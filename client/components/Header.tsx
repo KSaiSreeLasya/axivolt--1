@@ -173,24 +173,24 @@ export default function Header() {
                 }`}
               >
                 <div className="py-2">
-                  <a
-                    href="#"
+                  <Link
+                    to="/advisory"
                     className="block px-6 py-3 text-sm text-gray-300 hover:text-cyan hover:bg-background/50 transition-colors"
                   >
                     Advisory
-                  </a>
-                  <a
-                    href="#"
+                  </Link>
+                  <Link
+                    to="/procurement"
                     className="block px-6 py-3 text-sm text-gray-300 hover:text-cyan hover:bg-background/50 transition-colors"
                   >
                     Procurement
-                  </a>
-                  <a
-                    href="#"
+                  </Link>
+                  <Link
+                    to="/digital-solutions"
                     className="block px-6 py-3 text-sm text-gray-300 hover:text-cyan hover:bg-background/50 transition-colors"
                   >
                     Digital Solutions
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>

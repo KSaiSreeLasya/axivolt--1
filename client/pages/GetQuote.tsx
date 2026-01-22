@@ -11,61 +11,111 @@ interface BillRange {
 }
 
 const billRanges: BillRange[] = [
-  { min: 1500, max: 2500, capacity: 3, previousPrice: 210000, currentPrice: 205000 },
-  { min: 2501, max: 3500, capacity: 4, previousPrice: 271000, currentPrice: 266000 },
-  { min: 3501, max: 4500, capacity: 5, previousPrice: 332000, currentPrice: 327000 },
-  { min: 4501, max: 5500, capacity: 6, previousPrice: 393000, currentPrice: 388000 },
-  { min: 5501, max: 6500, capacity: 7, previousPrice: 454000, currentPrice: 449000 },
-  { min: 6501, max: 7500, capacity: 8, previousPrice: 515000, currentPrice: 510000 },
-  { min: 7501, max: 10500, capacity: 10, previousPrice: 637000, currentPrice: 632000 },
+  {
+    min: 1500,
+    max: 2500,
+    capacity: 3,
+    previousPrice: 210000,
+    currentPrice: 205000,
+  },
+  {
+    min: 2501,
+    max: 3500,
+    capacity: 4,
+    previousPrice: 271000,
+    currentPrice: 266000,
+  },
+  {
+    min: 3501,
+    max: 4500,
+    capacity: 5,
+    previousPrice: 332000,
+    currentPrice: 327000,
+  },
+  {
+    min: 4501,
+    max: 5500,
+    capacity: 6,
+    previousPrice: 393000,
+    currentPrice: 388000,
+  },
+  {
+    min: 5501,
+    max: 6500,
+    capacity: 7,
+    previousPrice: 454000,
+    currentPrice: 449000,
+  },
+  {
+    min: 6501,
+    max: 7500,
+    capacity: 8,
+    previousPrice: 515000,
+    currentPrice: 510000,
+  },
+  {
+    min: 7501,
+    max: 10500,
+    capacity: 10,
+    previousPrice: 637000,
+    currentPrice: 632000,
+  },
 ];
 
-const billOptions = billRanges.map(range => `₹${range.min.toLocaleString()} - ₹${range.max.toLocaleString()}`);
+const billOptions = billRanges.map(
+  (range) => `₹${range.min.toLocaleString()} - ₹${range.max.toLocaleString()}`,
+);
 
 export default function GetQuote() {
-  const [category, setCategory] = useState<"residential" | "housing" | "commercial">("residential");
+  const [category, setCategory] = useState<
+    "residential" | "housing" | "commercial"
+  >("residential");
   const [formData, setFormData] = useState({
     fullName: "",
     whatsapp: "",
     pinCode: "",
     billRange: "",
     capacity: "",
-    agreeToTerms: false
+    agreeToTerms: false,
   });
 
   const [submitted, setSubmitted] = useState(false);
 
   const selectedRangeIndex = billOptions.indexOf(formData.billRange);
-  const selectedBillRange = selectedRangeIndex >= 0 ? billRanges[selectedRangeIndex] : null;
+  const selectedBillRange =
+    selectedRangeIndex >= 0 ? billRanges[selectedRangeIndex] : null;
   const suggestedCapacity = selectedBillRange?.capacity || null;
 
   // Auto-fill capacity when bill range changes
   const handleBillRangeChange = (value: string) => {
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
       billRange: value,
-      capacity: billRanges[billOptions.indexOf(value)]?.capacity.toString() || ""
+      capacity:
+        billRanges[billOptions.indexOf(value)]?.capacity.toString() || "",
     }));
   };
 
   const handleCapacityChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      capacity: e.target.value
+      capacity: e.target.value,
     }));
   };
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>,
+  ) => {
     const { name, value, type } = e.target;
     if (type === "checkbox") {
-      setFormData(prev => ({
+      setFormData((prev) => ({
         ...prev,
-        [name]: (e.target as HTMLInputElement).checked
+        [name]: (e.target as HTMLInputElement).checked,
       }));
     } else {
-      setFormData(prev => ({
+      setFormData((prev) => ({
         ...prev,
-        [name]: value
+        [name]: value,
       }));
     }
   };
@@ -89,7 +139,8 @@ export default function GetQuote() {
               Get a <span className="text-cyan">Quote</span>
             </h1>
             <p className="text-lg text-gray-400 max-w-2xl mx-auto">
-              Choose your category and fill the form to receive a free consultation and quote.
+              Choose your category and fill the form to receive a free
+              consultation and quote.
             </p>
           </div>
         </div>
@@ -143,7 +194,9 @@ export default function GetQuote() {
 
               {submitted && (
                 <div className="mb-6 p-4 bg-green-500/20 border border-green-500 rounded-lg">
-                  <p className="text-green-400 font-semibold">Thank you! We'll contact you soon.</p>
+                  <p className="text-green-400 font-semibold">
+                    Thank you! We'll contact you soon.
+                  </p>
                 </div>
               )}
 
@@ -199,7 +252,8 @@ export default function GetQuote() {
                 {/* Average Monthly Bill */}
                 <div>
                   <label className="block text-sm font-semibold mb-2">
-                    What is your average monthly bill? <span className="text-red-500">*</span>
+                    What is your average monthly bill?{" "}
+                    <span className="text-red-500">*</span>
                   </label>
                   <select
                     name="billRange"
@@ -217,7 +271,8 @@ export default function GetQuote() {
                   </select>
                   {suggestedCapacity && (
                     <p className="text-sm text-gray-400 mt-2">
-                      Suggested capacity for this bill range: {suggestedCapacity} kW
+                      Suggested capacity for this bill range:{" "}
+                      {suggestedCapacity} kW
                     </p>
                   )}
                 </div>
@@ -244,7 +299,9 @@ export default function GetQuote() {
                     <div className="grid grid-cols-2 gap-4">
                       {/* Previous GST */}
                       <div className="bg-background rounded border border-border p-4 text-center">
-                        <p className="text-sm text-gray-400 mb-2">Previous GST</p>
+                        <p className="text-sm text-gray-400 mb-2">
+                          Previous GST
+                        </p>
                         <p className="text-2xl font-bold text-cyan mb-1">
                           ₹{selectedBillRange.previousPrice.toLocaleString()}
                         </p>
@@ -255,7 +312,9 @@ export default function GetQuote() {
 
                       {/* Current GST */}
                       <div className="bg-background rounded border border-cyan p-4 text-center">
-                        <p className="text-sm text-gray-400 mb-2">Current GST</p>
+                        <p className="text-sm text-gray-400 mb-2">
+                          Current GST
+                        </p>
                         <p className="text-2xl font-bold text-cyan mb-1">
                           ₹{selectedBillRange.currentPrice.toLocaleString()}
                         </p>
@@ -268,7 +327,8 @@ export default function GetQuote() {
                     {/* Estimated Cost */}
                     <div className="bg-background/50 rounded border border-cyan/50 p-4">
                       <p className="text-cyan font-bold text-lg">
-                        Estimated Cost: ₹{selectedBillRange.currentPrice.toLocaleString()}
+                        Estimated Cost: ₹
+                        {selectedBillRange.currentPrice.toLocaleString()}
                       </p>
                     </div>
                   </div>
@@ -314,29 +374,34 @@ export default function GetQuote() {
       <section className="py-20 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Why Get a Quote with AXIVOLT?</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Why Get a Quote with AXIVOLT?
+            </h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               {
                 title: "Free Consultation",
-                description: "Get expert advice tailored to your energy needs"
+                description: "Get expert advice tailored to your energy needs",
               },
               {
                 title: "Accurate Pricing",
-                description: "Transparent pricing with no hidden costs"
+                description: "Transparent pricing with no hidden costs",
               },
               {
                 title: "Fast Response",
-                description: "Get your quote within 24 hours"
+                description: "Get your quote within 24 hours",
               },
               {
                 title: "Expert Support",
-                description: "Dedicated team to guide you throughout"
-              }
+                description: "Dedicated team to guide you throughout",
+              },
             ].map((benefit, idx) => (
-              <div key={idx} className="bg-card rounded-lg border border-border p-6 text-center">
+              <div
+                key={idx}
+                className="bg-card rounded-lg border border-border p-6 text-center"
+              >
                 <div className="w-12 h-12 bg-cyan/20 rounded-lg flex items-center justify-center mb-4 mx-auto">
                   <CheckCircle className="w-6 h-6 text-cyan" />
                 </div>

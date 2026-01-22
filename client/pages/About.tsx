@@ -1,62 +1,79 @@
 import Header from "@/components/Header";
-import { ArrowRight, CheckCircle, Award, Users, Zap, Shield, Target } from "lucide-react";
+import {
+  ArrowRight,
+  CheckCircle,
+  Award,
+  Users,
+  Zap,
+  Shield,
+  Target,
+} from "lucide-react";
 
 export default function About() {
   const coreValues = [
     {
       icon: Users,
       title: "Customer Satisfaction",
-      description: "Putting clients first and ensuring exceptional service delivery at every step"
+      description:
+        "Putting clients first and ensuring exceptional service delivery at every step",
     },
     {
       icon: CheckCircle,
       title: "Quality Assurance",
-      description: "Maintaining the highest standards in engineering, reliability and performance"
+      description:
+        "Maintaining the highest standards in engineering, reliability and performance",
     },
     {
       icon: Zap,
       title: "Integrity",
-      description: "Operating with transparency, honesty, and ethical business practices in all operations"
+      description:
+        "Operating with transparency, honesty, and ethical business practices in all operations",
     },
     {
       icon: Target,
       title: "Innovation",
-      description: "Fostering cutting-edge technologies for the future of renewable energy"
+      description:
+        "Fostering cutting-edge technologies for the future of renewable energy",
     },
     {
       icon: Users,
       title: "Teamwork",
-      description: "Following collaboration and teamwork to achieve renewable energy goals"
+      description:
+        "Following collaboration and teamwork to achieve renewable energy goals",
     },
     {
       icon: Shield,
       title: "Safety",
-      description: "Prioritizing safety and environmental protection in all our operations"
-    }
+      description:
+        "Prioritizing safety and environmental protection in all our operations",
+    },
   ];
 
   const certifications = [
     {
       icon: Award,
       title: "Certified ISO",
-      description: "ISO 9001 certified organization ensuring highest quality standards and operational excellence"
+      description:
+        "ISO 9001 certified organization ensuring highest quality standards and operational excellence",
     },
     {
       icon: Target,
       title: "Startup India Recognized",
-      description: "Recognized under Startup India for innovation and renewable energy solutions"
+      description:
+        "Recognized under Startup India for innovation and renewable energy solutions",
     },
     {
       icon: Zap,
       title: "In Collaboration with MNRE",
-      description: "Working with the Ministry of New & Renewable Energy initiatives and programs"
-    }
+      description:
+        "Working with the Ministry of New & Renewable Energy initiatives and programs",
+    },
   ];
 
   const stats = [
     { value: "950+", label: "Projects Completed" },
     { value: "250MW", label: "Capacity Installed" },
-    { value: "$50M+", label: "Investment Value" }
+    { value: "$50M+", label: "Investment Value" },
   ];
 
   return (
@@ -75,7 +92,9 @@ export default function About() {
                 Our <span className="text-cyan">Mission</span>
               </h1>
               <p className="text-lg text-gray-400 mb-8">
-                To accelerate the world's transition to renewable energy through innovative solutions, expert guidance, and unwavering commitment to excellence.
+                To accelerate the world's transition to renewable energy through
+                innovative solutions, expert guidance, and unwavering commitment
+                to excellence.
               </p>
               <div className="flex items-center gap-4">
                 <button className="bg-cyan text-background px-6 py-3 rounded-lg font-bold hover:bg-yellow-green transition-all inline-flex items-center gap-2">
@@ -90,7 +109,9 @@ export default function About() {
               <div className="grid grid-cols-3 gap-6 mt-12">
                 {stats.map((stat, idx) => (
                   <div key={idx}>
-                    <p className="text-2xl md:text-3xl font-bold text-cyan">{stat.value}</p>
+                    <p className="text-2xl md:text-3xl font-bold text-cyan">
+                      {stat.value}
+                    </p>
                     <p className="text-sm text-gray-400">{stat.label}</p>
                   </div>
                 ))}
@@ -125,16 +146,21 @@ export default function About() {
                 Our <span className="text-cyan">Vision</span>
               </h2>
               <p className="text-lg text-gray-400 mb-6">
-                To accelerate India's transition to clean energy by providing reliable, affordable, and high-driven renewable energy solutions.
+                To accelerate India's transition to clean energy by providing
+                reliable, affordable, and high-driven renewable energy
+                solutions.
               </p>
               <ul className="space-y-4">
                 {[
                   "Provide holistic clean energy solutions",
                   "Reduce carbon footprint across industries",
                   "Enable sustainable economic growth",
-                  "Drive innovation in renewable technology"
+                  "Drive innovation in renewable technology",
                 ].map((item, idx) => (
-                  <li key={idx} className="flex items-center gap-3 text-gray-300">
+                  <li
+                    key={idx}
+                    className="flex items-center gap-3 text-gray-300"
+                  >
                     <CheckCircle className="w-5 h-5 text-cyan flex-shrink-0" />
                     {item}
                   </li>
@@ -153,7 +179,8 @@ export default function About() {
               Our <span className="text-cyan">Core Values</span>
             </h2>
             <p className="text-gray-400 max-w-2xl mx-auto">
-              The principles that guide our mission and shape our commitment to sustainable energy
+              The principles that guide our mission and shape our commitment to
+              sustainable energy
             </p>
           </div>
 
@@ -161,7 +188,10 @@ export default function About() {
             {coreValues.map((value, idx) => {
               const Icon = value.icon;
               return (
-                <div key={idx} className="bg-card rounded-lg p-8 border border-border hover:border-cyan transition-all">
+                <div
+                  key={idx}
+                  className="bg-card rounded-lg p-8 border border-border hover:border-cyan transition-all"
+                >
                   <div className="w-12 h-12 bg-cyan/20 rounded-lg flex items-center justify-center mb-6">
                     <Icon className="w-6 h-6 text-cyan" />
                   </div>
@@ -182,7 +212,8 @@ export default function About() {
               Certifications & Affiliations
             </h2>
             <p className="text-gray-400 max-w-2xl mx-auto">
-              Recognitions and partnerships that validate our commitment to quality, innovation, and clean energy leadership
+              Recognitions and partnerships that validate our commitment to
+              quality, innovation, and clean energy leadership
             </p>
           </div>
 
@@ -190,11 +221,16 @@ export default function About() {
             {certifications.map((cert, idx) => {
               const Icon = cert.icon;
               return (
-                <div key={idx} className="bg-card rounded-lg p-8 border border-border hover:border-cyan transition-all text-center">
+                <div
+                  key={idx}
+                  className="bg-card rounded-lg p-8 border border-border hover:border-cyan transition-all text-center"
+                >
                   <div className="w-16 h-16 bg-cyan/20 rounded-lg flex items-center justify-center mb-6 mx-auto">
                     <Icon className="w-8 h-8 text-cyan" />
                   </div>
-                  <h3 className="text-xl font-bold mb-3 text-cyan">{cert.title}</h3>
+                  <h3 className="text-xl font-bold mb-3 text-cyan">
+                    {cert.title}
+                  </h3>
                   <p className="text-gray-400">{cert.description}</p>
                 </div>
               );
@@ -211,7 +247,10 @@ export default function About() {
               Leading the Transition to Sustainable Energy
             </h2>
             <p className="text-lg text-gray-400 max-w-3xl mx-auto mb-8">
-              AXIVOLT Green Energies Pvt. Ltd. is committed to delivering innovative renewable energy solutions that empower businesses and individuals to achieve their sustainability goals while reducing costs and environmental impact.
+              AXIVOLT Green Energies Pvt. Ltd. is committed to delivering
+              innovative renewable energy solutions that empower businesses and
+              individuals to achieve their sustainability goals while reducing
+              costs and environmental impact.
             </p>
             <button className="bg-cyan text-background px-8 py-3 rounded-lg font-bold hover:bg-yellow-green transition-all inline-flex items-center gap-2">
               Get in Touch <ArrowRight className="w-5 h-5" />

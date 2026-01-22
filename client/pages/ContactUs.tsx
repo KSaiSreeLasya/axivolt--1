@@ -1,6 +1,13 @@
 import Header from "@/components/Header";
 import { useState } from "react";
-import { Mail, Phone, MapPin, Linkedin, Facebook, Instagram } from "lucide-react";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Linkedin,
+  Facebook,
+  Instagram,
+} from "lucide-react";
 
 export default function ContactUs() {
   const [formData, setFormData] = useState({
@@ -8,16 +15,18 @@ export default function ContactUs() {
     email: "",
     phone: "",
     subject: "",
-    message: ""
+    message: "",
   });
 
   const [submitted, setSubmitted] = useState(false);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }));
   };
 
@@ -30,7 +39,7 @@ export default function ContactUs() {
       email: "",
       phone: "",
       subject: "",
-      message: ""
+      message: "",
     });
     setTimeout(() => setSubmitted(false), 3000);
   };
@@ -47,7 +56,8 @@ export default function ContactUs() {
               Contact <span className="text-cyan">Us</span>
             </h1>
             <p className="text-lg text-gray-400 max-w-2xl mx-auto">
-              Get in touch with our renewable energy experts for a free consultation.
+              Get in touch with our renewable energy experts for a free
+              consultation.
             </p>
           </div>
         </div>
@@ -63,7 +73,9 @@ export default function ContactUs() {
 
               {submitted && (
                 <div className="mb-6 p-4 bg-green-500/20 border border-green-500 rounded-lg">
-                  <p className="text-green-400 font-semibold">Thank you! We'll get back to you soon.</p>
+                  <p className="text-green-400 font-semibold">
+                    Thank you! We'll get back to you soon.
+                  </p>
                 </div>
               )}
 
@@ -176,7 +188,10 @@ export default function ContactUs() {
                 <Phone className="w-6 h-6 text-cyan" />
               </div>
               <h3 className="text-lg font-bold mb-3">Phone</h3>
-              <a href="tel:+919876543210" className="text-gray-400 hover:text-cyan transition-colors">
+              <a
+                href="tel:+919876543210"
+                className="text-gray-400 hover:text-cyan transition-colors"
+              >
                 +91 98765 43210
               </a>
             </div>
@@ -187,7 +202,10 @@ export default function ContactUs() {
                 <Mail className="w-6 h-6 text-cyan" />
               </div>
               <h3 className="text-lg font-bold mb-3">Email</h3>
-              <a href="mailto:info@axivolt.com" className="text-gray-400 hover:text-cyan transition-colors">
+              <a
+                href="mailto:info@axivolt.com"
+                className="text-gray-400 hover:text-cyan transition-colors"
+              >
                 info@axivolt.com
               </a>
             </div>
@@ -199,8 +217,10 @@ export default function ContactUs() {
               </div>
               <h3 className="text-lg font-bold mb-3">Address</h3>
               <p className="text-gray-400 text-sm">
-                Plot No. 101, Miyoshi Residency, Sri<br />
-                Nagar Colony, Miyapur,<br />
+                Plot No. 101, Miyoshi Residency, Sri
+                <br />
+                Nagar Colony, Miyapur,
+                <br />
                 Hyderabad, Telangana 500049
               </p>
             </div>
@@ -212,7 +232,9 @@ export default function ContactUs() {
       <section className="py-20 bg-background/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Find Us on the Map</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Find Us on the Map
+            </h2>
             <p className="text-gray-400">Visit our office location</p>
           </div>
 
@@ -236,20 +258,32 @@ export default function ContactUs() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-card rounded-lg border border-border p-12 mb-12">
             <div className="max-w-3xl">
-              <h2 className="text-3xl font-bold mb-4">AXIVOLT Green Energies Pvt. Ltd.</h2>
+              <h2 className="text-3xl font-bold mb-4">
+                AXIVOLT Green Energies Pvt. Ltd.
+              </h2>
               <p className="text-gray-400 mb-6">
-                Leading the transition to sustainable energy with innovative renewable energy solutions for a cleaner, greener future.
+                Leading the transition to sustainable energy with innovative
+                renewable energy solutions for a cleaner, greener future.
               </p>
 
               {/* Social Links */}
               <div className="flex items-center gap-6">
-                <a href="#" className="w-10 h-10 rounded-full bg-cyan/20 flex items-center justify-center text-cyan hover:bg-cyan hover:text-background transition-all">
+                <a
+                  href="#"
+                  className="w-10 h-10 rounded-full bg-cyan/20 flex items-center justify-center text-cyan hover:bg-cyan hover:text-background transition-all"
+                >
                   <Facebook className="w-5 h-5" />
                 </a>
-                <a href="#" className="w-10 h-10 rounded-full bg-cyan/20 flex items-center justify-center text-cyan hover:bg-cyan hover:text-background transition-all">
+                <a
+                  href="#"
+                  className="w-10 h-10 rounded-full bg-cyan/20 flex items-center justify-center text-cyan hover:bg-cyan hover:text-background transition-all"
+                >
                   <Linkedin className="w-5 h-5" />
                 </a>
-                <a href="#" className="w-10 h-10 rounded-full bg-cyan/20 flex items-center justify-center text-cyan hover:bg-cyan hover:text-background transition-all">
+                <a
+                  href="#"
+                  className="w-10 h-10 rounded-full bg-cyan/20 flex items-center justify-center text-cyan hover:bg-cyan hover:text-background transition-all"
+                >
                   <Instagram className="w-5 h-5" />
                 </a>
               </div>
@@ -286,10 +320,26 @@ export default function ContactUs() {
             <div>
               <h3 className="text-lg font-bold mb-4">Services</h3>
               <ul className="space-y-2 text-sm text-gray-400">
-                <li><a href="#" className="hover:text-cyan transition-colors">Solar Energy</a></li>
-                <li><a href="#" className="hover:text-cyan transition-colors">Wind Energy</a></li>
-                <li><a href="#" className="hover:text-cyan transition-colors">Energy Storage</a></li>
-                <li><a href="#" className="hover:text-cyan transition-colors">Smart Grid</a></li>
+                <li>
+                  <a href="#" className="hover:text-cyan transition-colors">
+                    Solar Energy
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-cyan transition-colors">
+                    Wind Energy
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-cyan transition-colors">
+                    Energy Storage
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-cyan transition-colors">
+                    Smart Grid
+                  </a>
+                </li>
               </ul>
             </div>
 
@@ -297,10 +347,26 @@ export default function ContactUs() {
             <div>
               <h3 className="text-lg font-bold mb-4">Company</h3>
               <ul className="space-y-2 text-sm text-gray-400">
-                <li><a href="#" className="hover:text-cyan transition-colors">About Us</a></li>
-                <li><a href="#" className="hover:text-cyan transition-colors">Advisory</a></li>
-                <li><a href="#" className="hover:text-cyan transition-colors">Careers</a></li>
-                <li><a href="#" className="hover:text-cyan transition-colors">Sectors</a></li>
+                <li>
+                  <a href="#" className="hover:text-cyan transition-colors">
+                    About Us
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-cyan transition-colors">
+                    Advisory
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-cyan transition-colors">
+                    Careers
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-cyan transition-colors">
+                    Sectors
+                  </a>
+                </li>
               </ul>
             </div>
 
@@ -308,10 +374,26 @@ export default function ContactUs() {
             <div>
               <h3 className="text-lg font-bold mb-4">Resources</h3>
               <ul className="space-y-2 text-sm text-gray-400">
-                <li><a href="#" className="hover:text-cyan transition-colors">Resources</a></li>
-                <li><a href="#" className="hover:text-cyan transition-colors">Digital Solutions</a></li>
-                <li><a href="#" className="hover:text-cyan transition-colors">Procurement</a></li>
-                <li><a href="#" className="hover:text-cyan transition-colors">Support</a></li>
+                <li>
+                  <a href="#" className="hover:text-cyan transition-colors">
+                    Resources
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-cyan transition-colors">
+                    Digital Solutions
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-cyan transition-colors">
+                    Procurement
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-cyan transition-colors">
+                    Support
+                  </a>
+                </li>
               </ul>
             </div>
 
@@ -319,17 +401,34 @@ export default function ContactUs() {
             <div>
               <h3 className="text-lg font-bold mb-4">Legal</h3>
               <ul className="space-y-2 text-sm text-gray-400">
-                <li><a href="#" className="hover:text-cyan transition-colors">Privacy Policy</a></li>
-                <li><a href="#" className="hover:text-cyan transition-colors">Terms of Service</a></li>
-                <li><a href="#" className="hover:text-cyan transition-colors">Cookie Policy</a></li>
-                <li><a href="#" className="hover:text-cyan transition-colors">Compliance</a></li>
+                <li>
+                  <a href="#" className="hover:text-cyan transition-colors">
+                    Privacy Policy
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-cyan transition-colors">
+                    Terms of Service
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-cyan transition-colors">
+                    Cookie Policy
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-cyan transition-colors">
+                    Compliance
+                  </a>
+                </li>
               </ul>
             </div>
           </div>
 
           <div className="border-t border-border pt-8">
             <p className="text-center text-sm text-gray-400">
-              &copy; 2024 AXIVOLT Green Energies. All rights reserved. | Certified ISO 14001 | Certified ISO 9001 | TUREC Certified
+              &copy; 2024 AXIVOLT Green Energies. All rights reserved. |
+              Certified ISO 14001 | Certified ISO 9001 | TUREC Certified
             </p>
           </div>
         </div>

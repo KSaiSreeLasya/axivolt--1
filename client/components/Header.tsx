@@ -81,15 +81,50 @@ export default function Header() {
                 }`}
               >
                 <div className="py-2">
-                  <div className="px-6 py-3 border-b border-border">
-                    <a
-                      href="#"
-                      className="text-sm text-white hover:text-cyan transition-colors flex items-center justify-between"
+                  {/* Solar with submenu */}
+                  <div className="relative group/solar">
+                    <button
+                      onMouseEnter={() => setSolarOpen(true)}
+                      onMouseLeave={() => setSolarOpen(false)}
+                      className="w-full flex items-center justify-between px-6 py-3 border-b border-border text-sm text-white hover:text-cyan hover:bg-background/50 transition-colors"
                     >
                       Solar
                       <ChevronDown className="w-4 h-4" />
-                    </a>
+                    </button>
+
+                    {/* Solar Submenu - Industries */}
+                    <div
+                      onMouseEnter={() => setSolarOpen(true)}
+                      onMouseLeave={() => setSolarOpen(false)}
+                      className={`absolute left-full top-0 mt-0 bg-card border border-border rounded-none w-56 shadow-xl transition-all duration-200 ${
+                        solarOpen
+                          ? "opacity-100 visible translate-x-0"
+                          : "opacity-0 invisible -translate-x-2"
+                      }`}
+                    >
+                      <div className="py-2">
+                        <a
+                          href="#"
+                          className="block px-6 py-3 text-sm text-gray-300 hover:text-cyan hover:bg-background/50 transition-colors"
+                        >
+                          Residential (B2C)
+                        </a>
+                        <a
+                          href="#"
+                          className="block px-6 py-3 text-sm text-gray-300 hover:text-cyan hover:bg-background/50 transition-colors"
+                        >
+                          Commercial (B2B)
+                        </a>
+                        <a
+                          href="#"
+                          className="block px-6 py-3 text-sm text-gray-300 hover:text-cyan hover:bg-background/50 transition-colors"
+                        >
+                          Government (B2G)
+                        </a>
+                      </div>
+                    </div>
                   </div>
+
                   <a
                     href="#"
                     className="block px-6 py-3 text-sm text-gray-300 hover:text-cyan hover:bg-background/50 transition-colors"

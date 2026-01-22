@@ -10,6 +10,11 @@ import Index from "./pages/Index";
 import Advisory from "./pages/Advisory";
 import Procurement from "./pages/Procurement";
 import DigitalSolutions from "./pages/DigitalSolutions";
+import Industry from "./pages/Industry";
+import Careers from "./pages/Careers";
+import About from "./pages/About";
+import ContactUs from "./pages/ContactUs";
+import GetQuote from "./pages/GetQuote";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -22,6 +27,11 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/industry" element={<Industry />} />
+          <Route path="/careers" element={<Careers />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<ContactUs />} />
+          <Route path="/quote" element={<GetQuote />} />
           <Route path="/advisory" element={<Advisory />} />
           <Route path="/procurement" element={<Procurement />} />
           <Route path="/digital-solutions" element={<DigitalSolutions />} />

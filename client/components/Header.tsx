@@ -194,26 +194,43 @@ export default function Header() {
                 </div>
               </div>
             </div>
+            <Link
+              to="/industry"
+              className="text-sm font-medium text-white hover:text-cyan transition-colors"
+            >
+              Industry
+            </Link>
 
-            <a
-              href="#"
+            <Link
+              to="/careers"
               className="text-sm font-medium text-white hover:text-cyan transition-colors"
             >
               Careers
-            </a>
+            </Link>
 
-            <a
-              href="#"
+            <Link
+              to="/about"
               className="text-sm font-medium text-white hover:text-cyan transition-colors"
             >
               About
-            </a>
+            </Link>
           </nav>
 
-          {/* CTA Button */}
-          <button className="bg-cyan text-background px-6 py-2 rounded font-semibold hover:bg-yellow-green transition-all text-sm flex-shrink-0">
-            Get a Quote
-          </button>
+          {/* CTA Buttons */}
+          <div className="flex items-center gap-4 flex-shrink-0">
+            <Link
+              to="/contact"
+              className="border border-cyan text-cyan px-5 py-2 rounded font-semibold hover:bg-cyan/10 transition-all text-sm inline-block"
+            >
+              Contact Us
+            </Link>
+            <Link
+              to="/quote"
+              className="bg-cyan text-background px-6 py-2 rounded font-semibold hover:bg-yellow-green transition-all text-sm inline-block"
+            >
+              Get a Quote
+            </Link>
+          </div>
         </div>
       </div>
     </header>

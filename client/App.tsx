@@ -10,6 +10,7 @@ import Index from "./pages/Index";
 import Advisory from "./pages/Advisory";
 import Procurement from "./pages/Procurement";
 import DigitalSolutions from "./pages/DigitalSolutions";
+import Industry from "./pages/Industry";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();

@@ -55,12 +55,7 @@ export default function Header() {
               Home
             </Link>
 
-            <Link
-              to="/industry"
-              className="text-sm font-medium text-white hover:text-cyan transition-colors"
-            >
-              Industry
-            </Link>
+            
 
             {/* Solutions Dropdown */}
             <div className="relative group">
@@ -201,6 +196,12 @@ export default function Header() {
                 </div>
               </div>
             </div>
+            <Link
+              to="/industry"
+              className="text-sm font-medium text-white hover:text-cyan transition-colors"
+            >
+              Industry
+            </Link>
 
             <a
               href="#"

@@ -2,11 +2,11 @@ import { Link } from "react-router-dom";
 
 export default function Header() {
   return (
-    <header className="sticky top-0 z-50 w-full bg-white border-b border-gray-200 shadow-sm">
+    <header className="sticky top-0 z-50 w-full bg-background border-b border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo and Brand */}
-          <Link to="/" className="flex items-center gap-2 group">
+          <Link to="/" className="flex items-center gap-3 group">
             <div className="flex items-center gap-1">
               <svg
                 className="w-10 h-10"
@@ -43,7 +43,7 @@ export default function Header() {
               </svg>
             </div>
             <div className="hidden sm:block">
-              <h1 className="text-2xl font-bold text-navy-blue tracking-wide">
+              <h1 className="text-xl font-bold text-white tracking-wide">
                 AXIVOLT
               </h1>
             </div>
@@ -53,25 +53,25 @@ export default function Header() {
           <nav className="hidden md:flex items-center gap-8">
             <Link
               to="/"
-              className="text-sm font-medium text-gray-700 hover:text-cyan transition-colors"
+              className="text-sm font-medium text-gray-300 hover:text-cyan transition-colors"
             >
               Home
             </Link>
             <a
               href="#services"
-              className="text-sm font-medium text-gray-700 hover:text-cyan transition-colors"
+              className="text-sm font-medium text-gray-300 hover:text-cyan transition-colors"
             >
               Services
             </a>
             <a
               href="#process"
-              className="text-sm font-medium text-gray-700 hover:text-cyan transition-colors"
+              className="text-sm font-medium text-gray-300 hover:text-cyan transition-colors"
             >
               How It Works
             </a>
             <a
               href="#contact"
-              className="text-sm font-medium text-gray-700 hover:text-cyan transition-colors"
+              className="text-sm font-medium text-gray-300 hover:text-cyan transition-colors"
             >
               Contact
             </a>

@@ -203,25 +203,30 @@ export default function Header() {
               Industry
             </Link>
 
-            <a
-              href="#"
+            <Link
+              to="/careers"
               className="text-sm font-medium text-white hover:text-cyan transition-colors"
             >
               Careers
-            </a>
+            </Link>
 
-            <a
-              href="#"
+            <Link
+              to="/about"
               className="text-sm font-medium text-white hover:text-cyan transition-colors"
             >
               About
-            </a>
+            </Link>
           </nav>
 
-          {/* CTA Button */}
-          <button className="bg-cyan text-background px-6 py-2 rounded font-semibold hover:bg-yellow-green transition-all text-sm flex-shrink-0">
-            Get a Quote
-          </button>
+          {/* CTA Buttons */}
+          <div className="flex items-center gap-4 flex-shrink-0">
+            <button className="border border-cyan text-cyan px-5 py-2 rounded font-semibold hover:bg-cyan/10 transition-all text-sm">
+              Contact Us
+            </button>
+            <button className="bg-cyan text-background px-6 py-2 rounded font-semibold hover:bg-yellow-green transition-all text-sm">
+              Get a Quote
+            </button>
+          </div>
         </div>
       </div>
     </header>

@@ -218,9 +218,12 @@ export default function Header() {
 
           {/* CTA Buttons */}
           <div className="flex items-center gap-4 flex-shrink-0">
-            <button className="border border-cyan text-cyan px-5 py-2 rounded font-semibold hover:bg-cyan/10 transition-all text-sm">
+            <Link
+              to="/contact"
+              className="border border-cyan text-cyan px-5 py-2 rounded font-semibold hover:bg-cyan/10 transition-all text-sm inline-block"
+            >
               Contact Us
-            </button>
+            </Link>
             <button className="bg-cyan text-background px-6 py-2 rounded font-semibold hover:bg-yellow-green transition-all text-sm">
               Get a Quote
             </button>

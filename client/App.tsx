@@ -14,6 +14,7 @@ import Industry from "./pages/Industry";
 import Careers from "./pages/Careers";
 import About from "./pages/About";
 import ContactUs from "./pages/ContactUs";
+import GetQuote from "./pages/GetQuote";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();

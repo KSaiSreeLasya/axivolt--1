@@ -1,5 +1,12 @@
 import Header from "@/components/Header";
-import { ArrowRight, CheckCircle, Zap, Users, Shield, TrendingUp } from "lucide-react";
+import {
+  ArrowRight,
+  CheckCircle,
+  Zap,
+  Users,
+  Shield,
+  TrendingUp,
+} from "lucide-react";
 
 export default function Procurement() {
   return (
@@ -21,9 +28,10 @@ export default function Procurement() {
               Solutions
             </h1>
             <p className="text-lg text-gray-400 max-w-2xl mx-auto">
-              Streamline your renewable energy projects with our comprehensive procurement and project
-              management consulting services. From sourcing to quality assurance, we ensure optimal
-              outcomes and timely delivery.
+              Streamline your renewable energy projects with our comprehensive
+              procurement and project management consulting services. From
+              sourcing to quality assurance, we ensure optimal outcomes and
+              timely delivery.
             </p>
             <div className="flex gap-4 justify-center mt-8">
               <button className="bg-cyan text-background px-8 py-3 rounded-lg font-bold hover:bg-opacity-90 transition-all">
@@ -41,9 +49,12 @@ export default function Procurement() {
       <section className="py-20 bg-background/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Procurement Process</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Our Procurement Process
+            </h2>
             <p className="text-gray-400">
-              A systematic approach to manage quality, delivery, and cost-effectiveness in every project.
+              A systematic approach to manage quality, delivery, and
+              cost-effectiveness in every project.
             </p>
           </div>
 
@@ -55,7 +66,8 @@ export default function Procurement() {
                 <div className="flex-1 bg-card rounded-lg p-6 border border-border">
                   <h3 className="text-xl font-bold mb-2">Project Assessment</h3>
                   <p className="text-gray-400 text-sm">
-                    Comprehensive evaluation of your requirements and project specifications.
+                    Comprehensive evaluation of your requirements and project
+                    specifications.
                   </p>
                 </div>
                 <div className="flex-shrink-0">
@@ -75,8 +87,8 @@ export default function Procurement() {
                 <div className="flex-1 bg-card rounded-lg p-6 border border-border">
                   <h3 className="text-xl font-bold mb-2">Vendor Selection</h3>
                   <p className="text-gray-400 text-sm">
-                    Strategic sourcing and qualification of certified suppliers based on quality, reliability,
-                    and cost-effectiveness.
+                    Strategic sourcing and qualification of certified suppliers
+                    based on quality, reliability, and cost-effectiveness.
                   </p>
                 </div>
               </div>
@@ -84,10 +96,12 @@ export default function Procurement() {
               {/* Step 3 */}
               <div className="flex gap-8 items-center">
                 <div className="flex-1 bg-card rounded-lg p-6 border border-border">
-                  <h3 className="text-xl font-bold mb-2">Contract Management</h3>
+                  <h3 className="text-xl font-bold mb-2">
+                    Contract Management
+                  </h3>
                   <p className="text-gray-400 text-sm">
-                    Expert negotiation and management of vendor agreements, ensuring favorable terms and
-                    compliance.
+                    Expert negotiation and management of vendor agreements,
+                    ensuring favorable terms and compliance.
                   </p>
                 </div>
                 <div className="flex-shrink-0">
@@ -107,7 +121,8 @@ export default function Procurement() {
                 <div className="flex-1 bg-card rounded-lg p-6 border border-border">
                   <h3 className="text-xl font-bold mb-2">Quality Assurance</h3>
                   <p className="text-gray-400 text-sm">
-                    Rigorous quality control and compliance monitoring throughout the procurement process.
+                    Rigorous quality control and compliance monitoring
+                    throughout the procurement process.
                   </p>
                 </div>
               </div>
@@ -115,9 +130,12 @@ export default function Procurement() {
               {/* Step 5 */}
               <div className="flex gap-8 items-center">
                 <div className="flex-1 bg-card rounded-lg p-6 border border-border">
-                  <h3 className="text-xl font-bold mb-2">Performance Optimization</h3>
+                  <h3 className="text-xl font-bold mb-2">
+                    Performance Optimization
+                  </h3>
                   <p className="text-gray-400 text-sm">
-                    Continuous monitoring and optimization of procurement performance and vendor relationships.
+                    Continuous monitoring and optimization of procurement
+                    performance and vendor relationships.
                   </p>
                 </div>
                 <div className="flex-shrink-0">
@@ -135,9 +153,12 @@ export default function Procurement() {
       <section className="py-20 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Core Services</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Our Core Services
+            </h2>
             <p className="text-gray-400">
-              Comprehensive solutions tailored to your renewable energy project needs.
+              Comprehensive solutions tailored to your renewable energy project
+              needs.
             </p>
           </div>
 
@@ -149,17 +170,21 @@ export default function Procurement() {
               </div>
               <h3 className="text-xl font-bold mb-4">Vendor Procurement</h3>
               <p className="text-gray-400 mb-6">
-                Complete sourcing of solar panels, inverters, mounting systems and other critical equipment.
+                Complete sourcing of solar panels, inverters, mounting systems
+                and other critical equipment.
               </p>
               <ul className="space-y-2 text-sm text-gray-400">
                 <li className="flex items-center gap-2">
-                  <CheckCircle className="w-4 h-4 text-cyan" /> Global Supplier Network
+                  <CheckCircle className="w-4 h-4 text-cyan" /> Global Supplier
+                  Network
                 </li>
                 <li className="flex items-center gap-2">
-                  <CheckCircle className="w-4 h-4 text-cyan" /> Quality Certifications
+                  <CheckCircle className="w-4 h-4 text-cyan" /> Quality
+                  Certifications
                 </li>
                 <li className="flex items-center gap-2">
-                  <CheckCircle className="w-4 h-4 text-cyan" /> Warranty Management
+                  <CheckCircle className="w-4 h-4 text-cyan" /> Warranty
+                  Management
                 </li>
               </ul>
             </div>
@@ -169,9 +194,12 @@ export default function Procurement() {
               <div className="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center mb-6">
                 <Users className="w-6 h-6 text-blue-400" />
               </div>
-              <h3 className="text-xl font-bold mb-4">Plant Management Consulting</h3>
+              <h3 className="text-xl font-bold mb-4">
+                Plant Management Consulting
+              </h3>
               <p className="text-gray-400 mb-6">
-                End-to-end project management services from initial assessment to final commissioning.
+                End-to-end project management services from initial assessment
+                to final commissioning.
               </p>
               <ul className="space-y-2 text-sm text-gray-400">
                 <li className="flex items-center gap-2">
@@ -181,7 +209,8 @@ export default function Procurement() {
                   <CheckCircle className="w-4 h-4 text-cyan" /> Risk Management
                 </li>
                 <li className="flex items-center gap-2">
-                  <CheckCircle className="w-4 h-4 text-cyan" /> Timeline Coordination
+                  <CheckCircle className="w-4 h-4 text-cyan" /> Timeline
+                  Coordination
                 </li>
               </ul>
             </div>
@@ -193,17 +222,20 @@ export default function Procurement() {
               </div>
               <h3 className="text-xl font-bold mb-4">Expert Advisory</h3>
               <p className="text-gray-400 mb-6">
-                Expert technical guidance on equipment selection and implementation strategies.
+                Expert technical guidance on equipment selection and
+                implementation strategies.
               </p>
               <ul className="space-y-2 text-sm text-gray-400">
                 <li className="flex items-center gap-2">
                   <CheckCircle className="w-4 h-4 text-cyan" /> Technical Audits
                 </li>
                 <li className="flex items-center gap-2">
-                  <CheckCircle className="w-4 h-4 text-cyan" /> Performance Analysis
+                  <CheckCircle className="w-4 h-4 text-cyan" /> Performance
+                  Analysis
                 </li>
                 <li className="flex items-center gap-2">
-                  <CheckCircle className="w-4 h-4 text-cyan" /> Compliance Review
+                  <CheckCircle className="w-4 h-4 text-cyan" /> Compliance
+                  Review
                 </li>
               </ul>
             </div>

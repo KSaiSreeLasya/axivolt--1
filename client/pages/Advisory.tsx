@@ -1,5 +1,11 @@
 import Header from "@/components/Header";
-import { ArrowRight, CheckCircle, TrendingUp, Zap, BarChart3 } from "lucide-react";
+import {
+  ArrowRight,
+  CheckCircle,
+  TrendingUp,
+  Zap,
+  BarChart3,
+} from "lucide-react";
 
 export default function Advisory() {
   return (
@@ -14,11 +20,13 @@ export default function Advisory() {
               Advisory & Expert Management Consulting
             </p>
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Strategic Energy <span className="text-cyan">Advisory</span> Services
+              Strategic Energy <span className="text-cyan">Advisory</span>{" "}
+              Services
             </h1>
             <p className="text-lg text-gray-400 max-w-2xl mx-auto">
-              Maximize your renewable energy potential with our comprehensive advisory and asset
-              management services, designed to optimize performance and ensure long-term success.
+              Maximize your renewable energy potential with our comprehensive
+              advisory and asset management services, designed to optimize
+              performance and ensure long-term success.
             </p>
           </div>
         </div>
@@ -30,8 +38,8 @@ export default function Advisory() {
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Process</h2>
             <p className="text-gray-400">
-              A systematic approach to renewable advisory and asset management that ensure optimal
-              outcomes for your investment.
+              A systematic approach to renewable advisory and asset management
+              that ensure optimal outcomes for your investment.
             </p>
           </div>
 
@@ -47,9 +55,12 @@ export default function Advisory() {
                   <div className="w-1 h-20 bg-gradient-to-b from-cyan to-transparent"></div>
                 </div>
                 <div className="flex-1 bg-card rounded-lg p-6 border border-border">
-                  <h3 className="text-xl font-bold mb-2">Assessment & Analysis</h3>
+                  <h3 className="text-xl font-bold mb-2">
+                    Assessment & Analysis
+                  </h3>
                   <p className="text-gray-400">
-                    Comprehensive evaluation of your current energy infrastructure and needs.
+                    Comprehensive evaluation of your current energy
+                    infrastructure and needs.
                   </p>
                 </div>
               </div>
@@ -65,7 +76,8 @@ export default function Advisory() {
                 <div className="flex-1 bg-card rounded-lg p-6 border border-border ml-auto">
                   <h3 className="text-xl font-bold mb-2">Strategic Planning</h3>
                   <p className="text-gray-400">
-                    Development of customized renewable energy roadmap and implementation strategy.
+                    Development of customized renewable energy roadmap and
+                    implementation strategy.
                   </p>
                 </div>
               </div>
@@ -81,7 +93,8 @@ export default function Advisory() {
                 <div className="flex-1 bg-card rounded-lg p-6 border border-border">
                   <h3 className="text-xl font-bold mb-2">Financial Modeling</h3>
                   <p className="text-gray-400">
-                    ROI analysis, financing options, and all-encompassing financial frameworks.
+                    ROI analysis, financing options, and all-encompassing
+                    financial frameworks.
                   </p>
                 </div>
               </div>
@@ -95,9 +108,12 @@ export default function Advisory() {
                   <div className="w-1 h-20 bg-gradient-to-b from-cyan to-transparent"></div>
                 </div>
                 <div className="flex-1 bg-card rounded-lg p-6 border border-border ml-auto">
-                  <h3 className="text-xl font-bold mb-2">Implementation Management</h3>
+                  <h3 className="text-xl font-bold mb-2">
+                    Implementation Management
+                  </h3>
                   <p className="text-gray-400">
-                    Expert oversight, timeline management, and quality assurance throughout the project.
+                    Expert oversight, timeline management, and quality assurance
+                    throughout the project.
                   </p>
                 </div>
               </div>
@@ -111,9 +127,12 @@ export default function Advisory() {
                   <div className="w-1 h-20 bg-gradient-to-b from-cyan to-transparent"></div>
                 </div>
                 <div className="flex-1 bg-card rounded-lg p-6 border border-border">
-                  <h3 className="text-xl font-bold mb-2">Performance Monitoring</h3>
+                  <h3 className="text-xl font-bold mb-2">
+                    Performance Monitoring
+                  </h3>
                   <p className="text-gray-400">
-                    Ongoing analysis and optimization of performance post-installation.
+                    Ongoing analysis and optimization of performance
+                    post-installation.
                   </p>
                 </div>
               </div>
@@ -126,9 +145,12 @@ export default function Advisory() {
                   </div>
                 </div>
                 <div className="flex-1 bg-card rounded-lg p-6 border border-border ml-auto">
-                  <h3 className="text-xl font-bold mb-2">Continuous Optimization</h3>
+                  <h3 className="text-xl font-bold mb-2">
+                    Continuous Optimization
+                  </h3>
                   <p className="text-gray-400">
-                    Regular optimization and performance upgrades to maximize long-term success.
+                    Regular optimization and performance upgrades to maximize
+                    long-term success.
                   </p>
                 </div>
               </div>
@@ -141,7 +163,9 @@ export default function Advisory() {
       <section className="py-20 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Services</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Our Services
+            </h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -152,17 +176,21 @@ export default function Advisory() {
               </div>
               <h3 className="text-xl font-bold mb-4">Energy Consulting</h3>
               <p className="text-gray-400 mb-6">
-                Strategic energy consulting services, technology solutions and implementation support.
+                Strategic energy consulting services, technology solutions and
+                implementation support.
               </p>
               <ul className="space-y-2 text-sm text-gray-400">
                 <li className="flex items-center gap-2">
-                  <CheckCircle className="w-4 h-4 text-cyan" /> Technology Assessment
+                  <CheckCircle className="w-4 h-4 text-cyan" /> Technology
+                  Assessment
                 </li>
                 <li className="flex items-center gap-2">
-                  <CheckCircle className="w-4 h-4 text-cyan" /> Energy Efficiency Audit
+                  <CheckCircle className="w-4 h-4 text-cyan" /> Energy
+                  Efficiency Audit
                 </li>
                 <li className="flex items-center gap-2">
-                  <CheckCircle className="w-4 h-4 text-cyan" /> Renewable Solutions Design
+                  <CheckCircle className="w-4 h-4 text-cyan" /> Renewable
+                  Solutions Design
                 </li>
               </ul>
             </div>
@@ -174,17 +202,21 @@ export default function Advisory() {
               </div>
               <h3 className="text-xl font-bold mb-4">Asset Management</h3>
               <p className="text-gray-400 mb-6">
-                Comprehensive tracking, analytics and monitoring tools to maximize your investments.
+                Comprehensive tracking, analytics and monitoring tools to
+                maximize your investments.
               </p>
               <ul className="space-y-2 text-sm text-gray-400">
                 <li className="flex items-center gap-2">
-                  <CheckCircle className="w-4 h-4 text-cyan" /> Real-time Monitoring
+                  <CheckCircle className="w-4 h-4 text-cyan" /> Real-time
+                  Monitoring
                 </li>
                 <li className="flex items-center gap-2">
-                  <CheckCircle className="w-4 h-4 text-cyan" /> Performance Analytics
+                  <CheckCircle className="w-4 h-4 text-cyan" /> Performance
+                  Analytics
                 </li>
                 <li className="flex items-center gap-2">
-                  <CheckCircle className="w-4 h-4 text-cyan" /> Maintenance Scheduling
+                  <CheckCircle className="w-4 h-4 text-cyan" /> Maintenance
+                  Scheduling
                 </li>
               </ul>
             </div>
@@ -196,11 +228,13 @@ export default function Advisory() {
               </div>
               <h3 className="text-xl font-bold mb-4">Financial Advisory</h3>
               <p className="text-gray-400 mb-6">
-                Expert financial guidance and investment analysis to optimize energy projects.
+                Expert financial guidance and investment analysis to optimize
+                energy projects.
               </p>
               <ul className="space-y-2 text-sm text-gray-400">
                 <li className="flex items-center gap-2">
-                  <CheckCircle className="w-4 h-4 text-cyan" /> Financing Solutions
+                  <CheckCircle className="w-4 h-4 text-cyan" /> Financing
+                  Solutions
                 </li>
                 <li className="flex items-center gap-2">
                   <CheckCircle className="w-4 h-4 text-cyan" /> ROI Projections
@@ -218,17 +252,20 @@ export default function Advisory() {
               </div>
               <h3 className="text-xl font-bold mb-4">Risk Management</h3>
               <p className="text-gray-400 mb-6">
-                Comprehensive risk mitigation strategies for energy asset portfolio management.
+                Comprehensive risk mitigation strategies for energy asset
+                portfolio management.
               </p>
               <ul className="space-y-2 text-sm text-gray-400">
                 <li className="flex items-center gap-2">
                   <CheckCircle className="w-4 h-4 text-cyan" /> Risk Mitigation
                 </li>
                 <li className="flex items-center gap-2">
-                  <CheckCircle className="w-4 h-4 text-cyan" /> Compliance Assurance
+                  <CheckCircle className="w-4 h-4 text-cyan" /> Compliance
+                  Assurance
                 </li>
                 <li className="flex items-center gap-2">
-                  <CheckCircle className="w-4 h-4 text-cyan" /> Insurance Guidance
+                  <CheckCircle className="w-4 h-4 text-cyan" /> Insurance
+                  Guidance
                 </li>
               </ul>
             </div>

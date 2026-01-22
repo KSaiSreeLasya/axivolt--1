@@ -34,9 +34,9 @@ export default function DigitalSolutions() {
                 Platforms
               </h1>
               <p className="text-lg text-gray-400 mb-8">
-                Transform your energy management with our cutting-edge digital solutions. From real-time
-                monitoring to AI-powered optimization, unlock the potential of your renewable energy
-                investments.
+                Transform your energy management with our cutting-edge digital
+                solutions. From real-time monitoring to AI-powered optimization,
+                unlock the potential of your renewable energy investments.
               </p>
               <div className="flex gap-4">
                 <button className="bg-purple-600 text-white px-8 py-3 rounded-lg font-bold hover:bg-opacity-90 transition-all">
@@ -80,9 +80,12 @@ export default function DigitalSolutions() {
       <section className="py-20 bg-background/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Digital Platforms</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Our Digital Platforms
+            </h2>
             <p className="text-gray-400">
-              Comprehensive digital solutions designed to optimize your energy operations.
+              Comprehensive digital solutions designed to optimize your energy
+              operations.
             </p>
           </div>
 
@@ -124,50 +127,67 @@ export default function DigitalSolutions() {
           {activeTab === "energy" && (
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="bg-card rounded-lg p-8 border border-border">
-                <h3 className="text-2xl font-bold mb-6">Energy Management System</h3>
+                <h3 className="text-2xl font-bold mb-6">
+                  Energy Management System
+                </h3>
                 <p className="text-gray-400 mb-6">
-                  Real-time monitoring and control of your renewable energy assets.
+                  Real-time monitoring and control of your renewable energy
+                  assets.
                 </p>
                 <ul className="space-y-4">
                   <li className="flex items-start gap-3">
                     <CheckCircle className="w-5 h-5 text-cyan flex-shrink-0 mt-1" />
                     <div>
                       <p className="font-semibold">Real-time Monitoring</p>
-                      <p className="text-gray-500 text-sm">Track system performance 24/7</p>
+                      <p className="text-gray-500 text-sm">
+                        Track system performance 24/7
+                      </p>
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle className="w-5 h-5 text-cyan flex-shrink-0 mt-1" />
                     <div>
                       <p className="font-semibold">Predictive Analytics</p>
-                      <p className="text-gray-500 text-sm">AI-powered performance insights</p>
+                      <p className="text-gray-500 text-sm">
+                        AI-powered performance insights
+                      </p>
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle className="w-5 h-5 text-cyan flex-shrink-0 mt-1" />
                     <div>
                       <p className="font-semibold">Automated Control</p>
-                      <p className="text-gray-500 text-sm">Smart system optimization</p>
+                      <p className="text-gray-500 text-sm">
+                        Smart system optimization
+                      </p>
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle className="w-5 h-5 text-cyan flex-shrink-0 mt-1" />
                     <div>
                       <p className="font-semibold">Performance Optimization</p>
-                      <p className="text-gray-500 text-sm">Maximize energy generation</p>
+                      <p className="text-gray-500 text-sm">
+                        Maximize energy generation
+                      </p>
                     </div>
                   </li>
                 </ul>
               </div>
               <div className="bg-gradient-to-br from-blue-900/30 to-blue-600/10 rounded-lg p-12 flex items-center justify-center h-96">
                 <div className="text-center">
-                  <svg className="w-24 h-24 mx-auto mb-4 text-cyan" fill="currentColor" viewBox="0 0 24 24">
+                  <svg
+                    className="w-24 h-24 mx-auto mb-4 text-cyan"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
                     <circle cx="12" cy="12" r="10" opacity="0.1" />
                     <path d="M12 2c5.5 0 10 4.5 10 10s-4.5 10-10 10S2 17.5 2 12 6.5 2 12 2m0 2c-4.4 0-8 3.6-8 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8m3.5 9c.8 0 1.5-.7 1.5-1.5s-.7-1.5-1.5-1.5-1.5.7-1.5 1.5.7 1.5 1.5 1.5m-7 0c.8 0 1.5-.7 1.5-1.5S9.8 8 9 8s-1.5.7-1.5 1.5.7 1.5 1.5 1.5m3.5 6c-2.3 0-4.3-1.5-5-3.6h10c-.7 2.1-2.7 3.6-5 3.6z" />
                   </svg>
                   <p className="text-gray-400">25.5 kW</p>
                   <p className="text-gray-500 text-sm">Current Output</p>
-                  <p className="text-cyan text-sm font-mono mt-2">98.5% Efficiency</p>
+                  <p className="text-cyan text-sm font-mono mt-2">
+                    98.5% Efficiency
+                  </p>
                 </div>
               </div>
             </div>
@@ -176,30 +196,39 @@ export default function DigitalSolutions() {
           {activeTab === "mobile" && (
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="bg-card rounded-lg p-8 border border-border">
-                <h3 className="text-2xl font-bold mb-6">Mobile Asset Tracker</h3>
+                <h3 className="text-2xl font-bold mb-6">
+                  Mobile Asset Tracker
+                </h3>
                 <p className="text-gray-400 mb-6">
-                  Monitor and manage your energy assets from anywhere with our mobile application.
+                  Monitor and manage your energy assets from anywhere with our
+                  mobile application.
                 </p>
                 <ul className="space-y-4">
                   <li className="flex items-start gap-3">
                     <CheckCircle className="w-5 h-5 text-cyan flex-shrink-0 mt-1" />
                     <div>
                       <p className="font-semibold">On-the-go Monitoring</p>
-                      <p className="text-gray-500 text-sm">Access real-time data anywhere</p>
+                      <p className="text-gray-500 text-sm">
+                        Access real-time data anywhere
+                      </p>
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle className="w-5 h-5 text-cyan flex-shrink-0 mt-1" />
                     <div>
                       <p className="font-semibold">Alert Notifications</p>
-                      <p className="text-gray-500 text-sm">Instant system alerts and updates</p>
+                      <p className="text-gray-500 text-sm">
+                        Instant system alerts and updates
+                      </p>
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle className="w-5 h-5 text-cyan flex-shrink-0 mt-1" />
                     <div>
                       <p className="font-semibold">Remote Control</p>
-                      <p className="text-gray-500 text-sm">Manage systems remotely</p>
+                      <p className="text-gray-500 text-sm">
+                        Manage systems remotely
+                      </p>
                     </div>
                   </li>
                 </ul>
@@ -216,30 +245,39 @@ export default function DigitalSolutions() {
           {activeTab === "cloud" && (
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="bg-card rounded-lg p-8 border border-border">
-                <h3 className="text-2xl font-bold mb-6">Cloud Analytics Platform</h3>
+                <h3 className="text-2xl font-bold mb-6">
+                  Cloud Analytics Platform
+                </h3>
                 <p className="text-gray-400 mb-6">
-                  Comprehensive data analytics and visualization for your energy systems.
+                  Comprehensive data analytics and visualization for your energy
+                  systems.
                 </p>
                 <ul className="space-y-4">
                   <li className="flex items-start gap-3">
                     <CheckCircle className="w-5 h-5 text-cyan flex-shrink-0 mt-1" />
                     <div>
                       <p className="font-semibold">Advanced Analytics</p>
-                      <p className="text-gray-500 text-sm">Deep insights into performance data</p>
+                      <p className="text-gray-500 text-sm">
+                        Deep insights into performance data
+                      </p>
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle className="w-5 h-5 text-cyan flex-shrink-0 mt-1" />
                     <div>
                       <p className="font-semibold">Custom Reporting</p>
-                      <p className="text-gray-500 text-sm">Generate tailored reports</p>
+                      <p className="text-gray-500 text-sm">
+                        Generate tailored reports
+                      </p>
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle className="w-5 h-5 text-cyan flex-shrink-0 mt-1" />
                     <div>
                       <p className="font-semibold">Data Visualization</p>
-                      <p className="text-gray-500 text-sm">Interactive dashboards</p>
+                      <p className="text-gray-500 text-sm">
+                        Interactive dashboards
+                      </p>
                     </div>
                   </li>
                 </ul>
@@ -259,7 +297,9 @@ export default function DigitalSolutions() {
       <section className="py-20 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Advanced Features</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Advanced Features
+            </h2>
             <p className="text-gray-400">
               Cutting-edge technology powering the future of energy management
             </p>
@@ -270,35 +310,44 @@ export default function DigitalSolutions() {
               {
                 icon: Zap,
                 title: "AI-Powered Optimization",
-                description: "Machine learning algorithms continuously optimize energy production and consumption.",
+                description:
+                  "Machine learning algorithms continuously optimize energy production and consumption.",
               },
               {
                 icon: BarChart3,
                 title: "Real-Time Analytics",
-                description: "Comprehensive data visualization and analysis for performance monitoring.",
+                description:
+                  "Comprehensive data visualization and analysis for performance monitoring.",
               },
               {
                 icon: Cloud,
                 title: "Cloud Infrastructure",
-                description: "Reliable cloud-based architecture ensuring reliability and global accessibility.",
+                description:
+                  "Reliable cloud-based architecture ensuring reliability and global accessibility.",
               },
               {
                 icon: Lock,
                 title: "Advanced Security",
-                description: "Enterprise-grade security with end-to-end encryption and compliance standards.",
+                description:
+                  "Enterprise-grade security with end-to-end encryption and compliance standards.",
               },
               {
                 icon: GitBranch,
                 title: "API Integration",
-                description: "Seamless connectivity with sensors, smart meters, and IoT devices.",
+                description:
+                  "Seamless connectivity with sensors, smart meters, and IoT devices.",
               },
               {
                 icon: WrenchIcon,
                 title: "Predictive Maintenance",
-                description: "AI-driven maintenance scheduling to prevent downtime and optimize uptime.",
+                description:
+                  "AI-driven maintenance scheduling to prevent downtime and optimize uptime.",
               },
             ].map((feature, idx) => (
-              <div key={idx} className="bg-card rounded-lg p-8 border border-border">
+              <div
+                key={idx}
+                className="bg-card rounded-lg p-8 border border-border"
+              >
                 <feature.icon className="w-12 h-12 text-cyan mb-4" />
                 <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
                 <p className="text-gray-400 text-sm">{feature.description}</p>

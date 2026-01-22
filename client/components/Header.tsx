@@ -55,8 +55,6 @@ export default function Header() {
               Home
             </Link>
 
-            
-
             {/* Solutions Dropdown */}
             <div className="relative group">
               <button

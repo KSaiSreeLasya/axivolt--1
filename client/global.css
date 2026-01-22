@@ -12,49 +12,49 @@
    * A different format will require also updating the theme in tailwind.config.ts.
   */
   :root {
-    --background: 0 0% 100%;
-    --foreground: 208 47% 18%;
+    --background: 202 40% 12%;
+    --foreground: 0 0% 100%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 208 47% 18%;
+    --card: 202 40% 18%;
+    --card-foreground: 0 0% 100%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 208 47% 18%;
+    --popover: 202 40% 18%;
+    --popover-foreground: 0 0% 100%;
 
     --primary: 183 94% 27%;
-    --primary-foreground: 0 0% 100%;
+    --primary-foreground: 202 40% 12%;
 
     --secondary: 75 78% 54%;
-    --secondary-foreground: 208 47% 18%;
+    --secondary-foreground: 202 40% 12%;
 
-    --muted: 0 0% 95%;
-    --muted-foreground: 0 0% 40%;
+    --muted: 202 40% 25%;
+    --muted-foreground: 0 0% 70%;
 
     --accent: 75 78% 54%;
-    --accent-foreground: 208 47% 18%;
+    --accent-foreground: 202 40% 12%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 0 0% 92%;
-    --input: 0 0% 92%;
+    --border: 202 40% 25%;
+    --input: 202 40% 18%;
     --ring: 183 94% 27%;
 
     --radius: 0.5rem;
 
-    --sidebar-background: 0 0% 98%;
+    --sidebar-background: 202 40% 18%;
 
-    --sidebar-foreground: 208 47% 18%;
+    --sidebar-foreground: 0 0% 100%;
 
     --sidebar-primary: 183 94% 27%;
 
-    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-primary-foreground: 202 40% 12%;
 
     --sidebar-accent: 75 78% 54%;
 
-    --sidebar-accent-foreground: 208 47% 18%;
+    --sidebar-accent-foreground: 202 40% 12%;
 
-    --sidebar-border: 0 0% 92%;
+    --sidebar-border: 202 40% 25%;
 
     --sidebar-ring: 183 94% 27%;
 

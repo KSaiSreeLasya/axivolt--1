@@ -4,15 +4,15 @@ import { ChevronDown } from "lucide-react";
 
 export default function Header() {
   const [solutionsOpen, setSolutionsOpen] = useState(false);
+  const [solarOpen, setSolarOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
-  const [industriesOpen, setIndustriesOpen] = useState(false);
 
   return (
     <header className="sticky top-0 z-50 w-full bg-background border-b border-border">
       <div className="max-w-full mx-auto px-6 lg:px-12">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center h-20 gap-8">
           {/* Logo and Brand */}
-          <Link to="/" className="flex items-center gap-3 group">
+          <Link to="/" className="flex items-center gap-3 group flex-shrink-0">
             <div className="flex items-center gap-1">
               <svg
                 className="w-8 h-8"
@@ -46,8 +46,8 @@ export default function Header() {
             </div>
           </Link>
 
-          {/* Navigation */}
-          <nav className="hidden md:flex items-center gap-12 ml-16">
+          {/* Navigation - Centered */}
+          <nav className="hidden md:flex items-center gap-12 flex-1 justify-center">
             <Link
               to="/"
               className="text-sm font-medium text-cyan hover:text-yellow-green transition-colors"

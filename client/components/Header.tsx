@@ -195,54 +195,6 @@ export default function Header() {
               </div>
             </div>
 
-            {/* Industries Dropdown */}
-            <div className="relative group">
-              <button
-                onMouseEnter={() => setIndustriesOpen(true)}
-                onMouseLeave={() => setIndustriesOpen(false)}
-                className="flex items-center gap-1 text-sm font-medium text-white hover:text-cyan transition-colors"
-              >
-                Industries
-                <ChevronDown
-                  className={`w-4 h-4 transition-transform ${
-                    industriesOpen ? "rotate-180" : ""
-                  }`}
-                />
-              </button>
-
-              {/* Industries Submenu */}
-              <div
-                onMouseEnter={() => setIndustriesOpen(true)}
-                onMouseLeave={() => setIndustriesOpen(false)}
-                className={`absolute top-full left-0 mt-0 bg-card border border-border rounded-none w-56 shadow-xl transition-all duration-200 ${
-                  industriesOpen
-                    ? "opacity-100 visible translate-y-0"
-                    : "opacity-0 invisible -translate-y-2"
-                }`}
-              >
-                <div className="py-2">
-                  <a
-                    href="#"
-                    className="block px-6 py-3 text-sm text-gray-300 hover:text-cyan hover:bg-background/50 transition-colors"
-                  >
-                    Residential (B2C)
-                  </a>
-                  <a
-                    href="#"
-                    className="block px-6 py-3 text-sm text-gray-300 hover:text-cyan hover:bg-background/50 transition-colors"
-                  >
-                    Commercial (B2B)
-                  </a>
-                  <a
-                    href="#"
-                    className="block px-6 py-3 text-sm text-gray-300 hover:text-cyan hover:bg-background/50 transition-colors"
-                  >
-                    Government (B2G)
-                  </a>
-                </div>
-              </div>
-            </div>
-
             <a
               href="#"
               className="text-sm font-medium text-white hover:text-cyan transition-colors"
@@ -259,11 +211,9 @@ export default function Header() {
           </nav>
 
           {/* CTA Button */}
-          <div className="hidden lg:block ml-auto">
-            <button className="bg-cyan text-background px-6 py-2 rounded font-semibold hover:bg-yellow-green transition-all text-sm">
-              Get a Quote
-            </button>
-          </div>
+          <button className="bg-cyan text-background px-6 py-2 rounded font-semibold hover:bg-yellow-green transition-all text-sm flex-shrink-0">
+            Get a Quote
+          </button>
         </div>
       </div>
     </header>

@@ -6,15 +6,18 @@ export default function Wind() {
   const projects = [
     {
       title: "Onshore Wind Farm 1",
-      image: "https://images.unsplash.com/photo-1498855926480-d98e83099315?w=600&h=400&fit=crop",
+      image:
+        "https://images.unsplash.com/photo-1498855926480-d98e83099315?w=600&h=400&fit=crop",
     },
     {
       title: "Wind Installation 2",
-      image: "https://images.unsplash.com/photo-1509391366360-2e938aa1df42?w=600&h=400&fit=crop",
+      image:
+        "https://images.unsplash.com/photo-1509391366360-2e938aa1df42?w=600&h=400&fit=crop",
     },
     {
       title: "Hybrid System Project",
-      image: "https://images.unsplash.com/photo-1495652714223-3ba207a4bff3?w=600&h=400&fit=crop",
+      image:
+        "https://images.unsplash.com/photo-1495652714223-3ba207a4bff3?w=600&h=400&fit=crop",
     },
   ];
 
@@ -82,7 +85,8 @@ export default function Wind() {
     },
     {
       title: "Hybrid Systems",
-      description: "Integrated renewable energy solutions combining wind and solar",
+      description:
+        "Integrated renewable energy solutions combining wind and solar",
     },
   ];
 
@@ -109,7 +113,8 @@ export default function Wind() {
               </h1>
 
               <p className="text-lg text-gray-300 leading-relaxed">
-                Comprehensive wind projects, systems, and O&M. Select your application to learn more.
+                Comprehensive wind projects, systems, and O&M. Select your
+                application to learn more.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
@@ -139,15 +144,21 @@ export default function Wind() {
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Wind Projects in Action</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Wind Projects in Action
+            </h2>
             <p className="text-gray-300">
-              Discover our diverse wind installations across utility-scale, commercial and hybrid renewable projects
+              Discover our diverse wind installations across utility-scale,
+              commercial and hybrid renewable projects
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {projects.map((project, idx) => (
-              <div key={idx} className="relative h-64 rounded-lg overflow-hidden group">
+              <div
+                key={idx}
+                className="relative h-64 rounded-lg overflow-hidden group"
+              >
                 <img
                   src={project.image}
                   alt={project.title}
@@ -166,9 +177,12 @@ export default function Wind() {
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-background/50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Wind Energy Solutions</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Wind Energy Solutions
+            </h2>
             <p className="text-gray-300">
-              Comprehensive wind projects, systems, select your application to learn more.
+              Comprehensive wind projects, systems, select your application to
+              learn more.
             </p>
           </div>
 
@@ -180,17 +194,23 @@ export default function Wind() {
                   key={solution.title}
                   className="bg-card border border-border rounded-xl p-8 hover:border-cyan transition-all"
                 >
-                  <div className={`w-12 h-12 rounded-lg ${solution.color} flex items-center justify-center mb-4`}>
+                  <div
+                    className={`w-12 h-12 rounded-lg ${solution.color} flex items-center justify-center mb-4`}
+                  >
                     <Icon className={`w-6 h-6 ${solution.iconColor}`} />
                   </div>
 
                   <h3 className="text-xl font-bold mb-2">{solution.title}</h3>
-                  <p className="text-gray-300 text-sm mb-6">{solution.description}</p>
+                  <p className="text-gray-300 text-sm mb-6">
+                    {solution.description}
+                  </p>
 
                   <div className="grid grid-cols-2 gap-4 mb-6 pb-6 border-b border-border">
                     {solution.stats.map((stat, idx) => (
                       <div key={idx}>
-                        <p className="text-xl font-bold text-cyan">{stat.value}</p>
+                        <p className="text-xl font-bold text-cyan">
+                          {stat.value}
+                        </p>
                         <p className="text-xs text-gray-400">{stat.label}</p>
                       </div>
                     ))}
@@ -198,7 +218,10 @@ export default function Wind() {
 
                   <ul className="space-y-2 mb-6">
                     {solution.features.map((feature) => (
-                      <li key={feature} className="flex items-center gap-2 text-sm text-gray-300">
+                      <li
+                        key={feature}
+                        className="flex items-center gap-2 text-sm text-gray-300"
+                      >
                         <span className="w-1.5 h-1.5 rounded-full bg-cyan"></span>
                         {feature}
                       </li>
@@ -206,8 +229,12 @@ export default function Wind() {
                   </ul>
 
                   <div className="bg-background/50 rounded-lg p-4 border border-border">
-                    <p className="text-xs font-semibold text-cyan mb-1">Case Study</p>
-                    <p className="text-sm text-gray-300">{solution.caseStudy}</p>
+                    <p className="text-xs font-semibold text-cyan mb-1">
+                      Case Study
+                    </p>
+                    <p className="text-sm text-gray-300">
+                      {solution.caseStudy}
+                    </p>
                   </div>
                 </div>
               );
@@ -220,12 +247,17 @@ export default function Wind() {
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Wind Highlights</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Wind Highlights
+            </h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {highlights.map((highlight) => (
-              <div key={highlight.title} className="bg-card border border-border rounded-xl p-8">
+              <div
+                key={highlight.title}
+                className="bg-card border border-border rounded-xl p-8"
+              >
                 <h3 className="text-xl font-bold mb-3">{highlight.title}</h3>
                 <p className="text-gray-300">{highlight.description}</p>
               </div>
@@ -237,9 +269,12 @@ export default function Wind() {
       {/* CTA Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto bg-cyan rounded-2xl p-12 text-center">
-          <h2 className="text-3xl font-bold text-background mb-4">Partner with us on wind projects</h2>
+          <h2 className="text-3xl font-bold text-background mb-4">
+            Partner with us on wind projects
+          </h2>
           <p className="text-background/80 mb-6 text-lg">
-            Co-invest project development. EPC completed and operations for utility-scale and distributed renewables.
+            Co-invest project development. EPC completed and operations for
+            utility-scale and distributed renewables.
           </p>
           <button className="bg-background text-cyan px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition-all">
             Get Started
@@ -254,41 +289,103 @@ export default function Wind() {
             <div>
               <h4 className="font-bold mb-4">Services</h4>
               <ul className="space-y-2 text-sm text-gray-400">
-                <li><a href="#" className="hover:text-cyan transition">Solar Energy</a></li>
-                <li><a href="#" className="hover:text-cyan transition">Wind Power</a></li>
-                <li><a href="#" className="hover:text-cyan transition">Energy Storage</a></li>
-                <li><a href="#" className="hover:text-cyan transition">Smart Grid</a></li>
+                <li>
+                  <a href="#" className="hover:text-cyan transition">
+                    Solar Energy
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-cyan transition">
+                    Wind Power
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-cyan transition">
+                    Energy Storage
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-cyan transition">
+                    Smart Grid
+                  </a>
+                </li>
               </ul>
             </div>
             <div>
               <h4 className="font-bold mb-4">Company</h4>
               <ul className="space-y-2 text-sm text-gray-400">
-                <li><a href="#" className="hover:text-cyan transition">About Us</a></li>
-                <li><a href="#" className="hover:text-cyan transition">Advisory</a></li>
-                <li><a href="#" className="hover:text-cyan transition">Careers</a></li>
-                <li><a href="#" className="hover:text-cyan transition">Sectors</a></li>
+                <li>
+                  <a href="#" className="hover:text-cyan transition">
+                    About Us
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-cyan transition">
+                    Advisory
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-cyan transition">
+                    Careers
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-cyan transition">
+                    Sectors
+                  </a>
+                </li>
               </ul>
             </div>
             <div>
               <h4 className="font-bold mb-4">Resources</h4>
               <ul className="space-y-2 text-sm text-gray-400">
-                <li><a href="#" className="hover:text-cyan transition">Resources</a></li>
-                <li><a href="#" className="hover:text-cyan transition">Digital Solutions</a></li>
-                <li><a href="#" className="hover:text-cyan transition">Procurement</a></li>
-                <li><a href="#" className="hover:text-cyan transition">Support</a></li>
+                <li>
+                  <a href="#" className="hover:text-cyan transition">
+                    Resources
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-cyan transition">
+                    Digital Solutions
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-cyan transition">
+                    Procurement
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-cyan transition">
+                    Support
+                  </a>
+                </li>
               </ul>
             </div>
             <div>
               <h4 className="font-bold mb-4">Legal</h4>
               <ul className="space-y-2 text-sm text-gray-400">
-                <li><a href="#" className="hover:text-cyan transition">Privacy Policy</a></li>
-                <li><a href="#" className="hover:text-cyan transition">Terms of Service</a></li>
-                <li><a href="#" className="hover:text-cyan transition">Compliance</a></li>
+                <li>
+                  <a href="#" className="hover:text-cyan transition">
+                    Privacy Policy
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-cyan transition">
+                    Terms of Service
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-cyan transition">
+                    Compliance
+                  </a>
+                </li>
               </ul>
             </div>
           </div>
           <div className="border-t border-border pt-8">
-            <p className="text-sm text-gray-400">© 2024 Axiso Green Energies. All rights reserved.</p>
+            <p className="text-sm text-gray-400">
+              © 2024 Axiso Green Energies. All rights reserved.
+            </p>
           </div>
         </div>
       </footer>

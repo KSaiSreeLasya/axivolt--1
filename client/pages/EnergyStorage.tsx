@@ -6,15 +6,18 @@ export default function EnergyStorage() {
   const infrastructure = [
     {
       title: "Battery Storage",
-      image: "https://images.unsplash.com/photo-1513452862899-169dd34e93b4?w=600&h=400&fit=crop",
+      image:
+        "https://images.unsplash.com/photo-1513452862899-169dd34e93b4?w=600&h=400&fit=crop",
     },
     {
       title: "Energy Management",
-      image: "https://images.unsplash.com/photo-1621905167918-48416bd8575a?w=600&h=400&fit=crop",
+      image:
+        "https://images.unsplash.com/photo-1621905167918-48416bd8575a?w=600&h=400&fit=crop",
     },
     {
       title: "Grid Infrastructure",
-      image: "https://images.unsplash.com/photo-1532996122724-8f3c2cd83c5d?w=600&h=400&fit=crop",
+      image:
+        "https://images.unsplash.com/photo-1532996122724-8f3c2cd83c5d?w=600&h=400&fit=crop",
     },
   ];
 
@@ -22,21 +25,24 @@ export default function EnergyStorage() {
     {
       title: "Battery Energy Storage Systems",
       icon: Battery,
-      description: "Finest of water and lithium battery systems for peak shifting, backup, and grid services.",
+      description:
+        "Finest of water and lithium battery systems for peak shifting, backup, and grid services.",
       color: "bg-green-500/20",
       iconColor: "text-green-400",
     },
     {
       title: "Energy Management",
       icon: Gauge,
-      description: "Advanced EMS and controls to optimize dispatch, arbitrage and reliability.",
+      description:
+        "Advanced EMS and controls to optimize dispatch, arbitrage and reliability.",
       color: "bg-cyan-500/20",
       iconColor: "text-cyan-400",
     },
     {
       title: "O&M & Lifecycle",
       icon: Zap,
-      description: "Warranty, testing, and long-term operations to ensure safe and reliable performance.",
+      description:
+        "Warranty, testing, and long-term operations to ensure safe and reliable performance.",
       color: "bg-yellow-500/20",
       iconColor: "text-yellow-400",
     },
@@ -65,7 +71,8 @@ export default function EnergyStorage() {
               </h1>
 
               <p className="text-lg text-gray-300 leading-relaxed">
-                Battery energy storage solutions to enhance grid resilience, provide ancillary services and increase renewable penetration.
+                Battery energy storage solutions to enhance grid resilience,
+                provide ancillary services and increase renewable penetration.
               </p>
 
               <button className="bg-cyan text-background px-8 py-3 rounded-lg font-bold text-lg hover:bg-opacity-90 transition-all">
@@ -90,15 +97,21 @@ export default function EnergyStorage() {
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Energy Storage Infrastructure</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Energy Storage Infrastructure
+            </h2>
             <p className="text-gray-300">
-              Advanced battery systems and energy management solutions powering the grid
+              Advanced battery systems and energy management solutions powering
+              the grid
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {infrastructure.map((item, idx) => (
-              <div key={idx} className="relative h-64 rounded-lg overflow-hidden group">
+              <div
+                key={idx}
+                className="relative h-64 rounded-lg overflow-hidden group"
+              >
                 <img
                   src={item.image}
                   alt={item.title}
@@ -117,15 +130,22 @@ export default function EnergyStorage() {
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-background/50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Storage Highlights</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Storage Highlights
+            </h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {highlights.map((highlight) => {
               const Icon = highlight.icon;
               return (
-                <div key={highlight.title} className="bg-card border border-border rounded-xl p-8">
-                  <div className={`w-12 h-12 rounded-lg ${highlight.color} flex items-center justify-center mb-4`}>
+                <div
+                  key={highlight.title}
+                  className="bg-card border border-border rounded-xl p-8"
+                >
+                  <div
+                    className={`w-12 h-12 rounded-lg ${highlight.color} flex items-center justify-center mb-4`}
+                  >
                     <Icon className={`w-6 h-6 ${highlight.iconColor}`} />
                   </div>
                   <h3 className="text-xl font-bold mb-3">{highlight.title}</h3>
@@ -140,9 +160,12 @@ export default function EnergyStorage() {
       {/* CTA Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto bg-cyan rounded-2xl p-12 text-center">
-          <h2 className="text-3xl font-bold text-background mb-4">Energy storage for a flexible grid</h2>
+          <h2 className="text-3xl font-bold text-background mb-4">
+            Energy storage for a flexible grid
+          </h2>
           <p className="text-background/80 mb-6 text-lg">
-            We deliver turnkey battery solutions and EMS integrations to support grid services and increase renewable adoption.
+            We deliver turnkey battery solutions and EMS integrations to support
+            grid services and increase renewable adoption.
           </p>
           <button className="bg-background text-cyan px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition-all">
             Get Started
@@ -157,41 +180,103 @@ export default function EnergyStorage() {
             <div>
               <h4 className="font-bold mb-4">Services</h4>
               <ul className="space-y-2 text-sm text-gray-400">
-                <li><a href="#" className="hover:text-cyan transition">Solar Energy</a></li>
-                <li><a href="#" className="hover:text-cyan transition">Wind Power</a></li>
-                <li><a href="#" className="hover:text-cyan transition">Energy Storage</a></li>
-                <li><a href="#" className="hover:text-cyan transition">Smart Grid</a></li>
+                <li>
+                  <a href="#" className="hover:text-cyan transition">
+                    Solar Energy
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-cyan transition">
+                    Wind Power
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-cyan transition">
+                    Energy Storage
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-cyan transition">
+                    Smart Grid
+                  </a>
+                </li>
               </ul>
             </div>
             <div>
               <h4 className="font-bold mb-4">Company</h4>
               <ul className="space-y-2 text-sm text-gray-400">
-                <li><a href="#" className="hover:text-cyan transition">About Us</a></li>
-                <li><a href="#" className="hover:text-cyan transition">Advisory</a></li>
-                <li><a href="#" className="hover:text-cyan transition">Careers</a></li>
-                <li><a href="#" className="hover:text-cyan transition">Sectors</a></li>
+                <li>
+                  <a href="#" className="hover:text-cyan transition">
+                    About Us
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-cyan transition">
+                    Advisory
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-cyan transition">
+                    Careers
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-cyan transition">
+                    Sectors
+                  </a>
+                </li>
               </ul>
             </div>
             <div>
               <h4 className="font-bold mb-4">Resources</h4>
               <ul className="space-y-2 text-sm text-gray-400">
-                <li><a href="#" className="hover:text-cyan transition">Resources</a></li>
-                <li><a href="#" className="hover:text-cyan transition">Digital Solutions</a></li>
-                <li><a href="#" className="hover:text-cyan transition">Procurement</a></li>
-                <li><a href="#" className="hover:text-cyan transition">Support</a></li>
+                <li>
+                  <a href="#" className="hover:text-cyan transition">
+                    Resources
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-cyan transition">
+                    Digital Solutions
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-cyan transition">
+                    Procurement
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-cyan transition">
+                    Support
+                  </a>
+                </li>
               </ul>
             </div>
             <div>
               <h4 className="font-bold mb-4">Legal</h4>
               <ul className="space-y-2 text-sm text-gray-400">
-                <li><a href="#" className="hover:text-cyan transition">Privacy Policy</a></li>
-                <li><a href="#" className="hover:text-cyan transition">Terms of Service</a></li>
-                <li><a href="#" className="hover:text-cyan transition">Compliance</a></li>
+                <li>
+                  <a href="#" className="hover:text-cyan transition">
+                    Privacy Policy
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-cyan transition">
+                    Terms of Service
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-cyan transition">
+                    Compliance
+                  </a>
+                </li>
               </ul>
             </div>
           </div>
           <div className="border-t border-border pt-8">
-            <p className="text-sm text-gray-400">© 2024 Axiso Green Energies. All rights reserved.</p>
+            <p className="text-sm text-gray-400">
+              © 2024 Axiso Green Energies. All rights reserved.
+            </p>
           </div>
         </div>
       </footer>

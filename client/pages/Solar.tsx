@@ -6,15 +6,18 @@ export default function Solar() {
   const projects = [
     {
       title: "Residential Project 1",
-      image: "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=600&h=400&fit=crop",
+      image:
+        "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=600&h=400&fit=crop",
     },
     {
       title: "Commercial Project 1",
-      image: "https://images.unsplash.com/photo-1509391366360-2e938aa1df42?w=600&h=400&fit=crop",
+      image:
+        "https://images.unsplash.com/photo-1509391366360-2e938aa1df42?w=600&h=400&fit=crop",
     },
     {
       title: "Industrial Project 1",
-      image: "https://images.unsplash.com/photo-1495652714223-3ba207a4bff3?w=600&h=400&fit=crop",
+      image:
+        "https://images.unsplash.com/photo-1495652714223-3ba207a4bff3?w=600&h=400&fit=crop",
     },
   ];
 
@@ -89,7 +92,8 @@ export default function Solar() {
   const services = [
     {
       title: "Site Assessment",
-      description: "Comprehensive evaluation of your property for optimal solar placement",
+      description:
+        "Comprehensive evaluation of your property for optimal solar placement",
     },
     {
       title: "Design & Engineering",
@@ -97,7 +101,8 @@ export default function Solar() {
     },
     {
       title: "Installation & Support",
-      description: "Professional installation with ongoing technical support and monitoring",
+      description:
+        "Professional installation with ongoing technical support and monitoring",
     },
   ];
 
@@ -124,7 +129,8 @@ export default function Solar() {
               </h1>
 
               <p className="text-lg text-gray-300 leading-relaxed">
-                Comprehensive solar solutions for residential and public sector. Optimized for performance and longevity.
+                Comprehensive solar solutions for residential and public sector.
+                Optimized for performance and longevity.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
@@ -154,15 +160,21 @@ export default function Solar() {
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Solar Projects in Action</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Solar Projects in Action
+            </h2>
             <p className="text-gray-300">
-              Discover our diverse solar installations across residential, commercial and utility-scale projects
+              Discover our diverse solar installations across residential,
+              commercial and utility-scale projects
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {projects.map((project, idx) => (
-              <div key={idx} className="relative h-64 rounded-lg overflow-hidden group">
+              <div
+                key={idx}
+                className="relative h-64 rounded-lg overflow-hidden group"
+              >
                 <img
                   src={project.image}
                   alt={project.title}
@@ -181,9 +193,12 @@ export default function Solar() {
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-background/50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Who we serve</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Who we serve
+            </h2>
             <p className="text-gray-300">
-              Tailored solar solutions for homeowners, businesses and public sector. Select your category to learn more.
+              Tailored solar solutions for homeowners, businesses and public
+              sector. Select your category to learn more.
             </p>
           </div>
 
@@ -195,17 +210,23 @@ export default function Solar() {
                   key={segment.title}
                   className="bg-card border border-border rounded-xl p-8 hover:border-cyan transition-all"
                 >
-                  <div className={`w-12 h-12 rounded-lg ${segment.color} flex items-center justify-center mb-4`}>
+                  <div
+                    className={`w-12 h-12 rounded-lg ${segment.color} flex items-center justify-center mb-4`}
+                  >
                     <Icon className={`w-6 h-6 ${segment.iconColor}`} />
                   </div>
 
                   <h3 className="text-xl font-bold mb-2">{segment.title}</h3>
-                  <p className="text-gray-300 text-sm mb-6">{segment.description}</p>
+                  <p className="text-gray-300 text-sm mb-6">
+                    {segment.description}
+                  </p>
 
                   <div className="grid grid-cols-2 gap-4 mb-6 pb-6 border-b border-border">
                     {segment.stats.map((stat, idx) => (
                       <div key={idx}>
-                        <p className="text-xl font-bold text-cyan">{stat.value}</p>
+                        <p className="text-xl font-bold text-cyan">
+                          {stat.value}
+                        </p>
                         <p className="text-xs text-gray-400">{stat.label}</p>
                       </div>
                     ))}
@@ -213,7 +234,10 @@ export default function Solar() {
 
                   <ul className="space-y-2 mb-6">
                     {segment.features.map((feature) => (
-                      <li key={feature} className="flex items-center gap-2 text-sm text-gray-300">
+                      <li
+                        key={feature}
+                        className="flex items-center gap-2 text-sm text-gray-300"
+                      >
                         <span className="w-1.5 h-1.5 rounded-full bg-cyan"></span>
                         {feature}
                       </li>
@@ -221,7 +245,9 @@ export default function Solar() {
                   </ul>
 
                   <div className="bg-background/50 rounded-lg p-4 border border-border">
-                    <p className="text-xs font-semibold text-cyan mb-1">Case Study</p>
+                    <p className="text-xs font-semibold text-cyan mb-1">
+                      Case Study
+                    </p>
                     <p className="text-sm text-gray-300">{segment.caseStudy}</p>
                   </div>
                 </div>
@@ -235,12 +261,17 @@ export default function Solar() {
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Solar Highlights</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Solar Highlights
+            </h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {highlights.map((highlight) => (
-              <div key={highlight.title} className="bg-card border border-border rounded-xl p-8">
+              <div
+                key={highlight.title}
+                className="bg-card border border-border rounded-xl p-8"
+              >
                 <h3 className="text-xl font-bold mb-3">{highlight.title}</h3>
                 <p className="text-gray-300">{highlight.description}</p>
               </div>
@@ -252,9 +283,12 @@ export default function Solar() {
       {/* CTA Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto bg-yellow-400 rounded-2xl p-12 text-center">
-          <h2 className="text-3xl font-bold text-background mb-4">Ready to go solar?</h2>
+          <h2 className="text-3xl font-bold text-background mb-4">
+            Ready to go solar?
+          </h2>
           <p className="text-background/80 mb-6 text-lg">
-            Talk to our solar experts to design a system that's right for your needs and budget
+            Talk to our solar experts to design a system that's right for your
+            needs and budget
           </p>
           <button className="bg-background text-yellow-400 px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition-all">
             Get Started
@@ -266,12 +300,17 @@ export default function Solar() {
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-background/50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Solar Services</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Solar Services
+            </h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {services.map((service) => (
-              <div key={service.title} className="bg-card border border-border rounded-xl p-8">
+              <div
+                key={service.title}
+                className="bg-card border border-border rounded-xl p-8"
+              >
                 <h3 className="text-xl font-bold mb-3">{service.title}</h3>
                 <p className="text-gray-300">{service.description}</p>
               </div>
@@ -287,41 +326,103 @@ export default function Solar() {
             <div>
               <h4 className="font-bold mb-4">Services</h4>
               <ul className="space-y-2 text-sm text-gray-400">
-                <li><a href="#" className="hover:text-cyan transition">Solar Energy</a></li>
-                <li><a href="#" className="hover:text-cyan transition">Wind Power</a></li>
-                <li><a href="#" className="hover:text-cyan transition">Energy Storage</a></li>
-                <li><a href="#" className="hover:text-cyan transition">Smart Grid</a></li>
+                <li>
+                  <a href="#" className="hover:text-cyan transition">
+                    Solar Energy
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-cyan transition">
+                    Wind Power
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-cyan transition">
+                    Energy Storage
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-cyan transition">
+                    Smart Grid
+                  </a>
+                </li>
               </ul>
             </div>
             <div>
               <h4 className="font-bold mb-4">Company</h4>
               <ul className="space-y-2 text-sm text-gray-400">
-                <li><a href="#" className="hover:text-cyan transition">About Us</a></li>
-                <li><a href="#" className="hover:text-cyan transition">Advisory</a></li>
-                <li><a href="#" className="hover:text-cyan transition">Careers</a></li>
-                <li><a href="#" className="hover:text-cyan transition">Sectors</a></li>
+                <li>
+                  <a href="#" className="hover:text-cyan transition">
+                    About Us
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-cyan transition">
+                    Advisory
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-cyan transition">
+                    Careers
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-cyan transition">
+                    Sectors
+                  </a>
+                </li>
               </ul>
             </div>
             <div>
               <h4 className="font-bold mb-4">Resources</h4>
               <ul className="space-y-2 text-sm text-gray-400">
-                <li><a href="#" className="hover:text-cyan transition">Resources</a></li>
-                <li><a href="#" className="hover:text-cyan transition">Digital Solutions</a></li>
-                <li><a href="#" className="hover:text-cyan transition">Procurement</a></li>
-                <li><a href="#" className="hover:text-cyan transition">Support</a></li>
+                <li>
+                  <a href="#" className="hover:text-cyan transition">
+                    Resources
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-cyan transition">
+                    Digital Solutions
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-cyan transition">
+                    Procurement
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-cyan transition">
+                    Support
+                  </a>
+                </li>
               </ul>
             </div>
             <div>
               <h4 className="font-bold mb-4">Legal</h4>
               <ul className="space-y-2 text-sm text-gray-400">
-                <li><a href="#" className="hover:text-cyan transition">Privacy Policy</a></li>
-                <li><a href="#" className="hover:text-cyan transition">Terms of Service</a></li>
-                <li><a href="#" className="hover:text-cyan transition">Compliance</a></li>
+                <li>
+                  <a href="#" className="hover:text-cyan transition">
+                    Privacy Policy
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-cyan transition">
+                    Terms of Service
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-cyan transition">
+                    Compliance
+                  </a>
+                </li>
               </ul>
             </div>
           </div>
           <div className="border-t border-border pt-8">
-            <p className="text-sm text-gray-400">© 2024 Axiso Green Energies. All rights reserved.</p>
+            <p className="text-sm text-gray-400">
+              © 2024 Axiso Green Energies. All rights reserved.
+            </p>
           </div>
         </div>
       </footer>

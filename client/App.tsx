@@ -16,6 +16,11 @@ import About from "./pages/About";
 import ContactUs from "./pages/ContactUs";
 import GetQuote from "./pages/GetQuote";
 import NotFound from "./pages/NotFound";
+import Solutions from "./pages/Solutions";
+import Solar from "./pages/Solar";
+import Wind from "./pages/Wind";
+import EnergyStorage from "./pages/EnergyStorage";
+import EVStations from "./pages/EVStations";
 
 const queryClient = new QueryClient();
 

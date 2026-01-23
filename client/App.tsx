@@ -16,6 +16,11 @@ import About from "./pages/About";
 import ContactUs from "./pages/ContactUs";
 import GetQuote from "./pages/GetQuote";
 import NotFound from "./pages/NotFound";
+import Solutions from "./pages/Solutions";
+import Solar from "./pages/Solar";
+import Wind from "./pages/Wind";
+import EnergyStorage from "./pages/EnergyStorage";
+import EVStations from "./pages/EVStations";
 
 const queryClient = new QueryClient();
 
@@ -35,6 +40,11 @@ const App = () => (
           <Route path="/advisory" element={<Advisory />} />
           <Route path="/procurement" element={<Procurement />} />
           <Route path="/digital-solutions" element={<DigitalSolutions />} />
+          <Route path="/solutions" element={<Solutions />} />
+          <Route path="/solutions/solar" element={<Solar />} />
+          <Route path="/solutions/wind" element={<Wind />} />
+          <Route path="/solutions/energy-storage" element={<EnergyStorage />} />
+          <Route path="/solutions/ev-stations" element={<EVStations />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

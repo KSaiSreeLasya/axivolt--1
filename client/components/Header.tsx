@@ -57,9 +57,8 @@ export default function Header() {
 
             {/* Solutions Dropdown */}
             <div className="relative group">
-              <button
-                onMouseEnter={() => setSolutionsOpen(true)}
-                onMouseLeave={() => setSolutionsOpen(false)}
+              <Link
+                to="/solutions"
                 className="flex items-center gap-1 text-sm font-medium text-cyan hover:text-yellow-green transition-colors"
               >
                 Solutions
@@ -68,7 +67,7 @@ export default function Header() {
                     solutionsOpen ? "rotate-180" : ""
                   }`}
                 />
-              </button>
+              </Link>
 
               {/* Solutions Submenu */}
               <div
@@ -81,68 +80,30 @@ export default function Header() {
                 }`}
               >
                 <div className="py-2">
-                  {/* Solar with submenu */}
-                  <div className="relative group/solar">
-                    <button
-                      onMouseEnter={() => setSolarOpen(true)}
-                      onMouseLeave={() => setSolarOpen(false)}
-                      className="w-full flex items-center justify-between px-6 py-3 border-b border-border text-sm text-white hover:text-cyan hover:bg-background/50 transition-colors"
-                    >
-                      Solar
-                      <ChevronDown className="w-4 h-4" />
-                    </button>
-
-                    {/* Solar Submenu - Industries */}
-                    <div
-                      onMouseEnter={() => setSolarOpen(true)}
-                      onMouseLeave={() => setSolarOpen(false)}
-                      className={`absolute left-full top-0 mt-0 bg-card border border-border rounded-none w-56 shadow-xl transition-all duration-200 ${
-                        solarOpen
-                          ? "opacity-100 visible translate-x-0"
-                          : "opacity-0 invisible -translate-x-2"
-                      }`}
-                    >
-                      <div className="py-2">
-                        <a
-                          href="#"
-                          className="block px-6 py-3 text-sm text-gray-300 hover:text-cyan hover:bg-background/50 transition-colors"
-                        >
-                          Residential (B2C)
-                        </a>
-                        <a
-                          href="#"
-                          className="block px-6 py-3 text-sm text-gray-300 hover:text-cyan hover:bg-background/50 transition-colors"
-                        >
-                          Commercial (B2B)
-                        </a>
-                        <a
-                          href="#"
-                          className="block px-6 py-3 text-sm text-gray-300 hover:text-cyan hover:bg-background/50 transition-colors"
-                        >
-                          Government (B2G)
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-
-                  <a
-                    href="#"
-                    className="block px-6 py-3 text-sm text-gray-300 hover:text-cyan hover:bg-background/50 transition-colors"
+                  <Link
+                    to="/solutions/solar"
+                    className="block px-6 py-3 text-sm text-gray-300 hover:text-cyan hover:bg-background/50 transition-colors border-b border-border"
+                  >
+                    Solar
+                  </Link>
+                  <Link
+                    to="/solutions/wind"
+                    className="block px-6 py-3 text-sm text-gray-300 hover:text-cyan hover:bg-background/50 transition-colors border-b border-border"
                   >
                     Wind
-                  </a>
-                  <a
-                    href="#"
-                    className="block px-6 py-3 text-sm text-gray-300 hover:text-cyan hover:bg-background/50 transition-colors"
+                  </Link>
+                  <Link
+                    to="/solutions/energy-storage"
+                    className="block px-6 py-3 text-sm text-gray-300 hover:text-cyan hover:bg-background/50 transition-colors border-b border-border"
                   >
                     Energy Storage
-                  </a>
-                  <a
-                    href="#"
+                  </Link>
+                  <Link
+                    to="/solutions/ev-stations"
                     className="block px-6 py-3 text-sm text-gray-300 hover:text-cyan hover:bg-background/50 transition-colors"
                   >
                     EV Stations
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>

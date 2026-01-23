@@ -60,7 +60,7 @@ export default function Wind() {
     },
     {
       title: "Hybrid Systems",
-      icon: Wind,
+      icon: WindIcon,
       description: "Integrated solar wind renewable solutions",
       stats: [
         { value: "85+", label: "Projects" },

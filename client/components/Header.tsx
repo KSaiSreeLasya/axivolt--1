@@ -62,6 +62,8 @@ export default function Header() {
             <div className="relative group">
               <Link
                 to="/solutions"
+                onMouseEnter={() => setSolutionsOpen(true)}
+                onMouseLeave={() => setSolutionsOpen(false)}
                 className="flex items-center gap-1 text-sm font-medium text-cyan hover:text-yellow-green transition-colors"
               >
                 Solutions
@@ -75,10 +77,7 @@ export default function Header() {
               {/* Solutions Submenu */}
               <div
                 onMouseEnter={() => setSolutionsOpen(true)}
-                onMouseLeave={() => {
-                  setSolutionsOpen(false);
-                  setActiveSolutionSubmenu(null);
-                }}
+                onMouseLeave={() => setSolutionsOpen(false)}
                 className={`absolute top-full left-0 mt-0 bg-card border border-border rounded-none shadow-xl transition-all duration-200 overflow-visible z-50 ${
                   solutionsOpen
                     ? "opacity-100 visible translate-y-0"
@@ -89,13 +88,12 @@ export default function Header() {
                 <div className="py-2">
                   {/* Solar with Submenu */}
                   <div
-                    className="relative group/solar"
+                    className="relative"
                     onMouseEnter={() => setActiveSolutionSubmenu("solar")}
                     onMouseLeave={() => setActiveSolutionSubmenu(null)}
                   >
                     <button
                       className="w-full flex items-center justify-between px-6 py-3 text-sm text-black hover:text-cyan hover:bg-background/50 transition-colors border-b border-border"
-                      onMouseEnter={() => setActiveSolutionSubmenu("solar")}
                     >
                       Solar
                       <ChevronDown className="w-4 h-4 rotate-180" />
@@ -114,8 +112,6 @@ export default function Header() {
                           activeSolutionSubmenu === "solar" ? "auto" : "none",
                         marginLeft: "0px",
                       }}
-                      onMouseEnter={() => setActiveSolutionSubmenu("solar")}
-                      onMouseLeave={() => setActiveSolutionSubmenu(null)}
                     >
                       <div className="py-2">
                         <Link

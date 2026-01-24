@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Mail, Phone, Send } from "lucide-react";
 import { supabase } from "@/lib/supabase";
-import { toast } from "sonner";
+import Swal from "sweetalert2";
 
 export default function ContactForm() {
   const [loading, setLoading] = useState(false);
@@ -45,13 +45,23 @@ export default function ContactForm() {
       if (error) {
         const errorMsg =
           error instanceof Error ? error.message : JSON.stringify(error);
-        toast.error("Failed to submit form: " + errorMsg);
+        Swal.fire({
+          icon: "error",
+          title: "Submission Failed",
+          text: errorMsg,
+          confirmButtonColor: "#047F86",
+        });
         console.error("Supabase error:", error);
         setLoading(false);
         return;
       }
 
-      toast.success("Thank you! We'll contact you soon.");
+      Swal.fire({
+        icon: "success",
+        title: "Message Sent!",
+        text: "Thank you for contacting us. We'll get back to you soon.",
+        confirmButtonColor: "#047F86",
+      });
       setFormData({
         full_name: "",
         email: "",
@@ -64,7 +74,12 @@ export default function ContactForm() {
       setLoading(false);
     } catch (err) {
       const errorMsg = err instanceof Error ? err.message : String(err);
-      toast.error("An error occurred: " + errorMsg);
+      Swal.fire({
+        icon: "error",
+        title: "Error",
+        text: errorMsg,
+        confirmButtonColor: "#047F86",
+      });
       console.error("Error:", err);
       setLoading(false);
     }

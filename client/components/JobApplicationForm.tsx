@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { X } from "lucide-react";
 import { supabase } from "@/lib/supabase";
-import { toast } from "sonner";
+import Swal from "sweetalert2";
 
 interface Job {
   id?: string;
@@ -28,7 +28,7 @@ export default function JobApplicationForm({
     fullName: "",
     email: "",
     phone: "",
-    resume: "",
+    resume: null as File | null,
     coverletter: "",
     experience: "",
     linkedIn: "",
@@ -37,6 +37,7 @@ export default function JobApplicationForm({
 
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [resumeFileName, setResumeFileName] = useState<string>("");
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
@@ -48,11 +49,76 @@ export default function JobApplicationForm({
     }));
   };
 
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      // Validate file size (max 5MB)
+      if (file.size > 5 * 1024 * 1024) {
+        Swal.fire({
+          icon: "warning",
+          title: "File Too Large",
+          text: "Resume file must be less than 5MB",
+          confirmButtonColor: "#047F86",
+        });
+        return;
+      }
+      // Validate file type
+      const validTypes = [
+        "application/pdf",
+        "application/msword",
+        "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      ];
+      if (!validTypes.includes(file.type)) {
+        Swal.fire({
+          icon: "warning",
+          title: "Invalid File Type",
+          text: "Please upload a PDF, DOC, or DOCX file",
+          confirmButtonColor: "#047F86",
+        });
+        return;
+      }
+      setFormData((prev) => ({
+        ...prev,
+        resume: file,
+      }));
+      setResumeFileName(file.name);
+    }
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
 
     try {
+      // Upload resume file if provided
+      let resumeUrl = "";
+      if (formData.resume) {
+        const fileExt = formData.resume.name.split(".").pop();
+        const fileName = `${Date.now()}-${Math.random().toString(36).substring(7)}.${fileExt}`;
+
+        const { error: uploadError, data: uploadData } = await supabase.storage
+          .from("job-resumes")
+          .upload(fileName, formData.resume);
+
+        if (uploadError) {
+          Swal.fire({
+            icon: "error",
+            title: "Upload Failed",
+            text: "Failed to upload resume. Please try again.",
+            confirmButtonColor: "#047F86",
+          });
+          setLoading(false);
+          return;
+        }
+
+        // Get the public URL
+        const { data: publicUrlData } = supabase.storage
+          .from("job-resumes")
+          .getPublicUrl(fileName);
+
+        resumeUrl = publicUrlData.publicUrl;
+      }
+
       // Get the job_id - for now we'll use job title to find it
       let jobId = job.id;
 
@@ -65,7 +131,12 @@ export default function JobApplicationForm({
           .single();
 
         if (jobError || !jobData) {
-          toast.error("Unable to find job. Please try again.");
+          Swal.fire({
+            icon: "error",
+            title: "Error",
+            text: "Unable to find job. Please try again.",
+            confirmButtonColor: "#047F86",
+          });
           setLoading(false);
           return;
         }
@@ -83,7 +154,7 @@ export default function JobApplicationForm({
             years_of_experience: formData.experience,
             linkedin_profile: formData.linkedIn,
             portfolio_url: formData.portfolio,
-            resume_url: formData.resume,
+            resume_url: resumeUrl,
             cover_letter: formData.coverletter,
             application_status: "pending",
           },
@@ -93,32 +164,46 @@ export default function JobApplicationForm({
       if (error) {
         const errorMsg =
           error instanceof Error ? error.message : JSON.stringify(error);
-        toast.error("Failed to submit application: " + errorMsg);
+        Swal.fire({
+          icon: "error",
+          title: "Submission Failed",
+          text: errorMsg,
+          confirmButtonColor: "#047F86",
+        });
         console.error("Supabase error:", error);
         setLoading(false);
         return;
       }
 
-      toast.success("Application submitted successfully!");
-      setSubmitted(true);
-      setLoading(false);
-      setTimeout(() => {
+      Swal.fire({
+        icon: "success",
+        title: "Application Submitted!",
+        text: "Thank you for applying. We'll review your application and get back to you soon.",
+        confirmButtonColor: "#047F86",
+      }).then(() => {
         onClose();
         setSubmitted(false);
         setFormData({
           fullName: "",
           email: "",
           phone: "",
-          resume: "",
+          resume: null,
           coverletter: "",
           experience: "",
           linkedIn: "",
           portfolio: "",
         });
-      }, 2000);
+        setResumeFileName("");
+      });
+      setLoading(false);
     } catch (err) {
       const errorMsg = err instanceof Error ? err.message : String(err);
-      toast.error("An error occurred: " + errorMsg);
+      Swal.fire({
+        icon: "error",
+        title: "Error",
+        text: errorMsg,
+        confirmButtonColor: "#047F86",
+      });
       console.error("Error:", err);
       setLoading(false);
     }
@@ -292,19 +377,25 @@ export default function JobApplicationForm({
 
               <div>
                 <label className="block text-sm font-medium mb-2">
-                  Resume/CV (Paste Link) *
+                  Resume/CV (Upload File) *
                 </label>
-                <input
-                  type="url"
-                  name="resume"
-                  value={formData.resume}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-2 rounded-lg bg-background border border-border text-foreground focus:border-cyan outline-none transition-colors"
-                  placeholder="https://drive.google.com/... or https://dropbox.com/..."
-                />
-                <p className="text-xs text-black400 mt-1">
-                  Provide a link to your resume (Google Drive, Dropbox, etc.)
+                <div className="relative">
+                  <input
+                    type="file"
+                    name="resume"
+                    onChange={handleFileChange}
+                    required={!formData.resume}
+                    accept=".pdf,.doc,.docx"
+                    className="w-full px-4 py-2 rounded-lg bg-background border border-border text-foreground focus:border-cyan outline-none transition-colors cursor-pointer file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-cyan file:text-background hover:file:bg-cyan/90"
+                  />
+                </div>
+                {resumeFileName && (
+                  <p className="text-xs text-cyan mt-2">
+                    ✓ Selected: {resumeFileName}
+                  </p>
+                )}
+                <p className="text-xs text-black400 mt-2">
+                  Upload PDF, DOC, or DOCX (Max 5MB)
                 </p>
               </div>
 

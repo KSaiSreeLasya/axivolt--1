@@ -27,8 +27,8 @@ export default function Industry() {
       description:
         "Industrial-grade renewable energy solutions for high-demand manufacturing and production facilities.",
       icon: Factory,
-      color: "bg-green-500/20",
-      iconColor: "text-green-400",
+      color: "bg-cyan/20",
+      iconColor: "text-cyan",
       stats: [
         { value: "60%+", label: "Peak Load Coverage" },
         { value: "6-8 yrs", label: "ROI Timeline" },
@@ -84,8 +84,8 @@ export default function Industry() {
       description:
         "Energy-efficient solutions for retail stores, hotels, and hospitality businesses to enhance profitability.",
       icon: Building2,
-      color: "bg-yellow-500/20",
-      iconColor: "text-yellow-400",
+      color: "bg-cyan/20",
+      iconColor: "text-cyan",
       stats: [
         { value: "35-40%", label: "Utility Savings" },
         { value: "9-11 yrs", label: "ROI Timeline" },

@@ -81,7 +81,6 @@ export default function GetQuote() {
     agreeToTerms: false,
   });
 
-  const [submitted, setSubmitted] = useState(false);
 
   const selectedRangeIndex = billOptions.indexOf(formData.billRange);
   const selectedBillRange =
@@ -238,13 +237,6 @@ export default function GetQuote() {
                 {category === "commercial" && "Commercial Quote Form"}
               </h2>
 
-              {submitted && (
-                <div className="mb-6 p-4 bg-green-500/20 border border-green-500 rounded-lg">
-                  <p className="text-green-400 font-semibold">
-                    Thank you! We'll contact you soon.
-                  </p>
-                </div>
-              )}
 
               <form onSubmit={handleSubmit} className="space-y-6">
                 {/* Full Name */}

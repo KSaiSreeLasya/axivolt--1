@@ -86,7 +86,6 @@ export default function QuoteForm() {
 
   return (
     <div className="bg-card rounded-xl border border-border p-8">
-      <Toaster position="top-right" />
       <div className="flex items-start gap-3 mb-6">
         <div className="w-12 h-12 bg-cyan/20 rounded-lg flex items-center justify-center">
           <FileText className="w-6 h-6 text-cyan" />

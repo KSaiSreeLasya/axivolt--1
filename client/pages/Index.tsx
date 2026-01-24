@@ -25,7 +25,7 @@ export default function Index() {
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4">
                   <span className="text-cyan">Sustainable</span>
                   <br />
-                  <span className="text-white">Future</span>
+                  <span className="text-gray-900">Future</span>
                 </h1>
               </div>
 

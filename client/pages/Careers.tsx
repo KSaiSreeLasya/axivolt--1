@@ -443,6 +443,11 @@ export default function Careers() {
           <p>&copy; 2024 AXIVOLT. All rights reserved.</p>
         </div>
       </footer>
+
+      {/* Job Application Modal */}
+      {selectedJob && (
+        <JobApplicationForm job={selectedJob} onClose={() => setSelectedJob(null)} />
+      )}
     </div>
   );
 }

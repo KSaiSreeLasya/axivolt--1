@@ -7,12 +7,15 @@ import {
   Eye,
   Trash2,
   Download,
+  Plus,
+  X,
 } from "lucide-react";
 import Header from "@/components/Header";
 import { supabase } from "@/lib/supabase";
 import { toast, Toaster } from "sonner";
+import Swal from "sweetalert2";
 
-type SubmissionType = "contact" | "quote" | "application";
+type SubmissionType = "contact" | "quote" | "application" | "jobs";
 
 interface ContactSubmission {
   id: string;
@@ -48,14 +51,43 @@ interface JobApplication {
   created_at: string;
 }
 
+interface Job {
+  id?: string;
+  title: string;
+  department: string;
+  location: string;
+  job_type: string;
+  experience_required: string;
+  description: string;
+  requirements: string[];
+  benefits: string[];
+  is_active: boolean;
+  created_at?: string;
+  updated_at?: string;
+}
+
 export default function AdminDashboard() {
   const [activeTab, setActiveTab] = useState<SubmissionType>("contact");
   const [contacts, setContacts] = useState<ContactSubmission[]>([]);
   const [quotes, setQuotes] = useState<QuoteRequest[]>([]);
   const [applications, setApplications] = useState<JobApplication[]>([]);
+  const [jobs, setJobs] = useState<Job[]>([]);
   const [loading, setLoading] = useState(true);
   const [selectedItem, setSelectedItem] = useState<any>(null);
   const [viewDetailModal, setViewDetailModal] = useState(false);
+  const [showJobModal, setShowJobModal] = useState(false);
+  const [editingJob, setEditingJob] = useState<Job | null>(null);
+  const [jobForm, setJobForm] = useState<Job>({
+    title: "",
+    department: "",
+    location: "",
+    job_type: "",
+    experience_required: "",
+    description: "",
+    requirements: [],
+    benefits: [],
+    is_active: true,
+  });
 
   useEffect(() => {
     fetchData();
@@ -85,6 +117,13 @@ export default function AdminDashboard() {
           .order("created_at", { ascending: false });
         if (error) throw error;
         setApplications(data || []);
+      } else if (activeTab === "jobs") {
+        const { data, error } = await supabase
+          .from("jobs")
+          .select("*")
+          .order("created_at", { ascending: false });
+        if (error) throw error;
+        setJobs(data || []);
       }
     } catch (err) {
       toast.error("Failed to fetch data");
@@ -123,6 +162,74 @@ export default function AdminDashboard() {
       toast.error("Failed to update status");
       console.error(err);
     }
+  };
+
+  const handleSaveJob = async () => {
+    if (!jobForm.title || !jobForm.department || !jobForm.location) {
+      Swal.fire({
+        icon: 'warning',
+        title: 'Missing Fields',
+        text: 'Please fill in all required fields',
+        confirmButtonColor: '#047F86',
+      });
+      return;
+    }
+
+    try {
+      if (editingJob?.id) {
+        // Update existing job
+        const { error } = await supabase
+          .from("jobs")
+          .update(jobForm)
+          .eq("id", editingJob.id);
+        if (error) throw error;
+        toast.success("Job updated successfully");
+      } else {
+        // Create new job
+        const { error } = await supabase.from("jobs").insert([jobForm]);
+        if (error) throw error;
+        toast.success("Job created successfully");
+      }
+      setShowJobModal(false);
+      setEditingJob(null);
+      setJobForm({
+        title: "",
+        department: "",
+        location: "",
+        job_type: "",
+        experience_required: "",
+        description: "",
+        requirements: [],
+        benefits: [],
+        is_active: true,
+      });
+      fetchData();
+    } catch (err) {
+      toast.error("Failed to save job");
+      console.error(err);
+    }
+  };
+
+  const handleEditJob = (job: Job) => {
+    setEditingJob(job);
+    setJobForm(job);
+    setShowJobModal(true);
+  };
+
+  const handleOpenNewJobModal = () => {
+    setEditingJob(null);
+    setJobForm({
+      title: "",
+      department: "",
+      location: "",
+      job_type: "",
+      experience_required: "",
+      description: "",
+      requirements: [],
+      benefits: [],
+      is_active: true,
+    });
+    setShowJobModal(true);
   };
 
   const exportToCSV = () => {
@@ -190,10 +297,10 @@ export default function AdminDashboard() {
         </div>
 
         {/* Tabs */}
-        <div className="flex gap-4 mb-8 border-b border-border">
+        <div className="flex gap-4 mb-8 border-b border-border overflow-x-auto">
           <button
             onClick={() => setActiveTab("contact")}
-            className={`px-6 py-3 font-semibold transition-colors border-b-2 ${
+            className={`px-6 py-3 font-semibold transition-colors border-b-2 whitespace-nowrap ${
               activeTab === "contact"
                 ? "border-cyan text-cyan"
                 : "border-transparent text-gray-400 hover:text-foreground"
@@ -204,7 +311,7 @@ export default function AdminDashboard() {
           </button>
           <button
             onClick={() => setActiveTab("quote")}
-            className={`px-6 py-3 font-semibold transition-colors border-b-2 ${
+            className={`px-6 py-3 font-semibold transition-colors border-b-2 whitespace-nowrap ${
               activeTab === "quote"
                 ? "border-cyan text-cyan"
                 : "border-transparent text-gray-400 hover:text-foreground"
@@ -215,7 +322,7 @@ export default function AdminDashboard() {
           </button>
           <button
             onClick={() => setActiveTab("application")}
-            className={`px-6 py-3 font-semibold transition-colors border-b-2 ${
+            className={`px-6 py-3 font-semibold transition-colors border-b-2 whitespace-nowrap ${
               activeTab === "application"
                 ? "border-cyan text-cyan"
                 : "border-transparent text-gray-400 hover:text-foreground"
@@ -224,10 +331,21 @@ export default function AdminDashboard() {
             <Briefcase className="inline-block mr-2 w-5 h-5" />
             Applications ({applications.length})
           </button>
+          <button
+            onClick={() => setActiveTab("jobs")}
+            className={`px-6 py-3 font-semibold transition-colors border-b-2 whitespace-nowrap ${
+              activeTab === "jobs"
+                ? "border-cyan text-cyan"
+                : "border-transparent text-gray-400 hover:text-foreground"
+            }`}
+          >
+            <Briefcase className="inline-block mr-2 w-5 h-5" />
+            Jobs ({jobs.length})
+          </button>
         </div>
 
-        {/* Export Button */}
-        <div className="mb-6">
+        {/* Export and Action Buttons */}
+        <div className="mb-6 flex gap-4">
           <button
             onClick={exportToCSV}
             className="bg-cyan text-background px-4 py-2 rounded-lg font-semibold hover:bg-cyan/90 transition-all flex items-center gap-2"
@@ -235,6 +353,15 @@ export default function AdminDashboard() {
             <Download className="w-5 h-5" />
             Export to CSV
           </button>
+          {activeTab === "jobs" && (
+            <button
+              onClick={handleOpenNewJobModal}
+              className="bg-green-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-green-700 transition-all flex items-center gap-2"
+            >
+              <Plus className="w-5 h-5" />
+              Add New Job
+            </button>
+          )}
         </div>
 
         {/* Content */}
@@ -268,7 +395,7 @@ export default function AdminDashboard() {
             }
             getStatusColor={getStatusColor}
           />
-        ) : (
+        ) : activeTab === "application" ? (
           <ApplicationsTable
             applications={applications}
             onView={(item) => {
@@ -280,6 +407,15 @@ export default function AdminDashboard() {
               updateStatus(id, "job_applications", status)
             }
             getStatusColor={getStatusColor}
+          />
+        ) : (
+          <JobsTable
+            jobs={jobs}
+            onEdit={handleEditJob}
+            onDelete={(id) => deleteItem(id, "jobs")}
+            onToggleActive={(id, active) =>
+              updateStatus(id, "jobs", active ? "true" : "false")
+            }
           />
         )}
       </div>
@@ -311,6 +447,19 @@ export default function AdminDashboard() {
             </div>
           </div>
         </div>
+      )}
+
+      {/* Job Modal */}
+      {showJobModal && (
+        <JobModal
+          job={jobForm}
+          isEditing={!!editingJob}
+          onChange={(field, value) =>
+            setJobForm((prev) => ({ ...prev, [field]: value }))
+          }
+          onSave={handleSaveJob}
+          onClose={() => setShowJobModal(false)}
+        />
       )}
     </div>
   );

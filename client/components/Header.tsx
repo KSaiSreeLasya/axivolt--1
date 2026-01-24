@@ -6,7 +6,9 @@ export default function Header() {
   const [solutionsOpen, setSolutionsOpen] = useState(false);
   const [solarOpen, setSolarOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
-  const [activeSolutionSubmenu, setActiveSolutionSubmenu] = useState<string | null>(null);
+  const [activeSolutionSubmenu, setActiveSolutionSubmenu] = useState<
+    string | null
+  >(null);
 
   return (
     <header className="sticky top-0 z-50 w-full bg-background border-b border-border">
@@ -108,7 +110,8 @@ export default function Header() {
                       }`}
                       style={{
                         left: "100%",
-                        pointerEvents: activeSolutionSubmenu === "solar" ? "auto" : "none",
+                        pointerEvents:
+                          activeSolutionSubmenu === "solar" ? "auto" : "none",
                         marginLeft: "0px",
                       }}
                       onMouseEnter={() => setActiveSolutionSubmenu("solar")}

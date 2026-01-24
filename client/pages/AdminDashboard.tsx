@@ -97,12 +97,13 @@ export default function AdminDashboard() {
 
   const loadAllCounts = async () => {
     try {
-      const [contactsRes, quotesRes, applicationsRes, jobsRes] = await Promise.all([
-        supabase.from("contact_form_submissions").select("*"),
-        supabase.from("quote_requests").select("*"),
-        supabase.from("job_applications").select("*"),
-        supabase.from("jobs").select("*"),
-      ]);
+      const [contactsRes, quotesRes, applicationsRes, jobsRes] =
+        await Promise.all([
+          supabase.from("contact_form_submissions").select("*"),
+          supabase.from("quote_requests").select("*"),
+          supabase.from("job_applications").select("*"),
+          supabase.from("jobs").select("*"),
+        ]);
 
       if (contactsRes.data) setContacts(contactsRes.data);
       if (quotesRes.data) setQuotes(quotesRes.data);
@@ -237,7 +238,9 @@ export default function AdminDashboard() {
         job_type: jobForm.job_type.trim(),
         experience_required: jobForm.experience_required.trim(),
         description: jobForm.description.trim(),
-        requirements: Array.isArray(jobForm.requirements) ? jobForm.requirements : [],
+        requirements: Array.isArray(jobForm.requirements)
+          ? jobForm.requirements
+          : [],
         benefits: Array.isArray(jobForm.benefits) ? jobForm.benefits : [],
         is_active: Boolean(jobForm.is_active),
       };
@@ -260,7 +263,10 @@ export default function AdminDashboard() {
         });
       } else {
         // Create new job
-        const { error, data } = await supabase.from("jobs").insert([jobData]).select();
+        const { error, data } = await supabase
+          .from("jobs")
+          .insert([jobData])
+          .select();
         if (error) {
           console.error("Insert error:", error);
           throw error;
@@ -290,7 +296,10 @@ export default function AdminDashboard() {
       console.error("Save job error:", err);
 
       // Handle RLS policy violations
-      if (err?.message?.includes("row-level security") || err?.code === "PGRST301") {
+      if (
+        err?.message?.includes("row-level security") ||
+        err?.code === "PGRST301"
+      ) {
         Swal.fire({
           icon: "error",
           title: "Permission Denied",

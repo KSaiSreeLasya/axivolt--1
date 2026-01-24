@@ -176,17 +176,30 @@ export default function AdminDashboard() {
     }
 
     try {
+      // Prepare job data without id and timestamps
+      const jobData = {
+        title: jobForm.title,
+        department: jobForm.department,
+        location: jobForm.location,
+        job_type: jobForm.job_type,
+        experience_required: jobForm.experience_required,
+        description: jobForm.description,
+        requirements: jobForm.requirements,
+        benefits: jobForm.benefits,
+        is_active: jobForm.is_active,
+      };
+
       if (editingJob?.id) {
         // Update existing job
         const { error } = await supabase
           .from("jobs")
-          .update(jobForm)
+          .update(jobData)
           .eq("id", editingJob.id);
         if (error) throw error;
         toast.success("Job updated successfully");
       } else {
         // Create new job
-        const { error } = await supabase.from("jobs").insert([jobForm]);
+        const { error } = await supabase.from("jobs").insert([jobData]);
         if (error) throw error;
         toast.success("Job created successfully");
       }

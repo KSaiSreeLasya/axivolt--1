@@ -161,7 +161,8 @@ export default function Header() {
 
             {/* Services Dropdown */}
             <div className="relative group">
-              <button
+              <Link
+                to="/services"
                 onMouseEnter={() => setServicesOpen(true)}
                 onMouseLeave={() => setServicesOpen(false)}
                 className="flex items-center gap-1 text-sm font-medium text-cyan hover:text-yellow-green transition-colors"
@@ -172,7 +173,7 @@ export default function Header() {
                     servicesOpen ? "rotate-180" : ""
                   }`}
                 />
-              </button>
+              </Link>
 
               {/* Services Submenu */}
               <div

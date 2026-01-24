@@ -178,15 +178,15 @@ export default function AdminDashboard() {
     try {
       // Prepare job data without id and timestamps
       const jobData = {
-        title: jobForm.title,
-        department: jobForm.department,
-        location: jobForm.location,
-        job_type: jobForm.job_type,
-        experience_required: jobForm.experience_required,
-        description: jobForm.description,
-        requirements: jobForm.requirements,
-        benefits: jobForm.benefits,
-        is_active: jobForm.is_active,
+        title: jobForm.title.trim(),
+        department: jobForm.department.trim(),
+        location: jobForm.location.trim(),
+        job_type: jobForm.job_type.trim(),
+        experience_required: jobForm.experience_required.trim(),
+        description: jobForm.description.trim(),
+        requirements: Array.isArray(jobForm.requirements) ? jobForm.requirements : [],
+        benefits: Array.isArray(jobForm.benefits) ? jobForm.benefits : [],
+        is_active: Boolean(jobForm.is_active),
       };
 
       if (editingJob?.id) {
@@ -195,12 +195,18 @@ export default function AdminDashboard() {
           .from("jobs")
           .update(jobData)
           .eq("id", editingJob.id);
-        if (error) throw error;
+        if (error) {
+          console.error("Update error:", error);
+          throw error;
+        }
         toast.success("Job updated successfully");
       } else {
         // Create new job
-        const { error } = await supabase.from("jobs").insert([jobData]);
-        if (error) throw error;
+        const { error, data } = await supabase.from("jobs").insert([jobData]).select();
+        if (error) {
+          console.error("Insert error:", error);
+          throw error;
+        }
         toast.success("Job created successfully");
       }
       setShowJobModal(false);
@@ -217,9 +223,9 @@ export default function AdminDashboard() {
         is_active: true,
       });
       fetchData();
-    } catch (err) {
-      toast.error("Failed to save job");
-      console.error(err);
+    } catch (err: any) {
+      console.error("Save job error:", err);
+      toast.error(err?.message || "Failed to save job");
     }
   };
 

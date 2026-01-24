@@ -12,7 +12,7 @@ import {
 } from "lucide-react";
 import Header from "@/components/Header";
 import { supabase } from "@/lib/supabase";
-import { toast, Toaster } from "sonner";
+import { toast } from "sonner";
 import Swal from "sweetalert2";
 
 type SubmissionType = "contact" | "quote" | "application" | "jobs";

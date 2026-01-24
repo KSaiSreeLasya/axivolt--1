@@ -113,7 +113,7 @@ export default function Header() {
               <button
                 onMouseEnter={() => setServicesOpen(true)}
                 onMouseLeave={() => setServicesOpen(false)}
-                className="flex items-center gap-1 text-sm font-medium text-gray-900 hover:text-cyan transition-colors"
+                className="flex items-center gap-1 text-sm font-medium text-cyan hover:text-yellow-green transition-colors"
               >
                 Services
                 <ChevronDown
@@ -157,21 +157,21 @@ export default function Header() {
             </div>
             <Link
               to="/industry"
-              className="text-sm font-medium text-gray-900 hover:text-cyan transition-colors"
+              className="text-sm font-medium text-cyan hover:text-yellow-green transition-colors"
             >
               Industry
             </Link>
 
             <Link
               to="/careers"
-              className="text-sm font-medium text-gray-900 hover:text-cyan transition-colors"
+              className="text-sm font-medium text-cyan hover:text-yellow-green transition-colors"
             >
               Careers
             </Link>
 
             <Link
               to="/about"
-              className="text-sm font-medium text-gray-900 hover:text-cyan transition-colors"
+              className="text-sm font-medium text-cyan hover:text-yellow-green transition-colors"
             >
               About
             </Link>

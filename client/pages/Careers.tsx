@@ -230,7 +230,7 @@ export default function Careers() {
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
               Build the <span className="text-cyan">Energy Future</span> With Us
             </h1>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-8">
+            <p className="text-lg text-black max-w-2xl mx-auto mb-8">
               Join a passionate team of innovators, engineers, and
               sustainability experts working together to revolutionize renewable
               energy solutions.
@@ -247,7 +247,7 @@ export default function Careers() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Values</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <p className="text-black max-w-2xl mx-auto">
               The principles that guide our team and define our commitment to
               excellence
             </p>
@@ -263,7 +263,7 @@ export default function Careers() {
                   <CheckCircle className="w-6 h-6 text-cyan" />
                 </div>
                 <h3 className="text-lg font-bold mb-2">{value.title}</h3>
-                <p className="text-sm text-gray-600">{value.description}</p>
+                <p className="text-sm text-black">{value.description}</p>
               </div>
             ))}
           </div>
@@ -277,7 +277,7 @@ export default function Careers() {
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Open Positions
             </h2>
-            <p className="text-gray-600">
+            <p className="text-black">
               Find your next opportunity and help shape the future of renewable
               energy
             </p>
@@ -296,8 +296,8 @@ export default function Careers() {
                     </div>
                     <div className="flex-1">
                       <h3 className="text-lg font-bold mb-2">{job.title}</h3>
-                      <p className="text-sm text-gray-600 mb-3">{job.description.substring(0, 100)}...</p>
-                      <div className="flex flex-wrap gap-4 text-sm text-gray-600">
+                      <p className="text-sm text-black mb-3">{job.description.substring(0, 100)}...</p>
+                      <div className="flex flex-wrap gap-4 text-sm text-black">
                         <span>📍 {job.location}</span>
                         <span>💼 {job.department}</span>
                         <span>⏱️ {job.type}</span>
@@ -331,7 +331,7 @@ export default function Careers() {
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Benefits & Perks
             </h2>
-            <p className="text-gray-600">
+            <p className="text-black">
               We invest in our team's wellbeing and growth
             </p>
           </div>
@@ -348,7 +348,7 @@ export default function Careers() {
                     <Icon className="w-6 h-6 text-cyan" />
                   </div>
                   <h3 className="text-lg font-bold mb-4">{benefit.title}</h3>
-                  <ul className="space-y-2 text-sm text-gray-600">
+                  <ul className="space-y-2 text-sm text-black">
                     {benefit.items.map((item, i) => (
                       <li
                         key={i}
@@ -373,7 +373,7 @@ export default function Careers() {
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Life at AXIVOLT
             </h2>
-            <p className="text-gray-600">
+            <p className="text-black">
               Get a glimpse into our vibrant, inclusive, and empowering
               workplace
             </p>
@@ -386,7 +386,7 @@ export default function Careers() {
               </div>
               <div className="p-6">
                 <h3 className="text-lg font-bold mb-2">Team Collaboration</h3>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-black">
                   Work alongside talented professionals in a collaborative
                   environment
                 </p>
@@ -401,7 +401,7 @@ export default function Careers() {
                 <h3 className="text-lg font-bold mb-2">
                   Learning & Development
                 </h3>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-black">
                   Continuous learning programs to enhance your skills and career
                 </p>
               </div>
@@ -413,7 +413,7 @@ export default function Careers() {
               </div>
               <div className="p-6">
                 <h3 className="text-lg font-bold mb-2">Work-Life Balance</h3>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-black">
                   Flexible work arrangements that prioritize your wellbeing
                 </p>
               </div>
@@ -439,7 +439,7 @@ export default function Careers() {
 
       {/* Footer */}
       <footer className="bg-card border-t border-border py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-600 text-sm">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-black text-sm">
           <p>&copy; 2024 AXIVOLT. All rights reserved.</p>
         </div>
       </footer>

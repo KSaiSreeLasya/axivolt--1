@@ -77,11 +77,12 @@ export default function Header() {
                   setSolutionsOpen(false);
                   setActiveSolutionSubmenu(null);
                 }}
-                className={`absolute top-full left-0 mt-0 bg-card border border-border rounded-none w-56 shadow-xl transition-all duration-200 overflow-visible ${
+                className={`absolute top-full left-0 mt-0 bg-card border border-border rounded-none shadow-xl transition-all duration-200 overflow-visible z-50 ${
                   solutionsOpen
                     ? "opacity-100 visible translate-y-0"
                     : "opacity-0 invisible -translate-y-2"
                 }`}
+                style={{ width: "auto", minWidth: "224px" }}
               >
                 <div className="py-2">
                   {/* Solar with Submenu */}

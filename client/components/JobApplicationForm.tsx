@@ -372,19 +372,25 @@ export default function JobApplicationForm({
 
               <div>
                 <label className="block text-sm font-medium mb-2">
-                  Resume/CV (Paste Link) *
+                  Resume/CV (Upload File) *
                 </label>
-                <input
-                  type="url"
-                  name="resume"
-                  value={formData.resume}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-2 rounded-lg bg-background border border-border text-foreground focus:border-cyan outline-none transition-colors"
-                  placeholder="https://drive.google.com/... or https://dropbox.com/..."
-                />
-                <p className="text-xs text-black400 mt-1">
-                  Provide a link to your resume (Google Drive, Dropbox, etc.)
+                <div className="relative">
+                  <input
+                    type="file"
+                    name="resume"
+                    onChange={handleFileChange}
+                    required={!formData.resume}
+                    accept=".pdf,.doc,.docx"
+                    className="w-full px-4 py-2 rounded-lg bg-background border border-border text-foreground focus:border-cyan outline-none transition-colors cursor-pointer file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-cyan file:text-background hover:file:bg-cyan/90"
+                  />
+                </div>
+                {resumeFileName && (
+                  <p className="text-xs text-cyan mt-2">
+                    ✓ Selected: {resumeFileName}
+                  </p>
+                )}
+                <p className="text-xs text-black400 mt-2">
+                  Upload PDF, DOC, or DOCX (Max 5MB)
                 </p>
               </div>
 

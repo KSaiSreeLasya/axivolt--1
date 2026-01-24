@@ -183,12 +183,13 @@ export default function JobApplicationForm({
           fullName: "",
           email: "",
           phone: "",
-          resume: "",
+          resume: null,
           coverletter: "",
           experience: "",
           linkedIn: "",
           portfolio: "",
         });
+        setResumeFileName("");
       });
       setLoading(false);
     } catch (err) {

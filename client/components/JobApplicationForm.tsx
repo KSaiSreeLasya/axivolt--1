@@ -1,7 +1,10 @@
 import { useState } from "react";
 import { X } from "lucide-react";
+import { supabase } from "@/lib/supabase";
+import { toast } from "sonner";
 
 interface Job {
+  id?: string;
   title: string;
   department: string;
   type: string;
@@ -33,6 +36,7 @@ export default function JobApplicationForm({
   });
 
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -44,25 +48,76 @@ export default function JobApplicationForm({
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Here you can add API call to submit the form
-    console.log("Application submitted for:", job.title, formData);
-    setSubmitted(true);
-    setTimeout(() => {
-      onClose();
-      setSubmitted(false);
-      setFormData({
-        fullName: "",
-        email: "",
-        phone: "",
-        resume: "",
-        coverletter: "",
-        experience: "",
-        linkedIn: "",
-        portfolio: "",
-      });
-    }, 2000);
+    setLoading(true);
+
+    try {
+      // Get the job_id - for now we'll use job title to find it
+      let jobId = job.id;
+
+      // If job.id doesn't exist, fetch it from the jobs table
+      if (!jobId) {
+        const { data: jobData, error: jobError } = await supabase
+          .from("jobs")
+          .select("id")
+          .eq("title", job.title)
+          .single();
+
+        if (jobError || !jobData) {
+          toast.error("Unable to find job. Please try again.");
+          setLoading(false);
+          return;
+        }
+        jobId = jobData.id;
+      }
+
+      const { data, error } = await supabase
+        .from("job_applications")
+        .insert([
+          {
+            job_id: jobId,
+            full_name: formData.fullName,
+            email: formData.email,
+            phone: formData.phone,
+            years_of_experience: formData.experience,
+            linkedin_profile: formData.linkedIn,
+            portfolio_url: formData.portfolio,
+            resume_url: formData.resume,
+            cover_letter: formData.coverletter,
+            application_status: "pending",
+          },
+        ])
+        .select();
+
+      if (error) {
+        toast.error("Failed to submit application: " + error.message);
+        console.error("Supabase error:", error);
+        setLoading(false);
+        return;
+      }
+
+      toast.success("Application submitted successfully!");
+      setSubmitted(true);
+      setTimeout(() => {
+        onClose();
+        setSubmitted(false);
+        setFormData({
+          fullName: "",
+          email: "",
+          phone: "",
+          resume: "",
+          coverletter: "",
+          experience: "",
+          linkedIn: "",
+          portfolio: "",
+        });
+      }, 2000);
+    } catch (err) {
+      toast.error("An error occurred. Please try again.");
+      console.error("Error:", err);
+      setLoading(false);
+    }
   };
 
   return (

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { FileText, Send } from "lucide-react";
-import { supabase, type QuoteRequest } from "@/lib/supabase";
-import { Toaster, toast } from "sonner";
+import { supabase } from "@/lib/supabase";
+import { toast } from "sonner";
 
 export default function QuoteForm() {
   const [loading, setLoading] = useState(false);
@@ -49,8 +49,11 @@ export default function QuoteForm() {
         .select();
 
       if (error) {
-        toast.error("Failed to submit quote request: " + error.message);
+        const errorMsg =
+          error instanceof Error ? error.message : JSON.stringify(error);
+        toast.error("Failed to submit quote request: " + errorMsg);
         console.error("Supabase error:", error);
+        setLoading(false);
         return;
       }
 
@@ -72,10 +75,11 @@ export default function QuoteForm() {
         timeline: "",
         description: "",
       });
+      setLoading(false);
     } catch (err) {
-      toast.error("An error occurred. Please try again.");
+      const errorMsg = err instanceof Error ? err.message : String(err);
+      toast.error("An error occurred: " + errorMsg);
       console.error("Error:", err);
-    } finally {
       setLoading(false);
     }
   };

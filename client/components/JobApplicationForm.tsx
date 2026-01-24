@@ -319,14 +319,16 @@ export default function JobApplicationForm({
               <div className="flex gap-4 pt-4">
                 <button
                   type="submit"
-                  className="flex-1 bg-cyan text-background px-6 py-2 rounded-lg font-semibold hover:bg-cyan/90 transition-all"
+                  disabled={loading}
+                  className="flex-1 bg-cyan text-background px-6 py-2 rounded-lg font-semibold hover:bg-cyan/90 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Submit Application
+                  {loading ? "Submitting..." : "Submit Application"}
                 </button>
                 <button
                   type="button"
                   onClick={onClose}
-                  className="flex-1 border border-border text-foreground px-6 py-2 rounded-lg font-semibold hover:border-cyan transition-all"
+                  disabled={loading}
+                  className="flex-1 border border-border text-foreground px-6 py-2 rounded-lg font-semibold hover:border-cyan transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   Cancel
                 </button>

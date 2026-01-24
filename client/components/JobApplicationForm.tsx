@@ -86,6 +86,35 @@ export default function JobApplicationForm({
     setLoading(true);
 
     try {
+      // Upload resume file if provided
+      let resumeUrl = "";
+      if (formData.resume) {
+        const fileExt = formData.resume.name.split('.').pop();
+        const fileName = `${Date.now()}-${Math.random().toString(36).substring(7)}.${fileExt}`;
+
+        const { error: uploadError, data: uploadData } = await supabase.storage
+          .from('job-resumes')
+          .upload(fileName, formData.resume);
+
+        if (uploadError) {
+          Swal.fire({
+            icon: 'error',
+            title: 'Upload Failed',
+            text: 'Failed to upload resume. Please try again.',
+            confirmButtonColor: '#047F86',
+          });
+          setLoading(false);
+          return;
+        }
+
+        // Get the public URL
+        const { data: publicUrlData } = supabase.storage
+          .from('job-resumes')
+          .getPublicUrl(fileName);
+
+        resumeUrl = publicUrlData.publicUrl;
+      }
+
       // Get the job_id - for now we'll use job title to find it
       let jobId = job.id;
 
@@ -121,7 +150,7 @@ export default function JobApplicationForm({
             years_of_experience: formData.experience,
             linkedin_profile: formData.linkedIn,
             portfolio_url: formData.portfolio,
-            resume_url: formData.resume,
+            resume_url: resumeUrl,
             cover_letter: formData.coverletter,
             application_status: "pending",
           },

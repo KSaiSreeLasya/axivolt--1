@@ -29,7 +29,7 @@ export default function Index() {
                 </h1>
               </div>
 
-              <p className="text-lg text-gray-300 leading-relaxed max-w-xl">
+              <p className="text-lg text-gray-700 leading-relaxed max-w-xl">
                 Transform your energy consumption with cutting-edge solar
                 solutions. Harness clean, renewable power for a sustainable
                 tomorrow.

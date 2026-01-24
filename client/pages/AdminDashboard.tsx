@@ -672,3 +672,180 @@ function ApplicationsTable({
     </div>
   );
 }
+
+function JobsTable({ jobs, onEdit, onDelete, onToggleActive }: any) {
+  if (jobs.length === 0) {
+    return <p className="text-gray-400 text-center py-8">No jobs yet. Click "Add New Job" to create one.</p>;
+  }
+
+  return (
+    <div className="overflow-x-auto">
+      <table className="w-full">
+        <thead>
+          <tr className="border-b border-border">
+            <th className="text-left py-3 px-4 font-semibold">Title</th>
+            <th className="text-left py-3 px-4 font-semibold">Department</th>
+            <th className="text-left py-3 px-4 font-semibold">Location</th>
+            <th className="text-left py-3 px-4 font-semibold">Type</th>
+            <th className="text-left py-3 px-4 font-semibold">Status</th>
+            <th className="text-left py-3 px-4 font-semibold">Date</th>
+            <th className="text-left py-3 px-4 font-semibold">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {jobs.map((job: any) => (
+            <tr key={job.id} className="border-b border-border hover:bg-card/50">
+              <td className="py-3 px-4 font-medium">{job.title}</td>
+              <td className="py-3 px-4">{job.department}</td>
+              <td className="py-3 px-4">{job.location}</td>
+              <td className="py-3 px-4 text-sm">{job.job_type}</td>
+              <td className="py-3 px-4">
+                <span className={`px-3 py-1 rounded text-sm font-medium ${job.is_active ? "bg-green-500/20 text-green-400" : "bg-red-500/20 text-red-400"}`}>
+                  {job.is_active ? "Active" : "Inactive"}
+                </span>
+              </td>
+              <td className="py-3 px-4 text-sm text-gray-400">
+                {new Date(job.created_at).toLocaleDateString()}
+              </td>
+              <td className="py-3 px-4">
+                <div className="flex gap-2">
+                  <button
+                    onClick={() => onEdit(job)}
+                    className="text-cyan hover:text-cyan/80"
+                  >
+                    <Eye className="w-5 h-5" />
+                  </button>
+                  <button
+                    onClick={() => onDelete(job.id)}
+                    className="text-red-500 hover:text-red-600"
+                  >
+                    <Trash2 className="w-5 h-5" />
+                  </button>
+                </div>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+
+function JobModal({ job, isEditing, onChange, onSave, onClose }: any) {
+  return (
+    <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
+      <div className="bg-card rounded-lg border border-border max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+        <div className="sticky top-0 bg-card border-b border-border p-6 flex items-center justify-between">
+          <h2 className="text-2xl font-bold">
+            {isEditing ? "Edit Job" : "Add New Job"}
+          </h2>
+          <button
+            onClick={onClose}
+            className="text-gray-400 hover:text-foreground"
+          >
+            <X className="w-6 h-6" />
+          </button>
+        </div>
+
+        <div className="p-6 space-y-4">
+          <div className="grid grid-cols-2 gap-4">
+            <input
+              type="text"
+              placeholder="Job Title *"
+              value={job.title}
+              onChange={(e) => onChange("title", e.target.value)}
+              className="px-4 py-2 rounded-lg bg-background border border-border text-foreground focus:border-cyan outline-none"
+            />
+            <input
+              type="text"
+              placeholder="Department *"
+              value={job.department}
+              onChange={(e) => onChange("department", e.target.value)}
+              className="px-4 py-2 rounded-lg bg-background border border-border text-foreground focus:border-cyan outline-none"
+            />
+          </div>
+
+          <div className="grid grid-cols-2 gap-4">
+            <input
+              type="text"
+              placeholder="Location *"
+              value={job.location}
+              onChange={(e) => onChange("location", e.target.value)}
+              className="px-4 py-2 rounded-lg bg-background border border-border text-foreground focus:border-cyan outline-none"
+            />
+            <input
+              type="text"
+              placeholder="Job Type (e.g., Full-time)"
+              value={job.job_type}
+              onChange={(e) => onChange("job_type", e.target.value)}
+              className="px-4 py-2 rounded-lg bg-background border border-border text-foreground focus:border-cyan outline-none"
+            />
+          </div>
+
+          <input
+            type="text"
+            placeholder="Experience Required (e.g., 3+ years)"
+            value={job.experience_required}
+            onChange={(e) => onChange("experience_required", e.target.value)}
+            className="w-full px-4 py-2 rounded-lg bg-background border border-border text-foreground focus:border-cyan outline-none"
+          />
+
+          <textarea
+            placeholder="Job Description"
+            value={job.description}
+            onChange={(e) => onChange("description", e.target.value)}
+            rows={4}
+            className="w-full px-4 py-2 rounded-lg bg-background border border-border text-foreground focus:border-cyan outline-none resize-none"
+          />
+
+          <div>
+            <label className="block text-sm font-medium mb-2">Requirements (comma-separated)</label>
+            <textarea
+              placeholder="e.g., Bachelor's degree, 3+ years experience, Strong communication"
+              value={Array.isArray(job.requirements) ? job.requirements.join(", ") : ""}
+              onChange={(e) => onChange("requirements", e.target.value.split(",").map((r) => r.trim()))}
+              rows={3}
+              className="w-full px-4 py-2 rounded-lg bg-background border border-border text-foreground focus:border-cyan outline-none resize-none"
+            />
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium mb-2">Benefits (comma-separated)</label>
+            <textarea
+              placeholder="e.g., Health Insurance, Flexible Hours, Remote Work"
+              value={Array.isArray(job.benefits) ? job.benefits.join(", ") : ""}
+              onChange={(e) => onChange("benefits", e.target.value.split(",").map((b) => b.trim()))}
+              rows={3}
+              className="w-full px-4 py-2 rounded-lg bg-background border border-border text-foreground focus:border-cyan outline-none resize-none"
+            />
+          </div>
+
+          <label className="flex items-center gap-2">
+            <input
+              type="checkbox"
+              checked={job.is_active}
+              onChange={(e) => onChange("is_active", e.target.checked)}
+              className="w-4 h-4 cursor-pointer"
+            />
+            <span className="text-sm">Active Job (visible on careers page)</span>
+          </label>
+
+          <div className="flex gap-4 pt-4">
+            <button
+              onClick={onSave}
+              className="flex-1 bg-cyan text-background px-6 py-3 rounded-lg font-semibold hover:bg-cyan/90 transition-all"
+            >
+              {isEditing ? "Update Job" : "Create Job"}
+            </button>
+            <button
+              onClick={onClose}
+              className="flex-1 border border-border text-foreground px-6 py-3 rounded-lg font-semibold hover:border-cyan transition-all"
+            >
+              Cancel
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}

@@ -31,8 +31,8 @@ export default function EVStations() {
         "AC & DC fast charging deployments",
         "Smart charging and payment integrations",
       ],
-      color: "bg-green-500/20",
-      iconColor: "text-green-400",
+      color: "bg-cyan-500/20",
+      iconColor: "text-cyan",
     },
     {
       title: "EV Charging Solutions",
@@ -78,9 +78,9 @@ export default function EVStations() {
             {/* Left Content */}
             <div className="space-y-8">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-                <span className="text-green-400">EV Stations &</span>
+                <span className="text-cyan">EV Stations &</span>
                 <br />
-                <span className="text-green-400">Charging</span>
+                <span className="text-cyan">Charging</span>
               </h1>
 
               <p className="text-lg text-black300 leading-relaxed">
@@ -89,10 +89,10 @@ export default function EVStations() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                <button className="bg-green-400 text-background px-8 py-3 rounded-lg font-bold text-lg hover:bg-green-500 transition-all">
+                <button className="bg-cyan text-background px-8 py-3 rounded-lg font-bold text-lg hover:bg-opacity-90 transition-all">
                   EV Infrastructure
                 </button>
-                <button className="border-2 border-green-400 text-green-400 px-8 py-3 rounded-lg font-bold text-lg hover:bg-green-400/10 transition-all">
+                <button className="border-2 border-cyan text-cyan px-8 py-3 rounded-lg font-bold text-lg hover:bg-cyan/10 transition-all">
                   EV Charging
                 </button>
               </div>
@@ -177,7 +177,7 @@ export default function EVStations() {
                         key={feature}
                         className="flex items-start gap-2 text-sm text-black300"
                       >
-                        <span className="w-1.5 h-1.5 rounded-full bg-green-400 mt-1.5 flex-shrink-0"></span>
+                        <span className="w-1.5 h-1.5 rounded-full bg-cyan mt-1.5 flex-shrink-0"></span>
                         {feature}
                       </li>
                     ))}
@@ -191,7 +191,7 @@ export default function EVStations() {
 
       {/* CTA Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto bg-green-400 rounded-2xl p-12 text-center">
+        <div className="max-w-4xl mx-auto bg-cyan rounded-2xl p-12 text-center">
           <h2 className="text-3xl font-bold text-background mb-4">
             Deploy EV charging at scale
           </h2>
@@ -199,7 +199,7 @@ export default function EVStations() {
             We offer planning, permitting, supply and operations for charging
             networks and depot electrification.
           </p>
-          <button className="bg-background text-green-400 px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition-all">
+          <button className="bg-background text-cyan px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition-all">
             Get Started
           </button>
         </div>

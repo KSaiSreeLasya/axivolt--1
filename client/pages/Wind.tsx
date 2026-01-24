@@ -52,7 +52,6 @@ export default function Wind() {
         "Design & Engineering",
         "Supply & Installation",
         "Performance Monitoring",
-        "Performance Monitoring",
       ],
       caseStudy: "Corporate Campus - 5MW Wind System",
       color: "bg-cyan-500/20",

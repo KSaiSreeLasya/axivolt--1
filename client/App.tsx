@@ -18,7 +18,11 @@ import GetQuote from "./pages/GetQuote";
 import AdminDashboard from "./pages/AdminDashboard";
 import NotFound from "./pages/NotFound";
 import Solutions from "./pages/Solutions";
+import Services from "./pages/Services";
 import Solar from "./pages/Solar";
+import SolarResidential from "./pages/SolarResidential";
+import SolarCommercial from "./pages/SolarCommercial";
+import SolarGovernment from "./pages/SolarGovernment";
 import Wind from "./pages/Wind";
 import EnergyStorage from "./pages/EnergyStorage";
 import EVStations from "./pages/EVStations";
@@ -39,11 +43,24 @@ const App = () => (
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/quote" element={<GetQuote />} />
           <Route path="/admin" element={<AdminDashboard />} />
+          <Route path="/services" element={<Services />} />
           <Route path="/advisory" element={<Advisory />} />
           <Route path="/procurement" element={<Procurement />} />
           <Route path="/digital-solutions" element={<DigitalSolutions />} />
           <Route path="/solutions" element={<Solutions />} />
           <Route path="/solutions/solar" element={<Solar />} />
+          <Route
+            path="/solutions/solar/residential"
+            element={<SolarResidential />}
+          />
+          <Route
+            path="/solutions/solar/commercial"
+            element={<SolarCommercial />}
+          />
+          <Route
+            path="/solutions/solar/government"
+            element={<SolarGovernment />}
+          />
           <Route path="/solutions/wind" element={<Wind />} />
           <Route path="/solutions/energy-storage" element={<EnergyStorage />} />
           <Route path="/solutions/ev-stations" element={<EVStations />} />

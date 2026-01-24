@@ -90,8 +90,28 @@ export default function AdminDashboard() {
   });
 
   useEffect(() => {
+    // Load all data on mount and when tab changes
+    loadAllCounts();
     fetchData();
   }, [activeTab]);
+
+  const loadAllCounts = async () => {
+    try {
+      const [contactsRes, quotesRes, applicationsRes, jobsRes] = await Promise.all([
+        supabase.from("contact_form_submissions").select("*"),
+        supabase.from("quote_requests").select("*"),
+        supabase.from("job_applications").select("*"),
+        supabase.from("jobs").select("*"),
+      ]);
+
+      if (contactsRes.data) setContacts(contactsRes.data);
+      if (quotesRes.data) setQuotes(quotesRes.data);
+      if (applicationsRes.data) setApplications(applicationsRes.data);
+      if (jobsRes.data) setJobs(jobsRes.data);
+    } catch (err) {
+      console.error("Failed to load counts:", err);
+    }
+  };
 
   const fetchData = async () => {
     setLoading(true);

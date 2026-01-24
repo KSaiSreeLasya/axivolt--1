@@ -100,10 +100,10 @@ export default function Header() {
 
                     {/* Solar Subcategories */}
                     <div
-                      className={`absolute left-full top-0 ml-0 bg-card border border-border w-48 shadow-xl transition-all duration-200 ${
+                      className={`absolute left-full top-0 ml-1 bg-card border border-border w-48 shadow-xl transition-all duration-200 z-50 pointer-events-auto ${
                         activeSolutionSubmenu === "solar"
                           ? "opacity-100 visible translate-x-0"
-                          : "opacity-0 invisible -translate-x-2"
+                          : "opacity-0 invisible -translate-x-2 pointer-events-none"
                       }`}
                     >
                       <div className="py-2">

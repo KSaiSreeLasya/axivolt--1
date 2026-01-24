@@ -199,7 +199,12 @@ export default function AdminDashboard() {
           console.error("Update error:", error);
           throw error;
         }
-        toast.success("Job updated successfully");
+        Swal.fire({
+          icon: "success",
+          title: "Job Updated!",
+          text: `${jobForm.title} has been updated successfully`,
+          confirmButtonColor: "#047F86",
+        });
       } else {
         // Create new job
         const { error, data } = await supabase.from("jobs").insert([jobData]).select();
@@ -207,7 +212,12 @@ export default function AdminDashboard() {
           console.error("Insert error:", error);
           throw error;
         }
-        toast.success("Job created successfully");
+        Swal.fire({
+          icon: "success",
+          title: "Job Created!",
+          text: `${jobForm.title} position has been added successfully`,
+          confirmButtonColor: "#047F86",
+        });
       }
       setShowJobModal(false);
       setEditingJob(null);

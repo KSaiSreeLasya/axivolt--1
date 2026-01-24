@@ -201,13 +201,8 @@ export default function Solar() {
                 <Link
                   key={solution.title}
                   to={solution.link}
-                  className="bg-card border border-border rounded-xl p-8 hover:border-cyan transition-all cursor-pointer block relative"
+                  className="bg-card border border-border rounded-xl p-8 hover:border-cyan transition-all cursor-pointer block"
                 >
-                  {/* Left Arrow Navigation */}
-                  <div className="absolute left-4 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full border-2 border-cyan flex items-center justify-center">
-                    <ArrowRight className="w-4 h-4 text-cyan" />
-                  </div>
-
                   <div
                     className={`w-12 h-12 rounded-lg ${solution.color} flex items-center justify-center mb-4`}
                   >
@@ -242,13 +237,16 @@ export default function Solar() {
                     ))}
                   </ul>
 
-                  <div className="bg-background/50 rounded-lg p-4 border border-border">
-                    <p className="text-xs font-semibold text-cyan mb-1">
-                      Case Study
-                    </p>
-                    <p className="text-sm text-black300">
-                      {solution.caseStudy}
-                    </p>
+                  <div className="bg-background/50 rounded-lg p-4 border border-border flex items-center justify-between">
+                    <div>
+                      <p className="text-xs font-semibold text-cyan mb-1">
+                        Case Study
+                      </p>
+                      <p className="text-sm text-black300">
+                        {solution.caseStudy}
+                      </p>
+                    </div>
+                    <ArrowRight className="w-5 h-5 text-cyan flex-shrink-0 ml-3" />
                   </div>
                 </Link>
               );

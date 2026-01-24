@@ -47,7 +47,7 @@ export default function Index() {
                 </div>
                 <div>
                   <p className="text-3xl font-bold text-cyan">Global</p>
-                  <p className="text-sm text-gray-400">presence</p>
+                  <p className="text-sm text-gray-600">presence</p>
                 </div>
               </div>
 

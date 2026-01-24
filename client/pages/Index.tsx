@@ -43,7 +43,7 @@ export default function Index() {
                 </div>
                 <div>
                   <p className="text-3xl font-bold text-yellow-green">350+</p>
-                  <p className="text-sm text-gray-400">projects worldwide</p>
+                  <p className="text-sm text-gray-600">projects worldwide</p>
                 </div>
                 <div>
                   <p className="text-3xl font-bold text-cyan">Global</p>

@@ -155,7 +155,7 @@ export default function GetQuote() {
               className={`py-3 px-6 rounded font-semibold transition-all ${
                 category === "residential"
                   ? "bg-cyan text-background"
-                  : "bg-card border border-border text-white hover:border-cyan"
+                  : "bg-card border border-border text-black hover:border-cyan"
               }`}
             >
               Residential
@@ -165,7 +165,7 @@ export default function GetQuote() {
               className={`py-3 px-6 rounded font-semibold transition-all ${
                 category === "housing"
                   ? "bg-cyan text-background"
-                  : "bg-card border border-border text-white hover:border-cyan"
+                  : "bg-card border border-border text-black hover:border-cyan"
               }`}
             >
               Housing Society
@@ -175,7 +175,7 @@ export default function GetQuote() {
               className={`py-3 px-6 rounded font-semibold transition-all ${
                 category === "commercial"
                   ? "bg-cyan text-background"
-                  : "bg-card border border-border text-white hover:border-cyan"
+                  : "bg-card border border-border text-black hover:border-cyan"
               }`}
             >
               Commercial
@@ -351,7 +351,7 @@ export default function GetQuote() {
                 {/* Submit Button */}
                 <button
                   type="submit"
-                  className="w-full bg-cyan text-background px-6 py-3 rounded font-bold hover:bg-yellow-green transition-all"
+                  className="w-full bg-cyan text-background px-6 py-3 rounded font-bold hover:bg-[#AFE332] transition-all"
                 >
                   Submit Details
                 </button>

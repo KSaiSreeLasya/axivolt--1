@@ -122,11 +122,55 @@ export default function GetQuote() {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("Quote submitted:", { category, ...formData });
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 3000);
+
+    try {
+      const { error } = await supabase
+        .from('quote_requests')
+        .insert([
+          {
+            full_name: formData.fullName,
+            whatsapp: formData.whatsapp,
+            pin_code: formData.pinCode,
+            bill_range: formData.billRange,
+            capacity: formData.capacity,
+            category: category,
+            agree_to_terms: formData.agreeToTerms,
+          },
+        ]);
+
+      if (error) {
+        throw error;
+      }
+
+      // Show success alert
+      Swal.fire({
+        icon: 'success',
+        title: 'Quote Request Submitted!',
+        text: 'Thank you! Our team will contact you shortly.',
+        confirmButtonColor: '#047F86',
+        confirmButtonText: 'OK',
+      });
+
+      // Reset form
+      setFormData({
+        fullName: '',
+        whatsapp: '',
+        pinCode: '',
+        billRange: '',
+        capacity: '',
+        agreeToTerms: false,
+      });
+    } catch (error: any) {
+      console.error('Failed to submit quote:', error);
+      Swal.fire({
+        icon: 'error',
+        title: 'Submission Failed',
+        text: error.message || 'Failed to submit quote. Please try again.',
+        confirmButtonColor: '#047F86',
+      });
+    }
   };
 
   return (

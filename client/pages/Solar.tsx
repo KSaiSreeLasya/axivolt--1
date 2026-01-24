@@ -1,5 +1,5 @@
 import Header from "@/components/Header";
-import { ArrowLeft, Sun, Zap, Gauge } from "lucide-react";
+import { ArrowLeft, ArrowRight, Sun, Zap, Gauge } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export default function Solar() {

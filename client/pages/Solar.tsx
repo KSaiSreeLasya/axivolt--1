@@ -1,108 +1,95 @@
 import Header from "@/components/Header";
-import { ArrowLeft, Sun, Building2, Factory, Zap } from "lucide-react";
+import { ArrowLeft, Sun, Zap, Gauge } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export default function Solar() {
   const projects = [
     {
-      title: "Residential Project 1",
-      image:
-        "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=600&h=400&fit=crop",
-    },
-    {
-      title: "Commercial Project 1",
+      title: "Rooftop Solar Installation 1",
       image:
         "https://images.unsplash.com/photo-1509391366360-2e938aa1df42?w=600&h=400&fit=crop",
     },
     {
-      title: "Industrial Project 1",
+      title: "Large-Scale Solar Farm",
+      image:
+        "https://images.unsplash.com/photo-1473375157435-2a8ad3cf3d64?w=600&h=400&fit=crop",
+    },
+    {
+      title: "Solar Panel Installation",
       image:
         "https://images.unsplash.com/photo-1495652714223-3ba207a4bff3?w=600&h=400&fit=crop",
     },
   ];
 
-  const segments = [
+  const solutions = [
     {
-      title: "B2C",
-      icon: Building2,
-      description: "Residential rooftop solutions",
+      title: "B2C - Residential",
+      icon: Sun,
+      description: "Trusted rooftop solar systems for homeowners",
       stats: [
-        { value: "500+", label: "Projects" },
-        { value: "20-35%", label: "Savings" },
+        { value: "500+", label: "Installations" },
+        { value: "5MW", label: "Capacity" },
       ],
       features: [
-        "Rooftop Solar",
-        "Solar Carports",
-        "Net Metering",
-        "Grid Integration",
+        "Free site assessment",
+        "Customized system design",
+        "Installation & commissioning",
+        "O&M & warranty support",
       ],
-      caseStudy: "Tech Campus - 2.5MW Solar Installation",
-      color: "bg-purple-500/20",
-      iconColor: "text-purple-400",
+      caseStudy: "Residential Rooftop - 5kW System",
+      color: "bg-yellow-500/20",
+      iconColor: "text-yellow-400",
+      link: "/solutions/solar/residential",
     },
     {
-      title: "B2B",
-      icon: Building2,
-      description: "Commercial & industrial DC, EV infra",
+      title: "B2B - Commercial",
+      icon: Zap,
+      description: "Scalable commercial solar solutions",
       stats: [
-        { value: "150+", label: "Projects" },
-        { value: "25-40%", label: "Savings" },
+        { value: "300+", label: "Projects" },
+        { value: "50MW", label: "Capacity" },
       ],
       features: [
-        "Rooftop Solar",
-        "Ground Mount",
-        "Solar Carports",
-        "Grid Integration",
+        "Design & engineering",
+        "EPC services",
+        "Performance monitoring",
+        "Asset management",
       ],
-      caseStudy: "Tech Campus - 2.5MW Solar Installation",
+      caseStudy: "Commercial Rooftop - 100kW System",
       color: "bg-blue-500/20",
       iconColor: "text-blue-400",
+      link: "/solutions/solar/commercial",
     },
     {
-      title: "B2G",
-      icon: Zap,
-      description: "Government & public sector programs",
+      title: "B2G - Government",
+      icon: Gauge,
+      description: "Large-scale public sector projects",
       stats: [
-        { value: "80+", label: "Projects" },
-        { value: "30-50%", label: "Savings" },
+        { value: "50+", label: "Projects" },
+        { value: "30MW", label: "Capacity" },
       ],
       features: [
-        "Utility-Scale Solar",
-        "Public Buildings",
-        "Grid Integration",
-        "Peak Load Management",
+        "Tender support",
+        "Government compliance",
+        "Public sector expertise",
+        "Reporting & analytics",
       ],
-      caseStudy: "Govt Plant - 5MW Government System",
+      caseStudy: "Government Installation - 5MW System",
       color: "bg-green-500/20",
       iconColor: "text-green-400",
+      link: "/solutions/solar/government",
     },
   ];
 
   const highlights = [
     {
-      title: "Roofing & Ground",
-      description: "Advanced solar technology for all installation types",
+      title: "Solar EPC",
+      description: "Full Engineering, Procurement and Construction services",
     },
     {
-      title: "Commercial",
-      description: "Large-scale commercial solar solutions for businesses",
-    },
-  ];
-
-  const services = [
-    {
-      title: "Site Assessment",
+      title: "Solar O&M",
       description:
-        "Comprehensive evaluation of your property for optimal solar placement",
-    },
-    {
-      title: "Design & Engineering",
-      description: "Custom solar system design tailored to your energy needs",
-    },
-    {
-      title: "Installation & Support",
-      description:
-        "Professional installation with ongoing technical support and monitoring",
+        "Comprehensive operations and maintenance for optimal performance",
     },
   ];
 
@@ -118,28 +105,34 @@ export default function Solar() {
             className="inline-flex items-center gap-2 text-cyan hover:text-yellow-green transition-colors mb-8"
           >
             <ArrowLeft className="w-4 h-4" />
-            Back to Solutions
+            Back
           </Link>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
             <div className="space-y-8">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-                <span className="text-yellow-400">Solar Energy</span>
+                <span className="text-cyan">Solar Energy</span>
               </h1>
 
               <p className="text-lg text-black300 leading-relaxed">
-                Comprehensive solar solutions for residential and public sector.
-                Optimized for performance and longevity.
+                Comprehensive solar projects, systems, and O&M. Select your
+                application to learn more.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                <button className="bg-yellow-400 text-background px-8 py-3 rounded-lg font-bold text-lg hover:bg-yellow-500 transition-all">
+                <Link
+                  to="/solutions/solar/residential"
+                  className="bg-cyan text-background px-8 py-3 rounded-lg font-bold text-lg hover:bg-opacity-90 transition-all text-center"
+                >
                   Residential
-                </button>
-                <button className="border-2 border-yellow-400 text-yellow-400 px-8 py-3 rounded-lg font-bold text-lg hover:bg-yellow-400/10 transition-all">
+                </Link>
+                <Link
+                  to="/solutions/solar/commercial"
+                  className="border-2 border-cyan text-cyan px-8 py-3 rounded-lg font-bold text-lg hover:bg-cyan/10 transition-all text-center"
+                >
                   Commercial
-                </button>
+                </Link>
               </div>
             </div>
 
@@ -165,7 +158,7 @@ export default function Solar() {
             </h2>
             <p className="text-black300">
               Discover our diverse solar installations across residential,
-              commercial and utility-scale projects
+              commercial and government projects
             </p>
           </div>
 
@@ -189,40 +182,40 @@ export default function Solar() {
         </div>
       </section>
 
-      {/* Who We Serve Section */}
+      {/* Solutions Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-background/50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Who we serve
+              Solar Energy Solutions
             </h2>
             <p className="text-black300">
-              Tailored solar solutions for homeowners, businesses and public
-              sector. Select your category to learn more.
+              Choose your application to view detailed solar solutions and services.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {segments.map((segment) => {
-              const Icon = segment.icon;
+            {solutions.map((solution) => {
+              const Icon = solution.icon;
               return (
-                <div
-                  key={segment.title}
-                  className="bg-card border border-border rounded-xl p-8 hover:border-cyan transition-all"
+                <Link
+                  key={solution.title}
+                  to={solution.link}
+                  className="bg-card border border-border rounded-xl p-8 hover:border-cyan transition-all cursor-pointer block"
                 >
                   <div
-                    className={`w-12 h-12 rounded-lg ${segment.color} flex items-center justify-center mb-4`}
+                    className={`w-12 h-12 rounded-lg ${solution.color} flex items-center justify-center mb-4`}
                   >
-                    <Icon className={`w-6 h-6 ${segment.iconColor}`} />
+                    <Icon className={`w-6 h-6 ${solution.iconColor}`} />
                   </div>
 
-                  <h3 className="text-xl font-bold mb-2">{segment.title}</h3>
+                  <h3 className="text-xl font-bold mb-2">{solution.title}</h3>
                   <p className="text-black300 text-sm mb-6">
-                    {segment.description}
+                    {solution.description}
                   </p>
 
                   <div className="grid grid-cols-2 gap-4 mb-6 pb-6 border-b border-border">
-                    {segment.stats.map((stat, idx) => (
+                    {solution.stats.map((stat, idx) => (
                       <div key={idx}>
                         <p className="text-xl font-bold text-cyan">
                           {stat.value}
@@ -233,7 +226,7 @@ export default function Solar() {
                   </div>
 
                   <ul className="space-y-2 mb-6">
-                    {segment.features.map((feature) => (
+                    {solution.features.map((feature) => (
                       <li
                         key={feature}
                         className="flex items-center gap-2 text-sm text-black300"
@@ -248,9 +241,11 @@ export default function Solar() {
                     <p className="text-xs font-semibold text-cyan mb-1">
                       Case Study
                     </p>
-                    <p className="text-sm text-black300">{segment.caseStudy}</p>
+                    <p className="text-sm text-black300">
+                      {solution.caseStudy}
+                    </p>
                   </div>
-                </div>
+                </Link>
               );
             })}
           </div>
@@ -282,40 +277,17 @@ export default function Solar() {
 
       {/* CTA Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto bg-yellow-400 rounded-2xl p-12 text-center">
+        <div className="max-w-4xl mx-auto bg-cyan rounded-2xl p-12 text-center">
           <h2 className="text-3xl font-bold text-background mb-4">
-            Ready to go solar?
+            Go Solar with Axiso Green Energies
           </h2>
           <p className="text-background/80 mb-6 text-lg">
-            Talk to our solar experts to design a system that's right for your
-            needs and budget
+            From residential rooftops to utility-scale projects, we deliver
+            reliable solar solutions for every sector.
           </p>
-          <button className="bg-background text-yellow-400 px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition-all">
+          <button className="bg-background text-cyan px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition-all">
             Get Started
           </button>
-        </div>
-      </section>
-
-      {/* Services Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-background/50">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Solar Services
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {services.map((service) => (
-              <div
-                key={service.title}
-                className="bg-card border border-border rounded-xl p-8"
-              >
-                <h3 className="text-xl font-bold mb-3">{service.title}</h3>
-                <p className="text-black300">{service.description}</p>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 

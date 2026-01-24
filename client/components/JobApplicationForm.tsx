@@ -91,7 +91,9 @@ export default function JobApplicationForm({
         .select();
 
       if (error) {
-        toast.error("Failed to submit application: " + error.message);
+        const errorMsg =
+          error instanceof Error ? error.message : JSON.stringify(error);
+        toast.error("Failed to submit application: " + errorMsg);
         console.error("Supabase error:", error);
         setLoading(false);
         return;
@@ -99,6 +101,7 @@ export default function JobApplicationForm({
 
       toast.success("Application submitted successfully!");
       setSubmitted(true);
+      setLoading(false);
       setTimeout(() => {
         onClose();
         setSubmitted(false);
@@ -114,7 +117,8 @@ export default function JobApplicationForm({
         });
       }, 2000);
     } catch (err) {
-      toast.error("An error occurred. Please try again.");
+      const errorMsg = err instanceof Error ? err.message : String(err);
+      toast.error("An error occurred: " + errorMsg);
       console.error("Error:", err);
       setLoading(false);
     }

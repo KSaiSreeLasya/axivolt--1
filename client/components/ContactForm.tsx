@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Mail, Phone, Send } from "lucide-react";
-import { supabase, type ContactSubmission } from "@/lib/supabase";
-import { Toaster, toast } from "sonner";
+import { supabase } from "@/lib/supabase";
+import { toast } from "sonner";
 
 export default function ContactForm() {
   const [loading, setLoading] = useState(false);
@@ -43,8 +43,11 @@ export default function ContactForm() {
         .select();
 
       if (error) {
-        toast.error("Failed to submit form: " + error.message);
+        const errorMsg =
+          error instanceof Error ? error.message : JSON.stringify(error);
+        toast.error("Failed to submit form: " + errorMsg);
         console.error("Supabase error:", error);
+        setLoading(false);
         return;
       }
 
@@ -58,10 +61,11 @@ export default function ContactForm() {
         message: "",
         contact_preference: "email",
       });
+      setLoading(false);
     } catch (err) {
-      toast.error("An error occurred. Please try again.");
+      const errorMsg = err instanceof Error ? err.message : String(err);
+      toast.error("An error occurred: " + errorMsg);
       console.error("Error:", err);
-    } finally {
       setLoading(false);
     }
   };

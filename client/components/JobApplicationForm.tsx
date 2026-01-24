@@ -28,7 +28,7 @@ export default function JobApplicationForm({
     fullName: "",
     email: "",
     phone: "",
-    resume: "",
+    resume: null as File | null,
     coverletter: "",
     experience: "",
     linkedIn: "",
@@ -37,6 +37,7 @@ export default function JobApplicationForm({
 
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [resumeFileName, setResumeFileName] = useState<string>("");
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
@@ -46,6 +47,38 @@ export default function JobApplicationForm({
       ...prev,
       [name]: value,
     }));
+  };
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      // Validate file size (max 5MB)
+      if (file.size > 5 * 1024 * 1024) {
+        Swal.fire({
+          icon: 'warning',
+          title: 'File Too Large',
+          text: 'Resume file must be less than 5MB',
+          confirmButtonColor: '#047F86',
+        });
+        return;
+      }
+      // Validate file type
+      const validTypes = ['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
+      if (!validTypes.includes(file.type)) {
+        Swal.fire({
+          icon: 'warning',
+          title: 'Invalid File Type',
+          text: 'Please upload a PDF, DOC, or DOCX file',
+          confirmButtonColor: '#047F86',
+        });
+        return;
+      }
+      setFormData((prev) => ({
+        ...prev,
+        resume: file,
+      }));
+      setResumeFileName(file.name);
+    }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {

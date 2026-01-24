@@ -201,8 +201,13 @@ export default function Solar() {
                 <Link
                   key={solution.title}
                   to={solution.link}
-                  className="bg-card border border-border rounded-xl p-8 hover:border-cyan transition-all cursor-pointer block"
+                  className="bg-card border border-border rounded-xl p-8 hover:border-cyan transition-all cursor-pointer block relative"
                 >
+                  {/* Left Arrow Navigation */}
+                  <div className="absolute left-4 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full border-2 border-cyan flex items-center justify-center">
+                    <ArrowRight className="w-4 h-4 text-cyan" />
+                  </div>
+
                   <div
                     className={`w-12 h-12 rounded-lg ${solution.color} flex items-center justify-center mb-4`}
                   >

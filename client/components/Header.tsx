@@ -86,42 +86,47 @@ export default function Header() {
                 <div className="py-2">
                   {/* Solar with Submenu */}
                   <div
-                    className="relative"
+                    className="relative group/solar"
                     onMouseEnter={() => setActiveSolutionSubmenu("solar")}
                     onMouseLeave={() => setActiveSolutionSubmenu(null)}
                   >
-                    <Link
-                      to="/solutions/solar"
-                      className="flex items-center justify-between px-6 py-3 text-sm text-black hover:text-cyan hover:bg-background/50 transition-colors border-b border-border"
+                    <button
+                      className="w-full flex items-center justify-between px-6 py-3 text-sm text-black hover:text-cyan hover:bg-background/50 transition-colors border-b border-border"
+                      onMouseEnter={() => setActiveSolutionSubmenu("solar")}
                     >
                       Solar
                       <ChevronDown className="w-4 h-4 rotate-180" />
-                    </Link>
+                    </button>
 
                     {/* Solar Subcategories */}
                     <div
-                      className={`absolute left-full top-0 ml-1 bg-card border border-border w-48 shadow-xl transition-all duration-200 z-50 pointer-events-auto ${
+                      className={`absolute left-56 top-0 bg-card border border-border rounded-sm w-48 shadow-2xl transition-all duration-200 ${
                         activeSolutionSubmenu === "solar"
-                          ? "opacity-100 visible translate-x-0"
-                          : "opacity-0 invisible -translate-x-2 pointer-events-none"
+                          ? "opacity-100 visible"
+                          : "opacity-0 invisible"
                       }`}
+                      style={{
+                        pointerEvents: activeSolutionSubmenu === "solar" ? "auto" : "none",
+                      }}
+                      onMouseEnter={() => setActiveSolutionSubmenu("solar")}
+                      onMouseLeave={() => setActiveSolutionSubmenu(null)}
                     >
                       <div className="py-2">
                         <Link
-                          to="/solutions/solar"
-                          className="block px-6 py-3 text-sm text-black hover:text-cyan hover:bg-background/50 transition-colors border-b border-border"
+                          to="/solutions/solar?category=residential"
+                          className="block px-6 py-3 text-sm text-black hover:text-cyan hover:bg-background/50 transition-colors border-b border-border last:border-b-0"
                         >
                           Residential (B2C)
                         </Link>
                         <Link
-                          to="/solutions/solar"
-                          className="block px-6 py-3 text-sm text-black hover:text-cyan hover:bg-background/50 transition-colors border-b border-border"
+                          to="/solutions/solar?category=commercial"
+                          className="block px-6 py-3 text-sm text-black hover:text-cyan hover:bg-background/50 transition-colors border-b border-border last:border-b-0"
                         >
                           Commercial (B2B)
                         </Link>
                         <Link
-                          to="/solutions/solar"
-                          className="block px-6 py-3 text-sm text-black hover:text-cyan hover:bg-background/50 transition-colors"
+                          to="/solutions/solar?category=government"
+                          className="block px-6 py-3 text-sm text-black hover:text-cyan hover:bg-background/50 transition-colors last:border-b-0"
                         >
                           Government (B2G)
                         </Link>

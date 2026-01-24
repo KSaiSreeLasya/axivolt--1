@@ -12,7 +12,7 @@ import {
 } from "lucide-react";
 import Header from "@/components/Header";
 import { supabase } from "@/lib/supabase";
-import { toast, Toaster } from "sonner";
+import { toast } from "sonner";
 import Swal from "sweetalert2";
 
 type SubmissionType = "contact" | "quote" | "application" | "jobs";
@@ -90,8 +90,29 @@ export default function AdminDashboard() {
   });
 
   useEffect(() => {
+    // Load all data on mount and when tab changes
+    loadAllCounts();
     fetchData();
   }, [activeTab]);
+
+  const loadAllCounts = async () => {
+    try {
+      const [contactsRes, quotesRes, applicationsRes, jobsRes] =
+        await Promise.all([
+          supabase.from("contact_form_submissions").select("*"),
+          supabase.from("quote_requests").select("*"),
+          supabase.from("job_applications").select("*"),
+          supabase.from("jobs").select("*"),
+        ]);
+
+      if (contactsRes.data) setContacts(contactsRes.data);
+      if (quotesRes.data) setQuotes(quotesRes.data);
+      if (applicationsRes.data) setApplications(applicationsRes.data);
+      if (jobsRes.data) setJobs(jobsRes.data);
+    } catch (err) {
+      console.error("Failed to load counts:", err);
+    }
+  };
 
   const fetchData = async () => {
     setLoading(true);
@@ -134,17 +155,38 @@ export default function AdminDashboard() {
   };
 
   const deleteItem = async (id: string, table: string) => {
-    if (!confirm("Are you sure you want to delete this?")) return;
+    Swal.fire({
+      title: "Delete Confirmation",
+      text: "Are you sure you want to delete this item? This action cannot be undone.",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#dc2626",
+      cancelButtonColor: "#047F86",
+      confirmButtonText: "Yes, delete it!",
+      cancelButtonText: "Cancel",
+    }).then(async (result) => {
+      if (!result.isConfirmed) return;
 
-    try {
-      const { error } = await supabase.from(table).delete().eq("id", id);
-      if (error) throw error;
-      toast.success("Deleted successfully");
-      fetchData();
-    } catch (err) {
-      toast.error("Failed to delete");
-      console.error(err);
-    }
+      try {
+        const { error } = await supabase.from(table).delete().eq("id", id);
+        if (error) throw error;
+        Swal.fire({
+          icon: "success",
+          title: "Deleted!",
+          text: "Item has been deleted successfully",
+          confirmButtonColor: "#047F86",
+        });
+        fetchData();
+      } catch (err) {
+        Swal.fire({
+          icon: "error",
+          title: "Failed to Delete",
+          text: "An error occurred while deleting the item",
+          confirmButtonColor: "#047F86",
+        });
+        console.error(err);
+      }
+    });
   };
 
   const updateStatus = async (id: string, table: string, newStatus: string) => {
@@ -156,10 +198,22 @@ export default function AdminDashboard() {
         .update({ [statusField]: newStatus })
         .eq("id", id);
       if (error) throw error;
-      toast.success("Status updated");
+      Swal.fire({
+        icon: "success",
+        title: "Status Updated!",
+        text: `Status changed to: ${newStatus}`,
+        confirmButtonColor: "#047F86",
+        timer: 2000,
+        showConfirmButton: false,
+      });
       fetchData();
     } catch (err) {
-      toast.error("Failed to update status");
+      Swal.fire({
+        icon: "error",
+        title: "Failed to Update Status",
+        text: "An error occurred while updating the status",
+        confirmButtonColor: "#047F86",
+      });
       console.error(err);
     }
   };
@@ -176,19 +230,53 @@ export default function AdminDashboard() {
     }
 
     try {
+      // Prepare job data without id and timestamps
+      const jobData = {
+        title: jobForm.title.trim(),
+        department: jobForm.department.trim(),
+        location: jobForm.location.trim(),
+        job_type: jobForm.job_type.trim(),
+        experience_required: jobForm.experience_required.trim(),
+        description: jobForm.description.trim(),
+        requirements: Array.isArray(jobForm.requirements)
+          ? jobForm.requirements
+          : [],
+        benefits: Array.isArray(jobForm.benefits) ? jobForm.benefits : [],
+        is_active: Boolean(jobForm.is_active),
+      };
+
       if (editingJob?.id) {
         // Update existing job
         const { error } = await supabase
           .from("jobs")
-          .update(jobForm)
+          .update(jobData)
           .eq("id", editingJob.id);
-        if (error) throw error;
-        toast.success("Job updated successfully");
+        if (error) {
+          console.error("Update error:", error);
+          throw error;
+        }
+        Swal.fire({
+          icon: "success",
+          title: "Job Updated!",
+          text: `${jobForm.title} has been updated successfully`,
+          confirmButtonColor: "#047F86",
+        });
       } else {
         // Create new job
-        const { error } = await supabase.from("jobs").insert([jobForm]);
-        if (error) throw error;
-        toast.success("Job created successfully");
+        const { error, data } = await supabase
+          .from("jobs")
+          .insert([jobData])
+          .select();
+        if (error) {
+          console.error("Insert error:", error);
+          throw error;
+        }
+        Swal.fire({
+          icon: "success",
+          title: "Job Created!",
+          text: `${jobForm.title} position has been added successfully`,
+          confirmButtonColor: "#047F86",
+        });
       }
       setShowJobModal(false);
       setEditingJob(null);
@@ -204,9 +292,28 @@ export default function AdminDashboard() {
         is_active: true,
       });
       fetchData();
-    } catch (err) {
-      toast.error("Failed to save job");
-      console.error(err);
+    } catch (err: any) {
+      console.error("Save job error:", err);
+
+      // Handle RLS policy violations
+      if (
+        err?.message?.includes("row-level security") ||
+        err?.code === "PGRST301"
+      ) {
+        Swal.fire({
+          icon: "error",
+          title: "Permission Denied",
+          text: "Check RLS policies in Supabase for the jobs table",
+          confirmButtonColor: "#047F86",
+        });
+      } else {
+        Swal.fire({
+          icon: "error",
+          title: "Failed to Save Job",
+          text: err?.message || "An error occurred while saving the job",
+          confirmButtonColor: "#047F86",
+        });
+      }
     }
   };
 
@@ -217,8 +324,8 @@ export default function AdminDashboard() {
   };
 
   const handleOpenNewJobModal = () => {
-    setEditingJob(null);
-    setJobForm({
+    // Clear all form state first
+    const emptyForm: Job = {
       title: "",
       department: "",
       location: "",
@@ -228,8 +335,11 @@ export default function AdminDashboard() {
       requirements: [],
       benefits: [],
       is_active: true,
-    });
-    setShowJobModal(true);
+    };
+    setJobForm(emptyForm);
+    setEditingJob(null);
+    // Then show modal
+    setTimeout(() => setShowJobModal(true), 0);
   };
 
   const exportToCSV = () => {
@@ -242,13 +352,21 @@ export default function AdminDashboard() {
     } else if (activeTab === "quote") {
       data = quotes;
       filename = "quotes.csv";
-    } else {
+    } else if (activeTab === "application") {
       data = applications;
       filename = "applications.csv";
+    } else {
+      data = jobs;
+      filename = "jobs.csv";
     }
 
     if (data.length === 0) {
-      toast.error("No data to export");
+      Swal.fire({
+        icon: "warning",
+        title: "No Data to Export",
+        text: "There are no records to export for this category",
+        confirmButtonColor: "#047F86",
+      });
       return;
     }
 
@@ -267,7 +385,14 @@ export default function AdminDashboard() {
     a.href = url;
     a.download = filename;
     a.click();
-    toast.success("Exported successfully");
+    Swal.fire({
+      icon: "success",
+      title: "Exported Successfully!",
+      text: `${filename} has been downloaded with ${data.length} records`,
+      confirmButtonColor: "#047F86",
+      timer: 2000,
+      showConfirmButton: false,
+    });
   };
 
   const getStatusColor = (status: string) => {
@@ -286,7 +411,6 @@ export default function AdminDashboard() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Header />
-      <Toaster position="top-right" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="mb-8">
@@ -458,7 +582,21 @@ export default function AdminDashboard() {
             setJobForm((prev) => ({ ...prev, [field]: value }))
           }
           onSave={handleSaveJob}
-          onClose={() => setShowJobModal(false)}
+          onClose={() => {
+            setShowJobModal(false);
+            setEditingJob(null);
+            setJobForm({
+              title: "",
+              department: "",
+              location: "",
+              job_type: "",
+              experience_required: "",
+              description: "",
+              requirements: [],
+              benefits: [],
+              is_active: true,
+            });
+          }}
         />
       )}
     </div>

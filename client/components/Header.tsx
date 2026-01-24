@@ -6,6 +6,9 @@ export default function Header() {
   const [solutionsOpen, setSolutionsOpen] = useState(false);
   const [solarOpen, setSolarOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
+  const [activeSolutionSubmenu, setActiveSolutionSubmenu] = useState<
+    string | null
+  >(null);
 
   return (
     <header className="sticky top-0 z-50 w-full bg-background border-b border-border">
@@ -72,20 +75,71 @@ export default function Header() {
               {/* Solutions Submenu */}
               <div
                 onMouseEnter={() => setSolutionsOpen(true)}
-                onMouseLeave={() => setSolutionsOpen(false)}
-                className={`absolute top-full left-0 mt-0 bg-card border border-border rounded-none w-56 shadow-xl transition-all duration-200 ${
+                onMouseLeave={() => {
+                  setSolutionsOpen(false);
+                  setActiveSolutionSubmenu(null);
+                }}
+                className={`absolute top-full left-0 mt-0 bg-card border border-border rounded-none shadow-xl transition-all duration-200 overflow-visible z-50 ${
                   solutionsOpen
                     ? "opacity-100 visible translate-y-0"
                     : "opacity-0 invisible -translate-y-2"
                 }`}
+                style={{ width: "auto", minWidth: "224px" }}
               >
                 <div className="py-2">
-                  <Link
-                    to="/solutions/solar"
-                    className="block px-6 py-3 text-sm text-black hover:text-cyan hover:bg-background/50 transition-colors border-b border-border"
+                  {/* Solar with Submenu */}
+                  <div
+                    className="relative group/solar"
+                    onMouseEnter={() => setActiveSolutionSubmenu("solar")}
+                    onMouseLeave={() => setActiveSolutionSubmenu(null)}
                   >
-                    Solar
-                  </Link>
+                    <button
+                      className="w-full flex items-center justify-between px-6 py-3 text-sm text-black hover:text-cyan hover:bg-background/50 transition-colors border-b border-border"
+                      onMouseEnter={() => setActiveSolutionSubmenu("solar")}
+                    >
+                      Solar
+                      <ChevronDown className="w-4 h-4 rotate-180" />
+                    </button>
+
+                    {/* Solar Subcategories */}
+                    <div
+                      className={`absolute top-0 bg-card border border-border rounded-sm w-48 shadow-2xl transition-all duration-200 z-50 ${
+                        activeSolutionSubmenu === "solar"
+                          ? "opacity-100 visible"
+                          : "opacity-0 invisible"
+                      }`}
+                      style={{
+                        left: "100%",
+                        pointerEvents:
+                          activeSolutionSubmenu === "solar" ? "auto" : "none",
+                        marginLeft: "0px",
+                      }}
+                      onMouseEnter={() => setActiveSolutionSubmenu("solar")}
+                      onMouseLeave={() => setActiveSolutionSubmenu(null)}
+                    >
+                      <div className="py-2">
+                        <Link
+                          to="/solutions/solar?category=residential"
+                          className="block px-6 py-3 text-sm text-black hover:text-cyan hover:bg-background/50 transition-colors border-b border-border last:border-b-0"
+                        >
+                          Residential (B2C)
+                        </Link>
+                        <Link
+                          to="/solutions/solar?category=commercial"
+                          className="block px-6 py-3 text-sm text-black hover:text-cyan hover:bg-background/50 transition-colors border-b border-border last:border-b-0"
+                        >
+                          Commercial (B2B)
+                        </Link>
+                        <Link
+                          to="/solutions/solar?category=government"
+                          className="block px-6 py-3 text-sm text-black hover:text-cyan hover:bg-background/50 transition-colors last:border-b-0"
+                        >
+                          Government (B2G)
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+
                   <Link
                     to="/solutions/wind"
                     className="block px-6 py-3 text-sm text-black hover:text-cyan hover:bg-background/50 transition-colors border-b border-border"

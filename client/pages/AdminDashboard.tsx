@@ -177,10 +177,22 @@ export default function AdminDashboard() {
         .update({ [statusField]: newStatus })
         .eq("id", id);
       if (error) throw error;
-      toast.success("Status updated");
+      Swal.fire({
+        icon: "success",
+        title: "Status Updated!",
+        text: `Status changed to: ${newStatus}`,
+        confirmButtonColor: "#047F86",
+        timer: 2000,
+        showConfirmButton: false,
+      });
       fetchData();
     } catch (err) {
-      toast.error("Failed to update status");
+      Swal.fire({
+        icon: "error",
+        title: "Failed to Update Status",
+        text: "An error occurred while updating the status",
+        confirmButtonColor: "#047F86",
+      });
       console.error(err);
     }
   };

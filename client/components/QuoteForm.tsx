@@ -24,7 +24,7 @@ export default function QuoteForm() {
   const handleChange = (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-    >
+    >,
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
@@ -58,7 +58,7 @@ export default function QuoteForm() {
       }
 
       toast.success(
-        "Quote request submitted! We'll contact you within 24 hours."
+        "Quote request submitted! We'll contact you within 24 hours.",
       );
       setFormData({
         full_name: "",

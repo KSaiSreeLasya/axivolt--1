@@ -24,13 +24,13 @@
     --primary: 183 94% 27%;
     --primary-foreground: 202 40% 12%;
 
-    --secondary: 75 78% 54%;
+    --secondary: 179 94% 27%;
     --secondary-foreground: 202 40% 12%;
 
     --muted: 202 40% 25%;
     --muted-foreground: 0 0% 70%;
 
-    --accent: 75 78% 54%;
+    --accent: 179 94% 27%;
     --accent-foreground: 202 40% 12%;
 
     --destructive: 0 84.2% 60.2%;
@@ -59,7 +59,7 @@
     --sidebar-ring: 183 94% 27%;
 
     --cyan: 183 94% 27%;
-    --yellow-green: 75 78% 54%;
+    --yellow-green: 179 94% 27%;
     --navy-blue: 208 47% 18%;
   }
 

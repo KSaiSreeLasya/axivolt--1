@@ -1,4 +1,6 @@
+import { useState } from "react";
 import Header from "@/components/Header";
+import JobApplicationForm from "@/components/JobApplicationForm";
 import {
   ArrowRight,
   Briefcase,
@@ -8,7 +10,20 @@ import {
   Heart,
 } from "lucide-react";
 
+interface Job {
+  title: string;
+  department: string;
+  type: string;
+  location: string;
+  experience: string;
+  description: string;
+  requirements: string[];
+  benefits: string[];
+}
+
 export default function Careers() {
+  const [selectedJob, setSelectedJob] = useState<Job | null>(null);
+
   const values = [
     {
       title: "Innovation & Creativity",
@@ -28,13 +43,31 @@ export default function Careers() {
     },
   ];
 
-  const jobs = [
+  const jobs: Job[] = [
     {
       title: "Solar Engineer",
       department: "Engineering",
       type: "Full-time",
       location: "Remote/On-site",
       experience: "3+ years",
+      description:
+        "Lead the design and implementation of utility-scale solar projects, working with cutting-edge technology to drive renewable energy adoption. You'll collaborate with our engineering team to develop innovative solutions that optimize energy generation and system efficiency.",
+      requirements: [
+        "Bachelor's degree in Electrical/Mechanical Engineering",
+        "3+ years experience in solar project development",
+        "PV system design and analysis expertise",
+        "Knowledge of grid interconnection standards",
+        "Experience with AutoCAD, PVsyst, or similar tools",
+        "Strong problem-solving and communication skills",
+      ],
+      benefits: [
+        "Health Insurance with 40% match",
+        "Flexible Hours",
+        "Remote Work Options",
+        "Career Growth Opportunities",
+        "Performance Bonus",
+        "Stock Options",
+      ],
     },
     {
       title: "Wind Energy Analyst",
@@ -42,6 +75,24 @@ export default function Careers() {
       type: "Full-time",
       location: "Bangalore",
       experience: "2+ years",
+      description:
+        "Analyze wind resources and conduct feasibility studies for wind energy projects. Work with advanced modeling software and data analysis tools to identify optimal project locations and predict energy generation potential. Contribute to the development of wind energy strategies.",
+      requirements: [
+        "Bachelor's degree in Engineering, Physics, or Environmental Science",
+        "2+ years of experience in wind energy analysis",
+        "Proficiency with WAsP, WindPRO, or similar tools",
+        "Strong data analysis and statistical skills",
+        "Knowledge of meteorological data and wind assessment",
+        "Excellent documentation and presentation abilities",
+      ],
+      benefits: [
+        "Health Insurance",
+        "Flexible Hours",
+        "Team Outings",
+        "Training Programs",
+        "Competitive Salary",
+        "Mental Health Support",
+      ],
     },
     {
       title: "Digital Solutions Developer",
@@ -49,6 +100,24 @@ export default function Careers() {
       type: "Full-time",
       location: "Remote",
       experience: "4+ years",
+      description:
+        "Build and maintain digital solutions for renewable energy management and monitoring. Develop full-stack applications that help clients track energy generation, optimize consumption, and integrate with smart grid technologies.",
+      requirements: [
+        "Bachelor's degree in Computer Science/Engineering",
+        "4+ years of full-stack development experience",
+        "Proficiency in React, Node.js, and databases",
+        "Experience with IoT and real-time data systems",
+        "API development and integration expertise",
+        "Cloud platform experience (AWS/GCP/Azure)",
+      ],
+      benefits: [
+        "Health Insurance",
+        "Remote Work Options",
+        "Flexible Hours",
+        "Professional Development",
+        "Performance Bonus",
+        "Wellness Programs",
+      ],
     },
     {
       title: "Project Manager - Renewable Energy",
@@ -56,6 +125,24 @@ export default function Careers() {
       type: "Full-time",
       location: "Bangalore/Pune",
       experience: "5+ years",
+      description:
+        "Oversee end-to-end renewable energy projects from conception to completion. Manage budgets, timelines, stakeholder relationships, and teams. Ensure projects meet technical specifications, quality standards, and regulatory requirements.",
+      requirements: [
+        "Bachelor's degree in Engineering/Business/Project Management",
+        "5+ years of project management in renewable energy",
+        "PMP or equivalent certification preferred",
+        "Strong leadership and team management skills",
+        "Experience with project management tools (MS Project, Asana, etc.)",
+        "Budget management and cost control expertise",
+      ],
+      benefits: [
+        "Health Insurance with 50% match",
+        "Flexible Hours",
+        "Remote Work Options",
+        "Career Growth",
+        "Performance Bonus",
+        "Leadership Training",
+      ],
     },
     {
       title: "Business Development Specialist",
@@ -63,6 +150,24 @@ export default function Careers() {
       type: "Full-time",
       location: "Pan India",
       experience: "3+ years",
+      description:
+        "Identify and develop new business opportunities in the renewable energy sector. Build and maintain client relationships, conduct market research, and prepare proposals for potential projects. Contribute to business strategy and growth initiatives.",
+      requirements: [
+        "Bachelor's degree in Business/Commerce/Engineering",
+        "3+ years of B2B sales experience",
+        "Strong understanding of renewable energy market",
+        "Excellent negotiation and communication skills",
+        "Experience in enterprise sales cycles",
+        "CRM software proficiency",
+      ],
+      benefits: [
+        "Competitive Salary",
+        "Performance Bonus",
+        "Flexible Hours",
+        "Remote Work Options",
+        "Travel Opportunities",
+        "Incentive Programs",
+      ],
     },
     {
       title: "Sustainability Consultant",
@@ -70,6 +175,24 @@ export default function Careers() {
       type: "Full-time",
       location: "Remote",
       experience: "6+ years",
+      description:
+        "Provide strategic consulting on sustainability and renewable energy implementation. Help clients develop comprehensive energy strategies, conduct sustainability assessments, and identify cost-saving opportunities through renewable energy adoption.",
+      requirements: [
+        "Master's degree in Sustainability/Energy Management or 6+ years experience",
+        "Deep knowledge of renewable energy policies and incentives",
+        "Experience in energy audits and sustainability reporting",
+        "Strong analytical and strategic thinking skills",
+        "Client management and presentation expertise",
+        "Knowledge of ESG and carbon accounting frameworks",
+      ],
+      benefits: [
+        "Health Insurance",
+        "Flexible Hours",
+        "Remote Work Options",
+        "Professional Development Funds",
+        "Performance Bonus",
+        "Wellness Programs",
+      ],
     },
   ];
 
@@ -173,6 +296,7 @@ export default function Careers() {
                     </div>
                     <div className="flex-1">
                       <h3 className="text-lg font-bold mb-2">{job.title}</h3>
+                      <p className="text-sm text-gray-400 mb-3">{job.description.substring(0, 100)}...</p>
                       <div className="flex flex-wrap gap-4 text-sm text-gray-400">
                         <span>📍 {job.location}</span>
                         <span>💼 {job.department}</span>
@@ -182,7 +306,10 @@ export default function Careers() {
                     </div>
                   </div>
                 </div>
-                <button className="bg-cyan text-background px-6 py-2 rounded font-semibold hover:bg-yellow-green transition-all text-sm flex-shrink-0">
+                <button
+                  onClick={() => setSelectedJob(job)}
+                  className="bg-cyan text-background px-6 py-2 rounded font-semibold hover:bg-yellow-green transition-all text-sm flex-shrink-0 ml-4"
+                >
                   Apply Now
                 </button>
               </div>
@@ -316,6 +443,11 @@ export default function Careers() {
           <p>&copy; 2024 AXIVOLT. All rights reserved.</p>
         </div>
       </footer>
+
+      {/* Job Application Modal */}
+      {selectedJob && (
+        <JobApplicationForm job={selectedJob} onClose={() => setSelectedJob(null)} />
+      )}
     </div>
   );
 }

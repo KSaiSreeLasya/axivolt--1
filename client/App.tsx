@@ -15,6 +15,7 @@ import Careers from "./pages/Careers";
 import About from "./pages/About";
 import ContactUs from "./pages/ContactUs";
 import GetQuote from "./pages/GetQuote";
+import AdminDashboard from "./pages/AdminDashboard";
 import NotFound from "./pages/NotFound";
 import Solutions from "./pages/Solutions";
 import Solar from "./pages/Solar";
@@ -37,6 +38,7 @@ const App = () => (
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/quote" element={<GetQuote />} />
+          <Route path="/admin" element={<AdminDashboard />} />
           <Route path="/advisory" element={<Advisory />} />
           <Route path="/procurement" element={<Procurement />} />
           <Route path="/digital-solutions" element={<DigitalSolutions />} />

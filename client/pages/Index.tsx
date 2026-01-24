@@ -105,7 +105,7 @@ export default function Index() {
                     width="160"
                     height="40"
                     rx="5"
-                    fill="#afe332"
+                    fill="#047F86"
                     opacity="0.8"
                   />
 
@@ -164,7 +164,7 @@ export default function Index() {
                     cx="350"
                     cy="60"
                     r="30"
-                    fill="#afe332"
+                    fill="#047F86"
                     opacity="0.9"
                   />
                   <line
@@ -172,7 +172,7 @@ export default function Index() {
                     y1="15"
                     x2="350"
                     y2="0"
-                    stroke="#afe332"
+                    stroke="#047F86"
                     strokeWidth="3"
                   />
                   <line
@@ -180,7 +180,7 @@ export default function Index() {
                     y1="105"
                     x2="350"
                     y2="120"
-                    stroke="#afe332"
+                    stroke="#047F86"
                     strokeWidth="3"
                   />
                   <line
@@ -188,7 +188,7 @@ export default function Index() {
                     y1="60"
                     x2="285"
                     y2="60"
-                    stroke="#afe332"
+                    stroke="#047F86"
                     strokeWidth="3"
                   />
                   <line
@@ -196,7 +196,7 @@ export default function Index() {
                     y1="60"
                     x2="415"
                     y2="60"
-                    stroke="#afe332"
+                    stroke="#047F86"
                     strokeWidth="3"
                   />
                 </svg>

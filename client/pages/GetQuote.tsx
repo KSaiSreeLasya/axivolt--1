@@ -351,7 +351,7 @@ export default function GetQuote() {
                 {/* Submit Button */}
                 <button
                   type="submit"
-                  className="w-full bg-cyan text-background px-6 py-3 rounded font-bold hover:bg-[#AFE332] transition-all"
+                  className="w-full bg-cyan text-background px-6 py-3 rounded font-bold hover:bg-[#047F86] transition-all"
                 >
                   Submit Details
                 </button>

@@ -33,11 +33,11 @@ export default function Header() {
                 />
                 <path
                   d="M 130 50 L 160 80 L 150 130 Q 140 140 130 135 L 115 100 Z"
-                  fill="#afe332"
+                  fill="#047F86"
                 />
                 <path
                   d="M 145 60 Q 160 75 155 110"
-                  stroke="#afe332"
+                  stroke="#047F86"
                   strokeWidth="10"
                   fill="none"
                   strokeLinecap="round"

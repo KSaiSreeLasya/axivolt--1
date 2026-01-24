@@ -236,8 +236,8 @@ export default function AdminDashboard() {
   };
 
   const handleOpenNewJobModal = () => {
-    setEditingJob(null);
-    setJobForm({
+    // Clear all form state first
+    const emptyForm: Job = {
       title: "",
       department: "",
       location: "",
@@ -247,8 +247,11 @@ export default function AdminDashboard() {
       requirements: [],
       benefits: [],
       is_active: true,
-    });
-    setShowJobModal(true);
+    };
+    setJobForm(emptyForm);
+    setEditingJob(null);
+    // Then show modal
+    setTimeout(() => setShowJobModal(true), 0);
   };
 
   const exportToCSV = () => {

@@ -18,6 +18,7 @@ import GetQuote from "./pages/GetQuote";
 import AdminDashboard from "./pages/AdminDashboard";
 import NotFound from "./pages/NotFound";
 import Solutions from "./pages/Solutions";
+import Services from "./pages/Services";
 import Solar from "./pages/Solar";
 import SolarResidential from "./pages/SolarResidential";
 import SolarCommercial from "./pages/SolarCommercial";

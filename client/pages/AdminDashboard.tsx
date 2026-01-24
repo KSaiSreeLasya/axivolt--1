@@ -238,9 +238,19 @@ export default function AdminDashboard() {
 
       // Handle RLS policy violations
       if (err?.message?.includes("row-level security") || err?.code === "PGRST301") {
-        toast.error("Permission denied: Check RLS policies in Supabase for the jobs table");
+        Swal.fire({
+          icon: "error",
+          title: "Permission Denied",
+          text: "Check RLS policies in Supabase for the jobs table",
+          confirmButtonColor: "#047F86",
+        });
       } else {
-        toast.error(err?.message || "Failed to save job");
+        Swal.fire({
+          icon: "error",
+          title: "Failed to Save Job",
+          text: err?.message || "An error occurred while saving the job",
+          confirmButtonColor: "#047F86",
+        });
       }
     }
   };

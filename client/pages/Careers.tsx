@@ -76,6 +76,7 @@ export default function Careers() {
       job_type: "Full-time",
       location: "Remote/On-site",
       experience_required: "3+ years",
+      is_active: true,
       description:
         "Lead the design and implementation of utility-scale solar projects, working with cutting-edge technology to drive renewable energy adoption. You'll collaborate with our engineering team to develop innovative solutions that optimize energy generation and system efficiency.",
       requirements: [
@@ -101,6 +102,7 @@ export default function Careers() {
       job_type: "Full-time",
       location: "Bangalore",
       experience_required: "2+ years",
+      is_active: true,
       description:
         "Analyze wind resources and conduct feasibility studies for wind energy projects. Work with advanced modeling software and data analysis tools to identify optimal project locations and predict energy generation potential. Contribute to the development of wind energy strategies.",
       requirements: [
@@ -126,6 +128,7 @@ export default function Careers() {
       job_type: "Full-time",
       location: "Remote",
       experience_required: "4+ years",
+      is_active: true,
       description:
         "Build and maintain digital solutions for renewable energy management and monitoring. Develop full-stack applications that help clients track energy generation, optimize consumption, and integrate with smart grid technologies.",
       requirements: [
@@ -151,6 +154,7 @@ export default function Careers() {
       job_type: "Full-time",
       location: "Bangalore/Pune",
       experience_required: "5+ years",
+      is_active: true,
       description:
         "Oversee end-to-end renewable energy projects from conception to completion. Manage budgets, timelines, stakeholder relationships, and teams. Ensure projects meet technical specifications, quality standards, and regulatory requirements.",
       requirements: [
@@ -176,6 +180,7 @@ export default function Careers() {
       job_type: "Full-time",
       location: "Pan India",
       experience_required: "3+ years",
+      is_active: true,
       description:
         "Identify and develop new business opportunities in the renewable energy sector. Build and maintain client relationships, conduct market research, and prepare proposals for potential projects. Contribute to business strategy and growth initiatives.",
       requirements: [
@@ -201,6 +206,7 @@ export default function Careers() {
       job_type: "Full-time",
       location: "Remote",
       experience_required: "6+ years",
+      is_active: true,
       description:
         "Provide strategic consulting on sustainability and renewable energy implementation. Help clients develop comprehensive energy strategies, conduct sustainability assessments, and identify cost-saving opportunities through renewable energy adoption.",
       requirements: [

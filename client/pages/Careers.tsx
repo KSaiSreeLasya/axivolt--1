@@ -12,14 +12,18 @@ import {
 } from "lucide-react";
 
 interface Job {
+  id?: string;
   title: string;
   department: string;
-  type: string;
+  job_type: string;
   location: string;
-  experience: string;
+  experience_required: string;
   description: string;
   requirements: string[];
   benefits: string[];
+  is_active?: boolean;
+  created_at?: string;
+  updated_at?: string;
 }
 
 export default function Careers() {

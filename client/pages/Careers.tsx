@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Header from "@/components/Header";
 import JobApplicationForm from "@/components/JobApplicationForm";
+import { supabase } from "@/lib/supabase";
 import {
   ArrowRight,
   Briefcase,
@@ -23,6 +24,31 @@ interface Job {
 
 export default function Careers() {
   const [selectedJob, setSelectedJob] = useState<Job | null>(null);
+  const [jobs, setJobs] = useState<Job[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetchJobs();
+  }, []);
+
+  const fetchJobs = async () => {
+    try {
+      const { data, error } = await supabase
+        .from("jobs")
+        .select("*")
+        .eq("is_active", true)
+        .order("created_at", { ascending: false });
+
+      if (error) throw error;
+      setJobs(data || []);
+    } catch (err) {
+      console.error("Failed to fetch jobs:", err);
+      // Fallback to static jobs if fetch fails
+      setJobs(defaultJobs);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   const values = [
     {
@@ -43,7 +69,7 @@ export default function Careers() {
     },
   ];
 
-  const jobs: Job[] = [
+  const defaultJobs: Job[] = [
     {
       title: "Solar Engineer",
       department: "Engineering",

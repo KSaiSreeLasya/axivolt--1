@@ -309,40 +309,50 @@ export default function Careers() {
             </p>
           </div>
 
-          <div className="space-y-4">
-            {jobs.map((job, idx) => (
-              <div
-                key={idx}
-                className="bg-card rounded-lg border border-border p-6 hover:border-cyan transition-all flex items-center justify-between"
-              >
-                <div className="flex-1">
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-cyan/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <Briefcase className="w-6 h-6 text-cyan" />
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="text-lg font-bold mb-2">{job.title}</h3>
-                      <p className="text-sm text-black mb-3">
-                        {job.description.substring(0, 100)}...
-                      </p>
-                      <div className="flex flex-wrap gap-4 text-sm text-black">
-                        <span>📍 {job.location}</span>
-                        <span>💼 {job.department}</span>
-                        <span>⏱️ {job.type}</span>
-                        <span>📊 {job.experience}</span>
+          {loading ? (
+            <div className="text-center py-12">
+              <p className="text-black">Loading positions...</p>
+            </div>
+          ) : jobs.length === 0 ? (
+            <div className="text-center py-12 bg-card rounded-lg border border-border">
+              <p className="text-black">No open positions at this time. Check back soon!</p>
+            </div>
+          ) : (
+            <div className="space-y-4">
+              {jobs.map((job, idx) => (
+                <div
+                  key={idx}
+                  className="bg-card rounded-lg border border-border p-6 hover:border-cyan transition-all flex items-center justify-between"
+                >
+                  <div className="flex-1">
+                    <div className="flex items-start gap-4">
+                      <div className="w-12 h-12 bg-cyan/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <Briefcase className="w-6 h-6 text-cyan" />
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="text-lg font-bold mb-2">{job.title}</h3>
+                        <p className="text-sm text-black mb-3">
+                          {job.description.substring(0, 100)}...
+                        </p>
+                        <div className="flex flex-wrap gap-4 text-sm text-black">
+                          <span>📍 {job.location}</span>
+                          <span>💼 {job.department}</span>
+                          <span>⏱️ {job.job_type}</span>
+                          <span>📊 {job.experience_required}</span>
+                        </div>
                       </div>
                     </div>
                   </div>
+                  <button
+                    onClick={() => setSelectedJob(job)}
+                    className="bg-cyan text-background px-6 py-2 rounded font-semibold hover:bg-yellow-green transition-all text-sm flex-shrink-0 ml-4"
+                  >
+                    Apply Now
+                  </button>
                 </div>
-                <button
-                  onClick={() => setSelectedJob(job)}
-                  className="bg-cyan text-background px-6 py-2 rounded font-semibold hover:bg-yellow-green transition-all text-sm flex-shrink-0 ml-4"
-                >
-                  Apply Now
-                </button>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          )}
 
           <div className="text-center mt-12">
             <button className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 rounded-lg font-bold transition-all inline-flex items-center gap-2">

@@ -1,6 +1,8 @@
 import Header from "@/components/Header";
 import { useState } from "react";
 import { CheckCircle } from "lucide-react";
+import Swal from "sweetalert2";
+import { supabase } from "@/lib/supabase";
 
 interface BillRange {
   min: number;

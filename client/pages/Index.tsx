@@ -39,7 +39,7 @@ export default function Index() {
               <div className="flex gap-12 py-8">
                 <div>
                   <p className="text-3xl font-bold text-cyan">500k</p>
-                  <p className="text-sm text-gray-400">tons CO₂ saved</p>
+                  <p className="text-sm text-gray-600">tons CO₂ saved</p>
                 </div>
                 <div>
                   <p className="text-3xl font-bold text-yellow-green">350+</p>

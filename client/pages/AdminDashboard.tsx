@@ -225,7 +225,13 @@ export default function AdminDashboard() {
       fetchData();
     } catch (err: any) {
       console.error("Save job error:", err);
-      toast.error(err?.message || "Failed to save job");
+
+      // Handle RLS policy violations
+      if (err?.message?.includes("row-level security") || err?.code === "PGRST301") {
+        toast.error("Permission denied: Check RLS policies in Supabase for the jobs table");
+      } else {
+        toast.error(err?.message || "Failed to save job");
+      }
     }
   };
 

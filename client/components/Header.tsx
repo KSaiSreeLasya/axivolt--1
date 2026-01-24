@@ -100,13 +100,15 @@ export default function Header() {
 
                     {/* Solar Subcategories */}
                     <div
-                      className={`absolute left-56 top-0 bg-card border border-border rounded-sm w-48 shadow-2xl transition-all duration-200 ${
+                      className={`absolute top-0 bg-card border border-border rounded-sm w-48 shadow-2xl transition-all duration-200 z-50 ${
                         activeSolutionSubmenu === "solar"
                           ? "opacity-100 visible"
                           : "opacity-0 invisible"
                       }`}
                       style={{
+                        left: "100%",
                         pointerEvents: activeSolutionSubmenu === "solar" ? "auto" : "none",
+                        marginLeft: "0px",
                       }}
                       onMouseEnter={() => setActiveSolutionSubmenu("solar")}
                       onMouseLeave={() => setActiveSolutionSubmenu(null)}

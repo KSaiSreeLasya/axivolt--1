@@ -72,7 +72,6 @@ export default function ContactForm() {
 
   return (
     <div className="bg-card rounded-xl border border-border p-8">
-      <Toaster position="top-right" />
       <h2 className="text-2xl font-bold mb-2">Get in Touch</h2>
       <p className="text-gray-400 mb-8">
         Have questions? We'd love to hear from you. Send us a message!

@@ -321,7 +321,9 @@ export default function Careers() {
             </div>
           ) : jobs.length === 0 ? (
             <div className="text-center py-12 bg-card rounded-lg border border-border">
-              <p className="text-black">No open positions at this time. Check back soon!</p>
+              <p className="text-black">
+                No open positions at this time. Check back soon!
+              </p>
             </div>
           ) : (
             <div className="space-y-4">

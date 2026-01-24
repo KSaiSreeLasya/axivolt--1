@@ -167,10 +167,10 @@ export default function AdminDashboard() {
   const handleSaveJob = async () => {
     if (!jobForm.title || !jobForm.department || !jobForm.location) {
       Swal.fire({
-        icon: 'warning',
-        title: 'Missing Fields',
-        text: 'Please fill in all required fields',
-        confirmButtonColor: '#047F86',
+        icon: "warning",
+        title: "Missing Fields",
+        text: "Please fill in all required fields",
+        confirmButtonColor: "#047F86",
       });
       return;
     }
@@ -257,7 +257,7 @@ export default function AdminDashboard() {
       ...data.map((item) =>
         Object.values(item)
           .map((v) => `"${v}"`)
-          .join(",")
+          .join(","),
       ),
     ].join("\n");
 
@@ -491,7 +491,10 @@ function ContactsTable({
         </thead>
         <tbody>
           {contacts.map((contact) => (
-            <tr key={contact.id} className="border-b border-border hover:bg-card/50">
+            <tr
+              key={contact.id}
+              className="border-b border-border hover:bg-card/50"
+            >
               <td className="py-3 px-4">{contact.full_name}</td>
               <td className="py-3 px-4">{contact.email}</td>
               <td className="py-3 px-4 truncate">{contact.subject}</td>
@@ -541,7 +544,9 @@ function QuotesTable({
   getStatusColor,
 }: any) {
   if (quotes.length === 0) {
-    return <p className="text-gray-400 text-center py-8">No quote requests yet</p>;
+    return (
+      <p className="text-gray-400 text-center py-8">No quote requests yet</p>
+    );
   }
 
   return (
@@ -560,7 +565,10 @@ function QuotesTable({
         </thead>
         <tbody>
           {quotes.map((quote) => (
-            <tr key={quote.id} className="border-b border-border hover:bg-card/50">
+            <tr
+              key={quote.id}
+              className="border-b border-border hover:bg-card/50"
+            >
               <td className="py-3 px-4">{quote.full_name}</td>
               <td className="py-3 px-4">{quote.email}</td>
               <td className="py-3 px-4">{quote.project_type}</td>
@@ -612,7 +620,9 @@ function ApplicationsTable({
   getStatusColor,
 }: any) {
   if (applications.length === 0) {
-    return <p className="text-gray-400 text-center py-8">No applications yet</p>;
+    return (
+      <p className="text-gray-400 text-center py-8">No applications yet</p>
+    );
   }
 
   return (
@@ -630,7 +640,10 @@ function ApplicationsTable({
         </thead>
         <tbody>
           {applications.map((app) => (
-            <tr key={app.id} className="border-b border-border hover:bg-card/50">
+            <tr
+              key={app.id}
+              className="border-b border-border hover:bg-card/50"
+            >
               <td className="py-3 px-4">{app.full_name}</td>
               <td className="py-3 px-4">{app.email}</td>
               <td className="py-3 px-4">{app.phone}</td>
@@ -675,7 +688,11 @@ function ApplicationsTable({
 
 function JobsTable({ jobs, onEdit, onDelete, onToggleActive }: any) {
   if (jobs.length === 0) {
-    return <p className="text-gray-400 text-center py-8">No jobs yet. Click "Add New Job" to create one.</p>;
+    return (
+      <p className="text-gray-400 text-center py-8">
+        No jobs yet. Click "Add New Job" to create one.
+      </p>
+    );
   }
 
   return (
@@ -694,13 +711,18 @@ function JobsTable({ jobs, onEdit, onDelete, onToggleActive }: any) {
         </thead>
         <tbody>
           {jobs.map((job: any) => (
-            <tr key={job.id} className="border-b border-border hover:bg-card/50">
+            <tr
+              key={job.id}
+              className="border-b border-border hover:bg-card/50"
+            >
               <td className="py-3 px-4 font-medium">{job.title}</td>
               <td className="py-3 px-4">{job.department}</td>
               <td className="py-3 px-4">{job.location}</td>
               <td className="py-3 px-4 text-sm">{job.job_type}</td>
               <td className="py-3 px-4">
-                <span className={`px-3 py-1 rounded text-sm font-medium ${job.is_active ? "bg-green-500/20 text-green-400" : "bg-red-500/20 text-red-400"}`}>
+                <span
+                  className={`px-3 py-1 rounded text-sm font-medium ${job.is_active ? "bg-green-500/20 text-green-400" : "bg-red-500/20 text-red-400"}`}
+                >
                   {job.is_active ? "Active" : "Inactive"}
                 </span>
               </td>
@@ -799,22 +821,40 @@ function JobModal({ job, isEditing, onChange, onSave, onClose }: any) {
           />
 
           <div>
-            <label className="block text-sm font-medium mb-2">Requirements (comma-separated)</label>
+            <label className="block text-sm font-medium mb-2">
+              Requirements (comma-separated)
+            </label>
             <textarea
               placeholder="e.g., Bachelor's degree, 3+ years experience, Strong communication"
-              value={Array.isArray(job.requirements) ? job.requirements.join(", ") : ""}
-              onChange={(e) => onChange("requirements", e.target.value.split(",").map((r) => r.trim()))}
+              value={
+                Array.isArray(job.requirements)
+                  ? job.requirements.join(", ")
+                  : ""
+              }
+              onChange={(e) =>
+                onChange(
+                  "requirements",
+                  e.target.value.split(",").map((r) => r.trim()),
+                )
+              }
               rows={3}
               className="w-full px-4 py-2 rounded-lg bg-background border border-border text-foreground focus:border-cyan outline-none resize-none"
             />
           </div>
 
           <div>
-            <label className="block text-sm font-medium mb-2">Benefits (comma-separated)</label>
+            <label className="block text-sm font-medium mb-2">
+              Benefits (comma-separated)
+            </label>
             <textarea
               placeholder="e.g., Health Insurance, Flexible Hours, Remote Work"
               value={Array.isArray(job.benefits) ? job.benefits.join(", ") : ""}
-              onChange={(e) => onChange("benefits", e.target.value.split(",").map((b) => b.trim()))}
+              onChange={(e) =>
+                onChange(
+                  "benefits",
+                  e.target.value.split(",").map((b) => b.trim()),
+                )
+              }
               rows={3}
               className="w-full px-4 py-2 rounded-lg bg-background border border-border text-foreground focus:border-cyan outline-none resize-none"
             />
@@ -827,7 +867,9 @@ function JobModal({ job, isEditing, onChange, onSave, onClose }: any) {
               onChange={(e) => onChange("is_active", e.target.checked)}
               className="w-4 h-4 cursor-pointer"
             />
-            <span className="text-sm">Active Job (visible on careers page)</span>
+            <span className="text-sm">
+              Active Job (visible on careers page)
+            </span>
           </label>
 
           <div className="flex gap-4 pt-4">

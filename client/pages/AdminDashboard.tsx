@@ -476,7 +476,21 @@ export default function AdminDashboard() {
             setJobForm((prev) => ({ ...prev, [field]: value }))
           }
           onSave={handleSaveJob}
-          onClose={() => setShowJobModal(false)}
+          onClose={() => {
+            setShowJobModal(false);
+            setEditingJob(null);
+            setJobForm({
+              title: "",
+              department: "",
+              location: "",
+              job_type: "",
+              experience_required: "",
+              description: "",
+              requirements: [],
+              benefits: [],
+              is_active: true,
+            });
+          }}
         />
       )}
     </div>

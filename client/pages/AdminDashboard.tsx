@@ -323,13 +323,21 @@ export default function AdminDashboard() {
     } else if (activeTab === "quote") {
       data = quotes;
       filename = "quotes.csv";
-    } else {
+    } else if (activeTab === "application") {
       data = applications;
       filename = "applications.csv";
+    } else {
+      data = jobs;
+      filename = "jobs.csv";
     }
 
     if (data.length === 0) {
-      toast.error("No data to export");
+      Swal.fire({
+        icon: "warning",
+        title: "No Data to Export",
+        text: "There are no records to export for this category",
+        confirmButtonColor: "#047F86",
+      });
       return;
     }
 
@@ -348,7 +356,14 @@ export default function AdminDashboard() {
     a.href = url;
     a.download = filename;
     a.click();
-    toast.success("Exported successfully");
+    Swal.fire({
+      icon: "success",
+      title: "Exported Successfully!",
+      text: `${filename} has been downloaded with ${data.length} records`,
+      confirmButtonColor: "#047F86",
+      timer: 2000,
+      showConfirmButton: false,
+    });
   };
 
   const getStatusColor = (status: string) => {

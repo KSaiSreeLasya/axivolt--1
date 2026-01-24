@@ -12,8 +12,8 @@
    * A different format will require also updating the theme in tailwind.config.ts.
   */
   :root {
-    --background: 202 40% 12%;
-    --foreground: 0 0% 100%;
+    --background: 0 0% 100%;
+    --foreground: 0 0% 0%;
 
     --card: 202 40% 18%;
     --card-foreground: 0 0% 100%;

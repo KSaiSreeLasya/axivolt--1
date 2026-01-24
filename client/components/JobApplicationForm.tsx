@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { X } from "lucide-react";
 import { supabase } from "@/lib/supabase";
-import { toast } from "sonner";
+import Swal from "sweetalert2";
 
 interface Job {
   id?: string;
@@ -65,7 +65,12 @@ export default function JobApplicationForm({
           .single();
 
         if (jobError || !jobData) {
-          toast.error("Unable to find job. Please try again.");
+          Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: 'Unable to find job. Please try again.',
+            confirmButtonColor: '#047F86',
+          });
           setLoading(false);
           return;
         }
@@ -93,16 +98,23 @@ export default function JobApplicationForm({
       if (error) {
         const errorMsg =
           error instanceof Error ? error.message : JSON.stringify(error);
-        toast.error("Failed to submit application: " + errorMsg);
+        Swal.fire({
+          icon: 'error',
+          title: 'Submission Failed',
+          text: errorMsg,
+          confirmButtonColor: '#047F86',
+        });
         console.error("Supabase error:", error);
         setLoading(false);
         return;
       }
 
-      toast.success("Application submitted successfully!");
-      setSubmitted(true);
-      setLoading(false);
-      setTimeout(() => {
+      Swal.fire({
+        icon: 'success',
+        title: 'Application Submitted!',
+        text: 'Thank you for applying. We\'ll review your application and get back to you soon.',
+        confirmButtonColor: '#047F86',
+      }).then(() => {
         onClose();
         setSubmitted(false);
         setFormData({
@@ -115,10 +127,16 @@ export default function JobApplicationForm({
           linkedIn: "",
           portfolio: "",
         });
-      }, 2000);
+      });
+      setLoading(false);
     } catch (err) {
       const errorMsg = err instanceof Error ? err.message : String(err);
-      toast.error("An error occurred: " + errorMsg);
+      Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: errorMsg,
+        confirmButtonColor: '#047F86',
+      });
       console.error("Error:", err);
       setLoading(false);
     }

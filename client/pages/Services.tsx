@@ -1,5 +1,11 @@
 import Header from "@/components/Header";
-import { ArrowLeft, ArrowRight, Lightbulb, ShoppingCart, Zap } from "lucide-react";
+import {
+  ArrowLeft,
+  ArrowRight,
+  Lightbulb,
+  ShoppingCart,
+  Zap,
+} from "lucide-react";
 import { Link } from "react-router-dom";
 
 export default function Services() {

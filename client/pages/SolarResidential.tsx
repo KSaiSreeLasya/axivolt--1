@@ -53,7 +53,9 @@ export default function SolarResidential() {
 
           <div className="space-y-6">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-              <span className="text-cyan">B2C — Residential Solar Solutions</span>
+              <span className="text-cyan">
+                B2C — Residential Solar Solutions
+              </span>
             </h1>
 
             <p className="text-lg text-black300 max-w-2xl leading-relaxed">

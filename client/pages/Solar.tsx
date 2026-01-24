@@ -190,7 +190,8 @@ export default function Solar() {
               Solar Energy Solutions
             </h2>
             <p className="text-black300">
-              Choose your application to view detailed solar solutions and services.
+              Choose your application to view detailed solar solutions and
+              services.
             </p>
           </div>
 

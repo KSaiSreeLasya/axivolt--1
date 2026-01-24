@@ -1,5 +1,13 @@
 import Header from "@/components/Header";
-import { ArrowLeft, Building2, Zap, TrendingUp, Grid3x3, Truck, Eye } from "lucide-react";
+import {
+  ArrowLeft,
+  Building2,
+  Zap,
+  TrendingUp,
+  Grid3x3,
+  Truck,
+  Eye,
+} from "lucide-react";
 import { Link } from "react-router-dom";
 
 export default function SolarCommercial() {
@@ -65,12 +73,14 @@ export default function SolarCommercial() {
 
           <div className="space-y-6">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-              <span className="text-cyan">B2B — Commercial & Industrial Solar</span>
+              <span className="text-cyan">
+                B2B — Commercial & Industrial Solar
+              </span>
             </h1>
 
             <p className="text-lg text-black300 max-w-2xl leading-relaxed">
-              Scalable commercial solar solutions to reduce energy costs, improve
-              sustainability and support corporate ESG goals.
+              Scalable commercial solar solutions to reduce energy costs,
+              improve sustainability and support corporate ESG goals.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4">

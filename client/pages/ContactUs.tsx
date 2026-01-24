@@ -1,5 +1,5 @@
 import Header from "@/components/Header";
-import { useState } from "react";
+import ContactForm from "@/components/ContactForm";
 import {
   Mail,
   Phone,
@@ -10,39 +10,6 @@ import {
 } from "lucide-react";
 
 export default function ContactUs() {
-  const [formData, setFormData] = useState({
-    fullName: "",
-    email: "",
-    phone: "",
-    subject: "",
-    message: "",
-  });
-
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
-  ) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-  };
-
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    console.log("Form submitted:", formData);
-    setSubmitted(true);
-    setFormData({
-      fullName: "",
-      email: "",
-      phone: "",
-      subject: "",
-      message: "",
-    });
-    setTimeout(() => setSubmitted(false), 3000);
-  };
 
   return (
     <div className="min-h-screen bg-background text-foreground">

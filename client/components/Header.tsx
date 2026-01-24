@@ -73,7 +73,10 @@ export default function Header() {
               {/* Solutions Submenu */}
               <div
                 onMouseEnter={() => setSolutionsOpen(true)}
-                onMouseLeave={() => setSolutionsOpen(false)}
+                onMouseLeave={() => {
+                  setSolutionsOpen(false);
+                  setActiveSolutionSubmenu(null);
+                }}
                 className={`absolute top-full left-0 mt-0 bg-card border border-border rounded-none w-56 shadow-xl transition-all duration-200 ${
                   solutionsOpen
                     ? "opacity-100 visible translate-y-0"
@@ -81,12 +84,51 @@ export default function Header() {
                 }`}
               >
                 <div className="py-2">
-                  <Link
-                    to="/solutions/solar"
-                    className="block px-6 py-3 text-sm text-black hover:text-cyan hover:bg-background/50 transition-colors border-b border-border"
+                  {/* Solar with Submenu */}
+                  <div
+                    className="relative"
+                    onMouseEnter={() => setActiveSolutionSubmenu("solar")}
+                    onMouseLeave={() => setActiveSolutionSubmenu(null)}
                   >
-                    Solar
-                  </Link>
+                    <Link
+                      to="/solutions/solar"
+                      className="flex items-center justify-between px-6 py-3 text-sm text-black hover:text-cyan hover:bg-background/50 transition-colors border-b border-border"
+                    >
+                      Solar
+                      <ChevronDown className="w-4 h-4 rotate-180" />
+                    </Link>
+
+                    {/* Solar Subcategories */}
+                    <div
+                      className={`absolute left-full top-0 ml-0 bg-card border border-border w-48 shadow-xl transition-all duration-200 ${
+                        activeSolutionSubmenu === "solar"
+                          ? "opacity-100 visible translate-x-0"
+                          : "opacity-0 invisible -translate-x-2"
+                      }`}
+                    >
+                      <div className="py-2">
+                        <Link
+                          to="/solutions/solar"
+                          className="block px-6 py-3 text-sm text-black hover:text-cyan hover:bg-background/50 transition-colors border-b border-border"
+                        >
+                          Residential (B2C)
+                        </Link>
+                        <Link
+                          to="/solutions/solar"
+                          className="block px-6 py-3 text-sm text-black hover:text-cyan hover:bg-background/50 transition-colors border-b border-border"
+                        >
+                          Commercial (B2B)
+                        </Link>
+                        <Link
+                          to="/solutions/solar"
+                          className="block px-6 py-3 text-sm text-black hover:text-cyan hover:bg-background/50 transition-colors"
+                        >
+                          Government (B2G)
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+
                   <Link
                     to="/solutions/wind"
                     className="block px-6 py-3 text-sm text-black hover:text-cyan hover:bg-background/50 transition-colors border-b border-border"

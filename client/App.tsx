@@ -15,6 +15,7 @@ import Careers from "./pages/Careers";
 import About from "./pages/About";
 import ContactUs from "./pages/ContactUs";
 import GetQuote from "./pages/GetQuote";
+import AdminDashboard from "./pages/AdminDashboard";
 import NotFound from "./pages/NotFound";
 import Solutions from "./pages/Solutions";
 import Solar from "./pages/Solar";

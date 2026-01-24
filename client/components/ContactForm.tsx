@@ -46,10 +46,10 @@ export default function ContactForm() {
         const errorMsg =
           error instanceof Error ? error.message : JSON.stringify(error);
         Swal.fire({
-          icon: 'error',
-          title: 'Submission Failed',
+          icon: "error",
+          title: "Submission Failed",
           text: errorMsg,
-          confirmButtonColor: '#047F86',
+          confirmButtonColor: "#047F86",
         });
         console.error("Supabase error:", error);
         setLoading(false);
@@ -57,10 +57,10 @@ export default function ContactForm() {
       }
 
       Swal.fire({
-        icon: 'success',
-        title: 'Message Sent!',
-        text: 'Thank you for contacting us. We\'ll get back to you soon.',
-        confirmButtonColor: '#047F86',
+        icon: "success",
+        title: "Message Sent!",
+        text: "Thank you for contacting us. We'll get back to you soon.",
+        confirmButtonColor: "#047F86",
       });
       setFormData({
         full_name: "",
@@ -75,10 +75,10 @@ export default function ContactForm() {
     } catch (err) {
       const errorMsg = err instanceof Error ? err.message : String(err);
       Swal.fire({
-        icon: 'error',
-        title: 'Error',
+        icon: "error",
+        title: "Error",
         text: errorMsg,
-        confirmButtonColor: '#047F86',
+        confirmButtonColor: "#047F86",
       });
       console.error("Error:", err);
       setLoading(false);

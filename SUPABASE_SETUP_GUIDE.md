@@ -10,6 +10,7 @@
 6. Click **Run** button
 
 This will:
+
 - Enable RLS on all tables
 - Allow anonymous form submissions
 - Create a storage bucket for job resumes
@@ -29,6 +30,7 @@ These are already configured in the project.
 ## Step 3: Test the Forms
 
 ### Get Quote Form (`/quote`)
+
 1. Navigate to `/quote`
 2. Fill in the form:
    - Full Name
@@ -42,6 +44,7 @@ These are already configured in the project.
 6. Data saved to `quote_requests` table
 
 ### Contact Form (`/contact`)
+
 1. Navigate to `/contact`
 2. Fill in the form:
    - Full Name
@@ -56,6 +59,7 @@ These are already configured in the project.
 5. Data saved to `contact_form_submissions` table
 
 ### Job Application Form (`/careers`)
+
 1. Navigate to `/careers`
 2. Click **Apply Now** on any job
 3. Fill in the form:
@@ -74,6 +78,7 @@ These are already configured in the project.
 ## Step 4: Verify Data Storage
 
 ### Check Database Records
+
 1. Go to Supabase Dashboard
 2. Click **Table Editor**
 3. Select table:
@@ -82,6 +87,7 @@ These are already configured in the project.
    - `job_applications` - for job applications
 
 ### Check Resume Files
+
 1. Go to Supabase Dashboard
 2. Click **Storage** (left sidebar)
 3. Click `job-resumes` bucket
@@ -90,12 +96,15 @@ These are already configured in the project.
 ## Features Implemented
 
 ### Sweet Alert Notifications
+
 All forms now use SweetAlert2 for beautiful notifications:
+
 - ✅ Success alerts with custom messages
 - ❌ Error alerts with detailed error messages
 - 🎨 Teal color (#047F86) branded buttons
 
 ### File Upload for Resumes
+
 - Accept PDF, DOC, DOCX files only
 - Maximum file size: 5MB
 - Files stored in Supabase Storage
@@ -103,7 +112,8 @@ All forms now use SweetAlert2 for beautiful notifications:
 - File validation with user feedback
 
 ### Form Validation
-- Required fields marked with *
+
+- Required fields marked with \*
 - Email validation
 - Phone number validation
 - File type and size validation
@@ -112,6 +122,7 @@ All forms now use SweetAlert2 for beautiful notifications:
 ## Database Schema
 
 ### quote_requests Table
+
 ```
 - id (uuid, primary key)
 - full_name (varchar)
@@ -126,6 +137,7 @@ All forms now use SweetAlert2 for beautiful notifications:
 ```
 
 ### contact_form_submissions Table
+
 ```
 - id (uuid, primary key)
 - full_name (varchar)
@@ -141,6 +153,7 @@ All forms now use SweetAlert2 for beautiful notifications:
 ```
 
 ### job_applications Table
+
 ```
 - id (uuid, primary key)
 - job_id (uuid, foreign key)
@@ -159,15 +172,19 @@ All forms now use SweetAlert2 for beautiful notifications:
 ## Troubleshooting
 
 ### Error: "new row violates row-level security policy"
+
 **Solution:** Run the RLS_POLICIES.sql file in SQL Editor
 
 ### Error: "Permission denied" for storage
+
 **Solution:** Make sure storage bucket policies are created (included in RLS_POLICIES.sql)
 
 ### Error: "File too large"
+
 **Solution:** Ensure resume file is less than 5MB
 
 ### Error: "Invalid file type"
+
 **Solution:** Only PDF, DOC, and DOCX files are accepted
 
 ## Security Notes

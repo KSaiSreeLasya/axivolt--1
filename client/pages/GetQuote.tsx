@@ -81,7 +81,6 @@ export default function GetQuote() {
     agreeToTerms: false,
   });
 
-
   const selectedRangeIndex = billOptions.indexOf(formData.billRange);
   const selectedBillRange =
     selectedRangeIndex >= 0 ? billRanges[selectedRangeIndex] : null;
@@ -125,19 +124,17 @@ export default function GetQuote() {
     e.preventDefault();
 
     try {
-      const { error } = await supabase
-        .from('quote_requests')
-        .insert([
-          {
-            full_name: formData.fullName,
-            whatsapp: formData.whatsapp,
-            pin_code: formData.pinCode,
-            bill_range: formData.billRange,
-            capacity: formData.capacity,
-            category: category,
-            agree_to_terms: formData.agreeToTerms,
-          },
-        ]);
+      const { error } = await supabase.from("quote_requests").insert([
+        {
+          full_name: formData.fullName,
+          whatsapp: formData.whatsapp,
+          pin_code: formData.pinCode,
+          bill_range: formData.billRange,
+          capacity: formData.capacity,
+          category: category,
+          agree_to_terms: formData.agreeToTerms,
+        },
+      ]);
 
       if (error) {
         throw error;
@@ -145,29 +142,29 @@ export default function GetQuote() {
 
       // Show success alert
       Swal.fire({
-        icon: 'success',
-        title: 'Quote Request Submitted!',
-        text: 'Thank you! Our team will contact you shortly.',
-        confirmButtonColor: '#047F86',
-        confirmButtonText: 'OK',
+        icon: "success",
+        title: "Quote Request Submitted!",
+        text: "Thank you! Our team will contact you shortly.",
+        confirmButtonColor: "#047F86",
+        confirmButtonText: "OK",
       });
 
       // Reset form
       setFormData({
-        fullName: '',
-        whatsapp: '',
-        pinCode: '',
-        billRange: '',
-        capacity: '',
+        fullName: "",
+        whatsapp: "",
+        pinCode: "",
+        billRange: "",
+        capacity: "",
         agreeToTerms: false,
       });
     } catch (error: any) {
-      console.error('Failed to submit quote:', error);
+      console.error("Failed to submit quote:", error);
       Swal.fire({
-        icon: 'error',
-        title: 'Submission Failed',
-        text: error.message || 'Failed to submit quote. Please try again.',
-        confirmButtonColor: '#047F86',
+        icon: "error",
+        title: "Submission Failed",
+        text: error.message || "Failed to submit quote. Please try again.",
+        confirmButtonColor: "#047F86",
       });
     }
   };
@@ -236,7 +233,6 @@ export default function GetQuote() {
                 {category === "housing" && "Housing Society Quote Form"}
                 {category === "commercial" && "Commercial Quote Form"}
               </h2>
-
 
               <form onSubmit={handleSubmit} className="space-y-6">
                 {/* Full Name */}

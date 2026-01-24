@@ -55,21 +55,25 @@ export default function JobApplicationForm({
       // Validate file size (max 5MB)
       if (file.size > 5 * 1024 * 1024) {
         Swal.fire({
-          icon: 'warning',
-          title: 'File Too Large',
-          text: 'Resume file must be less than 5MB',
-          confirmButtonColor: '#047F86',
+          icon: "warning",
+          title: "File Too Large",
+          text: "Resume file must be less than 5MB",
+          confirmButtonColor: "#047F86",
         });
         return;
       }
       // Validate file type
-      const validTypes = ['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
+      const validTypes = [
+        "application/pdf",
+        "application/msword",
+        "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      ];
       if (!validTypes.includes(file.type)) {
         Swal.fire({
-          icon: 'warning',
-          title: 'Invalid File Type',
-          text: 'Please upload a PDF, DOC, or DOCX file',
-          confirmButtonColor: '#047F86',
+          icon: "warning",
+          title: "Invalid File Type",
+          text: "Please upload a PDF, DOC, or DOCX file",
+          confirmButtonColor: "#047F86",
         });
         return;
       }
@@ -89,19 +93,19 @@ export default function JobApplicationForm({
       // Upload resume file if provided
       let resumeUrl = "";
       if (formData.resume) {
-        const fileExt = formData.resume.name.split('.').pop();
+        const fileExt = formData.resume.name.split(".").pop();
         const fileName = `${Date.now()}-${Math.random().toString(36).substring(7)}.${fileExt}`;
 
         const { error: uploadError, data: uploadData } = await supabase.storage
-          .from('job-resumes')
+          .from("job-resumes")
           .upload(fileName, formData.resume);
 
         if (uploadError) {
           Swal.fire({
-            icon: 'error',
-            title: 'Upload Failed',
-            text: 'Failed to upload resume. Please try again.',
-            confirmButtonColor: '#047F86',
+            icon: "error",
+            title: "Upload Failed",
+            text: "Failed to upload resume. Please try again.",
+            confirmButtonColor: "#047F86",
           });
           setLoading(false);
           return;
@@ -109,7 +113,7 @@ export default function JobApplicationForm({
 
         // Get the public URL
         const { data: publicUrlData } = supabase.storage
-          .from('job-resumes')
+          .from("job-resumes")
           .getPublicUrl(fileName);
 
         resumeUrl = publicUrlData.publicUrl;
@@ -128,10 +132,10 @@ export default function JobApplicationForm({
 
         if (jobError || !jobData) {
           Swal.fire({
-            icon: 'error',
-            title: 'Error',
-            text: 'Unable to find job. Please try again.',
-            confirmButtonColor: '#047F86',
+            icon: "error",
+            title: "Error",
+            text: "Unable to find job. Please try again.",
+            confirmButtonColor: "#047F86",
           });
           setLoading(false);
           return;
@@ -161,10 +165,10 @@ export default function JobApplicationForm({
         const errorMsg =
           error instanceof Error ? error.message : JSON.stringify(error);
         Swal.fire({
-          icon: 'error',
-          title: 'Submission Failed',
+          icon: "error",
+          title: "Submission Failed",
           text: errorMsg,
-          confirmButtonColor: '#047F86',
+          confirmButtonColor: "#047F86",
         });
         console.error("Supabase error:", error);
         setLoading(false);
@@ -172,10 +176,10 @@ export default function JobApplicationForm({
       }
 
       Swal.fire({
-        icon: 'success',
-        title: 'Application Submitted!',
-        text: 'Thank you for applying. We\'ll review your application and get back to you soon.',
-        confirmButtonColor: '#047F86',
+        icon: "success",
+        title: "Application Submitted!",
+        text: "Thank you for applying. We'll review your application and get back to you soon.",
+        confirmButtonColor: "#047F86",
       }).then(() => {
         onClose();
         setSubmitted(false);
@@ -195,10 +199,10 @@ export default function JobApplicationForm({
     } catch (err) {
       const errorMsg = err instanceof Error ? err.message : String(err);
       Swal.fire({
-        icon: 'error',
-        title: 'Error',
+        icon: "error",
+        title: "Error",
         text: errorMsg,
-        confirmButtonColor: '#047F86',
+        confirmButtonColor: "#047F86",
       });
       console.error("Error:", err);
       setLoading(false);

@@ -27,7 +27,7 @@ export default function Procurement() {
               <br />
               Solutions
             </h1>
-            <p className="text-lg text-gray-400 max-w-2xl mx-auto">
+            <p className="text-lg text-black400 max-w-2xl mx-auto">
               Streamline your renewable energy projects with our comprehensive
               procurement and project management consulting services. From
               sourcing to quality assurance, we ensure optimal outcomes and
@@ -52,7 +52,7 @@ export default function Procurement() {
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Our Procurement Process
             </h2>
-            <p className="text-gray-400">
+            <p className="text-black400">
               A systematic approach to manage quality, delivery, and
               cost-effectiveness in every project.
             </p>
@@ -65,7 +65,7 @@ export default function Procurement() {
               <div className="flex gap-8 items-center">
                 <div className="flex-1 bg-card rounded-lg p-6 border border-border">
                   <h3 className="text-xl font-bold mb-2">Project Assessment</h3>
-                  <p className="text-gray-400 text-sm">
+                  <p className="text-black400 text-sm">
                     Comprehensive evaluation of your requirements and project
                     specifications.
                   </p>
@@ -86,7 +86,7 @@ export default function Procurement() {
                 </div>
                 <div className="flex-1 bg-card rounded-lg p-6 border border-border">
                   <h3 className="text-xl font-bold mb-2">Vendor Selection</h3>
-                  <p className="text-gray-400 text-sm">
+                  <p className="text-black400 text-sm">
                     Strategic sourcing and qualification of certified suppliers
                     based on quality, reliability, and cost-effectiveness.
                   </p>
@@ -99,7 +99,7 @@ export default function Procurement() {
                   <h3 className="text-xl font-bold mb-2">
                     Contract Management
                   </h3>
-                  <p className="text-gray-400 text-sm">
+                  <p className="text-black400 text-sm">
                     Expert negotiation and management of vendor agreements,
                     ensuring favorable terms and compliance.
                   </p>
@@ -120,7 +120,7 @@ export default function Procurement() {
                 </div>
                 <div className="flex-1 bg-card rounded-lg p-6 border border-border">
                   <h3 className="text-xl font-bold mb-2">Quality Assurance</h3>
-                  <p className="text-gray-400 text-sm">
+                  <p className="text-black400 text-sm">
                     Rigorous quality control and compliance monitoring
                     throughout the procurement process.
                   </p>
@@ -133,7 +133,7 @@ export default function Procurement() {
                   <h3 className="text-xl font-bold mb-2">
                     Performance Optimization
                   </h3>
-                  <p className="text-gray-400 text-sm">
+                  <p className="text-black400 text-sm">
                     Continuous monitoring and optimization of procurement
                     performance and vendor relationships.
                   </p>
@@ -156,7 +156,7 @@ export default function Procurement() {
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Our Core Services
             </h2>
-            <p className="text-gray-400">
+            <p className="text-black400">
               Comprehensive solutions tailored to your renewable energy project
               needs.
             </p>
@@ -169,11 +169,11 @@ export default function Procurement() {
                 <Zap className="w-6 h-6 text-green-400" />
               </div>
               <h3 className="text-xl font-bold mb-4">Vendor Procurement</h3>
-              <p className="text-gray-400 mb-6">
+              <p className="text-black400 mb-6">
                 Complete sourcing of solar panels, inverters, mounting systems
                 and other critical equipment.
               </p>
-              <ul className="space-y-2 text-sm text-gray-400">
+              <ul className="space-y-2 text-sm text-black400">
                 <li className="flex items-center gap-2">
                   <CheckCircle className="w-4 h-4 text-cyan" /> Global Supplier
                   Network
@@ -197,11 +197,11 @@ export default function Procurement() {
               <h3 className="text-xl font-bold mb-4">
                 Plant Management Consulting
               </h3>
-              <p className="text-gray-400 mb-6">
+              <p className="text-black400 mb-6">
                 End-to-end project management services from initial assessment
                 to final commissioning.
               </p>
-              <ul className="space-y-2 text-sm text-gray-400">
+              <ul className="space-y-2 text-sm text-black400">
                 <li className="flex items-center gap-2">
                   <CheckCircle className="w-4 h-4 text-cyan" /> Project Planning
                 </li>
@@ -221,11 +221,11 @@ export default function Procurement() {
                 <Shield className="w-6 h-6 text-purple-400" />
               </div>
               <h3 className="text-xl font-bold mb-4">Expert Advisory</h3>
-              <p className="text-gray-400 mb-6">
+              <p className="text-black400 mb-6">
                 Expert technical guidance on equipment selection and
                 implementation strategies.
               </p>
-              <ul className="space-y-2 text-sm text-gray-400">
+              <ul className="space-y-2 text-sm text-black400">
                 <li className="flex items-center gap-2">
                   <CheckCircle className="w-4 h-4 text-cyan" /> Technical Audits
                 </li>
@@ -277,7 +277,7 @@ export default function Procurement() {
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Ready to Optimize Your Procurement?
           </h2>
-          <p className="text-lg text-gray-400 mb-8">
+          <p className="text-lg text-black400 mb-8">
             Let our experts handle your project sourcing and management
           </p>
           <button className="bg-cyan text-background px-8 py-3 rounded-lg font-bold hover:bg-opacity-90 transition-all inline-flex items-center gap-2">
@@ -288,7 +288,7 @@ export default function Procurement() {
 
       {/* Footer */}
       <footer className="bg-card border-t border-border py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-400 text-sm">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-black400 text-sm">
           <p>&copy; 2024 AXIVOLT. All rights reserved.</p>
         </div>
       </footer>

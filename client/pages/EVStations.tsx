@@ -83,7 +83,7 @@ export default function EVStations() {
                 <span className="text-green-400">Charging</span>
               </h1>
 
-              <p className="text-lg text-gray-300 leading-relaxed">
+              <p className="text-lg text-black300 leading-relaxed">
                 Turnkey EV charging infrastructure and service solutions for
                 businesses, fleets and public deployments.
               </p>
@@ -118,7 +118,7 @@ export default function EVStations() {
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               EV Charging Solutions
             </h2>
-            <p className="text-gray-300">
+            <p className="text-black300">
               Next-generation charging infrastructure for electric vehicles
             </p>
           </div>
@@ -167,7 +167,7 @@ export default function EVStations() {
                   </div>
 
                   <h3 className="text-xl font-bold mb-2">{offering.title}</h3>
-                  <p className="text-gray-300 text-sm mb-6">
+                  <p className="text-black300 text-sm mb-6">
                     {offering.description}
                   </p>
 
@@ -175,7 +175,7 @@ export default function EVStations() {
                     {offering.features.map((feature) => (
                       <li
                         key={feature}
-                        className="flex items-start gap-2 text-sm text-gray-300"
+                        className="flex items-start gap-2 text-sm text-black300"
                       >
                         <span className="w-1.5 h-1.5 rounded-full bg-green-400 mt-1.5 flex-shrink-0"></span>
                         {feature}
@@ -211,7 +211,7 @@ export default function EVStations() {
           <div className="grid grid-cols-4 gap-8 mb-12">
             <div>
               <h4 className="font-bold mb-4">Services</h4>
-              <ul className="space-y-2 text-sm text-gray-400">
+              <ul className="space-y-2 text-sm text-black400">
                 <li>
                   <a href="#" className="hover:text-cyan transition">
                     Solar Energy
@@ -236,7 +236,7 @@ export default function EVStations() {
             </div>
             <div>
               <h4 className="font-bold mb-4">Company</h4>
-              <ul className="space-y-2 text-sm text-gray-400">
+              <ul className="space-y-2 text-sm text-black400">
                 <li>
                   <a href="#" className="hover:text-cyan transition">
                     About Us
@@ -261,7 +261,7 @@ export default function EVStations() {
             </div>
             <div>
               <h4 className="font-bold mb-4">Resources</h4>
-              <ul className="space-y-2 text-sm text-gray-400">
+              <ul className="space-y-2 text-sm text-black400">
                 <li>
                   <a href="#" className="hover:text-cyan transition">
                     Resources
@@ -286,7 +286,7 @@ export default function EVStations() {
             </div>
             <div>
               <h4 className="font-bold mb-4">Legal</h4>
-              <ul className="space-y-2 text-sm text-gray-400">
+              <ul className="space-y-2 text-sm text-black400">
                 <li>
                   <a href="#" className="hover:text-cyan transition">
                     Privacy Policy
@@ -306,7 +306,7 @@ export default function EVStations() {
             </div>
           </div>
           <div className="border-t border-border pt-8">
-            <p className="text-sm text-gray-400">
+            <p className="text-sm text-black400">
               © 2024 Axiso Green Energies. All rights reserved.
             </p>
           </div>

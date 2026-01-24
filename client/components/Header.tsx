@@ -86,12 +86,56 @@ export default function Header() {
                 style={{ width: "auto", minWidth: "224px" }}
               >
                 <div className="py-2">
-                  <Link
-                    to="/solutions/solar"
-                    className="block px-6 py-3 text-sm text-black hover:text-cyan hover:bg-background/50 transition-colors border-b border-border"
+                  {/* Solar with Submenu */}
+                  <div
+                    className="relative"
+                    onMouseEnter={() => setActiveSolutionSubmenu("solar")}
+                    onMouseLeave={() => setActiveSolutionSubmenu(null)}
                   >
-                    Solar
-                  </Link>
+                    <Link
+                      to="/solutions/solar"
+                      className="flex items-center justify-between px-6 py-3 text-sm text-black hover:text-cyan hover:bg-background/50 transition-colors border-b border-border"
+                    >
+                      Solar
+                      <ChevronDown className="w-4 h-4 rotate-180" />
+                    </Link>
+
+                    {/* Solar Subcategories */}
+                    <div
+                      className={`absolute top-0 bg-card border border-border rounded-sm w-56 shadow-2xl transition-all duration-200 z-50 ${
+                        activeSolutionSubmenu === "solar"
+                          ? "opacity-100 visible"
+                          : "opacity-0 invisible"
+                      }`}
+                      style={{
+                        left: "100%",
+                        pointerEvents:
+                          activeSolutionSubmenu === "solar" ? "auto" : "none",
+                        marginLeft: "0px",
+                      }}
+                    >
+                      <div className="py-2">
+                        <Link
+                          to="/solutions/solar/residential"
+                          className="block px-6 py-3 text-sm text-black hover:text-cyan hover:bg-background/50 transition-colors border-b border-border last:border-b-0"
+                        >
+                          Residential (B2C)
+                        </Link>
+                        <Link
+                          to="/solutions/solar/commercial"
+                          className="block px-6 py-3 text-sm text-black hover:text-cyan hover:bg-background/50 transition-colors border-b border-border last:border-b-0"
+                        >
+                          Commercial (B2B)
+                        </Link>
+                        <Link
+                          to="/solutions/solar/government"
+                          className="block px-6 py-3 text-sm text-black hover:text-cyan hover:bg-background/50 transition-colors last:border-b-0"
+                        >
+                          Government (B2G)
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
 
                   <Link
                     to="/solutions/wind"

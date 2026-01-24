@@ -296,6 +296,7 @@ export default function Careers() {
                     </div>
                     <div className="flex-1">
                       <h3 className="text-lg font-bold mb-2">{job.title}</h3>
+                      <p className="text-sm text-gray-400 mb-3">{job.description.substring(0, 100)}...</p>
                       <div className="flex flex-wrap gap-4 text-sm text-gray-400">
                         <span>📍 {job.location}</span>
                         <span>💼 {job.department}</span>
@@ -305,7 +306,10 @@ export default function Careers() {
                     </div>
                   </div>
                 </div>
-                <button className="bg-cyan text-background px-6 py-2 rounded font-semibold hover:bg-yellow-green transition-all text-sm flex-shrink-0">
+                <button
+                  onClick={() => setSelectedJob(job)}
+                  className="bg-cyan text-background px-6 py-2 rounded font-semibold hover:bg-yellow-green transition-all text-sm flex-shrink-0 ml-4"
+                >
                   Apply Now
                 </button>
               </div>

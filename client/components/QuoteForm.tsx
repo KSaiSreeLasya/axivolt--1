@@ -92,7 +92,7 @@ export default function QuoteForm() {
         </div>
         <div>
           <h2 className="text-2xl font-bold">Request a Quote</h2>
-          <p className="text-gray-400 text-sm mt-1">
+          <p className="text-black400 text-sm mt-1">
             Get a personalized quote for your renewable energy project
           </p>
         </div>

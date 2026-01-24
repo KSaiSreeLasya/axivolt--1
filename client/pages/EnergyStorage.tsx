@@ -70,7 +70,7 @@ export default function EnergyStorage() {
                 <span className="text-cyan">Energy Storage</span>
               </h1>
 
-              <p className="text-lg text-gray-300 leading-relaxed">
+              <p className="text-lg text-black300 leading-relaxed">
                 Battery energy storage solutions to enhance grid resilience,
                 provide ancillary services and increase renewable penetration.
               </p>
@@ -100,7 +100,7 @@ export default function EnergyStorage() {
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Energy Storage Infrastructure
             </h2>
-            <p className="text-gray-300">
+            <p className="text-black300">
               Advanced battery systems and energy management solutions powering
               the grid
             </p>
@@ -149,7 +149,7 @@ export default function EnergyStorage() {
                     <Icon className={`w-6 h-6 ${highlight.iconColor}`} />
                   </div>
                   <h3 className="text-xl font-bold mb-3">{highlight.title}</h3>
-                  <p className="text-gray-300">{highlight.description}</p>
+                  <p className="text-black300">{highlight.description}</p>
                 </div>
               );
             })}
@@ -179,7 +179,7 @@ export default function EnergyStorage() {
           <div className="grid grid-cols-4 gap-8 mb-12">
             <div>
               <h4 className="font-bold mb-4">Services</h4>
-              <ul className="space-y-2 text-sm text-gray-400">
+              <ul className="space-y-2 text-sm text-black400">
                 <li>
                   <a href="#" className="hover:text-cyan transition">
                     Solar Energy
@@ -204,7 +204,7 @@ export default function EnergyStorage() {
             </div>
             <div>
               <h4 className="font-bold mb-4">Company</h4>
-              <ul className="space-y-2 text-sm text-gray-400">
+              <ul className="space-y-2 text-sm text-black400">
                 <li>
                   <a href="#" className="hover:text-cyan transition">
                     About Us
@@ -229,7 +229,7 @@ export default function EnergyStorage() {
             </div>
             <div>
               <h4 className="font-bold mb-4">Resources</h4>
-              <ul className="space-y-2 text-sm text-gray-400">
+              <ul className="space-y-2 text-sm text-black400">
                 <li>
                   <a href="#" className="hover:text-cyan transition">
                     Resources
@@ -254,7 +254,7 @@ export default function EnergyStorage() {
             </div>
             <div>
               <h4 className="font-bold mb-4">Legal</h4>
-              <ul className="space-y-2 text-sm text-gray-400">
+              <ul className="space-y-2 text-sm text-black400">
                 <li>
                   <a href="#" className="hover:text-cyan transition">
                     Privacy Policy
@@ -274,7 +274,7 @@ export default function EnergyStorage() {
             </div>
           </div>
           <div className="border-t border-border pt-8">
-            <p className="text-sm text-gray-400">
+            <p className="text-sm text-black400">
               © 2024 Axiso Green Energies. All rights reserved.
             </p>
           </div>

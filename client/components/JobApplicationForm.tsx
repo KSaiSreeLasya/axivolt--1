@@ -39,7 +39,7 @@ export default function JobApplicationForm({
   const [loading, setLoading] = useState(false);
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
@@ -131,11 +131,13 @@ export default function JobApplicationForm({
         <div className="sticky top-0 bg-card border-b border-border p-6 flex items-center justify-between">
           <div>
             <h2 className="text-2xl font-bold">{job.title}</h2>
-            <p className="text-gray-400 text-sm mt-1">Apply for this position</p>
+            <p className="text-black400 text-sm mt-1">
+              Apply for this position
+            </p>
           </div>
           <button
             onClick={onClose}
-            className="text-gray-400 hover:text-foreground transition-colors"
+            className="text-black400 hover:text-foreground transition-colors"
           >
             <X className="w-6 h-6" />
           </button>
@@ -145,26 +147,26 @@ export default function JobApplicationForm({
         <div className="p-6 border-b border-border">
           <div className="grid grid-cols-2 gap-4 mb-6">
             <div>
-              <p className="text-sm text-gray-400">Department</p>
+              <p className="text-sm text-black400">Department</p>
               <p className="font-semibold text-cyan">{job.department}</p>
             </div>
             <div>
-              <p className="text-sm text-gray-400">Experience</p>
+              <p className="text-sm text-black400">Experience</p>
               <p className="font-semibold text-cyan">{job.experience}</p>
             </div>
             <div>
-              <p className="text-sm text-gray-400">Location</p>
+              <p className="text-sm text-black400">Location</p>
               <p className="font-semibold">{job.location}</p>
             </div>
             <div>
-              <p className="text-sm text-gray-400">Employment Type</p>
+              <p className="text-sm text-black400">Employment Type</p>
               <p className="font-semibold">{job.type}</p>
             </div>
           </div>
 
           <div>
             <h3 className="font-bold mb-2">About the Role</h3>
-            <p className="text-gray-300 text-sm leading-relaxed">
+            <p className="text-black300 text-sm leading-relaxed">
               {job.description}
             </p>
           </div>
@@ -173,7 +175,7 @@ export default function JobApplicationForm({
             <h3 className="font-bold mb-2">Requirements</h3>
             <ul className="space-y-1">
               {job.requirements.map((req, idx) => (
-                <li key={idx} className="text-sm text-gray-300 flex gap-2">
+                <li key={idx} className="text-sm text-black300 flex gap-2">
                   <span className="text-cyan">✓</span>
                   {req}
                 </li>
@@ -190,7 +192,7 @@ export default function JobApplicationForm({
                 <span className="text-2xl">✓</span>
               </div>
               <h3 className="text-xl font-bold mb-2">Application Submitted!</h3>
-              <p className="text-gray-400">
+              <p className="text-black400">
                 Thank you for applying. We'll review your application and get
                 back to you soon.
               </p>
@@ -301,7 +303,7 @@ export default function JobApplicationForm({
                   className="w-full px-4 py-2 rounded-lg bg-background border border-border text-foreground focus:border-cyan outline-none transition-colors"
                   placeholder="https://drive.google.com/... or https://dropbox.com/..."
                 />
-                <p className="text-xs text-gray-400 mt-1">
+                <p className="text-xs text-black400 mt-1">
                   Provide a link to your resume (Google Drive, Dropbox, etc.)
                 </p>
               </div>

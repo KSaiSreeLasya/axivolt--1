@@ -91,7 +91,7 @@ export default function About() {
               <h1 className="text-4xl md:text-5xl font-bold mb-6">
                 Our <span className="text-cyan">Mission</span>
               </h1>
-              <p className="text-lg text-gray-400 mb-8">
+              <p className="text-lg text-black400 mb-8">
                 To accelerate the world's transition to renewable energy through
                 innovative solutions, expert guidance, and unwavering commitment
                 to excellence.
@@ -112,7 +112,7 @@ export default function About() {
                     <p className="text-2xl md:text-3xl font-bold text-cyan">
                       {stat.value}
                     </p>
-                    <p className="text-sm text-gray-400">{stat.label}</p>
+                    <p className="text-sm text-black400">{stat.label}</p>
                   </div>
                 ))}
               </div>
@@ -145,7 +145,7 @@ export default function About() {
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
                 Our <span className="text-cyan">Vision</span>
               </h2>
-              <p className="text-lg text-gray-400 mb-6">
+              <p className="text-lg text-black400 mb-6">
                 To accelerate India's transition to clean energy by providing
                 reliable, affordable, and high-driven renewable energy
                 solutions.
@@ -159,7 +159,7 @@ export default function About() {
                 ].map((item, idx) => (
                   <li
                     key={idx}
-                    className="flex items-center gap-3 text-gray-300"
+                    className="flex items-center gap-3 text-black300"
                   >
                     <CheckCircle className="w-5 h-5 text-cyan flex-shrink-0" />
                     {item}
@@ -178,7 +178,7 @@ export default function About() {
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Our <span className="text-cyan">Core Values</span>
             </h2>
-            <p className="text-gray-400 max-w-2xl mx-auto">
+            <p className="text-black400 max-w-2xl mx-auto">
               The principles that guide our mission and shape our commitment to
               sustainable energy
             </p>
@@ -196,7 +196,7 @@ export default function About() {
                     <Icon className="w-6 h-6 text-cyan" />
                   </div>
                   <h3 className="text-xl font-bold mb-3">{value.title}</h3>
-                  <p className="text-gray-400">{value.description}</p>
+                  <p className="text-black400">{value.description}</p>
                 </div>
               );
             })}
@@ -211,7 +211,7 @@ export default function About() {
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Certifications & Affiliations
             </h2>
-            <p className="text-gray-400 max-w-2xl mx-auto">
+            <p className="text-black400 max-w-2xl mx-auto">
               Recognitions and partnerships that validate our commitment to
               quality, innovation, and clean energy leadership
             </p>
@@ -231,7 +231,7 @@ export default function About() {
                   <h3 className="text-xl font-bold mb-3 text-cyan">
                     {cert.title}
                   </h3>
-                  <p className="text-gray-400">{cert.description}</p>
+                  <p className="text-black400">{cert.description}</p>
                 </div>
               );
             })}
@@ -246,7 +246,7 @@ export default function About() {
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
               Leading the Transition to Sustainable Energy
             </h2>
-            <p className="text-lg text-gray-400 max-w-3xl mx-auto mb-8">
+            <p className="text-lg text-black400 max-w-3xl mx-auto mb-8">
               AXIVOLT Green Energies Pvt. Ltd. is committed to delivering
               innovative renewable energy solutions that empower businesses and
               individuals to achieve their sustainability goals while reducing
@@ -276,7 +276,7 @@ export default function About() {
 
       {/* Footer */}
       <footer className="bg-card border-t border-border py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-400 text-sm">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-black400 text-sm">
           <p>&copy; 2024 AXIVOLT. All rights reserved.</p>
         </div>
       </footer>

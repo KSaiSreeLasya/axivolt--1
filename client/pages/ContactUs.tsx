@@ -10,7 +10,6 @@ import {
 } from "lucide-react";
 
 export default function ContactUs() {
-
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Header />
@@ -22,7 +21,7 @@ export default function ContactUs() {
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
               Contact <span className="text-cyan">Us</span>
             </h1>
-            <p className="text-lg text-gray-400 max-w-2xl mx-auto">
+            <p className="text-lg text-black400 max-w-2xl mx-auto">
               Get in touch with our renewable energy experts for a free
               consultation.
             </p>
@@ -49,7 +48,7 @@ export default function ContactUs() {
               <h3 className="text-lg font-bold mb-3">Phone</h3>
               <a
                 href="tel:+919876543210"
-                className="text-gray-400 hover:text-cyan transition-colors"
+                className="text-black400 hover:text-cyan transition-colors"
               >
                 +91 98765 43210
               </a>
@@ -63,7 +62,7 @@ export default function ContactUs() {
               <h3 className="text-lg font-bold mb-3">Email</h3>
               <a
                 href="mailto:info@axivolt.com"
-                className="text-gray-400 hover:text-cyan transition-colors"
+                className="text-black400 hover:text-cyan transition-colors"
               >
                 info@axivolt.com
               </a>
@@ -75,7 +74,7 @@ export default function ContactUs() {
                 <MapPin className="w-6 h-6 text-cyan" />
               </div>
               <h3 className="text-lg font-bold mb-3">Address</h3>
-              <p className="text-gray-400 text-sm">
+              <p className="text-black400 text-sm">
                 Plot No. 101, Miyoshi Residency, Sri
                 <br />
                 Nagar Colony, Miyapur,
@@ -94,7 +93,7 @@ export default function ContactUs() {
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Find Us on the Map
             </h2>
-            <p className="text-gray-400">Visit our office location</p>
+            <p className="text-black400">Visit our office location</p>
           </div>
 
           <div className="bg-card rounded-lg border border-border overflow-hidden shadow-lg">
@@ -120,7 +119,7 @@ export default function ContactUs() {
               <h2 className="text-3xl font-bold mb-4">
                 AXIVOLT Green Energies Pvt. Ltd.
               </h2>
-              <p className="text-gray-400 mb-6">
+              <p className="text-black400 mb-6">
                 Leading the transition to sustainable energy with innovative
                 renewable energy solutions for a cleaner, greener future.
               </p>
@@ -155,7 +154,7 @@ export default function ContactUs() {
       <section className="py-16 bg-background/50">
         <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-2xl font-bold mb-4">Stay Updated</h2>
-          <p className="text-gray-400 mb-6">
+          <p className="text-black400 mb-6">
             Get the latest news about renewable energy and sustainability.
           </p>
           <div className="flex gap-2">
@@ -178,7 +177,7 @@ export default function ContactUs() {
             {/* Company Info */}
             <div>
               <h3 className="text-lg font-bold mb-4">Services</h3>
-              <ul className="space-y-2 text-sm text-gray-400">
+              <ul className="space-y-2 text-sm text-black400">
                 <li>
                   <a href="#" className="hover:text-cyan transition-colors">
                     Solar Energy
@@ -205,7 +204,7 @@ export default function ContactUs() {
             {/* Company Links */}
             <div>
               <h3 className="text-lg font-bold mb-4">Company</h3>
-              <ul className="space-y-2 text-sm text-gray-400">
+              <ul className="space-y-2 text-sm text-black400">
                 <li>
                   <a href="#" className="hover:text-cyan transition-colors">
                     About Us
@@ -232,7 +231,7 @@ export default function ContactUs() {
             {/* Resources */}
             <div>
               <h3 className="text-lg font-bold mb-4">Resources</h3>
-              <ul className="space-y-2 text-sm text-gray-400">
+              <ul className="space-y-2 text-sm text-black400">
                 <li>
                   <a href="#" className="hover:text-cyan transition-colors">
                     Resources
@@ -259,7 +258,7 @@ export default function ContactUs() {
             {/* Legal */}
             <div>
               <h3 className="text-lg font-bold mb-4">Legal</h3>
-              <ul className="space-y-2 text-sm text-gray-400">
+              <ul className="space-y-2 text-sm text-black400">
                 <li>
                   <a href="#" className="hover:text-cyan transition-colors">
                     Privacy Policy
@@ -285,7 +284,7 @@ export default function ContactUs() {
           </div>
 
           <div className="border-t border-border pt-8">
-            <p className="text-center text-sm text-gray-400">
+            <p className="text-center text-sm text-black400">
               &copy; 2024 AXIVOLT Green Energies. All rights reserved. |
               Certified ISO 14001 | Certified ISO 9001 | TUREC Certified
             </p>

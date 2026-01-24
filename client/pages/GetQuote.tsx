@@ -138,7 +138,7 @@ export default function GetQuote() {
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
               Get a <span className="text-cyan">Quote</span>
             </h1>
-            <p className="text-lg text-gray-400 max-w-2xl mx-auto">
+            <p className="text-lg text-black400 max-w-2xl mx-auto">
               Choose your category and fill the form to receive a free
               consultation and quote.
             </p>
@@ -155,7 +155,7 @@ export default function GetQuote() {
               className={`py-3 px-6 rounded font-semibold transition-all ${
                 category === "residential"
                   ? "bg-cyan text-background"
-                  : "bg-card border border-border text-white hover:border-cyan"
+                  : "bg-card border border-border text-black hover:border-cyan"
               }`}
             >
               Residential
@@ -165,7 +165,7 @@ export default function GetQuote() {
               className={`py-3 px-6 rounded font-semibold transition-all ${
                 category === "housing"
                   ? "bg-cyan text-background"
-                  : "bg-card border border-border text-white hover:border-cyan"
+                  : "bg-card border border-border text-black hover:border-cyan"
               }`}
             >
               Housing Society
@@ -175,7 +175,7 @@ export default function GetQuote() {
               className={`py-3 px-6 rounded font-semibold transition-all ${
                 category === "commercial"
                   ? "bg-cyan text-background"
-                  : "bg-card border border-border text-white hover:border-cyan"
+                  : "bg-card border border-border text-black hover:border-cyan"
               }`}
             >
               Commercial
@@ -270,7 +270,7 @@ export default function GetQuote() {
                     ))}
                   </select>
                   {suggestedCapacity && (
-                    <p className="text-sm text-gray-400 mt-2">
+                    <p className="text-sm text-black400 mt-2">
                       Suggested capacity for this bill range:{" "}
                       {suggestedCapacity} kW
                     </p>
@@ -299,26 +299,26 @@ export default function GetQuote() {
                     <div className="grid grid-cols-2 gap-4">
                       {/* Previous GST */}
                       <div className="bg-background rounded border border-border p-4 text-center">
-                        <p className="text-sm text-gray-400 mb-2">
+                        <p className="text-sm text-black400 mb-2">
                           Previous GST
                         </p>
                         <p className="text-2xl font-bold text-cyan mb-1">
                           ₹{selectedBillRange.previousPrice.toLocaleString()}
                         </p>
-                        <p className="text-sm text-gray-500 line-through">
+                        <p className="text-sm text-black500 line-through">
                           ₹{selectedBillRange.previousPrice.toLocaleString()}
                         </p>
                       </div>
 
                       {/* Current GST */}
                       <div className="bg-background rounded border border-cyan p-4 text-center">
-                        <p className="text-sm text-gray-400 mb-2">
+                        <p className="text-sm text-black400 mb-2">
                           Current GST
                         </p>
                         <p className="text-2xl font-bold text-cyan mb-1">
                           ₹{selectedBillRange.currentPrice.toLocaleString()}
                         </p>
-                        <p className="text-sm text-gray-500 line-through">
+                        <p className="text-sm text-black500 line-through">
                           ₹{selectedBillRange.previousPrice.toLocaleString()}
                         </p>
                       </div>
@@ -343,7 +343,7 @@ export default function GetQuote() {
                     onChange={handleInputChange}
                     className="w-4 h-4 cursor-pointer accent-cyan"
                   />
-                  <span className="text-sm text-gray-400">
+                  <span className="text-sm text-black400">
                     I agree to terms of service & privacy policy
                   </span>
                 </label>
@@ -351,7 +351,7 @@ export default function GetQuote() {
                 {/* Submit Button */}
                 <button
                   type="submit"
-                  className="w-full bg-cyan text-background px-6 py-3 rounded font-bold hover:bg-yellow-green transition-all"
+                  className="w-full bg-cyan text-background px-6 py-3 rounded font-bold hover:bg-[#AFE332] transition-all"
                 >
                   Submit Details
                 </button>
@@ -406,7 +406,7 @@ export default function GetQuote() {
                   <CheckCircle className="w-6 h-6 text-cyan" />
                 </div>
                 <h3 className="font-bold mb-2">{benefit.title}</h3>
-                <p className="text-sm text-gray-400">{benefit.description}</p>
+                <p className="text-sm text-black400">{benefit.description}</p>
               </div>
             ))}
           </div>
@@ -415,7 +415,7 @@ export default function GetQuote() {
 
       {/* Footer */}
       <footer className="bg-card border-t border-border py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-400 text-sm">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-black400 text-sm">
           <p>&copy; 2024 AXIVOLT. All rights reserved.</p>
         </div>
       </footer>

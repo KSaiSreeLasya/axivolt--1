@@ -134,7 +134,7 @@ export default function Industry() {
               Tailored Renewable Energy{" "}
               <span className="text-cyan">Solutions</span> for Every Industry
             </h1>
-            <p className="text-lg text-gray-400 max-w-2xl mx-auto">
+            <p className="text-lg text-black400 max-w-2xl mx-auto">
               From commercial offices to manufacturing plants, healthcare
               facilities to government institutions, we deliver customized
               renewable energy solutions that maximize efficiency and
@@ -151,7 +151,7 @@ export default function Industry() {
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Industries We Serve
             </h2>
-            <p className="text-gray-400 max-w-2xl mx-auto">
+            <p className="text-black400 max-w-2xl mx-auto">
               Proven expertise across diverse sectors with customized solutions
               designed for your specific needs
             </p>
@@ -171,7 +171,7 @@ export default function Industry() {
                     <Icon className={`w-6 h-6 ${industry.iconColor}`} />
                   </div>
                   <h3 className="text-xl font-bold mb-3">{industry.title}</h3>
-                  <p className="text-gray-400 mb-6">{industry.description}</p>
+                  <p className="text-black400 mb-6">{industry.description}</p>
 
                   {/* Stats */}
                   <div className="grid grid-cols-3 gap-4 mb-8 py-6 border-y border-border/50">
@@ -180,7 +180,7 @@ export default function Industry() {
                         <p className="text-cyan font-bold text-lg">
                           {stat.value}
                         </p>
-                        <p className="text-xs text-gray-400">{stat.label}</p>
+                        <p className="text-xs text-black400">{stat.label}</p>
                       </div>
                     ))}
                   </div>
@@ -190,7 +190,7 @@ export default function Industry() {
                     {industry.benefits.map((benefit, idx) => (
                       <li
                         key={idx}
-                        className="flex items-center gap-2 text-sm text-gray-300"
+                        className="flex items-center gap-2 text-sm text-black300"
                       >
                         <CheckCircle className="w-4 h-4 text-cyan flex-shrink-0" />
                         {benefit}
@@ -243,7 +243,7 @@ export default function Industry() {
                 <h3 className="text-lg font-bold mb-3 text-cyan">
                   {item.title}
                 </h3>
-                <p className="text-gray-400 text-sm">{item.description}</p>
+                <p className="text-black400 text-sm">{item.description}</p>
               </div>
             ))}
           </div>
@@ -268,7 +268,7 @@ export default function Industry() {
 
       {/* Footer */}
       <footer className="bg-card border-t border-border py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-400 text-sm">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-black400 text-sm">
           <p>&copy; 2024 AXIVOLT. All rights reserved.</p>
         </div>
       </footer>

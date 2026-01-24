@@ -73,7 +73,7 @@ export default function ContactForm() {
   return (
     <div className="bg-card rounded-xl border border-border p-8">
       <h2 className="text-2xl font-bold mb-2">Get in Touch</h2>
-      <p className="text-gray-400 mb-8">
+      <p className="text-black400 mb-8">
         Have questions? We'd love to hear from you. Send us a message!
       </p>
 
@@ -193,7 +193,7 @@ export default function ContactForm() {
           </div>
           <div>
             <h4 className="font-bold mb-1">Email</h4>
-            <p className="text-sm text-gray-400">hello@axivolt.com</p>
+            <p className="text-sm text-black400">hello@axivolt.com</p>
           </div>
         </div>
         <div className="flex gap-4">
@@ -202,7 +202,7 @@ export default function ContactForm() {
           </div>
           <div>
             <h4 className="font-bold mb-1">Phone</h4>
-            <p className="text-sm text-gray-400">+1 (555) 123-4567</p>
+            <p className="text-sm text-black400">+1 (555) 123-4567</p>
           </div>
         </div>
       </div>

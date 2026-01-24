@@ -23,7 +23,7 @@ export default function Advisory() {
               Strategic Energy <span className="text-cyan">Advisory</span>{" "}
               Services
             </h1>
-            <p className="text-lg text-gray-400 max-w-2xl mx-auto">
+            <p className="text-lg text-black400 max-w-2xl mx-auto">
               Maximize your renewable energy potential with our comprehensive
               advisory and asset management services, designed to optimize
               performance and ensure long-term success.
@@ -37,7 +37,7 @@ export default function Advisory() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Process</h2>
-            <p className="text-gray-400">
+            <p className="text-black400">
               A systematic approach to renewable advisory and asset management
               that ensure optimal outcomes for your investment.
             </p>
@@ -58,7 +58,7 @@ export default function Advisory() {
                   <h3 className="text-xl font-bold mb-2">
                     Assessment & Analysis
                   </h3>
-                  <p className="text-gray-400">
+                  <p className="text-black400">
                     Comprehensive evaluation of your current energy
                     infrastructure and needs.
                   </p>
@@ -75,7 +75,7 @@ export default function Advisory() {
                 </div>
                 <div className="flex-1 bg-card rounded-lg p-6 border border-border ml-auto">
                   <h3 className="text-xl font-bold mb-2">Strategic Planning</h3>
-                  <p className="text-gray-400">
+                  <p className="text-black400">
                     Development of customized renewable energy roadmap and
                     implementation strategy.
                   </p>
@@ -92,7 +92,7 @@ export default function Advisory() {
                 </div>
                 <div className="flex-1 bg-card rounded-lg p-6 border border-border">
                   <h3 className="text-xl font-bold mb-2">Financial Modeling</h3>
-                  <p className="text-gray-400">
+                  <p className="text-black400">
                     ROI analysis, financing options, and all-encompassing
                     financial frameworks.
                   </p>
@@ -111,7 +111,7 @@ export default function Advisory() {
                   <h3 className="text-xl font-bold mb-2">
                     Implementation Management
                   </h3>
-                  <p className="text-gray-400">
+                  <p className="text-black400">
                     Expert oversight, timeline management, and quality assurance
                     throughout the project.
                   </p>
@@ -130,7 +130,7 @@ export default function Advisory() {
                   <h3 className="text-xl font-bold mb-2">
                     Performance Monitoring
                   </h3>
-                  <p className="text-gray-400">
+                  <p className="text-black400">
                     Ongoing analysis and optimization of performance
                     post-installation.
                   </p>
@@ -148,7 +148,7 @@ export default function Advisory() {
                   <h3 className="text-xl font-bold mb-2">
                     Continuous Optimization
                   </h3>
-                  <p className="text-gray-400">
+                  <p className="text-black400">
                     Regular optimization and performance upgrades to maximize
                     long-term success.
                   </p>
@@ -175,11 +175,11 @@ export default function Advisory() {
                 <Zap className="w-6 h-6 text-green-400" />
               </div>
               <h3 className="text-xl font-bold mb-4">Energy Consulting</h3>
-              <p className="text-gray-400 mb-6">
+              <p className="text-black400 mb-6">
                 Strategic energy consulting services, technology solutions and
                 implementation support.
               </p>
-              <ul className="space-y-2 text-sm text-gray-400">
+              <ul className="space-y-2 text-sm text-black400">
                 <li className="flex items-center gap-2">
                   <CheckCircle className="w-4 h-4 text-cyan" /> Technology
                   Assessment
@@ -201,11 +201,11 @@ export default function Advisory() {
                 <TrendingUp className="w-6 h-6 text-blue-400" />
               </div>
               <h3 className="text-xl font-bold mb-4">Asset Management</h3>
-              <p className="text-gray-400 mb-6">
+              <p className="text-black400 mb-6">
                 Comprehensive tracking, analytics and monitoring tools to
                 maximize your investments.
               </p>
-              <ul className="space-y-2 text-sm text-gray-400">
+              <ul className="space-y-2 text-sm text-black400">
                 <li className="flex items-center gap-2">
                   <CheckCircle className="w-4 h-4 text-cyan" /> Real-time
                   Monitoring
@@ -227,11 +227,11 @@ export default function Advisory() {
                 <BarChart3 className="w-6 h-6 text-purple-400" />
               </div>
               <h3 className="text-xl font-bold mb-4">Financial Advisory</h3>
-              <p className="text-gray-400 mb-6">
+              <p className="text-black400 mb-6">
                 Expert financial guidance and investment analysis to optimize
                 energy projects.
               </p>
-              <ul className="space-y-2 text-sm text-gray-400">
+              <ul className="space-y-2 text-sm text-black400">
                 <li className="flex items-center gap-2">
                   <CheckCircle className="w-4 h-4 text-cyan" /> Financing
                   Solutions
@@ -251,11 +251,11 @@ export default function Advisory() {
                 <CheckCircle className="w-6 h-6 text-cyan" />
               </div>
               <h3 className="text-xl font-bold mb-4">Risk Management</h3>
-              <p className="text-gray-400 mb-6">
+              <p className="text-black400 mb-6">
                 Comprehensive risk mitigation strategies for energy asset
                 portfolio management.
               </p>
-              <ul className="space-y-2 text-sm text-gray-400">
+              <ul className="space-y-2 text-sm text-black400">
                 <li className="flex items-center gap-2">
                   <CheckCircle className="w-4 h-4 text-cyan" /> Risk Mitigation
                 </li>
@@ -290,7 +290,7 @@ export default function Advisory() {
 
       {/* Footer */}
       <footer className="bg-card border-t border-border py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-400 text-sm">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-black400 text-sm">
           <p>&copy; 2024 AXIVOLT. All rights reserved.</p>
         </div>
       </footer>

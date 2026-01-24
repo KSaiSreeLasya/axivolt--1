@@ -25,11 +25,11 @@ export default function Index() {
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4">
                   <span className="text-cyan">Sustainable</span>
                   <br />
-                  <span className="text-white">Future</span>
+                  <span className="text-gray-900">Future</span>
                 </h1>
               </div>
 
-              <p className="text-lg text-gray-300 leading-relaxed max-w-xl">
+              <p className="text-lg text-black leading-relaxed max-w-xl">
                 Transform your energy consumption with cutting-edge solar
                 solutions. Harness clean, renewable power for a sustainable
                 tomorrow.
@@ -39,15 +39,15 @@ export default function Index() {
               <div className="flex gap-12 py-8">
                 <div>
                   <p className="text-3xl font-bold text-cyan">500k</p>
-                  <p className="text-sm text-gray-400">tons CO₂ saved</p>
+                  <p className="text-sm text-black">tons CO₂ saved</p>
                 </div>
                 <div>
                   <p className="text-3xl font-bold text-yellow-green">350+</p>
-                  <p className="text-sm text-gray-400">projects worldwide</p>
+                  <p className="text-sm text-black">projects worldwide</p>
                 </div>
                 <div>
                   <p className="text-3xl font-bold text-cyan">Global</p>
-                  <p className="text-sm text-gray-400">presence</p>
+                  <p className="text-sm text-black">presence</p>
                 </div>
               </div>
 
@@ -209,7 +209,7 @@ export default function Index() {
       {/* Stats Section */}
       <section className="py-20 bg-background/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-center text-gray-400 mb-12 text-sm uppercase tracking-widest">
+          <p className="text-center text-black mb-12 text-sm uppercase tracking-widest">
             From Rooftops to Utility-Scale Projects
           </p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
@@ -217,25 +217,25 @@ export default function Index() {
               <p className="text-3xl md:text-4xl font-bold text-cyan mb-2">
                 250MW
               </p>
-              <p className="text-gray-400 text-sm">Total Capacity</p>
+              <p className="text-black text-sm">Total Capacity</p>
             </div>
             <div className="bg-card rounded-xl p-8 border border-border">
               <p className="text-3xl md:text-4xl font-bold text-yellow-green mb-2">
                 500+
               </p>
-              <p className="text-gray-400 text-sm">Projects Completed</p>
+              <p className="text-black text-sm">Projects Completed</p>
             </div>
             <div className="bg-card rounded-xl p-8 border border-border">
               <p className="text-3xl md:text-4xl font-bold text-cyan mb-2">
                 15+
               </p>
-              <p className="text-gray-400 text-sm">Years Experience</p>
+              <p className="text-black text-sm">Years Experience</p>
             </div>
             <div className="bg-card rounded-xl p-8 border border-border">
               <p className="text-3xl md:text-4xl font-bold text-yellow-green mb-2">
                 12+
               </p>
-              <p className="text-gray-400 text-sm">Countries Served</p>
+              <p className="text-black text-sm">Countries Served</p>
             </div>
           </div>
 
@@ -254,7 +254,7 @@ export default function Index() {
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Comprehensive Green Energy Solutions
             </h2>
-            <p className="text-gray-400 max-w-2xl mx-auto">
+            <p className="text-black max-w-2xl mx-auto">
               End-to-end solar and renewable energy solutions tailored to your
               needs
             </p>
@@ -267,7 +267,7 @@ export default function Index() {
                 <Sun className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-xl font-bold mb-3">Rooftop Installations</h3>
-              <p className="text-gray-400 mb-6">
+              <p className="text-black mb-6">
                 Professional solar panel installations with minimal disruption.
                 Maximize your roof space efficiency.
               </p>
@@ -285,7 +285,7 @@ export default function Index() {
                 <Battery className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-xl font-bold mb-3">Energy Storage</h3>
-              <p className="text-gray-400 mb-6">
+              <p className="text-black mb-6">
                 Advanced battery systems for round-the-clock power availability.
                 Store solar energy efficiently.
               </p>
@@ -303,7 +303,7 @@ export default function Index() {
                 <Leaf className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-xl font-bold mb-3">Industrial Solutions</h3>
-              <p className="text-gray-400 mb-6">
+              <p className="text-black mb-6">
                 Large-scale green energy projects for commercial and industrial
                 operations.
               </p>
@@ -357,7 +357,7 @@ export default function Index() {
                   </div>
                   <div>
                     <h4 className="font-bold text-lg">Industry Leadership</h4>
-                    <p className="text-gray-400 text-sm mt-1">
+                    <p className="text-black text-sm mt-1">
                       Pioneering sustainable energy solutions with proven track
                       record
                     </p>
@@ -371,7 +371,7 @@ export default function Index() {
                   </div>
                   <div>
                     <h4 className="font-bold text-lg">Advanced Technology</h4>
-                    <p className="text-gray-400 text-sm mt-1">
+                    <p className="text-black text-sm mt-1">
                       Cutting-edge solar panels and smart energy management
                     </p>
                   </div>
@@ -384,7 +384,7 @@ export default function Index() {
                   </div>
                   <div>
                     <h4 className="font-bold text-lg">Expert Support</h4>
-                    <p className="text-gray-400 text-sm mt-1">
+                    <p className="text-black text-sm mt-1">
                       Dedicated team available 24/7 for all your energy needs
                     </p>
                   </div>
@@ -399,23 +399,23 @@ export default function Index() {
             <div className="grid grid-cols-2 gap-6">
               <div className="bg-gradient-to-br from-cyan/20 to-cyan/10 rounded-xl p-6 border border-border">
                 <p className="text-4xl font-bold text-cyan mb-2">99.2%</p>
-                <p className="text-gray-400 text-sm">System Uptime</p>
+                <p className="text-black text-sm">System Uptime</p>
               </div>
               <div className="bg-gradient-to-br from-yellow-green/20 to-yellow-green/10 rounded-xl p-6 border border-border">
                 <p className="text-4xl font-bold text-yellow-green mb-2">
                   500+
                 </p>
-                <p className="text-gray-400 text-sm">Happy Clients</p>
+                <p className="text-black text-sm">Happy Clients</p>
               </div>
               <div className="bg-gradient-to-br from-cyan/20 to-cyan/10 rounded-xl p-6 border border-border">
                 <p className="text-4xl font-bold text-cyan mb-2">10000</p>
-                <p className="text-gray-400 text-sm">MWh Generated</p>
+                <p className="text-black text-sm">MWh Generated</p>
               </div>
               <div className="bg-gradient-to-br from-yellow-green/20 to-yellow-green/10 rounded-xl p-6 border border-border">
                 <p className="text-4xl font-bold text-yellow-green mb-2">
                   24/7
                 </p>
-                <p className="text-gray-400 text-sm">Support Available</p>
+                <p className="text-black text-sm">Support Available</p>
               </div>
             </div>
           </div>
@@ -457,7 +457,7 @@ export default function Index() {
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Transforming Energy Landscapes
             </h2>
-            <p className="text-gray-400 max-w-2xl mx-auto">
+            <p className="text-black max-w-2xl mx-auto">
               Explore our latest projects and see how we're making a difference
             </p>
           </div>
@@ -470,13 +470,13 @@ export default function Index() {
                 </h3>
                 <div className="space-y-4">
                   <div>
-                    <p className="text-sm text-gray-400 uppercase tracking-widest mb-2">
+                    <p className="text-sm text-black uppercase tracking-widest mb-2">
                       Capacity
                     </p>
                     <p className="text-2xl font-bold text-cyan">2.5 MWh</p>
                   </div>
                   <div>
-                    <p className="text-sm text-gray-400 uppercase tracking-widest mb-2">
+                    <p className="text-sm text-black uppercase tracking-widest mb-2">
                       Expected Savings
                     </p>
                     <p className="text-2xl font-bold text-yellow-green">
@@ -484,7 +484,7 @@ export default function Index() {
                     </p>
                   </div>
                   <div>
-                    <p className="text-sm text-gray-400 uppercase tracking-widest mb-2">
+                    <p className="text-sm text-black uppercase tracking-widest mb-2">
                       CO₂ Reduction
                     </p>
                     <p className="text-2xl font-bold text-cyan">
@@ -574,26 +574,17 @@ export default function Index() {
               <h4 className="font-bold mb-4 text-yellow-green">Company</h4>
               <ul className="space-y-2">
                 <li>
-                  <a
-                    href="#"
-                    className="text-gray-400 hover:text-cyan transition"
-                  >
+                  <a href="#" className="text-black hover:text-cyan transition">
                     About Us
                   </a>
                 </li>
                 <li>
-                  <a
-                    href="#"
-                    className="text-gray-400 hover:text-cyan transition"
-                  >
+                  <a href="#" className="text-black hover:text-cyan transition">
                     Blog
                   </a>
                 </li>
                 <li>
-                  <a
-                    href="#"
-                    className="text-gray-400 hover:text-cyan transition"
-                  >
+                  <a href="#" className="text-black hover:text-cyan transition">
                     Careers
                   </a>
                 </li>
@@ -603,26 +594,17 @@ export default function Index() {
               <h4 className="font-bold mb-4 text-yellow-green">Solutions</h4>
               <ul className="space-y-2">
                 <li>
-                  <a
-                    href="#"
-                    className="text-gray-400 hover:text-cyan transition"
-                  >
+                  <a href="#" className="text-black hover:text-cyan transition">
                     Residential
                   </a>
                 </li>
                 <li>
-                  <a
-                    href="#"
-                    className="text-gray-400 hover:text-cyan transition"
-                  >
+                  <a href="#" className="text-black hover:text-cyan transition">
                     Commercial
                   </a>
                 </li>
                 <li>
-                  <a
-                    href="#"
-                    className="text-gray-400 hover:text-cyan transition"
-                  >
+                  <a href="#" className="text-black hover:text-cyan transition">
                     Industrial
                   </a>
                 </li>
@@ -632,26 +614,17 @@ export default function Index() {
               <h4 className="font-bold mb-4 text-yellow-green">Resources</h4>
               <ul className="space-y-2">
                 <li>
-                  <a
-                    href="#"
-                    className="text-gray-400 hover:text-cyan transition"
-                  >
+                  <a href="#" className="text-black hover:text-cyan transition">
                     Documentation
                   </a>
                 </li>
                 <li>
-                  <a
-                    href="#"
-                    className="text-gray-400 hover:text-cyan transition"
-                  >
+                  <a href="#" className="text-black hover:text-cyan transition">
                     FAQ
                   </a>
                 </li>
                 <li>
-                  <a
-                    href="#"
-                    className="text-gray-400 hover:text-cyan transition"
-                  >
+                  <a href="#" className="text-black hover:text-cyan transition">
                     Support
                   </a>
                 </li>
@@ -661,26 +634,17 @@ export default function Index() {
               <h4 className="font-bold mb-4 text-yellow-green">Legal</h4>
               <ul className="space-y-2">
                 <li>
-                  <a
-                    href="#"
-                    className="text-gray-400 hover:text-cyan transition"
-                  >
+                  <a href="#" className="text-black hover:text-cyan transition">
                     Privacy
                   </a>
                 </li>
                 <li>
-                  <a
-                    href="#"
-                    className="text-gray-400 hover:text-cyan transition"
-                  >
+                  <a href="#" className="text-black hover:text-cyan transition">
                     Terms
                   </a>
                 </li>
                 <li>
-                  <a
-                    href="#"
-                    className="text-gray-400 hover:text-cyan transition"
-                  >
+                  <a href="#" className="text-black hover:text-cyan transition">
                     Cookie Policy
                   </a>
                 </li>
@@ -689,11 +653,11 @@ export default function Index() {
           </div>
 
           <div className="border-t border-border pt-8 flex flex-col md:flex-row items-center justify-between">
-            <p className="text-gray-400 text-sm">
+            <p className="text-black text-sm">
               &copy; 2024 AXIVOLT. All rights reserved.
             </p>
             <div className="flex gap-6 mt-6 md:mt-0">
-              <a href="#" className="text-gray-400 hover:text-cyan transition">
+              <a href="#" className="text-black hover:text-cyan transition">
                 <span className="sr-only">Facebook</span>
                 <svg
                   className="w-6 h-6"
@@ -703,7 +667,7 @@ export default function Index() {
                   <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
                 </svg>
               </a>
-              <a href="#" className="text-gray-400 hover:text-cyan transition">
+              <a href="#" className="text-black hover:text-cyan transition">
                 <span className="sr-only">LinkedIn</span>
                 <svg
                   className="w-6 h-6"

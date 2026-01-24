@@ -88,7 +88,7 @@ export default function Solutions() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
               Solutions
             </h1>
-            <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+            <p className="text-lg text-black max-w-2xl mx-auto">
               Explore our core energy solutions — click a category to view
               detailed services and offerings.
             </p>
@@ -103,7 +103,7 @@ export default function Solutions() {
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Our Solutions
             </h2>
-            <p className="text-gray-300 text-lg">
+            <p className="text-black text-lg">
               Comprehensive energy solutions with proven results and
               comprehensive features across all sectors.
             </p>
@@ -127,7 +127,7 @@ export default function Solutions() {
 
                   {/* Title and Description */}
                   <h3 className="text-2xl font-bold mb-2">{solution.title}</h3>
-                  <p className="text-gray-300 text-sm mb-6">
+                  <p className="text-black text-sm mb-6">
                     {solution.description}
                   </p>
 
@@ -137,7 +137,7 @@ export default function Solutions() {
                       <p className="text-2xl font-bold text-cyan">
                         {solution.metric1.value}
                       </p>
-                      <p className="text-xs text-gray-400">
+                      <p className="text-xs text-black">
                         {solution.metric1.label}
                       </p>
                     </div>
@@ -145,7 +145,7 @@ export default function Solutions() {
                       <p className="text-2xl font-bold text-yellow-green">
                         {solution.metric2.value}
                       </p>
-                      <p className="text-xs text-gray-400">
+                      <p className="text-xs text-black">
                         {solution.metric2.label}
                       </p>
                     </div>
@@ -156,7 +156,7 @@ export default function Solutions() {
                     {solution.features.map((feature) => (
                       <li
                         key={feature}
-                        className="flex items-center gap-2 text-sm text-gray-300"
+                        className="flex items-center gap-2 text-sm text-black"
                       >
                         <span className="w-2 h-2 rounded-full bg-cyan"></span>
                         {feature}
@@ -169,9 +169,7 @@ export default function Solutions() {
                     <p className="text-xs font-semibold text-cyan mb-1">
                       Case Study
                     </p>
-                    <p className="text-sm text-gray-300">
-                      {solution.caseStudy}
-                    </p>
+                    <p className="text-sm text-black">{solution.caseStudy}</p>
                   </div>
 
                   {/* Arrow Indicator */}
@@ -191,7 +189,7 @@ export default function Solutions() {
           <div className="grid grid-cols-4 gap-8 mb-12">
             <div>
               <h4 className="font-bold mb-4">Services</h4>
-              <ul className="space-y-2 text-sm text-gray-400">
+              <ul className="space-y-2 text-sm text-black">
                 <li>
                   <a href="#" className="hover:text-cyan transition">
                     Solar Energy
@@ -216,7 +214,7 @@ export default function Solutions() {
             </div>
             <div>
               <h4 className="font-bold mb-4">Company</h4>
-              <ul className="space-y-2 text-sm text-gray-400">
+              <ul className="space-y-2 text-sm text-black">
                 <li>
                   <a href="#" className="hover:text-cyan transition">
                     About Us
@@ -241,7 +239,7 @@ export default function Solutions() {
             </div>
             <div>
               <h4 className="font-bold mb-4">Resources</h4>
-              <ul className="space-y-2 text-sm text-gray-400">
+              <ul className="space-y-2 text-sm text-black">
                 <li>
                   <a href="#" className="hover:text-cyan transition">
                     Resources
@@ -266,7 +264,7 @@ export default function Solutions() {
             </div>
             <div>
               <h4 className="font-bold mb-4">Legal</h4>
-              <ul className="space-y-2 text-sm text-gray-400">
+              <ul className="space-y-2 text-sm text-black">
                 <li>
                   <a href="#" className="hover:text-cyan transition">
                     Privacy Policy
@@ -286,7 +284,7 @@ export default function Solutions() {
             </div>
           </div>
           <div className="border-t border-border pt-8">
-            <p className="text-sm text-gray-400">
+            <p className="text-sm text-black">
               © 2024 Axiso Green Energies. All rights reserved.
             </p>
           </div>

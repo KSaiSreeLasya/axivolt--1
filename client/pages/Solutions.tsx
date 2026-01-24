@@ -169,9 +169,7 @@ export default function Solutions() {
                     <p className="text-xs font-semibold text-cyan mb-1">
                       Case Study
                     </p>
-                    <p className="text-sm text-black">
-                      {solution.caseStudy}
-                    </p>
+                    <p className="text-sm text-black">{solution.caseStudy}</p>
                   </div>
 
                   {/* Arrow Indicator */}

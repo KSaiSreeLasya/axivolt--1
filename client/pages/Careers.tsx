@@ -296,7 +296,9 @@ export default function Careers() {
                     </div>
                     <div className="flex-1">
                       <h3 className="text-lg font-bold mb-2">{job.title}</h3>
-                      <p className="text-sm text-black mb-3">{job.description.substring(0, 100)}...</p>
+                      <p className="text-sm text-black mb-3">
+                        {job.description.substring(0, 100)}...
+                      </p>
                       <div className="flex flex-wrap gap-4 text-sm text-black">
                         <span>📍 {job.location}</span>
                         <span>💼 {job.department}</span>
@@ -446,7 +448,10 @@ export default function Careers() {
 
       {/* Job Application Modal */}
       {selectedJob && (
-        <JobApplicationForm job={selectedJob} onClose={() => setSelectedJob(null)} />
+        <JobApplicationForm
+          job={selectedJob}
+          onClose={() => setSelectedJob(null)}
+        />
       )}
     </div>
   );

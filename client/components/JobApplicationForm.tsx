@@ -39,7 +39,7 @@ export default function JobApplicationForm({
   const [loading, setLoading] = useState(false);
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
@@ -131,7 +131,9 @@ export default function JobApplicationForm({
         <div className="sticky top-0 bg-card border-b border-border p-6 flex items-center justify-between">
           <div>
             <h2 className="text-2xl font-bold">{job.title}</h2>
-            <p className="text-black400 text-sm mt-1">Apply for this position</p>
+            <p className="text-black400 text-sm mt-1">
+              Apply for this position
+            </p>
           </div>
           <button
             onClick={onClose}

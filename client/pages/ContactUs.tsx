@@ -10,7 +10,6 @@ import {
 } from "lucide-react";
 
 export default function ContactUs() {
-
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Header />

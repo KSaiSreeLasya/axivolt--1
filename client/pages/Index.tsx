@@ -574,26 +574,17 @@ export default function Index() {
               <h4 className="font-bold mb-4 text-yellow-green">Company</h4>
               <ul className="space-y-2">
                 <li>
-                  <a
-                    href="#"
-                    className="text-black hover:text-cyan transition"
-                  >
+                  <a href="#" className="text-black hover:text-cyan transition">
                     About Us
                   </a>
                 </li>
                 <li>
-                  <a
-                    href="#"
-                    className="text-black hover:text-cyan transition"
-                  >
+                  <a href="#" className="text-black hover:text-cyan transition">
                     Blog
                   </a>
                 </li>
                 <li>
-                  <a
-                    href="#"
-                    className="text-black hover:text-cyan transition"
-                  >
+                  <a href="#" className="text-black hover:text-cyan transition">
                     Careers
                   </a>
                 </li>
@@ -603,26 +594,17 @@ export default function Index() {
               <h4 className="font-bold mb-4 text-yellow-green">Solutions</h4>
               <ul className="space-y-2">
                 <li>
-                  <a
-                    href="#"
-                    className="text-black hover:text-cyan transition"
-                  >
+                  <a href="#" className="text-black hover:text-cyan transition">
                     Residential
                   </a>
                 </li>
                 <li>
-                  <a
-                    href="#"
-                    className="text-black hover:text-cyan transition"
-                  >
+                  <a href="#" className="text-black hover:text-cyan transition">
                     Commercial
                   </a>
                 </li>
                 <li>
-                  <a
-                    href="#"
-                    className="text-black hover:text-cyan transition"
-                  >
+                  <a href="#" className="text-black hover:text-cyan transition">
                     Industrial
                   </a>
                 </li>
@@ -632,26 +614,17 @@ export default function Index() {
               <h4 className="font-bold mb-4 text-yellow-green">Resources</h4>
               <ul className="space-y-2">
                 <li>
-                  <a
-                    href="#"
-                    className="text-black hover:text-cyan transition"
-                  >
+                  <a href="#" className="text-black hover:text-cyan transition">
                     Documentation
                   </a>
                 </li>
                 <li>
-                  <a
-                    href="#"
-                    className="text-black hover:text-cyan transition"
-                  >
+                  <a href="#" className="text-black hover:text-cyan transition">
                     FAQ
                   </a>
                 </li>
                 <li>
-                  <a
-                    href="#"
-                    className="text-black hover:text-cyan transition"
-                  >
+                  <a href="#" className="text-black hover:text-cyan transition">
                     Support
                   </a>
                 </li>
@@ -661,26 +634,17 @@ export default function Index() {
               <h4 className="font-bold mb-4 text-yellow-green">Legal</h4>
               <ul className="space-y-2">
                 <li>
-                  <a
-                    href="#"
-                    className="text-black hover:text-cyan transition"
-                  >
+                  <a href="#" className="text-black hover:text-cyan transition">
                     Privacy
                   </a>
                 </li>
                 <li>
-                  <a
-                    href="#"
-                    className="text-black hover:text-cyan transition"
-                  >
+                  <a href="#" className="text-black hover:text-cyan transition">
                     Terms
                   </a>
                 </li>
                 <li>
-                  <a
-                    href="#"
-                    className="text-black hover:text-cyan transition"
-                  >
+                  <a href="#" className="text-black hover:text-cyan transition">
                     Cookie Policy
                   </a>
                 </li>

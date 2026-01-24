@@ -82,25 +82,25 @@ export default function Header() {
                 <div className="py-2">
                   <Link
                     to="/solutions/solar"
-                    className="block px-6 py-3 text-sm text-gray-700 hover:text-cyan hover:bg-background/50 transition-colors border-b border-border"
+                    className="block px-6 py-3 text-sm text-black hover:text-cyan hover:bg-background/50 transition-colors border-b border-border"
                   >
                     Solar
                   </Link>
                   <Link
                     to="/solutions/wind"
-                    className="block px-6 py-3 text-sm text-gray-700 hover:text-cyan hover:bg-background/50 transition-colors border-b border-border"
+                    className="block px-6 py-3 text-sm text-black hover:text-cyan hover:bg-background/50 transition-colors border-b border-border"
                   >
                     Wind
                   </Link>
                   <Link
                     to="/solutions/energy-storage"
-                    className="block px-6 py-3 text-sm text-gray-700 hover:text-cyan hover:bg-background/50 transition-colors border-b border-border"
+                    className="block px-6 py-3 text-sm text-black hover:text-cyan hover:bg-background/50 transition-colors border-b border-border"
                   >
                     Energy Storage
                   </Link>
                   <Link
                     to="/solutions/ev-stations"
-                    className="block px-6 py-3 text-sm text-gray-700 hover:text-cyan hover:bg-background/50 transition-colors"
+                    className="block px-6 py-3 text-sm text-black hover:text-cyan hover:bg-background/50 transition-colors"
                   >
                     EV Stations
                   </Link>
@@ -136,19 +136,19 @@ export default function Header() {
                 <div className="py-2">
                   <Link
                     to="/advisory"
-                    className="block px-6 py-3 text-sm text-gray-700 hover:text-cyan hover:bg-background/50 transition-colors"
+                    className="block px-6 py-3 text-sm text-black hover:text-cyan hover:bg-background/50 transition-colors"
                   >
                     Advisory
                   </Link>
                   <Link
                     to="/procurement"
-                    className="block px-6 py-3 text-sm text-gray-700 hover:text-cyan hover:bg-background/50 transition-colors"
+                    className="block px-6 py-3 text-sm text-black hover:text-cyan hover:bg-background/50 transition-colors"
                   >
                     Procurement
                   </Link>
                   <Link
                     to="/digital-solutions"
-                    className="block px-6 py-3 text-sm text-gray-700 hover:text-cyan hover:bg-background/50 transition-colors"
+                    className="block px-6 py-3 text-sm text-black hover:text-cyan hover:bg-background/50 transition-colors"
                   >
                     Digital Solutions
                   </Link>

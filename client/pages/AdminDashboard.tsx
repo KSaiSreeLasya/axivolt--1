@@ -134,17 +134,38 @@ export default function AdminDashboard() {
   };
 
   const deleteItem = async (id: string, table: string) => {
-    if (!confirm("Are you sure you want to delete this?")) return;
+    Swal.fire({
+      title: "Delete Confirmation",
+      text: "Are you sure you want to delete this item? This action cannot be undone.",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#dc2626",
+      cancelButtonColor: "#047F86",
+      confirmButtonText: "Yes, delete it!",
+      cancelButtonText: "Cancel",
+    }).then(async (result) => {
+      if (!result.isConfirmed) return;
 
-    try {
-      const { error } = await supabase.from(table).delete().eq("id", id);
-      if (error) throw error;
-      toast.success("Deleted successfully");
-      fetchData();
-    } catch (err) {
-      toast.error("Failed to delete");
-      console.error(err);
-    }
+      try {
+        const { error } = await supabase.from(table).delete().eq("id", id);
+        if (error) throw error;
+        Swal.fire({
+          icon: "success",
+          title: "Deleted!",
+          text: "Item has been deleted successfully",
+          confirmButtonColor: "#047F86",
+        });
+        fetchData();
+      } catch (err) {
+        Swal.fire({
+          icon: "error",
+          title: "Failed to Delete",
+          text: "An error occurred while deleting the item",
+          confirmButtonColor: "#047F86",
+        });
+        console.error(err);
+      }
+    });
   };
 
   const updateStatus = async (id: string, table: string, newStatus: string) => {

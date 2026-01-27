@@ -1,4 +1,5 @@
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import { useState } from "react";
 import { CheckCircle } from "lucide-react";
 import Swal from "sweetalert2";
@@ -447,12 +448,7 @@ export default function GetQuote() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-card border-t border-border py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-black400 text-sm">
-          <p>&copy; 2024 AXIVOLT. All rights reserved.</p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

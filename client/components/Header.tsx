@@ -13,40 +13,14 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 w-full bg-background border-b border-border">
       <div className="max-w-full mx-auto px-6 lg:px-12">
-        <div className="flex items-center h-20 gap-8">
+        <div className="flex items-center h-24 gap-8">
           {/* Logo and Brand */}
           <Link to="/" className="flex items-center gap-3 group flex-shrink-0">
-            <div className="flex items-center gap-1">
-              <svg
-                className="w-8 h-8"
-                viewBox="0 0 200 200"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M 40 100 L 70 40 L 100 100 L 85 100 L 75 75 L 55 75 L 65 100 Z"
-                  fill="#048286"
-                />
-                <path
-                  d="M 50 120 Q 70 100 100 115"
-                  stroke="#048286"
-                  strokeWidth="12"
-                  fill="none"
-                  strokeLinecap="round"
-                />
-                <path
-                  d="M 130 50 L 160 80 L 150 130 Q 140 140 130 135 L 115 100 Z"
-                  fill="#047F86"
-                />
-                <path
-                  d="M 145 60 Q 160 75 155 110"
-                  stroke="#047F86"
-                  strokeWidth="10"
-                  fill="none"
-                  strokeLinecap="round"
-                />
-              </svg>
-            </div>
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets%2Ffe5527c1828944a38faa27a1f5c6efe7%2F00fa53301075421e90acc8403136e6ca?format=webp&width=200&height=300"
+              alt="AXIVOLT Logo"
+              className="h-16 w-auto"
+            />
           </Link>
 
           {/* Navigation - Centered */}

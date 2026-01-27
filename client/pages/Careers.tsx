@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import JobApplicationForm from "@/components/JobApplicationForm";
 import { supabase } from "@/lib/supabase";
 import {
@@ -487,12 +488,7 @@ export default function Careers() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-card border-t border-border py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-black text-sm">
-          <p>&copy; 2024 AXIVOLT. All rights reserved.</p>
-        </div>
-      </footer>
+      <Footer />
 
       {/* Job Application Modal */}
       {selectedJob && (

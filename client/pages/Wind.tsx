@@ -1,4 +1,5 @@
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import { ArrowLeft, Wind as WindIcon, Zap, Gauge } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -281,113 +282,7 @@ export default function Wind() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-card border-t border-border mt-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          <div className="grid grid-cols-4 gap-8 mb-12">
-            <div>
-              <h4 className="font-bold mb-4">Services</h4>
-              <ul className="space-y-2 text-sm text-black400">
-                <li>
-                  <a href="#" className="hover:text-cyan transition">
-                    Solar Energy
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-cyan transition">
-                    Wind Power
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-cyan transition">
-                    Energy Storage
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-cyan transition">
-                    Smart Grid
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-bold mb-4">Company</h4>
-              <ul className="space-y-2 text-sm text-black400">
-                <li>
-                  <a href="#" className="hover:text-cyan transition">
-                    About Us
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-cyan transition">
-                    Advisory
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-cyan transition">
-                    Careers
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-cyan transition">
-                    Sectors
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-bold mb-4">Resources</h4>
-              <ul className="space-y-2 text-sm text-black400">
-                <li>
-                  <a href="#" className="hover:text-cyan transition">
-                    Resources
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-cyan transition">
-                    Digital Solutions
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-cyan transition">
-                    Procurement
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-cyan transition">
-                    Support
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-bold mb-4">Legal</h4>
-              <ul className="space-y-2 text-sm text-black400">
-                <li>
-                  <a href="#" className="hover:text-cyan transition">
-                    Privacy Policy
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-cyan transition">
-                    Terms of Service
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-cyan transition">
-                    Compliance
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div className="border-t border-border pt-8">
-            <p className="text-sm text-black400">
-              © 2024 Axiso Green Energies. All rights reserved.
-            </p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

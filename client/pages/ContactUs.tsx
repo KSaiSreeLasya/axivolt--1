@@ -1,4 +1,5 @@
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import ContactForm from "@/components/ContactForm";
 import {
   Mail,
@@ -170,127 +171,7 @@ export default function ContactUs() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-card border-t border-border py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
-            {/* Company Info */}
-            <div>
-              <h3 className="text-lg font-bold mb-4">Services</h3>
-              <ul className="space-y-2 text-sm text-black400">
-                <li>
-                  <a href="#" className="hover:text-cyan transition-colors">
-                    Solar Energy
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-cyan transition-colors">
-                    Wind Energy
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-cyan transition-colors">
-                    Energy Storage
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-cyan transition-colors">
-                    Smart Grid
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            {/* Company Links */}
-            <div>
-              <h3 className="text-lg font-bold mb-4">Company</h3>
-              <ul className="space-y-2 text-sm text-black400">
-                <li>
-                  <a href="#" className="hover:text-cyan transition-colors">
-                    About Us
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-cyan transition-colors">
-                    Advisory
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-cyan transition-colors">
-                    Careers
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-cyan transition-colors">
-                    Sectors
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            {/* Resources */}
-            <div>
-              <h3 className="text-lg font-bold mb-4">Resources</h3>
-              <ul className="space-y-2 text-sm text-black400">
-                <li>
-                  <a href="#" className="hover:text-cyan transition-colors">
-                    Resources
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-cyan transition-colors">
-                    Digital Solutions
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-cyan transition-colors">
-                    Procurement
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-cyan transition-colors">
-                    Support
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            {/* Legal */}
-            <div>
-              <h3 className="text-lg font-bold mb-4">Legal</h3>
-              <ul className="space-y-2 text-sm text-black400">
-                <li>
-                  <a href="#" className="hover:text-cyan transition-colors">
-                    Privacy Policy
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-cyan transition-colors">
-                    Terms of Service
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-cyan transition-colors">
-                    Cookie Policy
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-cyan transition-colors">
-                    Compliance
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="border-t border-border pt-8">
-            <p className="text-center text-sm text-black400">
-              &copy; 2024 AXIVOLT Green Energies. All rights reserved. |
-              Certified ISO 14001 | Certified ISO 9001 | TUREC Certified
-            </p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

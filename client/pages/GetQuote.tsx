@@ -1,4 +1,5 @@
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import { useState } from "react";
 import { CheckCircle } from "lucide-react";
 import Swal from "sweetalert2";

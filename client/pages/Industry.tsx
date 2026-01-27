@@ -1,4 +1,5 @@
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import { ArrowRight, CheckCircle, Building2, Factory, Zap } from "lucide-react";
 
 export default function Industry() {
@@ -27,8 +28,8 @@ export default function Industry() {
       description:
         "Industrial-grade renewable energy solutions for high-demand manufacturing and production facilities.",
       icon: Factory,
-      color: "bg-green-500/20",
-      iconColor: "text-green-400",
+      color: "bg-cyan/20",
+      iconColor: "text-cyan",
       stats: [
         { value: "60%+", label: "Peak Load Coverage" },
         { value: "6-8 yrs", label: "ROI Timeline" },
@@ -84,8 +85,8 @@ export default function Industry() {
       description:
         "Energy-efficient solutions for retail stores, hotels, and hospitality businesses to enhance profitability.",
       icon: Building2,
-      color: "bg-yellow-500/20",
-      iconColor: "text-yellow-400",
+      color: "bg-cyan/20",
+      iconColor: "text-cyan",
       stats: [
         { value: "35-40%", label: "Utility Savings" },
         { value: "9-11 yrs", label: "ROI Timeline" },
@@ -266,12 +267,7 @@ export default function Industry() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-card border-t border-border py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-black400 text-sm">
-          <p>&copy; 2024 AXIVOLT. All rights reserved.</p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

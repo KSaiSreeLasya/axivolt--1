@@ -1,6 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import JobApplicationForm from "@/components/JobApplicationForm";
+import { supabase } from "@/lib/supabase";
 import {
   ArrowRight,
   Briefcase,
@@ -11,18 +13,47 @@ import {
 } from "lucide-react";
 
 interface Job {
+  id?: string;
   title: string;
   department: string;
-  type: string;
+  job_type: string;
   location: string;
-  experience: string;
+  experience_required: string;
   description: string;
   requirements: string[];
   benefits: string[];
+  is_active?: boolean;
+  created_at?: string;
+  updated_at?: string;
 }
 
 export default function Careers() {
   const [selectedJob, setSelectedJob] = useState<Job | null>(null);
+  const [jobs, setJobs] = useState<Job[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetchJobs();
+  }, []);
+
+  const fetchJobs = async () => {
+    try {
+      const { data, error } = await supabase
+        .from("jobs")
+        .select("*")
+        .eq("is_active", true)
+        .order("created_at", { ascending: false });
+
+      if (error) throw error;
+      setJobs(data || []);
+    } catch (err) {
+      console.error("Failed to fetch jobs:", err);
+      // Fallback to static jobs if fetch fails
+      setJobs(defaultJobs);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   const values = [
     {
@@ -43,13 +74,14 @@ export default function Careers() {
     },
   ];
 
-  const jobs: Job[] = [
+  const defaultJobs: Job[] = [
     {
       title: "Solar Engineer",
       department: "Engineering",
-      type: "Full-time",
+      job_type: "Full-time",
       location: "Remote/On-site",
-      experience: "3+ years",
+      experience_required: "3+ years",
+      is_active: true,
       description:
         "Lead the design and implementation of utility-scale solar projects, working with cutting-edge technology to drive renewable energy adoption. You'll collaborate with our engineering team to develop innovative solutions that optimize energy generation and system efficiency.",
       requirements: [
@@ -72,9 +104,10 @@ export default function Careers() {
     {
       title: "Wind Energy Analyst",
       department: "Analysis",
-      type: "Full-time",
+      job_type: "Full-time",
       location: "Bangalore",
-      experience: "2+ years",
+      experience_required: "2+ years",
+      is_active: true,
       description:
         "Analyze wind resources and conduct feasibility studies for wind energy projects. Work with advanced modeling software and data analysis tools to identify optimal project locations and predict energy generation potential. Contribute to the development of wind energy strategies.",
       requirements: [
@@ -97,9 +130,10 @@ export default function Careers() {
     {
       title: "Digital Solutions Developer",
       department: "Technology",
-      type: "Full-time",
+      job_type: "Full-time",
       location: "Remote",
-      experience: "4+ years",
+      experience_required: "4+ years",
+      is_active: true,
       description:
         "Build and maintain digital solutions for renewable energy management and monitoring. Develop full-stack applications that help clients track energy generation, optimize consumption, and integrate with smart grid technologies.",
       requirements: [
@@ -122,9 +156,10 @@ export default function Careers() {
     {
       title: "Project Manager - Renewable Energy",
       department: "Operations",
-      type: "Full-time",
+      job_type: "Full-time",
       location: "Bangalore/Pune",
-      experience: "5+ years",
+      experience_required: "5+ years",
+      is_active: true,
       description:
         "Oversee end-to-end renewable energy projects from conception to completion. Manage budgets, timelines, stakeholder relationships, and teams. Ensure projects meet technical specifications, quality standards, and regulatory requirements.",
       requirements: [
@@ -147,9 +182,10 @@ export default function Careers() {
     {
       title: "Business Development Specialist",
       department: "Sales",
-      type: "Full-time",
+      job_type: "Full-time",
       location: "Pan India",
-      experience: "3+ years",
+      experience_required: "3+ years",
+      is_active: true,
       description:
         "Identify and develop new business opportunities in the renewable energy sector. Build and maintain client relationships, conduct market research, and prepare proposals for potential projects. Contribute to business strategy and growth initiatives.",
       requirements: [
@@ -172,9 +208,10 @@ export default function Careers() {
     {
       title: "Sustainability Consultant",
       department: "Advisory",
-      type: "Full-time",
+      job_type: "Full-time",
       location: "Remote",
-      experience: "6+ years",
+      experience_required: "6+ years",
+      is_active: true,
       description:
         "Provide strategic consulting on sustainability and renewable energy implementation. Help clients develop comprehensive energy strategies, conduct sustainability assessments, and identify cost-saving opportunities through renewable energy adoption.",
       requirements: [
@@ -283,40 +320,52 @@ export default function Careers() {
             </p>
           </div>
 
-          <div className="space-y-4">
-            {jobs.map((job, idx) => (
-              <div
-                key={idx}
-                className="bg-card rounded-lg border border-border p-6 hover:border-cyan transition-all flex items-center justify-between"
-              >
-                <div className="flex-1">
-                  <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 bg-cyan/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <Briefcase className="w-6 h-6 text-cyan" />
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="text-lg font-bold mb-2">{job.title}</h3>
-                      <p className="text-sm text-black mb-3">
-                        {job.description.substring(0, 100)}...
-                      </p>
-                      <div className="flex flex-wrap gap-4 text-sm text-black">
-                        <span>📍 {job.location}</span>
-                        <span>💼 {job.department}</span>
-                        <span>⏱️ {job.type}</span>
-                        <span>📊 {job.experience}</span>
+          {loading ? (
+            <div className="text-center py-12">
+              <p className="text-black">Loading positions...</p>
+            </div>
+          ) : jobs.length === 0 ? (
+            <div className="text-center py-12 bg-card rounded-lg border border-border">
+              <p className="text-black">
+                No open positions at this time. Check back soon!
+              </p>
+            </div>
+          ) : (
+            <div className="space-y-4">
+              {jobs.map((job, idx) => (
+                <div
+                  key={idx}
+                  className="bg-card rounded-lg border border-border p-6 hover:border-cyan transition-all flex items-center justify-between"
+                >
+                  <div className="flex-1">
+                    <div className="flex items-start gap-4">
+                      <div className="w-12 h-12 bg-cyan/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <Briefcase className="w-6 h-6 text-cyan" />
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="text-lg font-bold mb-2">{job.title}</h3>
+                        <p className="text-sm text-black mb-3">
+                          {job.description.substring(0, 100)}...
+                        </p>
+                        <div className="flex flex-wrap gap-4 text-sm text-black">
+                          <span>📍 {job.location}</span>
+                          <span>💼 {job.department}</span>
+                          <span>⏱️ {job.job_type}</span>
+                          <span>📊 {job.experience_required}</span>
+                        </div>
                       </div>
                     </div>
                   </div>
+                  <button
+                    onClick={() => setSelectedJob(job)}
+                    className="bg-cyan text-background px-6 py-2 rounded font-semibold hover:bg-yellow-green transition-all text-sm flex-shrink-0 ml-4"
+                  >
+                    Apply Now
+                  </button>
                 </div>
-                <button
-                  onClick={() => setSelectedJob(job)}
-                  className="bg-cyan text-background px-6 py-2 rounded font-semibold hover:bg-yellow-green transition-all text-sm flex-shrink-0 ml-4"
-                >
-                  Apply Now
-                </button>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          )}
 
           <div className="text-center mt-12">
             <button className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 rounded-lg font-bold transition-all inline-flex items-center gap-2">
@@ -439,12 +488,7 @@ export default function Careers() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-card border-t border-border py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-black text-sm">
-          <p>&copy; 2024 AXIVOLT. All rights reserved.</p>
-        </div>
-      </footer>
+      <Footer />
 
       {/* Job Application Modal */}
       {selectedJob && (

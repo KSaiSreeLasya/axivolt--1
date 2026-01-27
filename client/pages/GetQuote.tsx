@@ -1,6 +1,9 @@
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import { useState } from "react";
 import { CheckCircle } from "lucide-react";
+import Swal from "sweetalert2";
+import { supabase } from "@/lib/supabase";
 
 interface BillRange {
   min: number;
@@ -79,8 +82,6 @@ export default function GetQuote() {
     agreeToTerms: false,
   });
 
-  const [submitted, setSubmitted] = useState(false);
-
   const selectedRangeIndex = billOptions.indexOf(formData.billRange);
   const selectedBillRange =
     selectedRangeIndex >= 0 ? billRanges[selectedRangeIndex] : null;
@@ -120,11 +121,53 @@ export default function GetQuote() {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("Quote submitted:", { category, ...formData });
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 3000);
+
+    try {
+      const { error } = await supabase.from("quote_requests").insert([
+        {
+          full_name: formData.fullName,
+          whatsapp: formData.whatsapp,
+          pin_code: formData.pinCode,
+          bill_range: formData.billRange,
+          capacity: formData.capacity,
+          category: category,
+          agree_to_terms: formData.agreeToTerms,
+        },
+      ]);
+
+      if (error) {
+        throw error;
+      }
+
+      // Show success alert
+      Swal.fire({
+        icon: "success",
+        title: "Quote Request Submitted!",
+        text: "Thank you! Our team will contact you shortly.",
+        confirmButtonColor: "#047F86",
+        confirmButtonText: "OK",
+      });
+
+      // Reset form
+      setFormData({
+        fullName: "",
+        whatsapp: "",
+        pinCode: "",
+        billRange: "",
+        capacity: "",
+        agreeToTerms: false,
+      });
+    } catch (error: any) {
+      console.error("Failed to submit quote:", error);
+      Swal.fire({
+        icon: "error",
+        title: "Submission Failed",
+        text: error.message || "Failed to submit quote. Please try again.",
+        confirmButtonColor: "#047F86",
+      });
+    }
   };
 
   return (
@@ -191,14 +234,6 @@ export default function GetQuote() {
                 {category === "housing" && "Housing Society Quote Form"}
                 {category === "commercial" && "Commercial Quote Form"}
               </h2>
-
-              {submitted && (
-                <div className="mb-6 p-4 bg-green-500/20 border border-green-500 rounded-lg">
-                  <p className="text-green-400 font-semibold">
-                    Thank you! We'll contact you soon.
-                  </p>
-                </div>
-              )}
 
               <form onSubmit={handleSubmit} className="space-y-6">
                 {/* Full Name */}
@@ -351,7 +386,7 @@ export default function GetQuote() {
                 {/* Submit Button */}
                 <button
                   type="submit"
-                  className="w-full bg-cyan text-background px-6 py-3 rounded font-bold hover:bg-[#AFE332] transition-all"
+                  className="w-full bg-cyan text-background px-6 py-3 rounded font-bold hover:bg-[#047F86] transition-all"
                 >
                   Submit Details
                 </button>
@@ -413,12 +448,7 @@ export default function GetQuote() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-card border-t border-border py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-black400 text-sm">
-          <p>&copy; 2024 AXIVOLT. All rights reserved.</p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

@@ -1,4 +1,5 @@
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import { ArrowLeft, Zap, Plug, Truck } from "lucide-react";
 import { Link } from "react-router-dom";
 
@@ -31,8 +32,8 @@ export default function EVStations() {
         "AC & DC fast charging deployments",
         "Smart charging and payment integrations",
       ],
-      color: "bg-green-500/20",
-      iconColor: "text-green-400",
+      color: "bg-cyan-500/20",
+      iconColor: "text-cyan",
     },
     {
       title: "EV Charging Solutions",
@@ -78,9 +79,9 @@ export default function EVStations() {
             {/* Left Content */}
             <div className="space-y-8">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-                <span className="text-green-400">EV Stations &</span>
+                <span className="text-cyan">EV Stations &</span>
                 <br />
-                <span className="text-green-400">Charging</span>
+                <span className="text-cyan">Charging</span>
               </h1>
 
               <p className="text-lg text-black300 leading-relaxed">
@@ -89,10 +90,10 @@ export default function EVStations() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                <button className="bg-green-400 text-background px-8 py-3 rounded-lg font-bold text-lg hover:bg-green-500 transition-all">
+                <button className="bg-cyan text-background px-8 py-3 rounded-lg font-bold text-lg hover:bg-opacity-90 transition-all">
                   EV Infrastructure
                 </button>
-                <button className="border-2 border-green-400 text-green-400 px-8 py-3 rounded-lg font-bold text-lg hover:bg-green-400/10 transition-all">
+                <button className="border-2 border-cyan text-cyan px-8 py-3 rounded-lg font-bold text-lg hover:bg-cyan/10 transition-all">
                   EV Charging
                 </button>
               </div>
@@ -177,7 +178,7 @@ export default function EVStations() {
                         key={feature}
                         className="flex items-start gap-2 text-sm text-black300"
                       >
-                        <span className="w-1.5 h-1.5 rounded-full bg-green-400 mt-1.5 flex-shrink-0"></span>
+                        <span className="w-1.5 h-1.5 rounded-full bg-cyan mt-1.5 flex-shrink-0"></span>
                         {feature}
                       </li>
                     ))}
@@ -191,7 +192,7 @@ export default function EVStations() {
 
       {/* CTA Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto bg-green-400 rounded-2xl p-12 text-center">
+        <div className="max-w-4xl mx-auto bg-cyan rounded-2xl p-12 text-center">
           <h2 className="text-3xl font-bold text-background mb-4">
             Deploy EV charging at scale
           </h2>
@@ -199,119 +200,13 @@ export default function EVStations() {
             We offer planning, permitting, supply and operations for charging
             networks and depot electrification.
           </p>
-          <button className="bg-background text-green-400 px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition-all">
+          <button className="bg-background text-cyan px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition-all">
             Get Started
           </button>
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-card border-t border-border mt-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          <div className="grid grid-cols-4 gap-8 mb-12">
-            <div>
-              <h4 className="font-bold mb-4">Services</h4>
-              <ul className="space-y-2 text-sm text-black400">
-                <li>
-                  <a href="#" className="hover:text-cyan transition">
-                    Solar Energy
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-cyan transition">
-                    Wind Power
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-cyan transition">
-                    Energy Storage
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-cyan transition">
-                    Smart Grid
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-bold mb-4">Company</h4>
-              <ul className="space-y-2 text-sm text-black400">
-                <li>
-                  <a href="#" className="hover:text-cyan transition">
-                    About Us
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-cyan transition">
-                    Advisory
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-cyan transition">
-                    Careers
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-cyan transition">
-                    Sectors
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-bold mb-4">Resources</h4>
-              <ul className="space-y-2 text-sm text-black400">
-                <li>
-                  <a href="#" className="hover:text-cyan transition">
-                    Resources
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-cyan transition">
-                    Digital Solutions
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-cyan transition">
-                    Procurement
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-cyan transition">
-                    Support
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-bold mb-4">Legal</h4>
-              <ul className="space-y-2 text-sm text-black400">
-                <li>
-                  <a href="#" className="hover:text-cyan transition">
-                    Privacy Policy
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-cyan transition">
-                    Terms of Service
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-cyan transition">
-                    Compliance
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div className="border-t border-border pt-8">
-            <p className="text-sm text-black400">
-              © 2024 Axiso Green Energies. All rights reserved.
-            </p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

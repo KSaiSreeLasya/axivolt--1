@@ -6,44 +6,21 @@ export default function Header() {
   const [solutionsOpen, setSolutionsOpen] = useState(false);
   const [solarOpen, setSolarOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
+  const [activeSolutionSubmenu, setActiveSolutionSubmenu] = useState<
+    string | null
+  >(null);
 
   return (
     <header className="sticky top-0 z-50 w-full bg-background border-b border-border">
       <div className="max-w-full mx-auto px-6 lg:px-12">
-        <div className="flex items-center h-20 gap-8">
+        <div className="flex items-center h-24 gap-8">
           {/* Logo and Brand */}
           <Link to="/" className="flex items-center gap-3 group flex-shrink-0">
-            <div className="flex items-center gap-1">
-              <svg
-                className="w-8 h-8"
-                viewBox="0 0 200 200"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M 40 100 L 70 40 L 100 100 L 85 100 L 75 75 L 55 75 L 65 100 Z"
-                  fill="#048286"
-                />
-                <path
-                  d="M 50 120 Q 70 100 100 115"
-                  stroke="#048286"
-                  strokeWidth="12"
-                  fill="none"
-                  strokeLinecap="round"
-                />
-                <path
-                  d="M 130 50 L 160 80 L 150 130 Q 140 140 130 135 L 115 100 Z"
-                  fill="#afe332"
-                />
-                <path
-                  d="M 145 60 Q 160 75 155 110"
-                  stroke="#afe332"
-                  strokeWidth="10"
-                  fill="none"
-                  strokeLinecap="round"
-                />
-              </svg>
-            </div>
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets%2Ffe5527c1828944a38faa27a1f5c6efe7%2F00fa53301075421e90acc8403136e6ca?format=webp&width=200&height=300"
+              alt="AXIVOLT Logo"
+              className="h-16 w-auto"
+            />
           </Link>
 
           {/* Navigation - Centered */}
@@ -59,6 +36,8 @@ export default function Header() {
             <div className="relative group">
               <Link
                 to="/solutions"
+                onMouseEnter={() => setSolutionsOpen(true)}
+                onMouseLeave={() => setSolutionsOpen(false)}
                 className="flex items-center gap-1 text-sm font-medium text-cyan hover:text-yellow-green transition-colors"
               >
                 Solutions
@@ -73,19 +52,65 @@ export default function Header() {
               <div
                 onMouseEnter={() => setSolutionsOpen(true)}
                 onMouseLeave={() => setSolutionsOpen(false)}
-                className={`absolute top-full left-0 mt-0 bg-card border border-border rounded-none w-56 shadow-xl transition-all duration-200 ${
+                className={`absolute top-full left-0 mt-0 bg-card border border-border rounded-none shadow-xl transition-all duration-200 overflow-visible z-50 ${
                   solutionsOpen
                     ? "opacity-100 visible translate-y-0"
                     : "opacity-0 invisible -translate-y-2"
                 }`}
+                style={{ width: "auto", minWidth: "224px" }}
               >
                 <div className="py-2">
-                  <Link
-                    to="/solutions/solar"
-                    className="block px-6 py-3 text-sm text-black hover:text-cyan hover:bg-background/50 transition-colors border-b border-border"
+                  {/* Solar with Submenu */}
+                  <div
+                    className="relative"
+                    onMouseEnter={() => setActiveSolutionSubmenu("solar")}
+                    onMouseLeave={() => setActiveSolutionSubmenu(null)}
                   >
-                    Solar
-                  </Link>
+                    <Link
+                      to="/solutions/solar"
+                      className="flex items-center justify-between px-6 py-3 text-sm text-black hover:text-cyan hover:bg-background/50 transition-colors border-b border-border"
+                    >
+                      Solar
+                      <ChevronDown className="w-4 h-4 rotate-180" />
+                    </Link>
+
+                    {/* Solar Subcategories */}
+                    <div
+                      className={`absolute top-0 bg-card border border-border rounded-sm w-56 shadow-2xl transition-all duration-200 z-50 ${
+                        activeSolutionSubmenu === "solar"
+                          ? "opacity-100 visible"
+                          : "opacity-0 invisible"
+                      }`}
+                      style={{
+                        left: "100%",
+                        pointerEvents:
+                          activeSolutionSubmenu === "solar" ? "auto" : "none",
+                        marginLeft: "0px",
+                      }}
+                    >
+                      <div className="py-2">
+                        <Link
+                          to="/solutions/solar/residential"
+                          className="block px-6 py-3 text-sm text-black hover:text-cyan hover:bg-background/50 transition-colors border-b border-border last:border-b-0"
+                        >
+                          Residential (B2C)
+                        </Link>
+                        <Link
+                          to="/solutions/solar/commercial"
+                          className="block px-6 py-3 text-sm text-black hover:text-cyan hover:bg-background/50 transition-colors border-b border-border last:border-b-0"
+                        >
+                          Commercial (B2B)
+                        </Link>
+                        <Link
+                          to="/solutions/solar/government"
+                          className="block px-6 py-3 text-sm text-black hover:text-cyan hover:bg-background/50 transition-colors last:border-b-0"
+                        >
+                          Government (B2G)
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+
                   <Link
                     to="/solutions/wind"
                     className="block px-6 py-3 text-sm text-black hover:text-cyan hover:bg-background/50 transition-colors border-b border-border"
@@ -110,7 +135,8 @@ export default function Header() {
 
             {/* Services Dropdown */}
             <div className="relative group">
-              <button
+              <Link
+                to="/services"
                 onMouseEnter={() => setServicesOpen(true)}
                 onMouseLeave={() => setServicesOpen(false)}
                 className="flex items-center gap-1 text-sm font-medium text-cyan hover:text-yellow-green transition-colors"
@@ -121,7 +147,7 @@ export default function Header() {
                     servicesOpen ? "rotate-180" : ""
                   }`}
                 />
-              </button>
+              </Link>
 
               {/* Services Submenu */}
               <div

@@ -373,12 +373,7 @@ export default function DigitalSolutions() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-card border-t border-border py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-black400 text-sm">
-          <p>&copy; 2024 AXIVOLT. All rights reserved.</p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

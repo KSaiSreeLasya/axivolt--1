@@ -1,4 +1,5 @@
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import { ArrowLeft, Home, Zap, Shield, Users } from "lucide-react";
 import { Link } from "react-router-dom";
 

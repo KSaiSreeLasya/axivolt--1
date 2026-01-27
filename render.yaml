@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: axivolt
+    plan: standard
+    runtime: node
+    runtimeVersion: 22
+    buildCommand: pnpm install --frozen-lockfile && pnpm run build
+    startCommand: node dist/server/node-build.mjs
+    envVars:
+      - key: NODE_ENV
+        value: production
+    routes:
+      - path: /*
+        destination: /index.html
+        match: miss

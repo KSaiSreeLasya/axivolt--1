@@ -26,6 +26,10 @@ import SolarGovernment from "./pages/SolarGovernment";
 import Wind from "./pages/Wind";
 import EnergyStorage from "./pages/EnergyStorage";
 import EVStations from "./pages/EVStations";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsOfService from "./pages/TermsOfService";
+import CookiePolicy from "./pages/CookiePolicy";
+import Compliance from "./pages/Compliance";
 
 const queryClient = new QueryClient();
 

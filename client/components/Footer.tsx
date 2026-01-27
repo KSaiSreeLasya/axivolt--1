@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <footer className="bg-card border-t border-border py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
           {/* Brand Section */}
           <div>
             <Link to="/" className="flex items-center gap-3 mb-4">
@@ -17,6 +17,42 @@ export default function Footer() {
             <p className="text-black text-sm">
               Sustainable energy solutions for a better tomorrow.
             </p>
+          </div>
+
+          {/* Services Links */}
+          <div>
+            <h4 className="font-bold mb-4 text-yellow-green">Services</h4>
+            <ul className="space-y-2">
+              <li>
+                <Link
+                  to="/solutions/solar"
+                  className="text-black hover:text-cyan transition"
+                >
+                  Solar Energy
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/solutions/wind"
+                  className="text-black hover:text-cyan transition"
+                >
+                  Wind Power
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/solutions/energy-storage"
+                  className="text-black hover:text-cyan transition"
+                >
+                  Energy Storage
+                </Link>
+              </li>
+              <li>
+                <a href="#" className="text-black hover:text-cyan transition">
+                  Smart Grid
+                </a>
+              </li>
+            </ul>
           </div>
 
           {/* Company Links */}
@@ -32,9 +68,12 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <a href="#" className="text-black hover:text-cyan transition">
-                  Blog
-                </a>
+                <Link
+                  to="/advisory"
+                  className="text-black hover:text-cyan transition"
+                >
+                  Advisory
+                </Link>
               </li>
               <li>
                 <Link
@@ -44,61 +83,85 @@ export default function Footer() {
                   Careers
                 </Link>
               </li>
-            </ul>
-          </div>
-
-          {/* Solutions Links */}
-          <div>
-            <h4 className="font-bold mb-4 text-yellow-green">Solutions</h4>
-            <ul className="space-y-2">
               <li>
-                <Link
-                  to="/solutions/solar/residential"
-                  className="text-black hover:text-cyan transition"
-                >
-                  Solar Residential
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/solutions/solar/commercial"
-                  className="text-black hover:text-cyan transition"
-                >
-                  Solar Commercial
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/solutions/wind"
-                  className="text-black hover:text-cyan transition"
-                >
-                  Wind
-                </Link>
+                <a href="#" className="text-black hover:text-cyan transition">
+                  Sectors
+                </a>
               </li>
             </ul>
           </div>
 
-          {/* Support Links */}
+          {/* Resources Links */}
           <div>
-            <h4 className="font-bold mb-4 text-yellow-green">Support</h4>
+            <h4 className="font-bold mb-4 text-yellow-green">Resources</h4>
             <ul className="space-y-2">
+              <li>
+                <a href="#" className="text-black hover:text-cyan transition">
+                  Resources
+                </a>
+              </li>
+              <li>
+                <Link
+                  to="/digital-solutions"
+                  className="text-black hover:text-cyan transition"
+                >
+                  Digital Solutions
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/procurement"
+                  className="text-black hover:text-cyan transition"
+                >
+                  Procurement
+                </Link>
+              </li>
               <li>
                 <Link
                   to="/contact"
                   className="text-black hover:text-cyan transition"
                 >
-                  Contact Us
+                  Support
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Legal Links */}
+          <div>
+            <h4 className="font-bold mb-4 text-yellow-green">Legal</h4>
+            <ul className="space-y-2">
+              <li>
+                <Link
+                  to="/privacy-policy"
+                  className="text-black hover:text-cyan transition"
+                >
+                  Privacy Policy
                 </Link>
               </li>
               <li>
-                <a href="#" className="text-black hover:text-cyan transition">
-                  FAQ
-                </a>
+                <Link
+                  to="/terms-of-service"
+                  className="text-black hover:text-cyan transition"
+                >
+                  Terms of Service
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-black hover:text-cyan transition">
-                  Support
-                </a>
+                <Link
+                  to="/cookie-policy"
+                  className="text-black hover:text-cyan transition"
+                >
+                  Cookie Policy
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/compliance"
+                  className="text-black hover:text-cyan transition"
+                >
+                  Compliance
+                </Link>
               </li>
             </ul>
           </div>

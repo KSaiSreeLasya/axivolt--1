@@ -106,6 +106,8 @@ export default function ContactUs() {
               allowFullScreen={true}
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
+              allow="accelerometer; ambient-light-sensor; autoplay; camera; encrypted-media; geolocation; gyroscope; magnetometer; microphone; payment; usb"
+              sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage allow-top-navigation"
               className="w-full"
             ></iframe>
           </div>

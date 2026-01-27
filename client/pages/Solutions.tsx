@@ -1,4 +1,5 @@
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import { ArrowRight, Sun, Wind, Battery, Zap } from "lucide-react";
 import { Link } from "react-router-dom";
 

@@ -1,4 +1,5 @@
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import { ArrowRight, CheckCircle, Building2, Factory, Zap } from "lucide-react";
 
 export default function Industry() {

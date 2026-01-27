@@ -103,7 +103,7 @@ export default function ContactUs() {
               width="100%"
               height="450"
               style={{ border: 0 }}
-              allowFullScreen={true}
+              allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               className="w-full"

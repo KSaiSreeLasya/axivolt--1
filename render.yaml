@@ -1,0 +1,9 @@
+services:
+  - type: static
+    name: axivolt
+    buildCommand: pnpm install --frozen-lockfile && pnpm run build:client
+    staticPublishPath: ./dist/spa
+    routes:
+      - path: /*
+        destination: /index.html
+        match: miss

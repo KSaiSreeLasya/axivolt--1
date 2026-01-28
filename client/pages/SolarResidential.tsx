@@ -2,8 +2,37 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { ArrowLeft, Home, Zap, Shield, Users } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useSEO, addSchemaMarkup, SchemaMarkup } from "@/hooks/useSEO";
+import { useEffect } from "react";
 
 export default function SolarResidential() {
+  useSEO({
+    title: "Residential Solar Panel Installation | Rooftop Solar Solutions",
+    description:
+      "Professional residential solar panel installation services. Custom rooftop solar systems for homes with warranty and maintenance support. Start saving on electricity bills today.",
+    keywords:
+      "residential solar panels, rooftop solar installation, home solar system, solar panels for home, residential solar company",
+    ogTitle: "Residential Solar Solutions - AXIVOLT",
+    ogDescription:
+      "Transform your home with affordable solar energy. Expert installation with lifetime support.",
+    canonical: `${typeof window !== 'undefined' ? window.location.origin : ''}/solutions/solar/residential`,
+  });
+
+  useEffect(() => {
+    // Add Service schema markup
+    addSchemaMarkup(
+      SchemaMarkup.service({
+        name: "Residential Solar Installation",
+        description:
+          "Professional rooftop solar panel installation and O&M services for residential homes and housing societies",
+        provider: {
+          name: "AXIVOLT",
+          url: typeof window !== 'undefined' ? window.location.origin : '',
+        },
+        areaServed: ["Hyderabad", "Telangana", "India"],
+      })
+    );
+  }, []);
   const offerings = [
     {
       title: "Rooftop Solar EPC",

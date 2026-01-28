@@ -4,20 +4,20 @@ export default function Footer() {
   return (
     <footer className="bg-card border-t border-border py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 mb-12">
           {/* Brand Section */}
-          <div>
-            <Link to="/" className="flex items-center gap-3 mb-4">
+          <div className="col-span-2 md:col-span-1">
+            <Link to="/" className="flex items-center gap-2 mb-3">
               <img
                 src="https://cdn.builder.io/api/v1/image/assets%2Ffe5527c1828944a38faa27a1f5c6efe7%2F00fa53301075421e90acc8403136e6ca?format=webp&width=200&height=300"
                 alt="AXIVOLT Logo"
-                className="h-24 w-auto"
+                className="h-16 w-auto"
               />
             </Link>
-            <p className="text-lg md:text-xl font-bold mb-3 whitespace-nowrap" style={{ color: '#03867E' }}>
+            <p className="text-base font-bold mb-2" style={{ color: '#03867E' }}>
               AXIVOLT GREEN ENERGIES PVT.LTD.
             </p>
-            <p className="text-black text-sm">
+            <p className="text-black text-xs">
               Sustainable energy solutions for a better tomorrow.
             </p>
           </div>

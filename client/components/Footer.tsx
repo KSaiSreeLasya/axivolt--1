@@ -14,6 +14,9 @@ export default function Footer() {
                 className="h-24 w-auto"
               />
             </Link>
+            <p className="text-black text-sm font-semibold mb-2">
+              AXIVOLT GREEN ENERGIES PVT.LTD.
+            </p>
             <p className="text-black text-sm">
               Sustainable energy solutions for a better tomorrow.
             </p>

@@ -10,8 +10,36 @@ import {
   Battery,
   Gauge,
 } from "lucide-react";
+import { useSEO, addSchemaMarkup, SchemaMarkup } from "@/hooks/useSEO";
+import { useEffect } from "react";
 
 export default function Index() {
+  useSEO({
+    title: "Solar Energy Companies in Hyderabad | AXIVOLT Renewable Solutions",
+    description:
+      "Leading solar energy company in Hyderabad offering residential, commercial, and industrial solar panel installations. Expert green energy solutions with 15+ years experience.",
+    keywords:
+      "solar energy companies in hyderabad, solar companies hyderabad, solar panel installation, green energy, renewable energy solutions",
+    ogTitle: "AXIVOLT - Solar Energy Solutions in Hyderabad",
+    ogDescription:
+      "Transform your energy with AXIVOLT's solar solutions. 500+ projects, 250MW capacity, 15+ years of excellence.",
+    canonical: `${typeof window !== 'undefined' ? window.location.origin : ''}/`,
+  });
+
+  useEffect(() => {
+    // Add Organization schema markup
+    addSchemaMarkup(
+      SchemaMarkup.organization({
+        name: "AXIVOLT",
+        logo: `${typeof window !== 'undefined' ? window.location.origin : ''}/logo.png`,
+        url: typeof window !== 'undefined' ? window.location.origin : '',
+        description:
+          "Leading solar energy company offering comprehensive renewable energy solutions",
+        phone: "+91-XXXX-XXXXX",
+        email: "info@axivolt.in",
+      })
+    );
+  }, []);
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Header />

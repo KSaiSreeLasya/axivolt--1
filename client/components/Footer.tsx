@@ -29,7 +29,7 @@ export default function Footer() {
               <li>
                 <Link
                   to="/solutions/solar"
-                  className="text-black hover:text-cyan transition"
+                  className="text-black text-sm hover:text-cyan transition"
                 >
                   Solar Energy
                 </Link>
@@ -37,7 +37,7 @@ export default function Footer() {
               <li>
                 <Link
                   to="/solutions/wind"
-                  className="text-black hover:text-cyan transition"
+                  className="text-black text-sm hover:text-cyan transition"
                 >
                   Wind Power
                 </Link>
@@ -45,13 +45,13 @@ export default function Footer() {
               <li>
                 <Link
                   to="/solutions/energy-storage"
-                  className="text-black hover:text-cyan transition"
+                  className="text-black text-sm hover:text-cyan transition"
                 >
                   Energy Storage
                 </Link>
               </li>
               <li>
-                <a href="#" className="text-black hover:text-cyan transition">
+                <a href="#" className="text-black text-sm hover:text-cyan transition">
                   Smart Grid
                 </a>
               </li>
@@ -65,7 +65,7 @@ export default function Footer() {
               <li>
                 <Link
                   to="/about"
-                  className="text-black hover:text-cyan transition"
+                  className="text-black text-sm hover:text-cyan transition"
                 >
                   About Us
                 </Link>
@@ -73,7 +73,7 @@ export default function Footer() {
               <li>
                 <Link
                   to="/advisory"
-                  className="text-black hover:text-cyan transition"
+                  className="text-black text-sm hover:text-cyan transition"
                 >
                   Advisory
                 </Link>
@@ -81,13 +81,13 @@ export default function Footer() {
               <li>
                 <Link
                   to="/careers"
-                  className="text-black hover:text-cyan transition"
+                  className="text-black text-sm hover:text-cyan transition"
                 >
                   Careers
                 </Link>
               </li>
               <li>
-                <a href="#" className="text-black hover:text-cyan transition">
+                <a href="#" className="text-black text-sm hover:text-cyan transition">
                   Sectors
                 </a>
               </li>
@@ -99,14 +99,14 @@ export default function Footer() {
             <h4 className="font-bold mb-4 text-yellow-green text-sm">Resources</h4>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="text-black hover:text-cyan transition">
+                <a href="#" className="text-black text-sm hover:text-cyan transition">
                   Resources
                 </a>
               </li>
               <li>
                 <Link
                   to="/digital-solutions"
-                  className="text-black hover:text-cyan transition"
+                  className="text-black text-sm hover:text-cyan transition"
                 >
                   Digital Solutions
                 </Link>
@@ -114,7 +114,7 @@ export default function Footer() {
               <li>
                 <Link
                   to="/procurement"
-                  className="text-black hover:text-cyan transition"
+                  className="text-black text-sm hover:text-cyan transition"
                 >
                   Procurement
                 </Link>
@@ -122,7 +122,7 @@ export default function Footer() {
               <li>
                 <Link
                   to="/contact"
-                  className="text-black hover:text-cyan transition"
+                  className="text-black text-sm hover:text-cyan transition"
                 >
                   Support
                 </Link>
@@ -137,7 +137,7 @@ export default function Footer() {
               <li>
                 <Link
                   to="/privacy-policy"
-                  className="text-black hover:text-cyan transition"
+                  className="text-black text-sm hover:text-cyan transition"
                 >
                   Privacy Policy
                 </Link>
@@ -145,7 +145,7 @@ export default function Footer() {
               <li>
                 <Link
                   to="/terms-of-service"
-                  className="text-black hover:text-cyan transition"
+                  className="text-black text-sm hover:text-cyan transition"
                 >
                   Terms of Service
                 </Link>
@@ -153,7 +153,7 @@ export default function Footer() {
               <li>
                 <Link
                   to="/cookie-policy"
-                  className="text-black hover:text-cyan transition"
+                  className="text-black text-sm hover:text-cyan transition"
                 >
                   Cookie Policy
                 </Link>
@@ -161,7 +161,7 @@ export default function Footer() {
               <li>
                 <Link
                   to="/compliance"
-                  className="text-black hover:text-cyan transition"
+                  className="text-black text-sm hover:text-cyan transition"
                 >
                   Compliance
                 </Link>

@@ -10,8 +10,37 @@ import {
   Eye,
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useSEO, addSchemaMarkup, SchemaMarkup } from "@/hooks/useSEO";
+import { useEffect } from "react";
 
 export default function SolarCommercial() {
+  useSEO({
+    title: "Commercial Solar Solutions | Business Solar Panel Systems | AXIVOLT",
+    description:
+      "Large-scale commercial solar installations for businesses. ROI-focused solar solutions with energy monitoring and asset management. Reduce operating costs significantly.",
+    keywords:
+      "commercial solar panels, business solar solutions, industrial solar installation, commercial solar company, solar energy for business",
+    ogTitle: "Commercial Solar Solutions - AXIVOLT",
+    ogDescription:
+      "Scale your business with solar. Proven commercial installations with 24/7 monitoring.",
+    canonical: `${typeof window !== 'undefined' ? window.location.origin : ''}/solutions/solar/commercial`,
+  });
+
+  useEffect(() => {
+    // Add Service schema markup
+    addSchemaMarkup(
+      SchemaMarkup.service({
+        name: "Commercial Solar Solutions",
+        description:
+          "Large-scale commercial and industrial solar installations including EPC, EV charging, and asset management services",
+        provider: {
+          name: "AXIVOLT",
+          url: typeof window !== 'undefined' ? window.location.origin : '',
+        },
+        areaServed: ["Hyderabad", "Telangana", "India"],
+      })
+    );
+  }, []);
   const services = [
     {
       title: "Commercial & Industrial Solar EPC",

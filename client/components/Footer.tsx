@@ -11,26 +11,20 @@ export default function Footer() {
               <img
                 src="https://cdn.builder.io/api/v1/image/assets%2Ffe5527c1828944a38faa27a1f5c6efe7%2F00fa53301075421e90acc8403136e6ca?format=webp&width=200&height=300"
                 alt="AXIVOLT Logo"
-                className="h-24 w-auto"
+                className="h-32 w-auto"
               />
             </Link>
-            <p
-              className="text-lg font-bold mb-3 whitespace-nowrap"
-              style={{ color: "#03867E" }}
-            >
+            <p className="text-lg font-bold mb-3 whitespace-nowrap" style={{ color: '#03867E' }}>
               AXIVOLT GREEN ENERGIES PVT.LTD.
             </p>
             <p className="text-black text-sm leading-relaxed">
-              Leading the transition to sustainable energy with innovative
-              renewable solutions for a cleaner, greener future.
+              Leading the transition to sustainable energy with innovative renewable solutions for a cleaner, greener future.
             </p>
           </div>
 
           {/* Services Links */}
           <div>
-            <h4 className="font-bold mb-4 text-yellow-green text-sm uppercase">
-              Services
-            </h4>
+            <h4 className="font-bold mb-4 text-yellow-green text-sm uppercase">Services</h4>
             <ul className="space-y-2">
               <li>
                 <Link
@@ -57,10 +51,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <a
-                  href="#"
-                  className="text-black text-sm hover:text-cyan transition"
-                >
+                <a href="#" className="text-black text-sm hover:text-cyan transition">
                   Smart Grid
                 </a>
               </li>
@@ -69,9 +60,7 @@ export default function Footer() {
 
           {/* Company Links */}
           <div>
-            <h4 className="font-bold mb-4 text-yellow-green text-sm uppercase">
-              Company
-            </h4>
+            <h4 className="font-bold mb-4 text-yellow-green text-sm uppercase">Company</h4>
             <ul className="space-y-2">
               <li>
                 <Link
@@ -98,10 +87,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <a
-                  href="#"
-                  className="text-black text-sm hover:text-cyan transition"
-                >
+                <a href="#" className="text-black text-sm hover:text-cyan transition">
                   Sectors
                 </a>
               </li>
@@ -110,15 +96,10 @@ export default function Footer() {
 
           {/* Resources Links */}
           <div>
-            <h4 className="font-bold mb-4 text-yellow-green text-sm uppercase">
-              Resources
-            </h4>
+            <h4 className="font-bold mb-4 text-yellow-green text-sm uppercase">Resources</h4>
             <ul className="space-y-2">
               <li>
-                <a
-                  href="#"
-                  className="text-black text-sm hover:text-cyan transition"
-                >
+                <a href="#" className="text-black text-sm hover:text-cyan transition">
                   Resources
                 </a>
               </li>
@@ -151,9 +132,7 @@ export default function Footer() {
 
           {/* Legal Links */}
           <div>
-            <h4 className="font-bold mb-4 text-yellow-green text-sm uppercase">
-              Legal
-            </h4>
+            <h4 className="font-bold mb-4 text-yellow-green text-sm uppercase">Legal</h4>
             <ul className="space-y-2">
               <li>
                 <Link

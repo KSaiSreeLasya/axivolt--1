@@ -4,9 +4,9 @@ export default function Footer() {
   return (
     <footer className="bg-card border-t border-border py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-6 mb-12">
+        <div className="grid grid-cols-1 lg:grid-cols-6 gap-4 mb-12">
           {/* Brand Section */}
-          <div className="col-span-1 md:col-span-2">
+          <div className="col-span-1 lg:col-span-2">
             <Link to="/" className="flex items-center gap-3 mb-4">
               <img
                 src="https://cdn.builder.io/api/v1/image/assets%2Ffe5527c1828944a38faa27a1f5c6efe7%2F00fa53301075421e90acc8403136e6ca?format=webp&width=200&height=300"

@@ -7,7 +7,8 @@ import { useEffect } from "react";
 
 export default function SolarGovernment() {
   useSEO({
-    title: "Government Solar Projects | Public Sector Energy Solutions | AXIVOLT",
+    title:
+      "Government Solar Projects | Public Sector Energy Solutions | AXIVOLT",
     description:
       "Specialized solar solutions for government and public sector projects. Tender support, compliance, and large-scale installations. Energy solutions for cities and institutions.",
     keywords:
@@ -15,7 +16,7 @@ export default function SolarGovernment() {
     ogTitle: "Government Solar Solutions - AXIVOLT",
     ogDescription:
       "Government-scale solar solutions with full compliance and tender support.",
-    canonical: `${typeof window !== 'undefined' ? window.location.origin : ''}/solutions/solar/government`,
+    canonical: `${typeof window !== "undefined" ? window.location.origin : ""}/solutions/solar/government`,
   });
 
   useEffect(() => {
@@ -27,10 +28,10 @@ export default function SolarGovernment() {
           "Comprehensive solar solutions for government institutions, public sector projects with tender support and full compliance",
         provider: {
           name: "AXIVOLT",
-          url: typeof window !== 'undefined' ? window.location.origin : '',
+          url: typeof window !== "undefined" ? window.location.origin : "",
         },
         areaServed: ["Hyderabad", "Telangana", "India"],
-      })
+      }),
     );
   }, []);
   const services = [

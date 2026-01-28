@@ -22,7 +22,7 @@ export default function About() {
     ogTitle: "About AXIVOLT - Renewable Energy Leaders",
     ogDescription:
       "Discover AXIVOLT's mission to transform energy through innovative solar solutions.",
-    canonical: `${typeof window !== 'undefined' ? window.location.origin : ''}/about`,
+    canonical: `${typeof window !== "undefined" ? window.location.origin : ""}/about`,
   });
 
   useEffect(() => {
@@ -32,7 +32,7 @@ export default function About() {
         name: "AXIVOLT",
         description:
           "Leading solar energy company providing comprehensive renewable energy solutions",
-        url: typeof window !== 'undefined' ? window.location.origin : '',
+        url: typeof window !== "undefined" ? window.location.origin : "",
         phone: "+91-XXXX-XXXXX",
         address: {
           streetAddress: "Hyderabad",
@@ -42,7 +42,7 @@ export default function About() {
           addressCountry: "India",
         },
         sameAs: [],
-      })
+      }),
     );
   }, []);
   const coreValues = [

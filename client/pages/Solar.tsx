@@ -15,7 +15,7 @@ export default function Solar() {
     ogTitle: "Solar Energy Solutions - AXIVOLT",
     ogDescription:
       "Professional solar installations for homes and businesses. Expert service with 15+ years experience.",
-    canonical: `${typeof window !== 'undefined' ? window.location.origin : ''}/solutions/solar`,
+    canonical: `${typeof window !== "undefined" ? window.location.origin : ""}/solutions/solar`,
   });
 
   useEffect(() => {
@@ -27,10 +27,10 @@ export default function Solar() {
           "Comprehensive solar panel installation, maintenance, and energy solutions for residential, commercial, and government sectors",
         provider: {
           name: "AXIVOLT",
-          url: typeof window !== 'undefined' ? window.location.origin : '',
+          url: typeof window !== "undefined" ? window.location.origin : "",
         },
         areaServed: ["Hyderabad", "Telangana", "India"],
-      })
+      }),
     );
   }, []);
   const projects = [

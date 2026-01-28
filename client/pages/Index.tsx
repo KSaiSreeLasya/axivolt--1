@@ -23,7 +23,7 @@ export default function Index() {
     ogTitle: "AXIVOLT - Solar Energy Solutions in Hyderabad",
     ogDescription:
       "Transform your energy with AXIVOLT's solar solutions. 500+ projects, 250MW capacity, 15+ years of excellence.",
-    canonical: `${typeof window !== 'undefined' ? window.location.origin : ''}/`,
+    canonical: `${typeof window !== "undefined" ? window.location.origin : ""}/`,
   });
 
   useEffect(() => {
@@ -31,13 +31,13 @@ export default function Index() {
     addSchemaMarkup(
       SchemaMarkup.organization({
         name: "AXIVOLT",
-        logo: `${typeof window !== 'undefined' ? window.location.origin : ''}/logo.png`,
-        url: typeof window !== 'undefined' ? window.location.origin : '',
+        logo: `${typeof window !== "undefined" ? window.location.origin : ""}/logo.png`,
+        url: typeof window !== "undefined" ? window.location.origin : "",
         description:
           "Leading solar energy company offering comprehensive renewable energy solutions",
         phone: "+91-XXXX-XXXXX",
         email: "info@axivolt.in",
-      })
+      }),
     );
   }, []);
   return (

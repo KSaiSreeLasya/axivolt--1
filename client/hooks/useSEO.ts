@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect } from "react";
 
 interface SEOProps {
   title: string;
@@ -29,69 +29,87 @@ export function useSEO({
 
     // Remove old meta tags and add new ones
     const updateMetaTag = (name: string, content: string) => {
-      let element = document.querySelector(`meta[name="${name}"]`) as HTMLMetaElement | null;
+      let element = document.querySelector(
+        `meta[name="${name}"]`,
+      ) as HTMLMetaElement | null;
       if (!element) {
-        element = document.createElement('meta');
-        element.setAttribute('name', name);
+        element = document.createElement("meta");
+        element.setAttribute("name", name);
         document.head.appendChild(element);
       }
-      element.setAttribute('content', content);
+      element.setAttribute("content", content);
     };
 
     const updatePropertyTag = (property: string, content: string) => {
-      let element = document.querySelector(`meta[property="${property}"]`) as HTMLMetaElement | null;
+      let element = document.querySelector(
+        `meta[property="${property}"]`,
+      ) as HTMLMetaElement | null;
       if (!element) {
-        element = document.createElement('meta');
-        element.setAttribute('property', property);
+        element = document.createElement("meta");
+        element.setAttribute("property", property);
         document.head.appendChild(element);
       }
-      element.setAttribute('content', content);
+      element.setAttribute("content", content);
     };
 
     // Meta tags
-    updateMetaTag('description', description);
+    updateMetaTag("description", description);
     if (keywords) {
-      updateMetaTag('keywords', keywords);
+      updateMetaTag("keywords", keywords);
     }
 
     // Open Graph tags (for social sharing)
-    updatePropertyTag('og:title', ogTitle || title);
-    updatePropertyTag('og:description', ogDescription || description);
-    updatePropertyTag('og:type', 'website');
+    updatePropertyTag("og:title", ogTitle || title);
+    updatePropertyTag("og:description", ogDescription || description);
+    updatePropertyTag("og:type", "website");
     if (ogImage) {
-      updatePropertyTag('og:image', ogImage);
+      updatePropertyTag("og:image", ogImage);
     }
     if (ogUrl) {
-      updatePropertyTag('og:url', ogUrl);
+      updatePropertyTag("og:url", ogUrl);
     }
 
     // Robots tag
     if (noindex) {
-      updateMetaTag('robots', 'noindex, nofollow');
+      updateMetaTag("robots", "noindex, nofollow");
     } else {
-      updateMetaTag('robots', 'index, follow');
+      updateMetaTag("robots", "index, follow");
     }
 
     // Canonical tag
     if (canonical) {
-      let canonicalElement = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
+      let canonicalElement = document.querySelector(
+        'link[rel="canonical"]',
+      ) as HTMLLinkElement | null;
       if (!canonicalElement) {
-        canonicalElement = document.createElement('link');
-        canonicalElement.setAttribute('rel', 'canonical');
+        canonicalElement = document.createElement("link");
+        canonicalElement.setAttribute("rel", "canonical");
         document.head.appendChild(canonicalElement);
       }
-      canonicalElement.setAttribute('href', canonical);
+      canonicalElement.setAttribute("href", canonical);
     }
-  }, [title, description, keywords, ogTitle, ogDescription, ogImage, ogUrl, canonical, noindex]);
+  }, [
+    title,
+    description,
+    keywords,
+    ogTitle,
+    ogDescription,
+    ogImage,
+    ogUrl,
+    canonical,
+    noindex,
+  ]);
 }
 
 // Helper to add schema markup (structured data)
 export function addSchemaMarkup(schema: Record<string, any>) {
-  let scriptTag = document.getElementById('schema-markup') as HTMLScriptElement | null;
+  let scriptTag = document.getElementById(
+    "schema-markup",
+  ) as HTMLScriptElement | null;
   if (!scriptTag) {
-    scriptTag = document.createElement('script');
-    scriptTag.id = 'schema-markup';
-    scriptTag.type = 'application/ld+json';
+    scriptTag = document.createElement("script");
+    scriptTag.id = "schema-markup";
+    scriptTag.type = "application/ld+json";
     document.head.appendChild(scriptTag);
   }
   scriptTag.textContent = JSON.stringify(schema);
@@ -107,8 +125,8 @@ export const SchemaMarkup = {
     phone?: string;
     email?: string;
   }) => ({
-    '@context': 'https://schema.org',
-    '@type': 'Organization',
+    "@context": "https://schema.org",
+    "@type": "Organization",
     name: data.name,
     logo: data.logo,
     url: data.url,
@@ -132,8 +150,8 @@ export const SchemaMarkup = {
     };
     sameAs?: string[];
   }) => ({
-    '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
     name: data.name,
     description: data.description,
     url: data.url,
@@ -152,8 +170,8 @@ export const SchemaMarkup = {
     };
     areaServed?: string[];
   }) => ({
-    '@context': 'https://schema.org',
-    '@type': 'Service',
+    "@context": "https://schema.org",
+    "@type": "Service",
     name: data.name,
     description: data.description,
     ...(data.provider && { provider: data.provider }),
@@ -161,10 +179,10 @@ export const SchemaMarkup = {
   }),
 
   breadcrumb: (items: Array<{ name: string; url: string }>) => ({
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
     itemListElement: items.map((item, index) => ({
-      '@type': 'ListItem',
+      "@type": "ListItem",
       position: index + 1,
       name: item.name,
       item: item.url,

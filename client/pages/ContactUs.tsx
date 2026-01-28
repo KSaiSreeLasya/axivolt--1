@@ -21,7 +21,7 @@ export default function ContactUs() {
     ogTitle: "Contact AXIVOLT - Solar Energy Experts",
     ogDescription:
       "Reach out to AXIVOLT for a free solar energy consultation. We're here to help.",
-    canonical: `${typeof window !== 'undefined' ? window.location.origin : ''}/contact`,
+    canonical: `${typeof window !== "undefined" ? window.location.origin : ""}/contact`,
   });
   return (
     <div className="min-h-screen bg-background text-foreground">

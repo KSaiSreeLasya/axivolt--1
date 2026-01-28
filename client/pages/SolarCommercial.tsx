@@ -15,7 +15,8 @@ import { useEffect } from "react";
 
 export default function SolarCommercial() {
   useSEO({
-    title: "Commercial Solar Solutions | Business Solar Panel Systems | AXIVOLT",
+    title:
+      "Commercial Solar Solutions | Business Solar Panel Systems | AXIVOLT",
     description:
       "Large-scale commercial solar installations for businesses. ROI-focused solar solutions with energy monitoring and asset management. Reduce operating costs significantly.",
     keywords:
@@ -23,7 +24,7 @@ export default function SolarCommercial() {
     ogTitle: "Commercial Solar Solutions - AXIVOLT",
     ogDescription:
       "Scale your business with solar. Proven commercial installations with 24/7 monitoring.",
-    canonical: `${typeof window !== 'undefined' ? window.location.origin : ''}/solutions/solar/commercial`,
+    canonical: `${typeof window !== "undefined" ? window.location.origin : ""}/solutions/solar/commercial`,
   });
 
   useEffect(() => {
@@ -35,10 +36,10 @@ export default function SolarCommercial() {
           "Large-scale commercial and industrial solar installations including EPC, EV charging, and asset management services",
         provider: {
           name: "AXIVOLT",
-          url: typeof window !== 'undefined' ? window.location.origin : '',
+          url: typeof window !== "undefined" ? window.location.origin : "",
         },
         areaServed: ["Hyderabad", "Telangana", "India"],
-      })
+      }),
     );
   }, []);
   const services = [

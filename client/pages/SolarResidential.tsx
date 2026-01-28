@@ -15,7 +15,7 @@ export default function SolarResidential() {
     ogTitle: "Residential Solar Solutions - AXIVOLT",
     ogDescription:
       "Transform your home with affordable solar energy. Expert installation with lifetime support.",
-    canonical: `${typeof window !== 'undefined' ? window.location.origin : ''}/solutions/solar/residential`,
+    canonical: `${typeof window !== "undefined" ? window.location.origin : ""}/solutions/solar/residential`,
   });
 
   useEffect(() => {
@@ -27,10 +27,10 @@ export default function SolarResidential() {
           "Professional rooftop solar panel installation and O&M services for residential homes and housing societies",
         provider: {
           name: "AXIVOLT",
-          url: typeof window !== 'undefined' ? window.location.origin : '',
+          url: typeof window !== "undefined" ? window.location.origin : "",
         },
         areaServed: ["Hyderabad", "Telangana", "India"],
-      })
+      }),
     );
   }, []);
   const offerings = [

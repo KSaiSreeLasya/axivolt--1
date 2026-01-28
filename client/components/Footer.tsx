@@ -172,7 +172,7 @@ export default function Footer() {
 
         {/* Bottom Section */}
         <div className="border-t border-border pt-8 flex flex-col md:flex-row items-center justify-between">
-          <p className="text-black text-sm">
+          <p className="text-black text-xs">
             &copy; 2024 AXIVOLT. All rights reserved.
           </p>
           <div className="flex gap-6 mt-6 md:mt-0">

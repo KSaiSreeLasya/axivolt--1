@@ -2,8 +2,37 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { ArrowLeft, ArrowRight, Sun, Zap, Gauge } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useSEO, addSchemaMarkup, SchemaMarkup } from "@/hooks/useSEO";
+import { useEffect } from "react";
 
 export default function Solar() {
+  useSEO({
+    title: "Solar Energy Solutions | Residential & Commercial | AXIVOLT",
+    description:
+      "Comprehensive solar panel installation and energy solutions for residential, commercial, and government projects. 500+ installations, 50MW+ capacity.",
+    keywords:
+      "solar energy, solar panel installation, solar companies, residential solar, commercial solar, solar systems, green energy solutions",
+    ogTitle: "Solar Energy Solutions - AXIVOLT",
+    ogDescription:
+      "Professional solar installations for homes and businesses. Expert service with 15+ years experience.",
+    canonical: `${typeof window !== 'undefined' ? window.location.origin : ''}/solutions/solar`,
+  });
+
+  useEffect(() => {
+    // Add Service schema markup
+    addSchemaMarkup(
+      SchemaMarkup.service({
+        name: "Solar Energy Solutions",
+        description:
+          "Comprehensive solar panel installation, maintenance, and energy solutions for residential, commercial, and government sectors",
+        provider: {
+          name: "AXIVOLT",
+          url: typeof window !== 'undefined' ? window.location.origin : '',
+        },
+        areaServed: ["Hyderabad", "Telangana", "India"],
+      })
+    );
+  }, []);
   const projects = [
     {
       title: "Rooftop Solar Installation 1",

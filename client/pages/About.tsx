@@ -9,8 +9,42 @@ import {
   Shield,
   Target,
 } from "lucide-react";
+import { useSEO, addSchemaMarkup, SchemaMarkup } from "@/hooks/useSEO";
+import { useEffect } from "react";
 
 export default function About() {
+  useSEO({
+    title: "About AXIVOLT | Leading Solar Energy Company in India",
+    description:
+      "Learn about AXIVOLT - a pioneering renewable energy company with 15+ years of experience in solar solutions. 500+ projects, 250MW capacity.",
+    keywords:
+      "about solar company, renewable energy company, green energy provider, solar energy expertise",
+    ogTitle: "About AXIVOLT - Renewable Energy Leaders",
+    ogDescription:
+      "Discover AXIVOLT's mission to transform energy through innovative solar solutions.",
+    canonical: `${typeof window !== 'undefined' ? window.location.origin : ''}/about`,
+  });
+
+  useEffect(() => {
+    // Add LocalBusiness schema markup
+    addSchemaMarkup(
+      SchemaMarkup.localBusiness({
+        name: "AXIVOLT",
+        description:
+          "Leading solar energy company providing comprehensive renewable energy solutions",
+        url: typeof window !== 'undefined' ? window.location.origin : '',
+        phone: "+91-XXXX-XXXXX",
+        address: {
+          streetAddress: "Hyderabad",
+          addressLocality: "Hyderabad",
+          addressRegion: "Telangana",
+          postalCode: "500000",
+          addressCountry: "India",
+        },
+        sameAs: [],
+      })
+    );
+  }, []);
   const coreValues = [
     {
       icon: Users,

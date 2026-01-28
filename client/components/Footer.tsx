@@ -14,7 +14,7 @@ export default function Footer() {
                 className="h-24 w-auto"
               />
             </Link>
-            <p className="text-black text-sm font-semibold mb-2">
+            <p className="text-lg md:text-xl font-bold mb-3 whitespace-nowrap" style={{ color: '#03867E' }}>
               AXIVOLT GREEN ENERGIES PVT.LTD.
             </p>
             <p className="text-black text-sm">

@@ -14,17 +14,23 @@ export default function Footer() {
                 className="h-24 w-auto"
               />
             </Link>
-            <p className="text-lg font-bold mb-3 whitespace-nowrap" style={{ color: '#03867E' }}>
+            <p
+              className="text-lg font-bold mb-3 whitespace-nowrap"
+              style={{ color: "#03867E" }}
+            >
               AXIVOLT GREEN ENERGIES PVT.LTD.
             </p>
             <p className="text-black text-sm leading-relaxed">
-              Leading the transition to sustainable energy with innovative renewable solutions for a cleaner, greener future.
+              Leading the transition to sustainable energy with innovative
+              renewable solutions for a cleaner, greener future.
             </p>
           </div>
 
           {/* Services Links */}
           <div>
-            <h4 className="font-bold mb-4 text-yellow-green text-sm uppercase">Services</h4>
+            <h4 className="font-bold mb-4 text-yellow-green text-sm uppercase">
+              Services
+            </h4>
             <ul className="space-y-2">
               <li>
                 <Link
@@ -51,7 +57,10 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <a href="#" className="text-black text-sm hover:text-cyan transition">
+                <a
+                  href="#"
+                  className="text-black text-sm hover:text-cyan transition"
+                >
                   Smart Grid
                 </a>
               </li>
@@ -60,7 +69,9 @@ export default function Footer() {
 
           {/* Company Links */}
           <div>
-            <h4 className="font-bold mb-4 text-yellow-green text-sm uppercase">Company</h4>
+            <h4 className="font-bold mb-4 text-yellow-green text-sm uppercase">
+              Company
+            </h4>
             <ul className="space-y-2">
               <li>
                 <Link
@@ -87,7 +98,10 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <a href="#" className="text-black text-sm hover:text-cyan transition">
+                <a
+                  href="#"
+                  className="text-black text-sm hover:text-cyan transition"
+                >
                   Sectors
                 </a>
               </li>
@@ -96,10 +110,15 @@ export default function Footer() {
 
           {/* Resources Links */}
           <div>
-            <h4 className="font-bold mb-4 text-yellow-green text-sm uppercase">Resources</h4>
+            <h4 className="font-bold mb-4 text-yellow-green text-sm uppercase">
+              Resources
+            </h4>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="text-black text-sm hover:text-cyan transition">
+                <a
+                  href="#"
+                  className="text-black text-sm hover:text-cyan transition"
+                >
                   Resources
                 </a>
               </li>
@@ -132,7 +151,9 @@ export default function Footer() {
 
           {/* Legal Links */}
           <div>
-            <h4 className="font-bold mb-4 text-yellow-green text-sm uppercase">Legal</h4>
+            <h4 className="font-bold mb-4 text-yellow-green text-sm uppercase">
+              Legal
+            </h4>
             <ul className="space-y-2">
               <li>
                 <Link

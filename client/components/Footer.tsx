@@ -4,29 +4,38 @@ export default function Footer() {
   return (
     <footer className="bg-card border-t border-border py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
+        <div className="grid grid-cols-1 lg:grid-cols-6 gap-4 mb-12">
           {/* Brand Section */}
-          <div>
+          <div className="col-span-1 lg:col-span-2">
             <Link to="/" className="flex items-center gap-3 mb-4">
               <img
                 src="https://cdn.builder.io/api/v1/image/assets%2Ffe5527c1828944a38faa27a1f5c6efe7%2F00fa53301075421e90acc8403136e6ca?format=webp&width=200&height=300"
                 alt="AXIVOLT Logo"
-                className="h-16 w-auto"
+                className="h-24 w-auto"
               />
             </Link>
-            <p className="text-black text-sm">
-              Sustainable energy solutions for a better tomorrow.
+            <p
+              className="text-lg font-bold mb-3 whitespace-nowrap"
+              style={{ color: "#03867E" }}
+            >
+              AXIVOLT GREEN ENERGIES PVT.LTD.
+            </p>
+            <p className="text-black text-sm leading-relaxed">
+              Leading the transition to sustainable energy with innovative
+              renewable solutions for a cleaner, greener future.
             </p>
           </div>
 
           {/* Services Links */}
           <div>
-            <h4 className="font-bold mb-4 text-yellow-green">Services</h4>
+            <h4 className="font-bold mb-4 text-yellow-green text-sm uppercase">
+              Services
+            </h4>
             <ul className="space-y-2">
               <li>
                 <Link
                   to="/solutions/solar"
-                  className="text-black hover:text-cyan transition"
+                  className="text-black text-sm hover:text-cyan transition"
                 >
                   Solar Energy
                 </Link>
@@ -34,7 +43,7 @@ export default function Footer() {
               <li>
                 <Link
                   to="/solutions/wind"
-                  className="text-black hover:text-cyan transition"
+                  className="text-black text-sm hover:text-cyan transition"
                 >
                   Wind Power
                 </Link>
@@ -42,13 +51,16 @@ export default function Footer() {
               <li>
                 <Link
                   to="/solutions/energy-storage"
-                  className="text-black hover:text-cyan transition"
+                  className="text-black text-sm hover:text-cyan transition"
                 >
                   Energy Storage
                 </Link>
               </li>
               <li>
-                <a href="#" className="text-black hover:text-cyan transition">
+                <a
+                  href="#"
+                  className="text-black text-sm hover:text-cyan transition"
+                >
                   Smart Grid
                 </a>
               </li>
@@ -57,12 +69,14 @@ export default function Footer() {
 
           {/* Company Links */}
           <div>
-            <h4 className="font-bold mb-4 text-yellow-green">Company</h4>
+            <h4 className="font-bold mb-4 text-yellow-green text-sm uppercase">
+              Company
+            </h4>
             <ul className="space-y-2">
               <li>
                 <Link
                   to="/about"
-                  className="text-black hover:text-cyan transition"
+                  className="text-black text-sm hover:text-cyan transition"
                 >
                   About Us
                 </Link>
@@ -70,7 +84,7 @@ export default function Footer() {
               <li>
                 <Link
                   to="/advisory"
-                  className="text-black hover:text-cyan transition"
+                  className="text-black text-sm hover:text-cyan transition"
                 >
                   Advisory
                 </Link>
@@ -78,13 +92,16 @@ export default function Footer() {
               <li>
                 <Link
                   to="/careers"
-                  className="text-black hover:text-cyan transition"
+                  className="text-black text-sm hover:text-cyan transition"
                 >
                   Careers
                 </Link>
               </li>
               <li>
-                <a href="#" className="text-black hover:text-cyan transition">
+                <a
+                  href="#"
+                  className="text-black text-sm hover:text-cyan transition"
+                >
                   Sectors
                 </a>
               </li>
@@ -93,17 +110,22 @@ export default function Footer() {
 
           {/* Resources Links */}
           <div>
-            <h4 className="font-bold mb-4 text-yellow-green">Resources</h4>
+            <h4 className="font-bold mb-4 text-yellow-green text-sm uppercase">
+              Resources
+            </h4>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="text-black hover:text-cyan transition">
+                <a
+                  href="#"
+                  className="text-black text-sm hover:text-cyan transition"
+                >
                   Resources
                 </a>
               </li>
               <li>
                 <Link
                   to="/digital-solutions"
-                  className="text-black hover:text-cyan transition"
+                  className="text-black text-sm hover:text-cyan transition"
                 >
                   Digital Solutions
                 </Link>
@@ -111,7 +133,7 @@ export default function Footer() {
               <li>
                 <Link
                   to="/procurement"
-                  className="text-black hover:text-cyan transition"
+                  className="text-black text-sm hover:text-cyan transition"
                 >
                   Procurement
                 </Link>
@@ -119,7 +141,7 @@ export default function Footer() {
               <li>
                 <Link
                   to="/contact"
-                  className="text-black hover:text-cyan transition"
+                  className="text-black text-sm hover:text-cyan transition"
                 >
                   Support
                 </Link>
@@ -129,12 +151,14 @@ export default function Footer() {
 
           {/* Legal Links */}
           <div>
-            <h4 className="font-bold mb-4 text-yellow-green">Legal</h4>
+            <h4 className="font-bold mb-4 text-yellow-green text-sm uppercase">
+              Legal
+            </h4>
             <ul className="space-y-2">
               <li>
                 <Link
                   to="/privacy-policy"
-                  className="text-black hover:text-cyan transition"
+                  className="text-black text-sm hover:text-cyan transition"
                 >
                   Privacy Policy
                 </Link>
@@ -142,7 +166,7 @@ export default function Footer() {
               <li>
                 <Link
                   to="/terms-of-service"
-                  className="text-black hover:text-cyan transition"
+                  className="text-black text-sm hover:text-cyan transition"
                 >
                   Terms of Service
                 </Link>
@@ -150,7 +174,7 @@ export default function Footer() {
               <li>
                 <Link
                   to="/cookie-policy"
-                  className="text-black hover:text-cyan transition"
+                  className="text-black text-sm hover:text-cyan transition"
                 >
                   Cookie Policy
                 </Link>
@@ -158,7 +182,7 @@ export default function Footer() {
               <li>
                 <Link
                   to="/compliance"
-                  className="text-black hover:text-cyan transition"
+                  className="text-black text-sm hover:text-cyan transition"
                 >
                   Compliance
                 </Link>
@@ -169,7 +193,7 @@ export default function Footer() {
 
         {/* Bottom Section */}
         <div className="border-t border-border pt-8 flex flex-col md:flex-row items-center justify-between">
-          <p className="text-black text-sm">
+          <p className="text-black text-xs">
             &copy; 2024 AXIVOLT. All rights reserved.
           </p>
           <div className="flex gap-6 mt-6 md:mt-0">

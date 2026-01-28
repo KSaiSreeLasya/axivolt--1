@@ -23,8 +23,8 @@ export default function Footer() {
           </div>
 
           {/* Services Links */}
-          <div>
-            <h4 className="font-bold mb-4 text-yellow-green">Services</h4>
+          <div className="col-span-1">
+            <h4 className="font-bold mb-4 text-yellow-green text-sm">Services</h4>
             <ul className="space-y-2">
               <li>
                 <Link
@@ -59,8 +59,8 @@ export default function Footer() {
           </div>
 
           {/* Company Links */}
-          <div>
-            <h4 className="font-bold mb-4 text-yellow-green">Company</h4>
+          <div className="col-span-1">
+            <h4 className="font-bold mb-4 text-yellow-green text-sm">Company</h4>
             <ul className="space-y-2">
               <li>
                 <Link
@@ -95,8 +95,8 @@ export default function Footer() {
           </div>
 
           {/* Resources Links */}
-          <div>
-            <h4 className="font-bold mb-4 text-yellow-green">Resources</h4>
+          <div className="col-span-1">
+            <h4 className="font-bold mb-4 text-yellow-green text-sm">Resources</h4>
             <ul className="space-y-2">
               <li>
                 <a href="#" className="text-black hover:text-cyan transition">
@@ -131,8 +131,8 @@ export default function Footer() {
           </div>
 
           {/* Legal Links */}
-          <div>
-            <h4 className="font-bold mb-4 text-yellow-green">Legal</h4>
+          <div className="col-span-1">
+            <h4 className="font-bold mb-4 text-yellow-green text-sm">Legal</h4>
             <ul className="space-y-2">
               <li>
                 <Link

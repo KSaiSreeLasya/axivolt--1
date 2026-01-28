@@ -2,8 +2,37 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { ArrowLeft, Building2, Globe, Shield } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useSEO, addSchemaMarkup, SchemaMarkup } from "@/hooks/useSEO";
+import { useEffect } from "react";
 
 export default function SolarGovernment() {
+  useSEO({
+    title: "Government Solar Projects | Public Sector Energy Solutions | AXIVOLT",
+    description:
+      "Specialized solar solutions for government and public sector projects. Tender support, compliance, and large-scale installations. Energy solutions for cities and institutions.",
+    keywords:
+      "government solar projects, public sector solar, government energy solutions, solar for institutions, public solar programs",
+    ogTitle: "Government Solar Solutions - AXIVOLT",
+    ogDescription:
+      "Government-scale solar solutions with full compliance and tender support.",
+    canonical: `${typeof window !== 'undefined' ? window.location.origin : ''}/solutions/solar/government`,
+  });
+
+  useEffect(() => {
+    // Add Service schema markup
+    addSchemaMarkup(
+      SchemaMarkup.service({
+        name: "Government Solar Solutions",
+        description:
+          "Comprehensive solar solutions for government institutions, public sector projects with tender support and full compliance",
+        provider: {
+          name: "AXIVOLT",
+          url: typeof window !== 'undefined' ? window.location.origin : '',
+        },
+        areaServed: ["Hyderabad", "Telangana", "India"],
+      })
+    );
+  }, []);
   const services = [
     {
       title: "Solar Rooftop — Residential & Commercial",

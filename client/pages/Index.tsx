@@ -15,7 +15,7 @@ import { useEffect } from "react";
 
 export default function Index() {
   useSEO({
-    title: "Solar Energy Companies in Hyderabad | AXIVOLT Renewable Solutions",
+    title: "AXIVOLT",
     description:
       "Leading solar energy company in Hyderabad offering residential, commercial, and industrial solar panel installations. Expert green energy solutions with 15+ years experience.",
     keywords:

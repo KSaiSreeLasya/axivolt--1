@@ -156,7 +156,9 @@ export default function ContactUs() {
                   <Linkedin className="w-5 h-5" />
                 </a>
                 <a
-                  href="#"
+                  href="https://www.instagram.com/axivoltgreenenergy/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-10 h-10 rounded-full bg-cyan/20 flex items-center justify-center text-cyan hover:bg-cyan hover:text-background transition-all"
                 >
                   <Instagram className="w-5 h-5" />

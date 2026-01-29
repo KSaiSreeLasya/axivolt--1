@@ -140,13 +140,17 @@ export default function ContactUs() {
               {/* Social Links */}
               <div className="flex items-center gap-6">
                 <a
-                  href="#"
+                  href="https://www.facebook.com/AxivoltGreenEnergy/?rdid=lzUX5nBf2lTLnktE"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-10 h-10 rounded-full bg-cyan/20 flex items-center justify-center text-cyan hover:bg-cyan hover:text-background transition-all"
                 >
                   <Facebook className="w-5 h-5" />
                 </a>
                 <a
-                  href="#"
+                  href="https://www.linkedin.com/company/axivoltgreen/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-10 h-10 rounded-full bg-cyan/20 flex items-center justify-center text-cyan hover:bg-cyan hover:text-background transition-all"
                 >
                   <Linkedin className="w-5 h-5" />

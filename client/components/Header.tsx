@@ -13,7 +13,7 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 w-full bg-background border-b border-border">
       <div className="max-w-full mx-auto px-6 lg:px-12">
-        <div className="flex items-center h-20 gap-4">
+        <div className="flex items-center h-32 gap-4">
           {/* Logo and Brand */}
           <Link to="/" className="flex items-center gap-3 group flex-shrink-0">
             <img

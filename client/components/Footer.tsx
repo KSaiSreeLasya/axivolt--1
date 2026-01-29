@@ -11,7 +11,7 @@ export default function Footer() {
               <img
                 src="https://cdn.builder.io/api/v1/image/assets%2Ffe5527c1828944a38faa27a1f5c6efe7%2F00fa53301075421e90acc8403136e6ca?format=webp&width=200&height=300"
                 alt="AXIVOLT Logo"
-                className="h-32 w-auto"
+                className="h-24 w-auto"
               />
             </Link>
             <p

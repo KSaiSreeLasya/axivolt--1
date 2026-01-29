@@ -1,0 +1,71 @@
+{
+  "name": "AXIVOLT - Sustainable Energy Solutions",
+  "short_name": "AXIVOLT",
+  "description": "Leading the transition to sustainable energy with innovative renewable solutions for a cleaner, greener future.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "theme_color": "#03867E",
+  "background_color": "#FFFFFF",
+  "icons": [
+    {
+      "src": "/favicon-48X48.jpg",
+      "sizes": "48x48",
+      "type": "image/jpeg",
+      "purpose": "any"
+    },
+    {
+      "src": "/favicon-64X64.jpg",
+      "sizes": "64x64",
+      "type": "image/jpeg",
+      "purpose": "any"
+    },
+    {
+      "src": "/favicon-96X96.jpg",
+      "sizes": "96x96",
+      "type": "image/jpeg",
+      "purpose": "any"
+    },
+    {
+      "src": "/favicon-192X192.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/favicon-512X512.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/favicon-192X192.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "/favicon-512X512.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "form_factor": "wide"
+    }
+  ],
+  "categories": ["energy", "environment", "utilities"],
+  "screenshots": [
+    {
+      "src": "/favicon-192X192.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "/favicon-512X512.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "form_factor": "wide"
+    }
+  ]
+}

@@ -13,7 +13,8 @@ import { useEffect } from "react";
 
 export default function Services() {
   useSEO({
-    title: "Renewable Energy Services | Advisory, Procurement, Digital Solutions | AXIVOLT",
+    title:
+      "Renewable Energy Services | Advisory, Procurement, Digital Solutions | AXIVOLT",
     description:
       "Complete renewable energy services including advisory, procurement, and digital solutions for solar, wind, and energy storage projects in Hyderabad, Telangana, and Andhra Pradesh.",
     keywords:

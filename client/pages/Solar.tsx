@@ -7,7 +7,8 @@ import { useEffect } from "react";
 
 export default function Solar() {
   useSEO({
-    title: "Solar Panel Installation & Solutions in Hyderabad, Telangana | AXIVOLT",
+    title:
+      "Solar Panel Installation & Solutions in Hyderabad, Telangana | AXIVOLT",
     description:
       "Top-rated solar panel installation company in Hyderabad and Telangana. Comprehensive residential, commercial, and government solar solutions. 500+ projects completed with 50MW+ capacity.",
     keywords:

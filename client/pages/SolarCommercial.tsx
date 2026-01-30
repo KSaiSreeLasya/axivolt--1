@@ -15,8 +15,7 @@ import { useEffect } from "react";
 
 export default function SolarCommercial() {
   useSEO({
-    title:
-      "Commercial & Industrial Solar Solutions in Hyderabad | AXIVOLT",
+    title: "Commercial & Industrial Solar Solutions in Hyderabad | AXIVOLT",
     description:
       "Large-scale commercial and industrial solar installations for businesses in Hyderabad and Telangana. ROI-focused solutions with energy monitoring and asset management. Reduce operating costs significantly.",
     keywords:

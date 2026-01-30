@@ -15,7 +15,8 @@ import { useEffect } from "react";
 
 export default function Index() {
   useSEO({
-    title: "AXIVOLT - Best Solar Company in Hyderabad, Telangana & Andhra Pradesh",
+    title:
+      "AXIVOLT - Best Solar Company in Hyderabad, Telangana & Andhra Pradesh",
     description:
       "Leading solar energy company in Hyderabad and Telangana offering residential, commercial, and government solar panel installations. Expert renewable energy solutions with 15+ years experience. 500+ projects completed.",
     keywords:
@@ -45,17 +46,17 @@ export default function Index() {
           areaServed: [
             {
               "@type": "City",
-              name: "Hyderabad"
+              name: "Hyderabad",
             },
             {
               "@type": "AdministrativeArea",
-              name: "Telangana"
+              name: "Telangana",
             },
             {
               "@type": "AdministrativeArea",
-              name: "Andhra Pradesh"
-            }
-          ]
+              name: "Andhra Pradesh",
+            },
+          ],
         },
         {
           "@type": "LocalBusiness",
@@ -68,24 +69,20 @@ export default function Index() {
           telephone: "+91-XXXX-XXXXX",
           email: "info@axivolt.in",
           priceRange: "Varies",
-          areaServed: [
-            "Hyderabad",
-            "Telangana",
-            "Andhra Pradesh"
-          ],
+          areaServed: ["Hyderabad", "Telangana", "Andhra Pradesh"],
           address: {
             "@type": "PostalAddress",
             addressLocality: "Hyderabad",
             addressRegion: "Telangana",
-            addressCountry: "India"
+            addressCountry: "India",
           },
           sameAs: [
             "https://www.facebook.com/axivolt",
             "https://www.linkedin.com/company/axivolt",
-            "https://www.instagram.com/axivolt"
-          ]
-        }
-      ]
+            "https://www.instagram.com/axivolt",
+          ],
+        },
+      ],
     };
     addSchemaMarkup(schema);
   }, []);

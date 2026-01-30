@@ -27,32 +27,63 @@ export default function Index() {
   });
 
   useEffect(() => {
-    // Add Organization schema markup
+    // Add Organization and LocalBusiness schema markup
+    const baseUrl = typeof window !== "undefined" ? window.location.origin : "";
     const schema = {
       "@context": "https://schema.org",
-      "@type": "Organization",
-      name: "AXIVOLT",
-      logo: `${typeof window !== "undefined" ? window.location.origin : ""}/logo.png`,
-      url: typeof window !== "undefined" ? window.location.origin : "",
-      description:
-        "Leading solar energy company offering comprehensive renewable energy solutions",
-      telephone: "+91-XXXX-XXXXX",
-      email: "info@axivolt.in",
-      areaServed: [
+      "@graph": [
         {
-          "@type": "City",
-          name: "Hyderabad",
-          "@id": "https://en.wikipedia.org/wiki/Hyderabad"
+          "@type": "Organization",
+          "@id": `${baseUrl}/#organization`,
+          name: "AXIVOLT",
+          logo: `${baseUrl}/logo.png`,
+          url: baseUrl,
+          description:
+            "Leading solar energy company offering comprehensive renewable energy solutions",
+          telephone: "+91-XXXX-XXXXX",
+          email: "info@axivolt.in",
+          areaServed: [
+            {
+              "@type": "City",
+              name: "Hyderabad"
+            },
+            {
+              "@type": "AdministrativeArea",
+              name: "Telangana"
+            },
+            {
+              "@type": "AdministrativeArea",
+              name: "Andhra Pradesh"
+            }
+          ]
         },
         {
-          "@type": "AdministrativeArea",
-          name: "Telangana",
-          "@id": "https://en.wikipedia.org/wiki/Telangana"
-        },
-        {
-          "@type": "AdministrativeArea",
-          name: "Andhra Pradesh",
-          "@id": "https://en.wikipedia.org/wiki/Andhra_Pradesh"
+          "@type": "LocalBusiness",
+          "@id": `${baseUrl}/#localbusiness`,
+          name: "AXIVOLT - Solar Energy Solutions",
+          image: `${baseUrl}/logo.png`,
+          description:
+            "Leading solar and renewable energy company in Hyderabad serving Telangana and Andhra Pradesh",
+          url: baseUrl,
+          telephone: "+91-XXXX-XXXXX",
+          email: "info@axivolt.in",
+          priceRange: "Varies",
+          areaServed: [
+            "Hyderabad",
+            "Telangana",
+            "Andhra Pradesh"
+          ],
+          address: {
+            "@type": "PostalAddress",
+            addressLocality: "Hyderabad",
+            addressRegion: "Telangana",
+            addressCountry: "India"
+          },
+          sameAs: [
+            "https://www.facebook.com/axivolt",
+            "https://www.linkedin.com/company/axivolt",
+            "https://www.instagram.com/axivolt"
+          ]
         }
       ]
     };

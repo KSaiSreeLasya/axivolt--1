@@ -28,17 +28,35 @@ export default function Index() {
 
   useEffect(() => {
     // Add Organization schema markup
-    addSchemaMarkup(
-      SchemaMarkup.organization({
-        name: "AXIVOLT",
-        logo: `${typeof window !== "undefined" ? window.location.origin : ""}/logo.png`,
-        url: typeof window !== "undefined" ? window.location.origin : "",
-        description:
-          "Leading solar energy company offering comprehensive renewable energy solutions",
-        phone: "+91-XXXX-XXXXX",
-        email: "info@axivolt.in",
-      }),
-    );
+    const schema = {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      name: "AXIVOLT",
+      logo: `${typeof window !== "undefined" ? window.location.origin : ""}/logo.png`,
+      url: typeof window !== "undefined" ? window.location.origin : "",
+      description:
+        "Leading solar energy company offering comprehensive renewable energy solutions",
+      telephone: "+91-XXXX-XXXXX",
+      email: "info@axivolt.in",
+      areaServed: [
+        {
+          "@type": "City",
+          name: "Hyderabad",
+          "@id": "https://en.wikipedia.org/wiki/Hyderabad"
+        },
+        {
+          "@type": "AdministrativeArea",
+          name: "Telangana",
+          "@id": "https://en.wikipedia.org/wiki/Telangana"
+        },
+        {
+          "@type": "AdministrativeArea",
+          name: "Andhra Pradesh",
+          "@id": "https://en.wikipedia.org/wiki/Andhra_Pradesh"
+        }
+      ]
+    };
+    addSchemaMarkup(schema);
   }, []);
   return (
     <div className="min-h-screen bg-background text-foreground">

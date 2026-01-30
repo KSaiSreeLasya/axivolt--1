@@ -7,14 +7,14 @@ import { useEffect } from "react";
 
 export default function SolarResidential() {
   useSEO({
-    title: "Residential Solar Panel Installation | Rooftop Solar Solutions",
+    title: "Residential Solar Panel Installation in Hyderabad | Rooftop Solar Systems",
     description:
-      "Professional residential solar panel installation services. Custom rooftop solar systems for homes with warranty and maintenance support. Start saving on electricity bills today.",
+      "Professional residential solar panel installation in Hyderabad and Telangana. Custom rooftop solar systems for homes with warranty and maintenance support. Save on electricity bills with AXIVOLT's expert service.",
     keywords:
-      "residential solar panels, rooftop solar installation, home solar system, solar panels for home, residential solar company",
+      "residential solar panels hyderabad, rooftop solar installation telangana, home solar system, solar panels for home in hyderabad, residential solar company telangana, solar installation andhra pradesh, rooftop solar system hyderabad",
     ogTitle: "Residential Solar Solutions - AXIVOLT",
     ogDescription:
-      "Transform your home with affordable solar energy. Expert installation with lifetime support.",
+      "Transform your home with affordable solar energy. Expert installation in Hyderabad and Telangana with lifetime support.",
     canonical: `${typeof window !== "undefined" ? window.location.origin : ""}/solutions/solar/residential`,
   });
 

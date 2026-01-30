@@ -188,4 +188,22 @@ export const SchemaMarkup = {
       item: item.url,
     })),
   }),
+
+  product: (data: {
+    name: string;
+    description: string;
+    image?: string;
+    manufacturer?: string;
+    category?: string;
+    url?: string;
+  }) => ({
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: data.name,
+    description: data.description,
+    ...(data.image && { image: data.image }),
+    ...(data.manufacturer && { manufacturer: data.manufacturer }),
+    ...(data.category && { category: data.category }),
+    ...(data.url && { url: data.url }),
+  }),
 };

@@ -15,30 +15,76 @@ import { useEffect } from "react";
 
 export default function Index() {
   useSEO({
-    title: "AXIVOLT",
+    title:
+      "AXIVOLT - Best Solar Company in Hyderabad, Telangana & Andhra Pradesh",
     description:
-      "Leading solar energy company in Hyderabad offering residential, commercial, and industrial solar panel installations. Expert green energy solutions with 15+ years experience.",
+      "Leading solar energy company in Hyderabad and Telangana offering residential, commercial, and government solar panel installations. Expert renewable energy solutions with 15+ years experience. 500+ projects completed.",
     keywords:
-      "solar energy companies in hyderabad, solar companies hyderabad, solar panel installation, green energy, renewable energy solutions",
-    ogTitle: "AXIVOLT - Solar Energy Solutions in Hyderabad",
+      "solar company hyderabad, best solar companies in telangana, solar energy solutions andhra pradesh, residential solar panels hyderabad, commercial solar installation, solar panel installation telangana, renewable energy company, green energy solutions",
+    ogTitle: "AXIVOLT - Solar Energy Solutions in Hyderabad & Telangana",
     ogDescription:
-      "Transform your energy with AXIVOLT's solar solutions. 500+ projects, 250MW capacity, 15+ years of excellence.",
+      "Transform your energy with AXIVOLT's solar solutions. 500+ projects, 250MW capacity, 15+ years of excellence in Hyderabad, Telangana, and Andhra Pradesh.",
     canonical: `${typeof window !== "undefined" ? window.location.origin : ""}/`,
   });
 
   useEffect(() => {
-    // Add Organization schema markup
-    addSchemaMarkup(
-      SchemaMarkup.organization({
-        name: "AXIVOLT",
-        logo: `${typeof window !== "undefined" ? window.location.origin : ""}/logo.png`,
-        url: typeof window !== "undefined" ? window.location.origin : "",
-        description:
-          "Leading solar energy company offering comprehensive renewable energy solutions",
-        phone: "+91-XXXX-XXXXX",
-        email: "info@axivolt.in",
-      }),
-    );
+    // Add Organization and LocalBusiness schema markup
+    const baseUrl = typeof window !== "undefined" ? window.location.origin : "";
+    const schema = {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": `${baseUrl}/#organization`,
+          name: "AXIVOLT",
+          logo: `${baseUrl}/logo.png`,
+          url: baseUrl,
+          description:
+            "Leading solar energy company offering comprehensive renewable energy solutions",
+          telephone: "+91-XXXX-XXXXX",
+          email: "info@axivolt.in",
+          areaServed: [
+            {
+              "@type": "City",
+              name: "Hyderabad",
+            },
+            {
+              "@type": "AdministrativeArea",
+              name: "Telangana",
+            },
+            {
+              "@type": "AdministrativeArea",
+              name: "Andhra Pradesh",
+            },
+          ],
+        },
+        {
+          "@type": "LocalBusiness",
+          "@id": `${baseUrl}/#localbusiness`,
+          name: "AXIVOLT - Solar Energy Solutions",
+          image: `${baseUrl}/logo.png`,
+          description:
+            "Leading solar and renewable energy company in Hyderabad serving Telangana and Andhra Pradesh",
+          url: baseUrl,
+          telephone: "+91-XXXX-XXXXX",
+          email: "info@axivolt.in",
+          priceRange: "Varies",
+          areaServed: ["Hyderabad", "Telangana", "Andhra Pradesh"],
+          address: {
+            "@type": "PostalAddress",
+            addressLocality: "Hyderabad",
+            addressRegion: "Telangana",
+            addressCountry: "India",
+          },
+          sameAs: [
+            "https://www.facebook.com/axivolt",
+            "https://www.linkedin.com/company/axivolt",
+            "https://www.instagram.com/axivolt",
+          ],
+        },
+      ],
+    };
+    addSchemaMarkup(schema);
   }, []);
   return (
     <div className="min-h-screen bg-background text-foreground">

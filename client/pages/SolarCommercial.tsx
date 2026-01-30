@@ -15,32 +15,50 @@ import { useEffect } from "react";
 
 export default function SolarCommercial() {
   useSEO({
-    title:
-      "Commercial Solar Solutions | Business Solar Panel Systems | AXIVOLT",
+    title: "Commercial & Industrial Solar Solutions in Hyderabad | AXIVOLT",
     description:
-      "Large-scale commercial solar installations for businesses. ROI-focused solar solutions with energy monitoring and asset management. Reduce operating costs significantly.",
+      "Large-scale commercial and industrial solar installations for businesses in Hyderabad and Telangana. ROI-focused solutions with energy monitoring and asset management. Reduce operating costs significantly.",
     keywords:
-      "commercial solar panels, business solar solutions, industrial solar installation, commercial solar company, solar energy for business",
+      "commercial solar panels hyderabad, industrial solar installation telangana, business solar solutions, commercial solar company andhra pradesh, industrial solar systems, corporate solar energy solutions, solar for factories and warehouses",
     ogTitle: "Commercial Solar Solutions - AXIVOLT",
     ogDescription:
-      "Scale your business with solar. Proven commercial installations with 24/7 monitoring.",
+      "Scale your business with solar. Proven commercial installations in Hyderabad and Telangana with 24/7 monitoring.",
     canonical: `${typeof window !== "undefined" ? window.location.origin : ""}/solutions/solar/commercial`,
   });
 
   useEffect(() => {
-    // Add Service schema markup
-    addSchemaMarkup(
-      SchemaMarkup.service({
-        name: "Commercial Solar Solutions",
-        description:
-          "Large-scale commercial and industrial solar installations including EPC, EV charging, and asset management services",
-        provider: {
-          name: "AXIVOLT",
-          url: typeof window !== "undefined" ? window.location.origin : "",
+    // Add Service and Product schema markup
+    const baseUrl = typeof window !== "undefined" ? window.location.origin : "";
+    const schema = {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Service",
+          name: "Commercial Solar Solutions",
+          description:
+            "Large-scale commercial and industrial solar installations including EPC, EV charging, and asset management services",
+          provider: {
+            "@type": "Organization",
+            name: "AXIVOLT",
+            url: baseUrl,
+          },
+          areaServed: ["Hyderabad", "Telangana", "Andhra Pradesh", "India"],
         },
-        areaServed: ["Hyderabad", "Telangana", "India"],
-      }),
-    );
+        {
+          "@type": "Product",
+          name: "Commercial Solar System",
+          description:
+            "Large-scale industrial and commercial solar panel systems with energy monitoring and asset management",
+          manufacturer: {
+            "@type": "Organization",
+            name: "AXIVOLT",
+          },
+          category: "Renewable Energy",
+          url: baseUrl + "/solutions/solar/commercial",
+        },
+      ],
+    };
+    addSchemaMarkup(schema);
   }, []);
   const services = [
     {

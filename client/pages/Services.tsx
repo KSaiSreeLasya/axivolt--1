@@ -8,8 +8,36 @@ import {
   Zap,
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useSEO, addSchemaMarkup, SchemaMarkup } from "@/hooks/useSEO";
+import { useEffect } from "react";
 
 export default function Services() {
+  useSEO({
+    title: "Renewable Energy Services | Advisory, Procurement, Digital Solutions | AXIVOLT",
+    description:
+      "Complete renewable energy services including advisory, procurement, and digital solutions for solar, wind, and energy storage projects in Hyderabad, Telangana, and Andhra Pradesh.",
+    keywords:
+      "renewable energy services, energy advisory, solar procurement, energy solutions, renewable energy consultation, solar services in Hyderabad, Telangana",
+    ogTitle: "Energy Services & Solutions - AXIVOLT",
+    ogDescription:
+      "Expert advisory, procurement, and digital solutions for renewable energy projects.",
+    canonical: `${typeof window !== "undefined" ? window.location.origin : ""}/services`,
+  });
+
+  useEffect(() => {
+    addSchemaMarkup(
+      SchemaMarkup.service({
+        name: "Renewable Energy Services",
+        description:
+          "Advisory, procurement, and digital solutions for renewable energy projects",
+        provider: {
+          name: "AXIVOLT",
+          url: typeof window !== "undefined" ? window.location.origin : "",
+        },
+        areaServed: ["Hyderabad", "Telangana", "Andhra Pradesh", "India"],
+      }),
+    );
+  }, []);
   const services = [
     {
       title: "Advisory",

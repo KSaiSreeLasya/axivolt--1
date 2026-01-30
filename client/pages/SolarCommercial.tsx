@@ -28,19 +28,38 @@ export default function SolarCommercial() {
   });
 
   useEffect(() => {
-    // Add Service schema markup
-    addSchemaMarkup(
-      SchemaMarkup.service({
-        name: "Commercial Solar Solutions",
-        description:
-          "Large-scale commercial and industrial solar installations including EPC, EV charging, and asset management services",
-        provider: {
-          name: "AXIVOLT",
-          url: typeof window !== "undefined" ? window.location.origin : "",
+    // Add Service and Product schema markup
+    const baseUrl = typeof window !== "undefined" ? window.location.origin : "";
+    const schema = {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Service",
+          name: "Commercial Solar Solutions",
+          description:
+            "Large-scale commercial and industrial solar installations including EPC, EV charging, and asset management services",
+          provider: {
+            "@type": "Organization",
+            name: "AXIVOLT",
+            url: baseUrl,
+          },
+          areaServed: ["Hyderabad", "Telangana", "Andhra Pradesh", "India"],
         },
-        areaServed: ["Hyderabad", "Telangana", "Andhra Pradesh", "India"],
-      }),
-    );
+        {
+          "@type": "Product",
+          name: "Commercial Solar System",
+          description:
+            "Large-scale industrial and commercial solar panel systems with energy monitoring and asset management",
+          manufacturer: {
+            "@type": "Organization",
+            name: "AXIVOLT",
+          },
+          category: "Renewable Energy",
+          url: baseUrl + "/solutions/solar/commercial",
+        },
+      ],
+    };
+    addSchemaMarkup(schema);
   }, []);
   const services = [
     {

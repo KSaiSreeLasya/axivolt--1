@@ -19,19 +19,38 @@ export default function SolarResidential() {
   });
 
   useEffect(() => {
-    // Add Service schema markup
-    addSchemaMarkup(
-      SchemaMarkup.service({
-        name: "Residential Solar Installation",
-        description:
-          "Professional rooftop solar panel installation and O&M services for residential homes and housing societies",
-        provider: {
-          name: "AXIVOLT",
-          url: typeof window !== "undefined" ? window.location.origin : "",
+    // Add Service and Product schema markup
+    const baseUrl = typeof window !== "undefined" ? window.location.origin : "";
+    const schema = {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Service",
+          name: "Residential Solar Installation",
+          description:
+            "Professional rooftop solar panel installation and O&M services for residential homes and housing societies",
+          provider: {
+            "@type": "Organization",
+            name: "AXIVOLT",
+            url: baseUrl,
+          },
+          areaServed: ["Hyderabad", "Telangana", "Andhra Pradesh", "India"],
         },
-        areaServed: ["Hyderabad", "Telangana", "Andhra Pradesh", "India"],
-      }),
-    );
+        {
+          "@type": "Product",
+          name: "Residential Solar Panel System",
+          description:
+            "High-efficiency rooftop solar panel systems for homes with installation and maintenance support",
+          manufacturer: {
+            "@type": "Organization",
+            name: "AXIVOLT",
+          },
+          category: "Renewable Energy",
+          url: baseUrl + "/solutions/solar/residential",
+        },
+      ],
+    };
+    addSchemaMarkup(schema);
   }, []);
   const offerings = [
     {

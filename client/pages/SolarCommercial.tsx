@@ -38,7 +38,7 @@ export default function SolarCommercial() {
           name: "AXIVOLT",
           url: typeof window !== "undefined" ? window.location.origin : "",
         },
-        areaServed: ["Hyderabad", "Telangana", "India"],
+        areaServed: ["Hyderabad", "Telangana", "Andhra Pradesh", "India"],
       }),
     );
   }, []);

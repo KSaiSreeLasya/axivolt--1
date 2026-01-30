@@ -13,6 +13,12 @@ export function createServer() {
   app.use(express.json());
   app.use(express.urlencoded({ extended: true }));
 
+  // Don't redirect between domains - serve same content
+  // Both axivolt.in and axiosgreen.in should serve without redirects
+  app.use((req, res, next) => {
+    next();
+  });
+
   // Example API routes
   app.get("/api/ping", (_req, res) => {
     const ping = process.env.PING_MESSAGE ?? "ping";

@@ -16,14 +16,14 @@ import { useEffect } from "react";
 export default function SolarCommercial() {
   useSEO({
     title:
-      "Commercial Solar Solutions | Business Solar Panel Systems | AXIVOLT",
+      "Commercial & Industrial Solar Solutions in Hyderabad | AXIVOLT",
     description:
-      "Large-scale commercial solar installations for businesses. ROI-focused solar solutions with energy monitoring and asset management. Reduce operating costs significantly.",
+      "Large-scale commercial and industrial solar installations for businesses in Hyderabad and Telangana. ROI-focused solutions with energy monitoring and asset management. Reduce operating costs significantly.",
     keywords:
-      "commercial solar panels, business solar solutions, industrial solar installation, commercial solar company, solar energy for business",
+      "commercial solar panels hyderabad, industrial solar installation telangana, business solar solutions, commercial solar company andhra pradesh, industrial solar systems, corporate solar energy solutions, solar for factories and warehouses",
     ogTitle: "Commercial Solar Solutions - AXIVOLT",
     ogDescription:
-      "Scale your business with solar. Proven commercial installations with 24/7 monitoring.",
+      "Scale your business with solar. Proven commercial installations in Hyderabad and Telangana with 24/7 monitoring.",
     canonical: `${typeof window !== "undefined" ? window.location.origin : ""}/solutions/solar/commercial`,
   });
 

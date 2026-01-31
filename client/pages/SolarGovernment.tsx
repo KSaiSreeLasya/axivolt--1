@@ -1,6 +1,13 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { ArrowLeft, Building2, Globe, Shield, ArrowRight, Check } from "lucide-react";
+import {
+  ArrowLeft,
+  Building2,
+  Globe,
+  Shield,
+  ArrowRight,
+  Check,
+} from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 import { useSEO, addSchemaMarkup, SchemaMarkup } from "@/hooks/useSEO";
 import { useEffect } from "react";
@@ -166,7 +173,8 @@ export default function SolarGovernment() {
               B2G Services
             </h2>
             <p className="text-xl text-gray-700 font-light max-w-2xl">
-              Comprehensive services for government and public sector renewable energy projects
+              Comprehensive services for government and public sector renewable
+              energy projects
             </p>
           </motion.div>
 
@@ -194,8 +202,12 @@ export default function SolarGovernment() {
                   >
                     <Icon className="w-7 h-7 text-cyan" />
                   </motion.div>
-                  <h3 className="text-xl font-bold mb-4 text-gray-900 relative z-10">{service.title}</h3>
-                  <p className="text-gray-700 leading-relaxed relative z-10">{service.description}</p>
+                  <h3 className="text-xl font-bold mb-4 text-gray-900 relative z-10">
+                    {service.title}
+                  </h3>
+                  <p className="text-gray-700 leading-relaxed relative z-10">
+                    {service.description}
+                  </p>
                 </motion.div>
               );
             })}
@@ -217,7 +229,8 @@ export default function SolarGovernment() {
               Public sector capabilities
             </h2>
             <p className="text-xl text-gray-700 font-light">
-              End-to-end solutions tailored for government requirements and large-scale deployments
+              End-to-end solutions tailored for government requirements and
+              large-scale deployments
             </p>
           </motion.div>
 
@@ -233,7 +246,9 @@ export default function SolarGovernment() {
                 whileHover={{ x: 8 }}
               >
                 <Check className="w-6 h-6 text-cyan flex-shrink-0 mt-0.5" />
-                <span className="text-gray-700 text-lg font-medium">{capability}</span>
+                <span className="text-gray-700 text-lg font-medium">
+                  {capability}
+                </span>
               </motion.div>
             ))}
           </div>

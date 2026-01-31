@@ -244,7 +244,9 @@ export default function Industry() {
                         <p className="text-cyan font-bold text-2xl">
                           {stat.value}
                         </p>
-                        <p className="text-xs text-gray-600 font-medium">{stat.label}</p>
+                        <p className="text-xs text-gray-600 font-medium">
+                          {stat.label}
+                        </p>
                       </motion.div>
                     ))}
                   </div>
@@ -324,7 +326,9 @@ export default function Industry() {
                 <h3 className="text-xl font-bold mb-4 text-cyan">
                   {item.title}
                 </h3>
-                <p className="text-gray-700 leading-relaxed">{item.description}</p>
+                <p className="text-gray-700 leading-relaxed">
+                  {item.description}
+                </p>
               </motion.div>
             ))}
           </div>

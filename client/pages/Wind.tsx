@@ -1,6 +1,12 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { ArrowLeft, Wind as WindIcon, Zap, Gauge, ArrowRight } from "lucide-react";
+import {
+  ArrowLeft,
+  Wind as WindIcon,
+  Zap,
+  Gauge,
+  ArrowRight,
+} from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 

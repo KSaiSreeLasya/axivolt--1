@@ -139,11 +139,15 @@ export default function DigitalSolutions() {
                   transition={{ duration: 0.6, delay: 0.6 }}
                 >
                   <div className="bg-white/50 backdrop-blur p-6 rounded-lg border border-cyan/20">
-                    <p className="text-gray-600 text-xs font-medium uppercase mb-2">Power Generated</p>
+                    <p className="text-gray-600 text-xs font-medium uppercase mb-2">
+                      Power Generated
+                    </p>
                     <p className="text-cyan font-bold text-2xl">99.9%</p>
                   </div>
                   <div className="bg-white/50 backdrop-blur p-6 rounded-lg border border-cyan/20">
-                    <p className="text-gray-600 text-xs font-medium uppercase mb-2">Efficiency</p>
+                    <p className="text-gray-600 text-xs font-medium uppercase mb-2">
+                      Efficiency
+                    </p>
                     <p className="text-cyan font-bold text-2xl">98.5%</p>
                   </div>
                 </motion.div>
@@ -197,7 +201,8 @@ export default function DigitalSolutions() {
                 }`}
               >
                 {tab.icon && <tab.icon className="w-4 h-4 inline mr-2" />}
-                {tab.id === "mobile" ? "📱 " : ""}{tab.label}
+                {tab.id === "mobile" ? "📱 " : ""}
+                {tab.label}
               </motion.button>
             ))}
           </motion.div>
@@ -215,10 +220,22 @@ export default function DigitalSolutions() {
                 </p>
                 <ul className="space-y-5">
                   {[
-                    { title: "Real-time Monitoring", desc: "Track system performance 24/7" },
-                    { title: "Predictive Analytics", desc: "AI-powered performance insights" },
-                    { title: "Automated Control", desc: "Smart system optimization" },
-                    { title: "Performance Optimization", desc: "Maximize energy generation" },
+                    {
+                      title: "Real-time Monitoring",
+                      desc: "Track system performance 24/7",
+                    },
+                    {
+                      title: "Predictive Analytics",
+                      desc: "AI-powered performance insights",
+                    },
+                    {
+                      title: "Automated Control",
+                      desc: "Smart system optimization",
+                    },
+                    {
+                      title: "Performance Optimization",
+                      desc: "Maximize energy generation",
+                    },
                   ].map((item, idx) => (
                     <motion.li
                       key={idx}
@@ -243,7 +260,9 @@ export default function DigitalSolutions() {
                 <div className="text-center">
                   <BarChart3 className="w-24 h-24 mx-auto mb-4 text-cyan" />
                   <p className="text-gray-700">Energy Dashboard</p>
-                  <p className="text-cyan text-sm font-mono font-bold mt-4">Live Monitoring</p>
+                  <p className="text-cyan text-sm font-mono font-bold mt-4">
+                    Live Monitoring
+                  </p>
                 </div>
               </div>
             </div>
@@ -261,9 +280,18 @@ export default function DigitalSolutions() {
                 </p>
                 <ul className="space-y-5">
                   {[
-                    { title: "On-the-go Monitoring", desc: "Access real-time data anywhere" },
-                    { title: "Alert Notifications", desc: "Instant system alerts and updates" },
-                    { title: "Remote Control", desc: "Manage systems remotely" },
+                    {
+                      title: "On-the-go Monitoring",
+                      desc: "Access real-time data anywhere",
+                    },
+                    {
+                      title: "Alert Notifications",
+                      desc: "Instant system alerts and updates",
+                    },
+                    {
+                      title: "Remote Control",
+                      desc: "Manage systems remotely",
+                    },
                   ].map((item, idx) => (
                     <motion.li
                       key={idx}
@@ -305,9 +333,18 @@ export default function DigitalSolutions() {
                 </p>
                 <ul className="space-y-5">
                   {[
-                    { title: "Advanced Analytics", desc: "Deep insights into performance data" },
-                    { title: "Custom Reporting", desc: "Generate tailored reports" },
-                    { title: "Data Visualization", desc: "Interactive dashboards" },
+                    {
+                      title: "Advanced Analytics",
+                      desc: "Deep insights into performance data",
+                    },
+                    {
+                      title: "Custom Reporting",
+                      desc: "Generate tailored reports",
+                    },
+                    {
+                      title: "Data Visualization",
+                      desc: "Interactive dashboards",
+                    },
                   ].map((item, idx) => (
                     <motion.li
                       key={idx}
@@ -416,8 +453,12 @@ export default function DigitalSolutions() {
                   >
                     <IconComponent className="w-14 h-14 text-cyan mb-6" />
                   </motion.div>
-                  <h3 className="text-xl font-bold mb-4 text-gray-900">{feature.title}</h3>
-                  <p className="text-gray-700 leading-relaxed">{feature.description}</p>
+                  <h3 className="text-xl font-bold mb-4 text-gray-900">
+                    {feature.title}
+                  </h3>
+                  <p className="text-gray-700 leading-relaxed">
+                    {feature.description}
+                  </p>
                 </motion.div>
               );
             })}
@@ -460,7 +501,8 @@ export default function DigitalSolutions() {
             viewport={{ once: true }}
             className="text-xl text-background/95 mb-10 font-light leading-relaxed"
           >
-            Start your digital transformation journey today with our intelligent energy solutions
+            Start your digital transformation journey today with our intelligent
+            energy solutions
           </motion.p>
           <motion.button
             whileHover={{

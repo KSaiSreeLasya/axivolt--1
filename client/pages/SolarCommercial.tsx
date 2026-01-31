@@ -212,7 +212,8 @@ export default function SolarCommercial() {
               Our B2B Services
             </h2>
             <p className="text-xl text-gray-700 font-light max-w-2xl">
-              Comprehensive commercial solar solutions for enterprises and large-scale operations
+              Comprehensive commercial solar solutions for enterprises and
+              large-scale operations
             </p>
           </motion.div>
 
@@ -240,8 +241,12 @@ export default function SolarCommercial() {
                   >
                     <Icon className="w-7 h-7 text-cyan" />
                   </motion.div>
-                  <h3 className="text-xl font-bold mb-4 text-gray-900 relative z-10">{service.title}</h3>
-                  <p className="text-gray-700 leading-relaxed relative z-10">{service.description}</p>
+                  <h3 className="text-xl font-bold mb-4 text-gray-900 relative z-10">
+                    {service.title}
+                  </h3>
+                  <p className="text-gray-700 leading-relaxed relative z-10">
+                    {service.description}
+                  </p>
                 </motion.div>
               );
             })}
@@ -279,7 +284,9 @@ export default function SolarCommercial() {
                 whileHover={{ x: 8 }}
               >
                 <Check className="w-6 h-6 text-yellow-green flex-shrink-0 mt-0.5" />
-                <span className="text-gray-700 text-lg font-medium">{point}</span>
+                <span className="text-gray-700 text-lg font-medium">
+                  {point}
+                </span>
               </motion.div>
             ))}
           </div>

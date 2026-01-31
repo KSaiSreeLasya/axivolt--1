@@ -1,6 +1,14 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { ArrowLeft, Home, Zap, Shield, Users, ArrowRight, Check } from "lucide-react";
+import {
+  ArrowLeft,
+  Home,
+  Zap,
+  Shield,
+  Users,
+  ArrowRight,
+  Check,
+} from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 import { useSEO, addSchemaMarkup, SchemaMarkup } from "@/hooks/useSEO";
 import { useEffect } from "react";
@@ -191,7 +199,8 @@ export default function SolarResidential() {
               Residential Offerings
             </h2>
             <p className="text-xl text-gray-700 font-light max-w-2xl">
-              Comprehensive solar solutions tailored for homeowners and residential communities
+              Comprehensive solar solutions tailored for homeowners and
+              residential communities
             </p>
           </motion.div>
 
@@ -216,13 +225,21 @@ export default function SolarResidential() {
                     <motion.div
                       className="w-16 h-16 rounded-xl bg-cyan/20 flex items-center justify-center flex-shrink-0 shadow-lg border-2 border-white"
                       whileHover={{ scale: 1.15, rotate: 8 }}
-                      transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                      transition={{
+                        type: "spring",
+                        stiffness: 400,
+                        damping: 10,
+                      }}
                     >
                       <Icon className="w-8 h-8 text-cyan" />
                     </motion.div>
-                    <h3 className="text-2xl font-bold text-gray-900">{offering.title}</h3>
+                    <h3 className="text-2xl font-bold text-gray-900">
+                      {offering.title}
+                    </h3>
                   </div>
-                  <p className="text-gray-700 leading-relaxed relative z-10">{offering.description}</p>
+                  <p className="text-gray-700 leading-relaxed relative z-10">
+                    {offering.description}
+                  </p>
                 </motion.div>
               );
             })}
@@ -261,7 +278,9 @@ export default function SolarResidential() {
                   whileHover={{ x: 8 }}
                 >
                   <Check className="w-6 h-6 text-yellow-green flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-700 text-lg font-medium">{point}</span>
+                  <span className="text-gray-700 text-lg font-medium">
+                    {point}
+                  </span>
                 </motion.div>
               ))}
             </div>

@@ -392,7 +392,10 @@ export default function About() {
             viewport={{ once: true }}
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
-              Our <span className="bg-gradient-to-r from-cyan to-cyan/80 bg-clip-text text-transparent">Core Values</span>
+              Our{" "}
+              <span className="bg-gradient-to-r from-cyan to-cyan/80 bg-clip-text text-transparent">
+                Core Values
+              </span>
             </h2>
             <p className="text-xl text-gray-700 font-light max-w-2xl mx-auto">
               The principles that guide our mission and shape our commitment to
@@ -427,7 +430,9 @@ export default function About() {
                   <h3 className="text-xl font-bold mb-4 text-gray-900 relative z-10">
                     {value.title}
                   </h3>
-                  <p className="text-gray-700 leading-relaxed relative z-10">{value.description}</p>
+                  <p className="text-gray-700 leading-relaxed relative z-10">
+                    {value.description}
+                  </p>
                 </motion.div>
               );
             })}
@@ -484,7 +489,9 @@ export default function About() {
                   <h3 className="text-xl font-bold mb-3 text-cyan relative z-10">
                     {cert.title}
                   </h3>
-                  <p className="text-gray-700 leading-relaxed relative z-10">{cert.description}</p>
+                  <p className="text-gray-700 leading-relaxed relative z-10">
+                    {cert.description}
+                  </p>
                 </motion.div>
               );
             })}

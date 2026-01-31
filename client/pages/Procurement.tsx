@@ -51,7 +51,9 @@ export default function Procurement() {
             >
               Strategic
               <br />
-              <span className="bg-gradient-to-r from-cyan to-cyan/80 bg-clip-text text-transparent">Procurement</span>
+              <span className="bg-gradient-to-r from-cyan to-cyan/80 bg-clip-text text-transparent">
+                Procurement
+              </span>
               <br />
               Solutions
             </motion.h1>
@@ -124,31 +126,36 @@ export default function Procurement() {
                 {
                   step: 1,
                   title: "Project Assessment",
-                  description: "Comprehensive evaluation of your requirements and project specifications.",
+                  description:
+                    "Comprehensive evaluation of your requirements and project specifications.",
                   color: "bg-blue-500",
                 },
                 {
                   step: 2,
                   title: "Vendor Selection",
-                  description: "Strategic sourcing and qualification of certified suppliers based on quality, reliability, and cost-effectiveness.",
+                  description:
+                    "Strategic sourcing and qualification of certified suppliers based on quality, reliability, and cost-effectiveness.",
                   color: "bg-green-500",
                 },
                 {
                   step: 3,
                   title: "Contract Management",
-                  description: "Expert negotiation and management of vendor agreements, ensuring favorable terms and compliance.",
+                  description:
+                    "Expert negotiation and management of vendor agreements, ensuring favorable terms and compliance.",
                   color: "bg-purple-500",
                 },
                 {
                   step: 4,
                   title: "Quality Assurance",
-                  description: "Rigorous quality control and compliance monitoring throughout the procurement process.",
+                  description:
+                    "Rigorous quality control and compliance monitoring throughout the procurement process.",
                   color: "bg-orange-500",
                 },
                 {
                   step: 5,
                   title: "Performance Optimization",
-                  description: "Continuous monitoring and optimization of procurement performance and vendor relationships.",
+                  description:
+                    "Continuous monitoring and optimization of procurement performance and vendor relationships.",
                   color: "bg-red-500",
                 },
               ].map((item, idx) => (
@@ -161,7 +168,9 @@ export default function Procurement() {
                   viewport={{ once: true }}
                 >
                   <div className="flex-1 bg-white rounded-2xl p-10 border border-cyan/20 hover:border-cyan/50 transition-all shadow-lg hover:shadow-2xl group">
-                    <h3 className="text-xl font-bold mb-3 text-gray-900">{item.title}</h3>
+                    <h3 className="text-xl font-bold mb-3 text-gray-900">
+                      {item.title}
+                    </h3>
                     <p className="text-gray-700 leading-relaxed">
                       {item.description}
                     </p>
@@ -225,23 +234,25 @@ export default function Procurement() {
               >
                 <Zap className="w-8 h-8 text-green-500" />
               </motion.div>
-              <h3 className="text-2xl font-bold mb-4 text-gray-900 relative z-10">Vendor Procurement</h3>
+              <h3 className="text-2xl font-bold mb-4 text-gray-900 relative z-10">
+                Vendor Procurement
+              </h3>
               <p className="text-gray-700 mb-6 leading-relaxed relative z-10">
                 Complete sourcing of solar panels, inverters, mounting systems
                 and other critical equipment.
               </p>
               <ul className="space-y-3 relative z-10">
                 <li className="flex items-start gap-3 text-gray-700 font-medium">
-                  <CheckCircle className="w-5 h-5 text-cyan flex-shrink-0 mt-0.5" /> Global Supplier
-                  Network
+                  <CheckCircle className="w-5 h-5 text-cyan flex-shrink-0 mt-0.5" />{" "}
+                  Global Supplier Network
                 </li>
                 <li className="flex items-start gap-3 text-gray-700 font-medium">
-                  <CheckCircle className="w-5 h-5 text-cyan flex-shrink-0 mt-0.5" /> Quality
-                  Certifications
+                  <CheckCircle className="w-5 h-5 text-cyan flex-shrink-0 mt-0.5" />{" "}
+                  Quality Certifications
                 </li>
                 <li className="flex items-start gap-3 text-gray-700 font-medium">
-                  <CheckCircle className="w-5 h-5 text-cyan flex-shrink-0 mt-0.5" /> Warranty
-                  Management
+                  <CheckCircle className="w-5 h-5 text-cyan flex-shrink-0 mt-0.5" />{" "}
+                  Warranty Management
                 </li>
               </ul>
             </motion.div>
@@ -275,14 +286,16 @@ export default function Procurement() {
               </p>
               <ul className="space-y-3 relative z-10">
                 <li className="flex items-start gap-3 text-gray-700 font-medium">
-                  <CheckCircle className="w-5 h-5 text-cyan flex-shrink-0 mt-0.5" /> Project Planning
+                  <CheckCircle className="w-5 h-5 text-cyan flex-shrink-0 mt-0.5" />{" "}
+                  Project Planning
                 </li>
                 <li className="flex items-start gap-3 text-gray-700 font-medium">
-                  <CheckCircle className="w-5 h-5 text-cyan flex-shrink-0 mt-0.5" /> Risk Management
+                  <CheckCircle className="w-5 h-5 text-cyan flex-shrink-0 mt-0.5" />{" "}
+                  Risk Management
                 </li>
                 <li className="flex items-start gap-3 text-gray-700 font-medium">
-                  <CheckCircle className="w-5 h-5 text-cyan flex-shrink-0 mt-0.5" /> Timeline
-                  Coordination
+                  <CheckCircle className="w-5 h-5 text-cyan flex-shrink-0 mt-0.5" />{" "}
+                  Timeline Coordination
                 </li>
               </ul>
             </motion.div>
@@ -307,22 +320,25 @@ export default function Procurement() {
               >
                 <Shield className="w-8 h-8 text-purple-500" />
               </motion.div>
-              <h3 className="text-2xl font-bold mb-4 text-gray-900 relative z-10">Expert Advisory</h3>
+              <h3 className="text-2xl font-bold mb-4 text-gray-900 relative z-10">
+                Expert Advisory
+              </h3>
               <p className="text-gray-700 mb-6 leading-relaxed relative z-10">
                 Expert technical guidance on equipment selection and
                 implementation strategies.
               </p>
               <ul className="space-y-3 relative z-10">
                 <li className="flex items-start gap-3 text-gray-700 font-medium">
-                  <CheckCircle className="w-5 h-5 text-cyan flex-shrink-0 mt-0.5" /> Technical Audits
+                  <CheckCircle className="w-5 h-5 text-cyan flex-shrink-0 mt-0.5" />{" "}
+                  Technical Audits
                 </li>
                 <li className="flex items-start gap-3 text-gray-700 font-medium">
-                  <CheckCircle className="w-5 h-5 text-cyan flex-shrink-0 mt-0.5" /> Performance
-                  Analysis
+                  <CheckCircle className="w-5 h-5 text-cyan flex-shrink-0 mt-0.5" />{" "}
+                  Performance Analysis
                 </li>
                 <li className="flex items-start gap-3 text-gray-700 font-medium">
-                  <CheckCircle className="w-5 h-5 text-cyan flex-shrink-0 mt-0.5" /> Compliance
-                  Review
+                  <CheckCircle className="w-5 h-5 text-cyan flex-shrink-0 mt-0.5" />{" "}
+                  Compliance Review
                 </li>
               </ul>
             </motion.div>

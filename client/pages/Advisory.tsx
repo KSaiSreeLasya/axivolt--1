@@ -76,7 +76,9 @@ export default function Advisory() {
             viewport={{ once: true }}
             className="text-center mb-20"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">Our Process</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
+              Our Process
+            </h2>
             <p className="text-xl text-gray-700 font-light max-w-2xl mx-auto">
               A systematic approach to renewable advisory and asset management
               that ensure optimal outcomes for your investment.
@@ -156,8 +158,12 @@ export default function Advisory() {
                     }}
                   >
                     <div className="absolute top-0 right-0 w-24 h-24 bg-cyan/5 rounded-full -mr-12 -mt-12 group-hover:bg-cyan/10 transition-colors"></div>
-                    <h3 className="text-xl font-bold mb-3 text-gray-900 relative z-10">{item.title}</h3>
-                    <p className="text-gray-700 leading-relaxed relative z-10">{item.desc}</p>
+                    <h3 className="text-xl font-bold mb-3 text-gray-900 relative z-10">
+                      {item.title}
+                    </h3>
+                    <p className="text-gray-700 leading-relaxed relative z-10">
+                      {item.desc}
+                    </p>
                   </motion.div>
                 </motion.div>
               ))}
@@ -180,7 +186,8 @@ export default function Advisory() {
               Our Services
             </h2>
             <p className="text-xl text-gray-700 font-light max-w-2xl mx-auto">
-              Comprehensive advisory services to maximize your renewable energy investments
+              Comprehensive advisory services to maximize your renewable energy
+              investments
             </p>
           </motion.div>
 
@@ -257,12 +264,20 @@ export default function Advisory() {
                   >
                     <IconComponent className={`w-7 h-7 ${service.iconColor}`} />
                   </motion.div>
-                  <h3 className="text-2xl font-bold mb-4 text-gray-900 relative z-10">{service.title}</h3>
-                  <p className="text-gray-700 mb-6 leading-relaxed relative z-10">{service.desc}</p>
+                  <h3 className="text-2xl font-bold mb-4 text-gray-900 relative z-10">
+                    {service.title}
+                  </h3>
+                  <p className="text-gray-700 mb-6 leading-relaxed relative z-10">
+                    {service.desc}
+                  </p>
                   <ul className="space-y-3 relative z-10">
                     {service.items.map((item, i) => (
-                      <li key={i} className="flex items-start gap-3 text-gray-700 font-medium">
-                        <CheckCircle className="w-5 h-5 text-cyan flex-shrink-0 mt-0.5" /> {item}
+                      <li
+                        key={i}
+                        className="flex items-start gap-3 text-gray-700 font-medium"
+                      >
+                        <CheckCircle className="w-5 h-5 text-cyan flex-shrink-0 mt-0.5" />{" "}
+                        {item}
                       </li>
                     ))}
                   </ul>
@@ -308,7 +323,8 @@ export default function Advisory() {
             viewport={{ once: true }}
             className="text-xl text-background/95 mb-10 font-light leading-relaxed"
           >
-            Get expert guidance on optimizing your energy strategy and maximizing your renewable investments
+            Get expert guidance on optimizing your energy strategy and
+            maximizing your renewable investments
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}

@@ -358,7 +358,9 @@ export default function Careers() {
                 <h3 className="text-xl font-bold mb-3 text-gray-900">
                   {value.title}
                 </h3>
-                <p className="text-gray-700 leading-relaxed">{value.description}</p>
+                <p className="text-gray-700 leading-relaxed">
+                  {value.description}
+                </p>
               </motion.div>
             ))}
           </div>
@@ -479,7 +481,10 @@ export default function Careers() {
                   </h3>
                   <ul className="space-y-3 text-sm">
                     {benefit.items.map((item, i) => (
-                      <li key={i} className="flex items-center justify-center gap-3 text-gray-700 font-medium">
+                      <li
+                        key={i}
+                        className="flex items-center justify-center gap-3 text-gray-700 font-medium"
+                      >
                         <CheckCircle className="w-5 h-5 text-cyan flex-shrink-0" />
                         {item}
                       </li>

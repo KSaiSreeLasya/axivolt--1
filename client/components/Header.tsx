@@ -301,47 +301,30 @@ export default function Header() {
               )}
             </motion.div>
 
-            <motion.div
-              custom={3}
-              variants={navVariants}
-              initial="hidden"
-              animate="visible"
-            >
-              <Link
-                to="/industry"
-                className="text-sm font-medium text-cyan hover:text-yellow-green transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-yellow-green after:transition-all after:duration-300 hover:after:w-full"
+            {[
+              { custom: 3, to: "/industry", label: "Industry" },
+              { custom: 4, to: "/careers", label: "Careers" },
+              { custom: 5, to: "/about", label: "About" },
+            ].map((item) => (
+              <motion.div
+                key={item.to}
+                custom={item.custom}
+                variants={navVariants}
+                initial="hidden"
+                animate="visible"
+                whileHover={{ scale: 1.05 }}
               >
-                Industry
-              </Link>
-            </motion.div>
-
-            <motion.div
-              custom={4}
-              variants={navVariants}
-              initial="hidden"
-              animate="visible"
-            >
-              <Link
-                to="/careers"
-                className="text-sm font-medium text-cyan hover:text-yellow-green transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-yellow-green after:transition-all after:duration-300 hover:after:w-full"
-              >
-                Careers
-              </Link>
-            </motion.div>
-
-            <motion.div
-              custom={5}
-              variants={navVariants}
-              initial="hidden"
-              animate="visible"
-            >
-              <Link
-                to="/about"
-                className="text-sm font-medium text-cyan hover:text-yellow-green transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-yellow-green after:transition-all after:duration-300 hover:after:w-full"
-              >
-                About
-              </Link>
-            </motion.div>
+                <Link
+                  to={item.to}
+                  className="text-sm font-medium text-cyan hover:text-yellow-green transition-colors relative group py-2"
+                >
+                  {item.label}
+                  <motion.span
+                    className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan to-yellow-green group-hover:w-full transition-all duration-300"
+                  ></motion.span>
+                </Link>
+              </motion.div>
+            ))}
           </nav>
 
           {/* CTA Buttons */}

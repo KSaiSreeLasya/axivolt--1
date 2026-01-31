@@ -749,12 +749,12 @@ export default function Index() {
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
               className="rounded-2xl h-96 flex items-center justify-center relative overflow-hidden shadow-xl"
-              whileHover={{ scale: 1.02 }}
+              whileHover={{ scale: 1.05 }}
             >
               <img
-                src="https://cdn.builder.io/api/v1/image/assets%2F1b9c62c1213140709e07580a4ee1f322%2F2356a53507e641ff934395d7d7e77b16?format=webp&width=800&height=1200"
-                alt="Efficiency Gain"
-                className="w-full h-full object-cover rounded-2xl"
+                src="https://cdn.builder.io/api/v1/image/assets%2F1b9c62c1213140709e07580a4ee1f322%2Fe22ad79415ea4ace86924b0e44cbf6ee?format=webp&width=800&height=1200"
+                alt="C&I Factory Solar Installation Project"
+                className="w-full h-full object-cover rounded-2xl hover:brightness-110 transition-all duration-300"
               />
             </motion.div>
           </div>

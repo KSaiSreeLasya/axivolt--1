@@ -38,11 +38,11 @@ export default function Header() {
                 to="/solutions"
                 onMouseEnter={() => setSolutionsOpen(true)}
                 onMouseLeave={() => setSolutionsOpen(false)}
-                className="flex items-center gap-1 text-sm font-medium text-cyan hover:text-yellow-green transition-colors"
+                className="flex items-center gap-1 text-sm font-medium text-cyan hover:text-yellow-green transition-all duration-300 hover:scale-110 origin-center relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-yellow-green hover:after:w-full after:transition-all after:duration-300"
               >
                 Solutions
                 <ChevronDown
-                  className={`w-4 h-4 transition-transform ${
+                  className={`w-4 h-4 transition-transform duration-300 ${
                     solutionsOpen ? "rotate-180" : ""
                   }`}
                 />
@@ -52,10 +52,10 @@ export default function Header() {
               <div
                 onMouseEnter={() => setSolutionsOpen(true)}
                 onMouseLeave={() => setSolutionsOpen(false)}
-                className={`absolute top-full left-0 mt-0 bg-card border border-border rounded-none shadow-xl transition-all duration-200 overflow-visible z-50 ${
+                className={`absolute top-full left-0 mt-0 bg-card border border-border rounded-lg shadow-xl transition-all duration-300 overflow-hidden z-50 ${
                   solutionsOpen
                     ? "opacity-100 visible translate-y-0"
-                    : "opacity-0 invisible -translate-y-2"
+                    : "opacity-0 invisible translate-y-1 pointer-events-none"
                 }`}
                 style={{ width: "auto", minWidth: "224px" }}
               >

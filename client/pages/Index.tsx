@@ -166,36 +166,42 @@ export default function Index() {
 
               {/* Stats Preview */}
               <motion.div
-                className="flex gap-12 py-8"
+                className="flex gap-16 py-12 pt-4"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.9 }}
               >
                 <motion.div
-                  whileHover={{ scale: 1.05 }}
+                  whileHover={{ scale: 1.08, y: -5 }}
                   transition={{ type: "spring", stiffness: 400 }}
+                  className="group"
                 >
-                  <p className="text-3xl font-bold text-cyan">500k</p>
-                  <p className="text-sm text-black">tons CO₂ saved</p>
+                  <p className="text-4xl md:text-5xl font-bold text-cyan mb-2 group-hover:text-cyan/80 transition-colors">500k</p>
+                  <p className="text-base text-gray-600 font-medium">tons CO₂ saved</p>
+                  <div className="h-1 w-0 group-hover:w-12 bg-cyan transition-all duration-300 mt-3 rounded-full"></div>
                 </motion.div>
                 <motion.div
-                  whileHover={{ scale: 1.05 }}
+                  whileHover={{ scale: 1.08, y: -5 }}
                   transition={{ type: "spring", stiffness: 400 }}
+                  className="group"
                 >
-                  <p className="text-3xl font-bold text-yellow-green">350+</p>
-                  <p className="text-sm text-black">projects worldwide</p>
+                  <p className="text-4xl md:text-5xl font-bold text-yellow-green mb-2 group-hover:text-yellow-green/80 transition-colors">350+</p>
+                  <p className="text-base text-gray-600 font-medium">projects worldwide</p>
+                  <div className="h-1 w-0 group-hover:w-12 bg-yellow-green transition-all duration-300 mt-3 rounded-full"></div>
                 </motion.div>
                 <motion.div
-                  whileHover={{ scale: 1.05 }}
+                  whileHover={{ scale: 1.08, y: -5 }}
                   transition={{ type: "spring", stiffness: 400 }}
+                  className="group"
                 >
-                  <p className="text-3xl font-bold text-cyan">Global</p>
-                  <p className="text-sm text-black">presence</p>
+                  <p className="text-4xl md:text-5xl font-bold text-cyan mb-2 group-hover:text-cyan/80 transition-colors">Global</p>
+                  <p className="text-base text-gray-600 font-medium">presence</p>
+                  <div className="h-1 w-0 group-hover:w-12 bg-cyan transition-all duration-300 mt-3 rounded-full"></div>
                 </motion.div>
               </motion.div>
 
               <motion.div
-                className="flex flex-col sm:flex-row gap-4 pt-4"
+                className="flex flex-col sm:flex-row gap-6 pt-8"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 1.1 }}
@@ -204,10 +210,10 @@ export default function Index() {
                   onClick={() => navigate("/quote")}
                   whileHover={{
                     scale: 1.05,
-                    boxShadow: "0 20px 40px rgba(0, 188, 212, 0.3)",
+                    boxShadow: "0 25px 50px rgba(0, 188, 212, 0.35)",
                   }}
                   whileTap={{ scale: 0.95 }}
-                  className="bg-cyan text-white px-8 py-3 rounded-lg font-bold text-lg hover:bg-opacity-90 transition-all flex items-center justify-center gap-2 shadow-lg"
+                  className="bg-cyan text-white px-10 py-4 rounded-xl font-bold text-lg hover:bg-cyan/90 transition-all flex items-center justify-center gap-3 shadow-xl"
                 >
                   Get Started <ArrowRight className="w-5 h-5" />
                 </motion.button>
@@ -215,10 +221,11 @@ export default function Index() {
                   onClick={() => navigate("/solutions")}
                   whileHover={{
                     scale: 1.05,
-                    backgroundColor: "rgba(0, 188, 212, 0.1)",
+                    backgroundColor: "rgba(0, 188, 212, 0.15)",
+                    boxShadow: "0 15px 30px rgba(0, 188, 212, 0.2)",
                   }}
                   whileTap={{ scale: 0.95 }}
-                  className="border-2 border-cyan text-cyan px-8 py-3 rounded-lg font-bold text-lg hover:bg-cyan/10 transition-all"
+                  className="border-2 border-cyan text-cyan px-10 py-4 rounded-xl font-bold text-lg hover:bg-cyan/10 transition-all"
                 >
                   Learn More
                 </motion.button>

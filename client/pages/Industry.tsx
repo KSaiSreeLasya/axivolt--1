@@ -181,59 +181,87 @@ export default function Industry() {
       </section>
 
       {/* Industries Grid */}
-      <section className="py-20 bg-background/50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-cyan-50/30 via-white to-white">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            className="text-center mb-20"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
               Industries We Serve
             </h2>
-            <p className="text-black400 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-700 font-light max-w-2xl mx-auto">
               Proven expertise across diverse sectors with customized solutions
               designed for your specific needs
             </p>
-          </div>
+          </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             {industries.map((industry, index) => {
               const Icon = industry.icon;
               return (
-                <div
+                <motion.div
                   key={index}
-                  className="bg-card rounded-lg p-8 border border-border hover:border-cyan transition-all"
+                  className="bg-white rounded-2xl p-10 border border-cyan/20 hover:border-cyan/50 transition-all shadow-lg hover:shadow-2xl group relative overflow-hidden"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  whileHover={{
+                    y: -8,
+                    boxShadow: "0 30px 60px rgba(0, 188, 212, 0.2)",
+                  }}
                 >
-                  <div
-                    className={`w-12 h-12 ${industry.color} rounded-lg flex items-center justify-center mb-6`}
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-cyan/5 rounded-full -mr-16 -mt-16 group-hover:bg-cyan/10 transition-colors"></div>
+                  <motion.div
+                    className={`w-14 h-14 ${industry.color} rounded-xl flex items-center justify-center mb-6 shadow-lg relative z-10 border-2 border-white`}
+                    whileHover={{ scale: 1.15, rotate: 8 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 10 }}
                   >
-                    <Icon className={`w-6 h-6 ${industry.iconColor}`} />
-                  </div>
-                  <h3 className="text-xl font-bold mb-3">{industry.title}</h3>
-                  <p className="text-black400 mb-6">{industry.description}</p>
+                    <Icon className={`w-7 h-7 ${industry.iconColor}`} />
+                  </motion.div>
+                  <h3 className="text-2xl font-bold mb-4 text-gray-900 relative z-10">
+                    {industry.title}
+                  </h3>
+                  <p className="text-gray-700 mb-6 leading-relaxed relative z-10">
+                    {industry.description}
+                  </p>
 
                   {/* Stats */}
-                  <div className="grid grid-cols-3 gap-4 mb-8 py-6 border-y border-border/50">
+                  <div className="grid grid-cols-3 gap-4 mb-8 py-6 border-y border-gray-200 relative z-10">
                     {industry.stats.map((stat, idx) => (
-                      <div key={idx} className="text-center">
-                        <p className="text-cyan font-bold text-lg">
+                      <motion.div
+                        key={idx}
+                        className="text-center"
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.4, delay: 0.2 + idx * 0.1 }}
+                        viewport={{ once: true }}
+                      >
+                        <p className="text-cyan font-bold text-2xl">
                           {stat.value}
                         </p>
-                        <p className="text-xs text-black400">{stat.label}</p>
-                      </div>
+                        <p className="text-xs text-gray-600 font-medium">{stat.label}</p>
+                      </motion.div>
                     ))}
                   </div>
 
                   {/* Benefits */}
-                  <ul className="space-y-2">
+                  <ul className="space-y-3 relative z-10">
                     {industry.benefits.map((benefit, idx) => (
                       <li
                         key={idx}
-                        className="flex items-center gap-2 text-sm text-black300"
+                        className="flex items-start gap-3 text-gray-700 font-medium"
                       >
-                        <CheckCircle className="w-4 h-4 text-cyan flex-shrink-0" />
+                        <CheckCircle className="w-5 h-5 text-cyan flex-shrink-0 mt-0.5" />
                         {benefit}
                       </li>
                     ))}
                   </ul>
-                </div>
+                </motion.div>
               );
             })}
           </div>

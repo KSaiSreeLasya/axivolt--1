@@ -709,18 +709,19 @@ export default function Index() {
       </section>
 
       {/* Highlighted Stats Bar */}
-      <section className="py-12 bg-gradient-to-r from-yellow-green to-yellow-green/90 text-background relative overflow-hidden">
+      <section className="py-20 bg-gradient-to-br from-yellow-green via-yellow-green to-yellow-green/85 text-background relative overflow-hidden">
         <motion.div
           className="absolute inset-0 -z-10"
           initial={{ opacity: 0 }}
-          whileInView={{ opacity: 0.2 }}
+          whileInView={{ opacity: 0.3 }}
           transition={{ duration: 1 }}
           viewport={{ once: true }}
         >
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-white/10 rounded-full filter blur-3xl"></div>
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-white/15 rounded-full filter blur-3xl"></div>
+          <div className="absolute top-0 left-1/4 w-80 h-80 bg-white/10 rounded-full filter blur-3xl"></div>
         </motion.div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-10 text-center">
             {[
               { label: "System Uptime", value: "99.2%" },
               { label: "Active Installations", value: "500+" },
@@ -733,10 +734,12 @@ export default function Index() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                whileHover={{ scale: 1.1 }}
+                whileHover={{ scale: 1.12, y: -5 }}
+                className="group"
               >
-                <p className="text-3xl md:text-4xl font-bold">{stat.value}</p>
-                <p className="text-sm text-background/80 mt-2">{stat.label}</p>
+                <p className="text-5xl md:text-6xl font-bold mb-3 group-hover:text-white/95 transition-colors">{stat.value}</p>
+                <p className="text-base text-background/90 font-medium group-hover:text-background transition-colors">{stat.label}</p>
+                <div className="h-1 w-0 group-hover:w-16 bg-white/60 transition-all duration-300 mx-auto mt-4 rounded-full"></div>
               </motion.div>
             ))}
           </div>

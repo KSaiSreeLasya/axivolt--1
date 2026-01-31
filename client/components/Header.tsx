@@ -109,7 +109,7 @@ export default function Header() {
                 to="/solutions"
                 onMouseEnter={() => setSolutionsOpen(true)}
                 onMouseLeave={() => setSolutionsOpen(false)}
-                className="flex items-center gap-1 text-sm font-medium text-cyan hover:text-yellow-green transition-colors relative group py-2"
+                className="flex items-center gap-1 text-lg font-medium text-cyan hover:text-yellow-green transition-colors relative group py-2"
               >
                 Solutions
                 <motion.span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan to-yellow-green group-hover:w-full transition-all duration-300"></motion.span>

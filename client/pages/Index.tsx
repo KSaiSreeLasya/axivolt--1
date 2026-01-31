@@ -770,7 +770,7 @@ export default function Index() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className="space-y-6"
+              className="space-y-8"
             >
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -778,10 +778,10 @@ export default function Index() {
                 transition={{ duration: 0.6, delay: 0.1 }}
                 viewport={{ once: true }}
               >
-                <h3 className="text-2xl font-bold mb-4">
+                <h3 className="text-3xl md:text-4xl font-bold mb-8 text-gray-900">
                   C&I Factory Solar Installation
                 </h3>
-                <div className="space-y-4">
+                <div className="space-y-6">
                   {[
                     { label: "Capacity", value: "2.5 MWh", color: "text-cyan" },
                     {
@@ -801,11 +801,12 @@ export default function Index() {
                       whileInView={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.6, delay: 0.1 * (index + 1) }}
                       viewport={{ once: true }}
+                      className="pb-6 border-b border-gray-200 last:border-b-0"
                     >
-                      <p className="text-sm text-black uppercase tracking-widest mb-2">
+                      <p className="text-xs text-gray-600 uppercase tracking-widest mb-3 font-semibold">
                         {item.label}
                       </p>
-                      <p className={`text-2xl font-bold ${item.color}`}>
+                      <p className={`text-3xl md:text-4xl font-bold ${item.color}`}>
                         {item.value}
                       </p>
                     </motion.div>
@@ -819,11 +820,11 @@ export default function Index() {
                 transition={{ duration: 0.6, delay: 0.4 }}
                 viewport={{ once: true }}
                 whileHover={{
-                  scale: 1.05,
-                  boxShadow: "0 20px 40px rgba(0, 188, 212, 0.3)",
+                  scale: 1.08,
+                  boxShadow: "0 25px 50px rgba(0, 188, 212, 0.35)",
                 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-cyan text-white px-8 py-3 rounded-lg font-bold hover:bg-opacity-90 transition-all inline-flex items-center gap-2 shadow-lg"
+                className="bg-cyan text-white px-10 py-4 rounded-xl font-bold text-lg hover:bg-cyan/90 transition-all inline-flex items-center gap-3 shadow-xl"
               >
                 View Case Study <ArrowRight className="w-5 h-5" />
               </motion.button>

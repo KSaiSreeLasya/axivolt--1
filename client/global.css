@@ -108,8 +108,14 @@
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply bg-background text-foreground;
+    background: linear-gradient(135deg, #ffffff 0%, #f5f9ff 50%, #ffffff 100%);
+    background-attachment: fixed;
   }
 
   :where(p, span, li, h1, h2, h3, h4, h5, h6, a, button, label, td, th) {
@@ -117,9 +123,102 @@
     word-break: break-word;
   }
 
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    letter-spacing: -0.02em;
+  }
+
+  h1 {
+    @apply font-bold text-foreground;
+  }
+
   pre,
   code {
     overflow-x: auto;
     white-space: pre;
+  }
+
+  /* Modern button styles */
+  button {
+    @apply transition-all duration-300 ease-out;
+  }
+
+  /* Smooth scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #00bcd4;
+    border-radius: 5px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #00a0b0;
+  }
+}
+
+@layer components {
+  /* Professional gradient backgrounds */
+  .gradient-primary {
+    background: linear-gradient(135deg, #00bcd4 0%, #00a0b0 100%);
+  }
+
+  .gradient-secondary {
+    background: linear-gradient(135deg, #cdd228 0%, #a8a800 100%);
+  }
+
+  .gradient-accent {
+    background: linear-gradient(135deg, #00bcd4 0%, #cdd228 100%);
+  }
+
+  /* Professional shadow effects */
+  .shadow-sm-cyan {
+    box-shadow: 0 10px 25px rgba(0, 188, 212, 0.1);
+  }
+
+  .shadow-md-cyan {
+    box-shadow: 0 20px 40px rgba(0, 188, 212, 0.15);
+  }
+
+  .shadow-lg-cyan {
+    box-shadow: 0 30px 60px rgba(0, 188, 212, 0.2);
+  }
+
+  .shadow-sm-green {
+    box-shadow: 0 10px 25px rgba(205, 210, 40, 0.1);
+  }
+
+  .shadow-md-green {
+    box-shadow: 0 20px 40px rgba(205, 210, 40, 0.15);
+  }
+
+  .shadow-lg-green {
+    box-shadow: 0 30px 60px rgba(205, 210, 40, 0.2);
+  }
+
+  /* Professional cards with hover effects */
+  .card-elevated {
+    @apply bg-white/80 backdrop-blur-md border border-white/20 rounded-xl transition-all duration-300;
+  }
+
+  .card-elevated:hover {
+    @apply border-white/40 shadow-lg;
+  }
+
+  /* Text gradient effects */
+  .text-gradient {
+    background: linear-gradient(135deg, #00bcd4 0%, #cdd228 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 }

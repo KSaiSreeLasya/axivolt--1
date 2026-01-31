@@ -347,15 +347,15 @@ export default function Index() {
       <section id="process" className="py-20 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
+            <div className="animate-slide-left">
               <h2 className="text-3xl md:text-4xl font-bold mb-8">
                 Why Choose AXIVOLT?
               </h2>
 
               <ul className="space-y-6 mb-8">
-                <li className="flex gap-4">
+                <li className="flex gap-4 animate-stagger-1 hover:translate-x-2 transition-transform duration-300">
                   <div className="flex-shrink-0">
-                    <div className="flex items-center justify-center h-8 w-8 rounded-full bg-cyan/20 text-cyan">
+                    <div className="flex items-center justify-center h-8 w-8 rounded-full bg-cyan/20 text-cyan hover:scale-110 transition-transform duration-300">
                       <Check className="w-5 h-5" />
                     </div>
                   </div>
@@ -367,9 +367,9 @@ export default function Index() {
                     </p>
                   </div>
                 </li>
-                <li className="flex gap-4">
+                <li className="flex gap-4 animate-stagger-2 hover:translate-x-2 transition-transform duration-300">
                   <div className="flex-shrink-0">
-                    <div className="flex items-center justify-center h-8 w-8 rounded-full bg-yellow-green/20 text-yellow-green">
+                    <div className="flex items-center justify-center h-8 w-8 rounded-full bg-yellow-green/20 text-yellow-green hover:scale-110 transition-transform duration-300">
                       <Check className="w-5 h-5" />
                     </div>
                   </div>
@@ -380,9 +380,9 @@ export default function Index() {
                     </p>
                   </div>
                 </li>
-                <li className="flex gap-4">
+                <li className="flex gap-4 animate-stagger-3 hover:translate-x-2 transition-transform duration-300">
                   <div className="flex-shrink-0">
-                    <div className="flex items-center justify-center h-8 w-8 rounded-full bg-cyan/20 text-cyan">
+                    <div className="flex items-center justify-center h-8 w-8 rounded-full bg-cyan/20 text-cyan hover:scale-110 transition-transform duration-300">
                       <Check className="w-5 h-5" />
                     </div>
                   </div>
@@ -395,27 +395,27 @@ export default function Index() {
                 </li>
               </ul>
 
-              <button className="bg-cyan text-white px-8 py-3 rounded-lg font-bold hover:bg-opacity-90 transition-all inline-flex items-center gap-2">
+              <button className="bg-cyan text-white px-8 py-3 rounded-lg font-bold hover:bg-opacity-90 transition-all duration-300 inline-flex items-center gap-2 hover:scale-105 hover:shadow-lg hover:shadow-cyan/40">
                 Learn More <ArrowRight className="w-5 h-5" />
               </button>
             </div>
 
-            <div className="grid grid-cols-2 gap-6">
-              <div className="bg-gradient-to-br from-cyan/20 to-cyan/10 rounded-xl p-6 border border-border">
+            <div className="grid grid-cols-2 gap-6 animate-slide-right">
+              <div className="bg-gradient-to-br from-cyan/20 to-cyan/10 rounded-xl p-6 border border-border animate-stagger-1 hover:scale-105 hover:shadow-lg hover:shadow-cyan/20 transition-all duration-300">
                 <p className="text-4xl font-bold text-cyan mb-2">99.2%</p>
                 <p className="text-black text-sm">System Uptime</p>
               </div>
-              <div className="bg-gradient-to-br from-yellow-green/20 to-yellow-green/10 rounded-xl p-6 border border-border">
+              <div className="bg-gradient-to-br from-yellow-green/20 to-yellow-green/10 rounded-xl p-6 border border-border animate-stagger-2 hover:scale-105 hover:shadow-lg hover:shadow-yellow-green/20 transition-all duration-300">
                 <p className="text-4xl font-bold text-yellow-green mb-2">
                   500+
                 </p>
                 <p className="text-black text-sm">Happy Clients</p>
               </div>
-              <div className="bg-gradient-to-br from-cyan/20 to-cyan/10 rounded-xl p-6 border border-border">
+              <div className="bg-gradient-to-br from-cyan/20 to-cyan/10 rounded-xl p-6 border border-border animate-stagger-3 hover:scale-105 hover:shadow-lg hover:shadow-cyan/20 transition-all duration-300">
                 <p className="text-4xl font-bold text-cyan mb-2">10000</p>
                 <p className="text-black text-sm">MWh Generated</p>
               </div>
-              <div className="bg-gradient-to-br from-yellow-green/20 to-yellow-green/10 rounded-xl p-6 border border-border">
+              <div className="bg-gradient-to-br from-yellow-green/20 to-yellow-green/10 rounded-xl p-6 border border-border animate-stagger-1 hover:scale-105 hover:shadow-lg hover:shadow-yellow-green/20 transition-all duration-300">
                 <p className="text-4xl font-bold text-yellow-green mb-2">
                   24/7
                 </p>

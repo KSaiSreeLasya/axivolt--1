@@ -665,7 +665,10 @@ export default function Index() {
             <p className="text-lg text-background/90 mb-8">
               Start your sustainable energy journey today
             </p>
-            <button className="bg-background text-yellow-green px-8 py-3 rounded-lg font-bold hover:bg-opacity-90 transition-all">
+            <button
+              onClick={() => navigate("/contact")}
+              className="bg-background text-yellow-green px-8 py-3 rounded-lg font-bold hover:bg-opacity-90 transition-all"
+            >
               Get Free Consultation
             </button>
           </div>

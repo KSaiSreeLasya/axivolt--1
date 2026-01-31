@@ -791,40 +791,89 @@ export default function Index() {
       </section>
 
       {/* Final CTA Section */}
-      <section id="contact" className="py-20 bg-yellow-green text-background">
+      <section id="contact" className="py-20 bg-gradient-to-b from-yellow-green to-yellow-green/90 text-background relative overflow-hidden">
+        <motion.div
+          className="absolute inset-0 -z-10"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 0.3 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true }}
+        >
+          <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-white/10 rounded-full filter blur-3xl"></div>
+          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-white/10 rounded-full filter blur-3xl"></div>
+        </motion.div>
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center text-center">
-            <div>
-              <div className="text-4xl font-bold mb-2">📞</div>
-              <h3 className="font-bold text-lg mb-1">Call Us</h3>
-              <p className="text-sm text-background/80">+91 90634 47838</p>
-            </div>
-            <div>
-              <div className="text-4xl font-bold mb-2">📧</div>
-              <h3 className="font-bold text-lg mb-1">Email</h3>
-              <p className="text-sm text-background/80">contact@axivolt.in</p>
-            </div>
-            <div>
-              <div className="text-4xl font-bold mb-2">🌐</div>
-              <h3 className="font-bold text-lg mb-1">Online</h3>
-              <p className="text-sm text-background/80">Schedule a Demo</p>
-            </div>
-          </div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center text-center"
+          >
+            {[
+              { icon: "📞", title: "Call Us", text: "+91 90634 47838" },
+              { icon: "📧", title: "Email", text: "contact@axivolt.in" },
+              { icon: "🌐", title: "Online", text: "Schedule a Demo" },
+            ].map((contact, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                whileHover={{ scale: 1.05 }}
+              >
+                <motion.div
+                  className="text-4xl font-bold mb-2"
+                  whileHover={{ scale: 1.3, rotate: 5 }}
+                  transition={{ type: "spring", stiffness: 400 }}
+                >
+                  {contact.icon}
+                </motion.div>
+                <h3 className="font-bold text-lg mb-1">{contact.title}</h3>
+                <p className="text-sm text-background/80">{contact.text}</p>
+              </motion.div>
+            ))}
+          </motion.div>
 
-          <div className="mt-12 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            viewport={{ once: true }}
+            className="mt-12 text-center"
+          >
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              viewport={{ once: true }}
+              className="text-3xl md:text-4xl font-bold mb-6"
+            >
               Ready to go renewable?
-            </h2>
-            <p className="text-lg text-background/90 mb-8">
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              viewport={{ once: true }}
+              className="text-lg text-background/90 mb-8"
+            >
               Start your sustainable energy journey today
-            </p>
-            <button
+            </motion.p>
+            <motion.button
               onClick={() => navigate("/contact")}
-              className="bg-background text-yellow-green px-8 py-3 rounded-lg font-bold hover:bg-opacity-90 transition-all"
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              viewport={{ once: true }}
+              whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(0, 0, 0, 0.2)" }}
+              whileTap={{ scale: 0.95 }}
+              className="bg-background text-yellow-green px-8 py-3 rounded-lg font-bold hover:bg-opacity-90 transition-all shadow-lg"
             >
               Get Free Consultation
-            </button>
-          </div>
+            </motion.button>
+          </motion.div>
         </div>
       </section>
 

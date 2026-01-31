@@ -88,8 +88,7 @@ const initializeApp = () => {
   if (!rootElement) return;
 
   // Get or create root
-  const root =
-    (window as any).__APP_ROOT__ || createRoot(rootElement);
+  const root = (window as any).__APP_ROOT__ || createRoot(rootElement);
   (window as any).__APP_ROOT__ = root;
 
   root.render(<App />);

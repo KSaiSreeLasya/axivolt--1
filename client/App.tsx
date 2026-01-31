@@ -6,6 +6,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import FloatingActionButton from "./components/FloatingActionButton";
 import Index from "./pages/Index";
 import Advisory from "./pages/Advisory";
 import Procurement from "./pages/Procurement";
@@ -39,6 +40,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <FloatingActionButton />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/industry" element={<Industry />} />
@@ -80,4 +82,21 @@ const App = () => (
   </QueryClientProvider>
 );
 
-createRoot(document.getElementById("root")!).render(<App />);
+// Initialize root only once, properly handling HMR
+const initializeApp = () => {
+  const rootElement = document.getElementById("root");
+  if (!rootElement) return;
+
+  // Get or create root
+  const root = (window as any).__APP_ROOT__ || createRoot(rootElement);
+  (window as any).__APP_ROOT__ = root;
+
+  root.render(<App />);
+};
+
+// Call init when DOM is ready
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initializeApp);
+} else {
+  initializeApp();
+}

@@ -461,7 +461,7 @@ export default function Index() {
       {/* Projects Section */}
       <section className="py-20 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <div className="text-center mb-16 animate-slide-up">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Transforming Energy Landscapes
             </h2>
@@ -471,19 +471,19 @@ export default function Index() {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
+            <div className="space-y-6 animate-slide-left">
               <div>
                 <h3 className="text-2xl font-bold mb-4">
                   C&I Factory Solar Installation
                 </h3>
                 <div className="space-y-4">
-                  <div>
+                  <div className="animate-stagger-1 hover:scale-105 transition-transform duration-300">
                     <p className="text-sm text-black uppercase tracking-widest mb-2">
                       Capacity
                     </p>
                     <p className="text-2xl font-bold text-cyan">2.5 MWh</p>
                   </div>
-                  <div>
+                  <div className="animate-stagger-2 hover:scale-105 transition-transform duration-300">
                     <p className="text-sm text-black uppercase tracking-widest mb-2">
                       Expected Savings
                     </p>
@@ -491,7 +491,7 @@ export default function Index() {
                       $500k/year
                     </p>
                   </div>
-                  <div>
+                  <div className="animate-stagger-3 hover:scale-105 transition-transform duration-300">
                     <p className="text-sm text-black uppercase tracking-widest mb-2">
                       CO₂ Reduction
                     </p>
@@ -502,15 +502,15 @@ export default function Index() {
                 </div>
               </div>
 
-              <button className="bg-cyan text-white px-8 py-3 rounded-lg font-bold hover:bg-opacity-90 transition-all inline-flex items-center gap-2">
+              <button className="bg-cyan text-white px-8 py-3 rounded-lg font-bold hover:bg-opacity-90 transition-all duration-300 inline-flex items-center gap-2 hover:scale-105 hover:shadow-lg hover:shadow-cyan/40">
                 View Case Study <ArrowRight className="w-5 h-5" />
               </button>
             </div>
 
-            <div className="bg-gradient-to-br from-blue-600 to-blue-700 rounded-2xl p-8 h-96 flex items-center justify-center relative overflow-hidden">
+            <div className="bg-gradient-to-br from-blue-600 to-blue-700 rounded-2xl p-8 h-96 flex items-center justify-center relative overflow-hidden animate-float hover:shadow-2xl hover:shadow-blue-600/40 transition-all duration-500">
               <div className="absolute inset-0 opacity-20">
                 <svg
-                  className="w-full h-full"
+                  className="w-full h-full animate-pulse-slow"
                   fill="none"
                   viewBox="0 0 200 200"
                   xmlns="http://www.w3.org/2000/svg"

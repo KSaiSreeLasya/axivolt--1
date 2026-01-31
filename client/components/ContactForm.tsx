@@ -208,7 +208,7 @@ export default function ContactForm() {
           </div>
           <div>
             <h4 className="font-bold mb-1">Email</h4>
-            <p className="text-sm text-black400">hello@axivolt.com</p>
+            <p className="text-sm text-black400">contac@axivolt.in</p>
           </div>
         </div>
         <div className="flex gap-4">
@@ -217,7 +217,7 @@ export default function ContactForm() {
           </div>
           <div>
             <h4 className="font-bold mb-1">Phone</h4>
-            <p className="text-sm text-black400">+1 (555) 123-4567</p>
+            <p className="text-sm text-black400">+91 9063447838</p>
           </div>
         </div>
       </div>

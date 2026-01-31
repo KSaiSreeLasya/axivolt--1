@@ -119,10 +119,9 @@
     background-attachment: fixed;
   }
 
-  /* Add padding to main content when header is fixed */
-  main,
-  .min-h-screen {
-    padding-top: 8rem; /* 128px for fixed header (h-32) */
+  /* Add padding to sections to account for fixed header */
+  section:first-of-type {
+    @apply pt-12 md:pt-20;
   }
 
   :where(p, span, li, h1, h2, h3, h4, h5, h6, a, button, label, td, th) {

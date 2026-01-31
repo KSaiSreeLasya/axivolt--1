@@ -107,26 +107,26 @@ export default function Index() {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-white via-blue-50/30 to-white pt-20 md:pt-32 pb-16">
+      <section className="relative overflow-hidden bg-gradient-to-b from-white via-blue-50/40 to-white pt-24 md:pt-40 pb-20">
         {/* Animated background elements */}
         <motion.div
           className="absolute inset-0 -z-10"
           initial={{ opacity: 0 }}
-          animate={{ opacity: 0.5 }}
+          animate={{ opacity: 0.7 }}
           transition={{ duration: 1.5, ease: "easeOut" }}
         >
-          <div className="absolute top-0 left-1/4 w-96 h-96 bg-cyan/10 rounded-full filter blur-3xl"></div>
-          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-yellow-green/10 rounded-full filter blur-3xl"></div>
+          <div className="absolute top-0 left-1/4 w-96 h-96 bg-cyan/15 rounded-full filter blur-3xl"></div>
+          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-yellow-green/15 rounded-full filter blur-3xl"></div>
         </motion.div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             {/* Left Content */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8 }}
-              className="space-y-8"
+              className="space-y-10"
             >
               <div>
                 <motion.div
@@ -134,9 +134,9 @@ export default function Index() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.2 }}
                 >
-                  <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4">
+                  <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 tracking-tight">
                     <motion.span
-                      className="text-cyan block"
+                      className="text-cyan block bg-gradient-to-r from-cyan to-cyan/80 bg-clip-text text-transparent"
                       initial={{ opacity: 0, x: -30 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.7, delay: 0.3 }}
@@ -144,7 +144,7 @@ export default function Index() {
                       Sustainable
                     </motion.span>
                     <motion.span
-                      className="text-gray-900 block"
+                      className="text-gray-900 block font-extrabold"
                       initial={{ opacity: 0, x: -30 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.7, delay: 0.5 }}
@@ -156,14 +156,12 @@ export default function Index() {
               </div>
 
               <motion.p
-                className="text-lg text-black leading-relaxed max-w-xl"
+                className="text-xl text-gray-700 leading-relaxed max-w-xl font-light"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.7 }}
               >
-                Transform your energy consumption with cutting-edge solar
-                solutions. Harness clean, renewable power for a sustainable
-                tomorrow.
+                Transform your energy consumption with cutting-edge solar solutions. Harness clean, renewable power for a sustainable tomorrow.
               </motion.p>
 
               {/* Stats Preview */}

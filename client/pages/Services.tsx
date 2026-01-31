@@ -27,6 +27,9 @@ export default function Services() {
   });
 
   useEffect(() => {
+    const baseUrl = typeof window !== "undefined" ? window.location.origin : "";
+
+    // Add Service schema
     addSchemaMarkup(
       SchemaMarkup.service({
         name: "Renewable Energy Services",
@@ -34,11 +37,67 @@ export default function Services() {
           "Advisory, procurement, and digital solutions for renewable energy projects",
         provider: {
           name: "AXIVOLT",
-          url: typeof window !== "undefined" ? window.location.origin : "",
+          url: baseUrl,
         },
         areaServed: ["Hyderabad", "Telangana", "Andhra Pradesh", "India"],
       }),
     );
+
+    // Add FAQ schema for renewable energy services
+    const serviceFaqs = [
+      {
+        question: "What renewable energy services does AXIVOLT provide?",
+        answer:
+          "AXIVOLT provides comprehensive renewable energy services including: Energy Advisory (audits, strategy planning, feasibility studies), Procurement (sourcing equipment, vendor management), and Digital Solutions (IoT monitoring, AI-powered optimization, performance analytics).",
+      },
+      {
+        question: "Do you provide energy audits for commercial buildings?",
+        answer:
+          "Yes! Our expert team conducts comprehensive energy audits for commercial, industrial, and government buildings. We analyze your current consumption, identify inefficiencies, and recommend customized renewable energy solutions to reduce costs and environmental impact.",
+      },
+      {
+        question: "What is energy advisory and why do I need it?",
+        answer:
+          "Energy advisory involves expert consultation to develop your energy strategy. We help you understand your energy needs, evaluate renewable options, calculate ROI, navigate government incentives, and create a customized roadmap for sustainable energy transition.",
+      },
+      {
+        question: "How can digital solutions optimize my solar or renewable system?",
+        answer:
+          "Our digital solutions use IoT sensors, AI, and machine learning to monitor system performance in real-time, predict maintenance needs, optimize energy generation and consumption patterns, and provide actionable insights to maximize efficiency and minimize downtime.",
+      },
+      {
+        question: "Do you help with government subsidy applications?",
+        answer:
+          "Absolutely! Our advisory team helps you navigate various government incentives including MNRE subsidies, state-specific schemes, tax benefits, and financing options. We handle documentation and application support to ensure you maximize available benefits.",
+      },
+      {
+        question: "What is the difference between on-grid and off-grid solar systems?",
+        answer:
+          "On-grid systems are connected to the electricity grid, allowing you to sell excess power back. Off-grid systems operate independently with battery storage. Our advisory helps you choose the best option based on your location, needs, and budget.",
+      },
+    ];
+
+    // Create FAQ schema and merge with service schema
+    const faqSchema = SchemaMarkup.faq(serviceFaqs);
+
+    const mergedSchema = {
+      "@context": "https://schema.org",
+      "@graph": [
+        SchemaMarkup.service({
+          name: "Renewable Energy Services",
+          description:
+            "Advisory, procurement, and digital solutions for renewable energy projects",
+          provider: {
+            name: "AXIVOLT",
+            url: baseUrl,
+          },
+          areaServed: ["Hyderabad", "Telangana", "Andhra Pradesh", "India"],
+        }),
+        faqSchema,
+      ],
+    };
+
+    addSchemaMarkup(mergedSchema);
   }, []);
   const services = [
     {

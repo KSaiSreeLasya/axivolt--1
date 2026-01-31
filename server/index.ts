@@ -16,7 +16,8 @@ export function createServer() {
   // 301 redirect from old domain to new domain
   app.use((req, res, next) => {
     const host = req.get("host") || "";
-    if (host.includes("axisogreen.in")) {
+    // Match both www.axisogreen.in and axisogreen.in
+    if (host === "axisogreen.in" || host === "www.axisogreen.in" || host.startsWith("axisogreen.in:")) {
       const newUrl = `https://www.axivolt.in${req.originalUrl}`;
       return res.redirect(301, newUrl);
     }

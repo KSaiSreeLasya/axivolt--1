@@ -427,24 +427,28 @@ export default function Index() {
       </section>
 
       {/* Highlighted Stats Bar */}
-      <section className="py-12 bg-yellow-green text-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-12 bg-yellow-green text-background relative overflow-hidden">
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute -top-24 -left-24 w-96 h-96 bg-background rounded-full blur-3xl"></div>
+          <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-background rounded-full blur-3xl"></div>
+        </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div>
+            <div className="animate-stagger-1 hover:scale-110 transition-transform duration-300 hover:-translate-y-2">
               <p className="text-3xl md:text-4xl font-bold">99.2%</p>
               <p className="text-sm text-background/80 mt-2">System Uptime</p>
             </div>
-            <div>
+            <div className="animate-stagger-2 hover:scale-110 transition-transform duration-300 hover:-translate-y-2">
               <p className="text-3xl md:text-4xl font-bold">500+</p>
               <p className="text-sm text-background/80 mt-2">
                 Active Installations
               </p>
             </div>
-            <div>
+            <div className="animate-stagger-3 hover:scale-110 transition-transform duration-300 hover:-translate-y-2">
               <p className="text-3xl md:text-4xl font-bold">10000</p>
               <p className="text-sm text-background/80 mt-2">MWh Generated</p>
             </div>
-            <div>
+            <div className="animate-stagger-1 hover:scale-110 transition-transform duration-300 hover:-translate-y-2">
               <p className="text-3xl md:text-4xl font-bold">24/7</p>
               <p className="text-sm text-background/80 mt-2">
                 Customer Support

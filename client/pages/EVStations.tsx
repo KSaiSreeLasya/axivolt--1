@@ -21,7 +21,6 @@ export default function EVStations() {
       image:
         "https://cdn.builder.io/api/v1/image/assets%2F125c7cd6968a435da0ace6ef2edbf6b7%2F724918157e3e443e87569a122e3fa517?format=webp&width=800&height=1200",
     },
-    
   ];
 
   const offerings = [

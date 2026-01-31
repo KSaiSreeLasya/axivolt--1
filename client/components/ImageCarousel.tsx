@@ -31,7 +31,7 @@ export default function ImageCarousel({
     <div
       className={cn(
         "relative w-full h-full overflow-hidden rounded-2xl",
-        className
+        className,
       )}
     >
       {/* Images Container */}
@@ -43,7 +43,7 @@ export default function ImageCarousel({
             alt={`${alt} ${index + 1}`}
             className={cn(
               "absolute inset-0 w-full h-full object-cover transition-opacity duration-500",
-              index === currentIndex ? "opacity-100" : "opacity-0"
+              index === currentIndex ? "opacity-100" : "opacity-0",
             )}
           />
         ))}
@@ -65,7 +65,7 @@ export default function ImageCarousel({
               "h-2 rounded-full transition-all duration-300",
               index === currentIndex
                 ? "w-8 bg-white"
-                : "w-2 bg-white/50 hover:bg-white/75"
+                : "w-2 bg-white/50 hover:bg-white/75",
             )}
             aria-label={`Go to image ${index + 1}`}
           />

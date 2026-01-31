@@ -35,12 +35,14 @@ export default function About() {
           }
         }
       },
-      { threshold: 0.2 }
+      { threshold: 0.2 },
     );
 
     const visionElement = document.getElementById("vision-section");
     const coreValuesElement = document.getElementById("core-values-section");
-    const certificationsElement = document.getElementById("certifications-section");
+    const certificationsElement = document.getElementById(
+      "certifications-section",
+    );
 
     if (visionElement) {
       observer.observe(visionElement);

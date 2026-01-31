@@ -43,8 +43,8 @@ export default function Index() {
           url: baseUrl,
           description:
             "Leading solar energy company offering comprehensive renewable energy solutions",
-          telephone: "+91-XXXX-XXXXX",
-          email: "info@axivolt.in",
+          telephone: "+91 90634 47838",
+          email: "contact@axivolt.in",
           areaServed: [
             {
               "@type": "City",

@@ -525,44 +525,61 @@ export default function Careers() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-card rounded-lg overflow-hidden border border-border hover:border-cyan transition-all">
-              <div className="h-48 bg-gradient-to-br from-cyan/20 to-purple-500/20 flex items-center justify-center">
-                <Users className="w-16 h-16 text-cyan/50" />
-              </div>
-              <div className="p-6">
-                <h3 className="text-lg font-bold mb-2">Team Collaboration</h3>
-                <p className="text-sm text-black">
-                  Work alongside talented professionals in a collaborative
-                  environment
-                </p>
-              </div>
-            </div>
-
-            <div className="bg-card rounded-lg overflow-hidden border border-border hover:border-cyan transition-all">
-              <div className="h-48 bg-gradient-to-br from-green-400/20 to-cyan/20 flex items-center justify-center">
-                <Award className="w-16 h-16 text-green-400/50" />
-              </div>
-              <div className="p-6">
-                <h3 className="text-lg font-bold mb-2">
-                  Learning & Development
-                </h3>
-                <p className="text-sm text-black">
-                  Continuous learning programs to enhance your skills and career
-                </p>
-              </div>
-            </div>
-
-            <div className="bg-card rounded-lg overflow-hidden border border-border hover:border-cyan transition-all">
-              <div className="h-48 bg-gradient-to-br from-purple-500/20 to-pink-500/20 flex items-center justify-center">
-                <Heart className="w-16 h-16 text-purple-400/50" />
-              </div>
-              <div className="p-6">
-                <h3 className="text-lg font-bold mb-2">Work-Life Balance</h3>
-                <p className="text-sm text-black">
-                  Flexible work arrangements that prioritize your wellbeing
-                </p>
-              </div>
-            </div>
+            {[
+              {
+                icon: Users,
+                title: "Team Collaboration",
+                description: "Work alongside talented professionals in a collaborative environment",
+                gradient: "from-cyan/20 to-purple-500/20",
+                iconColor: "text-cyan/50",
+              },
+              {
+                icon: Award,
+                title: "Learning & Development",
+                description: "Continuous learning programs to enhance your skills and career",
+                gradient: "from-green-400/20 to-cyan/20",
+                iconColor: "text-green-400/50",
+              },
+              {
+                icon: Heart,
+                title: "Work-Life Balance",
+                description: "Flexible work arrangements that prioritize your wellbeing",
+                gradient: "from-purple-500/20 to-pink-500/20",
+                iconColor: "text-purple-400/50",
+              },
+            ].map((item, idx) => {
+              const Icon = item.icon;
+              return (
+                <motion.div
+                  key={idx}
+                  className="bg-card rounded-lg overflow-hidden border border-border hover:border-cyan transition-all group"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: idx * 0.1 }}
+                  viewport={{ once: true }}
+                  whileHover={{
+                    boxShadow: "0 15px 40px rgba(0, 188, 212, 0.15)",
+                  }}
+                >
+                  <motion.div
+                    className={`h-48 bg-gradient-to-br ${item.gradient} flex items-center justify-center relative overflow-hidden`}
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <motion.div
+                      whileHover={{ scale: 1.2, rotate: 8 }}
+                      transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                    >
+                      <Icon className={`w-16 h-16 ${item.iconColor}`} />
+                    </motion.div>
+                  </motion.div>
+                  <div className="p-6">
+                    <h3 className="text-lg font-bold mb-2">{item.title}</h3>
+                    <p className="text-sm text-black">{item.description}</p>
+                  </div>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>

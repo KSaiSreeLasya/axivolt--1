@@ -204,44 +204,46 @@ export default function DigitalSolutions() {
 
           {/* Tab Content */}
           {activeTab === "energy" && (
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div className="bg-white rounded-2xl p-10 border border-cyan/20 hover:border-cyan/50 transition-all shadow-lg hover:shadow-2xl">
-                  <h3 className="text-3xl font-bold mb-6 text-gray-900">
-                    Mobile Asset Tracker
-                  </h3>
-                  <p className="text-gray-700 mb-8 leading-relaxed">
-                    Monitor and manage your energy assets from anywhere with our
-                    powerful mobile application.
-                  </p>
-                  <ul className="space-y-5">
-                    {[
-                      { title: "On-the-go Monitoring", desc: "Access real-time data anywhere" },
-                      { title: "Alert Notifications", desc: "Instant system alerts and updates" },
-                      { title: "Remote Control", desc: "Manage systems remotely" },
-                    ].map((item, idx) => (
-                      <motion.li
-                        key={idx}
-                        className="flex items-start gap-4"
-                        initial={{ opacity: 0, x: -10 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.4, delay: idx * 0.1 }}
-                        viewport={{ once: true }}
-                      >
-                        <CheckCircle className="w-6 h-6 text-cyan flex-shrink-0 mt-0.5" />
-                        <div>
-                          <p className="font-bold text-gray-900">{item.title}</p>
-                          <p className="text-gray-700 text-sm mt-1">
-                            {item.desc}
-                          </p>
-                        </div>
-                      </motion.li>
-                    ))}
-                  </ul>
-                </div>
-              <div className="bg-gradient-to-br from-green-900/30 to-green-600/10 rounded-lg p-8 h-96 flex items-center justify-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div className="bg-white rounded-2xl p-10 border border-cyan/20 hover:border-cyan/50 transition-all shadow-lg hover:shadow-2xl">
+                <h3 className="text-3xl font-bold mb-6 text-gray-900">
+                  Energy Management System
+                </h3>
+                <p className="text-gray-700 mb-8 leading-relaxed">
+                  Real-time monitoring and control of your renewable energy
+                  assets with intelligent automation.
+                </p>
+                <ul className="space-y-5">
+                  {[
+                    { title: "Real-time Monitoring", desc: "Track system performance 24/7" },
+                    { title: "Predictive Analytics", desc: "AI-powered performance insights" },
+                    { title: "Automated Control", desc: "Smart system optimization" },
+                    { title: "Performance Optimization", desc: "Maximize energy generation" },
+                  ].map((item, idx) => (
+                    <motion.li
+                      key={idx}
+                      className="flex items-start gap-4"
+                      initial={{ opacity: 0, x: -10 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.4, delay: idx * 0.1 }}
+                      viewport={{ once: true }}
+                    >
+                      <CheckCircle className="w-6 h-6 text-cyan flex-shrink-0 mt-0.5" />
+                      <div>
+                        <p className="font-bold text-gray-900">{item.title}</p>
+                        <p className="text-gray-700 text-sm mt-1">
+                          {item.desc}
+                        </p>
+                      </div>
+                    </motion.li>
+                  ))}
+                </ul>
+              </div>
+              <div className="bg-gradient-to-br from-blue-900/30 to-blue-600/10 rounded-lg p-8 h-96 flex items-center justify-center">
                 <div className="text-center">
-                  <div className="text-6xl mb-4">📱</div>
-                  <p className="text-black400">Mobile Application</p>
+                  <BarChart3 className="w-24 h-24 mx-auto mb-4 text-cyan" />
+                  <p className="text-gray-700">Energy Dashboard</p>
+                  <p className="text-cyan text-sm font-mono font-bold mt-4">Live Monitoring</p>
                 </div>
               </div>
             </div>

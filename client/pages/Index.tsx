@@ -540,34 +540,38 @@ export default function Index() {
       </section>
 
       {/* Final CTA Section */}
-      <section id="contact" className="py-20 bg-yellow-green text-background">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section id="contact" className="py-20 bg-yellow-green text-background relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-0 left-0 w-96 h-96 bg-background rounded-full blur-3xl"></div>
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-background rounded-full blur-3xl"></div>
+        </div>
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center text-center">
-            <div>
-              <div className="text-4xl font-bold mb-2">📞</div>
+            <div className="animate-stagger-1 hover:scale-110 transition-transform duration-300 hover:-translate-y-2">
+              <div className="text-4xl font-bold mb-2 animate-float">📞</div>
               <h3 className="font-bold text-lg mb-1">Call Us</h3>
               <p className="text-sm text-background/80">+1 (555) 123-4567</p>
             </div>
-            <div>
-              <div className="text-4xl font-bold mb-2">📧</div>
+            <div className="animate-stagger-2 hover:scale-110 transition-transform duration-300 hover:-translate-y-2">
+              <div className="text-4xl font-bold mb-2 animate-float">📧</div>
               <h3 className="font-bold text-lg mb-1">Email</h3>
               <p className="text-sm text-background/80">hello@axivolt.com</p>
             </div>
-            <div>
-              <div className="text-4xl font-bold mb-2">🌐</div>
+            <div className="animate-stagger-3 hover:scale-110 transition-transform duration-300 hover:-translate-y-2">
+              <div className="text-4xl font-bold mb-2 animate-float">🌐</div>
               <h3 className="font-bold text-lg mb-1">Online</h3>
               <p className="text-sm text-background/80">Schedule a Demo</p>
             </div>
           </div>
 
           <div className="mt-12 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 animate-slide-up">
               Ready to go renewable?
             </h2>
-            <p className="text-lg text-background/90 mb-8">
+            <p className="text-lg text-background/90 mb-8 animate-stagger-1">
               Start your sustainable energy journey today
             </p>
-            <button className="bg-background text-yellow-green px-8 py-3 rounded-lg font-bold hover:bg-opacity-90 transition-all">
+            <button className="bg-background text-yellow-green px-8 py-3 rounded-lg font-bold hover:bg-opacity-90 transition-all duration-300 hover:scale-105 hover:shadow-lg animate-stagger-2">
               Get Free Consultation
             </button>
           </div>

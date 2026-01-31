@@ -12,7 +12,8 @@ import {
   Target,
 } from "lucide-react";
 import { useSEO, addSchemaMarkup, SchemaMarkup } from "@/hooks/useSEO";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { X } from "lucide-react";
 
 export default function About() {
   const navigate = useNavigate();

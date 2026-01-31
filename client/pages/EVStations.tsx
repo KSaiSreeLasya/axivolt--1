@@ -117,28 +117,29 @@ export default function EVStations() {
       </section>
 
       {/* Charging Solutions Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white via-blue-50/20 to-white">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
               EV Charging Solutions
             </h2>
-            <p className="text-black300">
+            <p className="text-xl text-gray-700 font-light">
               Next-generation charging infrastructure for electric vehicles
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {solutions.map((solution, idx) => (
-              <div key={idx}>
-                <div className="relative h-64 rounded-lg overflow-hidden group mb-3">
+              <div key={idx} className="group">
+                <div className="relative h-72 rounded-2xl overflow-hidden group-hover:shadow-2xl transition-all duration-300 shadow-lg">
                   <img
                     src={solution.image}
                     alt={solution.title}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                   />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 </div>
-                <h3 className="text-lg font-bold">{solution.title}</h3>
+                <h3 className="text-lg font-bold text-gray-900 mt-5 group-hover:text-cyan transition-colors">{solution.title}</h3>
               </div>
             ))}
           </div>
@@ -146,40 +147,41 @@ export default function EVStations() {
       </section>
 
       {/* Offerings Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-background/50">
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-cyan-50/30 via-white to-white">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
               EV Stations Offerings
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {offerings.map((offering) => {
               const Icon = offering.icon;
               return (
                 <div
                   key={offering.title}
-                  className="bg-card border border-border rounded-xl p-8 hover:border-cyan transition-all"
+                  className="group bg-white rounded-2xl p-10 border-2 transition-all shadow-lg hover:shadow-2xl relative overflow-hidden hover:border-cyan/50"
                 >
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-cyan/5 rounded-full -mr-16 -mt-16 group-hover:bg-cyan/10 transition-colors"></div>
                   <div
-                    className={`w-12 h-12 rounded-lg ${offering.color} flex items-center justify-center mb-4`}
+                    className={`w-20 h-20 rounded-2xl ${offering.color} flex items-center justify-center mb-8 shadow-lg relative z-10 border-2 border-white`}
                   >
-                    <Icon className={`w-6 h-6 ${offering.iconColor}`} />
+                    <Icon className={`w-10 h-10 ${offering.iconColor}`} />
                   </div>
 
-                  <h3 className="text-xl font-bold mb-2">{offering.title}</h3>
-                  <p className="text-black300 text-sm mb-6">
+                  <h3 className="text-3xl font-bold mb-3 text-gray-900 relative z-10">{offering.title}</h3>
+                  <p className="text-gray-700 text-base mb-8 leading-relaxed relative z-10">
                     {offering.description}
                   </p>
 
-                  <ul className="space-y-2">
+                  <ul className="space-y-3 relative z-10">
                     {offering.features.map((feature) => (
                       <li
                         key={feature}
-                        className="flex items-start gap-2 text-sm text-black300"
+                        className="flex items-start gap-3 text-base text-gray-700 font-medium"
                       >
-                        <span className="w-1.5 h-1.5 rounded-full bg-cyan mt-1.5 flex-shrink-0"></span>
+                        <span className="w-3 h-3 rounded-full bg-cyan mt-1.5 flex-shrink-0"></span>
                         {feature}
                       </li>
                     ))}
@@ -192,18 +194,21 @@ export default function EVStations() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto bg-cyan rounded-2xl p-12 text-center">
-          <h2 className="text-3xl font-bold text-background mb-4">
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-yellow-green via-yellow-green to-yellow-green/85 text-background relative overflow-hidden">
+        <div className="absolute inset-0 -z-10">
+          <div className="absolute top-0 left-1/3 w-96 h-96 bg-white/15 rounded-full filter blur-3xl"></div>
+          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-white/10 rounded-full filter blur-3xl"></div>
+        </div>
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
             Deploy EV charging at scale
           </h2>
-          <p className="text-background/80 mb-6 text-lg">
-            We offer planning, permitting, supply and operations for charging
-            networks and depot electrification.
+          <p className="text-xl text-background/95 mb-10 font-light">
+            We offer planning, permitting, supply and operations for charging networks and depot electrification.
           </p>
           <button
             onClick={() => navigate("/quote")}
-            className="bg-background text-cyan px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition-all"
+            className="bg-white text-yellow-green px-12 py-5 rounded-xl font-bold text-lg hover:bg-gray-50 transition-all shadow-xl hover:shadow-2xl"
           >
             Get Started
           </button>

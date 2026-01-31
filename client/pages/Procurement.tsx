@@ -8,8 +8,10 @@ import {
   Shield,
   TrendingUp,
 } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 export default function Procurement() {
+  const navigate = useNavigate();
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Header />

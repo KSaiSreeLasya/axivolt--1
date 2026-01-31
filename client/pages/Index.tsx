@@ -106,60 +106,130 @@ export default function Index() {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-background to-background/80 pt-20 md:pt-32 pb-16">
+      <section className="relative overflow-hidden bg-gradient-to-b from-background via-background to-background/80 pt-20 md:pt-32 pb-16">
+        {/* Animated background elements */}
+        <motion.div
+          className="absolute inset-0 -z-10"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 0.5 }}
+          transition={{ duration: 1.5, ease: "easeOut" }}
+        >
+          <div className="absolute top-0 left-1/4 w-96 h-96 bg-cyan/10 rounded-full filter blur-3xl"></div>
+          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-yellow-green/10 rounded-full filter blur-3xl"></div>
+        </motion.div>
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
-            <div className="space-y-8">
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8 }}
+              className="space-y-8"
+            >
               <div>
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4">
-                  <span className="text-cyan">Sustainable</span>
-                  <br />
-                  <span className="text-gray-900">Future</span>
-                </h1>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                >
+                  <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4">
+                    <motion.span
+                      className="text-cyan block"
+                      initial={{ opacity: 0, x: -30 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.7, delay: 0.3 }}
+                    >
+                      Sustainable
+                    </motion.span>
+                    <motion.span
+                      className="text-gray-900 block"
+                      initial={{ opacity: 0, x: -30 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.7, delay: 0.5 }}
+                    >
+                      Future
+                    </motion.span>
+                  </h1>
+                </motion.div>
               </div>
 
-              <p className="text-lg text-black leading-relaxed max-w-xl">
+              <motion.p
+                className="text-lg text-black leading-relaxed max-w-xl"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.7 }}
+              >
                 Transform your energy consumption with cutting-edge solar
                 solutions. Harness clean, renewable power for a sustainable
                 tomorrow.
-              </p>
+              </motion.p>
 
               {/* Stats Preview */}
-              <div className="flex gap-12 py-8">
-                <div>
+              <motion.div
+                className="flex gap-12 py-8"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.9 }}
+              >
+                <motion.div whileHover={{ scale: 1.05 }} transition={{ type: "spring", stiffness: 400 }}>
                   <p className="text-3xl font-bold text-cyan">500k</p>
                   <p className="text-sm text-black">tons CO₂ saved</p>
-                </div>
-                <div>
+                </motion.div>
+                <motion.div whileHover={{ scale: 1.05 }} transition={{ type: "spring", stiffness: 400 }}>
                   <p className="text-3xl font-bold text-yellow-green">350+</p>
                   <p className="text-sm text-black">projects worldwide</p>
-                </div>
-                <div>
+                </motion.div>
+                <motion.div whileHover={{ scale: 1.05 }} transition={{ type: "spring", stiffness: 400 }}>
                   <p className="text-3xl font-bold text-cyan">Global</p>
                   <p className="text-sm text-black">presence</p>
-                </div>
-              </div>
+                </motion.div>
+              </motion.div>
 
-              <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                <button
+              <motion.div
+                className="flex flex-col sm:flex-row gap-4 pt-4"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 1.1 }}
+              >
+                <motion.button
                   onClick={() => navigate("/quote")}
-                  className="bg-cyan text-white px-8 py-3 rounded-lg font-bold text-lg hover:bg-opacity-90 transition-all flex items-center justify-center gap-2"
+                  whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(0, 188, 212, 0.3)" }}
+                  whileTap={{ scale: 0.95 }}
+                  className="bg-cyan text-white px-8 py-3 rounded-lg font-bold text-lg hover:bg-opacity-90 transition-all flex items-center justify-center gap-2 shadow-lg"
                 >
                   Get Started <ArrowRight className="w-5 h-5" />
-                </button>
-                <button
+                </motion.button>
+                <motion.button
                   onClick={() => navigate("/solutions")}
+                  whileHover={{ scale: 1.05, backgroundColor: "rgba(0, 188, 212, 0.1)" }}
+                  whileTap={{ scale: 0.95 }}
                   className="border-2 border-cyan text-cyan px-8 py-3 rounded-lg font-bold text-lg hover:bg-cyan/10 transition-all"
                 >
                   Learn More
-                </button>
-              </div>
-            </div>
+                </motion.button>
+              </motion.div>
+            </motion.div>
 
             {/* Right Image */}
-            <div className="relative h-96 md:h-full">
-              <div className="absolute inset-0 bg-gradient-to-br from-cyan/20 to-yellow-green/20 rounded-3xl blur-2xl"></div>
+            <motion.div
+              className="relative h-96 md:h-full"
+              initial={{ opacity: 0, scale: 0.9, x: 20 }}
+              animate={{ opacity: 1, scale: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+            >
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-br from-cyan/20 to-yellow-green/20 rounded-3xl blur-2xl"
+                animate={{
+                  scale: [1, 1.1, 1],
+                  opacity: [0.5, 0.7, 0.5],
+                }}
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
+                  repeatType: "mirror",
+                }}
+              ></motion.div>
               <ImageCarousel
                 images={[
                   "https://cdn.builder.io/api/v1/image/assets%2F125c7cd6968a435da0ace6ef2edbf6b7%2F9d84a999e09b4e95b8bc2776c5f2ab23?format=webp&width=800&height=1200",
@@ -169,7 +239,7 @@ export default function Index() {
                 alt="AXIVOLT Solar Projects"
                 className="relative h-full"
               />
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>

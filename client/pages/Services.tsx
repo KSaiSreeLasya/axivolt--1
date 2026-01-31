@@ -181,7 +181,10 @@ export default function Services() {
             Let us help you achieve your renewable energy and sustainability
             goals with our expert services.
           </p>
-          <button onClick={() => navigate('/contact')} className="bg-background text-cyan px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition-all">
+          <button
+            onClick={() => navigate("/contact")}
+            className="bg-background text-cyan px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition-all"
+          >
             Contact Us Today
           </button>
         </div>

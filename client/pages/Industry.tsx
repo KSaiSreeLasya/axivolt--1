@@ -263,7 +263,10 @@ export default function Industry() {
             Let's create a customized renewable energy solution for your
             organization
           </p>
-          <button onClick={() => navigate('/contact')} className="bg-background text-cyan px-8 py-3 rounded-lg font-bold hover:bg-opacity-90 transition-all inline-flex items-center gap-2">
+          <button
+            onClick={() => navigate("/contact")}
+            className="bg-background text-cyan px-8 py-3 rounded-lg font-bold hover:bg-opacity-90 transition-all inline-flex items-center gap-2"
+          >
             Get Industry Assessment <ArrowRight className="w-5 h-5" />
           </button>
         </div>

@@ -201,7 +201,10 @@ export default function EVStations() {
             We offer planning, permitting, supply and operations for charging
             networks and depot electrification.
           </p>
-          <button onClick={() => navigate('/quote')} className="bg-background text-cyan px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition-all">
+          <button
+            onClick={() => navigate("/quote")}
+            className="bg-background text-cyan px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition-all"
+          >
             Get Started
           </button>
         </div>

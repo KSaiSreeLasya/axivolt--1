@@ -129,10 +129,16 @@ export default function Index() {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                <button onClick={() => navigate('/quote')} className="bg-cyan text-white px-8 py-3 rounded-lg font-bold text-lg hover:bg-opacity-90 transition-all flex items-center justify-center gap-2">
+                <button
+                  onClick={() => navigate("/quote")}
+                  className="bg-cyan text-white px-8 py-3 rounded-lg font-bold text-lg hover:bg-opacity-90 transition-all flex items-center justify-center gap-2"
+                >
                   Get Started <ArrowRight className="w-5 h-5" />
                 </button>
-                <button onClick={() => navigate('/solutions')} className="border-2 border-cyan text-cyan px-8 py-3 rounded-lg font-bold text-lg hover:bg-cyan/10 transition-all">
+                <button
+                  onClick={() => navigate("/solutions")}
+                  className="border-2 border-cyan text-cyan px-8 py-3 rounded-lg font-bold text-lg hover:bg-cyan/10 transition-all"
+                >
                   Learn More
                 </button>
               </div>
@@ -317,7 +323,10 @@ export default function Index() {
           </div>
 
           <div className="flex justify-center pt-12">
-            <button onClick={() => navigate('/contact')} className="bg-yellow-green text-background px-8 py-3 rounded-full font-semibold hover:bg-opacity-90 transition-all">
+            <button
+              onClick={() => navigate("/contact")}
+              className="bg-yellow-green text-background px-8 py-3 rounded-full font-semibold hover:bg-opacity-90 transition-all"
+            >
               Explore Our Portfolio
             </button>
           </div>
@@ -406,10 +415,16 @@ export default function Index() {
             planet
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button onClick={() => navigate('/contact')} className="bg-background text-yellow-green px-8 py-3 rounded-lg font-bold hover:bg-opacity-90 transition-all">
+            <button
+              onClick={() => navigate("/contact")}
+              className="bg-background text-yellow-green px-8 py-3 rounded-lg font-bold hover:bg-opacity-90 transition-all"
+            >
               Get Free Consultation
             </button>
-            <button onClick={() => navigate('/solutions')} className="border-2 border-background text-background px-8 py-3 rounded-lg font-bold hover:bg-background/10 transition-all">
+            <button
+              onClick={() => navigate("/solutions")}
+              className="border-2 border-background text-background px-8 py-3 rounded-lg font-bold hover:bg-background/10 transition-all"
+            >
               Learn More
             </button>
           </div>
@@ -468,7 +483,10 @@ export default function Index() {
                 </li>
               </ul>
 
-              <button onClick={() => navigate('/solutions')} className="bg-cyan text-white px-8 py-3 rounded-lg font-bold hover:bg-opacity-90 transition-all inline-flex items-center gap-2">
+              <button
+                onClick={() => navigate("/solutions")}
+                className="bg-cyan text-white px-8 py-3 rounded-lg font-bold hover:bg-opacity-90 transition-all inline-flex items-center gap-2"
+              >
                 Learn More <ArrowRight className="w-5 h-5" />
               </button>
             </div>

@@ -15,6 +15,7 @@ import { useSEO, addSchemaMarkup, SchemaMarkup } from "@/hooks/useSEO";
 import { useEffect } from "react";
 
 export default function Index() {
+  const navigate = useNavigate();
   useSEO({
     title:
       "AXIVOLT - Best Solar Company in Hyderabad, Telangana & Andhra Pradesh",

@@ -11,15 +11,15 @@ export default function Header() {
   >(null);
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-background border-b border-border">
+    <header className="sticky top-0 z-50 w-full bg-background border-b border-border shadow-sm backdrop-blur-sm bg-opacity-95 transition-all duration-300">
       <div className="max-w-full mx-auto px-6 lg:px-12">
         <div className="flex items-center h-24 gap-8">
           {/* Logo and Brand */}
-          <Link to="/" className="flex items-center gap-3 group flex-shrink-0">
+          <Link to="/" className="flex items-center gap-3 group flex-shrink-0 hover:opacity-80 transition-opacity duration-300">
             <img
               src="https://cdn.builder.io/api/v1/image/assets%2Ffe5527c1828944a38faa27a1f5c6efe7%2F00fa53301075421e90acc8403136e6ca?format=webp&width=200&height=300"
               alt="AXIVOLT Logo"
-              className="h-16 w-auto"
+              className="h-16 w-auto group-hover:scale-105 transition-transform duration-300"
             />
           </Link>
 
@@ -27,7 +27,7 @@ export default function Header() {
           <nav className="hidden md:flex items-center gap-12 flex-1 justify-center">
             <Link
               to="/"
-              className="text-sm font-medium text-cyan hover:text-yellow-green transition-colors"
+              className="text-sm font-medium text-cyan hover:text-yellow-green transition-all duration-300 hover:scale-110 origin-center relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-yellow-green hover:after:w-full after:transition-all after:duration-300"
             >
               Home
             </Link>

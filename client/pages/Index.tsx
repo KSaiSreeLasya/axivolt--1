@@ -512,15 +512,16 @@ export default function Index() {
       </section>
 
       {/* CTA Section 1 */}
-      <section className="py-16 bg-gradient-to-r from-yellow-green to-yellow-green/90 text-background relative overflow-hidden">
+      <section className="py-24 bg-gradient-to-br from-yellow-green via-yellow-green to-yellow-green/85 text-background relative overflow-hidden">
         <motion.div
           className="absolute inset-0 -z-10"
           initial={{ opacity: 0 }}
-          whileInView={{ opacity: 0.3 }}
+          whileInView={{ opacity: 0.4 }}
           transition={{ duration: 1 }}
           viewport={{ once: true }}
         >
-          <div className="absolute top-0 left-1/3 w-96 h-96 bg-white/10 rounded-full filter blur-3xl"></div>
+          <div className="absolute top-0 left-1/3 w-96 h-96 bg-white/15 rounded-full filter blur-3xl"></div>
+          <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-white/10 rounded-full filter blur-3xl"></div>
         </motion.div>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -534,7 +535,7 @@ export default function Index() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-4xl font-bold mb-6"
+            className="text-4xl md:text-5xl font-bold mb-8 leading-tight"
           >
             Ready to Switch to Clean Energy?
           </motion.h2>
@@ -543,37 +544,37 @@ export default function Index() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
-            className="text-lg text-background/90 mb-8"
+            className="text-xl text-background/95 mb-10 font-light leading-relaxed"
           >
-            Join thousands of businesses saving money while protecting the
-            planet
+            Join thousands of businesses saving money while protecting the planet
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
             viewport={{ once: true }}
-            className="flex flex-col sm:flex-row gap-4 justify-center"
+            className="flex flex-col sm:flex-row gap-6 justify-center"
           >
             <motion.button
               onClick={() => navigate("/contact")}
               whileHover={{
-                scale: 1.05,
-                boxShadow: "0 20px 40px rgba(0, 0, 0, 0.2)",
+                scale: 1.08,
+                boxShadow: "0 30px 60px rgba(0, 0, 0, 0.3)",
               }}
               whileTap={{ scale: 0.95 }}
-              className="bg-background text-yellow-green px-8 py-3 rounded-lg font-bold hover:bg-opacity-90 transition-all shadow-lg"
+              className="bg-white text-yellow-green px-12 py-5 rounded-xl font-bold text-lg hover:bg-gray-50 transition-all shadow-xl"
             >
               Get Free Consultation
             </motion.button>
             <motion.button
               onClick={() => navigate("/solutions")}
               whileHover={{
-                scale: 1.05,
-                backgroundColor: "rgba(255, 255, 255, 0.2)",
+                scale: 1.08,
+                backgroundColor: "rgba(255, 255, 255, 0.25)",
+                boxShadow: "0 15px 40px rgba(255, 255, 255, 0.2)",
               }}
               whileTap={{ scale: 0.95 }}
-              className="border-2 border-background text-background px-8 py-3 rounded-lg font-bold hover:bg-background/10 transition-all"
+              className="border-2 border-white text-white px-12 py-5 rounded-xl font-bold text-lg hover:bg-white/10 transition-all"
             >
               Learn More
             </motion.button>

@@ -9,7 +9,8 @@ import {
   Facebook,
   Instagram,
 } from "lucide-react";
-import { useSEO } from "@/hooks/useSEO";
+import { useSEO, addSchemaMarkup } from "@/hooks/useSEO";
+import { useEffect } from "react";
 
 export default function ContactUs() {
   useSEO({
@@ -23,6 +24,67 @@ export default function ContactUs() {
       "Reach out to AXIVOLT for a free solar energy consultation. We're here to help.",
     canonical: `${typeof window !== "undefined" ? window.location.origin : ""}/contact`,
   });
+
+  useEffect(() => {
+    // Add LocalBusiness schema with ratings and contact info
+    const baseUrl = typeof window !== "undefined" ? window.location.origin : "";
+    const schema = {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "@id": `${baseUrl}/#localbusiness`,
+      name: "AXIVOLT Green Energy",
+      alternateName: "Axiso Green Energy",
+      image: `${baseUrl}/logo.png`,
+      description:
+        "Leading solar and renewable energy company in Hyderabad providing solar panel installations, energy storage, EV charging solutions and advisory services. 500+ completed projects with 4.9-star rating.",
+      url: baseUrl,
+      telephone: "+91 9063447838",
+      email: "contact@axivolt.in",
+      priceRange: "₹₹₹",
+      areaServed: [
+        {
+          "@type": "City",
+          name: "Hyderabad",
+        },
+        {
+          "@type": "AdministrativeArea",
+          name: "Telangana",
+        },
+        {
+          "@type": "AdministrativeArea",
+          name: "Andhra Pradesh",
+        },
+      ],
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "Plot No. 101, Miyoshi Residency, Sri Nagar Colony, Miyapur",
+        addressLocality: "Hyderabad",
+        addressRegion: "Telangana",
+        postalCode: "500049",
+        addressCountry: "India",
+      },
+      aggregateRating: {
+        "@type": "AggregateRating",
+        ratingValue: 4.9,
+        reviewCount: 70,
+        ratingCount: 70,
+        bestRating: 5,
+        worstRating: 1,
+      },
+      sameAs: [
+        "https://www.facebook.com/AxivoltGreenEnergy/",
+        "https://www.linkedin.com/company/axivoltgreen/",
+        "https://www.instagram.com/axivoltgreenenergy/",
+      ],
+      contactPoint: {
+        "@type": "ContactPoint",
+        contactType: "Customer Service",
+        telephone: "+91 9063447838",
+        email: "contact@axivolt.in",
+      },
+    };
+    addSchemaMarkup(schema);
+  }, []);
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Header />

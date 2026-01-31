@@ -277,24 +277,27 @@ export default function Index() {
           >
             From Rooftops to Utility-Scale Projects
           </motion.p>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0 }}
               viewport={{ once: true }}
               whileHover={{
-                y: -5,
-                boxShadow: "0 20px 40px rgba(0, 188, 212, 0.15)",
+                y: -12,
+                boxShadow: "0 30px 60px rgba(0, 188, 212, 0.25)",
               }}
-              className="bg-card rounded-xl p-8 border border-border hover:border-cyan/50 transition-all"
+              className="bg-white rounded-2xl p-10 border border-cyan/20 hover:border-cyan/50 transition-all shadow-lg hover:shadow-2xl group"
             >
-              <AnimatedCounter
-                value={250}
-                suffix="MW"
-                className="text-3xl md:text-4xl font-bold text-cyan mb-2"
-              />
-              <p className="text-black text-sm">Total Capacity</p>
+              <div className="relative">
+                <AnimatedCounter
+                  value={250}
+                  suffix="MW"
+                  className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-cyan to-cyan/80 bg-clip-text text-transparent mb-3"
+                />
+              </div>
+              <p className="text-gray-700 text-base font-medium group-hover:text-gray-900 transition-colors">Total Capacity</p>
+              <div className="absolute top-0 right-0 w-20 h-20 bg-cyan/5 rounded-full -mr-10 -mt-10 group-hover:bg-cyan/10 transition-colors"></div>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -302,17 +305,20 @@ export default function Index() {
               transition={{ duration: 0.6, delay: 0.1 }}
               viewport={{ once: true }}
               whileHover={{
-                y: -5,
-                boxShadow: "0 20px 40px rgba(205, 210, 40, 0.15)",
+                y: -12,
+                boxShadow: "0 30px 60px rgba(205, 210, 40, 0.25)",
               }}
-              className="bg-card rounded-xl p-8 border border-border hover:border-yellow-green/50 transition-all"
+              className="bg-white rounded-2xl p-10 border border-yellow-green/20 hover:border-yellow-green/50 transition-all shadow-lg hover:shadow-2xl group"
             >
-              <AnimatedCounter
-                value={500}
-                suffix="+"
-                className="text-3xl md:text-4xl font-bold text-yellow-green mb-2"
-              />
-              <p className="text-black text-sm">Projects Completed</p>
+              <div className="relative">
+                <AnimatedCounter
+                  value={500}
+                  suffix="+"
+                  className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-yellow-green to-yellow-green/80 bg-clip-text text-transparent mb-3"
+                />
+              </div>
+              <p className="text-gray-700 text-base font-medium group-hover:text-gray-900 transition-colors">Projects Completed</p>
+              <div className="absolute top-0 right-0 w-20 h-20 bg-yellow-green/5 rounded-full -mr-10 -mt-10 group-hover:bg-yellow-green/10 transition-colors"></div>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -320,17 +326,20 @@ export default function Index() {
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
               whileHover={{
-                y: -5,
-                boxShadow: "0 20px 40px rgba(0, 188, 212, 0.15)",
+                y: -12,
+                boxShadow: "0 30px 60px rgba(0, 188, 212, 0.25)",
               }}
-              className="bg-card rounded-xl p-8 border border-border hover:border-cyan/50 transition-all"
+              className="bg-white rounded-2xl p-10 border border-cyan/20 hover:border-cyan/50 transition-all shadow-lg hover:shadow-2xl group"
             >
-              <AnimatedCounter
-                value={15}
-                suffix="+"
-                className="text-3xl md:text-4xl font-bold text-cyan mb-2"
-              />
-              <p className="text-black text-sm">Years Experience</p>
+              <div className="relative">
+                <AnimatedCounter
+                  value={15}
+                  suffix="+"
+                  className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-cyan to-cyan/80 bg-clip-text text-transparent mb-3"
+                />
+              </div>
+              <p className="text-gray-700 text-base font-medium group-hover:text-gray-900 transition-colors">Years Experience</p>
+              <div className="absolute top-0 right-0 w-20 h-20 bg-cyan/5 rounded-full -mr-10 -mt-10 group-hover:bg-cyan/10 transition-colors"></div>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -338,17 +347,20 @@ export default function Index() {
               transition={{ duration: 0.6, delay: 0.3 }}
               viewport={{ once: true }}
               whileHover={{
-                y: -5,
-                boxShadow: "0 20px 40px rgba(205, 210, 40, 0.15)",
+                y: -12,
+                boxShadow: "0 30px 60px rgba(205, 210, 40, 0.25)",
               }}
-              className="bg-card rounded-xl p-8 border border-border hover:border-yellow-green/50 transition-all"
+              className="bg-white rounded-2xl p-10 border border-yellow-green/20 hover:border-yellow-green/50 transition-all shadow-lg hover:shadow-2xl group"
             >
-              <AnimatedCounter
-                value={12}
-                suffix="+"
-                className="text-3xl md:text-4xl font-bold text-yellow-green mb-2"
-              />
-              <p className="text-black text-sm">Countries Served</p>
+              <div className="relative">
+                <AnimatedCounter
+                  value={12}
+                  suffix="+"
+                  className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-yellow-green to-yellow-green/80 bg-clip-text text-transparent mb-3"
+                />
+              </div>
+              <p className="text-gray-700 text-base font-medium group-hover:text-gray-900 transition-colors">Countries Served</p>
+              <div className="absolute top-0 right-0 w-20 h-20 bg-yellow-green/5 rounded-full -mr-10 -mt-10 group-hover:bg-yellow-green/10 transition-colors"></div>
             </motion.div>
           </div>
 

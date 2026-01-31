@@ -251,7 +251,7 @@ export default function Index() {
       {/* Services Section */}
       <section id="services" className="py-20 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <div className="text-center mb-16 animate-slide-up">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Comprehensive Green Energy Solutions
             </h2>
@@ -263,8 +263,8 @@ export default function Index() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Service 1 - Orange Icon */}
-            <div className="bg-card rounded-xl p-8 border border-border hover:border-cyan/50 transition-all group">
-              <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+            <div className="bg-card rounded-xl p-8 border border-border hover:border-cyan/50 transition-all duration-300 group animate-stagger-1 hover:-translate-y-2 hover:shadow-lg">
+              <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                 <Sun className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-xl font-bold mb-3">Rooftop Installations</h3>
@@ -274,15 +274,15 @@ export default function Index() {
               </p>
               <a
                 href="#"
-                className="text-cyan text-sm font-medium hover:text-yellow-green transition-colors"
+                className="text-cyan text-sm font-medium hover:text-yellow-green transition-colors duration-300 hover:translate-x-1 inline-block"
               >
                 Explore More →
               </a>
             </div>
 
             {/* Service 2 - Blue Icon */}
-            <div className="bg-card rounded-xl p-8 border border-border hover:border-cyan/50 transition-all group">
-              <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+            <div className="bg-card rounded-xl p-8 border border-border hover:border-cyan/50 transition-all duration-300 group animate-stagger-2 hover:-translate-y-2 hover:shadow-lg">
+              <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                 <Battery className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-xl font-bold mb-3">Energy Storage</h3>
@@ -292,15 +292,15 @@ export default function Index() {
               </p>
               <a
                 href="#"
-                className="text-cyan text-sm font-medium hover:text-yellow-green transition-colors"
+                className="text-cyan text-sm font-medium hover:text-yellow-green transition-colors duration-300 hover:translate-x-1 inline-block"
               >
                 Explore More →
               </a>
             </div>
 
             {/* Service 3 - Green Icon */}
-            <div className="bg-card rounded-xl p-8 border border-border hover:border-cyan/50 transition-all group">
-              <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+            <div className="bg-card rounded-xl p-8 border border-border hover:border-cyan/50 transition-all duration-300 group animate-stagger-3 hover:-translate-y-2 hover:shadow-lg">
+              <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                 <Leaf className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-xl font-bold mb-3">Industrial Solutions</h3>
@@ -310,7 +310,7 @@ export default function Index() {
               </p>
               <a
                 href="#"
-                className="text-cyan text-sm font-medium hover:text-yellow-green transition-colors"
+                className="text-cyan text-sm font-medium hover:text-yellow-green transition-colors duration-300 hover:translate-x-1 inline-block"
               >
                 Explore More →
               </a>

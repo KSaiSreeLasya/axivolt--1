@@ -110,18 +110,15 @@ export default function EnergyStorage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {infrastructure.map((item, idx) => (
-              <div
-                key={idx}
-                className="relative h-64 rounded-lg overflow-hidden group"
-              >
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent flex items-end p-4">
-                  <h3 className="text-lg font-bold">{item.title}</h3>
+              <div key={idx}>
+                <div className="relative h-64 rounded-lg overflow-hidden group mb-3">
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                  />
                 </div>
+                <h3 className="text-lg font-bold">{item.title}</h3>
               </div>
             ))}
           </div>

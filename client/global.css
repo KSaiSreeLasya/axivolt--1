@@ -119,11 +119,6 @@
     background-attachment: fixed;
   }
 
-  /* Account for fixed header - add top margin to first section */
-  body > div > section:first-of-type {
-    @apply mt-32;
-  }
-
   :where(p, span, li, h1, h2, h3, h4, h5, h6, a, button, label, td, th) {
     overflow-wrap: anywhere;
     word-break: break-word;

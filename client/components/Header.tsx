@@ -86,7 +86,7 @@ export default function Header() {
             >
               <Link
                 to="/"
-                className="text-sm font-medium text-cyan hover:text-yellow-green transition-colors relative group py-2"
+                className="text-lg font-medium text-cyan hover:text-yellow-green transition-colors relative group py-2"
               >
                 Home
                 <motion.span

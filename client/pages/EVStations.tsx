@@ -66,35 +66,38 @@ export default function EVStations() {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-background to-background/80 pt-20 md:pt-32 pb-16">
+      <section className="relative overflow-hidden bg-gradient-to-br from-white via-blue-50/40 to-white pt-24 md:pt-40 pb-20">
+        <div className="absolute inset-0 -z-10">
+          <div className="absolute top-0 left-1/4 w-96 h-96 bg-cyan/15 rounded-full filter blur-3xl"></div>
+          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-yellow-green/15 rounded-full filter blur-3xl"></div>
+        </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Link
             to="/solutions"
-            className="inline-flex items-center gap-2 text-cyan hover:text-yellow-green transition-colors mb-8"
+            className="inline-flex items-center gap-2 text-cyan hover:text-yellow-green transition-colors mb-10 font-semibold"
           >
-            <ArrowLeft className="w-4 h-4" />
+            <ArrowLeft className="w-5 h-5" />
             Back to Solutions
           </Link>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             {/* Left Content */}
-            <div className="space-y-8">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-                <span className="text-cyan">EV Stations &</span>
+            <div className="space-y-10">
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-gray-900 tracking-tight">
+                <span className="bg-gradient-to-r from-cyan to-cyan/80 bg-clip-text text-transparent">EV Stations &</span>
                 <br />
-                <span className="text-cyan">Charging</span>
+                <span className="bg-gradient-to-r from-cyan to-cyan/80 bg-clip-text text-transparent">Charging</span>
               </h1>
 
-              <p className="text-lg text-black300 leading-relaxed">
-                Turnkey EV charging infrastructure and service solutions for
-                businesses, fleets and public deployments.
+              <p className="text-xl text-gray-700 leading-relaxed font-light">
+                Turnkey EV charging infrastructure and service solutions for businesses, fleets and public deployments.
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                <button className="bg-cyan text-background px-8 py-3 rounded-lg font-bold text-lg hover:bg-opacity-90 transition-all">
+              <div className="flex flex-col sm:flex-row gap-6 pt-8">
+                <button className="bg-cyan text-white px-10 py-4 rounded-xl font-bold text-lg hover:bg-cyan/90 transition-all shadow-xl hover:shadow-2xl">
                   EV Infrastructure
                 </button>
-                <button className="border-2 border-cyan text-cyan px-8 py-3 rounded-lg font-bold text-lg hover:bg-cyan/10 transition-all">
+                <button className="border-2 border-cyan text-cyan px-10 py-4 rounded-xl font-bold text-lg hover:bg-cyan/10 transition-all shadow-lg">
                   EV Charging
                 </button>
               </div>

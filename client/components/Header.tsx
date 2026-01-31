@@ -129,7 +129,7 @@ export default function Header() {
                   exit="exit"
                   onMouseEnter={() => setSolutionsOpen(true)}
                   onMouseLeave={() => setSolutionsOpen(false)}
-                  className="absolute top-full left-0 mt-0 bg-card border border-border rounded-lg shadow-xl overflow-visible z-50"
+                  className="absolute top-full left-0 mt-1 bg-card border border-cyan/30 rounded-xl shadow-2xl overflow-visible z-50 backdrop-blur-sm"
                   style={{ width: "auto", minWidth: "224px" }}
                 >
                   <div className="py-2">

@@ -243,7 +243,7 @@ export default function About() {
                   Learn More <ArrowRight className="w-5 h-5" />
                 </button>
                 <button
-                  onClick={() => navigate("/contact")}
+                  onClick={() => setShowVideoModal(true)}
                   className="border border-cyan text-cyan px-6 py-3 rounded-lg font-bold hover:bg-cyan/10 transition-all"
                 >
                   Our Story

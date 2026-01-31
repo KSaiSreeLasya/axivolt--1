@@ -204,75 +204,6 @@ export default function DigitalSolutions() {
 
           {/* Tab Content */}
           {activeTab === "energy" && (
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div className="bg-card rounded-lg p-8 border border-border">
-                <h3 className="text-2xl font-bold mb-6">
-                  Energy Management System
-                </h3>
-                <p className="text-black400 mb-6">
-                  Real-time monitoring and control of your renewable energy
-                  assets.
-                </p>
-                <ul className="space-y-4">
-                  <li className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-cyan flex-shrink-0 mt-1" />
-                    <div>
-                      <p className="font-semibold">Real-time Monitoring</p>
-                      <p className="text-black500 text-sm">
-                        Track system performance 24/7
-                      </p>
-                    </div>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-cyan flex-shrink-0 mt-1" />
-                    <div>
-                      <p className="font-semibold">Predictive Analytics</p>
-                      <p className="text-black500 text-sm">
-                        AI-powered performance insights
-                      </p>
-                    </div>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-cyan flex-shrink-0 mt-1" />
-                    <div>
-                      <p className="font-semibold">Automated Control</p>
-                      <p className="text-black500 text-sm">
-                        Smart system optimization
-                      </p>
-                    </div>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-cyan flex-shrink-0 mt-1" />
-                    <div>
-                      <p className="font-semibold">Performance Optimization</p>
-                      <p className="text-black500 text-sm">
-                        Maximize energy generation
-                      </p>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-              <div className="bg-gradient-to-br from-blue-900/30 to-blue-600/10 rounded-lg p-12 flex items-center justify-center h-96">
-                <div className="text-center">
-                  <svg
-                    className="w-24 h-24 mx-auto mb-4 text-cyan"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <circle cx="12" cy="12" r="10" opacity="0.1" />
-                    <path d="M12 2c5.5 0 10 4.5 10 10s-4.5 10-10 10S2 17.5 2 12 6.5 2 12 2m0 2c-4.4 0-8 3.6-8 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8m3.5 9c.8 0 1.5-.7 1.5-1.5s-.7-1.5-1.5-1.5-1.5.7-1.5 1.5.7 1.5 1.5 1.5m-7 0c.8 0 1.5-.7 1.5-1.5S9.8 8 9 8s-1.5.7-1.5 1.5.7 1.5 1.5 1.5m3.5 6c-2.3 0-4.3-1.5-5-3.6h10c-.7 2.1-2.7 3.6-5 3.6z" />
-                  </svg>
-                  <p className="text-black400">25.5 kW</p>
-                  <p className="text-black500 text-sm">Current Output</p>
-                  <p className="text-cyan text-sm font-mono mt-2">
-                    98.5% Efficiency
-                  </p>
-                </div>
-              </div>
-            </div>
-          )}
-
-            {activeTab === "mobile" && (
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div className="bg-white rounded-2xl p-10 border border-cyan/20 hover:border-cyan/50 transition-all shadow-lg hover:shadow-2xl">
                   <h3 className="text-3xl font-bold mb-6 text-gray-900">
@@ -316,45 +247,89 @@ export default function DigitalSolutions() {
             </div>
           )}
 
-            {activeTab === "cloud" && (
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div className="bg-white rounded-2xl p-10 border border-cyan/20 hover:border-cyan/50 transition-all shadow-lg hover:shadow-2xl">
-                  <h3 className="text-3xl font-bold mb-6 text-gray-900">
-                    Cloud Analytics Platform
-                  </h3>
-                  <p className="text-gray-700 mb-8 leading-relaxed">
-                    Comprehensive data analytics and visualization for your energy
-                    systems with enterprise-grade insights.
-                  </p>
-                  <ul className="space-y-5">
-                    {[
-                      { title: "Advanced Analytics", desc: "Deep insights into performance data" },
-                      { title: "Custom Reporting", desc: "Generate tailored reports" },
-                      { title: "Data Visualization", desc: "Interactive dashboards" },
-                    ].map((item, idx) => (
-                      <motion.li
-                        key={idx}
-                        className="flex items-start gap-4"
-                        initial={{ opacity: 0, x: -10 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.4, delay: idx * 0.1 }}
-                        viewport={{ once: true }}
-                      >
-                        <CheckCircle className="w-6 h-6 text-cyan flex-shrink-0 mt-0.5" />
-                        <div>
-                          <p className="font-bold text-gray-900">{item.title}</p>
-                          <p className="text-gray-700 text-sm mt-1">
-                            {item.desc}
-                          </p>
-                        </div>
-                      </motion.li>
-                    ))}
-                  </ul>
+          {activeTab === "mobile" && (
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div className="bg-white rounded-2xl p-10 border border-cyan/20 hover:border-cyan/50 transition-all shadow-lg hover:shadow-2xl">
+                <h3 className="text-3xl font-bold mb-6 text-gray-900">
+                  Mobile Asset Tracker
+                </h3>
+                <p className="text-gray-700 mb-8 leading-relaxed">
+                  Monitor and manage your energy assets from anywhere with our
+                  powerful mobile application.
+                </p>
+                <ul className="space-y-5">
+                  {[
+                    { title: "On-the-go Monitoring", desc: "Access real-time data anywhere" },
+                    { title: "Alert Notifications", desc: "Instant system alerts and updates" },
+                    { title: "Remote Control", desc: "Manage systems remotely" },
+                  ].map((item, idx) => (
+                    <motion.li
+                      key={idx}
+                      className="flex items-start gap-4"
+                      initial={{ opacity: 0, x: -10 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.4, delay: idx * 0.1 }}
+                      viewport={{ once: true }}
+                    >
+                      <CheckCircle className="w-6 h-6 text-cyan flex-shrink-0 mt-0.5" />
+                      <div>
+                        <p className="font-bold text-gray-900">{item.title}</p>
+                        <p className="text-gray-700 text-sm mt-1">
+                          {item.desc}
+                        </p>
+                      </div>
+                    </motion.li>
+                  ))}
+                </ul>
+              </div>
+              <div className="bg-gradient-to-br from-green-900/30 to-green-600/10 rounded-lg p-8 h-96 flex items-center justify-center">
+                <div className="text-center">
+                  <div className="text-6xl mb-4">📱</div>
+                  <p className="text-gray-700">Mobile Application</p>
                 </div>
+              </div>
+            </div>
+          )}
+
+          {activeTab === "cloud" && (
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div className="bg-white rounded-2xl p-10 border border-cyan/20 hover:border-cyan/50 transition-all shadow-lg hover:shadow-2xl">
+                <h3 className="text-3xl font-bold mb-6 text-gray-900">
+                  Cloud Analytics Platform
+                </h3>
+                <p className="text-gray-700 mb-8 leading-relaxed">
+                  Comprehensive data analytics and visualization for your energy
+                  systems with enterprise-grade insights.
+                </p>
+                <ul className="space-y-5">
+                  {[
+                    { title: "Advanced Analytics", desc: "Deep insights into performance data" },
+                    { title: "Custom Reporting", desc: "Generate tailored reports" },
+                    { title: "Data Visualization", desc: "Interactive dashboards" },
+                  ].map((item, idx) => (
+                    <motion.li
+                      key={idx}
+                      className="flex items-start gap-4"
+                      initial={{ opacity: 0, x: -10 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.4, delay: idx * 0.1 }}
+                      viewport={{ once: true }}
+                    >
+                      <CheckCircle className="w-6 h-6 text-cyan flex-shrink-0 mt-0.5" />
+                      <div>
+                        <p className="font-bold text-gray-900">{item.title}</p>
+                        <p className="text-gray-700 text-sm mt-1">
+                          {item.desc}
+                        </p>
+                      </div>
+                    </motion.li>
+                  ))}
+                </ul>
+              </div>
               <div className="bg-gradient-to-br from-cyan-900/30 to-cyan-600/10 rounded-lg p-8 h-96 flex items-center justify-center">
                 <div className="text-center">
                   <BarChart3 className="w-24 h-24 mx-auto mb-4 text-cyan" />
-                  <p className="text-black400">Cloud Analytics</p>
+                  <p className="text-gray-700">Cloud Analytics</p>
                 </div>
               </div>
             </div>

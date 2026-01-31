@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function Header() {
   const [solutionsOpen, setSolutionsOpen] = useState(false);
@@ -10,214 +11,303 @@ export default function Header() {
     string | null
   >(null);
 
+  const navVariants = {
+    hidden: { opacity: 0, y: -20 },
+    visible: (i: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: { delay: i * 0.1, duration: 0.5, ease: "easeOut" },
+    }),
+  };
+
+  const buttonVariants = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: { duration: 0.5, ease: "easeOut" },
+    },
+  };
+
+  const menuVariants = {
+    hidden: { opacity: 0, y: -10 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.3, ease: "easeOut" },
+    },
+    exit: {
+      opacity: 0,
+      y: -10,
+      transition: { duration: 0.2 },
+    },
+  };
+
   return (
-    <header className="sticky top-0 z-50 w-full bg-background border-b border-border">
+    <header className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur-md border-b border-border shadow-sm">
       <div className="max-w-full mx-auto px-6 lg:px-12">
         <div className="flex items-center h-32 gap-4">
           {/* Logo and Brand */}
-          <Link to="/" className="flex items-center gap-3 group flex-shrink-0">
-            <img
-              src="https://cdn.builder.io/api/v1/image/assets%2Ffe5527c1828944a38faa27a1f5c6efe7%2F00fa53301075421e90acc8403136e6ca?format=webp&width=200&height=300"
-              alt="AXIVOLT Logo"
-              className="h-24 w-auto"
-            />
-          </Link>
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+          >
+            <Link
+              to="/"
+              className="flex items-center gap-3 group flex-shrink-0 hover:opacity-80 transition-opacity"
+            >
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets%2Ffe5527c1828944a38faa27a1f5c6efe7%2F00fa53301075421e90acc8403136e6ca?format=webp&width=200&height=300"
+                alt="AXIVOLT Logo"
+                className="h-24 w-auto hover:scale-105 transition-transform duration-300"
+              />
+            </Link>
+          </motion.div>
 
           {/* Navigation - Centered */}
           <nav className="hidden md:flex items-center gap-8 flex-1 justify-center">
-            <Link
-              to="/"
-              className="text-sm font-medium text-cyan hover:text-yellow-green transition-colors"
-            >
-              Home
-            </Link>
+            <motion.div custom={0} variants={navVariants} initial="hidden" animate="visible">
+              <Link
+                to="/"
+                className="text-sm font-medium text-cyan hover:text-yellow-green transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-yellow-green after:transition-all after:duration-300 hover:after:w-full"
+              >
+                Home
+              </Link>
+            </motion.div>
 
             {/* Solutions Dropdown */}
-            <div className="relative group">
+            <motion.div
+              custom={1}
+              variants={navVariants}
+              initial="hidden"
+              animate="visible"
+              className="relative group"
+            >
               <Link
                 to="/solutions"
                 onMouseEnter={() => setSolutionsOpen(true)}
                 onMouseLeave={() => setSolutionsOpen(false)}
-                className="flex items-center gap-1 text-sm font-medium text-cyan hover:text-yellow-green transition-colors"
+                className="flex items-center gap-1 text-sm font-medium text-cyan hover:text-yellow-green transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-yellow-green after:transition-all after:duration-300 hover:after:w-full"
               >
                 Solutions
-                <ChevronDown
-                  className={`w-4 h-4 transition-transform ${
-                    solutionsOpen ? "rotate-180" : ""
-                  }`}
-                />
+                <motion.div
+                  animate={{ rotate: solutionsOpen ? 180 : 0 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <ChevronDown className="w-4 h-4" />
+                </motion.div>
               </Link>
 
               {/* Solutions Submenu */}
-              <div
-                onMouseEnter={() => setSolutionsOpen(true)}
-                onMouseLeave={() => setSolutionsOpen(false)}
-                className={`absolute top-full left-0 mt-0 bg-card border border-border rounded-none shadow-xl transition-all duration-200 overflow-visible z-50 ${
-                  solutionsOpen
-                    ? "opacity-100 visible translate-y-0"
-                    : "opacity-0 invisible -translate-y-2"
-                }`}
-                style={{ width: "auto", minWidth: "224px" }}
-              >
-                <div className="py-2">
-                  {/* Solar with Submenu */}
-                  <div
-                    className="relative"
-                    onMouseEnter={() => setActiveSolutionSubmenu("solar")}
-                    onMouseLeave={() => setActiveSolutionSubmenu(null)}
-                  >
-                    <Link
-                      to="/solutions/solar"
-                      className="flex items-center justify-between px-6 py-3 text-sm text-black hover:text-cyan hover:bg-background/50 transition-colors border-b border-border"
-                    >
-                      Solar
-                      <ChevronDown className="w-4 h-4 rotate-180" />
-                    </Link>
-
-                    {/* Solar Subcategories */}
+              {solutionsOpen && (
+                <motion.div
+                  variants={menuVariants}
+                  initial="hidden"
+                  animate="visible"
+                  exit="exit"
+                  onMouseEnter={() => setSolutionsOpen(true)}
+                  onMouseLeave={() => setSolutionsOpen(false)}
+                  className="absolute top-full left-0 mt-0 bg-card border border-border rounded-lg shadow-xl overflow-visible z-50"
+                  style={{ width: "auto", minWidth: "224px" }}
+                >
+                  <div className="py-2">
+                    {/* Solar with Submenu */}
                     <div
-                      className={`absolute top-0 bg-card border border-border rounded-sm w-56 shadow-2xl transition-all duration-200 z-50 ${
-                        activeSolutionSubmenu === "solar"
-                          ? "opacity-100 visible"
-                          : "opacity-0 invisible"
-                      }`}
-                      style={{
-                        left: "100%",
-                        pointerEvents:
-                          activeSolutionSubmenu === "solar" ? "auto" : "none",
-                        marginLeft: "0px",
-                      }}
+                      className="relative"
+                      onMouseEnter={() => setActiveSolutionSubmenu("solar")}
+                      onMouseLeave={() => setActiveSolutionSubmenu(null)}
                     >
-                      <div className="py-2">
-                        <Link
-                          to="/solutions/solar/residential"
-                          className="block px-6 py-3 text-sm text-black hover:text-cyan hover:bg-background/50 transition-colors border-b border-border last:border-b-0"
+                      <Link
+                        to="/solutions/solar"
+                        className="flex items-center justify-between px-6 py-3 text-sm text-black hover:text-cyan hover:bg-background/50 transition-colors border-b border-border group"
+                      >
+                        Solar
+                        <motion.div
+                          animate={{
+                            rotate: activeSolutionSubmenu === "solar" ? -180 : 0,
+                          }}
+                          transition={{ duration: 0.3 }}
                         >
-                          Residential (B2C)
-                        </Link>
-                        <Link
-                          to="/solutions/solar/commercial"
-                          className="block px-6 py-3 text-sm text-black hover:text-cyan hover:bg-background/50 transition-colors border-b border-border last:border-b-0"
-                        >
-                          Commercial (B2B)
-                        </Link>
-                        <Link
-                          to="/solutions/solar/government"
-                          className="block px-6 py-3 text-sm text-black hover:text-cyan hover:bg-background/50 transition-colors last:border-b-0"
-                        >
-                          Government (B2G)
-                        </Link>
-                      </div>
-                    </div>
-                  </div>
+                          <ChevronDown className="w-4 h-4 rotate-180 group-hover:text-cyan" />
+                        </motion.div>
+                      </Link>
 
-                  <Link
-                    to="/solutions/wind"
-                    className="block px-6 py-3 text-sm text-black hover:text-cyan hover:bg-background/50 transition-colors border-b border-border"
-                  >
-                    Wind
-                  </Link>
-                  <Link
-                    to="/solutions/energy-storage"
-                    className="block px-6 py-3 text-sm text-black hover:text-cyan hover:bg-background/50 transition-colors border-b border-border"
-                  >
-                    Energy Storage
-                  </Link>
-                  <Link
-                    to="/solutions/ev-stations"
-                    className="block px-6 py-3 text-sm text-black hover:text-cyan hover:bg-background/50 transition-colors"
-                  >
-                    EV Stations
-                  </Link>
-                </div>
-              </div>
-            </div>
+                      {/* Solar Subcategories */}
+                      {activeSolutionSubmenu === "solar" && (
+                        <motion.div
+                          variants={menuVariants}
+                          initial="hidden"
+                          animate="visible"
+                          exit="exit"
+                          className="absolute top-0 bg-card border border-border rounded-lg w-56 shadow-2xl z-50"
+                          style={{ left: "100%", marginLeft: "0px" }}
+                        >
+                          <div className="py-2">
+                            <Link
+                              to="/solutions/solar/residential"
+                              className="block px-6 py-3 text-sm text-black hover:text-cyan hover:bg-background/50 transition-colors border-b border-border last:border-b-0"
+                            >
+                              Residential (B2C)
+                            </Link>
+                            <Link
+                              to="/solutions/solar/commercial"
+                              className="block px-6 py-3 text-sm text-black hover:text-cyan hover:bg-background/50 transition-colors border-b border-border last:border-b-0"
+                            >
+                              Commercial (B2B)
+                            </Link>
+                            <Link
+                              to="/solutions/solar/government"
+                              className="block px-6 py-3 text-sm text-black hover:text-cyan hover:bg-background/50 transition-colors last:border-b-0"
+                            >
+                              Government (B2G)
+                            </Link>
+                          </div>
+                        </motion.div>
+                      )}
+                    </div>
+
+                    <Link
+                      to="/solutions/wind"
+                      className="block px-6 py-3 text-sm text-black hover:text-cyan hover:bg-background/50 transition-colors border-b border-border"
+                    >
+                      Wind
+                    </Link>
+                    <Link
+                      to="/solutions/energy-storage"
+                      className="block px-6 py-3 text-sm text-black hover:text-cyan hover:bg-background/50 transition-colors border-b border-border"
+                    >
+                      Energy Storage
+                    </Link>
+                    <Link
+                      to="/solutions/ev-stations"
+                      className="block px-6 py-3 text-sm text-black hover:text-cyan hover:bg-background/50 transition-colors"
+                    >
+                      EV Stations
+                    </Link>
+                  </div>
+                </motion.div>
+              )}
+            </motion.div>
 
             {/* Services Dropdown */}
-            <div className="relative group">
+            <motion.div
+              custom={2}
+              variants={navVariants}
+              initial="hidden"
+              animate="visible"
+              className="relative group"
+            >
               <Link
                 to="/services"
                 onMouseEnter={() => setServicesOpen(true)}
                 onMouseLeave={() => setServicesOpen(false)}
-                className="flex items-center gap-1 text-sm font-medium text-cyan hover:text-yellow-green transition-colors"
+                className="flex items-center gap-1 text-sm font-medium text-cyan hover:text-yellow-green transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-yellow-green after:transition-all after:duration-300 hover:after:w-full"
               >
                 Services
-                <ChevronDown
-                  className={`w-4 h-4 transition-transform ${
-                    servicesOpen ? "rotate-180" : ""
-                  }`}
-                />
+                <motion.div
+                  animate={{ rotate: servicesOpen ? 180 : 0 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <ChevronDown className="w-4 h-4" />
+                </motion.div>
               </Link>
 
               {/* Services Submenu */}
-              <div
-                onMouseEnter={() => setServicesOpen(true)}
-                onMouseLeave={() => setServicesOpen(false)}
-                className={`absolute top-full left-0 mt-0 bg-card border border-border rounded-none w-56 shadow-xl transition-all duration-200 ${
-                  servicesOpen
-                    ? "opacity-100 visible translate-y-0"
-                    : "opacity-0 invisible -translate-y-2"
-                }`}
+              {servicesOpen && (
+                <motion.div
+                  variants={menuVariants}
+                  initial="hidden"
+                  animate="visible"
+                  exit="exit"
+                  onMouseEnter={() => setServicesOpen(true)}
+                  onMouseLeave={() => setServicesOpen(false)}
+                  className="absolute top-full left-0 mt-0 bg-card border border-border rounded-lg w-56 shadow-xl z-50"
+                >
+                  <div className="py-2">
+                    <Link
+                      to="/advisory"
+                      className="block px-6 py-3 text-sm text-black hover:text-cyan hover:bg-background/50 transition-colors rounded-t-lg"
+                    >
+                      Advisory
+                    </Link>
+                    <Link
+                      to="/procurement"
+                      className="block px-6 py-3 text-sm text-black hover:text-cyan hover:bg-background/50 transition-colors border-y border-border"
+                    >
+                      Procurement
+                    </Link>
+                    <Link
+                      to="/digital-solutions"
+                      className="block px-6 py-3 text-sm text-black hover:text-cyan hover:bg-background/50 transition-colors rounded-b-lg"
+                    >
+                      Digital Solutions
+                    </Link>
+                  </div>
+                </motion.div>
+              )}
+            </motion.div>
+
+            <motion.div custom={3} variants={navVariants} initial="hidden" animate="visible">
+              <Link
+                to="/industry"
+                className="text-sm font-medium text-cyan hover:text-yellow-green transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-yellow-green after:transition-all after:duration-300 hover:after:w-full"
               >
-                <div className="py-2">
-                  <Link
-                    to="/advisory"
-                    className="block px-6 py-3 text-sm text-black hover:text-cyan hover:bg-background/50 transition-colors"
-                  >
-                    Advisory
-                  </Link>
-                  <Link
-                    to="/procurement"
-                    className="block px-6 py-3 text-sm text-black hover:text-cyan hover:bg-background/50 transition-colors"
-                  >
-                    Procurement
-                  </Link>
-                  <Link
-                    to="/digital-solutions"
-                    className="block px-6 py-3 text-sm text-black hover:text-cyan hover:bg-background/50 transition-colors"
-                  >
-                    Digital Solutions
-                  </Link>
-                </div>
-              </div>
-            </div>
-            <Link
-              to="/industry"
-              className="text-sm font-medium text-cyan hover:text-yellow-green transition-colors"
-            >
-              Industry
-            </Link>
+                Industry
+              </Link>
+            </motion.div>
 
-            <Link
-              to="/careers"
-              className="text-sm font-medium text-cyan hover:text-yellow-green transition-colors"
-            >
-              Careers
-            </Link>
+            <motion.div custom={4} variants={navVariants} initial="hidden" animate="visible">
+              <Link
+                to="/careers"
+                className="text-sm font-medium text-cyan hover:text-yellow-green transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-yellow-green after:transition-all after:duration-300 hover:after:w-full"
+              >
+                Careers
+              </Link>
+            </motion.div>
 
-            <Link
-              to="/about"
-              className="text-sm font-medium text-cyan hover:text-yellow-green transition-colors"
-            >
-              About
-            </Link>
+            <motion.div custom={5} variants={navVariants} initial="hidden" animate="visible">
+              <Link
+                to="/about"
+                className="text-sm font-medium text-cyan hover:text-yellow-green transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-yellow-green after:transition-all after:duration-300 hover:after:w-full"
+              >
+                About
+              </Link>
+            </motion.div>
           </nav>
 
           {/* CTA Buttons */}
-          <div className="flex items-center gap-4 flex-shrink-0">
-            <Link
-              to="/contact"
-              className="border border-cyan text-cyan px-5 py-2 rounded font-semibold hover:bg-cyan/10 transition-all text-sm inline-block"
+          <motion.div
+            variants={buttonVariants}
+            initial="hidden"
+            animate="visible"
+            className="flex items-center gap-4 flex-shrink-0"
+          >
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              transition={{ type: "spring", stiffness: 400, damping: 10 }}
             >
-              Contact Us
-            </Link>
-            <Link
-              to="/quote"
-              className="bg-cyan text-background px-6 py-2 rounded font-semibold hover:bg-yellow-green transition-all text-sm inline-block"
+              <Link
+                to="/contact"
+                className="border border-cyan text-cyan px-5 py-2 rounded font-semibold hover:bg-cyan/10 transition-all text-sm inline-block"
+              >
+                Contact Us
+              </Link>
+            </motion.div>
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              transition={{ type: "spring", stiffness: 400, damping: 10 }}
             >
-              Get a Quote
-            </Link>
-          </div>
+              <Link
+                to="/quote"
+                className="bg-cyan text-background px-6 py-2 rounded font-semibold hover:bg-yellow-green transition-all text-sm inline-block shadow-lg hover:shadow-xl"
+              >
+                Get a Quote
+              </Link>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
     </header>

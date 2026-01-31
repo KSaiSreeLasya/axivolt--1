@@ -393,15 +393,27 @@ export default function Careers() {
           ) : (
             <div className="space-y-4">
               {jobs.map((job, idx) => (
-                <div
+                <motion.div
                   key={idx}
-                  className="bg-card rounded-lg border border-border p-6 hover:border-cyan transition-all flex items-center justify-between"
+                  className="bg-card rounded-lg border border-border p-6 hover:border-cyan transition-all flex items-center justify-between group relative overflow-hidden"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: idx * 0.08 }}
+                  viewport={{ once: true }}
+                  whileHover={{
+                    boxShadow: "0 10px 30px rgba(0, 188, 212, 0.15)",
+                  }}
                 >
-                  <div className="flex-1">
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-cyan/5 rounded-full -mr-16 -mt-16 group-hover:bg-cyan/10 transition-colors"></div>
+                  <div className="flex-1 relative z-10">
                     <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 bg-cyan/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <motion.div
+                        className="w-12 h-12 bg-cyan/20 rounded-lg flex items-center justify-center flex-shrink-0"
+                        whileHover={{ scale: 1.2, rotate: 8 }}
+                        transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                      >
                         <Briefcase className="w-6 h-6 text-cyan" />
-                      </div>
+                      </motion.div>
                       <div className="flex-1">
                         <h3 className="text-lg font-bold mb-2">{job.title}</h3>
                         <p className="text-sm text-black mb-3">
@@ -416,13 +428,15 @@ export default function Careers() {
                       </div>
                     </div>
                   </div>
-                  <button
+                  <motion.button
                     onClick={() => setSelectedJob(job)}
-                    className="bg-cyan text-background px-6 py-2 rounded font-semibold hover:bg-yellow-green transition-all text-sm flex-shrink-0 ml-4"
+                    className="bg-cyan text-background px-6 py-2 rounded font-semibold hover:bg-yellow-green transition-all text-sm flex-shrink-0 ml-4 relative z-10"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
                   >
                     Apply Now
-                  </button>
-                </div>
+                  </motion.button>
+                </motion.div>
               ))}
             </div>
           )}

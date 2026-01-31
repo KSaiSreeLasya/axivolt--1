@@ -154,76 +154,79 @@ export default function Services() {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-background to-background/80 pt-20 md:pt-32 pb-16">
+      <section className="relative overflow-hidden bg-gradient-to-br from-white via-blue-50/40 to-white pt-24 md:pt-40 pb-20">
+        <div className="absolute inset-0 -z-10">
+          <div className="absolute top-0 left-1/4 w-96 h-96 bg-cyan/15 rounded-full filter blur-3xl"></div>
+          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-yellow-green/15 rounded-full filter blur-3xl"></div>
+        </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Link
             to="/"
-            className="inline-flex items-center gap-2 text-cyan hover:text-yellow-green transition-colors mb-8"
+            className="inline-flex items-center gap-2 text-cyan hover:text-yellow-green transition-colors mb-10 font-semibold"
           >
-            <ArrowLeft className="w-4 h-4" />
+            <ArrowLeft className="w-5 h-5" />
             Back
           </Link>
 
-          <div className="space-y-6">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-              <span className="text-cyan">Our Services</span>
+          <div className="space-y-8">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-gray-900 tracking-tight">
+              <span className="bg-gradient-to-r from-cyan to-cyan/80 bg-clip-text text-transparent">Our Services</span>
             </h1>
 
-            <p className="text-lg text-black300 max-w-2xl leading-relaxed">
-              Comprehensive service offerings to support your renewable energy
-              journey from planning to implementation and beyond.
+            <p className="text-xl text-gray-700 max-w-2xl leading-relaxed font-light">
+              Comprehensive service offerings to support your renewable energy journey from planning to implementation and beyond.
             </p>
           </div>
         </div>
       </section>
 
       {/* Services Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-cyan-50/30 via-white to-white">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
               What We Offer
             </h2>
-            <p className="text-black300 max-w-2xl mx-auto">
-              Choose a service to learn more about how we can support your
-              renewable energy goals.
+            <p className="text-xl text-gray-700 font-light max-w-2xl mx-auto">
+              Choose a service to learn more about how we can support your renewable energy goals.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {services.map((service) => {
               const Icon = service.icon;
               return (
                 <Link
                   key={service.title}
                   to={service.link}
-                  className="bg-card border border-border rounded-xl p-8 hover:border-cyan transition-all cursor-pointer block"
+                  className="group bg-white rounded-2xl p-10 border-2 transition-all shadow-lg hover:shadow-2xl relative overflow-hidden hover:border-cyan/50"
                 >
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-cyan/5 rounded-full -mr-16 -mt-16 group-hover:bg-cyan/10 transition-colors"></div>
                   <div
-                    className={`w-12 h-12 rounded-lg ${service.color} flex items-center justify-center mb-4`}
+                    className={`w-20 h-20 rounded-2xl ${service.color} flex items-center justify-center mb-8 shadow-lg relative z-10 border-2 border-white`}
                   >
-                    <Icon className={`w-6 h-6 ${service.iconColor}`} />
+                    <Icon className={`w-10 h-10 ${service.iconColor}`} />
                   </div>
 
-                  <h3 className="text-xl font-bold mb-2">{service.title}</h3>
-                  <p className="text-black300 text-sm mb-6">
+                  <h3 className="text-3xl font-bold mb-3 text-gray-900">{service.title}</h3>
+                  <p className="text-gray-700 text-base mb-8 leading-relaxed">
                     {service.description}
                   </p>
 
-                  <ul className="space-y-3 mb-6">
+                  <ul className="space-y-3 mb-8">
                     {service.highlights.map((highlight) => (
                       <li
                         key={highlight}
-                        className="flex items-center gap-2 text-sm text-black300"
+                        className="flex items-center gap-3 text-base text-gray-700 font-medium"
                       >
-                        <span className="w-1.5 h-1.5 rounded-full bg-cyan"></span>
+                        <span className="w-3 h-3 rounded-full bg-cyan flex-shrink-0"></span>
                         {highlight}
                       </li>
                     ))}
                   </ul>
 
-                  <div className="flex items-center justify-end pt-4 border-t border-border">
-                    <ArrowRight className="w-5 h-5 text-cyan" />
+                  <div className="flex items-center justify-end pt-6 border-t-2 border-gray-200">
+                    <ArrowRight className="w-6 h-6 text-cyan group-hover:translate-x-2 transition-transform" />
                   </div>
                 </Link>
               );
@@ -233,18 +236,21 @@ export default function Services() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto bg-cyan rounded-2xl p-12 text-center">
-          <h2 className="text-3xl font-bold text-background mb-4">
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-yellow-green via-yellow-green to-yellow-green/85 text-background relative overflow-hidden">
+        <div className="absolute inset-0 -z-10">
+          <div className="absolute top-0 left-1/3 w-96 h-96 bg-white/15 rounded-full filter blur-3xl"></div>
+          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-white/10 rounded-full filter blur-3xl"></div>
+        </div>
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
             Ready to get started?
           </h2>
-          <p className="text-background/80 mb-6 text-lg">
-            Let us help you achieve your renewable energy and sustainability
-            goals with our expert services.
+          <p className="text-xl text-background/95 mb-10 font-light">
+            Let us help you achieve your renewable energy and sustainability goals with our expert services.
           </p>
           <button
             onClick={() => navigate("/contact")}
-            className="bg-background text-cyan px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition-all"
+            className="bg-white text-yellow-green px-12 py-5 rounded-xl font-bold text-lg hover:bg-gray-50 transition-all shadow-xl hover:shadow-2xl"
           >
             Contact Us Today
           </button>

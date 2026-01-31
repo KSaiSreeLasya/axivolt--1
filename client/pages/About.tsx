@@ -37,7 +37,8 @@ export default function About() {
         url: typeof window !== "undefined" ? window.location.origin : "",
         phone: "+91 90634 47838",
         address: {
-          streetAddress: "Plot No. 101, Miyoshi Residency, Sri Nagar Colony, Miyapur",
+          streetAddress:
+            "Plot No. 101, Miyoshi Residency, Sri Nagar Colony, Miyapur",
           addressLocality: "Hyderabad",
           addressRegion: "Telangana",
           postalCode: "500049",

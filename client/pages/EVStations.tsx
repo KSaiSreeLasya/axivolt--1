@@ -1,9 +1,10 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { ArrowLeft, Zap, Plug, Truck } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function EVStations() {
+  const navigate = useNavigate();
   const solutions = [
     {
       title: "Charging Solutions 1",

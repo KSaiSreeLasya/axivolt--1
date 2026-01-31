@@ -135,38 +135,42 @@ export default function Solar() {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-background to-background/80 pt-20 md:pt-32 pb-16">
+      <section className="relative overflow-hidden bg-gradient-to-br from-white via-blue-50/40 to-white pt-24 md:pt-40 pb-20">
+        <div className="absolute inset-0 -z-10">
+          <div className="absolute top-0 left-1/4 w-96 h-96 bg-cyan/15 rounded-full filter blur-3xl"></div>
+          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-yellow-green/15 rounded-full filter blur-3xl"></div>
+        </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Link
             to="/solutions"
-            className="inline-flex items-center gap-2 text-cyan hover:text-yellow-green transition-colors mb-8"
+            className="inline-flex items-center gap-2 text-cyan hover:text-yellow-green transition-colors mb-10 font-semibold"
           >
-            <ArrowLeft className="w-4 h-4" />
-            Back
+            <ArrowLeft className="w-5 h-5" />
+            Back to Solutions
           </Link>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             {/* Left Content */}
-            <div className="space-y-8">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-                <span className="text-cyan">Solar Energy</span>
+            <div className="space-y-10">
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-gray-900 tracking-tight">
+                <span className="bg-gradient-to-r from-cyan to-cyan/80 bg-clip-text text-transparent">Solar Energy</span>
               </h1>
 
-              <p className="text-lg text-black300 leading-relaxed">
+              <p className="text-xl text-gray-700 leading-relaxed font-light">
                 Comprehensive solar projects, systems, and O&M. Select your
                 application to learn more.
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4 pt-4">
+              <div className="flex flex-col sm:flex-row gap-6 pt-8">
                 <Link
                   to="/solutions/solar/residential"
-                  className="bg-cyan text-background px-8 py-3 rounded-lg font-bold text-lg hover:bg-opacity-90 transition-all text-center"
+                  className="bg-cyan text-white px-10 py-4 rounded-xl font-bold text-lg hover:bg-cyan/90 transition-all text-center shadow-xl hover:shadow-2xl"
                 >
                   Residential
                 </Link>
                 <Link
                   to="/solutions/solar/commercial"
-                  className="border-2 border-cyan text-cyan px-8 py-3 rounded-lg font-bold text-lg hover:bg-cyan/10 transition-all text-center"
+                  className="border-2 border-cyan text-cyan px-10 py-4 rounded-xl font-bold text-lg hover:bg-cyan/10 transition-all text-center shadow-lg"
                 >
                   Commercial
                 </Link>
@@ -187,29 +191,29 @@ export default function Solar() {
       </section>
 
       {/* Projects Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white via-blue-50/20 to-white">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
               Solar Projects in Action
             </h2>
-            <p className="text-black300">
-              Discover our diverse solar installations across residential,
-              commercial and government projects
+            <p className="text-xl text-gray-700 font-light">
+              Discover our diverse solar installations across residential, commercial and government projects
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {projects.map((project, idx) => (
-              <div key={idx}>
-                <div className="relative h-64 rounded-lg overflow-hidden group mb-3">
+              <div key={idx} className="group">
+                <div className="relative h-72 rounded-2xl overflow-hidden group-hover:shadow-2xl transition-all duration-300 shadow-lg">
                   <img
                     src={project.image}
                     alt={project.title}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                   />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 </div>
-                <h3 className="text-lg font-bold">{project.title}</h3>
+                <h3 className="text-lg font-bold text-gray-900 mt-5 group-hover:text-cyan transition-colors">{project.title}</h3>
               </div>
             ))}
           </div>
@@ -217,71 +221,71 @@ export default function Solar() {
       </section>
 
       {/* Solutions Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-background/50">
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-cyan-50/30 via-white to-white">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
               Solar Energy Solutions
             </h2>
-            <p className="text-black300">
-              Choose your application to view detailed solar solutions and
-              services.
+            <p className="text-xl text-gray-700 font-light">
+              Choose your application to view detailed solar solutions and services.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {solutions.map((solution) => {
               const Icon = solution.icon;
               return (
                 <Link
                   key={solution.title}
                   to={solution.link}
-                  className="bg-card border border-border rounded-xl p-8 hover:border-cyan transition-all cursor-pointer block"
+                  className="group bg-white rounded-2xl p-10 border-2 transition-all shadow-lg hover:shadow-2xl relative overflow-hidden hover:border-cyan/50"
                 >
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-cyan/5 rounded-full -mr-16 -mt-16 group-hover:bg-cyan/10 transition-colors"></div>
                   <div
-                    className={`w-12 h-12 rounded-lg ${solution.color} flex items-center justify-center mb-4`}
+                    className={`w-20 h-20 rounded-2xl ${solution.color} flex items-center justify-center mb-8 shadow-lg relative z-10 border-2 border-white`}
                   >
-                    <Icon className={`w-6 h-6 ${solution.iconColor}`} />
+                    <Icon className={`w-10 h-10 ${solution.iconColor}`} />
                   </div>
 
-                  <h3 className="text-xl font-bold mb-2">{solution.title}</h3>
-                  <p className="text-black300 text-sm mb-6">
+                  <h3 className="text-3xl font-bold mb-3 text-gray-900">{solution.title}</h3>
+                  <p className="text-gray-700 text-base mb-8 leading-relaxed">
                     {solution.description}
                   </p>
 
-                  <div className="grid grid-cols-2 gap-4 mb-6 pb-6 border-b border-border">
+                  <div className="grid grid-cols-2 gap-6 mb-8 pb-8 border-b-2 border-gray-200">
                     {solution.stats.map((stat, idx) => (
                       <div key={idx}>
-                        <p className="text-xl font-bold text-cyan">
+                        <p className="text-4xl font-bold bg-gradient-to-r from-cyan to-cyan/80 bg-clip-text text-transparent mb-2">
                           {stat.value}
                         </p>
-                        <p className="text-xs text-black400">{stat.label}</p>
+                        <p className="text-base text-gray-700 font-medium">{stat.label}</p>
                       </div>
                     ))}
                   </div>
 
-                  <ul className="space-y-2 mb-6">
+                  <ul className="space-y-3 mb-8">
                     {solution.features.map((feature) => (
                       <li
                         key={feature}
-                        className="flex items-center gap-2 text-sm text-black300"
+                        className="flex items-center gap-3 text-base text-gray-700 font-medium"
                       >
-                        <span className="w-1.5 h-1.5 rounded-full bg-cyan"></span>
+                        <span className="w-3 h-3 rounded-full bg-cyan flex-shrink-0"></span>
                         {feature}
                       </li>
                     ))}
                   </ul>
 
-                  <div className="bg-background/50 rounded-lg p-4 border border-border flex items-center justify-between">
+                  <div className="bg-gradient-to-br from-cyan/10 to-cyan/5 rounded-xl p-6 border-2 border-cyan/30 flex items-center justify-between">
                     <div>
-                      <p className="text-xs font-semibold text-cyan mb-1">
+                      <p className="text-xs font-bold text-cyan uppercase tracking-widest mb-1">
                         Case Study
                       </p>
-                      <p className="text-sm text-black300">
+                      <p className="text-base text-gray-800 font-semibold">
                         {solution.caseStudy}
                       </p>
                     </div>
-                    <ArrowRight className="w-5 h-5 text-cyan flex-shrink-0 ml-3" />
+                    <ArrowRight className="w-6 h-6 text-cyan flex-shrink-0" />
                   </div>
                 </Link>
               );
@@ -291,22 +295,23 @@ export default function Solar() {
       </section>
 
       {/* Highlights Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white via-yellow-green-50/20 to-white">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
               Solar Highlights
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
             {highlights.map((highlight) => (
               <div
                 key={highlight.title}
-                className="bg-card border border-border rounded-xl p-8"
+                className="group bg-white rounded-2xl p-10 border-2 border-yellow-green/20 hover:border-yellow-green/50 transition-all shadow-lg hover:shadow-2xl relative overflow-hidden"
               >
-                <h3 className="text-xl font-bold mb-3">{highlight.title}</h3>
-                <p className="text-black300">{highlight.description}</p>
+                <div className="absolute top-0 right-0 w-32 h-32 bg-yellow-green/5 rounded-full -mr-16 -mt-16 group-hover:bg-yellow-green/10 transition-colors"></div>
+                <h3 className="text-3xl font-bold mb-4 text-gray-900 relative z-10">{highlight.title}</h3>
+                <p className="text-gray-700 text-lg leading-relaxed relative z-10">{highlight.description}</p>
               </div>
             ))}
           </div>
@@ -314,18 +319,21 @@ export default function Solar() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto bg-cyan rounded-2xl p-12 text-center">
-          <h2 className="text-3xl font-bold text-background mb-4">
-            Go Solar with Axiso Green Energies
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-yellow-green via-yellow-green to-yellow-green/85 text-background relative overflow-hidden">
+        <div className="absolute inset-0 -z-10">
+          <div className="absolute top-0 left-1/3 w-96 h-96 bg-white/15 rounded-full filter blur-3xl"></div>
+          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-white/10 rounded-full filter blur-3xl"></div>
+        </div>
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            Go Solar with AXIVOLT
           </h2>
-          <p className="text-background/80 mb-6 text-lg">
-            From residential rooftops to utility-scale projects, we deliver
-            reliable solar solutions for every sector.
+          <p className="text-xl text-background/95 mb-10 font-light">
+            From residential rooftops to utility-scale projects, we deliver reliable solar solutions for every sector.
           </p>
           <button
             onClick={() => navigate("/quote")}
-            className="bg-background text-cyan px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition-all"
+            className="bg-white text-yellow-green px-12 py-5 rounded-xl font-bold text-lg hover:bg-gray-50 transition-all shadow-xl hover:shadow-2xl"
           >
             Get Started
           </button>

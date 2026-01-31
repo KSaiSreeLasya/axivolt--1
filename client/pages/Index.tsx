@@ -817,8 +817,8 @@ export default function Index() {
               whileHover={{ scale: 1.05 }}
             >
               <img
-                src="https://cdn.builder.io/api/v1/image/assets%2F1b9c62c1213140709e07580a4ee1f322%2Fe22ad79415ea4ace86924b0e44cbf6ee?format=webp&width=800&height=1200"
-                alt="C&I Factory Solar Installation Project"
+                src="https://images.pexels.com/photos/8853468/pexels-photo-8853468.jpeg"
+                alt="Close-up of solar charge controller installation with cables on a metal roof"
                 className="w-full h-full object-cover rounded-2xl hover:brightness-110 transition-all duration-300"
               />
             </motion.div>

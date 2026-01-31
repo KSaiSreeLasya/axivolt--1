@@ -320,20 +320,23 @@ export default function Index() {
       </section>
 
       {/* CTA Section 1 */}
-      <section className="py-16 bg-yellow-green text-background">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+      <section className="py-16 bg-yellow-green text-background relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-background rounded-full blur-3xl"></div>
+        </div>
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 animate-slide-up">
             Ready to Switch to Clean Energy?
           </h2>
-          <p className="text-lg text-background/90 mb-8">
+          <p className="text-lg text-background/90 mb-8 animate-stagger-1">
             Join thousands of businesses saving money while protecting the
             planet
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-background text-yellow-green px-8 py-3 rounded-lg font-bold hover:bg-opacity-90 transition-all">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-stagger-2">
+            <button className="bg-background text-yellow-green px-8 py-3 rounded-lg font-bold hover:bg-opacity-90 transition-all duration-300 hover:scale-105 hover:shadow-lg">
               Get Free Consultation
             </button>
-            <button className="border-2 border-background text-background px-8 py-3 rounded-lg font-bold hover:bg-background/10 transition-all">
+            <button className="border-2 border-background text-background px-8 py-3 rounded-lg font-bold hover:bg-background/10 transition-all duration-300 hover:scale-105 hover:shadow-lg">
               See Pricing
             </button>
           </div>

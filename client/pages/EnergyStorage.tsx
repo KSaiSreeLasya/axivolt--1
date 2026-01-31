@@ -73,11 +73,14 @@ export default function EnergyStorage() {
             {/* Left Content */}
             <div className="space-y-10">
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-gray-900 tracking-tight">
-                <span className="bg-gradient-to-r from-cyan to-cyan/80 bg-clip-text text-transparent">Energy Storage</span>
+                <span className="bg-gradient-to-r from-cyan to-cyan/80 bg-clip-text text-transparent">
+                  Energy Storage
+                </span>
               </h1>
 
               <p className="text-xl text-gray-700 leading-relaxed font-light">
-                Battery energy storage solutions to enhance grid resilience, provide ancillary services and increase renewable penetration.
+                Battery energy storage solutions to enhance grid resilience,
+                provide ancillary services and increase renewable penetration.
               </p>
 
               <button className="bg-cyan text-white px-10 py-4 rounded-xl font-bold text-lg hover:bg-cyan/90 transition-all shadow-xl hover:shadow-2xl">
@@ -106,7 +109,8 @@ export default function EnergyStorage() {
               Energy Storage Infrastructure
             </h2>
             <p className="text-xl text-gray-700 font-light">
-              Advanced battery systems and energy management solutions powering the grid
+              Advanced battery systems and energy management solutions powering
+              the grid
             </p>
           </div>
 
@@ -121,7 +125,9 @@ export default function EnergyStorage() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 </div>
-                <h3 className="text-lg font-bold text-gray-900 mt-5 group-hover:text-cyan transition-colors">{item.title}</h3>
+                <h3 className="text-lg font-bold text-gray-900 mt-5 group-hover:text-cyan transition-colors">
+                  {item.title}
+                </h3>
               </div>
             ))}
           </div>
@@ -151,8 +157,12 @@ export default function EnergyStorage() {
                   >
                     <Icon className={`w-10 h-10 ${highlight.iconColor}`} />
                   </div>
-                  <h3 className="text-3xl font-bold mb-3 text-gray-900 relative z-10">{highlight.title}</h3>
-                  <p className="text-gray-700 text-base leading-relaxed relative z-10">{highlight.description}</p>
+                  <h3 className="text-3xl font-bold mb-3 text-gray-900 relative z-10">
+                    {highlight.title}
+                  </h3>
+                  <p className="text-gray-700 text-base leading-relaxed relative z-10">
+                    {highlight.description}
+                  </p>
                 </div>
               );
             })}
@@ -171,7 +181,8 @@ export default function EnergyStorage() {
             Energy storage for a flexible grid
           </h2>
           <p className="text-xl text-background/95 mb-10 font-light">
-            We deliver turnkey battery solutions and EMS integrations to support grid services and increase renewable adoption.
+            We deliver turnkey battery solutions and EMS integrations to support
+            grid services and increase renewable adoption.
           </p>
           <button
             onClick={() => navigate("/quote")}

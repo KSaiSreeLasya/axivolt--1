@@ -161,7 +161,9 @@ export default function Index() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.7 }}
               >
-                Transform your energy consumption with cutting-edge solar solutions. Harness clean, renewable power for a sustainable tomorrow.
+                Transform your energy consumption with cutting-edge solar
+                solutions. Harness clean, renewable power for a sustainable
+                tomorrow.
               </motion.p>
 
               {/* Stats Preview */}
@@ -176,8 +178,12 @@ export default function Index() {
                   transition={{ type: "spring", stiffness: 400 }}
                   className="group"
                 >
-                  <p className="text-4xl md:text-5xl font-bold text-cyan mb-2 group-hover:text-cyan/80 transition-colors">500k</p>
-                  <p className="text-base text-gray-600 font-medium">tons CO₂ saved</p>
+                  <p className="text-4xl md:text-5xl font-bold text-cyan mb-2 group-hover:text-cyan/80 transition-colors">
+                    500k
+                  </p>
+                  <p className="text-base text-gray-600 font-medium">
+                    tons CO₂ saved
+                  </p>
                   <div className="h-1 w-0 group-hover:w-12 bg-cyan transition-all duration-300 mt-3 rounded-full"></div>
                 </motion.div>
                 <motion.div
@@ -185,8 +191,12 @@ export default function Index() {
                   transition={{ type: "spring", stiffness: 400 }}
                   className="group"
                 >
-                  <p className="text-4xl md:text-5xl font-bold text-yellow-green mb-2 group-hover:text-yellow-green/80 transition-colors">350+</p>
-                  <p className="text-base text-gray-600 font-medium">projects worldwide</p>
+                  <p className="text-4xl md:text-5xl font-bold text-yellow-green mb-2 group-hover:text-yellow-green/80 transition-colors">
+                    350+
+                  </p>
+                  <p className="text-base text-gray-600 font-medium">
+                    projects worldwide
+                  </p>
                   <div className="h-1 w-0 group-hover:w-12 bg-yellow-green transition-all duration-300 mt-3 rounded-full"></div>
                 </motion.div>
                 <motion.div
@@ -194,8 +204,12 @@ export default function Index() {
                   transition={{ type: "spring", stiffness: 400 }}
                   className="group"
                 >
-                  <p className="text-4xl md:text-5xl font-bold text-cyan mb-2 group-hover:text-cyan/80 transition-colors">Global</p>
-                  <p className="text-base text-gray-600 font-medium">presence</p>
+                  <p className="text-4xl md:text-5xl font-bold text-cyan mb-2 group-hover:text-cyan/80 transition-colors">
+                    Global
+                  </p>
+                  <p className="text-base text-gray-600 font-medium">
+                    presence
+                  </p>
                   <div className="h-1 w-0 group-hover:w-12 bg-cyan transition-all duration-300 mt-3 rounded-full"></div>
                 </motion.div>
               </motion.div>
@@ -296,7 +310,9 @@ export default function Index() {
                   className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-cyan to-cyan/80 bg-clip-text text-transparent mb-3"
                 />
               </div>
-              <p className="text-gray-700 text-base font-medium group-hover:text-gray-900 transition-colors">Total Capacity</p>
+              <p className="text-gray-700 text-base font-medium group-hover:text-gray-900 transition-colors">
+                Total Capacity
+              </p>
               <div className="absolute top-0 right-0 w-20 h-20 bg-cyan/5 rounded-full -mr-10 -mt-10 group-hover:bg-cyan/10 transition-colors"></div>
             </motion.div>
             <motion.div
@@ -317,7 +333,9 @@ export default function Index() {
                   className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-yellow-green to-yellow-green/80 bg-clip-text text-transparent mb-3"
                 />
               </div>
-              <p className="text-gray-700 text-base font-medium group-hover:text-gray-900 transition-colors">Projects Completed</p>
+              <p className="text-gray-700 text-base font-medium group-hover:text-gray-900 transition-colors">
+                Projects Completed
+              </p>
               <div className="absolute top-0 right-0 w-20 h-20 bg-yellow-green/5 rounded-full -mr-10 -mt-10 group-hover:bg-yellow-green/10 transition-colors"></div>
             </motion.div>
             <motion.div
@@ -338,7 +356,9 @@ export default function Index() {
                   className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-cyan to-cyan/80 bg-clip-text text-transparent mb-3"
                 />
               </div>
-              <p className="text-gray-700 text-base font-medium group-hover:text-gray-900 transition-colors">Years Experience</p>
+              <p className="text-gray-700 text-base font-medium group-hover:text-gray-900 transition-colors">
+                Years Experience
+              </p>
               <div className="absolute top-0 right-0 w-20 h-20 bg-cyan/5 rounded-full -mr-10 -mt-10 group-hover:bg-cyan/10 transition-colors"></div>
             </motion.div>
             <motion.div
@@ -359,7 +379,9 @@ export default function Index() {
                   className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-yellow-green to-yellow-green/80 bg-clip-text text-transparent mb-3"
                 />
               </div>
-              <p className="text-gray-700 text-base font-medium group-hover:text-gray-900 transition-colors">Countries Served</p>
+              <p className="text-gray-700 text-base font-medium group-hover:text-gray-900 transition-colors">
+                Countries Served
+              </p>
               <div className="absolute top-0 right-0 w-20 h-20 bg-yellow-green/5 rounded-full -mr-10 -mt-10 group-hover:bg-yellow-green/10 transition-colors"></div>
             </motion.div>
           </div>
@@ -429,16 +451,20 @@ export default function Index() {
               >
                 <Sun className="w-10 h-10 text-white" />
               </motion.div>
-              <h3 className="text-2xl font-bold mb-4 text-gray-900">Rooftop Installations</h3>
+              <h3 className="text-2xl font-bold mb-4 text-gray-900">
+                Rooftop Installations
+              </h3>
               <p className="text-gray-700 mb-8 leading-relaxed">
-                Professional solar panel installations with minimal disruption. Maximize your roof space efficiency.
+                Professional solar panel installations with minimal disruption.
+                Maximize your roof space efficiency.
               </p>
               <motion.a
                 href="#"
                 className="text-orange-600 font-semibold hover:text-orange-700 transition-colors inline-flex items-center gap-2 group/link"
                 whileHover={{ x: 5 }}
               >
-                Explore More <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
+                Explore More{" "}
+                <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
               </motion.a>
             </motion.div>
 
@@ -462,16 +488,20 @@ export default function Index() {
               >
                 <Battery className="w-10 h-10 text-white" />
               </motion.div>
-              <h3 className="text-2xl font-bold mb-4 text-gray-900">Energy Storage</h3>
+              <h3 className="text-2xl font-bold mb-4 text-gray-900">
+                Energy Storage
+              </h3>
               <p className="text-gray-700 mb-8 leading-relaxed">
-                Advanced battery systems for round-the-clock power availability. Store solar energy efficiently.
+                Advanced battery systems for round-the-clock power availability.
+                Store solar energy efficiently.
               </p>
               <motion.a
                 href="#"
                 className="text-blue-600 font-semibold hover:text-blue-700 transition-colors inline-flex items-center gap-2 group/link"
                 whileHover={{ x: 5 }}
               >
-                Explore More <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
+                Explore More{" "}
+                <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
               </motion.a>
             </motion.div>
 
@@ -495,16 +525,20 @@ export default function Index() {
               >
                 <Leaf className="w-10 h-10 text-white" />
               </motion.div>
-              <h3 className="text-2xl font-bold mb-4 text-gray-900">Industrial Solutions</h3>
+              <h3 className="text-2xl font-bold mb-4 text-gray-900">
+                Industrial Solutions
+              </h3>
               <p className="text-gray-700 mb-8 leading-relaxed">
-                Large-scale green energy projects for commercial and industrial operations.
+                Large-scale green energy projects for commercial and industrial
+                operations.
               </p>
               <motion.a
                 href="#"
                 className="text-green-600 font-semibold hover:text-green-700 transition-colors inline-flex items-center gap-2 group/link"
                 whileHover={{ x: 5 }}
               >
-                Explore More <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
+                Explore More{" "}
+                <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
               </motion.a>
             </motion.div>
           </div>
@@ -546,7 +580,8 @@ export default function Index() {
             viewport={{ once: true }}
             className="text-xl text-background/95 mb-10 font-light leading-relaxed"
           >
-            Join thousands of businesses saving money while protecting the planet
+            Join thousands of businesses saving money while protecting the
+            planet
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -640,8 +675,12 @@ export default function Index() {
                       </motion.div>
                     </div>
                     <div>
-                      <h4 className="font-bold text-xl text-gray-900">{item.title}</h4>
-                      <p className="text-gray-700 text-base mt-2">{item.desc}</p>
+                      <h4 className="font-bold text-xl text-gray-900">
+                        {item.title}
+                      </h4>
+                      <p className="text-gray-700 text-base mt-2">
+                        {item.desc}
+                      </p>
                     </div>
                   </motion.li>
                 ))}
@@ -700,7 +739,9 @@ export default function Index() {
                   >
                     {stat.value}
                   </p>
-                  <p className="text-gray-700 text-base font-medium">{stat.label}</p>
+                  <p className="text-gray-700 text-base font-medium">
+                    {stat.label}
+                  </p>
                 </motion.div>
               ))}
             </div>
@@ -737,8 +778,12 @@ export default function Index() {
                 whileHover={{ scale: 1.12, y: -5 }}
                 className="group"
               >
-                <p className="text-5xl md:text-6xl font-bold mb-3 group-hover:text-white/95 transition-colors">{stat.value}</p>
-                <p className="text-base text-background/90 font-medium group-hover:text-background transition-colors">{stat.label}</p>
+                <p className="text-5xl md:text-6xl font-bold mb-3 group-hover:text-white/95 transition-colors">
+                  {stat.value}
+                </p>
+                <p className="text-base text-background/90 font-medium group-hover:text-background transition-colors">
+                  {stat.label}
+                </p>
                 <div className="h-1 w-0 group-hover:w-16 bg-white/60 transition-all duration-300 mx-auto mt-4 rounded-full"></div>
               </motion.div>
             ))}
@@ -806,7 +851,9 @@ export default function Index() {
                       <p className="text-xs text-gray-600 uppercase tracking-widest mb-3 font-semibold">
                         {item.label}
                       </p>
-                      <p className={`text-3xl md:text-4xl font-bold ${item.color}`}>
+                      <p
+                        className={`text-3xl md:text-4xl font-bold ${item.color}`}
+                      >
                         {item.value}
                       </p>
                     </motion.div>
@@ -892,7 +939,9 @@ export default function Index() {
                 >
                   {contact.icon}
                 </motion.div>
-                <h3 className="font-bold text-2xl mb-2 text-white">{contact.title}</h3>
+                <h3 className="font-bold text-2xl mb-2 text-white">
+                  {contact.title}
+                </h3>
                 <p className="text-lg text-background/90">{contact.text}</p>
               </motion.div>
             ))}

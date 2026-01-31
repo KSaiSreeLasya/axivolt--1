@@ -205,7 +205,8 @@ export default function Solutions() {
               Solutions
             </h1>
             <p className="text-xl text-gray-700 max-w-2xl mx-auto font-light">
-              Explore our core energy solutions — click a category to view detailed services and offerings.
+              Explore our core energy solutions — click a category to view
+              detailed services and offerings.
             </p>
           </div>
         </div>
@@ -219,7 +220,8 @@ export default function Solutions() {
               Our Solutions
             </h2>
             <p className="text-xl text-gray-700 font-light">
-              Comprehensive energy solutions with proven results and comprehensive features across all sectors.
+              Comprehensive energy solutions with proven results and
+              comprehensive features across all sectors.
             </p>
           </div>
 
@@ -242,7 +244,9 @@ export default function Solutions() {
                   </div>
 
                   {/* Title and Description */}
-                  <h3 className="text-3xl font-bold mb-3 text-gray-900">{solution.title}</h3>
+                  <h3 className="text-3xl font-bold mb-3 text-gray-900">
+                    {solution.title}
+                  </h3>
                   <p className="text-gray-700 text-base mb-8 leading-relaxed">
                     {solution.description}
                   </p>
@@ -285,7 +289,9 @@ export default function Solutions() {
                     <p className="text-xs font-bold text-cyan uppercase tracking-widest mb-2">
                       Case Study
                     </p>
-                    <p className="text-base text-gray-800 font-semibold">{solution.caseStudy}</p>
+                    <p className="text-base text-gray-800 font-semibold">
+                      {solution.caseStudy}
+                    </p>
                   </div>
 
                   {/* Arrow Indicator */}

@@ -153,7 +153,9 @@ export default function Solar() {
             {/* Left Content */}
             <div className="space-y-10">
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-gray-900 tracking-tight">
-                <span className="bg-gradient-to-r from-cyan to-cyan/80 bg-clip-text text-transparent">Solar Energy</span>
+                <span className="bg-gradient-to-r from-cyan to-cyan/80 bg-clip-text text-transparent">
+                  Solar Energy
+                </span>
               </h1>
 
               <p className="text-xl text-gray-700 leading-relaxed font-light">
@@ -198,7 +200,8 @@ export default function Solar() {
               Solar Projects in Action
             </h2>
             <p className="text-xl text-gray-700 font-light">
-              Discover our diverse solar installations across residential, commercial and government projects
+              Discover our diverse solar installations across residential,
+              commercial and government projects
             </p>
           </div>
 
@@ -213,7 +216,9 @@ export default function Solar() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 </div>
-                <h3 className="text-lg font-bold text-gray-900 mt-5 group-hover:text-cyan transition-colors">{project.title}</h3>
+                <h3 className="text-lg font-bold text-gray-900 mt-5 group-hover:text-cyan transition-colors">
+                  {project.title}
+                </h3>
               </div>
             ))}
           </div>
@@ -228,7 +233,8 @@ export default function Solar() {
               Solar Energy Solutions
             </h2>
             <p className="text-xl text-gray-700 font-light">
-              Choose your application to view detailed solar solutions and services.
+              Choose your application to view detailed solar solutions and
+              services.
             </p>
           </div>
 
@@ -248,7 +254,9 @@ export default function Solar() {
                     <Icon className={`w-10 h-10 ${solution.iconColor}`} />
                   </div>
 
-                  <h3 className="text-3xl font-bold mb-3 text-gray-900">{solution.title}</h3>
+                  <h3 className="text-3xl font-bold mb-3 text-gray-900">
+                    {solution.title}
+                  </h3>
                   <p className="text-gray-700 text-base mb-8 leading-relaxed">
                     {solution.description}
                   </p>
@@ -259,7 +267,9 @@ export default function Solar() {
                         <p className="text-4xl font-bold bg-gradient-to-r from-cyan to-cyan/80 bg-clip-text text-transparent mb-2">
                           {stat.value}
                         </p>
-                        <p className="text-base text-gray-700 font-medium">{stat.label}</p>
+                        <p className="text-base text-gray-700 font-medium">
+                          {stat.label}
+                        </p>
                       </div>
                     ))}
                   </div>
@@ -310,8 +320,12 @@ export default function Solar() {
                 className="group bg-white rounded-2xl p-10 border-2 border-yellow-green/20 hover:border-yellow-green/50 transition-all shadow-lg hover:shadow-2xl relative overflow-hidden"
               >
                 <div className="absolute top-0 right-0 w-32 h-32 bg-yellow-green/5 rounded-full -mr-16 -mt-16 group-hover:bg-yellow-green/10 transition-colors"></div>
-                <h3 className="text-3xl font-bold mb-4 text-gray-900 relative z-10">{highlight.title}</h3>
-                <p className="text-gray-700 text-lg leading-relaxed relative z-10">{highlight.description}</p>
+                <h3 className="text-3xl font-bold mb-4 text-gray-900 relative z-10">
+                  {highlight.title}
+                </h3>
+                <p className="text-gray-700 text-lg leading-relaxed relative z-10">
+                  {highlight.description}
+                </p>
               </div>
             ))}
           </div>
@@ -329,7 +343,8 @@ export default function Solar() {
             Go Solar with AXIVOLT
           </h2>
           <p className="text-xl text-background/95 mb-10 font-light">
-            From residential rooftops to utility-scale projects, we deliver reliable solar solutions for every sector.
+            From residential rooftops to utility-scale projects, we deliver
+            reliable solar solutions for every sector.
           </p>
           <button
             onClick={() => navigate("/quote")}

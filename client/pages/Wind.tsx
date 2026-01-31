@@ -114,11 +114,14 @@ export default function Wind() {
             {/* Left Content */}
             <div className="space-y-10">
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-gray-900 tracking-tight">
-                <span className="bg-gradient-to-r from-cyan to-cyan/80 bg-clip-text text-transparent">Wind Energy</span>
+                <span className="bg-gradient-to-r from-cyan to-cyan/80 bg-clip-text text-transparent">
+                  Wind Energy
+                </span>
               </h1>
 
               <p className="text-xl text-gray-700 leading-relaxed font-light">
-                Comprehensive wind projects, systems, and O&M. Select your application to learn more.
+                Comprehensive wind projects, systems, and O&M. Select your
+                application to learn more.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-6 pt-8">
@@ -152,7 +155,8 @@ export default function Wind() {
               Wind Projects in Action
             </h2>
             <p className="text-xl text-gray-700 font-light">
-              Discover our diverse wind installations across utility-scale, commercial and hybrid renewable projects
+              Discover our diverse wind installations across utility-scale,
+              commercial and hybrid renewable projects
             </p>
           </div>
 
@@ -167,7 +171,9 @@ export default function Wind() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 </div>
-                <h3 className="text-lg font-bold text-gray-900 mt-5 group-hover:text-cyan transition-colors">{project.title}</h3>
+                <h3 className="text-lg font-bold text-gray-900 mt-5 group-hover:text-cyan transition-colors">
+                  {project.title}
+                </h3>
               </div>
             ))}
           </div>

@@ -170,11 +170,14 @@ export default function Services() {
 
           <div className="space-y-8">
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-gray-900 tracking-tight">
-              <span className="bg-gradient-to-r from-cyan to-cyan/80 bg-clip-text text-transparent">Our Services</span>
+              <span className="bg-gradient-to-r from-cyan to-cyan/80 bg-clip-text text-transparent">
+                Our Services
+              </span>
             </h1>
 
             <p className="text-xl text-gray-700 max-w-2xl leading-relaxed font-light">
-              Comprehensive service offerings to support your renewable energy journey from planning to implementation and beyond.
+              Comprehensive service offerings to support your renewable energy
+              journey from planning to implementation and beyond.
             </p>
           </div>
         </div>
@@ -188,7 +191,8 @@ export default function Services() {
               What We Offer
             </h2>
             <p className="text-xl text-gray-700 font-light max-w-2xl mx-auto">
-              Choose a service to learn more about how we can support your renewable energy goals.
+              Choose a service to learn more about how we can support your
+              renewable energy goals.
             </p>
           </div>
 
@@ -208,7 +212,9 @@ export default function Services() {
                     <Icon className={`w-10 h-10 ${service.iconColor}`} />
                   </div>
 
-                  <h3 className="text-3xl font-bold mb-3 text-gray-900">{service.title}</h3>
+                  <h3 className="text-3xl font-bold mb-3 text-gray-900">
+                    {service.title}
+                  </h3>
                   <p className="text-gray-700 text-base mb-8 leading-relaxed">
                     {service.description}
                   </p>
@@ -246,7 +252,8 @@ export default function Services() {
             Ready to get started?
           </h2>
           <p className="text-xl text-background/95 mb-10 font-light">
-            Let us help you achieve your renewable energy and sustainability goals with our expert services.
+            Let us help you achieve your renewable energy and sustainability
+            goals with our expert services.
           </p>
           <button
             onClick={() => navigate("/contact")}

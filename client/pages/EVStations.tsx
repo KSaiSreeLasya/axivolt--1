@@ -84,13 +84,18 @@ export default function EVStations() {
             {/* Left Content */}
             <div className="space-y-10">
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-gray-900 tracking-tight">
-                <span className="bg-gradient-to-r from-cyan to-cyan/80 bg-clip-text text-transparent">EV Stations &</span>
+                <span className="bg-gradient-to-r from-cyan to-cyan/80 bg-clip-text text-transparent">
+                  EV Stations &
+                </span>
                 <br />
-                <span className="bg-gradient-to-r from-cyan to-cyan/80 bg-clip-text text-transparent">Charging</span>
+                <span className="bg-gradient-to-r from-cyan to-cyan/80 bg-clip-text text-transparent">
+                  Charging
+                </span>
               </h1>
 
               <p className="text-xl text-gray-700 leading-relaxed font-light">
-                Turnkey EV charging infrastructure and service solutions for businesses, fleets and public deployments.
+                Turnkey EV charging infrastructure and service solutions for
+                businesses, fleets and public deployments.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-6 pt-8">
@@ -139,7 +144,9 @@ export default function EVStations() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 </div>
-                <h3 className="text-lg font-bold text-gray-900 mt-5 group-hover:text-cyan transition-colors">{solution.title}</h3>
+                <h3 className="text-lg font-bold text-gray-900 mt-5 group-hover:text-cyan transition-colors">
+                  {solution.title}
+                </h3>
               </div>
             ))}
           </div>
@@ -170,7 +177,9 @@ export default function EVStations() {
                     <Icon className={`w-10 h-10 ${offering.iconColor}`} />
                   </div>
 
-                  <h3 className="text-3xl font-bold mb-3 text-gray-900 relative z-10">{offering.title}</h3>
+                  <h3 className="text-3xl font-bold mb-3 text-gray-900 relative z-10">
+                    {offering.title}
+                  </h3>
                   <p className="text-gray-700 text-base mb-8 leading-relaxed relative z-10">
                     {offering.description}
                   </p>
@@ -204,7 +213,8 @@ export default function EVStations() {
             Deploy EV charging at scale
           </h2>
           <p className="text-xl text-background/95 mb-10 font-light">
-            We offer planning, permitting, supply and operations for charging networks and depot electrification.
+            We offer planning, permitting, supply and operations for charging
+            networks and depot electrification.
           </p>
           <button
             onClick={() => navigate("/quote")}

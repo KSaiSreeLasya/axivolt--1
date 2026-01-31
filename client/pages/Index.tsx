@@ -660,7 +660,7 @@ export default function Index() {
               </motion.button>
             </motion.div>
 
-            <div className="grid grid-cols-2 gap-6">
+            <div className="grid grid-cols-2 gap-8">
               {[
                 { value: "99.2%", label: "System Uptime", color: "cyan" },
                 {
@@ -677,30 +677,30 @@ export default function Index() {
               ].map((stat, index) => (
                 <motion.div
                   key={index}
-                  className={`bg-gradient-to-br ${
+                  className={`bg-gradient-to-br rounded-2xl p-8 border-2 shadow-lg hover:shadow-2xl transition-all ${
                     stat.color === "cyan"
-                      ? "from-cyan/20 to-cyan/10"
-                      : "from-yellow-green/20 to-yellow-green/10"
-                  } rounded-xl p-6 border border-border`}
+                      ? "from-cyan/15 to-cyan/5 border-cyan/30 hover:border-cyan/60"
+                      : "from-yellow-green/15 to-yellow-green/5 border-yellow-green/30 hover:border-yellow-green/60"
+                  }`}
                   initial={{ opacity: 0, scale: 0.8 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
                   whileHover={{
-                    y: -10,
-                    boxShadow: `0 20px 40px rgba(${
+                    y: -12,
+                    boxShadow: `0 30px 60px rgba(${
                       stat.color === "cyan" ? "0, 188, 212" : "205, 210, 40"
-                    }, 0.2)`,
+                    }, 0.3)`,
                   }}
                 >
                   <p
-                    className={`text-4xl font-bold ${
+                    className={`text-5xl font-bold ${
                       stat.color === "cyan" ? "text-cyan" : "text-yellow-green"
-                    } mb-2`}
+                    } mb-3`}
                   >
                     {stat.value}
                   </p>
-                  <p className="text-black text-sm">{stat.label}</p>
+                  <p className="text-gray-700 text-base font-medium">{stat.label}</p>
                 </motion.div>
               ))}
             </div>

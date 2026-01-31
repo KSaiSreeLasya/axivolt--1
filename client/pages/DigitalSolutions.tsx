@@ -11,6 +11,7 @@ import {
   Zap as WrenchIcon,
 } from "lucide-react";
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 export default function DigitalSolutions() {
   const [activeTab, setActiveTab] = useState("energy");
@@ -20,109 +21,186 @@ export default function DigitalSolutions() {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden pt-20 md:pt-32 pb-20">
+      <section className="relative overflow-hidden bg-gradient-to-b from-white via-blue-50/40 to-white pt-24 md:pt-40 pb-20">
+        <motion.div
+          className="absolute inset-0 -z-10"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 0.7 }}
+          transition={{ duration: 1.5, ease: "easeOut" }}
+        >
+          <div className="absolute top-0 left-1/4 w-96 h-96 bg-purple-500/15 rounded-full filter blur-3xl"></div>
+          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-cyan/15 rounded-full filter blur-3xl"></div>
+        </motion.div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <p className="text-purple-400 text-sm uppercase tracking-widest mb-4">
-                Digital Energy Solutions
-              </p>
-              <h1 className="text-4xl md:text-5xl font-bold mb-6">
-                Smart
-                <br />
-                <span className="text-cyan">Digital</span>
-                <br />
-                Platforms
-              </h1>
-              <p className="text-lg text-black400 mb-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8 }}
+              className="space-y-10"
+            >
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+              >
+                <p className="text-purple-500 text-sm uppercase tracking-widest mb-4 font-semibold">
+                  Digital Energy Solutions
+                </p>
+                <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-gray-900 tracking-tight">
+                  Smart
+                  <br />
+                  <span className="bg-gradient-to-r from-cyan to-cyan/80 bg-clip-text text-transparent">
+                    Digital
+                  </span>
+                  <br />
+                  Platforms
+                </h1>
+              </motion.div>
+              <motion.p
+                className="text-xl text-gray-700 leading-relaxed font-light max-w-xl"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+              >
                 Transform your energy management with our cutting-edge digital
                 solutions. From real-time monitoring to AI-powered optimization,
                 unlock the potential of your renewable energy investments.
-              </p>
-              <div className="flex gap-4">
-                <button className="bg-purple-600 text-white px-8 py-3 rounded-lg font-bold hover:bg-opacity-90 transition-all">
+              </motion.p>
+              <motion.div
+                className="flex flex-col sm:flex-row gap-6 pt-4"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+              >
+                <motion.button
+                  whileHover={{
+                    scale: 1.05,
+                    boxShadow: "0 25px 50px rgba(168, 85, 247, 0.35)",
+                  }}
+                  whileTap={{ scale: 0.95 }}
+                  className="bg-purple-600 text-white px-10 py-4 rounded-xl font-bold text-lg hover:bg-purple-700 transition-all shadow-xl"
+                >
                   Try Demo
-                </button>
-                <button className="border-2 border-purple-600 text-purple-400 px-8 py-3 rounded-lg font-bold hover:bg-purple-600/10 transition-all">
+                </motion.button>
+                <motion.button
+                  whileHover={{
+                    scale: 1.05,
+                    backgroundColor: "rgba(168, 85, 247, 0.15)",
+                    boxShadow: "0 15px 30px rgba(168, 85, 247, 0.2)",
+                  }}
+                  whileTap={{ scale: 0.95 }}
+                  className="border-2 border-purple-600 text-purple-600 px-10 py-4 rounded-xl font-bold text-lg hover:bg-purple-600/10 transition-all"
+                >
                   View Features
-                </button>
-              </div>
-            </div>
-            <div className="bg-gradient-to-br from-purple-900/20 to-purple-600/10 rounded-2xl p-8">
-              <div className="space-y-6">
+                </motion.button>
+              </motion.div>
+            </motion.div>
+            <motion.div
+              className="bg-gradient-to-br from-purple-900/20 to-purple-600/10 rounded-3xl p-12 border border-purple-500/20 shadow-lg"
+              initial={{ opacity: 0, scale: 0.9, x: 20 }}
+              animate={{ opacity: 1, scale: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              <motion.div
+                className="space-y-6"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+              >
                 <div className="text-center">
-                  <div className="flex gap-2 justify-center mb-4">
-                    <div className="w-3 h-12 bg-purple-500 rounded"></div>
-                    <div className="w-3 h-16 bg-purple-600 rounded"></div>
-                    <div className="w-3 h-10 bg-purple-400 rounded"></div>
-                    <div className="w-3 h-14 bg-purple-500 rounded"></div>
-                    <div className="w-3 h-12 bg-purple-600 rounded"></div>
-                  </div>
-                  <p className="text-black400 text-sm mb-4">Energy Dashboard</p>
-                  <p className="text-cyan text-sm font-mono">View</p>
+                  <motion.div
+                    className="flex gap-2 justify-center mb-4"
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.5 }}
+                  >
+                    {[12, 16, 10, 14, 12].map((h, idx) => (
+                      <motion.div
+                        key={idx}
+                        className={`w-3 bg-purple-500 rounded`}
+                        style={{ height: `${h * 4}px` }}
+                        animate={{ scaleY: [1, 1.2, 1] }}
+                        transition={{
+                          duration: 1.5,
+                          delay: idx * 0.1,
+                          repeat: Infinity,
+                        }}
+                      />
+                    ))}
+                  </motion.div>
+                  <p className="text-gray-700 text-sm mb-4">Energy Dashboard</p>
+                  <p className="text-cyan text-sm font-mono font-bold">Live</p>
                 </div>
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="bg-background/50 p-4 rounded">
-                    <p className="text-black500 text-xs">Power Generated</p>
-                    <p className="text-cyan font-bold text-lg">99.9%</p>
+                <motion.div
+                  className="grid grid-cols-2 gap-4"
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.6 }}
+                >
+                  <div className="bg-white/50 backdrop-blur p-6 rounded-lg border border-cyan/20">
+                    <p className="text-gray-600 text-xs font-medium uppercase mb-2">Power Generated</p>
+                    <p className="text-cyan font-bold text-2xl">99.9%</p>
                   </div>
-                  <div className="bg-background/50 p-4 rounded">
-                    <p className="text-black500 text-xs">Efficiency</p>
-                    <p className="text-cyan font-bold text-lg">98.5%</p>
+                  <div className="bg-white/50 backdrop-blur p-6 rounded-lg border border-cyan/20">
+                    <p className="text-gray-600 text-xs font-medium uppercase mb-2">Efficiency</p>
+                    <p className="text-cyan font-bold text-2xl">98.5%</p>
                   </div>
-                </div>
-              </div>
-            </div>
+                </motion.div>
+              </motion.div>
+            </motion.div>
           </div>
         </div>
       </section>
 
       {/* Our Digital Platforms Section */}
-      <section className="py-20 bg-background/50">
+      <section className="py-24 bg-gradient-to-b from-cyan-50/30 via-white to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <motion.div
+            className="text-center mb-20"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
               Our Digital Platforms
             </h2>
-            <p className="text-black400">
+            <p className="text-xl text-gray-700 font-light max-w-2xl mx-auto">
               Comprehensive digital solutions designed to optimize your energy
-              operations.
+              operations and maximize ROI.
             </p>
-          </div>
+          </motion.div>
 
           {/* Platform Tabs */}
-          <div className="flex gap-4 justify-center mb-12 flex-wrap">
-            <button
-              onClick={() => setActiveTab("energy")}
-              className={`px-6 py-2 rounded-lg font-semibold transition-all ${
-                activeTab === "energy"
-                  ? "bg-cyan text-background"
-                  : "bg-card text-black400 border border-border hover:text-cyan"
-              }`}
-            >
-              <Zap className="w-4 h-4 inline mr-2" /> Energy Management System
-            </button>
-            <button
-              onClick={() => setActiveTab("mobile")}
-              className={`px-6 py-2 rounded-lg font-semibold transition-all ${
-                activeTab === "mobile"
-                  ? "bg-cyan text-background"
-                  : "bg-card text-black400 border border-border hover:text-cyan"
-              }`}
-            >
-              📱 Mobile Asset Tracker
-            </button>
-            <button
-              onClick={() => setActiveTab("cloud")}
-              className={`px-6 py-2 rounded-lg font-semibold transition-all ${
-                activeTab === "cloud"
-                  ? "bg-cyan text-background"
-                  : "bg-card text-black400 border border-border hover:text-cyan"
-              }`}
-            >
-              <Cloud className="w-4 h-4 inline mr-2" /> Cloud Analytics Platform
-            </button>
-          </div>
+          <motion.div
+            className="flex gap-4 justify-center mb-16 flex-wrap"
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            {[
+              { id: "energy", label: "Energy Management System", icon: Zap },
+              { id: "mobile", label: "Mobile Asset Tracker", icon: null },
+              { id: "cloud", label: "Cloud Analytics Platform", icon: Cloud },
+            ].map((tab) => (
+              <motion.button
+                key={tab.id}
+                onClick={() => setActiveTab(tab.id)}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className={`px-8 py-3 rounded-lg font-bold transition-all ${
+                  activeTab === tab.id
+                    ? "bg-cyan text-white shadow-lg"
+                    : "bg-white text-gray-700 border border-cyan/20 hover:border-cyan/50 hover:text-cyan"
+                }`}
+              >
+                {tab.icon && <tab.icon className="w-4 h-4 inline mr-2" />}
+                {tab.id === "mobile" ? "📱 " : ""}{tab.label}
+              </motion.button>
+            ))}
+          </motion.div>
 
           {/* Tab Content */}
           {activeTab === "energy" && (
@@ -194,46 +272,41 @@ export default function DigitalSolutions() {
             </div>
           )}
 
-          {activeTab === "mobile" && (
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div className="bg-card rounded-lg p-8 border border-border">
-                <h3 className="text-2xl font-bold mb-6">
-                  Mobile Asset Tracker
-                </h3>
-                <p className="text-black400 mb-6">
-                  Monitor and manage your energy assets from anywhere with our
-                  mobile application.
-                </p>
-                <ul className="space-y-4">
-                  <li className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-cyan flex-shrink-0 mt-1" />
-                    <div>
-                      <p className="font-semibold">On-the-go Monitoring</p>
-                      <p className="text-black500 text-sm">
-                        Access real-time data anywhere
-                      </p>
-                    </div>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-cyan flex-shrink-0 mt-1" />
-                    <div>
-                      <p className="font-semibold">Alert Notifications</p>
-                      <p className="text-black500 text-sm">
-                        Instant system alerts and updates
-                      </p>
-                    </div>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-cyan flex-shrink-0 mt-1" />
-                    <div>
-                      <p className="font-semibold">Remote Control</p>
-                      <p className="text-black500 text-sm">
-                        Manage systems remotely
-                      </p>
-                    </div>
-                  </li>
-                </ul>
-              </div>
+            {activeTab === "mobile" && (
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div className="bg-white rounded-2xl p-10 border border-cyan/20 hover:border-cyan/50 transition-all shadow-lg hover:shadow-2xl">
+                  <h3 className="text-3xl font-bold mb-6 text-gray-900">
+                    Mobile Asset Tracker
+                  </h3>
+                  <p className="text-gray-700 mb-8 leading-relaxed">
+                    Monitor and manage your energy assets from anywhere with our
+                    powerful mobile application.
+                  </p>
+                  <ul className="space-y-5">
+                    {[
+                      { title: "On-the-go Monitoring", desc: "Access real-time data anywhere" },
+                      { title: "Alert Notifications", desc: "Instant system alerts and updates" },
+                      { title: "Remote Control", desc: "Manage systems remotely" },
+                    ].map((item, idx) => (
+                      <motion.li
+                        key={idx}
+                        className="flex items-start gap-4"
+                        initial={{ opacity: 0, x: -10 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.4, delay: idx * 0.1 }}
+                        viewport={{ once: true }}
+                      >
+                        <CheckCircle className="w-6 h-6 text-cyan flex-shrink-0 mt-0.5" />
+                        <div>
+                          <p className="font-bold text-gray-900">{item.title}</p>
+                          <p className="text-gray-700 text-sm mt-1">
+                            {item.desc}
+                          </p>
+                        </div>
+                      </motion.li>
+                    ))}
+                  </ul>
+                </div>
               <div className="bg-gradient-to-br from-green-900/30 to-green-600/10 rounded-lg p-8 h-96 flex items-center justify-center">
                 <div className="text-center">
                   <div className="text-6xl mb-4">📱</div>
@@ -243,46 +316,41 @@ export default function DigitalSolutions() {
             </div>
           )}
 
-          {activeTab === "cloud" && (
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div className="bg-card rounded-lg p-8 border border-border">
-                <h3 className="text-2xl font-bold mb-6">
-                  Cloud Analytics Platform
-                </h3>
-                <p className="text-black400 mb-6">
-                  Comprehensive data analytics and visualization for your energy
-                  systems.
-                </p>
-                <ul className="space-y-4">
-                  <li className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-cyan flex-shrink-0 mt-1" />
-                    <div>
-                      <p className="font-semibold">Advanced Analytics</p>
-                      <p className="text-black500 text-sm">
-                        Deep insights into performance data
-                      </p>
-                    </div>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-cyan flex-shrink-0 mt-1" />
-                    <div>
-                      <p className="font-semibold">Custom Reporting</p>
-                      <p className="text-black500 text-sm">
-                        Generate tailored reports
-                      </p>
-                    </div>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-cyan flex-shrink-0 mt-1" />
-                    <div>
-                      <p className="font-semibold">Data Visualization</p>
-                      <p className="text-black500 text-sm">
-                        Interactive dashboards
-                      </p>
-                    </div>
-                  </li>
-                </ul>
-              </div>
+            {activeTab === "cloud" && (
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div className="bg-white rounded-2xl p-10 border border-cyan/20 hover:border-cyan/50 transition-all shadow-lg hover:shadow-2xl">
+                  <h3 className="text-3xl font-bold mb-6 text-gray-900">
+                    Cloud Analytics Platform
+                  </h3>
+                  <p className="text-gray-700 mb-8 leading-relaxed">
+                    Comprehensive data analytics and visualization for your energy
+                    systems with enterprise-grade insights.
+                  </p>
+                  <ul className="space-y-5">
+                    {[
+                      { title: "Advanced Analytics", desc: "Deep insights into performance data" },
+                      { title: "Custom Reporting", desc: "Generate tailored reports" },
+                      { title: "Data Visualization", desc: "Interactive dashboards" },
+                    ].map((item, idx) => (
+                      <motion.li
+                        key={idx}
+                        className="flex items-start gap-4"
+                        initial={{ opacity: 0, x: -10 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.4, delay: idx * 0.1 }}
+                        viewport={{ once: true }}
+                      >
+                        <CheckCircle className="w-6 h-6 text-cyan flex-shrink-0 mt-0.5" />
+                        <div>
+                          <p className="font-bold text-gray-900">{item.title}</p>
+                          <p className="text-gray-700 text-sm mt-1">
+                            {item.desc}
+                          </p>
+                        </div>
+                      </motion.li>
+                    ))}
+                  </ul>
+                </div>
               <div className="bg-gradient-to-br from-cyan-900/30 to-cyan-600/10 rounded-lg p-8 h-96 flex items-center justify-center">
                 <div className="text-center">
                   <BarChart3 className="w-24 h-24 mx-auto mb-4 text-cyan" />
@@ -295,18 +363,24 @@ export default function DigitalSolutions() {
       </section>
 
       {/* Advanced Features Section */}
-      <section className="py-20 bg-background">
+      <section className="py-24 bg-gradient-to-b from-white via-cyan-50/20 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <motion.div
+            className="text-center mb-20"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
               Advanced Features
             </h2>
-            <p className="text-black400">
+            <p className="text-xl text-gray-700 font-light max-w-2xl mx-auto">
               Cutting-edge technology powering the future of energy management
             </p>
-          </div>
+          </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {[
               {
                 icon: Zap,
@@ -344,33 +418,84 @@ export default function DigitalSolutions() {
                 description:
                   "AI-driven maintenance scheduling to prevent downtime and optimize uptime.",
               },
-            ].map((feature, idx) => (
-              <div
-                key={idx}
-                className="bg-card rounded-lg p-8 border border-border"
-              >
-                <feature.icon className="w-12 h-12 text-cyan mb-4" />
-                <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
-                <p className="text-black400 text-sm">{feature.description}</p>
-              </div>
-            ))}
+            ].map((feature, idx) => {
+              const IconComponent = feature.icon;
+              return (
+                <motion.div
+                  key={idx}
+                  className="bg-white rounded-2xl p-10 border border-cyan/20 hover:border-cyan/50 transition-all shadow-lg hover:shadow-2xl group"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: idx * 0.1 }}
+                  viewport={{ once: true }}
+                  whileHover={{
+                    y: -8,
+                    boxShadow: "0 30px 60px rgba(0, 188, 212, 0.2)",
+                  }}
+                >
+                  <motion.div
+                    whileHover={{ scale: 1.2, rotate: 8 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                  >
+                    <IconComponent className="w-14 h-14 text-cyan mb-6" />
+                  </motion.div>
+                  <h3 className="text-xl font-bold mb-4 text-gray-900">{feature.title}</h3>
+                  <p className="text-gray-700 leading-relaxed">{feature.description}</p>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-cyan text-background">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+      <section className="py-28 bg-gradient-to-br from-cyan via-cyan to-cyan/90 text-background relative overflow-hidden">
+        <motion.div
+          className="absolute inset-0 -z-10"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 0.4 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true }}
+        >
+          <div className="absolute top-0 left-1/3 w-96 h-96 bg-white/15 rounded-full filter blur-3xl"></div>
+          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-white/10 rounded-full filter blur-3xl"></div>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
+        >
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            viewport={{ once: true }}
+            className="text-4xl md:text-5xl font-bold mb-8 leading-tight"
+          >
             Ready to Transform Your Energy Management?
-          </h2>
-          <p className="text-lg text-background/90 mb-8">
-            Start your digital transformation journey today
-          </p>
-          <button className="bg-background text-cyan px-8 py-3 rounded-lg font-bold hover:bg-opacity-90 transition-all inline-flex items-center gap-2">
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="text-xl text-background/95 mb-10 font-light leading-relaxed"
+          >
+            Start your digital transformation journey today with our intelligent energy solutions
+          </motion.p>
+          <motion.button
+            whileHover={{
+              scale: 1.08,
+              boxShadow: "0 30px 60px rgba(0, 0, 0, 0.3)",
+            }}
+            whileTap={{ scale: 0.95 }}
+            className="bg-white text-cyan px-12 py-5 rounded-xl font-bold text-lg hover:bg-gray-50 transition-all shadow-xl inline-flex items-center gap-3"
+          >
             Schedule a Demo <ArrowRight className="w-5 h-5" />
-          </button>
-        </div>
+          </motion.button>
+        </motion.div>
       </section>
 
       <Footer />

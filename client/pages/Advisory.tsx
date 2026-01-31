@@ -163,115 +163,101 @@ export default function Advisory() {
       </section>
 
       {/* Our Services Section */}
-      <section className="py-20 bg-background">
+      <section className="py-20 bg-gradient-to-b from-white via-yellow-green-50/20 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Our Services
             </h2>
-          </div>
+          </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Energy Consulting */}
-            <div className="bg-card rounded-lg p-8 border border-border">
-              <div className="w-12 h-12 bg-green-500/20 rounded-lg flex items-center justify-center mb-6">
-                <Zap className="w-6 h-6 text-green-400" />
-              </div>
-              <h3 className="text-xl font-bold mb-4">Energy Consulting</h3>
-              <p className="text-black400 mb-6">
-                Strategic energy consulting services, technology solutions and
-                implementation support.
-              </p>
-              <ul className="space-y-2 text-sm text-black400">
-                <li className="flex items-center gap-2">
-                  <CheckCircle className="w-4 h-4 text-cyan" /> Technology
-                  Assessment
-                </li>
-                <li className="flex items-center gap-2">
-                  <CheckCircle className="w-4 h-4 text-cyan" /> Energy
-                  Efficiency Audit
-                </li>
-                <li className="flex items-center gap-2">
-                  <CheckCircle className="w-4 h-4 text-cyan" /> Renewable
-                  Solutions Design
-                </li>
-              </ul>
-            </div>
-
-            {/* Asset Management */}
-            <div className="bg-card rounded-lg p-8 border border-border">
-              <div className="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center mb-6">
-                <TrendingUp className="w-6 h-6 text-blue-400" />
-              </div>
-              <h3 className="text-xl font-bold mb-4">Asset Management</h3>
-              <p className="text-black400 mb-6">
-                Comprehensive tracking, analytics and monitoring tools to
-                maximize your investments.
-              </p>
-              <ul className="space-y-2 text-sm text-black400">
-                <li className="flex items-center gap-2">
-                  <CheckCircle className="w-4 h-4 text-cyan" /> Real-time
-                  Monitoring
-                </li>
-                <li className="flex items-center gap-2">
-                  <CheckCircle className="w-4 h-4 text-cyan" /> Performance
-                  Analytics
-                </li>
-                <li className="flex items-center gap-2">
-                  <CheckCircle className="w-4 h-4 text-cyan" /> Maintenance
-                  Scheduling
-                </li>
-              </ul>
-            </div>
-
-            {/* Financial Advisory */}
-            <div className="bg-card rounded-lg p-8 border border-border">
-              <div className="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center mb-6">
-                <BarChart3 className="w-6 h-6 text-purple-400" />
-              </div>
-              <h3 className="text-xl font-bold mb-4">Financial Advisory</h3>
-              <p className="text-black400 mb-6">
-                Expert financial guidance and investment analysis to optimize
-                energy projects.
-              </p>
-              <ul className="space-y-2 text-sm text-black400">
-                <li className="flex items-center gap-2">
-                  <CheckCircle className="w-4 h-4 text-cyan" /> Financing
-                  Solutions
-                </li>
-                <li className="flex items-center gap-2">
-                  <CheckCircle className="w-4 h-4 text-cyan" /> ROI Projections
-                </li>
-                <li className="flex items-center gap-2">
-                  <CheckCircle className="w-4 h-4 text-cyan" /> Risk Assessment
-                </li>
-              </ul>
-            </div>
-
-            {/* Risk Management */}
-            <div className="bg-card rounded-lg p-8 border border-border">
-              <div className="w-12 h-12 bg-cyan/20 rounded-lg flex items-center justify-center mb-6">
-                <CheckCircle className="w-6 h-6 text-cyan" />
-              </div>
-              <h3 className="text-xl font-bold mb-4">Risk Management</h3>
-              <p className="text-black400 mb-6">
-                Comprehensive risk mitigation strategies for energy asset
-                portfolio management.
-              </p>
-              <ul className="space-y-2 text-sm text-black400">
-                <li className="flex items-center gap-2">
-                  <CheckCircle className="w-4 h-4 text-cyan" /> Risk Mitigation
-                </li>
-                <li className="flex items-center gap-2">
-                  <CheckCircle className="w-4 h-4 text-cyan" /> Compliance
-                  Assurance
-                </li>
-                <li className="flex items-center gap-2">
-                  <CheckCircle className="w-4 h-4 text-cyan" /> Insurance
-                  Guidance
-                </li>
-              </ul>
-            </div>
+            {[
+              {
+                icon: Zap,
+                color: "bg-green-500/20",
+                iconColor: "text-green-400",
+                title: "Energy Consulting",
+                desc: "Strategic energy consulting services, technology solutions and implementation support.",
+                items: [
+                  "Technology Assessment",
+                  "Energy Efficiency Audit",
+                  "Renewable Solutions Design",
+                ],
+              },
+              {
+                icon: TrendingUp,
+                color: "bg-blue-500/20",
+                iconColor: "text-blue-400",
+                title: "Asset Management",
+                desc: "Comprehensive tracking, analytics and monitoring tools to maximize your investments.",
+                items: [
+                  "Real-time Monitoring",
+                  "Performance Analytics",
+                  "Maintenance Scheduling",
+                ],
+              },
+              {
+                icon: BarChart3,
+                color: "bg-purple-500/20",
+                iconColor: "text-purple-400",
+                title: "Financial Advisory",
+                desc: "Expert financial guidance and investment analysis to optimize energy projects.",
+                items: [
+                  "Financing Solutions",
+                  "ROI Projections",
+                  "Risk Assessment",
+                ],
+              },
+              {
+                icon: CheckCircle,
+                color: "bg-cyan/20",
+                iconColor: "text-cyan",
+                title: "Risk Management",
+                desc: "Comprehensive risk mitigation strategies for energy asset portfolio management.",
+                items: [
+                  "Risk Mitigation",
+                  "Compliance Assurance",
+                  "Insurance Guidance",
+                ],
+              },
+            ].map((service, index) => {
+              const IconComponent = service.icon;
+              return (
+                <motion.div
+                  key={index}
+                  className="bg-card rounded-lg p-8 border border-border hover:border-cyan/50 transition-all"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  whileHover={{ y: -5, boxShadow: "0 20px 40px rgba(0, 188, 212, 0.15)" }}
+                >
+                  <motion.div
+                    className={`w-12 h-12 ${service.color} rounded-lg flex items-center justify-center mb-6`}
+                    whileHover={{ scale: 1.2, rotate: 5 }}
+                    transition={{ type: "spring", stiffness: 400 }}
+                  >
+                    <IconComponent className={`w-6 h-6 ${service.iconColor}`} />
+                  </motion.div>
+                  <h3 className="text-xl font-bold mb-4">{service.title}</h3>
+                  <p className="text-black400 mb-6">{service.desc}</p>
+                  <ul className="space-y-2 text-sm text-black400">
+                    {service.items.map((item, i) => (
+                      <li key={i} className="flex items-center gap-2">
+                        <CheckCircle className="w-4 h-4 text-cyan" /> {item}
+                      </li>
+                    ))}
+                  </ul>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>

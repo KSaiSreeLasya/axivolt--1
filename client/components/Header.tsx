@@ -67,7 +67,10 @@ export default function Header() {
               />
               <motion.div
                 className="absolute inset-0 -z-10 rounded-lg blur-lg opacity-0 group-hover:opacity-100 transition-opacity"
-                style={{ background: "linear-gradient(135deg, rgba(0, 188, 212, 0.2), rgba(163, 230, 53, 0.2))" }}
+                style={{
+                  background:
+                    "linear-gradient(135deg, rgba(0, 188, 212, 0.2), rgba(163, 230, 53, 0.2))",
+                }}
               ></motion.div>
             </Link>
           </motion.div>
@@ -109,9 +112,7 @@ export default function Header() {
                 className="flex items-center gap-1 text-sm font-medium text-cyan hover:text-yellow-green transition-colors relative group py-2"
               >
                 Solutions
-                <motion.span
-                  className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan to-yellow-green group-hover:w-full transition-all duration-300"
-                ></motion.span>
+                <motion.span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan to-yellow-green group-hover:w-full transition-all duration-300"></motion.span>
                 <motion.div
                   animate={{ rotate: solutionsOpen ? 180 : 0 }}
                   transition={{ duration: 0.3 }}
@@ -140,7 +141,9 @@ export default function Header() {
                       onMouseLeave={() => setActiveSolutionSubmenu(null)}
                     >
                       <motion.div
-                        whileHover={{ backgroundColor: "rgba(0, 188, 212, 0.05)" }}
+                        whileHover={{
+                          backgroundColor: "rgba(0, 188, 212, 0.05)",
+                        }}
                       >
                         <Link
                           to="/solutions/solar"
@@ -148,9 +151,7 @@ export default function Header() {
                         >
                           <span className="relative">
                             Solar
-                            <motion.span
-                              className="absolute bottom-0 left-0 w-0 h-0.5 bg-cyan group-hover:w-full transition-all duration-300"
-                            ></motion.span>
+                            <motion.span className="absolute bottom-0 left-0 w-0 h-0.5 bg-cyan group-hover:w-full transition-all duration-300"></motion.span>
                           </span>
                           <motion.div
                             animate={{
@@ -176,16 +177,27 @@ export default function Header() {
                         >
                           <div className="py-2">
                             {[
-                              { to: "/solutions/solar/residential", label: "Residential (B2C)" },
-                              { to: "/solutions/solar/commercial", label: "Commercial (B2B)" },
-                              { to: "/solutions/solar/government", label: "Government (B2G)" },
+                              {
+                                to: "/solutions/solar/residential",
+                                label: "Residential (B2C)",
+                              },
+                              {
+                                to: "/solutions/solar/commercial",
+                                label: "Commercial (B2B)",
+                              },
+                              {
+                                to: "/solutions/solar/government",
+                                label: "Government (B2G)",
+                              },
                             ].map((item, idx) => (
                               <motion.div
                                 key={idx}
                                 initial={{ opacity: 0, x: -10 }}
                                 animate={{ opacity: 1, x: 0 }}
                                 transition={{ delay: idx * 0.05 }}
-                                whileHover={{ backgroundColor: "rgba(0, 188, 212, 0.05)" }}
+                                whileHover={{
+                                  backgroundColor: "rgba(0, 188, 212, 0.05)",
+                                }}
                               >
                                 <Link
                                   to={item.to}
@@ -193,9 +205,7 @@ export default function Header() {
                                 >
                                   <span className="relative">
                                     {item.label}
-                                    <motion.span
-                                      className="absolute bottom-0 left-0 w-0 h-0.5 bg-cyan group-hover:w-full transition-all duration-300"
-                                    ></motion.span>
+                                    <motion.span className="absolute bottom-0 left-0 w-0 h-0.5 bg-cyan group-hover:w-full transition-all duration-300"></motion.span>
                                   </span>
                                 </Link>
                               </motion.div>
@@ -207,12 +217,17 @@ export default function Header() {
 
                     {[
                       { to: "/solutions/wind", label: "Wind" },
-                      { to: "/solutions/energy-storage", label: "Energy Storage" },
+                      {
+                        to: "/solutions/energy-storage",
+                        label: "Energy Storage",
+                      },
                       { to: "/solutions/ev-stations", label: "EV Stations" },
                     ].map((item, idx) => (
                       <motion.div
                         key={idx}
-                        whileHover={{ backgroundColor: "rgba(0, 188, 212, 0.05)" }}
+                        whileHover={{
+                          backgroundColor: "rgba(0, 188, 212, 0.05)",
+                        }}
                       >
                         <Link
                           to={item.to}
@@ -220,9 +235,7 @@ export default function Header() {
                         >
                           <span className="relative">
                             {item.label}
-                            <motion.span
-                              className="absolute bottom-0 left-0 w-0 h-0.5 bg-cyan group-hover:w-full transition-all duration-300"
-                            ></motion.span>
+                            <motion.span className="absolute bottom-0 left-0 w-0 h-0.5 bg-cyan group-hover:w-full transition-all duration-300"></motion.span>
                           </span>
                         </Link>
                       </motion.div>
@@ -248,9 +261,7 @@ export default function Header() {
                 className="flex items-center gap-1 text-sm font-medium text-cyan hover:text-yellow-green transition-colors relative group py-2"
               >
                 Services
-                <motion.span
-                  className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan to-yellow-green group-hover:w-full transition-all duration-300"
-                ></motion.span>
+                <motion.span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan to-yellow-green group-hover:w-full transition-all duration-300"></motion.span>
                 <motion.div
                   animate={{ rotate: servicesOpen ? 180 : 0 }}
                   transition={{ duration: 0.3 }}
@@ -281,7 +292,9 @@ export default function Header() {
                         initial={{ opacity: 0, x: -10 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: idx * 0.05 }}
-                        whileHover={{ backgroundColor: "rgba(0, 188, 212, 0.05)" }}
+                        whileHover={{
+                          backgroundColor: "rgba(0, 188, 212, 0.05)",
+                        }}
                       >
                         <Link
                           to={item.to}
@@ -289,9 +302,7 @@ export default function Header() {
                         >
                           <span className="relative">
                             {item.label}
-                            <motion.span
-                              className="absolute bottom-0 left-0 w-0 h-0.5 bg-cyan group-hover:w-full transition-all duration-300"
-                            ></motion.span>
+                            <motion.span className="absolute bottom-0 left-0 w-0 h-0.5 bg-cyan group-hover:w-full transition-all duration-300"></motion.span>
                           </span>
                         </Link>
                       </motion.div>
@@ -319,9 +330,7 @@ export default function Header() {
                   className="text-sm font-medium text-cyan hover:text-yellow-green transition-colors relative group py-2"
                 >
                   {item.label}
-                  <motion.span
-                    className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan to-yellow-green group-hover:w-full transition-all duration-300"
-                  ></motion.span>
+                  <motion.span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan to-yellow-green group-hover:w-full transition-all duration-300"></motion.span>
                 </Link>
               </motion.div>
             ))}
@@ -343,9 +352,7 @@ export default function Header() {
                 to="/contact"
                 className="border-2 border-cyan text-cyan px-5 py-2 rounded-lg font-semibold hover:bg-cyan/10 transition-all text-sm inline-block relative group overflow-hidden"
               >
-                <motion.span
-                  className="absolute inset-0 bg-gradient-to-r from-cyan to-yellow-green opacity-0 group-hover:opacity-10 transition-opacity"
-                ></motion.span>
+                <motion.span className="absolute inset-0 bg-gradient-to-r from-cyan to-yellow-green opacity-0 group-hover:opacity-10 transition-opacity"></motion.span>
                 <span className="relative">Contact Us</span>
               </Link>
             </motion.div>
@@ -358,9 +365,7 @@ export default function Header() {
                 to="/quote"
                 className="bg-gradient-to-r from-cyan to-yellow-green text-background px-6 py-2 rounded-lg font-semibold text-sm inline-block shadow-lg hover:shadow-2xl transition-all relative group overflow-hidden"
               >
-                <motion.span
-                  className="absolute inset-0 bg-gradient-to-r from-yellow-green to-cyan opacity-0 group-hover:opacity-100 transition-opacity"
-                ></motion.span>
+                <motion.span className="absolute inset-0 bg-gradient-to-r from-yellow-green to-cyan opacity-0 group-hover:opacity-100 transition-opacity"></motion.span>
                 <span className="relative">Get a Quote</span>
               </Link>
             </motion.div>

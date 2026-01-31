@@ -301,7 +301,10 @@ export default function About() {
                 transition={{ duration: 0.6, delay: 0.2 }}
               >
                 <h1 className="text-4xl md:text-5xl font-bold mb-6">
-                  Our <span className="bg-gradient-to-r from-cyan to-cyan/80 bg-clip-text text-transparent">Mission</span>
+                  Our{" "}
+                  <span className="bg-gradient-to-r from-cyan to-cyan/80 bg-clip-text text-transparent">
+                    Mission
+                  </span>
                 </h1>
               </motion.div>
               <motion.p
@@ -331,7 +334,10 @@ export default function About() {
                 <motion.button
                   onClick={() => setShowVideoModal(true)}
                   className="border border-cyan text-cyan px-6 py-3 rounded-lg font-bold hover:bg-cyan/10 transition-all"
-                  whileHover={{ scale: 1.05, backgroundColor: "rgba(0, 188, 212, 0.05)" }}
+                  whileHover={{
+                    scale: 1.05,
+                    backgroundColor: "rgba(0, 188, 212, 0.05)",
+                  }}
                   whileTap={{ scale: 0.95 }}
                 >
                   Our Story
@@ -382,10 +388,7 @@ export default function About() {
       </section>
 
       {/* Vision Section */}
-      <section
-        id="vision-section"
-        className="py-20 bg-background/50"
-      >
+      <section id="vision-section" className="py-20 bg-background/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div

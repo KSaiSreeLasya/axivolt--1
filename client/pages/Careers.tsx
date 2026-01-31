@@ -410,7 +410,11 @@ export default function Careers() {
                       <motion.div
                         className="w-12 h-12 bg-cyan/20 rounded-lg flex items-center justify-center flex-shrink-0"
                         whileHover={{ scale: 1.2, rotate: 8 }}
-                        transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                        transition={{
+                          type: "spring",
+                          stiffness: 400,
+                          damping: 10,
+                        }}
                       >
                         <Briefcase className="w-6 h-6 text-cyan" />
                       </motion.div>
@@ -529,21 +533,24 @@ export default function Careers() {
               {
                 icon: Users,
                 title: "Team Collaboration",
-                description: "Work alongside talented professionals in a collaborative environment",
+                description:
+                  "Work alongside talented professionals in a collaborative environment",
                 gradient: "from-cyan/20 to-purple-500/20",
                 iconColor: "text-cyan/50",
               },
               {
                 icon: Award,
                 title: "Learning & Development",
-                description: "Continuous learning programs to enhance your skills and career",
+                description:
+                  "Continuous learning programs to enhance your skills and career",
                 gradient: "from-green-400/20 to-cyan/20",
                 iconColor: "text-green-400/50",
               },
               {
                 icon: Heart,
                 title: "Work-Life Balance",
-                description: "Flexible work arrangements that prioritize your wellbeing",
+                description:
+                  "Flexible work arrangements that prioritize your wellbeing",
                 gradient: "from-purple-500/20 to-pink-500/20",
                 iconColor: "text-purple-400/50",
               },
@@ -568,7 +575,11 @@ export default function Careers() {
                   >
                     <motion.div
                       whileHover={{ scale: 1.2, rotate: 8 }}
-                      transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                      transition={{
+                        type: "spring",
+                        stiffness: 400,
+                        damping: 10,
+                      }}
                     >
                       <Icon className={`w-16 h-16 ${item.iconColor}`} />
                     </motion.div>

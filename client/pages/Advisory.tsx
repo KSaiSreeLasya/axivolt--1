@@ -86,114 +86,77 @@ export default function Advisory() {
           <div className="relative">
             {/* Timeline */}
             <div className="space-y-12">
-              {/* Step 1 */}
-              <div className="flex gap-8 items-start">
-                <div className="flex flex-col items-center">
-                  <div className="w-12 h-12 rounded-full bg-cyan text-background flex items-center justify-center font-bold text-lg mb-4">
-                    1
+              {[
+                {
+                  step: 1,
+                  title: "Assessment & Analysis",
+                  desc: "Comprehensive evaluation of your current energy infrastructure and needs.",
+                  align: "left",
+                },
+                {
+                  step: 2,
+                  title: "Strategic Planning",
+                  desc: "Development of customized renewable energy roadmap and implementation strategy.",
+                  align: "right",
+                },
+                {
+                  step: 3,
+                  title: "Financial Modeling",
+                  desc: "ROI analysis, financing options, and all-encompassing financial frameworks.",
+                  align: "left",
+                },
+                {
+                  step: 4,
+                  title: "Implementation Management",
+                  desc: "Expert oversight, timeline management, and quality assurance throughout the project.",
+                  align: "right",
+                },
+                {
+                  step: 5,
+                  title: "Performance Monitoring",
+                  desc: "Ongoing analysis and optimization of performance post-installation.",
+                  align: "left",
+                },
+                {
+                  step: 6,
+                  title: "Continuous Optimization",
+                  desc: "Regular optimization and performance upgrades to maximize long-term success.",
+                  align: "right",
+                },
+              ].map((item, index) => (
+                <motion.div
+                  key={index}
+                  className={`flex gap-8 items-start ${
+                    item.align === "right" ? "" : ""
+                  }`}
+                  initial={{ opacity: 0, x: item.align === "right" ? 20 : -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                >
+                  <div className="flex flex-col items-center">
+                    <motion.div
+                      className="w-12 h-12 rounded-full bg-cyan text-background flex items-center justify-center font-bold text-lg mb-4"
+                      whileHover={{ scale: 1.2 }}
+                      transition={{ type: "spring", stiffness: 400 }}
+                    >
+                      {item.step}
+                    </motion.div>
+                    {index < 5 && (
+                      <div className="w-1 h-20 bg-gradient-to-b from-cyan to-transparent"></div>
+                    )}
                   </div>
-                  <div className="w-1 h-20 bg-gradient-to-b from-cyan to-transparent"></div>
-                </div>
-                <div className="flex-1 bg-card rounded-lg p-6 border border-border">
-                  <h3 className="text-xl font-bold mb-2">
-                    Assessment & Analysis
-                  </h3>
-                  <p className="text-black400">
-                    Comprehensive evaluation of your current energy
-                    infrastructure and needs.
-                  </p>
-                </div>
-              </div>
-
-              {/* Step 2 */}
-              <div className="flex gap-8 items-start">
-                <div className="flex flex-col items-center">
-                  <div className="w-12 h-12 rounded-full bg-cyan text-background flex items-center justify-center font-bold text-lg mb-4">
-                    2
-                  </div>
-                  <div className="w-1 h-20 bg-gradient-to-b from-cyan to-transparent"></div>
-                </div>
-                <div className="flex-1 bg-card rounded-lg p-6 border border-border ml-auto">
-                  <h3 className="text-xl font-bold mb-2">Strategic Planning</h3>
-                  <p className="text-black400">
-                    Development of customized renewable energy roadmap and
-                    implementation strategy.
-                  </p>
-                </div>
-              </div>
-
-              {/* Step 3 */}
-              <div className="flex gap-8 items-start">
-                <div className="flex flex-col items-center">
-                  <div className="w-12 h-12 rounded-full bg-cyan text-background flex items-center justify-center font-bold text-lg mb-4">
-                    3
-                  </div>
-                  <div className="w-1 h-20 bg-gradient-to-b from-cyan to-transparent"></div>
-                </div>
-                <div className="flex-1 bg-card rounded-lg p-6 border border-border">
-                  <h3 className="text-xl font-bold mb-2">Financial Modeling</h3>
-                  <p className="text-black400">
-                    ROI analysis, financing options, and all-encompassing
-                    financial frameworks.
-                  </p>
-                </div>
-              </div>
-
-              {/* Step 4 */}
-              <div className="flex gap-8 items-start">
-                <div className="flex flex-col items-center">
-                  <div className="w-12 h-12 rounded-full bg-cyan text-background flex items-center justify-center font-bold text-lg mb-4">
-                    4
-                  </div>
-                  <div className="w-1 h-20 bg-gradient-to-b from-cyan to-transparent"></div>
-                </div>
-                <div className="flex-1 bg-card rounded-lg p-6 border border-border ml-auto">
-                  <h3 className="text-xl font-bold mb-2">
-                    Implementation Management
-                  </h3>
-                  <p className="text-black400">
-                    Expert oversight, timeline management, and quality assurance
-                    throughout the project.
-                  </p>
-                </div>
-              </div>
-
-              {/* Step 5 */}
-              <div className="flex gap-8 items-start">
-                <div className="flex flex-col items-center">
-                  <div className="w-12 h-12 rounded-full bg-cyan text-background flex items-center justify-center font-bold text-lg mb-4">
-                    5
-                  </div>
-                  <div className="w-1 h-20 bg-gradient-to-b from-cyan to-transparent"></div>
-                </div>
-                <div className="flex-1 bg-card rounded-lg p-6 border border-border">
-                  <h3 className="text-xl font-bold mb-2">
-                    Performance Monitoring
-                  </h3>
-                  <p className="text-black400">
-                    Ongoing analysis and optimization of performance
-                    post-installation.
-                  </p>
-                </div>
-              </div>
-
-              {/* Final Step */}
-              <div className="flex gap-8 items-start">
-                <div className="flex flex-col items-center">
-                  <div className="w-12 h-12 rounded-full bg-cyan text-background flex items-center justify-center font-bold text-lg">
-                    6
-                  </div>
-                </div>
-                <div className="flex-1 bg-card rounded-lg p-6 border border-border ml-auto">
-                  <h3 className="text-xl font-bold mb-2">
-                    Continuous Optimization
-                  </h3>
-                  <p className="text-black400">
-                    Regular optimization and performance upgrades to maximize
-                    long-term success.
-                  </p>
-                </div>
-              </div>
+                  <motion.div
+                    className={`flex-1 bg-card rounded-lg p-6 border border-border hover:border-cyan/50 transition-all ${
+                      item.align === "right" ? "ml-auto" : ""
+                    }`}
+                    whileHover={{ y: -5, boxShadow: "0 20px 40px rgba(0, 188, 212, 0.15)" }}
+                  >
+                    <h3 className="text-xl font-bold mb-2">{item.title}</h3>
+                    <p className="text-black400">{item.desc}</p>
+                  </motion.div>
+                </motion.div>
+              ))}
             </div>
           </div>
         </div>

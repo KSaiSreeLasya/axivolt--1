@@ -527,25 +527,61 @@ export default function About() {
       </section>
 
       {/* Company Info Section */}
-      <section className="py-20 bg-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-card rounded-lg border border-border p-12 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+      <section className="py-20 bg-background relative overflow-hidden">
+        <motion.div
+          className="absolute inset-0 -z-10"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 0.3 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true }}
+        >
+          <div className="absolute top-0 left-1/4 w-96 h-96 bg-cyan/10 rounded-full filter blur-3xl"></div>
+          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-yellow-green/10 rounded-full filter blur-3xl"></div>
+        </motion.div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <motion.div
+            className="bg-card rounded-lg border border-cyan/30 p-12 text-center group relative overflow-hidden shadow-lg hover:shadow-2xl transition-all"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            viewport={{ once: true }}
+            whileHover={{ borderColor: "rgba(0, 188, 212, 0.5)" }}
+          >
+            <div className="absolute top-0 right-0 w-32 h-32 bg-cyan/10 rounded-full -mr-16 -mt-16 group-hover:bg-cyan/15 transition-colors"></div>
+            <motion.h2
+              className="text-3xl md:text-4xl font-bold mb-6 relative z-10"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true }}
+            >
               Leading the Transition to Sustainable Energy
-            </h2>
-            <p className="text-lg text-black400 max-w-3xl mx-auto mb-8">
+            </motion.h2>
+            <motion.p
+              className="text-lg text-black400 max-w-3xl mx-auto mb-8 relative z-10"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
               AXIVOLT Green Energies Pvt. Ltd. is committed to delivering
               innovative renewable energy solutions that empower businesses and
               individuals to achieve their sustainability goals while reducing
               costs and environmental impact.
-            </p>
-            <button
+            </motion.p>
+            <motion.button
               onClick={() => navigate("/contact")}
-              className="bg-cyan text-background px-8 py-3 rounded-lg font-bold hover:bg-yellow-green transition-all inline-flex items-center gap-2"
+              className="bg-cyan text-background px-8 py-3 rounded-lg font-bold hover:bg-yellow-green transition-all inline-flex items-center gap-2 relative z-10"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              viewport={{ once: true }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
               Get in Touch <ArrowRight className="w-5 h-5" />
-            </button>
-          </div>
+            </motion.button>
+          </motion.div>
         </div>
       </section>
 

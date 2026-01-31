@@ -107,7 +107,7 @@ export default function Index() {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-background via-background to-background/80 pt-20 md:pt-32 pb-16">
+      <section className="relative overflow-hidden bg-gradient-to-b from-white via-blue-50/30 to-white pt-20 md:pt-32 pb-16">
         {/* Animated background elements */}
         <motion.div
           className="absolute inset-0 -z-10"

@@ -748,43 +748,14 @@ export default function Index() {
               whileInView={{ opacity: 1, scale: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
-              className="bg-gradient-to-br from-blue-600 to-blue-700 rounded-2xl p-8 h-96 flex items-center justify-center relative overflow-hidden shadow-xl"
+              className="rounded-2xl h-96 flex items-center justify-center relative overflow-hidden shadow-xl"
+              whileHover={{ scale: 1.02 }}
             >
-              <motion.div
-                className="absolute inset-0 opacity-20"
-                animate={{ rotate: 360 }}
-                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-              >
-                <svg
-                  className="w-full h-full"
-                  fill="none"
-                  viewBox="0 0 200 200"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <circle
-                    cx="100"
-                    cy="100"
-                    r="80"
-                    stroke="white"
-                    strokeWidth="1"
-                  />
-                  <path
-                    d="M100 30 L150 70 L120 120 L80 120 L50 70 Z"
-                    stroke="white"
-                    strokeWidth="2"
-                    fill="none"
-                  />
-                </svg>
-              </motion.div>
-              <motion.div
-                className="relative text-center"
-                whileInView={{ scale: [0.8, 1.1, 1] }}
-                transition={{ duration: 0.8, delay: 0.4 }}
-                viewport={{ once: true }}
-              >
-                <p className="text-6xl font-bold text-white mb-4">25%</p>
-                <p className="text-white text-lg">Efficiency Gain</p>
-              </motion.div>
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets%2F1b9c62c1213140709e07580a4ee1f322%2F2356a53507e641ff934395d7d7e77b16?format=webp&width=800&height=1200"
+                alt="Efficiency Gain"
+                className="w-full h-full object-cover rounded-2xl"
+              />
             </motion.div>
           </div>
         </div>

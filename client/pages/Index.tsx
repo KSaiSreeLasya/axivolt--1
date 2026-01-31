@@ -30,7 +30,7 @@ export default function Index() {
   });
 
   useEffect(() => {
-    // Add Organization and LocalBusiness schema markup
+    // Add Organization and LocalBusiness schema markup with ratings
     const baseUrl = typeof window !== "undefined" ? window.location.origin : "";
     const schema = {
       "@context": "https://schema.org",
@@ -43,8 +43,8 @@ export default function Index() {
           url: baseUrl,
           description:
             "Leading solar energy company offering comprehensive renewable energy solutions",
-          telephone: "+91-XXXX-XXXXX",
-          email: "info@axivolt.in",
+          telephone: "+91 9063447838",
+          email: "contact@axivolt.in",
           areaServed: [
             {
               "@type": "City",
@@ -63,20 +63,30 @@ export default function Index() {
         {
           "@type": "LocalBusiness",
           "@id": `${baseUrl}/#localbusiness`,
-          name: "AXIVOLT - Solar Energy Solutions",
+          name: "AXIVOLT Green Energy",
           image: `${baseUrl}/logo.png`,
           description:
-            "Leading solar and renewable energy company in Hyderabad serving Telangana and Andhra Pradesh",
+            "Leading solar and renewable energy company in Hyderabad serving Telangana and Andhra Pradesh with 500+ completed projects",
           url: baseUrl,
-          telephone: "+91-XXXX-XXXXX",
-          email: "info@axivolt.in",
+          telephone: "+91 9063447838",
+          email: "contact@axivolt.in",
           priceRange: "Varies",
           areaServed: ["Hyderabad", "Telangana", "Andhra Pradesh"],
           address: {
             "@type": "PostalAddress",
+            streetAddress: "Plot No. 101, Miyoshi Residency, Sri Nagar Colony, Miyapur",
             addressLocality: "Hyderabad",
             addressRegion: "Telangana",
+            postalCode: "500049",
             addressCountry: "India",
+          },
+          aggregateRating: {
+            "@type": "AggregateRating",
+            ratingValue: 4.9,
+            reviewCount: 70,
+            ratingCount: 70,
+            bestRating: 5,
+            worstRating: 1,
           },
           sameAs: [
             "https://www.facebook.com/axivolt",

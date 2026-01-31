@@ -79,12 +79,17 @@ export default function Header() {
               variants={navVariants}
               initial="hidden"
               animate="visible"
+              whileHover={{ scale: 1.05 }}
             >
               <Link
                 to="/"
-                className="text-sm font-medium text-cyan hover:text-yellow-green transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-yellow-green after:transition-all after:duration-300 hover:after:w-full"
+                className="text-sm font-medium text-cyan hover:text-yellow-green transition-colors relative group py-2"
               >
                 Home
+                <motion.span
+                  className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan to-yellow-green group-hover:w-full transition-all duration-300"
+                  layoutId="nav-underline"
+                ></motion.span>
               </Link>
             </motion.div>
 

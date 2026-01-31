@@ -599,7 +599,7 @@ export default function Index() {
                 Why Choose AXIVOLT?
               </h2>
 
-              <ul className="space-y-6 mb-8">
+              <ul className="space-y-8 mb-12">
                 {[
                   {
                     title: "Industry Leadership",
@@ -619,7 +619,7 @@ export default function Index() {
                 ].map((item, index) => (
                   <motion.li
                     key={index}
-                    className="flex gap-4"
+                    className="flex gap-6"
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -628,20 +628,20 @@ export default function Index() {
                   >
                     <div className="flex-shrink-0">
                       <motion.div
-                        className={`flex items-center justify-center h-8 w-8 rounded-full ${
+                        className={`flex items-center justify-center h-12 w-12 rounded-full font-bold text-white ${
                           item.color === "cyan"
-                            ? "bg-cyan/20 text-cyan"
-                            : "bg-yellow-green/20 text-yellow-green"
+                            ? "bg-gradient-to-br from-cyan to-cyan/80 shadow-lg"
+                            : "bg-gradient-to-br from-yellow-green to-yellow-green/80 shadow-lg"
                         }`}
                         whileHover={{ scale: 1.2, rotate: 360 }}
                         transition={{ type: "spring", stiffness: 400 }}
                       >
-                        <Check className="w-5 h-5" />
+                        <Check className="w-6 h-6" />
                       </motion.div>
                     </div>
                     <div>
-                      <h4 className="font-bold text-lg">{item.title}</h4>
-                      <p className="text-black text-sm mt-1">{item.desc}</p>
+                      <h4 className="font-bold text-xl text-gray-900">{item.title}</h4>
+                      <p className="text-gray-700 text-base mt-2">{item.desc}</p>
                     </div>
                   </motion.li>
                 ))}
@@ -650,11 +650,11 @@ export default function Index() {
               <motion.button
                 onClick={() => navigate("/solutions")}
                 whileHover={{
-                  scale: 1.05,
-                  boxShadow: "0 20px 40px rgba(0, 188, 212, 0.3)",
+                  scale: 1.08,
+                  boxShadow: "0 25px 50px rgba(0, 188, 212, 0.35)",
                 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-cyan text-white px-8 py-3 rounded-lg font-bold hover:bg-opacity-90 transition-all inline-flex items-center gap-2 shadow-lg"
+                className="bg-cyan text-white px-10 py-4 rounded-xl font-bold text-lg hover:bg-cyan/90 transition-all inline-flex items-center gap-3 shadow-xl"
               >
                 Learn More <ArrowRight className="w-5 h-5" />
               </motion.button>

@@ -433,7 +433,7 @@ export default function About() {
       {/* Video Modal */}
       {showVideoModal && (
         <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4">
-          <div className="relative w-full max-w-4xl bg-background rounded-lg overflow-hidden">
+          <div className="relative w-full max-w-6xl bg-background rounded-lg overflow-hidden aspect-video">
             <button
               onClick={() => setShowVideoModal(false)}
               className="absolute top-4 right-4 z-10 bg-cyan hover:bg-yellow-green text-background rounded-full p-2 transition-all"
@@ -444,7 +444,7 @@ export default function About() {
               src="https://cdn.builder.io/o/assets%2F125c7cd6968a435da0ace6ef2edbf6b7%2F4078f8329e7446b590f1b988d0ecccdc?alt=media&token=c2125ecf-c59f-4603-acad-02ea4b505e3e&apiKey=125c7cd6968a435da0ace6ef2edbf6b7"
               controls
               autoPlay
-              className="w-full h-auto"
+              className="w-full h-full object-cover"
             />
           </div>
         </div>

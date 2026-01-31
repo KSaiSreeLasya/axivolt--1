@@ -20,6 +20,7 @@ export default function About() {
   const [showVideoModal, setShowVideoModal] = useState(false);
   const [visionInView, setVisionInView] = useState(false);
   const [coreValuesInView, setCoreValuesInView] = useState(false);
+  const [certificationsInView, setCertificationsInView] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -29,6 +30,8 @@ export default function About() {
             setVisionInView(true);
           } else if (entry.target.id === "core-values-section") {
             setCoreValuesInView(true);
+          } else if (entry.target.id === "certifications-section") {
+            setCertificationsInView(true);
           }
         }
       },
@@ -37,12 +40,16 @@ export default function About() {
 
     const visionElement = document.getElementById("vision-section");
     const coreValuesElement = document.getElementById("core-values-section");
+    const certificationsElement = document.getElementById("certifications-section");
 
     if (visionElement) {
       observer.observe(visionElement);
     }
     if (coreValuesElement) {
       observer.observe(coreValuesElement);
+    }
+    if (certificationsElement) {
+      observer.observe(certificationsElement);
     }
 
     return () => {
@@ -51,6 +58,9 @@ export default function About() {
       }
       if (coreValuesElement) {
         observer.unobserve(coreValuesElement);
+      }
+      if (certificationsElement) {
+        observer.unobserve(certificationsElement);
       }
     };
   }, []);

@@ -851,25 +851,25 @@ export default function Index() {
       {/* Final CTA Section */}
       <section
         id="contact"
-        className="py-20 bg-gradient-to-b from-yellow-green to-yellow-green/90 text-background relative overflow-hidden"
+        className="py-28 bg-gradient-to-br from-yellow-green via-yellow-green to-yellow-green/85 text-background relative overflow-hidden"
       >
         <motion.div
           className="absolute inset-0 -z-10"
           initial={{ opacity: 0 }}
-          whileInView={{ opacity: 0.3 }}
+          whileInView={{ opacity: 0.4 }}
           transition={{ duration: 1 }}
           viewport={{ once: true }}
         >
-          <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-white/10 rounded-full filter blur-3xl"></div>
-          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-white/10 rounded-full filter blur-3xl"></div>
+          <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-white/15 rounded-full filter blur-3xl"></div>
+          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-white/15 rounded-full filter blur-3xl"></div>
         </motion.div>
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center text-center"
+            className="grid grid-cols-1 md:grid-cols-3 gap-12 items-center text-center mb-20"
           >
             {[
               { icon: "📞", title: "Call Us", text: "+91 90634 47838" },
@@ -882,17 +882,18 @@ export default function Index() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                whileHover={{ scale: 1.05 }}
+                whileHover={{ scale: 1.08, y: -8 }}
+                className="group"
               >
                 <motion.div
-                  className="text-4xl font-bold mb-2"
-                  whileHover={{ scale: 1.3, rotate: 5 }}
+                  className="text-6xl font-bold mb-4 group-hover:scale-125 transition-transform"
+                  whileHover={{ scale: 1.3, rotate: 8 }}
                   transition={{ type: "spring", stiffness: 400 }}
                 >
                   {contact.icon}
                 </motion.div>
-                <h3 className="font-bold text-lg mb-1">{contact.title}</h3>
-                <p className="text-sm text-background/80">{contact.text}</p>
+                <h3 className="font-bold text-2xl mb-2 text-white">{contact.title}</h3>
+                <p className="text-lg text-background/90">{contact.text}</p>
               </motion.div>
             ))}
           </motion.div>
@@ -902,14 +903,14 @@ export default function Index() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
             viewport={{ once: true }}
-            className="mt-12 text-center"
+            className="mt-8 text-center"
           >
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
               viewport={{ once: true }}
-              className="text-3xl md:text-4xl font-bold mb-6"
+              className="text-4xl md:text-5xl font-bold mb-8 leading-tight text-white"
             >
               Ready to go renewable?
             </motion.h2>
@@ -918,7 +919,7 @@ export default function Index() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
               viewport={{ once: true }}
-              className="text-lg text-background/90 mb-8"
+              className="text-xl text-background/95 mb-10 font-light"
             >
               Start your sustainable energy journey today
             </motion.p>
@@ -929,11 +930,11 @@ export default function Index() {
               transition={{ duration: 0.6, delay: 0.6 }}
               viewport={{ once: true }}
               whileHover={{
-                scale: 1.05,
-                boxShadow: "0 20px 40px rgba(0, 0, 0, 0.2)",
+                scale: 1.08,
+                boxShadow: "0 30px 60px rgba(0, 0, 0, 0.3)",
               }}
               whileTap={{ scale: 0.95 }}
-              className="bg-background text-yellow-green px-8 py-3 rounded-lg font-bold hover:bg-opacity-90 transition-all shadow-lg"
+              className="bg-white text-yellow-green px-12 py-5 rounded-xl font-bold text-lg hover:bg-gray-50 transition-all shadow-xl"
             >
               Get Free Consultation
             </motion.button>

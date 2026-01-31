@@ -46,7 +46,7 @@ export default function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 w-full bg-background/95 backdrop-blur-md border-b border-cyan/20 shadow-lg">
       <div className="max-w-full mx-auto px-6 lg:px-12">
-        <div className="flex items-center h-32 gap-4">
+        <div className="flex items-center h-40 gap-4">
           {/* Logo and Brand */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -59,9 +59,9 @@ export default function Header() {
               className="flex items-center gap-3 group flex-shrink-0 relative"
             >
               <motion.img
-                src="https://cdn.builder.io/api/v1/image/assets%2Ffe5527c1828944a38faa27a1f5c6efe7%2F00fa53301075421e90acc8403136e6ca?format=webp&width=200&height=300"
+                src="https://cdn.builder.io/api/v1/image/assets%2Ffe5527c1828944a38faa27a1f5c6efe7%2F00fa53301075421e90acc8403136e6ca?format=webp&width=400&height=600"
                 alt="AXIVOLT Logo"
-                className="h-24 w-auto"
+                className="h-32 w-auto"
                 whileHover={{ scale: 1.1 }}
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}
               />
@@ -86,7 +86,7 @@ export default function Header() {
             >
               <Link
                 to="/"
-                className="text-sm font-medium text-cyan hover:text-yellow-green transition-colors relative group py-2"
+                className="text-lg font-medium text-cyan hover:text-yellow-green transition-colors relative group py-2"
               >
                 Home
                 <motion.span
@@ -109,7 +109,7 @@ export default function Header() {
                 to="/solutions"
                 onMouseEnter={() => setSolutionsOpen(true)}
                 onMouseLeave={() => setSolutionsOpen(false)}
-                className="flex items-center gap-1 text-sm font-medium text-cyan hover:text-yellow-green transition-colors relative group py-2"
+                className="flex items-center gap-1 text-lg font-medium text-cyan hover:text-yellow-green transition-colors relative group py-2"
               >
                 Solutions
                 <motion.span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan to-yellow-green group-hover:w-full transition-all duration-300"></motion.span>
@@ -258,7 +258,7 @@ export default function Header() {
                 to="/services"
                 onMouseEnter={() => setServicesOpen(true)}
                 onMouseLeave={() => setServicesOpen(false)}
-                className="flex items-center gap-1 text-sm font-medium text-cyan hover:text-yellow-green transition-colors relative group py-2"
+                className="flex items-center gap-1 text-lg font-medium text-cyan hover:text-yellow-green transition-colors relative group py-2"
               >
                 Services
                 <motion.span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan to-yellow-green group-hover:w-full transition-all duration-300"></motion.span>
@@ -327,7 +327,7 @@ export default function Header() {
               >
                 <Link
                   to={item.to}
-                  className="text-sm font-medium text-cyan hover:text-yellow-green transition-colors relative group py-2"
+                  className="text-lg font-medium text-cyan hover:text-yellow-green transition-colors relative group py-2"
                 >
                   {item.label}
                   <motion.span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan to-yellow-green group-hover:w-full transition-all duration-300"></motion.span>
@@ -350,7 +350,7 @@ export default function Header() {
             >
               <Link
                 to="/contact"
-                className="border-2 border-cyan text-cyan px-5 py-2 rounded-lg font-semibold hover:bg-cyan/10 transition-all text-sm inline-block relative group overflow-hidden"
+                className="border-2 border-cyan text-cyan px-6 py-3 rounded-lg font-semibold hover:bg-cyan/10 transition-all text-base inline-block relative group overflow-hidden"
               >
                 <motion.span className="absolute inset-0 bg-gradient-to-r from-cyan to-yellow-green opacity-0 group-hover:opacity-10 transition-opacity"></motion.span>
                 <span className="relative">Contact Us</span>
@@ -363,7 +363,7 @@ export default function Header() {
             >
               <Link
                 to="/quote"
-                className="bg-gradient-to-r from-cyan to-yellow-green text-background px-6 py-2 rounded-lg font-semibold text-sm inline-block shadow-lg hover:shadow-2xl transition-all relative group overflow-hidden"
+                className="bg-gradient-to-r from-cyan to-yellow-green text-background px-7 py-3 rounded-lg font-semibold text-base inline-block shadow-lg hover:shadow-2xl transition-all relative group overflow-hidden"
               >
                 <motion.span className="absolute inset-0 bg-gradient-to-r from-yellow-green to-cyan opacity-0 group-hover:opacity-100 transition-opacity"></motion.span>
                 <span className="relative">Get a Quote</span>

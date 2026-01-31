@@ -342,7 +342,13 @@ export default function Index() {
       {/* Services Section */}
       <section id="services" className="py-20 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Comprehensive Green Energy Solutions
             </h2>
@@ -350,62 +356,98 @@ export default function Index() {
               End-to-end solar and renewable energy solutions tailored to your
               needs
             </p>
-          </div>
+          </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Service 1 - Orange Icon */}
-            <div className="bg-card rounded-xl p-8 border border-border hover:border-cyan/50 transition-all group">
-              <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0 }}
+              viewport={{ once: true }}
+              whileHover={{ y: -10, boxShadow: "0 30px 60px rgba(255, 153, 0, 0.2)" }}
+              className="bg-card rounded-xl p-8 border border-border hover:border-cyan/50 transition-all group"
+            >
+              <motion.div
+                className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mb-6"
+                whileHover={{ scale: 1.2, rotate: 5 }}
+                transition={{ type: "spring", stiffness: 400, damping: 10 }}
+              >
                 <Sun className="w-8 h-8 text-white" />
-              </div>
+              </motion.div>
               <h3 className="text-xl font-bold mb-3">Rooftop Installations</h3>
               <p className="text-black mb-6">
                 Professional solar panel installations with minimal disruption.
                 Maximize your roof space efficiency.
               </p>
-              <a
+              <motion.a
                 href="#"
-                className="text-cyan text-sm font-medium hover:text-yellow-green transition-colors"
+                className="text-cyan text-sm font-medium hover:text-yellow-green transition-colors inline-flex items-center gap-1"
+                whileHover={{ x: 5 }}
               >
                 Explore More →
-              </a>
-            </div>
+              </motion.a>
+            </motion.div>
 
             {/* Service 2 - Blue Icon */}
-            <div className="bg-card rounded-xl p-8 border border-border hover:border-cyan/50 transition-all group">
-              <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true }}
+              whileHover={{ y: -10, boxShadow: "0 30px 60px rgba(59, 130, 246, 0.2)" }}
+              className="bg-card rounded-xl p-8 border border-border hover:border-cyan/50 transition-all group"
+            >
+              <motion.div
+                className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-6"
+                whileHover={{ scale: 1.2, rotate: 5 }}
+                transition={{ type: "spring", stiffness: 400, damping: 10 }}
+              >
                 <Battery className="w-8 h-8 text-white" />
-              </div>
+              </motion.div>
               <h3 className="text-xl font-bold mb-3">Energy Storage</h3>
               <p className="text-black mb-6">
                 Advanced battery systems for round-the-clock power availability.
                 Store solar energy efficiently.
               </p>
-              <a
+              <motion.a
                 href="#"
-                className="text-cyan text-sm font-medium hover:text-yellow-green transition-colors"
+                className="text-cyan text-sm font-medium hover:text-yellow-green transition-colors inline-flex items-center gap-1"
+                whileHover={{ x: 5 }}
               >
                 Explore More →
-              </a>
-            </div>
+              </motion.a>
+            </motion.div>
 
             {/* Service 3 - Green Icon */}
-            <div className="bg-card rounded-xl p-8 border border-border hover:border-cyan/50 transition-all group">
-              <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              whileHover={{ y: -10, boxShadow: "0 30px 60px rgba(34, 197, 94, 0.2)" }}
+              className="bg-card rounded-xl p-8 border border-border hover:border-cyan/50 transition-all group"
+            >
+              <motion.div
+                className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mb-6"
+                whileHover={{ scale: 1.2, rotate: 5 }}
+                transition={{ type: "spring", stiffness: 400, damping: 10 }}
+              >
                 <Leaf className="w-8 h-8 text-white" />
-              </div>
+              </motion.div>
               <h3 className="text-xl font-bold mb-3">Industrial Solutions</h3>
               <p className="text-black mb-6">
                 Large-scale green energy projects for commercial and industrial
                 operations.
               </p>
-              <a
+              <motion.a
                 href="#"
-                className="text-cyan text-sm font-medium hover:text-yellow-green transition-colors"
+                className="text-cyan text-sm font-medium hover:text-yellow-green transition-colors inline-flex items-center gap-1"
+                whileHover={{ x: 5 }}
               >
                 Explore More →
-              </a>
-            </div>
+              </motion.a>
+            </motion.div>
           </div>
         </div>
       </section>

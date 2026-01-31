@@ -22,7 +22,7 @@ export default function Index() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
             <div className="space-y-8">
-              <div>
+              <div className="animate-slide-left">
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4">
                   <span className="text-cyan">Sustainable</span>
                   <br />
@@ -30,42 +30,42 @@ export default function Index() {
                 </h1>
               </div>
 
-              <p className="text-lg text-black leading-relaxed max-w-xl">
+              <p className="text-lg text-black leading-relaxed max-w-xl animate-stagger-1">
                 Transform your energy consumption with cutting-edge solar
                 solutions. Harness clean, renewable power for a sustainable
                 tomorrow.
               </p>
 
               {/* Stats Preview */}
-              <div className="flex gap-12 py-8">
-                <div>
+              <div className="flex gap-12 py-8 flex-wrap">
+                <div className="animate-stagger-1 hover:scale-105 transition-transform duration-300">
                   <p className="text-3xl font-bold text-cyan">500k</p>
                   <p className="text-sm text-black">tons CO₂ saved</p>
                 </div>
-                <div>
+                <div className="animate-stagger-2 hover:scale-105 transition-transform duration-300">
                   <p className="text-3xl font-bold text-yellow-green">350+</p>
                   <p className="text-sm text-black">projects worldwide</p>
                 </div>
-                <div>
+                <div className="animate-stagger-3 hover:scale-105 transition-transform duration-300">
                   <p className="text-3xl font-bold text-cyan">Global</p>
                   <p className="text-sm text-black">presence</p>
                 </div>
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                <button className="bg-cyan text-white px-8 py-3 rounded-lg font-bold text-lg hover:bg-opacity-90 transition-all flex items-center justify-center gap-2">
+                <button className="bg-cyan text-white px-8 py-3 rounded-lg font-bold text-lg hover:bg-opacity-90 transition-all duration-300 flex items-center justify-center gap-2 hover:scale-105 hover:shadow-lg hover:shadow-cyan/40">
                   Get Started <ArrowRight className="w-5 h-5" />
                 </button>
-                <button className="border-2 border-cyan text-cyan px-8 py-3 rounded-lg font-bold text-lg hover:bg-cyan/10 transition-all">
+                <button className="border-2 border-cyan text-cyan px-8 py-3 rounded-lg font-bold text-lg hover:bg-cyan/10 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-cyan/20">
                   Learn More
                 </button>
               </div>
             </div>
 
             {/* Right Image */}
-            <div className="relative h-96 md:h-full">
-              <div className="absolute inset-0 bg-gradient-to-br from-cyan/20 to-yellow-green/20 rounded-3xl blur-2xl"></div>
-              <div className="relative bg-gradient-to-br from-cyan/10 to-yellow-green/10 rounded-2xl p-8 h-full flex items-center justify-center">
+            <div className="relative h-96 md:h-full animate-float">
+              <div className="absolute inset-0 bg-gradient-to-br from-cyan/20 to-yellow-green/20 rounded-3xl blur-2xl animate-pulse-slow"></div>
+              <div className="relative bg-gradient-to-br from-cyan/10 to-yellow-green/10 rounded-2xl p-8 h-full flex items-center justify-center hover:shadow-2xl hover:shadow-cyan/20 transition-all duration-500">
                 <svg
                   className="w-full h-full"
                   viewBox="0 0 400 400"

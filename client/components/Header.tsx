@@ -139,21 +139,30 @@ export default function Header() {
                       onMouseEnter={() => setActiveSolutionSubmenu("solar")}
                       onMouseLeave={() => setActiveSolutionSubmenu(null)}
                     >
-                      <Link
-                        to="/solutions/solar"
-                        className="flex items-center justify-between px-6 py-3 text-sm text-black hover:text-cyan hover:bg-background/50 transition-colors border-b border-border group"
+                      <motion.div
+                        whileHover={{ backgroundColor: "rgba(0, 188, 212, 0.05)" }}
                       >
-                        Solar
-                        <motion.div
-                          animate={{
-                            rotate:
-                              activeSolutionSubmenu === "solar" ? -180 : 0,
-                          }}
-                          transition={{ duration: 0.3 }}
+                        <Link
+                          to="/solutions/solar"
+                          className="flex items-center justify-between px-6 py-3 text-sm text-black hover:text-cyan transition-colors border-b border-cyan/10 group relative"
                         >
-                          <ChevronDown className="w-4 h-4 rotate-180 group-hover:text-cyan" />
-                        </motion.div>
-                      </Link>
+                          <span className="relative">
+                            Solar
+                            <motion.span
+                              className="absolute bottom-0 left-0 w-0 h-0.5 bg-cyan group-hover:w-full transition-all duration-300"
+                            ></motion.span>
+                          </span>
+                          <motion.div
+                            animate={{
+                              rotate:
+                                activeSolutionSubmenu === "solar" ? -180 : 0,
+                            }}
+                            transition={{ duration: 0.3 }}
+                          >
+                            <ChevronDown className="w-4 h-4 rotate-180 group-hover:text-cyan" />
+                          </motion.div>
+                        </Link>
+                      </motion.div>
 
                       {/* Solar Subcategories */}
                       {activeSolutionSubmenu === "solar" && (

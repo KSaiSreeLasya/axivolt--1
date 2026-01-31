@@ -375,11 +375,11 @@ export default function About() {
               ></motion.div>
               <ImageCarousel
                 images={[
-                  "https://cdn.builder.io/api/v1/image/assets%2F125c7cd6968a435da0ace6ef2edbf6b7%2F9d84a999e09b4e95b8bc2776c5f2ab23?format=webp&width=800&height=1200",
-                  "https://cdn.builder.io/api/v1/image/assets%2F125c7cd6968a435da0ace6ef2edbf6b7%2F492a443ea87943468a7b786dd05f5e59?format=webp&width=800&height=1200",
-                  "https://cdn.builder.io/api/v1/image/assets%2F125c7cd6968a435da0ace6ef2edbf6b7%2Fac591aabec2946b5a62223139c02efe7?format=webp&width=800&height=1200",
+                  "https://images.pexels.com/photos/8853504/pexels-photo-8853504.jpeg",
+                  "https://images.pexels.com/photos/29558295/pexels-photo-29558295.jpeg",
+                  "https://images.pexels.com/photos/33508503/pexels-photo-33508503.jpeg",
                 ]}
-                alt="AXIVOLT Solar Projects"
+                alt="AXIVOLT Renewable Energy Solutions"
                 className="relative h-full"
               />
             </motion.div>

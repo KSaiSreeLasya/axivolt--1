@@ -408,7 +408,7 @@ export default function Index() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {/* Service 1 - Orange Icon */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -416,29 +416,29 @@ export default function Index() {
               transition={{ duration: 0.6, delay: 0 }}
               viewport={{ once: true }}
               whileHover={{
-                y: -10,
-                boxShadow: "0 30px 60px rgba(255, 153, 0, 0.2)",
+                y: -15,
+                boxShadow: "0 40px 80px rgba(255, 153, 0, 0.25)",
               }}
-              className="bg-card rounded-xl p-8 border border-border hover:border-cyan/50 transition-all group"
+              className="bg-white rounded-2xl p-10 border border-orange-200/50 hover:border-orange-300 transition-all group shadow-lg hover:shadow-2xl relative overflow-hidden"
             >
+              <div className="absolute top-0 right-0 w-32 h-32 bg-orange-500/5 rounded-full -mr-16 -mt-16 group-hover:bg-orange-500/10 transition-colors"></div>
               <motion.div
-                className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mb-6"
-                whileHover={{ scale: 1.2, rotate: 5 }}
+                className="w-20 h-20 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mb-8 shadow-lg relative z-10"
+                whileHover={{ scale: 1.15, rotate: 8 }}
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}
               >
-                <Sun className="w-8 h-8 text-white" />
+                <Sun className="w-10 h-10 text-white" />
               </motion.div>
-              <h3 className="text-xl font-bold mb-3">Rooftop Installations</h3>
-              <p className="text-black mb-6">
-                Professional solar panel installations with minimal disruption.
-                Maximize your roof space efficiency.
+              <h3 className="text-2xl font-bold mb-4 text-gray-900">Rooftop Installations</h3>
+              <p className="text-gray-700 mb-8 leading-relaxed">
+                Professional solar panel installations with minimal disruption. Maximize your roof space efficiency.
               </p>
               <motion.a
                 href="#"
-                className="text-cyan text-sm font-medium hover:text-yellow-green transition-colors inline-flex items-center gap-1"
+                className="text-orange-600 font-semibold hover:text-orange-700 transition-colors inline-flex items-center gap-2 group/link"
                 whileHover={{ x: 5 }}
               >
-                Explore More →
+                Explore More <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
               </motion.a>
             </motion.div>
 
@@ -449,29 +449,29 @@ export default function Index() {
               transition={{ duration: 0.6, delay: 0.1 }}
               viewport={{ once: true }}
               whileHover={{
-                y: -10,
-                boxShadow: "0 30px 60px rgba(59, 130, 246, 0.2)",
+                y: -15,
+                boxShadow: "0 40px 80px rgba(59, 130, 246, 0.25)",
               }}
-              className="bg-card rounded-xl p-8 border border-border hover:border-cyan/50 transition-all group"
+              className="bg-white rounded-2xl p-10 border border-blue-200/50 hover:border-blue-300 transition-all group shadow-lg hover:shadow-2xl relative overflow-hidden"
             >
+              <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/5 rounded-full -mr-16 -mt-16 group-hover:bg-blue-500/10 transition-colors"></div>
               <motion.div
-                className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-6"
-                whileHover={{ scale: 1.2, rotate: 5 }}
+                className="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mb-8 shadow-lg relative z-10"
+                whileHover={{ scale: 1.15, rotate: 8 }}
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}
               >
-                <Battery className="w-8 h-8 text-white" />
+                <Battery className="w-10 h-10 text-white" />
               </motion.div>
-              <h3 className="text-xl font-bold mb-3">Energy Storage</h3>
-              <p className="text-black mb-6">
-                Advanced battery systems for round-the-clock power availability.
-                Store solar energy efficiently.
+              <h3 className="text-2xl font-bold mb-4 text-gray-900">Energy Storage</h3>
+              <p className="text-gray-700 mb-8 leading-relaxed">
+                Advanced battery systems for round-the-clock power availability. Store solar energy efficiently.
               </p>
               <motion.a
                 href="#"
-                className="text-cyan text-sm font-medium hover:text-yellow-green transition-colors inline-flex items-center gap-1"
+                className="text-blue-600 font-semibold hover:text-blue-700 transition-colors inline-flex items-center gap-2 group/link"
                 whileHover={{ x: 5 }}
               >
-                Explore More →
+                Explore More <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
               </motion.a>
             </motion.div>
 
@@ -482,29 +482,29 @@ export default function Index() {
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
               whileHover={{
-                y: -10,
-                boxShadow: "0 30px 60px rgba(34, 197, 94, 0.2)",
+                y: -15,
+                boxShadow: "0 40px 80px rgba(34, 197, 94, 0.25)",
               }}
-              className="bg-card rounded-xl p-8 border border-border hover:border-cyan/50 transition-all group"
+              className="bg-white rounded-2xl p-10 border border-green-200/50 hover:border-green-300 transition-all group shadow-lg hover:shadow-2xl relative overflow-hidden"
             >
+              <div className="absolute top-0 right-0 w-32 h-32 bg-green-500/5 rounded-full -mr-16 -mt-16 group-hover:bg-green-500/10 transition-colors"></div>
               <motion.div
-                className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mb-6"
-                whileHover={{ scale: 1.2, rotate: 5 }}
+                className="w-20 h-20 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mb-8 shadow-lg relative z-10"
+                whileHover={{ scale: 1.15, rotate: 8 }}
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}
               >
-                <Leaf className="w-8 h-8 text-white" />
+                <Leaf className="w-10 h-10 text-white" />
               </motion.div>
-              <h3 className="text-xl font-bold mb-3">Industrial Solutions</h3>
-              <p className="text-black mb-6">
-                Large-scale green energy projects for commercial and industrial
-                operations.
+              <h3 className="text-2xl font-bold mb-4 text-gray-900">Industrial Solutions</h3>
+              <p className="text-gray-700 mb-8 leading-relaxed">
+                Large-scale green energy projects for commercial and industrial operations.
               </p>
               <motion.a
                 href="#"
-                className="text-cyan text-sm font-medium hover:text-yellow-green transition-colors inline-flex items-center gap-1"
+                className="text-green-600 font-semibold hover:text-green-700 transition-colors inline-flex items-center gap-2 group/link"
                 whileHover={{ x: 5 }}
               >
-                Explore More →
+                Explore More <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
               </motion.a>
             </motion.div>
           </div>

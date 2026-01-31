@@ -134,10 +134,10 @@ export default function About() {
                 to excellence.
               </p>
               <div className="flex items-center gap-4">
-                <button className="bg-cyan text-background px-6 py-3 rounded-lg font-bold hover:bg-yellow-green transition-all inline-flex items-center gap-2">
+                <button onClick={() => navigate('/solutions')} className="bg-cyan text-background px-6 py-3 rounded-lg font-bold hover:bg-yellow-green transition-all inline-flex items-center gap-2">
                   Learn More <ArrowRight className="w-5 h-5" />
                 </button>
-                <button className="border border-cyan text-cyan px-6 py-3 rounded-lg font-bold hover:bg-cyan/10 transition-all">
+                <button onClick={() => navigate('/contact')} className="border border-cyan text-cyan px-6 py-3 rounded-lg font-bold hover:bg-cyan/10 transition-all">
                   Our Story
                 </button>
               </div>
@@ -289,7 +289,7 @@ export default function About() {
               individuals to achieve their sustainability goals while reducing
               costs and environmental impact.
             </p>
-            <button className="bg-cyan text-background px-8 py-3 rounded-lg font-bold hover:bg-yellow-green transition-all inline-flex items-center gap-2">
+            <button onClick={() => navigate('/contact')} className="bg-cyan text-background px-8 py-3 rounded-lg font-bold hover:bg-yellow-green transition-all inline-flex items-center gap-2">
               Get in Touch <ArrowRight className="w-5 h-5" />
             </button>
           </div>
@@ -305,7 +305,7 @@ export default function About() {
           <p className="text-lg text-background/90 mb-8">
             Let's work together to accelerate the renewable energy revolution
           </p>
-          <button className="bg-background text-cyan px-8 py-3 rounded-lg font-bold hover:bg-opacity-90 transition-all inline-flex items-center gap-2">
+          <button onClick={() => navigate('/quote')} className="bg-background text-cyan px-8 py-3 rounded-lg font-bold hover:bg-opacity-90 transition-all inline-flex items-center gap-2">
             Start Your Journey <ArrowRight className="w-5 h-5" />
           </button>
         </div>

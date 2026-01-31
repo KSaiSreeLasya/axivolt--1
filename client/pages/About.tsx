@@ -14,6 +14,7 @@ import { useSEO, addSchemaMarkup, SchemaMarkup } from "@/hooks/useSEO";
 import { useEffect } from "react";
 
 export default function About() {
+  const navigate = useNavigate();
   useSEO({
     title: "About AXIVOLT | Leading Solar Energy Company in India",
     description:

@@ -82,8 +82,22 @@ const App = () => (
   </QueryClientProvider>
 );
 
-// Only render if the root element exists and hasn't been rendered yet
-const rootElement = document.getElementById("root");
-if (rootElement && !rootElement.hasChildNodes()) {
-  createRoot(rootElement).render(<App />);
+// Initialize root only once, properly handling HMR
+const initializeApp = () => {
+  const rootElement = document.getElementById("root");
+  if (!rootElement) return;
+
+  // Get or create root
+  const root =
+    (window as any).__APP_ROOT__ || createRoot(rootElement);
+  (window as any).__APP_ROOT__ = root;
+
+  root.render(<App />);
+};
+
+// Call init when DOM is ready
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initializeApp);
+} else {
+  initializeApp();
 }

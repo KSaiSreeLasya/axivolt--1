@@ -171,28 +171,35 @@ export default function Header() {
                           initial="hidden"
                           animate="visible"
                           exit="exit"
-                          className="absolute top-0 bg-card border border-border rounded-lg w-56 shadow-2xl z-50"
-                          style={{ left: "100%", marginLeft: "0px" }}
+                          className="absolute top-0 bg-card border border-cyan/30 rounded-lg w-56 shadow-2xl z-50 backdrop-blur-sm"
+                          style={{ left: "100%", marginLeft: "4px" }}
                         >
                           <div className="py-2">
-                            <Link
-                              to="/solutions/solar/residential"
-                              className="block px-6 py-3 text-sm text-black hover:text-cyan hover:bg-background/50 transition-colors border-b border-border last:border-b-0"
-                            >
-                              Residential (B2C)
-                            </Link>
-                            <Link
-                              to="/solutions/solar/commercial"
-                              className="block px-6 py-3 text-sm text-black hover:text-cyan hover:bg-background/50 transition-colors border-b border-border last:border-b-0"
-                            >
-                              Commercial (B2B)
-                            </Link>
-                            <Link
-                              to="/solutions/solar/government"
-                              className="block px-6 py-3 text-sm text-black hover:text-cyan hover:bg-background/50 transition-colors last:border-b-0"
-                            >
-                              Government (B2G)
-                            </Link>
+                            {[
+                              { to: "/solutions/solar/residential", label: "Residential (B2C)" },
+                              { to: "/solutions/solar/commercial", label: "Commercial (B2B)" },
+                              { to: "/solutions/solar/government", label: "Government (B2G)" },
+                            ].map((item, idx) => (
+                              <motion.div
+                                key={idx}
+                                initial={{ opacity: 0, x: -10 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ delay: idx * 0.05 }}
+                                whileHover={{ backgroundColor: "rgba(0, 188, 212, 0.05)" }}
+                              >
+                                <Link
+                                  to={item.to}
+                                  className="block px-6 py-3 text-sm text-black hover:text-cyan transition-colors border-b border-cyan/10 last:border-b-0 group relative"
+                                >
+                                  <span className="relative">
+                                    {item.label}
+                                    <motion.span
+                                      className="absolute bottom-0 left-0 w-0 h-0.5 bg-cyan group-hover:w-full transition-all duration-300"
+                                    ></motion.span>
+                                  </span>
+                                </Link>
+                              </motion.div>
+                            ))}
                           </div>
                         </motion.div>
                       )}

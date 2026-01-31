@@ -74,7 +74,8 @@ export default function Index() {
           areaServed: ["Hyderabad", "Telangana", "Andhra Pradesh"],
           address: {
             "@type": "PostalAddress",
-            streetAddress: "Plot No. 101, Miyoshi Residency, Sri Nagar Colony, Miyapur",
+            streetAddress:
+              "Plot No. 101, Miyoshi Residency, Sri Nagar Colony, Miyapur",
             addressLocality: "Hyderabad",
             addressRegion: "Telangana",
             postalCode: "500049",

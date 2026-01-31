@@ -61,7 +61,8 @@ export default function Services() {
           "Energy advisory involves expert consultation to develop your energy strategy. We help you understand your energy needs, evaluate renewable options, calculate ROI, navigate government incentives, and create a customized roadmap for sustainable energy transition.",
       },
       {
-        question: "How can digital solutions optimize my solar or renewable system?",
+        question:
+          "How can digital solutions optimize my solar or renewable system?",
         answer:
           "Our digital solutions use IoT sensors, AI, and machine learning to monitor system performance in real-time, predict maintenance needs, optimize energy generation and consumption patterns, and provide actionable insights to maximize efficiency and minimize downtime.",
       },
@@ -71,7 +72,8 @@ export default function Services() {
           "Absolutely! Our advisory team helps you navigate various government incentives including MNRE subsidies, state-specific schemes, tax benefits, and financing options. We handle documentation and application support to ensure you maximize available benefits.",
       },
       {
-        question: "What is the difference between on-grid and off-grid solar systems?",
+        question:
+          "What is the difference between on-grid and off-grid solar systems?",
         answer:
           "On-grid systems are connected to the electricity grid, allowing you to sell excess power back. Off-grid systems operate independently with battery storage. Our advisory helps you choose the best option based on your location, needs, and budget.",
       },

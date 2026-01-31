@@ -41,7 +41,8 @@ export default function About() {
         phone: "+91 9063447838",
         image: `${baseUrl}/logo.png`,
         address: {
-          streetAddress: "Plot No. 101, Miyoshi Residency, Sri Nagar Colony, Miyapur",
+          streetAddress:
+            "Plot No. 101, Miyoshi Residency, Sri Nagar Colony, Miyapur",
           addressLocality: "Hyderabad",
           addressRegion: "Telangana",
           postalCode: "500049",
@@ -83,7 +84,8 @@ export default function About() {
           "Solar panels require minimal maintenance - typically just occasional cleaning to remove dust and debris. We offer comprehensive O&M (operations and maintenance) packages to ensure optimal performance and longevity.",
       },
       {
-        question: "Are there government subsidies available for solar installation?",
+        question:
+          "Are there government subsidies available for solar installation?",
         answer:
           "Yes! India offers various subsidies and incentives including MNRE subsidies, tax benefits under Section 80, accelerated depreciation, and state-specific programs. Our advisory team helps you navigate and maximize available incentives.",
       },
@@ -93,7 +95,8 @@ export default function About() {
           "A typical 5 kW residential system requires about 250-300 sq ft of roof space (or ground area). We conduct site assessments to determine the optimal design for your available space and energy needs.",
       },
       {
-        question: "What happens to my electricity bills after solar installation?",
+        question:
+          "What happens to my electricity bills after solar installation?",
         answer:
           "With grid-connected solar and net metering, you can sell excess electricity back to the grid and receive credits on your bill. Most users see 70-90% reduction in electricity bills, depending on system size and consumption.",
       },
@@ -124,7 +127,8 @@ export default function About() {
           phone: "+91 9063447838",
           image: `${baseUrl}/logo.png`,
           address: {
-            streetAddress: "Plot No. 101, Miyoshi Residency, Sri Nagar Colony, Miyapur",
+            streetAddress:
+              "Plot No. 101, Miyoshi Residency, Sri Nagar Colony, Miyapur",
             addressLocality: "Hyderabad",
             addressRegion: "Telangana",
             postalCode: "500049",

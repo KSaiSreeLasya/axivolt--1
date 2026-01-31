@@ -7,7 +7,8 @@ import { useEffect } from "react";
 
 export default function Solutions() {
   useSEO({
-    title: "Renewable Energy Solutions | Solar, Wind, Storage, EV Charging | AXIVOLT",
+    title:
+      "Renewable Energy Solutions | Solar, Wind, Storage, EV Charging | AXIVOLT",
     description:
       "AXIVOLT offers comprehensive renewable energy solutions including solar energy, wind power, energy storage, and EV charging infrastructure for residential, commercial, and government sectors.",
     keywords:
@@ -44,7 +45,8 @@ export default function Solutions() {
           "Energy storage systems (batteries) store excess energy generated during peak production for use during low generation or high demand periods. This ensures 24/7 power availability, reduces grid dependency, and maximizes ROI of your renewable system.",
       },
       {
-        question: "How do renewable energy solutions reduce my electricity costs?",
+        question:
+          "How do renewable energy solutions reduce my electricity costs?",
         answer:
           "Renewable systems generate free electricity from natural resources, eliminating fuel costs. Combined with net metering (selling excess power back to the grid) and government incentives, most users see 70-90% reduction in electricity bills.",
       },
@@ -91,7 +93,8 @@ export default function Solutions() {
           email: "contact@axivolt.in",
           image: `${baseUrl}/logo.png`,
           address: {
-            streetAddress: "Plot No. 101, Miyoshi Residency, Sri Nagar Colony, Miyapur",
+            streetAddress:
+              "Plot No. 101, Miyoshi Residency, Sri Nagar Colony, Miyapur",
             addressLocality: "Hyderabad",
             addressRegion: "Telangana",
             postalCode: "500049",

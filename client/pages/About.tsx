@@ -261,11 +261,16 @@ export default function About() {
               </div>
             </div>
 
-            <div className="relative h-96 bg-gradient-to-br from-cyan/20 to-purple-500/20 rounded-lg border border-border overflow-hidden">
-              <img
-                src="https://images.unsplash.com/photo-1509391366360-2e938aa1df86?w=600&h=400&fit=crop"
-                alt="Solar panels"
-                className="w-full h-full object-cover"
+            <div className="relative h-96">
+              <div className="absolute inset-0 bg-gradient-to-br from-cyan/20 to-yellow-green/20 rounded-3xl blur-2xl"></div>
+              <ImageCarousel
+                images={[
+                  "https://cdn.builder.io/api/v1/image/assets%2F125c7cd6968a435da0ace6ef2edbf6b7%2F9d84a999e09b4e95b8bc2776c5f2ab23?format=webp&width=800&height=1200",
+                  "https://cdn.builder.io/api/v1/image/assets%2F125c7cd6968a435da0ace6ef2edbf6b7%2F492a443ea87943468a7b786dd05f5e59?format=webp&width=800&height=1200",
+                  "https://cdn.builder.io/api/v1/image/assets%2F125c7cd6968a435da0ace6ef2edbf6b7%2Fac591aabec2946b5a62223139c02efe7?format=webp&width=800&height=1200",
+                ]}
+                alt="AXIVOLT Solar Projects"
+                className="relative h-full"
               />
             </div>
           </div>

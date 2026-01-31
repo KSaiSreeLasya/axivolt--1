@@ -59,9 +59,9 @@ export default function Header() {
               className="flex items-center gap-3 group flex-shrink-0 relative"
             >
               <motion.img
-                src="https://cdn.builder.io/api/v1/image/assets%2Ffe5527c1828944a38faa27a1f5c6efe7%2F00fa53301075421e90acc8403136e6ca?format=webp&width=200&height=300"
+                src="https://cdn.builder.io/api/v1/image/assets%2Ffe5527c1828944a38faa27a1f5c6efe7%2F00fa53301075421e90acc8403136e6ca?format=webp&width=400&height=600"
                 alt="AXIVOLT Logo"
-                className="h-24 w-auto"
+                className="h-32 w-auto"
                 whileHover={{ scale: 1.1 }}
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}
               />

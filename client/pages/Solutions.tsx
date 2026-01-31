@@ -191,33 +191,35 @@ export default function Solutions() {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-background to-background/80 pt-20 md:pt-32 pb-16">
+      <section className="relative overflow-hidden bg-gradient-to-br from-white via-blue-50/40 to-white pt-24 md:pt-40 pb-20">
+        <div className="absolute inset-0 -z-10">
+          <div className="absolute top-0 left-1/4 w-96 h-96 bg-cyan/15 rounded-full filter blur-3xl"></div>
+          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-yellow-green/15 rounded-full filter blur-3xl"></div>
+        </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center space-y-4">
-            <div className="inline-block bg-cyan/20 text-cyan px-4 py-2 rounded-full text-sm font-semibold mb-4">
+          <div className="text-center space-y-6">
+            <div className="inline-block bg-cyan/20 text-cyan px-6 py-3 rounded-full text-sm font-semibold mb-4 border border-cyan/30">
               Our Solutions
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-gray-900 tracking-tight">
               Solutions
             </h1>
-            <p className="text-lg text-black max-w-2xl mx-auto">
-              Explore our core energy solutions — click a category to view
-              detailed services and offerings.
+            <p className="text-xl text-gray-700 max-w-2xl mx-auto font-light">
+              Explore our core energy solutions — click a category to view detailed services and offerings.
             </p>
           </div>
         </div>
       </section>
 
       {/* Solutions Grid */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
+      <section className="py-24 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
               Our Solutions
             </h2>
-            <p className="text-black text-lg">
-              Comprehensive energy solutions with proven results and
-              comprehensive features across all sectors.
+            <p className="text-xl text-gray-700 font-light">
+              Comprehensive energy solutions with proven results and comprehensive features across all sectors.
             </p>
           </div>
 

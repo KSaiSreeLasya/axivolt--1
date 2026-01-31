@@ -21,21 +21,7 @@ export default function EVStations() {
       image:
         "https://cdn.builder.io/api/v1/image/assets%2F125c7cd6968a435da0ace6ef2edbf6b7%2F724918157e3e443e87569a122e3fa517?format=webp&width=800&height=1200",
     },
-    {
-      title: "Smart City EV Infrastructure",
-      image:
-        "https://cdn.builder.io/api/v1/image/assets%2F125c7cd6968a435da0ace6ef2edbf6b7%2F15d24e3c6cff47b7b00f7219809975d1?format=webp&width=800&height=1200",
-    },
-    {
-      title: "Public Charging Station",
-      image:
-        "https://cdn.builder.io/api/v1/image/assets%2F125c7cd6968a435da0ace6ef2edbf6b7%2F823985c562fd47ada9f7e6769a08a75b?format=webp&width=800&height=1200",
-    },
-    {
-      title: "Fleet Charging Depot",
-      image:
-        "https://cdn.builder.io/api/v1/image/assets%2F125c7cd6968a435da0ace6ef2edbf6b7%2F35161b004dc04e639405401e87d6d162?format=webp&width=800&height=1200",
-    },
+    
   ];
 
   const offerings = [

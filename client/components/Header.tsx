@@ -139,11 +139,11 @@ export default function Header() {
                 to="/services"
                 onMouseEnter={() => setServicesOpen(true)}
                 onMouseLeave={() => setServicesOpen(false)}
-                className="flex items-center gap-1 text-sm font-medium text-cyan hover:text-yellow-green transition-colors"
+                className="flex items-center gap-1 text-sm font-medium text-cyan hover:text-yellow-green transition-all duration-300 hover:scale-110 origin-center relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-yellow-green hover:after:w-full after:transition-all after:duration-300"
               >
                 Services
                 <ChevronDown
-                  className={`w-4 h-4 transition-transform ${
+                  className={`w-4 h-4 transition-transform duration-300 ${
                     servicesOpen ? "rotate-180" : ""
                   }`}
                 />
@@ -153,10 +153,10 @@ export default function Header() {
               <div
                 onMouseEnter={() => setServicesOpen(true)}
                 onMouseLeave={() => setServicesOpen(false)}
-                className={`absolute top-full left-0 mt-0 bg-card border border-border rounded-none w-56 shadow-xl transition-all duration-200 ${
+                className={`absolute top-full left-0 mt-0 bg-card border border-border rounded-lg w-56 shadow-xl transition-all duration-300 overflow-hidden ${
                   servicesOpen
                     ? "opacity-100 visible translate-y-0"
-                    : "opacity-0 invisible -translate-y-2"
+                    : "opacity-0 invisible translate-y-1 pointer-events-none"
                 }`}
               >
                 <div className="py-2">

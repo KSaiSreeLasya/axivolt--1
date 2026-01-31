@@ -67,17 +67,17 @@ export default function Advisory() {
       </section>
 
       {/* Our Process Section */}
-      <section className="py-20 bg-gradient-to-b from-cyan-50/30 via-white to-white">
+      <section className="py-24 bg-gradient-to-b from-cyan-50/30 via-white to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-20"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Process</h2>
-            <p className="text-black400">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">Our Process</h2>
+            <p className="text-xl text-gray-700 font-light max-w-2xl mx-auto">
               A systematic approach to renewable advisory and asset management
               that ensure optimal outcomes for your investment.
             </p>
@@ -147,16 +147,17 @@ export default function Advisory() {
                     )}
                   </div>
                   <motion.div
-                    className={`flex-1 bg-card rounded-lg p-6 border border-border hover:border-cyan/50 transition-all ${
+                    className={`flex-1 bg-white rounded-xl p-8 border border-cyan/20 hover:border-cyan/50 transition-all shadow-lg hover:shadow-2xl group relative overflow-hidden ${
                       item.align === "right" ? "ml-auto" : ""
                     }`}
                     whileHover={{
-                      y: -5,
-                      boxShadow: "0 20px 40px rgba(0, 188, 212, 0.15)",
+                      y: -8,
+                      boxShadow: "0 30px 60px rgba(0, 188, 212, 0.2)",
                     }}
                   >
-                    <h3 className="text-xl font-bold mb-2">{item.title}</h3>
-                    <p className="text-black400">{item.desc}</p>
+                    <div className="absolute top-0 right-0 w-24 h-24 bg-cyan/5 rounded-full -mr-12 -mt-12 group-hover:bg-cyan/10 transition-colors"></div>
+                    <h3 className="text-xl font-bold mb-3 text-gray-900 relative z-10">{item.title}</h3>
+                    <p className="text-gray-700 leading-relaxed relative z-10">{item.desc}</p>
                   </motion.div>
                 </motion.div>
               ))}
@@ -166,18 +167,21 @@ export default function Advisory() {
       </section>
 
       {/* Our Services Section */}
-      <section className="py-20 bg-gradient-to-b from-white via-yellow-green-50/20 to-white">
+      <section className="py-24 bg-gradient-to-b from-white via-yellow-green-50/20 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-20"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
               Our Services
             </h2>
+            <p className="text-xl text-gray-700 font-light max-w-2xl mx-auto">
+              Comprehensive advisory services to maximize your renewable energy investments
+            </p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -235,29 +239,30 @@ export default function Advisory() {
               return (
                 <motion.div
                   key={index}
-                  className="bg-card rounded-lg p-8 border border-border hover:border-cyan/50 transition-all"
+                  className="bg-white rounded-2xl p-10 border border-cyan/20 hover:border-cyan/50 transition-all shadow-lg hover:shadow-2xl group relative overflow-hidden"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
                   whileHover={{
-                    y: -5,
-                    boxShadow: "0 20px 40px rgba(0, 188, 212, 0.15)",
+                    y: -12,
+                    boxShadow: "0 40px 80px rgba(0, 188, 212, 0.25)",
                   }}
                 >
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-cyan/5 rounded-full -mr-16 -mt-16 group-hover:bg-cyan/10 transition-colors"></div>
                   <motion.div
-                    className={`w-12 h-12 ${service.color} rounded-lg flex items-center justify-center mb-6`}
-                    whileHover={{ scale: 1.2, rotate: 5 }}
-                    transition={{ type: "spring", stiffness: 400 }}
+                    className={`w-14 h-14 ${service.color} rounded-xl flex items-center justify-center mb-6 shadow-lg relative z-10 border-2 border-white`}
+                    whileHover={{ scale: 1.15, rotate: 8 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 10 }}
                   >
-                    <IconComponent className={`w-6 h-6 ${service.iconColor}`} />
+                    <IconComponent className={`w-7 h-7 ${service.iconColor}`} />
                   </motion.div>
-                  <h3 className="text-xl font-bold mb-4">{service.title}</h3>
-                  <p className="text-black400 mb-6">{service.desc}</p>
-                  <ul className="space-y-2 text-sm text-black400">
+                  <h3 className="text-2xl font-bold mb-4 text-gray-900 relative z-10">{service.title}</h3>
+                  <p className="text-gray-700 mb-6 leading-relaxed relative z-10">{service.desc}</p>
+                  <ul className="space-y-3 relative z-10">
                     {service.items.map((item, i) => (
-                      <li key={i} className="flex items-center gap-2">
-                        <CheckCircle className="w-4 h-4 text-cyan" /> {item}
+                      <li key={i} className="flex items-start gap-3 text-gray-700 font-medium">
+                        <CheckCircle className="w-5 h-5 text-cyan flex-shrink-0 mt-0.5" /> {item}
                       </li>
                     ))}
                   </ul>
@@ -269,15 +274,16 @@ export default function Advisory() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-cyan to-cyan/90 text-background relative overflow-hidden">
+      <section className="py-28 bg-gradient-to-br from-cyan via-cyan to-cyan/90 text-background relative overflow-hidden">
         <motion.div
           className="absolute inset-0 -z-10"
           initial={{ opacity: 0 }}
-          whileInView={{ opacity: 0.3 }}
+          whileInView={{ opacity: 0.4 }}
           transition={{ duration: 1 }}
           viewport={{ once: true }}
         >
-          <div className="absolute top-0 left-1/3 w-96 h-96 bg-white/10 rounded-full filter blur-3xl"></div>
+          <div className="absolute top-0 left-1/3 w-96 h-96 bg-white/15 rounded-full filter blur-3xl"></div>
+          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-white/10 rounded-full filter blur-3xl"></div>
         </motion.div>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -291,7 +297,7 @@ export default function Advisory() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-4xl font-bold mb-6"
+            className="text-4xl md:text-5xl font-bold mb-8 leading-tight"
           >
             Schedule Advisory Consultation
           </motion.h2>
@@ -300,36 +306,37 @@ export default function Advisory() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
-            className="text-lg text-background/90 mb-8"
+            className="text-xl text-background/95 mb-10 font-light leading-relaxed"
           >
-            Get expert guidance on optimizing your energy strategy
+            Get expert guidance on optimizing your energy strategy and maximizing your renewable investments
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
             viewport={{ once: true }}
-            className="flex flex-col sm:flex-row gap-4 justify-center"
+            className="flex flex-col sm:flex-row gap-6 justify-center"
           >
             <motion.button
               onClick={() => navigate("/contact")}
               whileHover={{
-                scale: 1.05,
-                boxShadow: "0 20px 40px rgba(0, 0, 0, 0.2)",
+                scale: 1.08,
+                boxShadow: "0 30px 60px rgba(0, 0, 0, 0.3)",
               }}
               whileTap={{ scale: 0.95 }}
-              className="bg-background text-cyan px-8 py-3 rounded-lg font-bold hover:bg-opacity-90 transition-all shadow-lg inline-flex items-center justify-center gap-2"
+              className="bg-background text-cyan px-12 py-5 rounded-xl font-bold hover:bg-opacity-90 transition-all shadow-xl inline-flex items-center justify-center gap-3"
             >
               Request Consultation <ArrowRight className="w-5 h-5" />
             </motion.button>
             <motion.button
               onClick={() => navigate("/quote")}
               whileHover={{
-                scale: 1.05,
+                scale: 1.08,
                 backgroundColor: "rgba(255, 255, 255, 0.2)",
+                boxShadow: "0 15px 40px rgba(255, 255, 255, 0.2)",
               }}
               whileTap={{ scale: 0.95 }}
-              className="border-2 border-background text-background px-8 py-3 rounded-lg font-bold hover:bg-background/10 transition-all"
+              className="border-2 border-background text-background px-12 py-5 rounded-xl font-bold hover:bg-background/10 transition-all"
             >
               Get a Quote
             </motion.button>

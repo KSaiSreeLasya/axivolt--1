@@ -7,19 +7,19 @@ export default function Wind() {
   const navigate = useNavigate();
   const projects = [
     {
-      title: "Onshore Wind Farm 1",
+      title: "Onshore Wind Farm Sunset",
       image:
-        "https://images.unsplash.com/photo-1498855926480-d98e83099315?w=600&h=400&fit=crop",
+        "https://cdn.builder.io/api/v1/image/assets%2F125c7cd6968a435da0ace6ef2edbf6b7%2F4ed1dbacd1724aefbb5e588ae62c6b65?format=webp&width=800&height=1200",
     },
     {
-      title: "Wind Installation 2",
+      title: "Industrial Wind Installation",
       image:
-        "https://images.unsplash.com/photo-1509391366360-2e938aa1df42?w=600&h=400&fit=crop",
+        "https://cdn.builder.io/api/v1/image/assets%2F125c7cd6968a435da0ace6ef2edbf6b7%2F23f70d91d01941beb371bf69e943b5da?format=webp&width=800&height=1200",
     },
     {
-      title: "Hybrid System Project",
+      title: "Wind & Solar Hybrid Project",
       image:
-        "https://images.unsplash.com/photo-1495652714223-3ba207a4bff3?w=600&h=400&fit=crop",
+        "https://cdn.builder.io/api/v1/image/assets%2F125c7cd6968a435da0ace6ef2edbf6b7%2F66b4a13c18bc43f2931a5438e3f202e5?format=webp&width=800&height=1200",
     },
   ];
 

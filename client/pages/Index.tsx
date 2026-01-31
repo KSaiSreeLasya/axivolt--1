@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import { useSEO, addSchemaMarkup, SchemaMarkup } from "@/hooks/useSEO";
 import { useEffect } from "react";
+import { motion } from "framer-motion";
 
 export default function Index() {
   const navigate = useNavigate();

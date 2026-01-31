@@ -7,19 +7,34 @@ export default function EVStations() {
   const navigate = useNavigate();
   const solutions = [
     {
-      title: "Charging Solutions 1",
+      title: "Home EV Charging Station",
       image:
-        "https://images.unsplash.com/photo-1617788386602-11c0c51c18e0?w=600&h=400&fit=crop",
+        "https://cdn.builder.io/api/v1/image/assets%2F125c7cd6968a435da0ace6ef2edbf6b7%2F0dfe5699a39f4683b1053aed1df1f2b4?format=webp&width=800&height=1200",
     },
     {
-      title: "Infrastructure 2",
+      title: "Commercial Parking Canopy",
       image:
-        "https://images.unsplash.com/photo-1506901925346-21bda4d32df4?w=600&h=400&fit=crop",
+        "https://cdn.builder.io/api/v1/image/assets%2F125c7cd6968a435da0ace6ef2edbf6b7%2F702874ccd7f542f980f6069362c8610c?format=webp&width=800&height=1200",
     },
     {
-      title: "Fleet Charging 3",
+      title: "Fast Charging Network",
       image:
-        "https://images.unsplash.com/photo-1557804506-669714d2e9d8?w=600&h=400&fit=crop",
+        "https://cdn.builder.io/api/v1/image/assets%2F125c7cd6968a435da0ace6ef2edbf6b7%2F724918157e3e443e87569a122e3fa517?format=webp&width=800&height=1200",
+    },
+    {
+      title: "Smart City EV Infrastructure",
+      image:
+        "https://cdn.builder.io/api/v1/image/assets%2F125c7cd6968a435da0ace6ef2edbf6b7%2F15d24e3c6cff47b7b00f7219809975d1?format=webp&width=800&height=1200",
+    },
+    {
+      title: "Public Charging Station",
+      image:
+        "https://cdn.builder.io/api/v1/image/assets%2F125c7cd6968a435da0ace6ef2edbf6b7%2F823985c562fd47ada9f7e6769a08a75b?format=webp&width=800&height=1200",
+    },
+    {
+      title: "Fleet Charging Depot",
+      image:
+        "https://cdn.builder.io/api/v1/image/assets%2F125c7cd6968a435da0ace6ef2edbf6b7%2F35161b004dc04e639405401e87d6d162?format=webp&width=800&height=1200",
     },
   ];
 

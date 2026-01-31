@@ -17,6 +17,7 @@ import { X } from "lucide-react";
 
 export default function About() {
   const navigate = useNavigate();
+  const [showVideoModal, setShowVideoModal] = useState(false);
   useSEO({
     title: "About AXIVOLT | Leading Solar Energy Company in India",
     description:

@@ -332,31 +332,54 @@ export default function About() {
       {/* Vision Section */}
       <section
         id="vision-section"
-        className={`py-20 bg-background/50 transition-all duration-1000 ${
-          visionInView
-            ? "opacity-100 translate-y-0"
-            : "opacity-0 translate-y-10"
-        }`}
+        className="py-20 bg-background/50"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="relative h-96 bg-gradient-to-br from-green-400/20 to-cyan/20 rounded-lg border border-border overflow-hidden order-2 lg:order-1">
-              <img
+            <motion.div
+              className="relative h-96 bg-gradient-to-br from-green-400/20 to-cyan/20 rounded-lg border border-border overflow-hidden order-2 lg:order-1 group"
+              initial={{ opacity: 0, x: -40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.7 }}
+              viewport={{ once: true }}
+              whileHover={{ scale: 1.02 }}
+            >
+              <motion.img
                 src="https://images.unsplash.com/photo-1466611653022-2f88e537e94f?w=600&h=400&fit=crop"
                 alt="Wind energy"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover group-hover:brightness-110 transition-all duration-300"
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.3 }}
               />
-            </div>
+            </motion.div>
 
-            <div className="order-1 lg:order-2">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            <motion.div
+              className="order-1 lg:order-2"
+              initial={{ opacity: 0, x: 40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.7 }}
+              viewport={{ once: true }}
+            >
+              <motion.h2
+                className="text-3xl md:text-4xl font-bold mb-6"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                viewport={{ once: true }}
+              >
                 Our <span className="text-cyan">Vision</span>
-              </h2>
-              <p className="text-lg text-black400 mb-6">
+              </motion.h2>
+              <motion.p
+                className="text-lg text-black400 mb-6"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true }}
+              >
                 To accelerate India's transition to clean energy by providing
                 reliable, affordable, and high-driven renewable energy
                 solutions.
-              </p>
+              </motion.p>
               <ul className="space-y-4">
                 {[
                   "Provide holistic clean energy solutions",
@@ -364,16 +387,20 @@ export default function About() {
                   "Enable sustainable economic growth",
                   "Drive innovation in renewable technology",
                 ].map((item, idx) => (
-                  <li
+                  <motion.li
                     key={idx}
                     className="flex items-center gap-3 text-black300"
+                    initial={{ opacity: 0, x: -15 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.4, delay: 0.3 + idx * 0.08 }}
+                    viewport={{ once: true }}
                   >
                     <CheckCircle className="w-5 h-5 text-cyan flex-shrink-0" />
                     {item}
-                  </li>
+                  </motion.li>
                 ))}
               </ul>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>

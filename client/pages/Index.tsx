@@ -666,54 +666,95 @@ export default function Index() {
       {/* Projects Section */}
       <section className="py-20 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Transforming Energy Landscapes
             </h2>
             <p className="text-black max-w-2xl mx-auto">
               Explore our latest projects and see how we're making a difference
             </p>
-          </div>
+          </motion.div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
-              <div>
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="space-y-6"
+            >
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                viewport={{ once: true }}
+              >
                 <h3 className="text-2xl font-bold mb-4">
                   C&I Factory Solar Installation
                 </h3>
                 <div className="space-y-4">
-                  <div>
-                    <p className="text-sm text-black uppercase tracking-widest mb-2">
-                      Capacity
-                    </p>
-                    <p className="text-2xl font-bold text-cyan">2.5 MWh</p>
-                  </div>
-                  <div>
-                    <p className="text-sm text-black uppercase tracking-widest mb-2">
-                      Expected Savings
-                    </p>
-                    <p className="text-2xl font-bold text-yellow-green">
-                      $500k/year
-                    </p>
-                  </div>
-                  <div>
-                    <p className="text-sm text-black uppercase tracking-widest mb-2">
-                      CO₂ Reduction
-                    </p>
-                    <p className="text-2xl font-bold text-cyan">
-                      2000 tons/year
-                    </p>
-                  </div>
+                  {[
+                    { label: "Capacity", value: "2.5 MWh", color: "text-cyan" },
+                    {
+                      label: "Expected Savings",
+                      value: "$500k/year",
+                      color: "text-yellow-green",
+                    },
+                    {
+                      label: "CO₂ Reduction",
+                      value: "2000 tons/year",
+                      color: "text-cyan",
+                    },
+                  ].map((item, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.6, delay: 0.1 * (index + 1) }}
+                      viewport={{ once: true }}
+                    >
+                      <p className="text-sm text-black uppercase tracking-widest mb-2">
+                        {item.label}
+                      </p>
+                      <p className={`text-2xl font-bold ${item.color}`}>
+                        {item.value}
+                      </p>
+                    </motion.div>
+                  ))}
                 </div>
-              </div>
+              </motion.div>
 
-              <button className="bg-cyan text-white px-8 py-3 rounded-lg font-bold hover:bg-opacity-90 transition-all inline-flex items-center gap-2">
+              <motion.button
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                viewport={{ once: true }}
+                whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(0, 188, 212, 0.3)" }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-cyan text-white px-8 py-3 rounded-lg font-bold hover:bg-opacity-90 transition-all inline-flex items-center gap-2 shadow-lg"
+              >
                 View Case Study <ArrowRight className="w-5 h-5" />
-              </button>
-            </div>
+              </motion.button>
+            </motion.div>
 
-            <div className="bg-gradient-to-br from-blue-600 to-blue-700 rounded-2xl p-8 h-96 flex items-center justify-center relative overflow-hidden">
-              <div className="absolute inset-0 opacity-20">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9, x: 20 }}
+              whileInView={{ opacity: 1, scale: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="bg-gradient-to-br from-blue-600 to-blue-700 rounded-2xl p-8 h-96 flex items-center justify-center relative overflow-hidden shadow-xl"
+            >
+              <motion.div
+                className="absolute inset-0 opacity-20"
+                animate={{ rotate: 360 }}
+                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+              >
                 <svg
                   className="w-full h-full"
                   fill="none"
@@ -734,12 +775,17 @@ export default function Index() {
                     fill="none"
                   />
                 </svg>
-              </div>
-              <div className="relative text-center">
+              </motion.div>
+              <motion.div
+                className="relative text-center"
+                whileInView={{ scale: [0.8, 1.1, 1] }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+                viewport={{ once: true }}
+              >
                 <p className="text-6xl font-bold text-white mb-4">25%</p>
                 <p className="text-white text-lg">Efficiency Gain</p>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
           </div>
         </div>
       </section>

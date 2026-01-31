@@ -7,11 +7,12 @@ import {
   ShoppingCart,
   Zap,
 } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useSEO, addSchemaMarkup, SchemaMarkup } from "@/hooks/useSEO";
 import { useEffect } from "react";
 
 export default function Services() {
+  const navigate = useNavigate();
   useSEO({
     title:
       "Renewable Energy Services | Advisory, Procurement, Digital Solutions | AXIVOLT",

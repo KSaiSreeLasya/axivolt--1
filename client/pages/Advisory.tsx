@@ -18,22 +18,51 @@ export default function Advisory() {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden pt-20 md:pt-32 pb-20">
+      <section className="relative overflow-hidden bg-gradient-to-b from-white via-cyan-50/20 to-white pt-20 md:pt-32 pb-20">
+        <motion.div
+          className="absolute inset-0 -z-10"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 0.5 }}
+          transition={{ duration: 1.5 }}
+        >
+          <div className="absolute top-0 left-1/4 w-96 h-96 bg-cyan/10 rounded-full filter blur-3xl"></div>
+          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-cyan/10 rounded-full filter blur-3xl"></div>
+        </motion.div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <p className="text-cyan text-sm uppercase tracking-widest mb-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="text-cyan text-sm uppercase tracking-widest mb-4"
+            >
               Advisory & Expert Management Consulting
-            </p>
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
+            </motion.p>
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="text-4xl md:text-5xl font-bold mb-6"
+            >
               Strategic Energy <span className="text-cyan">Advisory</span>{" "}
               Services
-            </h1>
-            <p className="text-lg text-black400 max-w-2xl mx-auto">
+            </motion.h1>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="text-lg text-black400 max-w-2xl mx-auto"
+            >
               Maximize your renewable energy potential with our comprehensive
               advisory and asset management services, designed to optimize
               performance and ensure long-term success.
-            </p>
-          </div>
+            </motion.p>
+          </motion.div>
         </div>
       </section>
 

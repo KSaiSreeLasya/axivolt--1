@@ -68,8 +68,8 @@ export default function Index() {
           description:
             "Leading solar and renewable energy company in Hyderabad serving Telangana and Andhra Pradesh",
           url: baseUrl,
-          telephone: "+91-XXXX-XXXXX",
-          email: "info@axivolt.in",
+          telephone: "+91 90634 47838",
+          email: "contact@axivolt.in",
           priceRange: "Varies",
           areaServed: ["Hyderabad", "Telangana", "Andhra Pradesh"],
           address: {

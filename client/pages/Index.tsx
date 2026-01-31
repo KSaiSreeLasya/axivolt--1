@@ -664,7 +664,7 @@ export default function Index() {
       </section>
 
       {/* Projects Section */}
-      <section className="py-20 bg-background">
+      <section className="py-20 bg-gradient-to-b from-white via-blue-50/20 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

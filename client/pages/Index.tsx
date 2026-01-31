@@ -246,46 +246,96 @@ export default function Index() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-20 bg-background/50">
+      <section className="py-20 bg-gradient-to-b from-background/50 to-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-center text-black mb-12 text-sm uppercase tracking-widest">
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-center text-black mb-12 text-sm uppercase tracking-widest"
+          >
             From Rooftops to Utility-Scale Projects
-          </p>
+          </motion.p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            <div className="bg-card rounded-xl p-8 border border-border">
-              <p className="text-3xl md:text-4xl font-bold text-cyan mb-2">
-                250MW
-              </p>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0 }}
+              viewport={{ once: true }}
+              whileHover={{ y: -5, boxShadow: "0 20px 40px rgba(0, 188, 212, 0.15)" }}
+              className="bg-card rounded-xl p-8 border border-border hover:border-cyan/50 transition-all"
+            >
+              <AnimatedCounter
+                value={250}
+                suffix="MW"
+                className="text-3xl md:text-4xl font-bold text-cyan mb-2"
+              />
               <p className="text-black text-sm">Total Capacity</p>
-            </div>
-            <div className="bg-card rounded-xl p-8 border border-border">
-              <p className="text-3xl md:text-4xl font-bold text-yellow-green mb-2">
-                500+
-              </p>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true }}
+              whileHover={{ y: -5, boxShadow: "0 20px 40px rgba(205, 210, 40, 0.15)" }}
+              className="bg-card rounded-xl p-8 border border-border hover:border-yellow-green/50 transition-all"
+            >
+              <AnimatedCounter
+                value={500}
+                suffix="+"
+                className="text-3xl md:text-4xl font-bold text-yellow-green mb-2"
+              />
               <p className="text-black text-sm">Projects Completed</p>
-            </div>
-            <div className="bg-card rounded-xl p-8 border border-border">
-              <p className="text-3xl md:text-4xl font-bold text-cyan mb-2">
-                15+
-              </p>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              whileHover={{ y: -5, boxShadow: "0 20px 40px rgba(0, 188, 212, 0.15)" }}
+              className="bg-card rounded-xl p-8 border border-border hover:border-cyan/50 transition-all"
+            >
+              <AnimatedCounter
+                value={15}
+                suffix="+"
+                className="text-3xl md:text-4xl font-bold text-cyan mb-2"
+              />
               <p className="text-black text-sm">Years Experience</p>
-            </div>
-            <div className="bg-card rounded-xl p-8 border border-border">
-              <p className="text-3xl md:text-4xl font-bold text-yellow-green mb-2">
-                12+
-              </p>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              viewport={{ once: true }}
+              whileHover={{ y: -5, boxShadow: "0 20px 40px rgba(205, 210, 40, 0.15)" }}
+              className="bg-card rounded-xl p-8 border border-border hover:border-yellow-green/50 transition-all"
+            >
+              <AnimatedCounter
+                value={12}
+                suffix="+"
+                className="text-3xl md:text-4xl font-bold text-yellow-green mb-2"
+              />
               <p className="text-black text-sm">Countries Served</p>
-            </div>
+            </motion.div>
           </div>
 
-          <div className="flex justify-center pt-12">
-            <button
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            viewport={{ once: true }}
+            className="flex justify-center pt-12"
+          >
+            <motion.button
               onClick={() => navigate("/contact")}
-              className="bg-yellow-green text-background px-8 py-3 rounded-full font-semibold hover:bg-opacity-90 transition-all"
+              whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(205, 210, 40, 0.3)" }}
+              whileTap={{ scale: 0.95 }}
+              className="bg-yellow-green text-background px-8 py-3 rounded-full font-semibold hover:bg-opacity-90 transition-all shadow-lg"
             >
               Explore Our Portfolio
-            </button>
-          </div>
+            </motion.button>
+          </motion.div>
         </div>
       </section>
 

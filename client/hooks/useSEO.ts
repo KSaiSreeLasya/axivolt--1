@@ -282,4 +282,22 @@ export const SchemaMarkup = {
     ...(data.bestRating && { bestRating: data.bestRating }),
     ...(data.worstRating && { worstRating: data.worstRating }),
   }),
+
+  faq: (
+    faqs: Array<{
+      question: string;
+      answer: string;
+    }>,
+  ) => ({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  }),
 };

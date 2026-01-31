@@ -18,7 +18,7 @@ export default function Footer() {
               className="text-lg font-bold mb-3 whitespace-nowrap"
               style={{ color: "#03867E" }}
             >
-              AXIVOLT GREEN ENERGIES PVT.LTD.
+              AXIVOLT GREEN ENERGY PVT.LTD.
             </p>
             <p className="text-black text-sm leading-relaxed">
               Leading the transition to sustainable energy with innovative

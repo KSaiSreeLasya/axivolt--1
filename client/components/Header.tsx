@@ -15,7 +15,10 @@ export default function Header() {
       <div className="max-w-full mx-auto px-6 lg:px-12">
         <div className="flex items-center h-24 gap-8">
           {/* Logo and Brand */}
-          <Link to="/" className="flex items-center gap-3 group flex-shrink-0 hover:opacity-80 transition-opacity duration-300">
+          <Link
+            to="/"
+            className="flex items-center gap-3 group flex-shrink-0 hover:opacity-80 transition-opacity duration-300"
+          >
             <img
               src="https://cdn.builder.io/api/v1/image/assets%2Ffe5527c1828944a38faa27a1f5c6efe7%2F00fa53301075421e90acc8403136e6ca?format=webp&width=200&height=300"
               alt="AXIVOLT Logo"

@@ -520,83 +520,109 @@ export default function Index() {
       <section id="process" className="py-20 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
               <h2 className="text-3xl md:text-4xl font-bold mb-8">
                 Why Choose AXIVOLT?
               </h2>
 
               <ul className="space-y-6 mb-8">
-                <li className="flex gap-4">
-                  <div className="flex-shrink-0">
-                    <div className="flex items-center justify-center h-8 w-8 rounded-full bg-cyan/20 text-cyan">
-                      <Check className="w-5 h-5" />
+                {[
+                  {
+                    title: "Industry Leadership",
+                    desc: "Pioneering sustainable energy solutions with proven track record",
+                    color: "cyan",
+                  },
+                  {
+                    title: "Advanced Technology",
+                    desc: "Cutting-edge solar panels and smart energy management",
+                    color: "yellow-green",
+                  },
+                  {
+                    title: "Expert Support",
+                    desc: "Dedicated team available 24/7 for all your energy needs",
+                    color: "cyan",
+                  },
+                ].map((item, index) => (
+                  <motion.li
+                    key={index}
+                    className="flex gap-4"
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                    viewport={{ once: true }}
+                    whileHover={{ x: 10 }}
+                  >
+                    <div className="flex-shrink-0">
+                      <motion.div
+                        className={`flex items-center justify-center h-8 w-8 rounded-full ${
+                          item.color === "cyan"
+                            ? "bg-cyan/20 text-cyan"
+                            : "bg-yellow-green/20 text-yellow-green"
+                        }`}
+                        whileHover={{ scale: 1.2, rotate: 360 }}
+                        transition={{ type: "spring", stiffness: 400 }}
+                      >
+                        <Check className="w-5 h-5" />
+                      </motion.div>
                     </div>
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-lg">Industry Leadership</h4>
-                    <p className="text-black text-sm mt-1">
-                      Pioneering sustainable energy solutions with proven track
-                      record
-                    </p>
-                  </div>
-                </li>
-                <li className="flex gap-4">
-                  <div className="flex-shrink-0">
-                    <div className="flex items-center justify-center h-8 w-8 rounded-full bg-yellow-green/20 text-yellow-green">
-                      <Check className="w-5 h-5" />
+                    <div>
+                      <h4 className="font-bold text-lg">{item.title}</h4>
+                      <p className="text-black text-sm mt-1">{item.desc}</p>
                     </div>
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-lg">Advanced Technology</h4>
-                    <p className="text-black text-sm mt-1">
-                      Cutting-edge solar panels and smart energy management
-                    </p>
-                  </div>
-                </li>
-                <li className="flex gap-4">
-                  <div className="flex-shrink-0">
-                    <div className="flex items-center justify-center h-8 w-8 rounded-full bg-cyan/20 text-cyan">
-                      <Check className="w-5 h-5" />
-                    </div>
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-lg">Expert Support</h4>
-                    <p className="text-black text-sm mt-1">
-                      Dedicated team available 24/7 for all your energy needs
-                    </p>
-                  </div>
-                </li>
+                  </motion.li>
+                ))}
               </ul>
 
-              <button
+              <motion.button
                 onClick={() => navigate("/solutions")}
-                className="bg-cyan text-white px-8 py-3 rounded-lg font-bold hover:bg-opacity-90 transition-all inline-flex items-center gap-2"
+                whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(0, 188, 212, 0.3)" }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-cyan text-white px-8 py-3 rounded-lg font-bold hover:bg-opacity-90 transition-all inline-flex items-center gap-2 shadow-lg"
               >
                 Learn More <ArrowRight className="w-5 h-5" />
-              </button>
-            </div>
+              </motion.button>
+            </motion.div>
 
             <div className="grid grid-cols-2 gap-6">
-              <div className="bg-gradient-to-br from-cyan/20 to-cyan/10 rounded-xl p-6 border border-border">
-                <p className="text-4xl font-bold text-cyan mb-2">99.2%</p>
-                <p className="text-black text-sm">System Uptime</p>
-              </div>
-              <div className="bg-gradient-to-br from-yellow-green/20 to-yellow-green/10 rounded-xl p-6 border border-border">
-                <p className="text-4xl font-bold text-yellow-green mb-2">
-                  500+
-                </p>
-                <p className="text-black text-sm">Happy Clients</p>
-              </div>
-              <div className="bg-gradient-to-br from-cyan/20 to-cyan/10 rounded-xl p-6 border border-border">
-                <p className="text-4xl font-bold text-cyan mb-2">10000</p>
-                <p className="text-black text-sm">MWh Generated</p>
-              </div>
-              <div className="bg-gradient-to-br from-yellow-green/20 to-yellow-green/10 rounded-xl p-6 border border-border">
-                <p className="text-4xl font-bold text-yellow-green mb-2">
-                  24/7
-                </p>
-                <p className="text-black text-sm">Support Available</p>
-              </div>
+              {[
+                { value: "99.2%", label: "System Uptime", color: "cyan" },
+                { value: "500+", label: "Happy Clients", color: "yellow-green" },
+                { value: "10000", label: "MWh Generated", color: "cyan" },
+                { value: "24/7", label: "Support Available", color: "yellow-green" },
+              ].map((stat, index) => (
+                <motion.div
+                  key={index}
+                  className={`bg-gradient-to-br ${
+                    stat.color === "cyan"
+                      ? "from-cyan/20 to-cyan/10"
+                      : "from-yellow-green/20 to-yellow-green/10"
+                  } rounded-xl p-6 border border-border`}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  whileHover={{
+                    y: -10,
+                    boxShadow: `0 20px 40px rgba(${
+                      stat.color === "cyan" ? "0, 188, 212" : "205, 210, 40"
+                    }, 0.2)`,
+                  }}
+                >
+                  <p
+                    className={`text-4xl font-bold ${
+                      stat.color === "cyan" ? "text-cyan" : "text-yellow-green"
+                    } mb-2`}
+                  >
+                    {stat.value}
+                  </p>
+                  <p className="text-black text-sm">{stat.label}</p>
+                </motion.div>
+              ))}
             </div>
           </div>
         </div>

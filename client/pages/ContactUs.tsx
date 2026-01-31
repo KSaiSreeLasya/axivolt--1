@@ -130,7 +130,7 @@ export default function ContactUs() {
           <div className="bg-card rounded-lg border border-border p-12 mb-12">
             <div className="max-w-3xl">
               <h2 className="text-3xl font-bold mb-4">
-                AXIVOLT Green Energies Pvt. Ltd.
+                AXIVOLT Green Energy Pvt. Ltd.
               </h2>
               <p className="text-black400 mb-6">
                 Leading the transition to sustainable energy with innovative

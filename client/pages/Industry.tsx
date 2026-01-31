@@ -254,13 +254,17 @@ export default function Industry() {
                   {/* Benefits */}
                   <ul className="space-y-3 relative z-10">
                     {industry.benefits.map((benefit, idx) => (
-                      <li
+                      <motion.li
                         key={idx}
                         className="flex items-start gap-3 text-gray-700 font-medium"
+                        initial={{ opacity: 0, x: -10 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.4, delay: 0.3 + idx * 0.08 }}
+                        viewport={{ once: true }}
                       >
                         <CheckCircle className="w-5 h-5 text-cyan flex-shrink-0 mt-0.5" />
                         {benefit}
-                      </li>
+                      </motion.li>
                     ))}
                   </ul>
                 </motion.div>

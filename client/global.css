@@ -117,6 +117,12 @@
     @apply bg-background text-foreground overflow-x-hidden;
     background: linear-gradient(135deg, #ffffff 0%, #f5f9ff 50%, #ffffff 100%);
     background-attachment: fixed;
+    padding-top: 8rem; /* 128px for fixed header (h-32) */
+  }
+
+  /* Ensure pages with header have proper spacing */
+  .min-h-screen:has(header) {
+    padding-top: 8rem;
   }
 
   :where(p, span, li, h1, h2, h3, h4, h5, h6, a, button, label, td, th) {

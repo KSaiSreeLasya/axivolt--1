@@ -283,7 +283,7 @@ export default function Procurement() {
           <p className="text-lg text-black400 mb-8">
             Let our experts handle your project sourcing and management
           </p>
-          <button className="bg-cyan text-background px-8 py-3 rounded-lg font-bold hover:bg-opacity-90 transition-all inline-flex items-center gap-2">
+          <button onClick={() => navigate('/quote')} className="bg-cyan text-background px-8 py-3 rounded-lg font-bold hover:bg-opacity-90 transition-all inline-flex items-center gap-2">
             Get Started <ArrowRight className="w-5 h-5" />
           </button>
         </div>

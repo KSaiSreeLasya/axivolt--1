@@ -210,29 +210,29 @@ export default function Index() {
       {/* Stats Section */}
       <section className="py-20 bg-background/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-center text-black mb-12 text-sm uppercase tracking-widest">
+          <p className="text-center text-black mb-12 text-sm uppercase tracking-widest animate-fade-in">
             From Rooftops to Utility-Scale Projects
           </p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            <div className="bg-card rounded-xl p-8 border border-border">
+            <div className="bg-card rounded-xl p-8 border border-border animate-stagger-1 hover:border-cyan/50 hover:shadow-lg hover:shadow-cyan/20 transition-all duration-300 hover:-translate-y-2">
               <p className="text-3xl md:text-4xl font-bold text-cyan mb-2">
                 250MW
               </p>
               <p className="text-black text-sm">Total Capacity</p>
             </div>
-            <div className="bg-card rounded-xl p-8 border border-border">
+            <div className="bg-card rounded-xl p-8 border border-border animate-stagger-2 hover:border-yellow-green/50 hover:shadow-lg hover:shadow-yellow-green/20 transition-all duration-300 hover:-translate-y-2">
               <p className="text-3xl md:text-4xl font-bold text-yellow-green mb-2">
                 500+
               </p>
               <p className="text-black text-sm">Projects Completed</p>
             </div>
-            <div className="bg-card rounded-xl p-8 border border-border">
+            <div className="bg-card rounded-xl p-8 border border-border animate-stagger-3 hover:border-cyan/50 hover:shadow-lg hover:shadow-cyan/20 transition-all duration-300 hover:-translate-y-2">
               <p className="text-3xl md:text-4xl font-bold text-cyan mb-2">
                 15+
               </p>
               <p className="text-black text-sm">Years Experience</p>
             </div>
-            <div className="bg-card rounded-xl p-8 border border-border">
+            <div className="bg-card rounded-xl p-8 border border-border animate-stagger-1 hover:border-yellow-green/50 hover:shadow-lg hover:shadow-yellow-green/20 transition-all duration-300 hover:-translate-y-2">
               <p className="text-3xl md:text-4xl font-bold text-yellow-green mb-2">
                 12+
               </p>
@@ -241,7 +241,7 @@ export default function Index() {
           </div>
 
           <div className="flex justify-center pt-12">
-            <button className="bg-yellow-green text-background px-8 py-3 rounded-full font-semibold hover:bg-opacity-90 transition-all">
+            <button className="bg-yellow-green text-background px-8 py-3 rounded-full font-semibold hover:bg-opacity-90 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-yellow-green/40">
               Explore Our Portfolio
             </button>
           </div>

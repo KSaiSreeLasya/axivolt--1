@@ -1,11 +1,12 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { ArrowLeft, Building2, Globe, Shield } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useSEO, addSchemaMarkup, SchemaMarkup } from "@/hooks/useSEO";
 import { useEffect } from "react";
 
 export default function SolarGovernment() {
+  const navigate = useNavigate();
   useSEO({
     title:
       "Government Solar Projects | Public Sector Energy Solutions | AXIVOLT",
@@ -157,7 +158,10 @@ export default function SolarGovernment() {
             From tender preparation to operations, we deliver scalable and
             compliant solar solutions for the public sector.
           </p>
-          <button className="bg-background text-cyan px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition-all">
+          <button
+            onClick={() => navigate("/quote")}
+            className="bg-background text-cyan px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition-all"
+          >
             Get Started
           </button>
         </div>

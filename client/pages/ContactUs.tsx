@@ -60,10 +60,10 @@ export default function ContactUs() {
               </div>
               <h3 className="text-lg font-bold mb-3">Phone</h3>
               <a
-                href="tel:+919876543210"
+                href="tel:+91 9063447838"
                 className="text-black400 hover:text-cyan transition-colors"
               >
-                +91 98765 43210
+                +91 9063447838
               </a>
             </div>
 
@@ -74,10 +74,10 @@ export default function ContactUs() {
               </div>
               <h3 className="text-lg font-bold mb-3">Email</h3>
               <a
-                href="mailto:info@axivolt.com"
+                href="mailto:contact@axivolt.in"
                 className="text-black400 hover:text-cyan transition-colors"
               >
-                info@axivolt.com
+                contact@axivolt.in
               </a>
             </div>
 
@@ -130,7 +130,7 @@ export default function ContactUs() {
           <div className="bg-card rounded-lg border border-border p-12 mb-12">
             <div className="max-w-3xl">
               <h2 className="text-3xl font-bold mb-4">
-                AXIVOLT Green Energies Pvt. Ltd.
+                AXIVOLT Green Energy Pvt. Ltd.
               </h2>
               <p className="text-black400 mb-6">
                 Leading the transition to sustainable energy with innovative

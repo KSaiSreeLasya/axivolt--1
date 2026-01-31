@@ -1,9 +1,10 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { ArrowLeft, Wind as WindIcon, Zap, Gauge } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Wind() {
+  const navigate = useNavigate();
   const projects = [
     {
       title: "Onshore Wind Farm 1",
@@ -276,7 +277,10 @@ export default function Wind() {
             Co-invest project development. EPC completed and operations for
             utility-scale and distributed renewables.
           </p>
-          <button className="bg-background text-cyan px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition-all">
+          <button
+            onClick={() => navigate("/quote")}
+            className="bg-background text-cyan px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition-all"
+          >
             Get Started
           </button>
         </div>

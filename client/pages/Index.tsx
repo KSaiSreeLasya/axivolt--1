@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { useNavigate } from "react-router-dom";
 import {
   ArrowRight,
   Check,
@@ -14,6 +15,7 @@ import { useSEO, addSchemaMarkup, SchemaMarkup } from "@/hooks/useSEO";
 import { useEffect } from "react";
 
 export default function Index() {
+  const navigate = useNavigate();
   useSEO({
     title:
       "AXIVOLT - Best Solar Company in Hyderabad, Telangana & Andhra Pradesh",
@@ -127,10 +129,16 @@ export default function Index() {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                <button className="bg-cyan text-white px-8 py-3 rounded-lg font-bold text-lg hover:bg-opacity-90 transition-all flex items-center justify-center gap-2">
+                <button
+                  onClick={() => navigate("/quote")}
+                  className="bg-cyan text-white px-8 py-3 rounded-lg font-bold text-lg hover:bg-opacity-90 transition-all flex items-center justify-center gap-2"
+                >
                   Get Started <ArrowRight className="w-5 h-5" />
                 </button>
-                <button className="border-2 border-cyan text-cyan px-8 py-3 rounded-lg font-bold text-lg hover:bg-cyan/10 transition-all">
+                <button
+                  onClick={() => navigate("/solutions")}
+                  className="border-2 border-cyan text-cyan px-8 py-3 rounded-lg font-bold text-lg hover:bg-cyan/10 transition-all"
+                >
                   Learn More
                 </button>
               </div>
@@ -315,7 +323,10 @@ export default function Index() {
           </div>
 
           <div className="flex justify-center pt-12">
-            <button className="bg-yellow-green text-background px-8 py-3 rounded-full font-semibold hover:bg-opacity-90 transition-all">
+            <button
+              onClick={() => navigate("/contact")}
+              className="bg-yellow-green text-background px-8 py-3 rounded-full font-semibold hover:bg-opacity-90 transition-all"
+            >
               Explore Our Portfolio
             </button>
           </div>
@@ -404,11 +415,17 @@ export default function Index() {
             planet
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-background text-yellow-green px-8 py-3 rounded-lg font-bold hover:bg-opacity-90 transition-all">
+            <button
+              onClick={() => navigate("/contact")}
+              className="bg-background text-yellow-green px-8 py-3 rounded-lg font-bold hover:bg-opacity-90 transition-all"
+            >
               Get Free Consultation
             </button>
-            <button className="border-2 border-background text-background px-8 py-3 rounded-lg font-bold hover:bg-background/10 transition-all">
-              See Pricing
+            <button
+              onClick={() => navigate("/solutions")}
+              className="border-2 border-background text-background px-8 py-3 rounded-lg font-bold hover:bg-background/10 transition-all"
+            >
+              Learn More
             </button>
           </div>
         </div>
@@ -466,7 +483,10 @@ export default function Index() {
                 </li>
               </ul>
 
-              <button className="bg-cyan text-white px-8 py-3 rounded-lg font-bold hover:bg-opacity-90 transition-all inline-flex items-center gap-2">
+              <button
+                onClick={() => navigate("/solutions")}
+                className="bg-cyan text-white px-8 py-3 rounded-lg font-bold hover:bg-opacity-90 transition-all inline-flex items-center gap-2"
+              >
                 Learn More <ArrowRight className="w-5 h-5" />
               </button>
             </div>
@@ -613,12 +633,12 @@ export default function Index() {
             <div>
               <div className="text-4xl font-bold mb-2">📞</div>
               <h3 className="font-bold text-lg mb-1">Call Us</h3>
-              <p className="text-sm text-background/80">+1 (555) 123-4567</p>
+              <p className="text-sm text-background/80">+91 90634 47838</p>
             </div>
             <div>
               <div className="text-4xl font-bold mb-2">📧</div>
               <h3 className="font-bold text-lg mb-1">Email</h3>
-              <p className="text-sm text-background/80">hello@axivolt.com</p>
+              <p className="text-sm text-background/80">contact@axivolt.in</p>
             </div>
             <div>
               <div className="text-4xl font-bold mb-2">🌐</div>

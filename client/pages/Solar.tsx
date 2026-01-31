@@ -1,11 +1,12 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { ArrowLeft, ArrowRight, Sun, Zap, Gauge } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useSEO, addSchemaMarkup, SchemaMarkup } from "@/hooks/useSEO";
 import { useEffect } from "react";
 
 export default function Solar() {
+  const navigate = useNavigate();
   useSEO({
     title:
       "Solar Panel Installation & Solutions in Hyderabad, Telangana | AXIVOLT",
@@ -320,7 +321,10 @@ export default function Solar() {
             From residential rooftops to utility-scale projects, we deliver
             reliable solar solutions for every sector.
           </p>
-          <button className="bg-background text-cyan px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition-all">
+          <button
+            onClick={() => navigate("/quote")}
+            className="bg-background text-cyan px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition-all"
+          >
             Get Started
           </button>
         </div>

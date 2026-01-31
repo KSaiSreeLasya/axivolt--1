@@ -1,9 +1,10 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { ArrowLeft, Battery, Gauge, Zap } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function EnergyStorage() {
+  const navigate = useNavigate();
   const infrastructure = [
     {
       title: "Battery Storage",
@@ -168,7 +169,10 @@ export default function EnergyStorage() {
             We deliver turnkey battery solutions and EMS integrations to support
             grid services and increase renewable adoption.
           </p>
-          <button className="bg-background text-cyan px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition-all">
+          <button
+            onClick={() => navigate("/quote")}
+            className="bg-background text-cyan px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition-all"
+          >
             Get Started
           </button>
         </div>

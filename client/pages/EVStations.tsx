@@ -1,9 +1,10 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { ArrowLeft, Zap, Plug, Truck } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function EVStations() {
+  const navigate = useNavigate();
   const solutions = [
     {
       title: "Charging Solutions 1",
@@ -200,7 +201,10 @@ export default function EVStations() {
             We offer planning, permitting, supply and operations for charging
             networks and depot electrification.
           </p>
-          <button className="bg-background text-cyan px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition-all">
+          <button
+            onClick={() => navigate("/quote")}
+            className="bg-background text-cyan px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition-all"
+          >
             Get Started
           </button>
         </div>

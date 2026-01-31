@@ -7,11 +7,12 @@ import {
   ShoppingCart,
   Zap,
 } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useSEO, addSchemaMarkup, SchemaMarkup } from "@/hooks/useSEO";
 import { useEffect } from "react";
 
 export default function Services() {
+  const navigate = useNavigate();
   useSEO({
     title:
       "Renewable Energy Services | Advisory, Procurement, Digital Solutions | AXIVOLT",
@@ -180,7 +181,10 @@ export default function Services() {
             Let us help you achieve your renewable energy and sustainability
             goals with our expert services.
           </p>
-          <button className="bg-background text-cyan px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition-all">
+          <button
+            onClick={() => navigate("/contact")}
+            className="bg-background text-cyan px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition-all"
+          >
             Contact Us Today
           </button>
         </div>

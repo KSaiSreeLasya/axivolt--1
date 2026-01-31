@@ -11,6 +11,7 @@ import {
   Award,
   Heart,
 } from "lucide-react";
+import { motion } from "framer-motion";
 
 interface Job {
   id?: string;
@@ -261,47 +262,106 @@ export default function Careers() {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden pt-20 md:pt-32 pb-20 bg-gradient-to-b from-background to-background/50">
+      <section className="relative overflow-hidden bg-gradient-to-b from-white via-blue-50/40 to-white pt-24 md:pt-40 pb-20">
+        <motion.div
+          className="absolute inset-0 -z-10"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 0.7 }}
+          transition={{ duration: 1.5, ease: "easeOut" }}
+        >
+          <div className="absolute top-0 left-1/4 w-96 h-96 bg-cyan/15 rounded-full filter blur-3xl"></div>
+          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-500/15 rounded-full filter blur-3xl"></div>
+        </motion.div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Build the <span className="text-cyan">Energy Future</span> With Us
-            </h1>
-            <p className="text-lg text-black max-w-2xl mx-auto mb-8">
+          <motion.div
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <motion.h1
+              className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight text-gray-900 tracking-tight"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+            >
+              Build the{" "}
+              <span className="bg-gradient-to-r from-cyan to-cyan/80 bg-clip-text text-transparent">
+                Energy Future
+              </span>{" "}
+              With Us
+            </motion.h1>
+            <motion.p
+              className="text-xl text-gray-700 leading-relaxed font-light max-w-2xl mx-auto mb-10"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
               Join a passionate team of innovators, engineers, and
               sustainability experts working together to revolutionize renewable
               energy solutions.
-            </p>
-            <button className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 rounded-lg font-bold transition-all inline-flex items-center gap-2">
+            </motion.p>
+            <motion.button
+              whileHover={{
+                scale: 1.05,
+                boxShadow: "0 25px 50px rgba(168, 85, 247, 0.35)",
+              }}
+              whileTap={{ scale: 0.95 }}
+              className="bg-purple-600 hover:bg-purple-700 text-white px-10 py-4 rounded-xl font-bold text-lg transition-all inline-flex items-center gap-2 shadow-xl"
+            >
               View Open Positions <ArrowRight className="w-5 h-5" />
-            </button>
-          </div>
+            </motion.button>
+          </motion.div>
         </div>
       </section>
 
       {/* Our Values Section */}
-      <section className="py-20 bg-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Values</h2>
-            <p className="text-black max-w-2xl mx-auto">
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-cyan-50/30 via-white to-white">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            className="text-center mb-20"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
+              Our Values
+            </h2>
+            <p className="text-xl text-gray-700 font-light max-w-2xl mx-auto">
               The principles that guide our team and define our commitment to
               excellence
             </p>
-          </div>
+          </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
             {values.map((value, idx) => (
-              <div
+              <motion.div
                 key={idx}
-                className="bg-card rounded-lg p-6 border border-border hover:border-cyan transition-all"
+                className="bg-white rounded-2xl p-10 border border-cyan/20 hover:border-cyan/50 transition-all shadow-lg hover:shadow-2xl group"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: idx * 0.1 }}
+                viewport={{ once: true }}
+                whileHover={{
+                  y: -8,
+                  boxShadow: "0 30px 60px rgba(0, 188, 212, 0.2)",
+                }}
               >
-                <div className="w-12 h-12 bg-cyan/20 rounded-lg flex items-center justify-center mb-4">
-                  <CheckCircle className="w-6 h-6 text-cyan" />
-                </div>
-                <h3 className="text-lg font-bold mb-2">{value.title}</h3>
-                <p className="text-sm text-black">{value.description}</p>
-              </div>
+                <motion.div
+                  className="w-14 h-14 bg-cyan/20 rounded-xl flex items-center justify-center mb-6 shadow-lg"
+                  whileHover={{ scale: 1.2, rotate: 8 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                >
+                  <CheckCircle className="w-7 h-7 text-cyan" />
+                </motion.div>
+                <h3 className="text-xl font-bold mb-3 text-gray-900">
+                  {value.title}
+                </h3>
+                <p className="text-gray-700 leading-relaxed">
+                  {value.description}
+                </p>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -376,41 +436,61 @@ export default function Careers() {
       </section>
 
       {/* Benefits & Perks Section */}
-      <section className="py-20 bg-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white via-yellow-green-50/20 to-white">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            className="text-center mb-20"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
               Benefits & Perks
             </h2>
-            <p className="text-black">
+            <p className="text-xl text-gray-700 font-light">
               We invest in our team's wellbeing and growth
             </p>
-          </div>
+          </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
             {benefits.map((benefit, idx) => {
               const Icon = benefit.icon;
               return (
-                <div
+                <motion.div
                   key={idx}
-                  className="bg-card rounded-lg p-8 border border-border text-center hover:border-cyan transition-all"
+                  className="bg-white rounded-2xl p-10 border border-cyan/20 hover:border-cyan/50 transition-all shadow-lg hover:shadow-2xl text-center group"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: idx * 0.1 }}
+                  viewport={{ once: true }}
+                  whileHover={{
+                    y: -8,
+                    boxShadow: "0 30px 60px rgba(0, 188, 212, 0.2)",
+                  }}
                 >
-                  <div className="w-12 h-12 bg-cyan/20 rounded-lg flex items-center justify-center mb-6 mx-auto">
-                    <Icon className="w-6 h-6 text-cyan" />
-                  </div>
-                  <h3 className="text-lg font-bold mb-4">{benefit.title}</h3>
-                  <ul className="space-y-2 text-sm text-black">
+                  <motion.div
+                    className="w-14 h-14 bg-cyan/20 rounded-xl flex items-center justify-center mb-6 mx-auto shadow-lg"
+                    whileHover={{ scale: 1.2, rotate: 8 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                  >
+                    <Icon className="w-7 h-7 text-cyan" />
+                  </motion.div>
+                  <h3 className="text-xl font-bold mb-4 text-gray-900">
+                    {benefit.title}
+                  </h3>
+                  <ul className="space-y-3 text-sm">
                     {benefit.items.map((item, i) => (
                       <li
                         key={i}
-                        className="flex items-center justify-center gap-2"
+                        className="flex items-center justify-center gap-3 text-gray-700 font-medium"
                       >
-                        <CheckCircle className="w-4 h-4 text-cyan" />
+                        <CheckCircle className="w-5 h-5 text-cyan flex-shrink-0" />
                         {item}
                       </li>
                     ))}
                   </ul>
-                </div>
+                </motion.div>
               );
             })}
           </div>
@@ -474,18 +554,53 @@ export default function Careers() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-cyan text-background">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+      <section className="py-28 bg-gradient-to-br from-cyan via-cyan to-cyan/90 text-background relative overflow-hidden">
+        <motion.div
+          className="absolute inset-0 -z-10"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 0.4 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true }}
+        >
+          <div className="absolute top-0 left-1/3 w-96 h-96 bg-white/15 rounded-full filter blur-3xl"></div>
+          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-white/10 rounded-full filter blur-3xl"></div>
+        </motion.div>
+        <motion.div
+          className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
+          <motion.h2
+            className="text-4xl md:text-5xl font-bold mb-8 leading-tight"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            viewport={{ once: true }}
+          >
             Ready to Join Our Team?
-          </h2>
-          <p className="text-lg text-background/90 mb-8">
+          </motion.h2>
+          <motion.p
+            className="text-xl text-background/95 mb-10 font-light leading-relaxed"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
             Start your journey in renewable energy with AXIVOLT
-          </p>
-          <button className="bg-background text-cyan px-8 py-3 rounded-lg font-bold hover:bg-opacity-90 transition-all inline-flex items-center gap-2">
+          </motion.p>
+          <motion.button
+            whileHover={{
+              scale: 1.08,
+              boxShadow: "0 30px 60px rgba(0, 0, 0, 0.3)",
+            }}
+            whileTap={{ scale: 0.95 }}
+            className="bg-white text-cyan px-12 py-5 rounded-xl font-bold text-lg hover:bg-gray-50 transition-all shadow-xl inline-flex items-center gap-3"
+          >
             Explore Careers <ArrowRight className="w-5 h-5" />
-          </button>
-        </div>
+          </motion.button>
+        </motion.div>
       </section>
 
       <Footer />

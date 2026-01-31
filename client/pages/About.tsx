@@ -14,6 +14,7 @@ import {
 import { useSEO, addSchemaMarkup, SchemaMarkup } from "@/hooks/useSEO";
 import { useEffect, useState } from "react";
 import { X } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function About() {
   const navigate = useNavigate();
@@ -380,37 +381,59 @@ export default function About() {
       {/* Core Values Section */}
       <section
         id="core-values-section"
-        className={`py-20 bg-background transition-all duration-1000 ${
-          coreValuesInView
-            ? "opacity-100 translate-y-0"
-            : "opacity-0 translate-y-10"
-        }`}
+        className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white via-yellow-green-50/20 to-white"
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Our <span className="text-cyan">Core Values</span>
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            className="text-center mb-20"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
+              Our{" "}
+              <span className="bg-gradient-to-r from-cyan to-cyan/80 bg-clip-text text-transparent">
+                Core Values
+              </span>
             </h2>
-            <p className="text-black400 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-700 font-light max-w-2xl mx-auto">
               The principles that guide our mission and shape our commitment to
               sustainable energy
             </p>
-          </div>
+          </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             {coreValues.map((value, idx) => {
               const Icon = value.icon;
               return (
-                <div
+                <motion.div
                   key={idx}
-                  className="bg-card rounded-lg p-8 border border-border hover:border-cyan transition-all"
+                  className="bg-white rounded-2xl p-10 border border-cyan/20 hover:border-cyan/50 transition-all shadow-lg hover:shadow-2xl group relative overflow-hidden"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: idx * 0.1 }}
+                  viewport={{ once: true }}
+                  whileHover={{
+                    y: -8,
+                    boxShadow: "0 30px 60px rgba(0, 188, 212, 0.2)",
+                  }}
                 >
-                  <div className="w-12 h-12 bg-cyan/20 rounded-lg flex items-center justify-center mb-6">
-                    <Icon className="w-6 h-6 text-cyan" />
-                  </div>
-                  <h3 className="text-xl font-bold mb-3">{value.title}</h3>
-                  <p className="text-black400">{value.description}</p>
-                </div>
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-cyan/5 rounded-full -mr-16 -mt-16 group-hover:bg-cyan/10 transition-colors"></div>
+                  <motion.div
+                    className="w-14 h-14 bg-cyan/20 rounded-xl flex items-center justify-center mb-6 shadow-lg relative z-10"
+                    whileHover={{ scale: 1.15, rotate: 8 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                  >
+                    <Icon className="w-7 h-7 text-cyan" />
+                  </motion.div>
+                  <h3 className="text-xl font-bold mb-4 text-gray-900 relative z-10">
+                    {value.title}
+                  </h3>
+                  <p className="text-gray-700 leading-relaxed relative z-10">
+                    {value.description}
+                  </p>
+                </motion.div>
               );
             })}
           </div>
@@ -420,39 +443,56 @@ export default function About() {
       {/* Certifications & Affiliations */}
       <section
         id="certifications-section"
-        className={`py-20 bg-background/50 transition-all duration-1000 ${
-          certificationsInView
-            ? "opacity-100 translate-y-0"
-            : "opacity-0 translate-y-10"
-        }`}
+        className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-cyan-50/30 via-white to-white"
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            className="text-center mb-20"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
               Certifications & Affiliations
             </h2>
-            <p className="text-black400 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-700 font-light max-w-2xl mx-auto">
               Recognitions and partnerships that validate our commitment to
               quality, innovation, and clean energy leadership
             </p>
-          </div>
+          </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {certifications.map((cert, idx) => {
               const Icon = cert.icon;
               return (
-                <div
+                <motion.div
                   key={idx}
-                  className="bg-card rounded-lg p-8 border border-border hover:border-cyan transition-all text-center"
+                  className="bg-white rounded-2xl p-10 border border-cyan/20 hover:border-cyan/50 transition-all shadow-lg hover:shadow-2xl text-center group relative overflow-hidden"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: idx * 0.1 }}
+                  viewport={{ once: true }}
+                  whileHover={{
+                    y: -8,
+                    boxShadow: "0 30px 60px rgba(0, 188, 212, 0.2)",
+                  }}
                 >
-                  <div className="w-16 h-16 bg-cyan/20 rounded-lg flex items-center justify-center mb-6 mx-auto">
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-cyan/5 rounded-full -mr-16 -mt-16 group-hover:bg-cyan/10 transition-colors"></div>
+                  <motion.div
+                    className="w-16 h-16 bg-cyan/20 rounded-xl flex items-center justify-center mb-6 mx-auto shadow-lg relative z-10"
+                    whileHover={{ scale: 1.15, rotate: 8 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                  >
                     <Icon className="w-8 h-8 text-cyan" />
-                  </div>
-                  <h3 className="text-xl font-bold mb-3 text-cyan">
+                  </motion.div>
+                  <h3 className="text-xl font-bold mb-3 text-cyan relative z-10">
                     {cert.title}
                   </h3>
-                  <p className="text-black400">{cert.description}</p>
-                </div>
+                  <p className="text-gray-700 leading-relaxed relative z-10">
+                    {cert.description}
+                  </p>
+                </motion.div>
               );
             })}
           </div>
@@ -483,21 +523,54 @@ export default function About() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-cyan text-background">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+      <section className="py-28 bg-gradient-to-br from-cyan via-cyan to-cyan/90 text-background relative overflow-hidden">
+        <motion.div
+          className="absolute inset-0 -z-10"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 0.4 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true }}
+        >
+          <div className="absolute top-0 left-1/3 w-96 h-96 bg-white/15 rounded-full filter blur-3xl"></div>
+          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-white/10 rounded-full filter blur-3xl"></div>
+        </motion.div>
+        <motion.div
+          className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
+          <motion.h2
+            className="text-4xl md:text-5xl font-bold mb-8 leading-tight"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            viewport={{ once: true }}
+          >
             Partner With Us for a Sustainable Future
-          </h2>
-          <p className="text-lg text-background/90 mb-8">
+          </motion.h2>
+          <motion.p
+            className="text-xl text-background/95 mb-10 font-light leading-relaxed"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
             Let's work together to accelerate the renewable energy revolution
-          </p>
-          <button
+          </motion.p>
+          <motion.button
             onClick={() => navigate("/quote")}
-            className="bg-background text-cyan px-8 py-3 rounded-lg font-bold hover:bg-opacity-90 transition-all inline-flex items-center gap-2"
+            whileHover={{
+              scale: 1.08,
+              boxShadow: "0 30px 60px rgba(0, 0, 0, 0.3)",
+            }}
+            whileTap={{ scale: 0.95 }}
+            className="bg-white text-cyan px-12 py-5 rounded-xl font-bold text-lg hover:bg-gray-50 transition-all shadow-xl inline-flex items-center gap-3"
           >
             Start Your Journey <ArrowRight className="w-5 h-5" />
-          </button>
-        </div>
+          </motion.button>
+        </motion.div>
       </section>
 
       {/* Video Modal */}

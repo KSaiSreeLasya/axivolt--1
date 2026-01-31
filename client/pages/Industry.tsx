@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { ArrowRight, CheckCircle, Building2, Factory, Zap } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 
 export default function Industry() {
   const navigate = useNavigate();
@@ -127,80 +128,142 @@ export default function Industry() {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden pt-20 md:pt-32 pb-20">
+      <section className="relative overflow-hidden bg-gradient-to-b from-white via-blue-50/40 to-white pt-24 md:pt-40 pb-20">
+        <motion.div
+          className="absolute inset-0 -z-10"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 0.7 }}
+          transition={{ duration: 1.5, ease: "easeOut" }}
+        >
+          <div className="absolute top-0 left-1/4 w-96 h-96 bg-cyan/15 rounded-full filter blur-3xl"></div>
+          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-yellow-green/15 rounded-full filter blur-3xl"></div>
+        </motion.div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <p className="text-cyan text-sm uppercase tracking-widest mb-4">
+          <motion.div
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <motion.p
+              className="text-cyan text-sm uppercase tracking-widest mb-4 font-semibold"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+            >
               Industry-Specific Solutions
-            </p>
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
+            </motion.p>
+            <motion.h1
+              className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight text-gray-900 tracking-tight"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
               Tailored Renewable Energy{" "}
-              <span className="text-cyan">Solutions</span> for Every Industry
-            </h1>
-            <p className="text-lg text-black400 max-w-2xl mx-auto">
+              <span className="bg-gradient-to-r from-cyan to-cyan/80 bg-clip-text text-transparent">
+                Solutions
+              </span>{" "}
+              for Every Industry
+            </motion.h1>
+            <motion.p
+              className="text-xl text-gray-700 leading-relaxed font-light max-w-2xl mx-auto"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+            >
               From commercial offices to manufacturing plants, healthcare
               facilities to government institutions, we deliver customized
               renewable energy solutions that maximize efficiency and
               profitability across all sectors.
-            </p>
-          </div>
+            </motion.p>
+          </motion.div>
         </div>
       </section>
 
       {/* Industries Grid */}
-      <section className="py-20 bg-background/50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-cyan-50/30 via-white to-white">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            className="text-center mb-20"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
               Industries We Serve
             </h2>
-            <p className="text-black400 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-700 font-light max-w-2xl mx-auto">
               Proven expertise across diverse sectors with customized solutions
               designed for your specific needs
             </p>
-          </div>
+          </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             {industries.map((industry, index) => {
               const Icon = industry.icon;
               return (
-                <div
+                <motion.div
                   key={index}
-                  className="bg-card rounded-lg p-8 border border-border hover:border-cyan transition-all"
+                  className="bg-white rounded-2xl p-10 border border-cyan/20 hover:border-cyan/50 transition-all shadow-lg hover:shadow-2xl group relative overflow-hidden"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  whileHover={{
+                    y: -8,
+                    boxShadow: "0 30px 60px rgba(0, 188, 212, 0.2)",
+                  }}
                 >
-                  <div
-                    className={`w-12 h-12 ${industry.color} rounded-lg flex items-center justify-center mb-6`}
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-cyan/5 rounded-full -mr-16 -mt-16 group-hover:bg-cyan/10 transition-colors"></div>
+                  <motion.div
+                    className={`w-14 h-14 ${industry.color} rounded-xl flex items-center justify-center mb-6 shadow-lg relative z-10 border-2 border-white`}
+                    whileHover={{ scale: 1.15, rotate: 8 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 10 }}
                   >
-                    <Icon className={`w-6 h-6 ${industry.iconColor}`} />
-                  </div>
-                  <h3 className="text-xl font-bold mb-3">{industry.title}</h3>
-                  <p className="text-black400 mb-6">{industry.description}</p>
+                    <Icon className={`w-7 h-7 ${industry.iconColor}`} />
+                  </motion.div>
+                  <h3 className="text-2xl font-bold mb-4 text-gray-900 relative z-10">
+                    {industry.title}
+                  </h3>
+                  <p className="text-gray-700 mb-6 leading-relaxed relative z-10">
+                    {industry.description}
+                  </p>
 
                   {/* Stats */}
-                  <div className="grid grid-cols-3 gap-4 mb-8 py-6 border-y border-border/50">
+                  <div className="grid grid-cols-3 gap-4 mb-8 py-6 border-y border-gray-200 relative z-10">
                     {industry.stats.map((stat, idx) => (
-                      <div key={idx} className="text-center">
-                        <p className="text-cyan font-bold text-lg">
+                      <motion.div
+                        key={idx}
+                        className="text-center"
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.4, delay: 0.2 + idx * 0.1 }}
+                        viewport={{ once: true }}
+                      >
+                        <p className="text-cyan font-bold text-2xl">
                           {stat.value}
                         </p>
-                        <p className="text-xs text-black400">{stat.label}</p>
-                      </div>
+                        <p className="text-xs text-gray-600 font-medium">
+                          {stat.label}
+                        </p>
+                      </motion.div>
                     ))}
                   </div>
 
                   {/* Benefits */}
-                  <ul className="space-y-2">
+                  <ul className="space-y-3 relative z-10">
                     {industry.benefits.map((benefit, idx) => (
                       <li
                         key={idx}
-                        className="flex items-center gap-2 text-sm text-black300"
+                        className="flex items-start gap-3 text-gray-700 font-medium"
                       >
-                        <CheckCircle className="w-4 h-4 text-cyan flex-shrink-0" />
+                        <CheckCircle className="w-5 h-5 text-cyan flex-shrink-0 mt-0.5" />
                         {benefit}
                       </li>
                     ))}
                   </ul>
-                </div>
+                </motion.div>
               );
             })}
           </div>
@@ -208,15 +271,24 @@ export default function Industry() {
       </section>
 
       {/* Why Choose AXIVOLT */}
-      <section className="py-20 bg-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Why Choose AXIVOLT for Your Industry
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white via-yellow-green-50/20 to-white">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            className="text-center mb-20"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
+              Why Choose AXIVOLT
             </h2>
-          </div>
+            <p className="text-xl text-gray-700 font-light">
+              Industry expertise and proven results
+            </p>
+          </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
             {[
               {
                 title: "Industry Expertise",
@@ -239,37 +311,80 @@ export default function Industry() {
                   "Ongoing monitoring and optimization for maximum performance",
               },
             ].map((item, idx) => (
-              <div
+              <motion.div
                 key={idx}
-                className="bg-card rounded-lg p-6 border border-border"
+                className="bg-white rounded-2xl p-10 border border-cyan/20 hover:border-cyan/50 transition-all shadow-lg hover:shadow-2xl"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: idx * 0.1 }}
+                viewport={{ once: true }}
+                whileHover={{
+                  y: -8,
+                  boxShadow: "0 25px 50px rgba(0, 188, 212, 0.2)",
+                }}
               >
-                <h3 className="text-lg font-bold mb-3 text-cyan">
+                <h3 className="text-xl font-bold mb-4 text-cyan">
                   {item.title}
                 </h3>
-                <p className="text-black400 text-sm">{item.description}</p>
-              </div>
+                <p className="text-gray-700 leading-relaxed">
+                  {item.description}
+                </p>
+              </motion.div>
             ))}
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-cyan text-background">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+      <section className="py-28 bg-gradient-to-br from-cyan via-cyan to-cyan/90 text-background relative overflow-hidden">
+        <motion.div
+          className="absolute inset-0 -z-10"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 0.4 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true }}
+        >
+          <div className="absolute top-0 left-1/3 w-96 h-96 bg-white/15 rounded-full filter blur-3xl"></div>
+          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-white/10 rounded-full filter blur-3xl"></div>
+        </motion.div>
+        <motion.div
+          className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
+          <motion.h2
+            className="text-4xl md:text-5xl font-bold mb-8 leading-tight"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            viewport={{ once: true }}
+          >
             Ready to Transform Your Industry
-          </h2>
-          <p className="text-lg text-background/90 mb-8">
+          </motion.h2>
+          <motion.p
+            className="text-xl text-background/95 mb-10 font-light leading-relaxed"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
             Let's create a customized renewable energy solution for your
             organization
-          </p>
-          <button
+          </motion.p>
+          <motion.button
             onClick={() => navigate("/contact")}
-            className="bg-background text-cyan px-8 py-3 rounded-lg font-bold hover:bg-opacity-90 transition-all inline-flex items-center gap-2"
+            whileHover={{
+              scale: 1.08,
+              boxShadow: "0 30px 60px rgba(0, 0, 0, 0.3)",
+            }}
+            whileTap={{ scale: 0.95 }}
+            className="bg-white text-cyan px-12 py-5 rounded-xl font-bold text-lg hover:bg-gray-50 transition-all shadow-xl inline-flex items-center gap-3"
           >
             Get Industry Assessment <ArrowRight className="w-5 h-5" />
-          </button>
-        </div>
+          </motion.button>
+        </motion.div>
       </section>
 
       <Footer />

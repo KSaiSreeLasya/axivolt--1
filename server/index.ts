@@ -13,22 +13,6 @@ export function createServer() {
   app.use(express.json());
   app.use(express.urlencoded({ extended: true }));
 
-  // 301 redirect from old domain to new domain
-  app.use((req, res, next) => {
-    const host = req.get("host") || "";
-    const hostWithoutPort = host.split(":")[0];
-
-    // Match both www.axisogreen.in and axisogreen.in
-    if (
-      hostWithoutPort === "axisogreen.in" ||
-      hostWithoutPort === "www.axisogreen.in"
-    ) {
-      const newUrl = `https://www.axivolt.in${req.originalUrl}`;
-      return res.redirect(301, newUrl);
-    }
-    next();
-  });
-
   // Example API routes
   app.get("/api/ping", (_req, res) => {
     const ping = process.env.PING_MESSAGE ?? "ping";

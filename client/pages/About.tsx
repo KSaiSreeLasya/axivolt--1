@@ -35,12 +35,12 @@ export default function About() {
         description:
           "Leading solar energy company providing comprehensive renewable energy solutions",
         url: typeof window !== "undefined" ? window.location.origin : "",
-        phone: "+91-XXXX-XXXXX",
+        phone: "+91 90634 47838",
         address: {
-          streetAddress: "Hyderabad",
+          streetAddress: "Plot No. 101, Miyoshi Residency, Sri Nagar Colony, Miyapur",
           addressLocality: "Hyderabad",
           addressRegion: "Telangana",
-          postalCode: "500000",
+          postalCode: "500049",
           addressCountry: "India",
         },
         sameAs: [],

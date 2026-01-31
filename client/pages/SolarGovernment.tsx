@@ -158,7 +158,7 @@ export default function SolarGovernment() {
             From tender preparation to operations, we deliver scalable and
             compliant solar solutions for the public sector.
           </p>
-          <button className="bg-background text-cyan px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition-all">
+          <button onClick={() => navigate('/quote')} className="bg-background text-cyan px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition-all">
             Get Started
           </button>
         </div>

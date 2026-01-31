@@ -400,8 +400,8 @@ export default function About() {
               whileHover={{ scale: 1.02 }}
             >
               <motion.img
-                src="https://images.unsplash.com/photo-1466611653022-2f88e537e94f?w=600&h=400&fit=crop"
-                alt="Wind energy"
+                src="https://images.pexels.com/photos/9800003/pexels-photo-9800003.jpeg"
+                alt="Solar panels reflecting sunlight showcasing renewable energy technology"
                 className="w-full h-full object-cover group-hover:brightness-110 transition-all duration-300"
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.3 }}

@@ -44,7 +44,7 @@ export default function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur-md border-b border-border shadow-sm">
+    <header className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur-md border-b border-cyan/20 shadow-md">
       <div className="max-w-full mx-auto px-6 lg:px-12">
         <div className="flex items-center h-32 gap-4">
           {/* Logo and Brand */}
@@ -52,16 +52,23 @@ export default function Header() {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
+            whileHover={{ scale: 1.02 }}
           >
             <Link
               to="/"
-              className="flex items-center gap-3 group flex-shrink-0 hover:opacity-80 transition-opacity"
+              className="flex items-center gap-3 group flex-shrink-0 relative"
             >
-              <img
+              <motion.img
                 src="https://cdn.builder.io/api/v1/image/assets%2Ffe5527c1828944a38faa27a1f5c6efe7%2F00fa53301075421e90acc8403136e6ca?format=webp&width=200&height=300"
                 alt="AXIVOLT Logo"
-                className="h-24 w-auto hover:scale-105 transition-transform duration-300"
+                className="h-24 w-auto"
+                whileHover={{ scale: 1.1 }}
+                transition={{ type: "spring", stiffness: 400, damping: 10 }}
               />
+              <motion.div
+                className="absolute inset-0 -z-10 rounded-lg blur-lg opacity-0 group-hover:opacity-100 transition-opacity"
+                style={{ background: "linear-gradient(135deg, rgba(0, 188, 212, 0.2), rgba(163, 230, 53, 0.2))" }}
+              ></motion.div>
             </Link>
           </motion.div>
 

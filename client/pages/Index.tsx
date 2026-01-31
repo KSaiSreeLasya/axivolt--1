@@ -173,15 +173,24 @@ export default function Index() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.9 }}
               >
-                <motion.div whileHover={{ scale: 1.05 }} transition={{ type: "spring", stiffness: 400 }}>
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ type: "spring", stiffness: 400 }}
+                >
                   <p className="text-3xl font-bold text-cyan">500k</p>
                   <p className="text-sm text-black">tons CO₂ saved</p>
                 </motion.div>
-                <motion.div whileHover={{ scale: 1.05 }} transition={{ type: "spring", stiffness: 400 }}>
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ type: "spring", stiffness: 400 }}
+                >
                   <p className="text-3xl font-bold text-yellow-green">350+</p>
                   <p className="text-sm text-black">projects worldwide</p>
                 </motion.div>
-                <motion.div whileHover={{ scale: 1.05 }} transition={{ type: "spring", stiffness: 400 }}>
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ type: "spring", stiffness: 400 }}
+                >
                   <p className="text-3xl font-bold text-cyan">Global</p>
                   <p className="text-sm text-black">presence</p>
                 </motion.div>
@@ -195,7 +204,10 @@ export default function Index() {
               >
                 <motion.button
                   onClick={() => navigate("/quote")}
-                  whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(0, 188, 212, 0.3)" }}
+                  whileHover={{
+                    scale: 1.05,
+                    boxShadow: "0 20px 40px rgba(0, 188, 212, 0.3)",
+                  }}
                   whileTap={{ scale: 0.95 }}
                   className="bg-cyan text-white px-8 py-3 rounded-lg font-bold text-lg hover:bg-opacity-90 transition-all flex items-center justify-center gap-2 shadow-lg"
                 >
@@ -203,7 +215,10 @@ export default function Index() {
                 </motion.button>
                 <motion.button
                   onClick={() => navigate("/solutions")}
-                  whileHover={{ scale: 1.05, backgroundColor: "rgba(0, 188, 212, 0.1)" }}
+                  whileHover={{
+                    scale: 1.05,
+                    backgroundColor: "rgba(0, 188, 212, 0.1)",
+                  }}
                   whileTap={{ scale: 0.95 }}
                   className="border-2 border-cyan text-cyan px-8 py-3 rounded-lg font-bold text-lg hover:bg-cyan/10 transition-all"
                 >
@@ -263,7 +278,10 @@ export default function Index() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0 }}
               viewport={{ once: true }}
-              whileHover={{ y: -5, boxShadow: "0 20px 40px rgba(0, 188, 212, 0.15)" }}
+              whileHover={{
+                y: -5,
+                boxShadow: "0 20px 40px rgba(0, 188, 212, 0.15)",
+              }}
               className="bg-card rounded-xl p-8 border border-border hover:border-cyan/50 transition-all"
             >
               <AnimatedCounter
@@ -278,7 +296,10 @@ export default function Index() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
               viewport={{ once: true }}
-              whileHover={{ y: -5, boxShadow: "0 20px 40px rgba(205, 210, 40, 0.15)" }}
+              whileHover={{
+                y: -5,
+                boxShadow: "0 20px 40px rgba(205, 210, 40, 0.15)",
+              }}
               className="bg-card rounded-xl p-8 border border-border hover:border-yellow-green/50 transition-all"
             >
               <AnimatedCounter
@@ -293,7 +314,10 @@ export default function Index() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
-              whileHover={{ y: -5, boxShadow: "0 20px 40px rgba(0, 188, 212, 0.15)" }}
+              whileHover={{
+                y: -5,
+                boxShadow: "0 20px 40px rgba(0, 188, 212, 0.15)",
+              }}
               className="bg-card rounded-xl p-8 border border-border hover:border-cyan/50 transition-all"
             >
               <AnimatedCounter
@@ -308,7 +332,10 @@ export default function Index() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
               viewport={{ once: true }}
-              whileHover={{ y: -5, boxShadow: "0 20px 40px rgba(205, 210, 40, 0.15)" }}
+              whileHover={{
+                y: -5,
+                boxShadow: "0 20px 40px rgba(205, 210, 40, 0.15)",
+              }}
               className="bg-card rounded-xl p-8 border border-border hover:border-yellow-green/50 transition-all"
             >
               <AnimatedCounter
@@ -329,7 +356,10 @@ export default function Index() {
           >
             <motion.button
               onClick={() => navigate("/contact")}
-              whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(205, 210, 40, 0.3)" }}
+              whileHover={{
+                scale: 1.05,
+                boxShadow: "0 20px 40px rgba(205, 210, 40, 0.3)",
+              }}
               whileTap={{ scale: 0.95 }}
               className="bg-yellow-green text-background px-8 py-3 rounded-full font-semibold hover:bg-opacity-90 transition-all shadow-lg"
             >
@@ -340,7 +370,10 @@ export default function Index() {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-20 bg-gradient-to-b from-white via-yellow-green-50/20 to-white">
+      <section
+        id="services"
+        className="py-20 bg-gradient-to-b from-white via-yellow-green-50/20 to-white"
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -365,7 +398,10 @@ export default function Index() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0 }}
               viewport={{ once: true }}
-              whileHover={{ y: -10, boxShadow: "0 30px 60px rgba(255, 153, 0, 0.2)" }}
+              whileHover={{
+                y: -10,
+                boxShadow: "0 30px 60px rgba(255, 153, 0, 0.2)",
+              }}
               className="bg-card rounded-xl p-8 border border-border hover:border-cyan/50 transition-all group"
             >
               <motion.div
@@ -395,7 +431,10 @@ export default function Index() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
               viewport={{ once: true }}
-              whileHover={{ y: -10, boxShadow: "0 30px 60px rgba(59, 130, 246, 0.2)" }}
+              whileHover={{
+                y: -10,
+                boxShadow: "0 30px 60px rgba(59, 130, 246, 0.2)",
+              }}
               className="bg-card rounded-xl p-8 border border-border hover:border-cyan/50 transition-all group"
             >
               <motion.div
@@ -425,7 +464,10 @@ export default function Index() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
-              whileHover={{ y: -10, boxShadow: "0 30px 60px rgba(34, 197, 94, 0.2)" }}
+              whileHover={{
+                y: -10,
+                boxShadow: "0 30px 60px rgba(34, 197, 94, 0.2)",
+              }}
               className="bg-card rounded-xl p-8 border border-border hover:border-cyan/50 transition-all group"
             >
               <motion.div
@@ -498,7 +540,10 @@ export default function Index() {
           >
             <motion.button
               onClick={() => navigate("/contact")}
-              whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(0, 0, 0, 0.2)" }}
+              whileHover={{
+                scale: 1.05,
+                boxShadow: "0 20px 40px rgba(0, 0, 0, 0.2)",
+              }}
               whileTap={{ scale: 0.95 }}
               className="bg-background text-yellow-green px-8 py-3 rounded-lg font-bold hover:bg-opacity-90 transition-all shadow-lg"
             >
@@ -506,7 +551,10 @@ export default function Index() {
             </motion.button>
             <motion.button
               onClick={() => navigate("/solutions")}
-              whileHover={{ scale: 1.05, backgroundColor: "rgba(255, 255, 255, 0.2)" }}
+              whileHover={{
+                scale: 1.05,
+                backgroundColor: "rgba(255, 255, 255, 0.2)",
+              }}
               whileTap={{ scale: 0.95 }}
               className="border-2 border-background text-background px-8 py-3 rounded-lg font-bold hover:bg-background/10 transition-all"
             >
@@ -517,7 +565,10 @@ export default function Index() {
       </section>
 
       {/* Why Choose Section */}
-      <section id="process" className="py-20 bg-gradient-to-b from-cyan-50/30 via-white to-white">
+      <section
+        id="process"
+        className="py-20 bg-gradient-to-b from-cyan-50/30 via-white to-white"
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -580,7 +631,10 @@ export default function Index() {
 
               <motion.button
                 onClick={() => navigate("/solutions")}
-                whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(0, 188, 212, 0.3)" }}
+                whileHover={{
+                  scale: 1.05,
+                  boxShadow: "0 20px 40px rgba(0, 188, 212, 0.3)",
+                }}
                 whileTap={{ scale: 0.95 }}
                 className="bg-cyan text-white px-8 py-3 rounded-lg font-bold hover:bg-opacity-90 transition-all inline-flex items-center gap-2 shadow-lg"
               >
@@ -591,9 +645,17 @@ export default function Index() {
             <div className="grid grid-cols-2 gap-6">
               {[
                 { value: "99.2%", label: "System Uptime", color: "cyan" },
-                { value: "500+", label: "Happy Clients", color: "yellow-green" },
+                {
+                  value: "500+",
+                  label: "Happy Clients",
+                  color: "yellow-green",
+                },
                 { value: "10000", label: "MWh Generated", color: "cyan" },
-                { value: "24/7", label: "Support Available", color: "yellow-green" },
+                {
+                  value: "24/7",
+                  label: "Support Available",
+                  color: "yellow-green",
+                },
               ].map((stat, index) => (
                 <motion.div
                   key={index}
@@ -735,7 +797,10 @@ export default function Index() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
                 viewport={{ once: true }}
-                whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(0, 188, 212, 0.3)" }}
+                whileHover={{
+                  scale: 1.05,
+                  boxShadow: "0 20px 40px rgba(0, 188, 212, 0.3)",
+                }}
                 whileTap={{ scale: 0.95 }}
                 className="bg-cyan text-white px-8 py-3 rounded-lg font-bold hover:bg-opacity-90 transition-all inline-flex items-center gap-2 shadow-lg"
               >
@@ -762,7 +827,10 @@ export default function Index() {
       </section>
 
       {/* Final CTA Section */}
-      <section id="contact" className="py-20 bg-gradient-to-b from-yellow-green to-yellow-green/90 text-background relative overflow-hidden">
+      <section
+        id="contact"
+        className="py-20 bg-gradient-to-b from-yellow-green to-yellow-green/90 text-background relative overflow-hidden"
+      >
         <motion.div
           className="absolute inset-0 -z-10"
           initial={{ opacity: 0 }}
@@ -838,7 +906,10 @@ export default function Index() {
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.6 }}
               viewport={{ once: true }}
-              whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(0, 0, 0, 0.2)" }}
+              whileHover={{
+                scale: 1.05,
+                boxShadow: "0 20px 40px rgba(0, 0, 0, 0.2)",
+              }}
               whileTap={{ scale: 0.95 }}
               className="bg-background text-yellow-green px-8 py-3 rounded-lg font-bold hover:bg-opacity-90 transition-all shadow-lg"
             >

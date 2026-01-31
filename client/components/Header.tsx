@@ -67,7 +67,12 @@ export default function Header() {
 
           {/* Navigation - Centered */}
           <nav className="hidden md:flex items-center gap-8 flex-1 justify-center">
-            <motion.div custom={0} variants={navVariants} initial="hidden" animate="visible">
+            <motion.div
+              custom={0}
+              variants={navVariants}
+              initial="hidden"
+              animate="visible"
+            >
               <Link
                 to="/"
                 className="text-sm font-medium text-cyan hover:text-yellow-green transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-yellow-green after:transition-all after:duration-300 hover:after:w-full"
@@ -125,7 +130,8 @@ export default function Header() {
                         Solar
                         <motion.div
                           animate={{
-                            rotate: activeSolutionSubmenu === "solar" ? -180 : 0,
+                            rotate:
+                              activeSolutionSubmenu === "solar" ? -180 : 0,
                           }}
                           transition={{ duration: 0.3 }}
                         >
@@ -248,7 +254,12 @@ export default function Header() {
               )}
             </motion.div>
 
-            <motion.div custom={3} variants={navVariants} initial="hidden" animate="visible">
+            <motion.div
+              custom={3}
+              variants={navVariants}
+              initial="hidden"
+              animate="visible"
+            >
               <Link
                 to="/industry"
                 className="text-sm font-medium text-cyan hover:text-yellow-green transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-yellow-green after:transition-all after:duration-300 hover:after:w-full"
@@ -257,7 +268,12 @@ export default function Header() {
               </Link>
             </motion.div>
 
-            <motion.div custom={4} variants={navVariants} initial="hidden" animate="visible">
+            <motion.div
+              custom={4}
+              variants={navVariants}
+              initial="hidden"
+              animate="visible"
+            >
               <Link
                 to="/careers"
                 className="text-sm font-medium text-cyan hover:text-yellow-green transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-yellow-green after:transition-all after:duration-300 hover:after:w-full"
@@ -266,7 +282,12 @@ export default function Header() {
               </Link>
             </motion.div>
 
-            <motion.div custom={5} variants={navVariants} initial="hidden" animate="visible">
+            <motion.div
+              custom={5}
+              variants={navVariants}
+              initial="hidden"
+              animate="visible"
+            >
               <Link
                 to="/about"
                 className="text-sm font-medium text-cyan hover:text-yellow-green transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-yellow-green after:transition-all after:duration-300 hover:after:w-full"

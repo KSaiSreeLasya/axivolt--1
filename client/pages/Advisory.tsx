@@ -150,7 +150,10 @@ export default function Advisory() {
                     className={`flex-1 bg-card rounded-lg p-6 border border-border hover:border-cyan/50 transition-all ${
                       item.align === "right" ? "ml-auto" : ""
                     }`}
-                    whileHover={{ y: -5, boxShadow: "0 20px 40px rgba(0, 188, 212, 0.15)" }}
+                    whileHover={{
+                      y: -5,
+                      boxShadow: "0 20px 40px rgba(0, 188, 212, 0.15)",
+                    }}
                   >
                     <h3 className="text-xl font-bold mb-2">{item.title}</h3>
                     <p className="text-black400">{item.desc}</p>
@@ -237,7 +240,10 @@ export default function Advisory() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  whileHover={{ y: -5, boxShadow: "0 20px 40px rgba(0, 188, 212, 0.15)" }}
+                  whileHover={{
+                    y: -5,
+                    boxShadow: "0 20px 40px rgba(0, 188, 212, 0.15)",
+                  }}
                 >
                   <motion.div
                     className={`w-12 h-12 ${service.color} rounded-lg flex items-center justify-center mb-6`}
@@ -307,7 +313,10 @@ export default function Advisory() {
           >
             <motion.button
               onClick={() => navigate("/contact")}
-              whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(0, 0, 0, 0.2)" }}
+              whileHover={{
+                scale: 1.05,
+                boxShadow: "0 20px 40px rgba(0, 0, 0, 0.2)",
+              }}
               whileTap={{ scale: 0.95 }}
               className="bg-background text-cyan px-8 py-3 rounded-lg font-bold hover:bg-opacity-90 transition-all shadow-lg inline-flex items-center justify-center gap-2"
             >
@@ -315,7 +324,10 @@ export default function Advisory() {
             </motion.button>
             <motion.button
               onClick={() => navigate("/quote")}
-              whileHover={{ scale: 1.05, backgroundColor: "rgba(255, 255, 255, 0.2)" }}
+              whileHover={{
+                scale: 1.05,
+                backgroundColor: "rgba(255, 255, 255, 0.2)",
+              }}
               whileTap={{ scale: 0.95 }}
               className="border-2 border-background text-background px-8 py-3 rounded-lg font-bold hover:bg-background/10 transition-all"
             >

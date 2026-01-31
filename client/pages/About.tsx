@@ -28,24 +28,123 @@ export default function About() {
   });
 
   useEffect(() => {
-    // Add LocalBusiness schema markup
+    // Add LocalBusiness schema and FAQ markup
+    const baseUrl = typeof window !== "undefined" ? window.location.origin : "";
+
+    // LocalBusiness schema
     addSchemaMarkup(
       SchemaMarkup.localBusiness({
-        name: "AXIVOLT",
+        name: "AXIVOLT Green Energy",
         description:
-          "Leading solar energy company providing comprehensive renewable energy solutions",
-        url: typeof window !== "undefined" ? window.location.origin : "",
-        phone: "+91-XXXX-XXXXX",
+          "Leading solar energy company providing comprehensive renewable energy solutions. 500+ completed projects with 4.9-star rating.",
+        url: baseUrl,
+        phone: "+91 9063447838",
+        image: `${baseUrl}/logo.png`,
         address: {
-          streetAddress: "Hyderabad",
+          streetAddress:
+            "Plot No. 101, Miyoshi Residency, Sri Nagar Colony, Miyapur",
           addressLocality: "Hyderabad",
           addressRegion: "Telangana",
-          postalCode: "500000",
+          postalCode: "500049",
           addressCountry: "India",
         },
-        sameAs: [],
+        sameAs: [
+          "https://www.facebook.com/AxivoltGreenEnergy/",
+          "https://www.linkedin.com/company/axivoltgreen/",
+          "https://www.instagram.com/axivoltgreenenergy/",
+        ],
       }),
     );
+
+    // Add FAQ schema for solar installations
+    const solarFaqs = [
+      {
+        question: "How much does a residential solar panel installation cost?",
+        answer:
+          "The cost of residential solar panel installations varies based on your system size, location, and roof type. Typical systems range from ₹2-5 lakhs for 3-5 kW systems. We provide free consultations and personalized quotes based on your energy needs. We also assist with government subsidies and financing options.",
+      },
+      {
+        question: "What is the payback period for solar panels?",
+        answer:
+          "Most residential solar systems in India have a payback period of 5-7 years, depending on electricity consumption and system size. After the payback period, you enjoy 20+ years of minimal-cost electricity. With government incentives and net metering, the payback can be even faster.",
+      },
+      {
+        question: "How long do solar panels last?",
+        answer:
+          "Quality solar panels typically last 25-30 years or more. Most manufacturers offer 25-year performance warranties. Our systems are designed for durability in various weather conditions with minimal maintenance required.",
+      },
+      {
+        question: "Do solar panels work in cloudy weather or at night?",
+        answer:
+          "Solar panels produce electricity during daylight hours, even on cloudy days, though at reduced efficiency. They don't generate power at night. For 24/7 power supply, consider adding battery storage systems which we specialize in.",
+      },
+      {
+        question: "What maintenance do solar panels require?",
+        answer:
+          "Solar panels require minimal maintenance - typically just occasional cleaning to remove dust and debris. We offer comprehensive O&M (operations and maintenance) packages to ensure optimal performance and longevity.",
+      },
+      {
+        question:
+          "Are there government subsidies available for solar installation?",
+        answer:
+          "Yes! India offers various subsidies and incentives including MNRE subsidies, tax benefits under Section 80, accelerated depreciation, and state-specific programs. Our advisory team helps you navigate and maximize available incentives.",
+      },
+      {
+        question: "How much space do I need for a solar installation?",
+        answer:
+          "A typical 5 kW residential system requires about 250-300 sq ft of roof space (or ground area). We conduct site assessments to determine the optimal design for your available space and energy needs.",
+      },
+      {
+        question:
+          "What happens to my electricity bills after solar installation?",
+        answer:
+          "With grid-connected solar and net metering, you can sell excess electricity back to the grid and receive credits on your bill. Most users see 70-90% reduction in electricity bills, depending on system size and consumption.",
+      },
+      {
+        question: "Can I use solar panels with my existing electrical system?",
+        answer:
+          "Yes! Our systems are designed to integrate seamlessly with your existing electrical setup. Grid-connected systems work alongside your regular connection, while off-grid systems operate independently.",
+      },
+      {
+        question: "How do I monitor my solar system's performance?",
+        answer:
+          "All our systems come with real-time monitoring through mobile apps and web dashboards. You can track daily generation, consumption, savings, and system health from anywhere.",
+      },
+    ];
+
+    // Create FAQ schema
+    const faqSchema = SchemaMarkup.faq(solarFaqs);
+
+    // Merge LocalBusiness and FAQ schemas
+    const mergedSchema = {
+      "@context": "https://schema.org",
+      "@graph": [
+        SchemaMarkup.localBusiness({
+          name: "AXIVOLT Green Energy",
+          description:
+            "Leading solar energy company providing comprehensive renewable energy solutions. 500+ completed projects with 4.9-star rating.",
+          url: baseUrl,
+          phone: "+91 9063447838",
+          image: `${baseUrl}/logo.png`,
+          address: {
+            streetAddress:
+              "Plot No. 101, Miyoshi Residency, Sri Nagar Colony, Miyapur",
+            addressLocality: "Hyderabad",
+            addressRegion: "Telangana",
+            postalCode: "500049",
+            addressCountry: "India",
+          },
+          sameAs: [
+            "https://www.facebook.com/AxivoltGreenEnergy/",
+            "https://www.linkedin.com/company/axivoltgreen/",
+            "https://www.instagram.com/axivoltgreenenergy/",
+          ],
+        }),
+        faqSchema,
+      ],
+    };
+
+    addSchemaMarkup(mergedSchema);
   }, []);
   const coreValues = [
     {

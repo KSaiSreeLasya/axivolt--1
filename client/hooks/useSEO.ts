@@ -206,4 +206,98 @@ export const SchemaMarkup = {
     ...(data.category && { category: data.category }),
     ...(data.url && { url: data.url }),
   }),
+
+  localBusinessWithRatings: (data: {
+    name: string;
+    description: string;
+    url: string;
+    phone: string;
+    email?: string;
+    image?: string;
+    address: {
+      streetAddress: string;
+      addressLocality: string;
+      addressRegion: string;
+      postalCode: string;
+      addressCountry: string;
+    };
+    rating?: number;
+    reviewCount?: number;
+    ratingCount?: number;
+    priceRange?: string;
+    openingHours?: Array<{
+      dayOfWeek: string;
+      opens: string;
+      closes: string;
+    }>;
+    sameAs?: string[];
+  }) => ({
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    name: data.name,
+    description: data.description,
+    url: data.url,
+    telephone: data.phone,
+    ...(data.email && { email: data.email }),
+    ...(data.image && { image: data.image }),
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: data.address.streetAddress,
+      addressLocality: data.address.addressLocality,
+      addressRegion: data.address.addressRegion,
+      postalCode: data.address.postalCode,
+      addressCountry: data.address.addressCountry,
+    },
+    ...(data.rating && {
+      aggregateRating: {
+        "@type": "AggregateRating",
+        ratingValue: data.rating,
+        reviewCount: data.reviewCount || 0,
+        ratingCount: data.ratingCount || data.reviewCount || 0,
+      },
+    }),
+    ...(data.priceRange && { priceRange: data.priceRange }),
+    ...(data.openingHours && {
+      openingHoursSpecification: data.openingHours.map((hour) => ({
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: hour.dayOfWeek,
+        opens: hour.opens,
+        closes: hour.closes,
+      })),
+    }),
+    ...(data.sameAs && { sameAs: data.sameAs }),
+  }),
+
+  aggregateRating: (data: {
+    ratingValue: number;
+    reviewCount: number;
+    ratingCount?: number;
+    bestRating?: number;
+    worstRating?: number;
+  }) => ({
+    "@type": "AggregateRating",
+    ratingValue: data.ratingValue,
+    reviewCount: data.reviewCount,
+    ...(data.ratingCount && { ratingCount: data.ratingCount }),
+    ...(data.bestRating && { bestRating: data.bestRating }),
+    ...(data.worstRating && { worstRating: data.worstRating }),
+  }),
+
+  faq: (
+    faqs: Array<{
+      question: string;
+      answer: string;
+    }>,
+  ) => ({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  }),
 };

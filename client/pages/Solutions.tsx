@@ -2,8 +2,119 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { ArrowRight, Sun, Wind, Battery, Zap } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useSEO, addSchemaMarkup, SchemaMarkup } from "@/hooks/useSEO";
+import { useEffect } from "react";
 
 export default function Solutions() {
+  useSEO({
+    title:
+      "Renewable Energy Solutions | Solar, Wind, Storage, EV Charging | AXIVOLT",
+    description:
+      "AXIVOLT offers comprehensive renewable energy solutions including solar energy, wind power, energy storage, and EV charging infrastructure for residential, commercial, and government sectors.",
+    keywords:
+      "renewable energy solutions, solar energy, wind energy, energy storage, EV charging, renewable power generation, green energy solutions",
+    ogTitle: "Renewable Energy Solutions - AXIVOLT",
+    ogDescription:
+      "Explore our core energy solutions: Solar, Wind, Energy Storage, and EV Charging with proven results across all sectors.",
+    canonical: `${typeof window !== "undefined" ? window.location.origin : ""}/solutions`,
+  });
+
+  useEffect(() => {
+    const baseUrl = typeof window !== "undefined" ? window.location.origin : "";
+
+    // Add FAQ schema for renewable energy solutions
+    const solutionsFaqs = [
+      {
+        question: "What are renewable energy solutions?",
+        answer:
+          "Renewable energy solutions harness natural resources like sun, wind, and storage to generate clean electricity. AXIVOLT provides solar, wind, energy storage, and EV charging solutions tailored to residential, commercial, and government needs.",
+      },
+      {
+        question: "Which renewable energy solution is best for my business?",
+        answer:
+          "The best solution depends on your location, available space, energy consumption, and budget. Solar works everywhere with good sunlight, wind suits coastal/windy areas, and storage enhances any system. Our advisory team provides personalized recommendations.",
+      },
+      {
+        question: "Can I combine multiple renewable energy solutions?",
+        answer:
+          "Yes! Hybrid systems combining solar + storage, solar + wind, or all three are highly effective. This combination maximizes generation, provides 24/7 reliability, and optimizes your energy independence and savings.",
+      },
+      {
+        question: "What is energy storage and why do I need it?",
+        answer:
+          "Energy storage systems (batteries) store excess energy generated during peak production for use during low generation or high demand periods. This ensures 24/7 power availability, reduces grid dependency, and maximizes ROI of your renewable system.",
+      },
+      {
+        question:
+          "How do renewable energy solutions reduce my electricity costs?",
+        answer:
+          "Renewable systems generate free electricity from natural resources, eliminating fuel costs. Combined with net metering (selling excess power back to the grid) and government incentives, most users see 70-90% reduction in electricity bills.",
+      },
+      {
+        question: "What maintenance do renewable energy systems require?",
+        answer:
+          "Renewable systems require minimal maintenance. Solar panels need occasional cleaning, moving parts in wind systems need regular servicing, and batteries need periodic checks. We offer comprehensive O&M packages ensuring optimal performance.",
+      },
+      {
+        question: "How long does it take to install a renewable energy system?",
+        answer:
+          "Typical installation timelines: Residential solar (1-2 weeks), Commercial solar (2-4 weeks), Wind systems (3-6 months), Energy storage (1-2 weeks). Timeline depends on system complexity, permits, and site conditions.",
+      },
+      {
+        question: "Do renewable energy systems work during power cuts?",
+        answer:
+          "Grid-connected systems automatically shut down during outages for safety. To maintain power during cuts, add battery storage. Off-grid systems with batteries provide uninterrupted power even without grid connection.",
+      },
+      {
+        question: "What happens after 25 years when solar panels degrade?",
+        answer:
+          "Quality solar panels retain 80-85% efficiency after 25 years. They continue generating electricity beyond warranty periods, though at reduced capacity. Degradation is gradual and typically causes minimal impact on energy output.",
+      },
+      {
+        question: "Are there financing options for renewable energy systems?",
+        answer:
+          "Yes! We facilitate multiple financing options including loans, EMI schemes, MNRE subsidies, accelerated depreciation, and power purchase agreements. Our team helps identify the most cost-effective options for your situation.",
+      },
+    ];
+
+    // Create FAQ schema
+    const faqSchema = SchemaMarkup.faq(solutionsFaqs);
+
+    // Create merged schema with LocalBusiness and FAQ
+    const mergedSchema = {
+      "@context": "https://schema.org",
+      "@graph": [
+        SchemaMarkup.localBusinessWithRatings({
+          name: "AXIVOLT Green Energy",
+          description:
+            "Comprehensive renewable energy solutions provider offering solar, wind, energy storage, and EV charging infrastructure. 500+ completed projects with 4.9-star rating.",
+          url: baseUrl,
+          phone: "+91 9063447838",
+          email: "contact@axivolt.in",
+          image: `${baseUrl}/logo.png`,
+          address: {
+            streetAddress:
+              "Plot No. 101, Miyoshi Residency, Sri Nagar Colony, Miyapur",
+            addressLocality: "Hyderabad",
+            addressRegion: "Telangana",
+            postalCode: "500049",
+            addressCountry: "India",
+          },
+          rating: 4.9,
+          reviewCount: 70,
+          ratingCount: 70,
+          sameAs: [
+            "https://www.facebook.com/AxivoltGreenEnergy/",
+            "https://www.linkedin.com/company/axivoltgreen/",
+            "https://www.instagram.com/axivoltgreenenergy/",
+          ],
+        }),
+        faqSchema,
+      ],
+    };
+
+    addSchemaMarkup(mergedSchema);
+  }, []);
   const solutions = [
     {
       title: "Solar Energy",

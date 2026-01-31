@@ -107,26 +107,26 @@ export default function Index() {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-white via-blue-50/30 to-white pt-20 md:pt-32 pb-16">
+      <section className="relative overflow-hidden bg-gradient-to-b from-white via-blue-50/40 to-white pt-24 md:pt-40 pb-20">
         {/* Animated background elements */}
         <motion.div
           className="absolute inset-0 -z-10"
           initial={{ opacity: 0 }}
-          animate={{ opacity: 0.5 }}
+          animate={{ opacity: 0.7 }}
           transition={{ duration: 1.5, ease: "easeOut" }}
         >
-          <div className="absolute top-0 left-1/4 w-96 h-96 bg-cyan/10 rounded-full filter blur-3xl"></div>
-          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-yellow-green/10 rounded-full filter blur-3xl"></div>
+          <div className="absolute top-0 left-1/4 w-96 h-96 bg-cyan/15 rounded-full filter blur-3xl"></div>
+          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-yellow-green/15 rounded-full filter blur-3xl"></div>
         </motion.div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             {/* Left Content */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8 }}
-              className="space-y-8"
+              className="space-y-10"
             >
               <div>
                 <motion.div
@@ -134,9 +134,9 @@ export default function Index() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.2 }}
                 >
-                  <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4">
+                  <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 tracking-tight">
                     <motion.span
-                      className="text-cyan block"
+                      className="text-cyan block bg-gradient-to-r from-cyan to-cyan/80 bg-clip-text text-transparent"
                       initial={{ opacity: 0, x: -30 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.7, delay: 0.3 }}
@@ -144,7 +144,7 @@ export default function Index() {
                       Sustainable
                     </motion.span>
                     <motion.span
-                      className="text-gray-900 block"
+                      className="text-gray-900 block font-extrabold"
                       initial={{ opacity: 0, x: -30 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.7, delay: 0.5 }}
@@ -156,7 +156,7 @@ export default function Index() {
               </div>
 
               <motion.p
-                className="text-lg text-black leading-relaxed max-w-xl"
+                className="text-xl text-gray-700 leading-relaxed max-w-xl font-light"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.7 }}
@@ -168,36 +168,54 @@ export default function Index() {
 
               {/* Stats Preview */}
               <motion.div
-                className="flex gap-12 py-8"
+                className="flex gap-16 py-12 pt-4"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.9 }}
               >
                 <motion.div
-                  whileHover={{ scale: 1.05 }}
+                  whileHover={{ scale: 1.08, y: -5 }}
                   transition={{ type: "spring", stiffness: 400 }}
+                  className="group"
                 >
-                  <p className="text-3xl font-bold text-cyan">500k</p>
-                  <p className="text-sm text-black">tons CO₂ saved</p>
+                  <p className="text-4xl md:text-5xl font-bold text-cyan mb-2 group-hover:text-cyan/80 transition-colors">
+                    500k
+                  </p>
+                  <p className="text-base text-gray-600 font-medium">
+                    tons CO₂ saved
+                  </p>
+                  <div className="h-1 w-0 group-hover:w-12 bg-cyan transition-all duration-300 mt-3 rounded-full"></div>
                 </motion.div>
                 <motion.div
-                  whileHover={{ scale: 1.05 }}
+                  whileHover={{ scale: 1.08, y: -5 }}
                   transition={{ type: "spring", stiffness: 400 }}
+                  className="group"
                 >
-                  <p className="text-3xl font-bold text-yellow-green">350+</p>
-                  <p className="text-sm text-black">projects worldwide</p>
+                  <p className="text-4xl md:text-5xl font-bold text-yellow-green mb-2 group-hover:text-yellow-green/80 transition-colors">
+                    350+
+                  </p>
+                  <p className="text-base text-gray-600 font-medium">
+                    projects worldwide
+                  </p>
+                  <div className="h-1 w-0 group-hover:w-12 bg-yellow-green transition-all duration-300 mt-3 rounded-full"></div>
                 </motion.div>
                 <motion.div
-                  whileHover={{ scale: 1.05 }}
+                  whileHover={{ scale: 1.08, y: -5 }}
                   transition={{ type: "spring", stiffness: 400 }}
+                  className="group"
                 >
-                  <p className="text-3xl font-bold text-cyan">Global</p>
-                  <p className="text-sm text-black">presence</p>
+                  <p className="text-4xl md:text-5xl font-bold text-cyan mb-2 group-hover:text-cyan/80 transition-colors">
+                    Global
+                  </p>
+                  <p className="text-base text-gray-600 font-medium">
+                    presence
+                  </p>
+                  <div className="h-1 w-0 group-hover:w-12 bg-cyan transition-all duration-300 mt-3 rounded-full"></div>
                 </motion.div>
               </motion.div>
 
               <motion.div
-                className="flex flex-col sm:flex-row gap-4 pt-4"
+                className="flex flex-col sm:flex-row gap-6 pt-8"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 1.1 }}
@@ -206,10 +224,10 @@ export default function Index() {
                   onClick={() => navigate("/quote")}
                   whileHover={{
                     scale: 1.05,
-                    boxShadow: "0 20px 40px rgba(0, 188, 212, 0.3)",
+                    boxShadow: "0 25px 50px rgba(0, 188, 212, 0.35)",
                   }}
                   whileTap={{ scale: 0.95 }}
-                  className="bg-cyan text-white px-8 py-3 rounded-lg font-bold text-lg hover:bg-opacity-90 transition-all flex items-center justify-center gap-2 shadow-lg"
+                  className="bg-cyan text-white px-10 py-4 rounded-xl font-bold text-lg hover:bg-cyan/90 transition-all flex items-center justify-center gap-3 shadow-xl"
                 >
                   Get Started <ArrowRight className="w-5 h-5" />
                 </motion.button>
@@ -217,10 +235,11 @@ export default function Index() {
                   onClick={() => navigate("/solutions")}
                   whileHover={{
                     scale: 1.05,
-                    backgroundColor: "rgba(0, 188, 212, 0.1)",
+                    backgroundColor: "rgba(0, 188, 212, 0.15)",
+                    boxShadow: "0 15px 30px rgba(0, 188, 212, 0.2)",
                   }}
                   whileTap={{ scale: 0.95 }}
-                  className="border-2 border-cyan text-cyan px-8 py-3 rounded-lg font-bold text-lg hover:bg-cyan/10 transition-all"
+                  className="border-2 border-cyan text-cyan px-10 py-4 rounded-xl font-bold text-lg hover:bg-cyan/10 transition-all"
                 >
                   Learn More
                 </motion.button>
@@ -272,24 +291,29 @@ export default function Index() {
           >
             From Rooftops to Utility-Scale Projects
           </motion.p>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0 }}
               viewport={{ once: true }}
               whileHover={{
-                y: -5,
-                boxShadow: "0 20px 40px rgba(0, 188, 212, 0.15)",
+                y: -12,
+                boxShadow: "0 30px 60px rgba(0, 188, 212, 0.25)",
               }}
-              className="bg-card rounded-xl p-8 border border-border hover:border-cyan/50 transition-all"
+              className="bg-white rounded-2xl p-10 border border-cyan/20 hover:border-cyan/50 transition-all shadow-lg hover:shadow-2xl group"
             >
-              <AnimatedCounter
-                value={250}
-                suffix="MW"
-                className="text-3xl md:text-4xl font-bold text-cyan mb-2"
-              />
-              <p className="text-black text-sm">Total Capacity</p>
+              <div className="relative">
+                <AnimatedCounter
+                  value={250}
+                  suffix="MW"
+                  className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-cyan to-cyan/80 bg-clip-text text-transparent mb-3"
+                />
+              </div>
+              <p className="text-gray-700 text-base font-medium group-hover:text-gray-900 transition-colors">
+                Total Capacity
+              </p>
+              <div className="absolute top-0 right-0 w-20 h-20 bg-cyan/5 rounded-full -mr-10 -mt-10 group-hover:bg-cyan/10 transition-colors"></div>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -297,17 +321,22 @@ export default function Index() {
               transition={{ duration: 0.6, delay: 0.1 }}
               viewport={{ once: true }}
               whileHover={{
-                y: -5,
-                boxShadow: "0 20px 40px rgba(205, 210, 40, 0.15)",
+                y: -12,
+                boxShadow: "0 30px 60px rgba(205, 210, 40, 0.25)",
               }}
-              className="bg-card rounded-xl p-8 border border-border hover:border-yellow-green/50 transition-all"
+              className="bg-white rounded-2xl p-10 border border-yellow-green/20 hover:border-yellow-green/50 transition-all shadow-lg hover:shadow-2xl group"
             >
-              <AnimatedCounter
-                value={500}
-                suffix="+"
-                className="text-3xl md:text-4xl font-bold text-yellow-green mb-2"
-              />
-              <p className="text-black text-sm">Projects Completed</p>
+              <div className="relative">
+                <AnimatedCounter
+                  value={500}
+                  suffix="+"
+                  className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-yellow-green to-yellow-green/80 bg-clip-text text-transparent mb-3"
+                />
+              </div>
+              <p className="text-gray-700 text-base font-medium group-hover:text-gray-900 transition-colors">
+                Projects Completed
+              </p>
+              <div className="absolute top-0 right-0 w-20 h-20 bg-yellow-green/5 rounded-full -mr-10 -mt-10 group-hover:bg-yellow-green/10 transition-colors"></div>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -315,17 +344,22 @@ export default function Index() {
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
               whileHover={{
-                y: -5,
-                boxShadow: "0 20px 40px rgba(0, 188, 212, 0.15)",
+                y: -12,
+                boxShadow: "0 30px 60px rgba(0, 188, 212, 0.25)",
               }}
-              className="bg-card rounded-xl p-8 border border-border hover:border-cyan/50 transition-all"
+              className="bg-white rounded-2xl p-10 border border-cyan/20 hover:border-cyan/50 transition-all shadow-lg hover:shadow-2xl group"
             >
-              <AnimatedCounter
-                value={15}
-                suffix="+"
-                className="text-3xl md:text-4xl font-bold text-cyan mb-2"
-              />
-              <p className="text-black text-sm">Years Experience</p>
+              <div className="relative">
+                <AnimatedCounter
+                  value={15}
+                  suffix="+"
+                  className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-cyan to-cyan/80 bg-clip-text text-transparent mb-3"
+                />
+              </div>
+              <p className="text-gray-700 text-base font-medium group-hover:text-gray-900 transition-colors">
+                Years Experience
+              </p>
+              <div className="absolute top-0 right-0 w-20 h-20 bg-cyan/5 rounded-full -mr-10 -mt-10 group-hover:bg-cyan/10 transition-colors"></div>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -333,17 +367,22 @@ export default function Index() {
               transition={{ duration: 0.6, delay: 0.3 }}
               viewport={{ once: true }}
               whileHover={{
-                y: -5,
-                boxShadow: "0 20px 40px rgba(205, 210, 40, 0.15)",
+                y: -12,
+                boxShadow: "0 30px 60px rgba(205, 210, 40, 0.25)",
               }}
-              className="bg-card rounded-xl p-8 border border-border hover:border-yellow-green/50 transition-all"
+              className="bg-white rounded-2xl p-10 border border-yellow-green/20 hover:border-yellow-green/50 transition-all shadow-lg hover:shadow-2xl group"
             >
-              <AnimatedCounter
-                value={12}
-                suffix="+"
-                className="text-3xl md:text-4xl font-bold text-yellow-green mb-2"
-              />
-              <p className="text-black text-sm">Countries Served</p>
+              <div className="relative">
+                <AnimatedCounter
+                  value={12}
+                  suffix="+"
+                  className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-yellow-green to-yellow-green/80 bg-clip-text text-transparent mb-3"
+                />
+              </div>
+              <p className="text-gray-700 text-base font-medium group-hover:text-gray-900 transition-colors">
+                Countries Served
+              </p>
+              <div className="absolute top-0 right-0 w-20 h-20 bg-yellow-green/5 rounded-full -mr-10 -mt-10 group-hover:bg-yellow-green/10 transition-colors"></div>
             </motion.div>
           </div>
 
@@ -391,7 +430,7 @@ export default function Index() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {/* Service 1 - Orange Icon */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -399,29 +438,33 @@ export default function Index() {
               transition={{ duration: 0.6, delay: 0 }}
               viewport={{ once: true }}
               whileHover={{
-                y: -10,
-                boxShadow: "0 30px 60px rgba(255, 153, 0, 0.2)",
+                y: -15,
+                boxShadow: "0 40px 80px rgba(255, 153, 0, 0.25)",
               }}
-              className="bg-card rounded-xl p-8 border border-border hover:border-cyan/50 transition-all group"
+              className="bg-white rounded-2xl p-10 border border-orange-200/50 hover:border-orange-300 transition-all group shadow-lg hover:shadow-2xl relative overflow-hidden"
             >
+              <div className="absolute top-0 right-0 w-32 h-32 bg-orange-500/5 rounded-full -mr-16 -mt-16 group-hover:bg-orange-500/10 transition-colors"></div>
               <motion.div
-                className="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mb-6"
-                whileHover={{ scale: 1.2, rotate: 5 }}
+                className="w-20 h-20 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mb-8 shadow-lg relative z-10"
+                whileHover={{ scale: 1.15, rotate: 8 }}
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}
               >
-                <Sun className="w-8 h-8 text-white" />
+                <Sun className="w-10 h-10 text-white" />
               </motion.div>
-              <h3 className="text-xl font-bold mb-3">Rooftop Installations</h3>
-              <p className="text-black mb-6">
+              <h3 className="text-2xl font-bold mb-4 text-gray-900">
+                Rooftop Installations
+              </h3>
+              <p className="text-gray-700 mb-8 leading-relaxed">
                 Professional solar panel installations with minimal disruption.
                 Maximize your roof space efficiency.
               </p>
               <motion.a
                 href="#"
-                className="text-cyan text-sm font-medium hover:text-yellow-green transition-colors inline-flex items-center gap-1"
+                className="text-orange-600 font-semibold hover:text-orange-700 transition-colors inline-flex items-center gap-2 group/link"
                 whileHover={{ x: 5 }}
               >
-                Explore More →
+                Explore More{" "}
+                <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
               </motion.a>
             </motion.div>
 
@@ -432,29 +475,33 @@ export default function Index() {
               transition={{ duration: 0.6, delay: 0.1 }}
               viewport={{ once: true }}
               whileHover={{
-                y: -10,
-                boxShadow: "0 30px 60px rgba(59, 130, 246, 0.2)",
+                y: -15,
+                boxShadow: "0 40px 80px rgba(59, 130, 246, 0.25)",
               }}
-              className="bg-card rounded-xl p-8 border border-border hover:border-cyan/50 transition-all group"
+              className="bg-white rounded-2xl p-10 border border-blue-200/50 hover:border-blue-300 transition-all group shadow-lg hover:shadow-2xl relative overflow-hidden"
             >
+              <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/5 rounded-full -mr-16 -mt-16 group-hover:bg-blue-500/10 transition-colors"></div>
               <motion.div
-                className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-6"
-                whileHover={{ scale: 1.2, rotate: 5 }}
+                className="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mb-8 shadow-lg relative z-10"
+                whileHover={{ scale: 1.15, rotate: 8 }}
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}
               >
-                <Battery className="w-8 h-8 text-white" />
+                <Battery className="w-10 h-10 text-white" />
               </motion.div>
-              <h3 className="text-xl font-bold mb-3">Energy Storage</h3>
-              <p className="text-black mb-6">
+              <h3 className="text-2xl font-bold mb-4 text-gray-900">
+                Energy Storage
+              </h3>
+              <p className="text-gray-700 mb-8 leading-relaxed">
                 Advanced battery systems for round-the-clock power availability.
                 Store solar energy efficiently.
               </p>
               <motion.a
                 href="#"
-                className="text-cyan text-sm font-medium hover:text-yellow-green transition-colors inline-flex items-center gap-1"
+                className="text-blue-600 font-semibold hover:text-blue-700 transition-colors inline-flex items-center gap-2 group/link"
                 whileHover={{ x: 5 }}
               >
-                Explore More →
+                Explore More{" "}
+                <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
               </motion.a>
             </motion.div>
 
@@ -465,29 +512,33 @@ export default function Index() {
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
               whileHover={{
-                y: -10,
-                boxShadow: "0 30px 60px rgba(34, 197, 94, 0.2)",
+                y: -15,
+                boxShadow: "0 40px 80px rgba(34, 197, 94, 0.25)",
               }}
-              className="bg-card rounded-xl p-8 border border-border hover:border-cyan/50 transition-all group"
+              className="bg-white rounded-2xl p-10 border border-green-200/50 hover:border-green-300 transition-all group shadow-lg hover:shadow-2xl relative overflow-hidden"
             >
+              <div className="absolute top-0 right-0 w-32 h-32 bg-green-500/5 rounded-full -mr-16 -mt-16 group-hover:bg-green-500/10 transition-colors"></div>
               <motion.div
-                className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mb-6"
-                whileHover={{ scale: 1.2, rotate: 5 }}
+                className="w-20 h-20 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mb-8 shadow-lg relative z-10"
+                whileHover={{ scale: 1.15, rotate: 8 }}
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}
               >
-                <Leaf className="w-8 h-8 text-white" />
+                <Leaf className="w-10 h-10 text-white" />
               </motion.div>
-              <h3 className="text-xl font-bold mb-3">Industrial Solutions</h3>
-              <p className="text-black mb-6">
+              <h3 className="text-2xl font-bold mb-4 text-gray-900">
+                Industrial Solutions
+              </h3>
+              <p className="text-gray-700 mb-8 leading-relaxed">
                 Large-scale green energy projects for commercial and industrial
                 operations.
               </p>
               <motion.a
                 href="#"
-                className="text-cyan text-sm font-medium hover:text-yellow-green transition-colors inline-flex items-center gap-1"
+                className="text-green-600 font-semibold hover:text-green-700 transition-colors inline-flex items-center gap-2 group/link"
                 whileHover={{ x: 5 }}
               >
-                Explore More →
+                Explore More{" "}
+                <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
               </motion.a>
             </motion.div>
           </div>
@@ -495,15 +546,16 @@ export default function Index() {
       </section>
 
       {/* CTA Section 1 */}
-      <section className="py-16 bg-gradient-to-r from-yellow-green to-yellow-green/90 text-background relative overflow-hidden">
+      <section className="py-24 bg-gradient-to-br from-yellow-green via-yellow-green to-yellow-green/85 text-background relative overflow-hidden">
         <motion.div
           className="absolute inset-0 -z-10"
           initial={{ opacity: 0 }}
-          whileInView={{ opacity: 0.3 }}
+          whileInView={{ opacity: 0.4 }}
           transition={{ duration: 1 }}
           viewport={{ once: true }}
         >
-          <div className="absolute top-0 left-1/3 w-96 h-96 bg-white/10 rounded-full filter blur-3xl"></div>
+          <div className="absolute top-0 left-1/3 w-96 h-96 bg-white/15 rounded-full filter blur-3xl"></div>
+          <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-white/10 rounded-full filter blur-3xl"></div>
         </motion.div>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -517,7 +569,7 @@ export default function Index() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-4xl font-bold mb-6"
+            className="text-4xl md:text-5xl font-bold mb-8 leading-tight"
           >
             Ready to Switch to Clean Energy?
           </motion.h2>
@@ -526,7 +578,7 @@ export default function Index() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
-            className="text-lg text-background/90 mb-8"
+            className="text-xl text-background/95 mb-10 font-light leading-relaxed"
           >
             Join thousands of businesses saving money while protecting the
             planet
@@ -536,27 +588,28 @@ export default function Index() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
             viewport={{ once: true }}
-            className="flex flex-col sm:flex-row gap-4 justify-center"
+            className="flex flex-col sm:flex-row gap-6 justify-center"
           >
             <motion.button
               onClick={() => navigate("/contact")}
               whileHover={{
-                scale: 1.05,
-                boxShadow: "0 20px 40px rgba(0, 0, 0, 0.2)",
+                scale: 1.08,
+                boxShadow: "0 30px 60px rgba(0, 0, 0, 0.3)",
               }}
               whileTap={{ scale: 0.95 }}
-              className="bg-background text-yellow-green px-8 py-3 rounded-lg font-bold hover:bg-opacity-90 transition-all shadow-lg"
+              className="bg-white text-yellow-green px-12 py-5 rounded-xl font-bold text-lg hover:bg-gray-50 transition-all shadow-xl"
             >
               Get Free Consultation
             </motion.button>
             <motion.button
               onClick={() => navigate("/solutions")}
               whileHover={{
-                scale: 1.05,
-                backgroundColor: "rgba(255, 255, 255, 0.2)",
+                scale: 1.08,
+                backgroundColor: "rgba(255, 255, 255, 0.25)",
+                boxShadow: "0 15px 40px rgba(255, 255, 255, 0.2)",
               }}
               whileTap={{ scale: 0.95 }}
-              className="border-2 border-background text-background px-8 py-3 rounded-lg font-bold hover:bg-background/10 transition-all"
+              className="border-2 border-white text-white px-12 py-5 rounded-xl font-bold text-lg hover:bg-white/10 transition-all"
             >
               Learn More
             </motion.button>
@@ -567,21 +620,21 @@ export default function Index() {
       {/* Why Choose Section */}
       <section
         id="process"
-        className="py-20 bg-gradient-to-b from-cyan-50/30 via-white to-white"
+        className="py-24 bg-gradient-to-br from-cyan-50/40 via-white to-white"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl md:text-4xl font-bold mb-8">
+              <h2 className="text-4xl md:text-5xl font-bold mb-10 leading-tight text-gray-900">
                 Why Choose AXIVOLT?
               </h2>
 
-              <ul className="space-y-6 mb-8">
+              <ul className="space-y-8 mb-12">
                 {[
                   {
                     title: "Industry Leadership",
@@ -601,7 +654,7 @@ export default function Index() {
                 ].map((item, index) => (
                   <motion.li
                     key={index}
-                    className="flex gap-4"
+                    className="flex gap-6"
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -610,20 +663,24 @@ export default function Index() {
                   >
                     <div className="flex-shrink-0">
                       <motion.div
-                        className={`flex items-center justify-center h-8 w-8 rounded-full ${
+                        className={`flex items-center justify-center h-12 w-12 rounded-full font-bold text-white ${
                           item.color === "cyan"
-                            ? "bg-cyan/20 text-cyan"
-                            : "bg-yellow-green/20 text-yellow-green"
+                            ? "bg-gradient-to-br from-cyan to-cyan/80 shadow-lg"
+                            : "bg-gradient-to-br from-yellow-green to-yellow-green/80 shadow-lg"
                         }`}
                         whileHover={{ scale: 1.2, rotate: 360 }}
                         transition={{ type: "spring", stiffness: 400 }}
                       >
-                        <Check className="w-5 h-5" />
+                        <Check className="w-6 h-6" />
                       </motion.div>
                     </div>
                     <div>
-                      <h4 className="font-bold text-lg">{item.title}</h4>
-                      <p className="text-black text-sm mt-1">{item.desc}</p>
+                      <h4 className="font-bold text-xl text-gray-900">
+                        {item.title}
+                      </h4>
+                      <p className="text-gray-700 text-base mt-2">
+                        {item.desc}
+                      </p>
                     </div>
                   </motion.li>
                 ))}
@@ -632,17 +689,17 @@ export default function Index() {
               <motion.button
                 onClick={() => navigate("/solutions")}
                 whileHover={{
-                  scale: 1.05,
-                  boxShadow: "0 20px 40px rgba(0, 188, 212, 0.3)",
+                  scale: 1.08,
+                  boxShadow: "0 25px 50px rgba(0, 188, 212, 0.35)",
                 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-cyan text-white px-8 py-3 rounded-lg font-bold hover:bg-opacity-90 transition-all inline-flex items-center gap-2 shadow-lg"
+                className="bg-cyan text-white px-10 py-4 rounded-xl font-bold text-lg hover:bg-cyan/90 transition-all inline-flex items-center gap-3 shadow-xl"
               >
                 Learn More <ArrowRight className="w-5 h-5" />
               </motion.button>
             </motion.div>
 
-            <div className="grid grid-cols-2 gap-6">
+            <div className="grid grid-cols-2 gap-8">
               {[
                 { value: "99.2%", label: "System Uptime", color: "cyan" },
                 {
@@ -659,30 +716,32 @@ export default function Index() {
               ].map((stat, index) => (
                 <motion.div
                   key={index}
-                  className={`bg-gradient-to-br ${
+                  className={`bg-gradient-to-br rounded-2xl p-8 border-2 shadow-lg hover:shadow-2xl transition-all ${
                     stat.color === "cyan"
-                      ? "from-cyan/20 to-cyan/10"
-                      : "from-yellow-green/20 to-yellow-green/10"
-                  } rounded-xl p-6 border border-border`}
+                      ? "from-cyan/15 to-cyan/5 border-cyan/30 hover:border-cyan/60"
+                      : "from-yellow-green/15 to-yellow-green/5 border-yellow-green/30 hover:border-yellow-green/60"
+                  }`}
                   initial={{ opacity: 0, scale: 0.8 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   viewport={{ once: true }}
                   whileHover={{
-                    y: -10,
-                    boxShadow: `0 20px 40px rgba(${
+                    y: -12,
+                    boxShadow: `0 30px 60px rgba(${
                       stat.color === "cyan" ? "0, 188, 212" : "205, 210, 40"
-                    }, 0.2)`,
+                    }, 0.3)`,
                   }}
                 >
                   <p
-                    className={`text-4xl font-bold ${
+                    className={`text-5xl font-bold ${
                       stat.color === "cyan" ? "text-cyan" : "text-yellow-green"
-                    } mb-2`}
+                    } mb-3`}
                   >
                     {stat.value}
                   </p>
-                  <p className="text-black text-sm">{stat.label}</p>
+                  <p className="text-gray-700 text-base font-medium">
+                    {stat.label}
+                  </p>
                 </motion.div>
               ))}
             </div>
@@ -691,18 +750,19 @@ export default function Index() {
       </section>
 
       {/* Highlighted Stats Bar */}
-      <section className="py-12 bg-gradient-to-r from-yellow-green to-yellow-green/90 text-background relative overflow-hidden">
+      <section className="py-20 bg-gradient-to-br from-yellow-green via-yellow-green to-yellow-green/85 text-background relative overflow-hidden">
         <motion.div
           className="absolute inset-0 -z-10"
           initial={{ opacity: 0 }}
-          whileInView={{ opacity: 0.2 }}
+          whileInView={{ opacity: 0.3 }}
           transition={{ duration: 1 }}
           viewport={{ once: true }}
         >
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-white/10 rounded-full filter blur-3xl"></div>
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-white/15 rounded-full filter blur-3xl"></div>
+          <div className="absolute top-0 left-1/4 w-80 h-80 bg-white/10 rounded-full filter blur-3xl"></div>
         </motion.div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-10 text-center">
             {[
               { label: "System Uptime", value: "99.2%" },
               { label: "Active Installations", value: "500+" },
@@ -715,10 +775,16 @@ export default function Index() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                whileHover={{ scale: 1.1 }}
+                whileHover={{ scale: 1.12, y: -5 }}
+                className="group"
               >
-                <p className="text-3xl md:text-4xl font-bold">{stat.value}</p>
-                <p className="text-sm text-background/80 mt-2">{stat.label}</p>
+                <p className="text-5xl md:text-6xl font-bold mb-3 group-hover:text-white/95 transition-colors">
+                  {stat.value}
+                </p>
+                <p className="text-base text-background/90 font-medium group-hover:text-background transition-colors">
+                  {stat.label}
+                </p>
+                <div className="h-1 w-0 group-hover:w-16 bg-white/60 transition-all duration-300 mx-auto mt-4 rounded-full"></div>
               </motion.div>
             ))}
           </div>
@@ -726,30 +792,30 @@ export default function Index() {
       </section>
 
       {/* Projects Section */}
-      <section className="py-20 bg-gradient-to-b from-white via-blue-50/20 to-white">
+      <section className="py-24 bg-gradient-to-b from-white via-blue-50/30 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-20"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
               Transforming Energy Landscapes
             </h2>
-            <p className="text-black max-w-2xl mx-auto">
+            <p className="text-xl text-gray-700 max-w-2xl mx-auto font-light">
               Explore our latest projects and see how we're making a difference
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className="space-y-6"
+              className="space-y-8"
             >
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -757,10 +823,10 @@ export default function Index() {
                 transition={{ duration: 0.6, delay: 0.1 }}
                 viewport={{ once: true }}
               >
-                <h3 className="text-2xl font-bold mb-4">
+                <h3 className="text-3xl md:text-4xl font-bold mb-8 text-gray-900">
                   C&I Factory Solar Installation
                 </h3>
-                <div className="space-y-4">
+                <div className="space-y-6">
                   {[
                     { label: "Capacity", value: "2.5 MWh", color: "text-cyan" },
                     {
@@ -780,11 +846,14 @@ export default function Index() {
                       whileInView={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.6, delay: 0.1 * (index + 1) }}
                       viewport={{ once: true }}
+                      className="pb-6 border-b border-gray-200 last:border-b-0"
                     >
-                      <p className="text-sm text-black uppercase tracking-widest mb-2">
+                      <p className="text-xs text-gray-600 uppercase tracking-widest mb-3 font-semibold">
                         {item.label}
                       </p>
-                      <p className={`text-2xl font-bold ${item.color}`}>
+                      <p
+                        className={`text-3xl md:text-4xl font-bold ${item.color}`}
+                      >
                         {item.value}
                       </p>
                     </motion.div>
@@ -798,11 +867,11 @@ export default function Index() {
                 transition={{ duration: 0.6, delay: 0.4 }}
                 viewport={{ once: true }}
                 whileHover={{
-                  scale: 1.05,
-                  boxShadow: "0 20px 40px rgba(0, 188, 212, 0.3)",
+                  scale: 1.08,
+                  boxShadow: "0 25px 50px rgba(0, 188, 212, 0.35)",
                 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-cyan text-white px-8 py-3 rounded-lg font-bold hover:bg-opacity-90 transition-all inline-flex items-center gap-2 shadow-lg"
+                className="bg-cyan text-white px-10 py-4 rounded-xl font-bold text-lg hover:bg-cyan/90 transition-all inline-flex items-center gap-3 shadow-xl"
               >
                 View Case Study <ArrowRight className="w-5 h-5" />
               </motion.button>
@@ -817,8 +886,8 @@ export default function Index() {
               whileHover={{ scale: 1.05 }}
             >
               <img
-                src="https://cdn.builder.io/api/v1/image/assets%2F1b9c62c1213140709e07580a4ee1f322%2Fe22ad79415ea4ace86924b0e44cbf6ee?format=webp&width=800&height=1200"
-                alt="C&I Factory Solar Installation Project"
+                src="https://images.pexels.com/photos/8853504/pexels-photo-8853504.jpeg"
+                alt="A technician in safety gear installs a solar panel on a rooftop, promoting renewable energy"
                 className="w-full h-full object-cover rounded-2xl hover:brightness-110 transition-all duration-300"
               />
             </motion.div>
@@ -829,25 +898,25 @@ export default function Index() {
       {/* Final CTA Section */}
       <section
         id="contact"
-        className="py-20 bg-gradient-to-b from-yellow-green to-yellow-green/90 text-background relative overflow-hidden"
+        className="py-28 bg-gradient-to-br from-yellow-green via-yellow-green to-yellow-green/85 text-background relative overflow-hidden"
       >
         <motion.div
           className="absolute inset-0 -z-10"
           initial={{ opacity: 0 }}
-          whileInView={{ opacity: 0.3 }}
+          whileInView={{ opacity: 0.4 }}
           transition={{ duration: 1 }}
           viewport={{ once: true }}
         >
-          <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-white/10 rounded-full filter blur-3xl"></div>
-          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-white/10 rounded-full filter blur-3xl"></div>
+          <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-white/15 rounded-full filter blur-3xl"></div>
+          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-white/15 rounded-full filter blur-3xl"></div>
         </motion.div>
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center text-center"
+            className="grid grid-cols-1 md:grid-cols-3 gap-12 items-center text-center mb-20"
           >
             {[
               { icon: "📞", title: "Call Us", text: "+91 90634 47838" },
@@ -860,17 +929,20 @@ export default function Index() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                whileHover={{ scale: 1.05 }}
+                whileHover={{ scale: 1.08, y: -8 }}
+                className="group"
               >
                 <motion.div
-                  className="text-4xl font-bold mb-2"
-                  whileHover={{ scale: 1.3, rotate: 5 }}
+                  className="text-6xl font-bold mb-4 group-hover:scale-125 transition-transform"
+                  whileHover={{ scale: 1.3, rotate: 8 }}
                   transition={{ type: "spring", stiffness: 400 }}
                 >
                   {contact.icon}
                 </motion.div>
-                <h3 className="font-bold text-lg mb-1">{contact.title}</h3>
-                <p className="text-sm text-background/80">{contact.text}</p>
+                <h3 className="font-bold text-2xl mb-2 text-white">
+                  {contact.title}
+                </h3>
+                <p className="text-lg text-background/90">{contact.text}</p>
               </motion.div>
             ))}
           </motion.div>
@@ -880,14 +952,14 @@ export default function Index() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
             viewport={{ once: true }}
-            className="mt-12 text-center"
+            className="mt-8 text-center"
           >
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
               viewport={{ once: true }}
-              className="text-3xl md:text-4xl font-bold mb-6"
+              className="text-4xl md:text-5xl font-bold mb-8 leading-tight text-white"
             >
               Ready to go renewable?
             </motion.h2>
@@ -896,7 +968,7 @@ export default function Index() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
               viewport={{ once: true }}
-              className="text-lg text-background/90 mb-8"
+              className="text-xl text-background/95 mb-10 font-light"
             >
               Start your sustainable energy journey today
             </motion.p>
@@ -907,11 +979,11 @@ export default function Index() {
               transition={{ duration: 0.6, delay: 0.6 }}
               viewport={{ once: true }}
               whileHover={{
-                scale: 1.05,
-                boxShadow: "0 20px 40px rgba(0, 0, 0, 0.2)",
+                scale: 1.08,
+                boxShadow: "0 30px 60px rgba(0, 0, 0, 0.3)",
               }}
               whileTap={{ scale: 0.95 }}
-              className="bg-background text-yellow-green px-8 py-3 rounded-lg font-bold hover:bg-opacity-90 transition-all shadow-lg"
+              className="bg-white text-yellow-green px-12 py-5 rounded-xl font-bold text-lg hover:bg-gray-50 transition-all shadow-xl"
             >
               Get Free Consultation
             </motion.button>

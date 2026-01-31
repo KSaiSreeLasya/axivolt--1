@@ -191,16 +191,20 @@ export default function Solutions() {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-background to-background/80 pt-20 md:pt-32 pb-16">
+      <section className="relative overflow-hidden bg-gradient-to-br from-white via-blue-50/40 to-white pt-24 md:pt-40 pb-20">
+        <div className="absolute inset-0 -z-10">
+          <div className="absolute top-0 left-1/4 w-96 h-96 bg-cyan/15 rounded-full filter blur-3xl"></div>
+          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-yellow-green/15 rounded-full filter blur-3xl"></div>
+        </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center space-y-4">
-            <div className="inline-block bg-cyan/20 text-cyan px-4 py-2 rounded-full text-sm font-semibold mb-4">
+          <div className="text-center space-y-6">
+            <div className="inline-block bg-cyan/20 text-cyan px-6 py-3 rounded-full text-sm font-semibold mb-4 border border-cyan/30">
               Our Solutions
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-gray-900 tracking-tight">
               Solutions
             </h1>
-            <p className="text-lg text-black max-w-2xl mx-auto">
+            <p className="text-xl text-gray-700 max-w-2xl mx-auto font-light">
               Explore our core energy solutions — click a category to view
               detailed services and offerings.
             </p>
@@ -209,84 +213,90 @@ export default function Solutions() {
       </section>
 
       {/* Solutions Grid */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
+      <section className="py-24 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
               Our Solutions
             </h2>
-            <p className="text-black text-lg">
+            <p className="text-xl text-gray-700 font-light">
               Comprehensive energy solutions with proven results and
               comprehensive features across all sectors.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
             {solutions.map((solution) => {
               const Icon = solution.icon;
               return (
                 <Link
                   key={solution.title}
                   to={solution.link}
-                  className="group bg-card border border-border rounded-xl p-8 hover:border-cyan transition-all hover:shadow-lg hover:shadow-cyan/10"
+                  className="group bg-white rounded-2xl p-10 border-2 transition-all shadow-lg hover:shadow-2xl relative overflow-hidden hover:border-cyan/50"
                 >
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-cyan/5 rounded-full -mr-16 -mt-16 group-hover:bg-cyan/10 transition-colors"></div>
+
                   {/* Icon */}
                   <div
-                    className={`w-16 h-16 rounded-lg ${solution.color} flex items-center justify-center mb-6`}
+                    className={`w-20 h-20 rounded-2xl ${solution.color} flex items-center justify-center mb-8 shadow-lg relative z-10 border-2 border-white`}
                   >
-                    <Icon className={`w-8 h-8 ${solution.iconColor}`} />
+                    <Icon className={`w-10 h-10 ${solution.iconColor}`} />
                   </div>
 
                   {/* Title and Description */}
-                  <h3 className="text-2xl font-bold mb-2">{solution.title}</h3>
-                  <p className="text-black text-sm mb-6">
+                  <h3 className="text-3xl font-bold mb-3 text-gray-900">
+                    {solution.title}
+                  </h3>
+                  <p className="text-gray-700 text-base mb-8 leading-relaxed">
                     {solution.description}
                   </p>
 
                   {/* Metrics */}
-                  <div className="grid grid-cols-2 gap-4 mb-6 pb-6 border-b border-border">
+                  <div className="grid grid-cols-2 gap-6 mb-8 pb-8 border-b-2 border-gray-200">
                     <div>
-                      <p className="text-2xl font-bold text-cyan">
+                      <p className="text-4xl font-bold bg-gradient-to-r from-cyan to-cyan/80 bg-clip-text text-transparent mb-2">
                         {solution.metric1.value}
                       </p>
-                      <p className="text-xs text-black">
+                      <p className="text-base text-gray-700 font-medium">
                         {solution.metric1.label}
                       </p>
                     </div>
                     <div>
-                      <p className="text-2xl font-bold text-yellow-green">
+                      <p className="text-4xl font-bold bg-gradient-to-r from-yellow-green to-yellow-green/80 bg-clip-text text-transparent mb-2">
                         {solution.metric2.value}
                       </p>
-                      <p className="text-xs text-black">
+                      <p className="text-base text-gray-700 font-medium">
                         {solution.metric2.label}
                       </p>
                     </div>
                   </div>
 
                   {/* Features */}
-                  <ul className="space-y-2 mb-6">
+                  <ul className="space-y-3 mb-8">
                     {solution.features.map((feature) => (
                       <li
                         key={feature}
-                        className="flex items-center gap-2 text-sm text-black"
+                        className="flex items-center gap-3 text-base text-gray-700 font-medium"
                       >
-                        <span className="w-2 h-2 rounded-full bg-cyan"></span>
+                        <span className="w-3 h-3 rounded-full bg-cyan flex-shrink-0"></span>
                         {feature}
                       </li>
                     ))}
                   </ul>
 
                   {/* Case Study */}
-                  <div className="bg-background/50 rounded-lg p-4 border border-border">
-                    <p className="text-xs font-semibold text-cyan mb-1">
+                  <div className="bg-gradient-to-br from-cyan/10 to-cyan/5 rounded-xl p-6 border-2 border-cyan/30 mb-6">
+                    <p className="text-xs font-bold text-cyan uppercase tracking-widest mb-2">
                       Case Study
                     </p>
-                    <p className="text-sm text-black">{solution.caseStudy}</p>
+                    <p className="text-base text-gray-800 font-semibold">
+                      {solution.caseStudy}
+                    </p>
                   </div>
 
                   {/* Arrow Indicator */}
-                  <div className="mt-4 flex items-center justify-end text-cyan group-hover:translate-x-1 transition-transform">
-                    <ArrowRight className="w-5 h-5" />
+                  <div className="flex items-center justify-end text-cyan group-hover:translate-x-2 transition-transform">
+                    <ArrowRight className="w-6 h-6" />
                   </div>
                 </Link>
               );

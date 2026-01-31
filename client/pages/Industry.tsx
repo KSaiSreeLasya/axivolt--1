@@ -1,8 +1,10 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { ArrowRight, CheckCircle, Building2, Factory, Zap } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 export default function Industry() {
+  const navigate = useNavigate();
   const industries = [
     {
       title: "Commercial & Office",

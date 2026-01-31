@@ -40,6 +40,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <FloatingActionButton />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/industry" element={<Industry />} />

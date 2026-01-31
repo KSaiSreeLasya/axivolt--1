@@ -298,26 +298,30 @@ export default function Industry() {
                 title: "Industry Expertise",
                 description:
                   "Deep knowledge of sector-specific regulations and requirements",
+                number: "01",
               },
               {
                 title: "Proven Track Record",
                 description:
                   "Successful implementations across diverse industrial sectors",
+                number: "02",
               },
               {
                 title: "Custom Solutions",
                 description:
                   "Tailored approaches designed for your unique operational needs",
+                number: "03",
               },
               {
                 title: "Long-term Support",
                 description:
                   "Ongoing monitoring and optimization for maximum performance",
+                number: "04",
               },
             ].map((item, idx) => (
               <motion.div
                 key={idx}
-                className="bg-white rounded-2xl p-10 border border-cyan/20 hover:border-cyan/50 transition-all shadow-lg hover:shadow-2xl"
+                className="bg-white rounded-2xl p-10 border border-cyan/20 hover:border-cyan/50 transition-all shadow-lg hover:shadow-2xl group relative overflow-hidden"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: idx * 0.1 }}
@@ -327,10 +331,20 @@ export default function Industry() {
                   boxShadow: "0 25px 50px rgba(0, 188, 212, 0.2)",
                 }}
               >
-                <h3 className="text-xl font-bold mb-4 text-cyan">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-cyan/5 rounded-full -mr-16 -mt-16 group-hover:bg-cyan/10 transition-colors"></div>
+                <motion.div
+                  className="text-5xl font-bold text-cyan/20 mb-4 group-hover:text-cyan/40 transition-colors"
+                  initial={{ opacity: 0, scale: 0.5 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.5, delay: idx * 0.1 }}
+                  viewport={{ once: true }}
+                >
+                  {item.number}
+                </motion.div>
+                <h3 className="text-xl font-bold mb-4 text-gray-900 relative z-10">
                   {item.title}
                 </h3>
-                <p className="text-gray-700 leading-relaxed">
+                <p className="text-gray-700 leading-relaxed relative z-10">
                   {item.description}
                 </p>
               </motion.div>

@@ -408,7 +408,7 @@ export default function Index() {
               Get Free Consultation
             </button>
             <button className="border-2 border-background text-background px-8 py-3 rounded-lg font-bold hover:bg-background/10 transition-all">
-              See Pricing
+              Learn More
             </button>
           </div>
         </div>
@@ -613,12 +613,12 @@ export default function Index() {
             <div>
               <div className="text-4xl font-bold mb-2">📞</div>
               <h3 className="font-bold text-lg mb-1">Call Us</h3>
-              <p className="text-sm text-background/80">+1 (555) 123-4567</p>
+              <p className="text-sm text-background/80">+91 90634 47838</p>
             </div>
             <div>
               <div className="text-4xl font-bold mb-2">📧</div>
               <h3 className="font-bold text-lg mb-1">Email</h3>
-              <p className="text-sm text-background/80">hello@axivolt.com</p>
+              <p className="text-sm text-background/80">contact@axivolt.in</p>
             </div>
             <div>
               <div className="text-4xl font-bold mb-2">🌐</div>

@@ -271,50 +271,108 @@ export default function About() {
 
       {/* Hero Section */}
       <section className="relative overflow-hidden pt-20 md:pt-32 pb-20">
+        <motion.div
+          className="absolute inset-0 -z-10"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 0.7 }}
+          transition={{ duration: 1.5, ease: "easeOut" }}
+        >
+          <div className="absolute top-0 left-1/4 w-96 h-96 bg-cyan/15 rounded-full filter blur-3xl"></div>
+          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-yellow-green/15 rounded-full filter blur-3xl"></div>
+        </motion.div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <p className="text-cyan text-sm uppercase tracking-widest mb-4">
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8 }}
+            >
+              <motion.p
+                className="text-cyan text-sm uppercase tracking-widest mb-4 font-semibold"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+              >
                 Empowering Sustainable Tomorrow
-              </p>
-              <h1 className="text-4xl md:text-5xl font-bold mb-6">
-                Our <span className="text-cyan">Mission</span>
-              </h1>
-              <p className="text-lg text-black400 mb-8">
+              </motion.p>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+              >
+                <h1 className="text-4xl md:text-5xl font-bold mb-6">
+                  Our{" "}
+                  <span className="bg-gradient-to-r from-cyan to-cyan/80 bg-clip-text text-transparent">
+                    Mission
+                  </span>
+                </h1>
+              </motion.div>
+              <motion.p
+                className="text-lg text-black400 mb-8"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+              >
                 To accelerate the world's transition to renewable energy through
                 innovative solutions, expert guidance, and unwavering commitment
                 to excellence.
-              </p>
-              <div className="flex items-center gap-4">
-                <button
+              </motion.p>
+              <motion.div
+                className="flex items-center gap-4 flex-wrap"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+              >
+                <motion.button
                   onClick={() => navigate("/solutions")}
                   className="bg-cyan text-background px-6 py-3 rounded-lg font-bold hover:bg-yellow-green transition-all inline-flex items-center gap-2"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
                 >
                   Learn More <ArrowRight className="w-5 h-5" />
-                </button>
-                <button
+                </motion.button>
+                <motion.button
                   onClick={() => setShowVideoModal(true)}
                   className="border border-cyan text-cyan px-6 py-3 rounded-lg font-bold hover:bg-cyan/10 transition-all"
+                  whileHover={{
+                    scale: 1.05,
+                    backgroundColor: "rgba(0, 188, 212, 0.05)",
+                  }}
+                  whileTap={{ scale: 0.95 }}
                 >
                   Our Story
-                </button>
-              </div>
+                </motion.button>
+              </motion.div>
 
               {/* Stats */}
               <div className="grid grid-cols-3 gap-6 mt-12">
                 {stats.map((stat, idx) => (
-                  <div key={idx}>
+                  <motion.div
+                    key={idx}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.5 + idx * 0.1 }}
+                  >
                     <p className="text-2xl md:text-3xl font-bold text-cyan">
                       {stat.value}
                     </p>
                     <p className="text-sm text-black400">{stat.label}</p>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
-            </div>
+            </motion.div>
 
-            <div className="relative h-96">
-              <div className="absolute inset-0 bg-gradient-to-br from-cyan/20 to-yellow-green/20 rounded-3xl blur-2xl"></div>
+            <motion.div
+              className="relative h-96"
+              initial={{ opacity: 0, x: 40 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-br from-cyan/20 to-yellow-green/20 rounded-3xl blur-2xl"
+                animate={{ scale: [1, 1.05, 1] }}
+                transition={{ duration: 4, repeat: Infinity }}
+              ></motion.div>
               <ImageCarousel
                 images={[
                   "https://cdn.builder.io/api/v1/image/assets%2F125c7cd6968a435da0ace6ef2edbf6b7%2F9d84a999e09b4e95b8bc2776c5f2ab23?format=webp&width=800&height=1200",
@@ -324,39 +382,59 @@ export default function About() {
                 alt="AXIVOLT Solar Projects"
                 className="relative h-full"
               />
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
 
       {/* Vision Section */}
-      <section
-        id="vision-section"
-        className={`py-20 bg-background/50 transition-all duration-1000 ${
-          visionInView
-            ? "opacity-100 translate-y-0"
-            : "opacity-0 translate-y-10"
-        }`}
-      >
+      <section id="vision-section" className="py-20 bg-background/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="relative h-96 bg-gradient-to-br from-green-400/20 to-cyan/20 rounded-lg border border-border overflow-hidden order-2 lg:order-1">
-              <img
+            <motion.div
+              className="relative h-96 bg-gradient-to-br from-green-400/20 to-cyan/20 rounded-lg border border-border overflow-hidden order-2 lg:order-1 group"
+              initial={{ opacity: 0, x: -40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.7 }}
+              viewport={{ once: true }}
+              whileHover={{ scale: 1.02 }}
+            >
+              <motion.img
                 src="https://images.unsplash.com/photo-1466611653022-2f88e537e94f?w=600&h=400&fit=crop"
                 alt="Wind energy"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover group-hover:brightness-110 transition-all duration-300"
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.3 }}
               />
-            </div>
+            </motion.div>
 
-            <div className="order-1 lg:order-2">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            <motion.div
+              className="order-1 lg:order-2"
+              initial={{ opacity: 0, x: 40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.7 }}
+              viewport={{ once: true }}
+            >
+              <motion.h2
+                className="text-3xl md:text-4xl font-bold mb-6"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                viewport={{ once: true }}
+              >
                 Our <span className="text-cyan">Vision</span>
-              </h2>
-              <p className="text-lg text-black400 mb-6">
+              </motion.h2>
+              <motion.p
+                className="text-lg text-black400 mb-6"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true }}
+              >
                 To accelerate India's transition to clean energy by providing
                 reliable, affordable, and high-driven renewable energy
                 solutions.
-              </p>
+              </motion.p>
               <ul className="space-y-4">
                 {[
                   "Provide holistic clean energy solutions",
@@ -364,16 +442,20 @@ export default function About() {
                   "Enable sustainable economic growth",
                   "Drive innovation in renewable technology",
                 ].map((item, idx) => (
-                  <li
+                  <motion.li
                     key={idx}
                     className="flex items-center gap-3 text-black300"
+                    initial={{ opacity: 0, x: -15 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.4, delay: 0.3 + idx * 0.08 }}
+                    viewport={{ once: true }}
                   >
                     <CheckCircle className="w-5 h-5 text-cyan flex-shrink-0" />
                     {item}
-                  </li>
+                  </motion.li>
                 ))}
               </ul>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -500,25 +582,61 @@ export default function About() {
       </section>
 
       {/* Company Info Section */}
-      <section className="py-20 bg-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-card rounded-lg border border-border p-12 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+      <section className="py-20 bg-background relative overflow-hidden">
+        <motion.div
+          className="absolute inset-0 -z-10"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 0.3 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true }}
+        >
+          <div className="absolute top-0 left-1/4 w-96 h-96 bg-cyan/10 rounded-full filter blur-3xl"></div>
+          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-yellow-green/10 rounded-full filter blur-3xl"></div>
+        </motion.div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <motion.div
+            className="bg-card rounded-lg border border-cyan/30 p-12 text-center group relative overflow-hidden shadow-lg hover:shadow-2xl transition-all"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            viewport={{ once: true }}
+            whileHover={{ borderColor: "rgba(0, 188, 212, 0.5)" }}
+          >
+            <div className="absolute top-0 right-0 w-32 h-32 bg-cyan/10 rounded-full -mr-16 -mt-16 group-hover:bg-cyan/15 transition-colors"></div>
+            <motion.h2
+              className="text-3xl md:text-4xl font-bold mb-6 relative z-10"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true }}
+            >
               Leading the Transition to Sustainable Energy
-            </h2>
-            <p className="text-lg text-black400 max-w-3xl mx-auto mb-8">
+            </motion.h2>
+            <motion.p
+              className="text-lg text-black400 max-w-3xl mx-auto mb-8 relative z-10"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
               AXIVOLT Green Energies Pvt. Ltd. is committed to delivering
               innovative renewable energy solutions that empower businesses and
               individuals to achieve their sustainability goals while reducing
               costs and environmental impact.
-            </p>
-            <button
+            </motion.p>
+            <motion.button
               onClick={() => navigate("/contact")}
-              className="bg-cyan text-background px-8 py-3 rounded-lg font-bold hover:bg-yellow-green transition-all inline-flex items-center gap-2"
+              className="bg-cyan text-background px-8 py-3 rounded-lg font-bold hover:bg-yellow-green transition-all inline-flex items-center gap-2 relative z-10"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              viewport={{ once: true }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
               Get in Touch <ArrowRight className="w-5 h-5" />
-            </button>
-          </div>
+            </motion.button>
+          </motion.div>
         </div>
       </section>
 

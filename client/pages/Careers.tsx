@@ -393,15 +393,31 @@ export default function Careers() {
           ) : (
             <div className="space-y-4">
               {jobs.map((job, idx) => (
-                <div
+                <motion.div
                   key={idx}
-                  className="bg-card rounded-lg border border-border p-6 hover:border-cyan transition-all flex items-center justify-between"
+                  className="bg-card rounded-lg border border-border p-6 hover:border-cyan transition-all flex items-center justify-between group relative overflow-hidden"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: idx * 0.08 }}
+                  viewport={{ once: true }}
+                  whileHover={{
+                    boxShadow: "0 10px 30px rgba(0, 188, 212, 0.15)",
+                  }}
                 >
-                  <div className="flex-1">
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-cyan/5 rounded-full -mr-16 -mt-16 group-hover:bg-cyan/10 transition-colors"></div>
+                  <div className="flex-1 relative z-10">
                     <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 bg-cyan/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <motion.div
+                        className="w-12 h-12 bg-cyan/20 rounded-lg flex items-center justify-center flex-shrink-0"
+                        whileHover={{ scale: 1.2, rotate: 8 }}
+                        transition={{
+                          type: "spring",
+                          stiffness: 400,
+                          damping: 10,
+                        }}
+                      >
                         <Briefcase className="w-6 h-6 text-cyan" />
-                      </div>
+                      </motion.div>
                       <div className="flex-1">
                         <h3 className="text-lg font-bold mb-2">{job.title}</h3>
                         <p className="text-sm text-black mb-3">
@@ -416,13 +432,15 @@ export default function Careers() {
                       </div>
                     </div>
                   </div>
-                  <button
+                  <motion.button
                     onClick={() => setSelectedJob(job)}
-                    className="bg-cyan text-background px-6 py-2 rounded font-semibold hover:bg-yellow-green transition-all text-sm flex-shrink-0 ml-4"
+                    className="bg-cyan text-background px-6 py-2 rounded font-semibold hover:bg-yellow-green transition-all text-sm flex-shrink-0 ml-4 relative z-10"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
                   >
                     Apply Now
-                  </button>
-                </div>
+                  </motion.button>
+                </motion.div>
               ))}
             </div>
           )}
@@ -511,44 +529,68 @@ export default function Careers() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-card rounded-lg overflow-hidden border border-border hover:border-cyan transition-all">
-              <div className="h-48 bg-gradient-to-br from-cyan/20 to-purple-500/20 flex items-center justify-center">
-                <Users className="w-16 h-16 text-cyan/50" />
-              </div>
-              <div className="p-6">
-                <h3 className="text-lg font-bold mb-2">Team Collaboration</h3>
-                <p className="text-sm text-black">
-                  Work alongside talented professionals in a collaborative
-                  environment
-                </p>
-              </div>
-            </div>
-
-            <div className="bg-card rounded-lg overflow-hidden border border-border hover:border-cyan transition-all">
-              <div className="h-48 bg-gradient-to-br from-green-400/20 to-cyan/20 flex items-center justify-center">
-                <Award className="w-16 h-16 text-green-400/50" />
-              </div>
-              <div className="p-6">
-                <h3 className="text-lg font-bold mb-2">
-                  Learning & Development
-                </h3>
-                <p className="text-sm text-black">
-                  Continuous learning programs to enhance your skills and career
-                </p>
-              </div>
-            </div>
-
-            <div className="bg-card rounded-lg overflow-hidden border border-border hover:border-cyan transition-all">
-              <div className="h-48 bg-gradient-to-br from-purple-500/20 to-pink-500/20 flex items-center justify-center">
-                <Heart className="w-16 h-16 text-purple-400/50" />
-              </div>
-              <div className="p-6">
-                <h3 className="text-lg font-bold mb-2">Work-Life Balance</h3>
-                <p className="text-sm text-black">
-                  Flexible work arrangements that prioritize your wellbeing
-                </p>
-              </div>
-            </div>
+            {[
+              {
+                icon: Users,
+                title: "Team Collaboration",
+                description:
+                  "Work alongside talented professionals in a collaborative environment",
+                gradient: "from-cyan/20 to-purple-500/20",
+                iconColor: "text-cyan/50",
+              },
+              {
+                icon: Award,
+                title: "Learning & Development",
+                description:
+                  "Continuous learning programs to enhance your skills and career",
+                gradient: "from-green-400/20 to-cyan/20",
+                iconColor: "text-green-400/50",
+              },
+              {
+                icon: Heart,
+                title: "Work-Life Balance",
+                description:
+                  "Flexible work arrangements that prioritize your wellbeing",
+                gradient: "from-purple-500/20 to-pink-500/20",
+                iconColor: "text-purple-400/50",
+              },
+            ].map((item, idx) => {
+              const Icon = item.icon;
+              return (
+                <motion.div
+                  key={idx}
+                  className="bg-card rounded-lg overflow-hidden border border-border hover:border-cyan transition-all group"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: idx * 0.1 }}
+                  viewport={{ once: true }}
+                  whileHover={{
+                    boxShadow: "0 15px 40px rgba(0, 188, 212, 0.15)",
+                  }}
+                >
+                  <motion.div
+                    className={`h-48 bg-gradient-to-br ${item.gradient} flex items-center justify-center relative overflow-hidden`}
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <motion.div
+                      whileHover={{ scale: 1.2, rotate: 8 }}
+                      transition={{
+                        type: "spring",
+                        stiffness: 400,
+                        damping: 10,
+                      }}
+                    >
+                      <Icon className={`w-16 h-16 ${item.iconColor}`} />
+                    </motion.div>
+                  </motion.div>
+                  <div className="p-6">
+                    <h3 className="text-lg font-bold mb-2">{item.title}</h3>
+                    <p className="text-sm text-black">{item.description}</p>
+                  </div>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>

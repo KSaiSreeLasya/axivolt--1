@@ -13,9 +13,13 @@ export function createServer() {
   app.use(express.json());
   app.use(express.urlencoded({ extended: true }));
 
-  // Don't redirect between domains - serve same content
-  // Both axivolt.in and axiosgreen.in should serve without redirects
+  // 301 redirect from old domain to new domain
   app.use((req, res, next) => {
+    const host = req.get("host") || "";
+    if (host.includes("axisogreen.in")) {
+      const newUrl = `https://www.axivolt.in${req.originalUrl}`;
+      return res.redirect(301, newUrl);
+    }
     next();
   });
 

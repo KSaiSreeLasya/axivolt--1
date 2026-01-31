@@ -239,14 +239,18 @@ export default function Header() {
               initial="hidden"
               animate="visible"
               className="relative group"
+              whileHover={{ scale: 1.05 }}
             >
               <Link
                 to="/services"
                 onMouseEnter={() => setServicesOpen(true)}
                 onMouseLeave={() => setServicesOpen(false)}
-                className="flex items-center gap-1 text-sm font-medium text-cyan hover:text-yellow-green transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-yellow-green after:transition-all after:duration-300 hover:after:w-full"
+                className="flex items-center gap-1 text-sm font-medium text-cyan hover:text-yellow-green transition-colors relative group py-2"
               >
                 Services
+                <motion.span
+                  className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan to-yellow-green group-hover:w-full transition-all duration-300"
+                ></motion.span>
                 <motion.div
                   animate={{ rotate: servicesOpen ? 180 : 0 }}
                   transition={{ duration: 0.3 }}

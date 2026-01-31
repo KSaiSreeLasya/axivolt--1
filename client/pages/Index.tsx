@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ImageCarousel from "@/components/ImageCarousel";
+import AnimatedCounter from "@/components/AnimatedCounter";
 import { useNavigate } from "react-router-dom";
 import {
   ArrowRight,

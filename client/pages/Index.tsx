@@ -585,17 +585,17 @@ export default function Index() {
       {/* Why Choose Section */}
       <section
         id="process"
-        className="py-20 bg-gradient-to-b from-cyan-50/30 via-white to-white"
+        className="py-24 bg-gradient-to-br from-cyan-50/40 via-white to-white"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl md:text-4xl font-bold mb-8">
+              <h2 className="text-4xl md:text-5xl font-bold mb-10 leading-tight text-gray-900">
                 Why Choose AXIVOLT?
               </h2>
 

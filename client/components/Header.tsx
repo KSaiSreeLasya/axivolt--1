@@ -205,24 +205,28 @@ export default function Header() {
                       )}
                     </div>
 
-                    <Link
-                      to="/solutions/wind"
-                      className="block px-6 py-3 text-sm text-black hover:text-cyan hover:bg-background/50 transition-colors border-b border-border"
-                    >
-                      Wind
-                    </Link>
-                    <Link
-                      to="/solutions/energy-storage"
-                      className="block px-6 py-3 text-sm text-black hover:text-cyan hover:bg-background/50 transition-colors border-b border-border"
-                    >
-                      Energy Storage
-                    </Link>
-                    <Link
-                      to="/solutions/ev-stations"
-                      className="block px-6 py-3 text-sm text-black hover:text-cyan hover:bg-background/50 transition-colors"
-                    >
-                      EV Stations
-                    </Link>
+                    {[
+                      { to: "/solutions/wind", label: "Wind" },
+                      { to: "/solutions/energy-storage", label: "Energy Storage" },
+                      { to: "/solutions/ev-stations", label: "EV Stations" },
+                    ].map((item, idx) => (
+                      <motion.div
+                        key={idx}
+                        whileHover={{ backgroundColor: "rgba(0, 188, 212, 0.05)" }}
+                      >
+                        <Link
+                          to={item.to}
+                          className="block px-6 py-3 text-sm text-black hover:text-cyan transition-colors border-b border-cyan/10 last:border-b-0 group relative"
+                        >
+                          <span className="relative">
+                            {item.label}
+                            <motion.span
+                              className="absolute bottom-0 left-0 w-0 h-0.5 bg-cyan group-hover:w-full transition-all duration-300"
+                            ></motion.span>
+                          </span>
+                        </Link>
+                      </motion.div>
+                    ))}
                   </div>
                 </motion.div>
               )}

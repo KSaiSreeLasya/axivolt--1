@@ -282,10 +282,9 @@ export default function About() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="relative h-96 bg-gradient-to-br from-green-400/20 to-cyan/20 rounded-lg border border-border overflow-hidden order-2 lg:order-1">
-              <video
-                src="https://cdn.builder.io/o/assets%2F125c7cd6968a435da0ace6ef2edbf6b7%2F4078f8329e7446b590f1b988d0ecccdc?alt=media&token=c2125ecf-c59f-4603-acad-02ea4b505e3e&apiKey=125c7cd6968a435da0ace6ef2edbf6b7"
-                alt="Our Story"
-                controls
+              <img
+                src="https://images.unsplash.com/photo-1466611653022-2f88e537e94f?w=600&h=400&fit=crop"
+                alt="Wind energy"
                 className="w-full h-full object-cover"
               />
             </div>

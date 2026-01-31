@@ -19,7 +19,10 @@ export function createServer() {
     const hostWithoutPort = host.split(":")[0];
 
     // Match both www.axisogreen.in and axisogreen.in
-    if (hostWithoutPort === "axisogreen.in" || hostWithoutPort === "www.axisogreen.in") {
+    if (
+      hostWithoutPort === "axisogreen.in" ||
+      hostWithoutPort === "www.axisogreen.in"
+    ) {
       const newUrl = `https://www.axivolt.in${req.originalUrl}`;
       return res.redirect(301, newUrl);
     }

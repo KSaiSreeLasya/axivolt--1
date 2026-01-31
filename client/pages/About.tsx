@@ -271,50 +271,102 @@ export default function About() {
 
       {/* Hero Section */}
       <section className="relative overflow-hidden pt-20 md:pt-32 pb-20">
+        <motion.div
+          className="absolute inset-0 -z-10"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 0.7 }}
+          transition={{ duration: 1.5, ease: "easeOut" }}
+        >
+          <div className="absolute top-0 left-1/4 w-96 h-96 bg-cyan/15 rounded-full filter blur-3xl"></div>
+          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-yellow-green/15 rounded-full filter blur-3xl"></div>
+        </motion.div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <p className="text-cyan text-sm uppercase tracking-widest mb-4">
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8 }}
+            >
+              <motion.p
+                className="text-cyan text-sm uppercase tracking-widest mb-4 font-semibold"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+              >
                 Empowering Sustainable Tomorrow
-              </p>
-              <h1 className="text-4xl md:text-5xl font-bold mb-6">
-                Our <span className="text-cyan">Mission</span>
-              </h1>
-              <p className="text-lg text-black400 mb-8">
+              </motion.p>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+              >
+                <h1 className="text-4xl md:text-5xl font-bold mb-6">
+                  Our <span className="bg-gradient-to-r from-cyan to-cyan/80 bg-clip-text text-transparent">Mission</span>
+                </h1>
+              </motion.div>
+              <motion.p
+                className="text-lg text-black400 mb-8"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+              >
                 To accelerate the world's transition to renewable energy through
                 innovative solutions, expert guidance, and unwavering commitment
                 to excellence.
-              </p>
-              <div className="flex items-center gap-4">
-                <button
+              </motion.p>
+              <motion.div
+                className="flex items-center gap-4 flex-wrap"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+              >
+                <motion.button
                   onClick={() => navigate("/solutions")}
                   className="bg-cyan text-background px-6 py-3 rounded-lg font-bold hover:bg-yellow-green transition-all inline-flex items-center gap-2"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
                 >
                   Learn More <ArrowRight className="w-5 h-5" />
-                </button>
-                <button
+                </motion.button>
+                <motion.button
                   onClick={() => setShowVideoModal(true)}
                   className="border border-cyan text-cyan px-6 py-3 rounded-lg font-bold hover:bg-cyan/10 transition-all"
+                  whileHover={{ scale: 1.05, backgroundColor: "rgba(0, 188, 212, 0.05)" }}
+                  whileTap={{ scale: 0.95 }}
                 >
                   Our Story
-                </button>
-              </div>
+                </motion.button>
+              </motion.div>
 
               {/* Stats */}
               <div className="grid grid-cols-3 gap-6 mt-12">
                 {stats.map((stat, idx) => (
-                  <div key={idx}>
+                  <motion.div
+                    key={idx}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.5 + idx * 0.1 }}
+                  >
                     <p className="text-2xl md:text-3xl font-bold text-cyan">
                       {stat.value}
                     </p>
                     <p className="text-sm text-black400">{stat.label}</p>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
-            </div>
+            </motion.div>
 
-            <div className="relative h-96">
-              <div className="absolute inset-0 bg-gradient-to-br from-cyan/20 to-yellow-green/20 rounded-3xl blur-2xl"></div>
+            <motion.div
+              className="relative h-96"
+              initial={{ opacity: 0, x: 40 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-br from-cyan/20 to-yellow-green/20 rounded-3xl blur-2xl"
+                animate={{ scale: [1, 1.05, 1] }}
+                transition={{ duration: 4, repeat: Infinity }}
+              ></motion.div>
               <ImageCarousel
                 images={[
                   "https://cdn.builder.io/api/v1/image/assets%2F125c7cd6968a435da0ace6ef2edbf6b7%2F9d84a999e09b4e95b8bc2776c5f2ab23?format=webp&width=800&height=1200",
@@ -324,7 +376,7 @@ export default function About() {
                 alt="AXIVOLT Solar Projects"
                 className="relative h-full"
               />
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>

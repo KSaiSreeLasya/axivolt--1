@@ -363,7 +363,7 @@ export default function Header() {
             >
               <Link
                 to="/quote"
-                className="bg-gradient-to-r from-cyan to-yellow-green text-background px-6 py-2 rounded-lg font-semibold text-sm inline-block shadow-lg hover:shadow-2xl transition-all relative group overflow-hidden"
+                className="bg-gradient-to-r from-cyan to-yellow-green text-background px-7 py-3 rounded-lg font-semibold text-base inline-block shadow-lg hover:shadow-2xl transition-all relative group overflow-hidden"
               >
                 <motion.span className="absolute inset-0 bg-gradient-to-r from-yellow-green to-cyan opacity-0 group-hover:opacity-100 transition-opacity"></motion.span>
                 <span className="relative">Get a Quote</span>

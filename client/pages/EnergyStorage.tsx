@@ -7,19 +7,19 @@ export default function EnergyStorage() {
   const navigate = useNavigate();
   const infrastructure = [
     {
-      title: "Battery Storage",
+      title: "Smart City Energy System",
       image:
-        "https://images.unsplash.com/photo-1513452862899-169dd34e93b4?w=600&h=400&fit=crop",
+        "https://cdn.builder.io/api/v1/image/assets%2F125c7cd6968a435da0ace6ef2edbf6b7%2Fc40413ea7aad4aa0846b7031b5e8e68a?format=webp&width=800&height=1200",
     },
     {
-      title: "Energy Management",
+      title: "Battery Storage Systems",
       image:
-        "https://images.unsplash.com/photo-1621905167918-48416bd8575a?w=600&h=400&fit=crop",
+        "https://cdn.builder.io/api/v1/image/assets%2F125c7cd6968a435da0ace6ef2edbf6b7%2F5215db448aa74c6bb69c1758274778dd?format=webp&width=800&height=1200",
     },
     {
-      title: "Grid Infrastructure",
+      title: "Energy Management Controls",
       image:
-        "https://images.unsplash.com/photo-1532996122724-8f3c2cd83c5d?w=600&h=400&fit=crop",
+        "https://cdn.builder.io/api/v1/image/assets%2F125c7cd6968a435da0ace6ef2edbf6b7%2F92489de2dc9b43308f558bd9797f20b6?format=webp&width=800&height=1200",
     },
   ];
 

@@ -335,27 +335,33 @@ export default function Header() {
             className="flex items-center gap-4 flex-shrink-0"
           >
             <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              whileHover={{ scale: 1.08 }}
+              whileTap={{ scale: 0.92 }}
               transition={{ type: "spring", stiffness: 400, damping: 10 }}
             >
               <Link
                 to="/contact"
-                className="border border-cyan text-cyan px-5 py-2 rounded font-semibold hover:bg-cyan/10 transition-all text-sm inline-block"
+                className="border-2 border-cyan text-cyan px-5 py-2 rounded-lg font-semibold hover:bg-cyan/10 transition-all text-sm inline-block relative group overflow-hidden"
               >
-                Contact Us
+                <motion.span
+                  className="absolute inset-0 bg-gradient-to-r from-cyan to-yellow-green opacity-0 group-hover:opacity-10 transition-opacity"
+                ></motion.span>
+                <span className="relative">Contact Us</span>
               </Link>
             </motion.div>
             <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              whileHover={{ scale: 1.08 }}
+              whileTap={{ scale: 0.92 }}
               transition={{ type: "spring", stiffness: 400, damping: 10 }}
             >
               <Link
                 to="/quote"
-                className="bg-cyan text-background px-6 py-2 rounded font-semibold hover:bg-yellow-green transition-all text-sm inline-block shadow-lg hover:shadow-xl"
+                className="bg-gradient-to-r from-cyan to-yellow-green text-background px-6 py-2 rounded-lg font-semibold text-sm inline-block shadow-lg hover:shadow-2xl transition-all relative group overflow-hidden"
               >
-                Get a Quote
+                <motion.span
+                  className="absolute inset-0 bg-gradient-to-r from-yellow-green to-cyan opacity-0 group-hover:opacity-100 transition-opacity"
+                ></motion.span>
+                <span className="relative">Get a Quote</span>
               </Link>
             </motion.div>
           </motion.div>

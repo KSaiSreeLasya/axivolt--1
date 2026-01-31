@@ -63,145 +63,20 @@ export default function Index() {
               </div>
             </div>
 
-            {/* Right Image */}
-            <div className="relative h-96 md:h-full animate-float">
+            {/* Right Image - Carousel */}
+            <div className="relative animate-float">
               <div className="absolute inset-0 bg-gradient-to-br from-cyan/20 to-yellow-green/20 rounded-3xl blur-2xl animate-pulse-slow"></div>
-              <div className="relative bg-gradient-to-br from-cyan/10 to-yellow-green/10 rounded-2xl p-8 h-full flex items-center justify-center hover:shadow-2xl hover:shadow-cyan/20 transition-all duration-500">
-                <svg
-                  className="w-full h-full"
-                  viewBox="0 0 400 400"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  {/* Building */}
-                  <rect
-                    x="100"
-                    y="150"
-                    width="200"
-                    height="200"
-                    rx="10"
-                    fill="#1a3a4a"
-                    stroke="#048286"
-                    strokeWidth="2"
-                  />
-
-                  {/* Windows */}
-                  {[0, 1, 2, 3].map((row) =>
-                    [0, 1, 2, 3].map((col) => (
-                      <rect
-                        key={`${row}-${col}`}
-                        x={115 + col * 45}
-                        y={165 + row * 45}
-                        width="30"
-                        height="30"
-                        rx="4"
-                        fill="rgba(175, 227, 50, 0.2)"
-                      />
-                    )),
-                  )}
-
-                  {/* Solar Panels on Roof */}
-                  <rect
-                    x="120"
-                    y="120"
-                    width="160"
-                    height="40"
-                    rx="5"
-                    fill="#047F86"
-                    opacity="0.8"
-                  />
-
-                  {/* Panel Grid Lines */}
-                  <line
-                    x1="140"
-                    y1="120"
-                    x2="140"
-                    y2="160"
-                    stroke="#1a3a4a"
-                    strokeWidth="1"
-                  />
-                  <line
-                    x1="160"
-                    y1="120"
-                    x2="160"
-                    y2="160"
-                    stroke="#1a3a4a"
-                    strokeWidth="1"
-                  />
-                  <line
-                    x1="180"
-                    y1="120"
-                    x2="180"
-                    y2="160"
-                    stroke="#1a3a4a"
-                    strokeWidth="1"
-                  />
-                  <line
-                    x1="200"
-                    y1="120"
-                    x2="200"
-                    y2="160"
-                    stroke="#1a3a4a"
-                    strokeWidth="1"
-                  />
-                  <line
-                    x1="220"
-                    y1="120"
-                    x2="220"
-                    y2="160"
-                    stroke="#1a3a4a"
-                    strokeWidth="1"
-                  />
-                  <line
-                    x1="240"
-                    y1="120"
-                    x2="240"
-                    y2="160"
-                    stroke="#1a3a4a"
-                    strokeWidth="1"
-                  />
-
-                  {/* Sun */}
-                  <circle
-                    cx="350"
-                    cy="60"
-                    r="30"
-                    fill="#047F86"
-                    opacity="0.9"
-                  />
-                  <line
-                    x1="350"
-                    y1="15"
-                    x2="350"
-                    y2="0"
-                    stroke="#047F86"
-                    strokeWidth="3"
-                  />
-                  <line
-                    x1="350"
-                    y1="105"
-                    x2="350"
-                    y2="120"
-                    stroke="#047F86"
-                    strokeWidth="3"
-                  />
-                  <line
-                    x1="305"
-                    y1="60"
-                    x2="285"
-                    y2="60"
-                    stroke="#047F86"
-                    strokeWidth="3"
-                  />
-                  <line
-                    x1="395"
-                    y1="60"
-                    x2="415"
-                    y2="60"
-                    stroke="#047F86"
-                    strokeWidth="3"
-                  />
-                </svg>
+              <div className="relative hover:shadow-2xl hover:shadow-cyan/20 transition-all duration-500">
+                <ImageCarousel
+                  images={[
+                    "https://cdn.builder.io/api/v1/image/assets%2F5dae6ba816ad4ab6ab0be78111d8eb0a%2F2bb90261dab04f95be97780a7243f0cc?format=webp&width=800&height=1200",
+                    "https://cdn.builder.io/api/v1/image/assets%2F5dae6ba816ad4ab6ab0be78111d8eb0a%2F3a1c821a20844e188796e3809d4922af?format=webp&width=800&height=1200",
+                    "https://cdn.builder.io/api/v1/image/assets%2F5dae6ba816ad4ab6ab0be78111d8eb0a%2F53a9ce0b25314be18c39874b991d1d9e?format=webp&width=800&height=1200",
+                  ]}
+                  autoplay={true}
+                  interval={5000}
+                  showIndicators={true}
+                />
               </div>
             </div>
           </div>

@@ -18,6 +18,30 @@ import { X } from "lucide-react";
 export default function About() {
   const navigate = useNavigate();
   const [showVideoModal, setShowVideoModal] = useState(false);
+  const [visionInView, setVisionInView] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisionInView(true);
+        }
+      },
+      { threshold: 0.2 }
+    );
+
+    const visionElement = document.getElementById("vision-section");
+    if (visionElement) {
+      observer.observe(visionElement);
+    }
+
+    return () => {
+      if (visionElement) {
+        observer.unobserve(visionElement);
+      }
+    };
+  }, []);
+
   useSEO({
     title: "About AXIVOLT | Leading Solar Energy Company in India",
     description:

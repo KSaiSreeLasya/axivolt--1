@@ -629,29 +629,36 @@ export default function Index() {
       </section>
 
       {/* Highlighted Stats Bar */}
-      <section className="py-12 bg-yellow-green text-background">
+      <section className="py-12 bg-gradient-to-r from-yellow-green to-yellow-green/90 text-background relative overflow-hidden">
+        <motion.div
+          className="absolute inset-0 -z-10"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 0.2 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true }}
+        >
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-white/10 rounded-full filter blur-3xl"></div>
+        </motion.div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div>
-              <p className="text-3xl md:text-4xl font-bold">99.2%</p>
-              <p className="text-sm text-background/80 mt-2">System Uptime</p>
-            </div>
-            <div>
-              <p className="text-3xl md:text-4xl font-bold">500+</p>
-              <p className="text-sm text-background/80 mt-2">
-                Active Installations
-              </p>
-            </div>
-            <div>
-              <p className="text-3xl md:text-4xl font-bold">10000</p>
-              <p className="text-sm text-background/80 mt-2">MWh Generated</p>
-            </div>
-            <div>
-              <p className="text-3xl md:text-4xl font-bold">24/7</p>
-              <p className="text-sm text-background/80 mt-2">
-                Customer Support
-              </p>
-            </div>
+            {[
+              { label: "System Uptime", value: "99.2%" },
+              { label: "Active Installations", value: "500+" },
+              { label: "MWh Generated", value: "10000" },
+              { label: "Customer Support", value: "24/7" },
+            ].map((stat, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                whileHover={{ scale: 1.1 }}
+              >
+                <p className="text-3xl md:text-4xl font-bold">{stat.value}</p>
+                <p className="text-sm text-background/80 mt-2">{stat.label}</p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>

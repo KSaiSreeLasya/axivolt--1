@@ -7,19 +7,19 @@ export default function EVStations() {
   const navigate = useNavigate();
   const solutions = [
     {
-      title: "Charging Solutions 1",
+      title: "Home EV Charging Station",
       image:
-        "https://images.unsplash.com/photo-1617788386602-11c0c51c18e0?w=600&h=400&fit=crop",
+        "https://cdn.builder.io/api/v1/image/assets%2F125c7cd6968a435da0ace6ef2edbf6b7%2F0dfe5699a39f4683b1053aed1df1f2b4?format=webp&width=800&height=1200",
     },
     {
-      title: "Infrastructure 2",
+      title: "Commercial Parking Canopy",
       image:
-        "https://images.unsplash.com/photo-1506901925346-21bda4d32df4?w=600&h=400&fit=crop",
+        "https://cdn.builder.io/api/v1/image/assets%2F125c7cd6968a435da0ace6ef2edbf6b7%2F702874ccd7f542f980f6069362c8610c?format=webp&width=800&height=1200",
     },
     {
-      title: "Fleet Charging 3",
+      title: "Fast Charging Network",
       image:
-        "https://images.unsplash.com/photo-1557804506-669714d2e9d8?w=600&h=400&fit=crop",
+        "https://cdn.builder.io/api/v1/image/assets%2F125c7cd6968a435da0ace6ef2edbf6b7%2F724918157e3e443e87569a122e3fa517?format=webp&width=800&height=1200",
     },
   ];
 
@@ -125,20 +125,17 @@ export default function EVStations() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {solutions.map((solution, idx) => (
-              <div
-                key={idx}
-                className="relative h-64 rounded-lg overflow-hidden group"
-              >
-                <img
-                  src={solution.image}
-                  alt={solution.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent flex items-end p-4">
-                  <h3 className="text-lg font-bold">{solution.title}</h3>
+              <div key={idx}>
+                <div className="relative h-64 rounded-lg overflow-hidden group mb-3">
+                  <img
+                    src={solution.image}
+                    alt={solution.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                  />
                 </div>
+                <h3 className="text-lg font-bold">{solution.title}</h3>
               </div>
             ))}
           </div>

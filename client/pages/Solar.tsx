@@ -37,19 +37,24 @@ export default function Solar() {
   }, []);
   const projects = [
     {
-      title: "Rooftop Solar Installation 1",
+      title: "Wind & Solar Hybrid Farm",
       image:
-        "https://images.unsplash.com/photo-1509391366360-2e938aa1df42?w=600&h=400&fit=crop",
+        "https://cdn.builder.io/api/v1/image/assets%2F125c7cd6968a435da0ace6ef2edbf6b7%2F7bc4b1a4b9ea417b94e89a43e047a7aa?format=webp&width=800&height=1200",
     },
     {
-      title: "Large-Scale Solar Farm",
+      title: "Large-Scale Industrial Solar Installation",
       image:
-        "https://images.unsplash.com/photo-1473375157435-2a8ad3cf3d64?w=600&h=400&fit=crop",
+        "https://cdn.builder.io/api/v1/image/assets%2F125c7cd6968a435da0ace6ef2edbf6b7%2Fe490542cae24409887803626eb7fd4fe?format=webp&width=800&height=1200",
     },
     {
-      title: "Solar Panel Installation",
+      title: "Commercial Warehouse Solar System",
       image:
-        "https://images.unsplash.com/photo-1495652714223-3ba207a4bff3?w=600&h=400&fit=crop",
+        "https://cdn.builder.io/api/v1/image/assets%2F125c7cd6968a435da0ace6ef2edbf6b7%2F2faad9b743d345038748132b0efe13f4?format=webp&width=800&height=1200",
+    },
+    {
+      title: "Ground-Mounted Solar Farm Project",
+      image:
+        "https://cdn.builder.io/api/v1/image/assets%2F125c7cd6968a435da0ace6ef2edbf6b7%2F0af327a09e41485fa5c095981a88b3eb?format=webp&width=800&height=1200",
     },
   ];
 
@@ -194,20 +199,17 @@ export default function Solar() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {projects.map((project, idx) => (
-              <div
-                key={idx}
-                className="relative h-64 rounded-lg overflow-hidden group"
-              >
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent flex items-end p-4">
-                  <h3 className="text-lg font-bold">{project.title}</h3>
+              <div key={idx}>
+                <div className="relative h-64 rounded-lg overflow-hidden group mb-3">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                  />
                 </div>
+                <h3 className="text-lg font-bold">{project.title}</h3>
               </div>
             ))}
           </div>

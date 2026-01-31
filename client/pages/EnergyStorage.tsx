@@ -7,19 +7,19 @@ export default function EnergyStorage() {
   const navigate = useNavigate();
   const infrastructure = [
     {
-      title: "Battery Storage",
+      title: "Smart City Energy System",
       image:
-        "https://images.unsplash.com/photo-1513452862899-169dd34e93b4?w=600&h=400&fit=crop",
+        "https://cdn.builder.io/api/v1/image/assets%2F125c7cd6968a435da0ace6ef2edbf6b7%2Fc40413ea7aad4aa0846b7031b5e8e68a?format=webp&width=800&height=1200",
     },
     {
-      title: "Energy Management",
+      title: "Battery Storage Systems",
       image:
-        "https://images.unsplash.com/photo-1621905167918-48416bd8575a?w=600&h=400&fit=crop",
+        "https://cdn.builder.io/api/v1/image/assets%2F125c7cd6968a435da0ace6ef2edbf6b7%2F5215db448aa74c6bb69c1758274778dd?format=webp&width=800&height=1200",
     },
     {
-      title: "Grid Infrastructure",
+      title: "Energy Management Controls",
       image:
-        "https://images.unsplash.com/photo-1532996122724-8f3c2cd83c5d?w=600&h=400&fit=crop",
+        "https://cdn.builder.io/api/v1/image/assets%2F125c7cd6968a435da0ace6ef2edbf6b7%2F92489de2dc9b43308f558bd9797f20b6?format=webp&width=800&height=1200",
     },
   ];
 
@@ -110,18 +110,15 @@ export default function EnergyStorage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {infrastructure.map((item, idx) => (
-              <div
-                key={idx}
-                className="relative h-64 rounded-lg overflow-hidden group"
-              >
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent flex items-end p-4">
-                  <h3 className="text-lg font-bold">{item.title}</h3>
+              <div key={idx}>
+                <div className="relative h-64 rounded-lg overflow-hidden group mb-3">
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                  />
                 </div>
+                <h3 className="text-lg font-bold">{item.title}</h3>
               </div>
             ))}
           </div>

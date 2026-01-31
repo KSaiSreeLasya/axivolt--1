@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import ImageCarousel from "@/components/ImageCarousel";
 import { useNavigate } from "react-router-dom";
 import {
   ArrowRight,
@@ -11,10 +12,61 @@ import {
   Target,
 } from "lucide-react";
 import { useSEO, addSchemaMarkup, SchemaMarkup } from "@/hooks/useSEO";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { X } from "lucide-react";
 
 export default function About() {
   const navigate = useNavigate();
+  const [showVideoModal, setShowVideoModal] = useState(false);
+  const [visionInView, setVisionInView] = useState(false);
+  const [coreValuesInView, setCoreValuesInView] = useState(false);
+  const [certificationsInView, setCertificationsInView] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          if (entry.target.id === "vision-section") {
+            setVisionInView(true);
+          } else if (entry.target.id === "core-values-section") {
+            setCoreValuesInView(true);
+          } else if (entry.target.id === "certifications-section") {
+            setCertificationsInView(true);
+          }
+        }
+      },
+      { threshold: 0.2 },
+    );
+
+    const visionElement = document.getElementById("vision-section");
+    const coreValuesElement = document.getElementById("core-values-section");
+    const certificationsElement = document.getElementById(
+      "certifications-section",
+    );
+
+    if (visionElement) {
+      observer.observe(visionElement);
+    }
+    if (coreValuesElement) {
+      observer.observe(coreValuesElement);
+    }
+    if (certificationsElement) {
+      observer.observe(certificationsElement);
+    }
+
+    return () => {
+      if (visionElement) {
+        observer.unobserve(visionElement);
+      }
+      if (coreValuesElement) {
+        observer.unobserve(coreValuesElement);
+      }
+      if (certificationsElement) {
+        observer.unobserve(certificationsElement);
+      }
+    };
+  }, []);
+
   useSEO({
     title: "About AXIVOLT | Leading Solar Energy Company in India",
     description:
@@ -240,7 +292,7 @@ export default function About() {
                   Learn More <ArrowRight className="w-5 h-5" />
                 </button>
                 <button
-                  onClick={() => navigate("/contact")}
+                  onClick={() => setShowVideoModal(true)}
                   className="border border-cyan text-cyan px-6 py-3 rounded-lg font-bold hover:bg-cyan/10 transition-all"
                 >
                   Our Story
@@ -260,11 +312,16 @@ export default function About() {
               </div>
             </div>
 
-            <div className="relative h-96 bg-gradient-to-br from-cyan/20 to-purple-500/20 rounded-lg border border-border overflow-hidden">
-              <img
-                src="https://images.unsplash.com/photo-1509391366360-2e938aa1df86?w=600&h=400&fit=crop"
-                alt="Solar panels"
-                className="w-full h-full object-cover"
+            <div className="relative h-96">
+              <div className="absolute inset-0 bg-gradient-to-br from-cyan/20 to-yellow-green/20 rounded-3xl blur-2xl"></div>
+              <ImageCarousel
+                images={[
+                  "https://cdn.builder.io/api/v1/image/assets%2F125c7cd6968a435da0ace6ef2edbf6b7%2F9d84a999e09b4e95b8bc2776c5f2ab23?format=webp&width=800&height=1200",
+                  "https://cdn.builder.io/api/v1/image/assets%2F125c7cd6968a435da0ace6ef2edbf6b7%2F492a443ea87943468a7b786dd05f5e59?format=webp&width=800&height=1200",
+                  "https://cdn.builder.io/api/v1/image/assets%2F125c7cd6968a435da0ace6ef2edbf6b7%2Fac591aabec2946b5a62223139c02efe7?format=webp&width=800&height=1200",
+                ]}
+                alt="AXIVOLT Solar Projects"
+                className="relative h-full"
               />
             </div>
           </div>
@@ -272,7 +329,14 @@ export default function About() {
       </section>
 
       {/* Vision Section */}
-      <section className="py-20 bg-background/50">
+      <section
+        id="vision-section"
+        className={`py-20 bg-background/50 transition-all duration-1000 ${
+          visionInView
+            ? "opacity-100 translate-y-0"
+            : "opacity-0 translate-y-10"
+        }`}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="relative h-96 bg-gradient-to-br from-green-400/20 to-cyan/20 rounded-lg border border-border overflow-hidden order-2 lg:order-1">
@@ -314,7 +378,14 @@ export default function About() {
       </section>
 
       {/* Core Values Section */}
-      <section className="py-20 bg-background">
+      <section
+        id="core-values-section"
+        className={`py-20 bg-background transition-all duration-1000 ${
+          coreValuesInView
+            ? "opacity-100 translate-y-0"
+            : "opacity-0 translate-y-10"
+        }`}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -347,7 +418,14 @@ export default function About() {
       </section>
 
       {/* Certifications & Affiliations */}
-      <section className="py-20 bg-background/50">
+      <section
+        id="certifications-section"
+        className={`py-20 bg-background/50 transition-all duration-1000 ${
+          certificationsInView
+            ? "opacity-100 translate-y-0"
+            : "opacity-0 translate-y-10"
+        }`}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -421,6 +499,26 @@ export default function About() {
           </button>
         </div>
       </section>
+
+      {/* Video Modal */}
+      {showVideoModal && (
+        <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-4">
+          <div className="relative w-full max-w-6xl bg-background rounded-lg overflow-hidden aspect-video">
+            <button
+              onClick={() => setShowVideoModal(false)}
+              className="absolute top-4 right-4 z-10 bg-cyan hover:bg-yellow-green text-background rounded-full p-2 transition-all"
+            >
+              <X className="w-6 h-6" />
+            </button>
+            <video
+              src="https://cdn.builder.io/o/assets%2F125c7cd6968a435da0ace6ef2edbf6b7%2F4078f8329e7446b590f1b988d0ecccdc?alt=media&token=c2125ecf-c59f-4603-acad-02ea4b505e3e&apiKey=125c7cd6968a435da0ace6ef2edbf6b7"
+              controls
+              autoPlay
+              className="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+      )}
 
       <Footer />
     </div>

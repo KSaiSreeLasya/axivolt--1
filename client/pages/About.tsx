@@ -19,25 +19,38 @@ export default function About() {
   const navigate = useNavigate();
   const [showVideoModal, setShowVideoModal] = useState(false);
   const [visionInView, setVisionInView] = useState(false);
+  const [coreValuesInView, setCoreValuesInView] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setVisionInView(true);
+          if (entry.target.id === "vision-section") {
+            setVisionInView(true);
+          } else if (entry.target.id === "core-values-section") {
+            setCoreValuesInView(true);
+          }
         }
       },
       { threshold: 0.2 }
     );
 
     const visionElement = document.getElementById("vision-section");
+    const coreValuesElement = document.getElementById("core-values-section");
+
     if (visionElement) {
       observer.observe(visionElement);
+    }
+    if (coreValuesElement) {
+      observer.observe(coreValuesElement);
     }
 
     return () => {
       if (visionElement) {
         observer.unobserve(visionElement);
+      }
+      if (coreValuesElement) {
+        observer.unobserve(coreValuesElement);
       }
     };
   }, []);

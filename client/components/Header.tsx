@@ -183,21 +183,21 @@ export default function Header() {
             </div>
             <Link
               to="/industry"
-              className="text-sm font-medium text-cyan hover:text-yellow-green transition-colors"
+              className="text-sm font-medium text-cyan hover:text-yellow-green transition-all duration-300 hover:scale-110 origin-center relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-yellow-green hover:after:w-full after:transition-all after:duration-300"
             >
               Industry
             </Link>
 
             <Link
               to="/careers"
-              className="text-sm font-medium text-cyan hover:text-yellow-green transition-colors"
+              className="text-sm font-medium text-cyan hover:text-yellow-green transition-all duration-300 hover:scale-110 origin-center relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-yellow-green hover:after:w-full after:transition-all after:duration-300"
             >
               Careers
             </Link>
 
             <Link
               to="/about"
-              className="text-sm font-medium text-cyan hover:text-yellow-green transition-colors"
+              className="text-sm font-medium text-cyan hover:text-yellow-green transition-all duration-300 hover:scale-110 origin-center relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-yellow-green hover:after:w-full after:transition-all after:duration-300"
             >
               About
             </Link>
@@ -207,13 +207,13 @@ export default function Header() {
           <div className="flex items-center gap-4 flex-shrink-0">
             <Link
               to="/contact"
-              className="border border-cyan text-cyan px-5 py-2 rounded font-semibold hover:bg-cyan/10 transition-all text-sm inline-block"
+              className="border border-cyan text-cyan px-5 py-2 rounded font-semibold hover:bg-cyan/10 transition-all duration-300 text-sm inline-block hover:scale-105 hover:shadow-lg hover:shadow-cyan/30"
             >
               Contact Us
             </Link>
             <Link
               to="/quote"
-              className="bg-cyan text-background px-6 py-2 rounded font-semibold hover:bg-yellow-green transition-all text-sm inline-block"
+              className="bg-cyan text-background px-6 py-2 rounded font-semibold hover:bg-yellow-green transition-all duration-300 text-sm inline-block hover:scale-105 hover:shadow-lg hover:shadow-cyan/40 hover:-translate-y-0.5"
             >
               Get a Quote
             </Link>

@@ -1,11 +1,12 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { ArrowLeft, Building2, Globe, Shield } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useSEO, addSchemaMarkup, SchemaMarkup } from "@/hooks/useSEO";
 import { useEffect } from "react";
 
 export default function SolarGovernment() {
+  const navigate = useNavigate();
   useSEO({
     title:
       "Government Solar Projects | Public Sector Energy Solutions | AXIVOLT",

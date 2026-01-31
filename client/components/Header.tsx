@@ -46,7 +46,7 @@ export default function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 w-full bg-background/95 backdrop-blur-md border-b border-cyan/20 shadow-lg">
       <div className="max-w-full mx-auto px-6 lg:px-12">
-        <div className="flex items-center h-32 gap-4">
+        <div className="flex items-center h-40 gap-4">
           {/* Logo and Brand */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}

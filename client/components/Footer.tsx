@@ -62,7 +62,7 @@ export default function Footer() {
                 <motion.img
                   src="https://cdn.builder.io/api/v1/image/assets%2F3c998b3ff9204c11af8b6ffa6ad40d16%2F30fb58eade114c97aa78f9ff333e7cab?format=webp&width=800&height=1200"
                   alt="AXIVOLT Logo"
-                  className="h-32 w-auto"
+                  className="h-20 w-auto"
                   whileHover={{ scale: 1.1 }}
                   transition={{ type: "spring", stiffness: 400, damping: 10 }}
                 />

@@ -58,7 +58,7 @@ export default function ContactUs() {
       address: {
         "@type": "PostalAddress",
         streetAddress:
-          "Plot No. 101, Miyoshi Residency, Sri Nagar Colony, Miyapur",
+          "Plot No. 101, Manishi Residency, Sri Nagar Colony, Miyapur",
         addressLocality: "Hyderabad",
         addressRegion: "Telangana",
         postalCode: "500049",

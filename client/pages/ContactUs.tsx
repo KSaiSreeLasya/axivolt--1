@@ -151,7 +151,7 @@ export default function ContactUs() {
               </div>
               <h3 className="text-lg font-bold mb-3">Address</h3>
               <p className="text-black400 text-sm">
-                Plot No. 101, Miyoshi Residency, Sri
+                Plot No. 101, Manish Residency, Sri
                 <br />
                 Nagar Colony, Miyapur,
                 <br />

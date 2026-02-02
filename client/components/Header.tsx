@@ -238,9 +238,11 @@ export default function Header() {
                           to={item.to}
                           className="block px-6 py-3 text-sm text-black hover:text-cyan transition-colors border-b border-cyan/10 last:border-b-0 group relative"
                         >
+                          <motion.span
+                            className="absolute inset-0 bg-cyan opacity-0 group-hover:opacity-10 -z-10 transition-opacity duration-300"
+                          ></motion.span>
                           <span className="relative">
                             {item.label}
-                            <motion.span className="absolute bottom-0 left-0 w-0 h-0.5 bg-cyan group-hover:w-full transition-all duration-300"></motion.span>
                           </span>
                         </Link>
                       </motion.div>

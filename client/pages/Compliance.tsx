@@ -181,8 +181,8 @@ export default function Compliance() {
               <p className="mb-2">
                 <strong>Compliance Department</strong>
               </p>
-              <p className="mb-2">Email: compliance@axivolt.com</p>
-              <p className="mb-2">Phone: +1 (555) 123-4567</p>
+              <p className="mb-2">Email: contact@axivolt.com</p>
+              <p className="mb-2">Phone: +91 9063447838</p>
               <p>
                 Address: Plot No. 101, Miyoshi Residency, Sri Nagar Colony,
                 Miyapur, Hyderabad, Telangana 500049

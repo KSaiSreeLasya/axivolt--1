@@ -59,7 +59,7 @@ export default function Header() {
               className="flex items-center gap-3 group flex-shrink-0 relative"
             >
               <motion.img
-                src="https://cdn.builder.io/api/v1/image/assets%2F3c998b3ff9204c11af8b6ffa6ad40d16%2F49c21257406842c093adac8e97681564?format=webp&width=800&height=1200"
+                src="https://cdn.builder.io/api/v1/image/assets%2F3c998b3ff9204c11af8b6ffa6ad40d16%2F30fb58eade114c97aa78f9ff333e7cab?format=webp&width=800&height=1200"
                 alt="AXIVOLT Logo"
                 className="h-32 w-auto"
                 whileHover={{ scale: 1.1 }}

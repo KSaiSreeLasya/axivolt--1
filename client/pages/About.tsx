@@ -245,7 +245,6 @@ export default function About() {
       subtitle: "Telangana State",
       description:
         "Registered with Telangana State Renewable Energy Development Corporation for renewable projects.",
-      image: "https://cdn.builder.io/api/v1/image/assets%2F3c998b3ff9204c11af8b6ffa6ad40d16%2Ff32f519927b2457480c66c90c8ef824c?format=webp&width=800&height=1200",
     },
     {
       icon: Award,
@@ -253,7 +252,6 @@ export default function About() {
       subtitle: "ISO 9001 & ISO 14001",
       description:
         "Certified quality and environmental management systems across our operations.",
-      image: "https://cdn.builder.io/api/v1/image/assets%2F3c998b3ff9204c11af8b6ffa6ad40d16%2Fb523ca3eea44426a88ce7913e31fd952?format=webp&width=800&height=1200",
     },
     {
       icon: Target,
@@ -261,7 +259,6 @@ export default function About() {
       subtitle: "DPIIT Registered",
       description:
         "Recognized under Startup India for innovation and national impact in renewable energy.",
-      image: "https://cdn.builder.io/api/v1/image/assets%2F3c998b3ff9204c11af8b6ffa6ad40d16%2Fb523ca3eea44426a88ce7913e31fd952?format=webp&width=800&height=1200",
     },
     {
       icon: Zap,
@@ -269,7 +266,6 @@ export default function About() {
       subtitle: "Govt. of India",
       description:
         "Working with the Ministry of New & Renewable Energy initiatives and programs.",
-      image: "https://cdn.builder.io/api/v1/image/assets%2F3c998b3ff9204c11af8b6ffa6ad40d16%2Fb523ca3eea44426a88ce7913e31fd952?format=webp&width=800&height=1200",
     },
     {
       icon: Shield,
@@ -277,7 +273,6 @@ export default function About() {
       subtitle: "UDYAM Registered",
       description:
         "Registered MSME strengthening local manufacturing & services.",
-      image: "https://cdn.builder.io/api/v1/image/assets%2F3c998b3ff9204c11af8b6ffa6ad40d16%2F35da9d793fc2472bb21caf4db1d88a04?format=webp&width=800&height=1200",
     },
   ];
 

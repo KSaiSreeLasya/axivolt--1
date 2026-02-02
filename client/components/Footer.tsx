@@ -62,7 +62,7 @@ export default function Footer() {
                 <motion.img
                   src="https://cdn.builder.io/api/v1/image/assets%2F3c998b3ff9204c11af8b6ffa6ad40d16%2F30fb58eade114c97aa78f9ff333e7cab?format=webp&width=800&height=1200"
                   alt="AXIVOLT Logo"
-                  className="h-32 w-auto"
+                  className="h-20 w-auto"
                   whileHover={{ scale: 1.1 }}
                   transition={{ type: "spring", stiffness: 400, damping: 10 }}
                 />
@@ -112,8 +112,8 @@ export default function Footer() {
                     to={link.to}
                     className="text-black text-sm hover:text-cyan transition-colors relative group"
                   >
+                    <motion.span className="absolute inset-0 bg-cyan opacity-0 group-hover:opacity-10 -z-10 rounded transition-opacity duration-300"></motion.span>
                     {link.label}
-                    <motion.span className="absolute bottom-0 left-0 w-0 h-0.5 bg-cyan group-hover:w-full transition-all duration-300"></motion.span>
                   </Link>
                 </motion.li>
               ))}
@@ -143,8 +143,8 @@ export default function Footer() {
                     to={link.to}
                     className="text-black text-sm hover:text-cyan transition-colors relative group"
                   >
+                    <motion.span className="absolute inset-0 bg-cyan opacity-0 group-hover:opacity-10 -z-10 rounded transition-opacity duration-300"></motion.span>
                     {link.label}
-                    <motion.span className="absolute bottom-0 left-0 w-0 h-0.5 bg-cyan group-hover:w-full transition-all duration-300"></motion.span>
                   </Link>
                 </motion.li>
               ))}
@@ -174,8 +174,8 @@ export default function Footer() {
                     to={link.to}
                     className="text-black text-sm hover:text-cyan transition-colors relative group"
                   >
+                    <motion.span className="absolute inset-0 bg-cyan opacity-0 group-hover:opacity-10 -z-10 rounded transition-opacity duration-300"></motion.span>
                     {link.label}
-                    <motion.span className="absolute bottom-0 left-0 w-0 h-0.5 bg-cyan group-hover:w-full transition-all duration-300"></motion.span>
                   </Link>
                 </motion.li>
               ))}
@@ -205,8 +205,8 @@ export default function Footer() {
                     to={link.to}
                     className="text-black text-sm hover:text-cyan transition-colors relative group"
                   >
+                    <motion.span className="absolute inset-0 bg-cyan opacity-0 group-hover:opacity-10 -z-10 rounded transition-opacity duration-300"></motion.span>
                     {link.label}
-                    <motion.span className="absolute bottom-0 left-0 w-0 h-0.5 bg-cyan group-hover:w-full transition-all duration-300"></motion.span>
                   </Link>
                 </motion.li>
               ))}

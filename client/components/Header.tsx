@@ -88,11 +88,8 @@ export default function Header() {
                 to="/"
                 className="text-lg font-medium text-cyan hover:text-yellow-green transition-colors relative group py-2"
               >
+                <motion.span className="absolute inset-0 bg-gradient-to-r from-cyan to-yellow-green opacity-0 group-hover:opacity-20 -z-10 rounded-md transition-opacity duration-300"></motion.span>
                 Home
-                <motion.span
-                  className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan to-yellow-green group-hover:w-full transition-all duration-300"
-                  layoutId="nav-underline"
-                ></motion.span>
               </Link>
             </motion.div>
 
@@ -111,8 +108,8 @@ export default function Header() {
                 onMouseLeave={() => setSolutionsOpen(false)}
                 className="flex items-center gap-1 text-lg font-medium text-cyan hover:text-yellow-green transition-colors relative group py-2"
               >
+                <motion.span className="absolute inset-0 bg-gradient-to-r from-cyan to-yellow-green opacity-0 group-hover:opacity-20 -z-10 rounded-md transition-opacity duration-300"></motion.span>
                 Solutions
-                <motion.span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan to-yellow-green group-hover:w-full transition-all duration-300"></motion.span>
                 <motion.div
                   animate={{ rotate: solutionsOpen ? 180 : 0 }}
                   transition={{ duration: 0.3 }}
@@ -149,10 +146,8 @@ export default function Header() {
                           to="/solutions/solar"
                           className="flex items-center justify-between px-6 py-3 text-sm text-black hover:text-cyan transition-colors border-b border-cyan/10 group relative"
                         >
-                          <span className="relative">
-                            Solar
-                            <motion.span className="absolute bottom-0 left-0 w-0 h-0.5 bg-cyan group-hover:w-full transition-all duration-300"></motion.span>
-                          </span>
+                          <motion.span className="absolute inset-0 bg-cyan opacity-0 group-hover:opacity-10 -z-10 transition-opacity duration-300"></motion.span>
+                          <span className="relative">Solar</span>
                           <motion.div
                             animate={{
                               rotate:
@@ -203,10 +198,8 @@ export default function Header() {
                                   to={item.to}
                                   className="block px-6 py-3 text-sm text-black hover:text-cyan transition-colors border-b border-cyan/10 last:border-b-0 group relative"
                                 >
-                                  <span className="relative">
-                                    {item.label}
-                                    <motion.span className="absolute bottom-0 left-0 w-0 h-0.5 bg-cyan group-hover:w-full transition-all duration-300"></motion.span>
-                                  </span>
+                                  <motion.span className="absolute inset-0 bg-cyan opacity-0 group-hover:opacity-10 -z-10 transition-opacity duration-300"></motion.span>
+                                  <span className="relative">{item.label}</span>
                                 </Link>
                               </motion.div>
                             ))}
@@ -233,10 +226,8 @@ export default function Header() {
                           to={item.to}
                           className="block px-6 py-3 text-sm text-black hover:text-cyan transition-colors border-b border-cyan/10 last:border-b-0 group relative"
                         >
-                          <span className="relative">
-                            {item.label}
-                            <motion.span className="absolute bottom-0 left-0 w-0 h-0.5 bg-cyan group-hover:w-full transition-all duration-300"></motion.span>
-                          </span>
+                          <motion.span className="absolute inset-0 bg-cyan opacity-0 group-hover:opacity-10 -z-10 transition-opacity duration-300"></motion.span>
+                          <span className="relative">{item.label}</span>
                         </Link>
                       </motion.div>
                     ))}
@@ -260,8 +251,8 @@ export default function Header() {
                 onMouseLeave={() => setServicesOpen(false)}
                 className="flex items-center gap-1 text-lg font-medium text-cyan hover:text-yellow-green transition-colors relative group py-2"
               >
+                <motion.span className="absolute inset-0 bg-gradient-to-r from-cyan to-yellow-green opacity-0 group-hover:opacity-20 -z-10 rounded-md transition-opacity duration-300"></motion.span>
                 Services
-                <motion.span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan to-yellow-green group-hover:w-full transition-all duration-300"></motion.span>
                 <motion.div
                   animate={{ rotate: servicesOpen ? 180 : 0 }}
                   transition={{ duration: 0.3 }}
@@ -300,10 +291,8 @@ export default function Header() {
                           to={item.to}
                           className="block px-6 py-3 text-sm text-black hover:text-cyan transition-colors border-b border-cyan/10 last:border-b-0 group relative"
                         >
-                          <span className="relative">
-                            {item.label}
-                            <motion.span className="absolute bottom-0 left-0 w-0 h-0.5 bg-cyan group-hover:w-full transition-all duration-300"></motion.span>
-                          </span>
+                          <motion.span className="absolute inset-0 bg-cyan opacity-0 group-hover:opacity-10 -z-10 transition-opacity duration-300"></motion.span>
+                          <span className="relative">{item.label}</span>
                         </Link>
                       </motion.div>
                     ))}
@@ -329,8 +318,8 @@ export default function Header() {
                   to={item.to}
                   className="text-lg font-medium text-cyan hover:text-yellow-green transition-colors relative group py-2"
                 >
+                  <motion.span className="absolute inset-0 bg-gradient-to-r from-cyan to-yellow-green opacity-0 group-hover:opacity-20 -z-10 rounded-md transition-opacity duration-300"></motion.span>
                   {item.label}
-                  <motion.span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan to-yellow-green group-hover:w-full transition-all duration-300"></motion.span>
                 </Link>
               </motion.div>
             ))}

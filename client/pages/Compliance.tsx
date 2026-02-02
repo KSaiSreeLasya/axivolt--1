@@ -184,7 +184,7 @@ export default function Compliance() {
               <p className="mb-2">Email: contact@axivolt.com</p>
               <p className="mb-2">Phone: +91 9063447838</p>
               <p>
-                Address: Plot No. 101, Miyoshi Residency, Sri Nagar Colony,
+                Address: Plot No. 101, Manish Residency, Sri  Durga Nagar Colony,
                 Miyapur, Hyderabad, Telangana 500049
               </p>
             </div>

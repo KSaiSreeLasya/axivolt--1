@@ -566,13 +566,13 @@ export default function About() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
             {certifications.map((cert, idx) => {
               const Icon = cert.icon;
               return (
                 <motion.div
                   key={idx}
-                  className="bg-white rounded-2xl p-10 border border-cyan/20 hover:border-cyan/50 transition-all shadow-lg hover:shadow-2xl text-center group relative overflow-hidden"
+                  className="bg-white rounded-2xl border border-cyan/20 hover:border-cyan/50 transition-all shadow-lg hover:shadow-2xl group relative overflow-hidden flex flex-col"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: idx * 0.1 }}
@@ -583,19 +583,31 @@ export default function About() {
                   }}
                 >
                   <div className="absolute top-0 right-0 w-32 h-32 bg-cyan/5 rounded-full -mr-16 -mt-16 group-hover:bg-cyan/10 transition-colors"></div>
-                  <motion.div
-                    className="w-16 h-16 bg-cyan/20 rounded-xl flex items-center justify-center mb-6 mx-auto shadow-lg relative z-10"
-                    whileHover={{ scale: 1.15, rotate: 8 }}
-                    transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                  >
-                    <Icon className="w-8 h-8 text-cyan" />
-                  </motion.div>
-                  <h3 className="text-xl font-bold mb-3 text-cyan relative z-10">
-                    {cert.title}
-                  </h3>
-                  <p className="text-gray-700 leading-relaxed relative z-10">
-                    {cert.description}
-                  </p>
+
+                  {/* Certificate Image */}
+                  <div className="relative h-40 overflow-hidden bg-gray-100">
+                    <motion.img
+                      src={cert.image}
+                      alt={cert.title}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                      whileHover={{ scale: 1.15 }}
+                    />
+                  </div>
+
+                  {/* Content */}
+                  <div className="p-6 flex flex-col flex-grow relative z-10">
+                    <h3 className="text-lg font-bold text-cyan mb-1">
+                      {cert.title}
+                    </h3>
+                    {cert.subtitle && (
+                      <p className="text-sm text-yellow-green font-semibold mb-3">
+                        {cert.subtitle}
+                      </p>
+                    )}
+                    <p className="text-gray-700 text-sm leading-relaxed flex-grow">
+                      {cert.description}
+                    </p>
+                  </div>
                 </motion.div>
               );
             })}

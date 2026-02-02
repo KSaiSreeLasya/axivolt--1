@@ -46,7 +46,7 @@ export default function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 w-full bg-background/95 backdrop-blur-md border-b border-cyan/20 shadow-lg">
       <div className="max-w-full mx-auto px-6 lg:px-12">
-        <div className="flex items-center h-40 gap-4">
+        <div className="flex items-center h-24 gap-4">
           {/* Logo and Brand */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -61,7 +61,7 @@ export default function Header() {
               <motion.img
                 src="https://cdn.builder.io/api/v1/image/assets%2F3c998b3ff9204c11af8b6ffa6ad40d16%2F30fb58eade114c97aa78f9ff333e7cab?format=webp&width=800&height=1200"
                 alt="AXIVOLT Logo"
-                className="h-32 w-auto"
+                className="h-20 w-auto"
                 whileHover={{ scale: 1.1 }}
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}
               />

@@ -132,7 +132,7 @@ export default function PrivacyPolicy() {
               <p className="mb-2">
                 <strong>AXIVOLT Green Energy</strong>
               </p>
-              <p className="mb-2">Email: privacy@axivolt.com</p>
+              <p className="mb-2">Email: contact@axivolt.com</p>
               <p>Phone: +91 9063447838</p>
             </div>
           </section>

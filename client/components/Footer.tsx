@@ -112,9 +112,7 @@ export default function Footer() {
                     to={link.to}
                     className="text-black text-sm hover:text-cyan transition-colors relative group"
                   >
-                    <motion.span
-                      className="absolute inset-0 bg-cyan opacity-0 group-hover:opacity-10 -z-10 rounded transition-opacity duration-300"
-                    ></motion.span>
+                    <motion.span className="absolute inset-0 bg-cyan opacity-0 group-hover:opacity-10 -z-10 rounded transition-opacity duration-300"></motion.span>
                     {link.label}
                   </Link>
                 </motion.li>
@@ -145,9 +143,7 @@ export default function Footer() {
                     to={link.to}
                     className="text-black text-sm hover:text-cyan transition-colors relative group"
                   >
-                    <motion.span
-                      className="absolute inset-0 bg-cyan opacity-0 group-hover:opacity-10 -z-10 rounded transition-opacity duration-300"
-                    ></motion.span>
+                    <motion.span className="absolute inset-0 bg-cyan opacity-0 group-hover:opacity-10 -z-10 rounded transition-opacity duration-300"></motion.span>
                     {link.label}
                   </Link>
                 </motion.li>
@@ -178,9 +174,7 @@ export default function Footer() {
                     to={link.to}
                     className="text-black text-sm hover:text-cyan transition-colors relative group"
                   >
-                    <motion.span
-                      className="absolute inset-0 bg-cyan opacity-0 group-hover:opacity-10 -z-10 rounded transition-opacity duration-300"
-                    ></motion.span>
+                    <motion.span className="absolute inset-0 bg-cyan opacity-0 group-hover:opacity-10 -z-10 rounded transition-opacity duration-300"></motion.span>
                     {link.label}
                   </Link>
                 </motion.li>
@@ -211,9 +205,7 @@ export default function Footer() {
                     to={link.to}
                     className="text-black text-sm hover:text-cyan transition-colors relative group"
                   >
-                    <motion.span
-                      className="absolute inset-0 bg-cyan opacity-0 group-hover:opacity-10 -z-10 rounded transition-opacity duration-300"
-                    ></motion.span>
+                    <motion.span className="absolute inset-0 bg-cyan opacity-0 group-hover:opacity-10 -z-10 rounded transition-opacity duration-300"></motion.span>
                     {link.label}
                   </Link>
                 </motion.li>

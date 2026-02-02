@@ -60,7 +60,7 @@ export default function Footer() {
             <motion.div whileHover={{ scale: 1.05 }} className="mb-4">
               <Link to="/" className="flex items-center gap-3 group">
                 <motion.img
-                  src="https://cdn.builder.io/api/v1/image/assets%2Ffe5527c1828944a38faa27a1f5c6efe7%2F00fa53301075421e90acc8403136e6ca?format=webp&width=200&height=300"
+                  src="https://cdn.builder.io/api/v1/image/assets%2F3c998b3ff9204c11af8b6ffa6ad40d16%2F49c21257406842c093adac8e97681564?format=webp&width=800&height=1200"
                   alt="AXIVOLT Logo"
                   className="h-32 w-auto"
                   whileHover={{ scale: 1.1 }}

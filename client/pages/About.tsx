@@ -241,21 +241,43 @@ export default function About() {
   const certifications = [
     {
       icon: Award,
-      title: "Certified ISO",
+      title: "TGREDCO",
+      subtitle: "Telangana State",
       description:
-        "ISO 9001 certified organization ensuring highest quality standards and operational excellence",
+        "Registered with Telangana State Renewable Energy Development Corporation for renewable projects.",
+      image: "https://cdn.builder.io/api/v1/image/assets%2F3c998b3ff9204c11af8b6ffa6ad40d16%2Ff32f519927b2457480c66c90c8ef824c?format=webp&width=800&height=1200",
+    },
+    {
+      icon: Award,
+      title: "ISO Certified",
+      subtitle: "ISO 9001 & ISO 14001",
+      description:
+        "Certified quality and environmental management systems across our operations.",
+      image: "https://cdn.builder.io/api/v1/image/assets%2F3c998b3ff9204c11af8b6ffa6ad40d16%2Fb523ca3eea44426a88ce7913e31fd952?format=webp&width=800&height=1200",
     },
     {
       icon: Target,
       title: "Startup India Recognized",
+      subtitle: "DPIIT Registered",
       description:
-        "Recognized under Startup India for innovation and renewable energy solutions",
+        "Recognized under Startup India for innovation and national impact in renewable energy.",
+      image: "https://cdn.builder.io/api/v1/image/assets%2F3c998b3ff9204c11af8b6ffa6ad40d16%2Fb523ca3eea44426a88ce7913e31fd952?format=webp&width=800&height=1200",
     },
     {
       icon: Zap,
       title: "In Collaboration with MNRE",
+      subtitle: "Govt. of India",
       description:
-        "Working with the Ministry of New & Renewable Energy initiatives and programs",
+        "Working with the Ministry of New & Renewable Energy initiatives and programs.",
+      image: "https://cdn.builder.io/api/v1/image/assets%2F3c998b3ff9204c11af8b6ffa6ad40d16%2Fb523ca3eea44426a88ce7913e31fd952?format=webp&width=800&height=1200",
+    },
+    {
+      icon: Shield,
+      title: "MSME Registered",
+      subtitle: "UDYAM Registered",
+      description:
+        "Registered MSME strengthening local manufacturing & services.",
+      image: "https://cdn.builder.io/api/v1/image/assets%2F3c998b3ff9204c11af8b6ffa6ad40d16%2F35da9d793fc2472bb21caf4db1d88a04?format=webp&width=800&height=1200",
     },
   ];
 

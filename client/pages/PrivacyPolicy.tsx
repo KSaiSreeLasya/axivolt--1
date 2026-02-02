@@ -133,7 +133,7 @@ export default function PrivacyPolicy() {
                 <strong>AXIVOLT Green Energy</strong>
               </p>
               <p className="mb-2">Email: privacy@axivolt.com</p>
-              <p>Phone: +1 (555) 123-4567</p>
+              <p>Phone: +91 9036447838</p>
             </div>
           </section>
         </div>

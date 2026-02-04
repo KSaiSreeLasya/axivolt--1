@@ -342,9 +342,8 @@ export default function Header() {
             >
               <Link
                 to="/contact"
-                className="border-2 border-cyan text-cyan px-6 py-3 rounded-lg font-semibold hover:bg-cyan/10 transition-all text-base inline-block relative group overflow-hidden"
+                className="border-2 border-cyan text-cyan px-6 py-3 rounded-lg font-semibold hover:border-yellow-green hover:text-yellow-green transition-all text-base inline-block relative group overflow-hidden"
               >
-                <motion.span className="absolute inset-0 bg-gradient-to-r from-cyan to-yellow-green opacity-0 group-hover:opacity-10 transition-opacity"></motion.span>
                 <span className="relative">Contact Us</span>
               </Link>
             </motion.div>

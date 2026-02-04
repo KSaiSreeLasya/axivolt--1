@@ -16,7 +16,11 @@ export default function Header() {
     visible: (i: number) => ({
       opacity: 1,
       x: 0,
-      transition: { delay: i * 0.08, duration: 0.6, ease: "cubic-bezier(0.34, 1.56, 0.64, 1)" },
+      transition: {
+        delay: i * 0.08,
+        duration: 0.6,
+        ease: "cubic-bezier(0.34, 1.56, 0.64, 1)",
+      },
     }),
   };
 

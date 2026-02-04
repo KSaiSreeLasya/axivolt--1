@@ -21,11 +21,12 @@ export default function Header() {
   };
 
   const buttonVariants = {
-    hidden: { opacity: 0, scale: 0.8 },
+    hidden: { opacity: 0, x: 30, scale: 0.8 },
     visible: {
       opacity: 1,
+      x: 0,
       scale: 1,
-      transition: { duration: 0.5, ease: "easeOut" },
+      transition: { duration: 0.6, ease: "cubic-bezier(0.34, 1.56, 0.64, 1)" },
     },
   };
 

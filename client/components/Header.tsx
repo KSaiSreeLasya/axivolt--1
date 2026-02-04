@@ -12,11 +12,11 @@ export default function Header() {
   >(null);
 
   const navVariants = {
-    hidden: { opacity: 0, y: -20 },
+    hidden: { opacity: 0, x: -30 },
     visible: (i: number) => ({
       opacity: 1,
-      y: 0,
-      transition: { delay: i * 0.1, duration: 0.5, ease: "easeOut" },
+      x: 0,
+      transition: { delay: i * 0.08, duration: 0.6, ease: "cubic-bezier(0.34, 1.56, 0.64, 1)" },
     }),
   };
 

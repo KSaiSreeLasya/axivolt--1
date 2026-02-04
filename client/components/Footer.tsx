@@ -14,11 +14,12 @@ export default function Footer() {
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 0, x: -40, scale: 0.9 },
     visible: {
       opacity: 1,
-      y: 0,
-      transition: { duration: 0.5, ease: "easeOut" },
+      x: 0,
+      scale: 1,
+      transition: { duration: 0.6, ease: "cubic-bezier(0.34, 1.56, 0.64, 1)" },
     },
   };
 

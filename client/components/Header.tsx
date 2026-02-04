@@ -316,9 +316,8 @@ export default function Header() {
               >
                 <Link
                   to={item.to}
-                  className="text-lg font-medium text-cyan hover:text-yellow-green transition-colors relative group py-2"
+                  className="text-lg font-medium text-cyan hover:text-yellow-green transition-colors py-2"
                 >
-                  <motion.span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-cyan to-yellow-green group-hover:w-full transition-all duration-300"></motion.span>
                   {item.label}
                 </Link>
               </motion.div>

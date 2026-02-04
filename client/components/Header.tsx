@@ -12,33 +12,40 @@ export default function Header() {
   >(null);
 
   const navVariants = {
-    hidden: { opacity: 0, y: -20 },
+    hidden: { opacity: 0, x: -30 },
     visible: (i: number) => ({
       opacity: 1,
-      y: 0,
-      transition: { delay: i * 0.1, duration: 0.5, ease: "easeOut" },
+      x: 0,
+      transition: {
+        delay: i * 0.08,
+        duration: 0.6,
+        ease: "cubic-bezier(0.34, 1.56, 0.64, 1)",
+      },
     }),
   };
 
   const buttonVariants = {
-    hidden: { opacity: 0, scale: 0.8 },
+    hidden: { opacity: 0, x: 30, scale: 0.8 },
     visible: {
       opacity: 1,
+      x: 0,
       scale: 1,
-      transition: { duration: 0.5, ease: "easeOut" },
+      transition: { duration: 0.6, ease: "cubic-bezier(0.34, 1.56, 0.64, 1)" },
     },
   };
 
   const menuVariants = {
-    hidden: { opacity: 0, y: -10 },
+    hidden: { opacity: 0, scale: 0.95, y: -15 },
     visible: {
       opacity: 1,
+      scale: 1,
       y: 0,
-      transition: { duration: 0.3, ease: "easeOut" },
+      transition: { duration: 0.4, ease: "cubic-bezier(0.34, 1.56, 0.64, 1)" },
     },
     exit: {
       opacity: 0,
-      y: -10,
+      scale: 0.95,
+      y: -15,
       transition: { duration: 0.2 },
     },
   };
@@ -86,9 +93,8 @@ export default function Header() {
             >
               <Link
                 to="/"
-                className="text-lg font-medium text-cyan hover:text-yellow-green transition-colors relative group py-2"
+                className="text-lg font-medium text-cyan hover:text-yellow-green transition-colors py-2"
               >
-                <motion.span className="absolute inset-0 bg-gradient-to-r from-cyan to-yellow-green opacity-0 group-hover:opacity-20 -z-10 rounded-md transition-opacity duration-300"></motion.span>
                 Home
               </Link>
             </motion.div>
@@ -106,9 +112,8 @@ export default function Header() {
                 to="/solutions"
                 onMouseEnter={() => setSolutionsOpen(true)}
                 onMouseLeave={() => setSolutionsOpen(false)}
-                className="flex items-center gap-1 text-lg font-medium text-cyan hover:text-yellow-green transition-colors relative group py-2"
+                className="flex items-center gap-1 text-lg font-medium text-cyan hover:text-yellow-green transition-colors py-2"
               >
-                <motion.span className="absolute inset-0 bg-gradient-to-r from-cyan to-yellow-green opacity-0 group-hover:opacity-20 -z-10 rounded-md transition-opacity duration-300"></motion.span>
                 Solutions
                 <motion.div
                   animate={{ rotate: solutionsOpen ? 180 : 0 }}
@@ -249,9 +254,8 @@ export default function Header() {
                 to="/services"
                 onMouseEnter={() => setServicesOpen(true)}
                 onMouseLeave={() => setServicesOpen(false)}
-                className="flex items-center gap-1 text-lg font-medium text-cyan hover:text-yellow-green transition-colors relative group py-2"
+                className="flex items-center gap-1 text-lg font-medium text-cyan hover:text-yellow-green transition-colors py-2"
               >
-                <motion.span className="absolute inset-0 bg-gradient-to-r from-cyan to-yellow-green opacity-0 group-hover:opacity-20 -z-10 rounded-md transition-opacity duration-300"></motion.span>
                 Services
                 <motion.div
                   animate={{ rotate: servicesOpen ? 180 : 0 }}
@@ -316,9 +320,8 @@ export default function Header() {
               >
                 <Link
                   to={item.to}
-                  className="text-lg font-medium text-cyan hover:text-yellow-green transition-colors relative group py-2"
+                  className="text-lg font-medium text-cyan hover:text-yellow-green transition-colors py-2"
                 >
-                  <motion.span className="absolute inset-0 bg-gradient-to-r from-cyan to-yellow-green opacity-0 group-hover:opacity-20 -z-10 rounded-md transition-opacity duration-300"></motion.span>
                   {item.label}
                 </Link>
               </motion.div>
@@ -339,9 +342,8 @@ export default function Header() {
             >
               <Link
                 to="/contact"
-                className="border-2 border-cyan text-cyan px-6 py-3 rounded-lg font-semibold hover:bg-cyan/10 transition-all text-base inline-block relative group overflow-hidden"
+                className="border-2 border-cyan text-cyan px-6 py-3 rounded-lg font-semibold hover:border-yellow-green hover:text-yellow-green transition-all text-base inline-block relative group overflow-hidden"
               >
-                <motion.span className="absolute inset-0 bg-gradient-to-r from-cyan to-yellow-green opacity-0 group-hover:opacity-10 transition-opacity"></motion.span>
                 <span className="relative">Contact Us</span>
               </Link>
             </motion.div>
@@ -352,9 +354,8 @@ export default function Header() {
             >
               <Link
                 to="/quote"
-                className="bg-gradient-to-r from-cyan to-yellow-green text-background px-7 py-3 rounded-lg font-semibold text-base inline-block shadow-lg hover:shadow-2xl transition-all relative group overflow-hidden"
+                className="bg-gradient-to-r from-cyan to-yellow-green text-background px-7 py-3 rounded-lg font-semibold text-base inline-block shadow-lg hover:shadow-2xl transition-all relative group overflow-hidden hover:from-yellow-green hover:to-cyan"
               >
-                <motion.span className="absolute inset-0 bg-gradient-to-r from-yellow-green to-cyan opacity-0 group-hover:opacity-100 transition-opacity"></motion.span>
                 <span className="relative">Get a Quote</span>
               </Link>
             </motion.div>

@@ -232,6 +232,8 @@ export default function Footer() {
             viewport={{ once: true }}
           >
             &copy; 2024 AXIVOLT. All rights reserved.
+            <br/>
+            Designed and Developed by Axisphere Mediaworx
           </motion.p>
           <motion.div
             className="flex gap-6 mt-6 md:mt-0"

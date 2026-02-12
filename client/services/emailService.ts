@@ -2,6 +2,12 @@ import emailjs from '@emailjs/browser';
 
 // Initialize EmailJS with your public key
 export const initEmailJS = () => {
+  // Disable EmailJS in production
+  if (import.meta.env.PROD) {
+    console.log('EmailJS is disabled in production');
+    return;
+  }
+
   const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
   if (!publicKey) {
     console.warn('EmailJS public key not found in environment variables');
@@ -54,6 +60,12 @@ interface JobApplicationData {
 // Generic function to send emails
 export const sendEmail = async (params: SendEmailParams): Promise<boolean> => {
   try {
+    // Disable email sending in production
+    if (import.meta.env.PROD) {
+      console.log('Email sending is disabled in production');
+      return false;
+    }
+
     const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
     if (!serviceId) {
       console.warn('EmailJS service ID not found in environment variables');

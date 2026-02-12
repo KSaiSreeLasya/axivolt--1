@@ -11,12 +11,15 @@ interface Job {
   id?: string;
   title: string;
   department: string;
-  type: string;
+  job_type: string;
   location: string;
-  experience: string;
+  experience_required: string;
   description: string;
   requirements: string[];
   benefits: string[];
+  is_active?: boolean;
+  created_at?: string;
+  updated_at?: string;
 }
 
 interface JobApplicationFormProps {
@@ -263,7 +266,7 @@ export default function JobApplicationForm({
             </div>
             <div>
               <p className="text-sm text-black400">Experience</p>
-              <p className="font-semibold text-cyan">{job.experience}</p>
+              <p className="font-semibold text-cyan">{job.experience_required}</p>
             </div>
             <div>
               <p className="text-sm text-black400">Location</p>
@@ -271,7 +274,7 @@ export default function JobApplicationForm({
             </div>
             <div>
               <p className="text-sm text-black400">Employment Type</p>
-              <p className="font-semibold">{job.type}</p>
+              <p className="font-semibold">{job.job_type}</p>
             </div>
           </div>
 

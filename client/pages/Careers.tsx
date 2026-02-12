@@ -45,10 +45,27 @@ export default function Careers() {
         .eq("is_active", true)
         .order("created_at", { ascending: false });
 
-      if (error) throw error;
-      setJobs(data || []);
+      if (error) {
+        const errorMessage =
+          error instanceof Error ? error.message : JSON.stringify(error);
+        console.error("Failed to fetch jobs - Error details:", errorMessage);
+        throw error;
+      }
+
+      if (data && data.length > 0) {
+        setJobs(data);
+      } else {
+        console.warn("No active jobs found in database, using fallback jobs");
+        setJobs(defaultJobs);
+      }
     } catch (err) {
-      console.error("Failed to fetch jobs:", err);
+      const errorMsg =
+        err instanceof Error
+          ? err.message
+          : typeof err === "object"
+            ? JSON.stringify(err)
+            : String(err);
+      console.error("Failed to fetch jobs:", errorMsg);
       // Fallback to static jobs if fetch fails
       setJobs(defaultJobs);
     } finally {

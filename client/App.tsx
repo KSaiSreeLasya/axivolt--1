@@ -6,7 +6,10 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import React, { useEffect } from "react";
 import FloatingActionButton from "./components/FloatingActionButton";
+import { initEmailJS, checkEmailJSStatus } from "./services/emailService";
+import { printEmailDebug } from "./lib/emailDebug";
 import Index from "./pages/Index";
 import Advisory from "./pages/Advisory";
 import Procurement from "./pages/Procurement";
@@ -34,7 +37,14 @@ import Compliance from "./pages/Compliance";
 
 const queryClient = new QueryClient();
 
-const App = () => (
+const App = () => {
+  useEffect(() => {
+    // Initialize EmailJS on app startup
+    console.log('App mounted: Initializing EmailJS service...');
+    initEmailJS();
+  }, []);
+
+  return (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
@@ -80,7 +90,8 @@ const App = () => (
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
-);
+  );
+};
 
 // Initialize root only once, properly handling HMR
 const initializeApp = () => {

@@ -65,11 +65,11 @@ export default function FloatingActionButton() {
   };
 
   return (
-    <div className="fixed bottom-8 right-8 z-40">
+    <div className="fixed bottom-4 right-4 md:bottom-8 md:right-8 z-40">
       {/* Action Buttons */}
       {isOpen && (
         <motion.div
-          className="absolute bottom-20 right-0 flex flex-col gap-4 mb-4"
+          className="absolute bottom-16 md:bottom-20 right-0 flex flex-col gap-3 md:gap-4 mb-4"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
@@ -85,16 +85,16 @@ export default function FloatingActionButton() {
                   setIsOpen(false);
                 }}
                 className={cn(
-                  "w-14 h-14 rounded-full shadow-lg flex items-center justify-center text-white transition-all group relative",
+                  "w-12 md:w-14 h-12 md:h-14 rounded-full shadow-lg flex items-center justify-center text-white transition-all group relative",
                   action.color,
                 )}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
                 title={action.label}
               >
-                <Icon className="w-6 h-6" />
+                <Icon className="w-5 md:w-6 h-5 md:h-6" />
                 <motion.span
-                  className="absolute right-full mr-3 bg-gray-900 text-white text-sm px-3 py-1 rounded-md whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity"
+                  className="absolute right-full mr-2 md:mr-3 bg-gray-900 text-white text-xs md:text-sm px-2 md:px-3 py-1 rounded-md whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity hidden md:inline"
                   initial={{ opacity: 0, x: 10 }}
                   whileHover={{ opacity: 1, x: 0 }}
                 >
@@ -110,7 +110,7 @@ export default function FloatingActionButton() {
       <motion.button
         onClick={() => setIsOpen(!isOpen)}
         className={cn(
-          "w-16 h-16 rounded-full shadow-lg flex items-center justify-center transition-all",
+          "w-14 h-14 md:w-16 md:h-16 rounded-full shadow-lg flex items-center justify-center transition-all",
           isOpen
             ? "bg-gray-600 text-white hover:bg-gray-700"
             : "bg-cyan text-background hover:bg-yellow-green",
@@ -118,15 +118,16 @@ export default function FloatingActionButton() {
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
         animate={isOpen ? { rotate: 45 } : { rotate: 0 }}
+        aria-label="Contact options"
       >
         <motion.div
-          className="w-6 h-6 flex items-center justify-center"
+          className="w-5 h-5 md:w-6 md:h-6 flex items-center justify-center"
           animate={isOpen ? { rotate: -45 } : { rotate: 0 }}
         >
           {isOpen ? (
-            <span className="text-2xl">×</span>
+            <span className="text-xl md:text-2xl">×</span>
           ) : (
-            <MessageCircle className="w-8 h-8" />
+            <MessageCircle className="w-6 md:w-8 h-6 md:h-8" />
           )}
         </motion.div>
       </motion.button>

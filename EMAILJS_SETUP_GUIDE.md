@@ -149,22 +149,28 @@ AXIVOLT Recruitment Team
 ## Step 4: Get Your Credentials
 
 1. Go to **Account** section in EmailJS dashboard
-2. Copy your **Public Key** (starts with `key_` or similar)
-3. Note your **Service ID** from Step 2
+2. Copy your **Public Key** (your API key)
+3. From **Email Services**, note your **Service ID** (format: `service_xxxxx`)
+4. From **Email Templates**, copy the Template IDs for each template you created (format: `template_xxxxx`)
 
 ## Step 5: Configure Environment Variables
 
 1. Create a `.env.local` file in the root of your project (same level as `package.json`)
-2. Add the following variables:
+2. Add the following variables with your actual EmailJS credentials:
 
 ```
-VITE_EMAILJS_PUBLIC_KEY=your_public_key_from_step_4
-VITE_EMAILJS_SERVICE_ID=your_service_id_from_step_2
-VITE_EMAILJS_CONTACT_TEMPLATE_ID=contact_template
-VITE_EMAILJS_QUOTE_TEMPLATE_ID=quote_template
-VITE_EMAILJS_JOB_TEMPLATE_ID=job_template
+VITE_EMAILJS_SERVICE_ID=service_xxxxx
+VITE_EMAILJS_PUBLIC_KEY=your_public_key
+VITE_EMAILJS_CONTACT_TEMPLATE_ID=template_xxxxx
+VITE_EMAILJS_QUOTE_TEMPLATE_ID=template_xxxxx
+VITE_EMAILJS_JOB_TEMPLATE_ID=template_xxxxx
 VITE_ADMIN_EMAIL=your_email@axivolt.in
 ```
+
+**Replace the `xxxxx` values with your actual IDs from EmailJS dashboard:**
+- `service_xxxxx` - Your EmailJS Service ID (e.g., `service_abc123def456`)
+- `template_xxxxx` - Your EmailJS Template IDs (e.g., `template_contact123`, `template_quote456`)
+- `your_public_key` - Your EmailJS Public Key from Account settings
 
 ## Step 6: Test the Integration
 

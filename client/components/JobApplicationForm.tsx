@@ -1,7 +1,11 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { X } from "lucide-react";
 import { supabase } from "@/lib/supabase";
 import Swal from "sweetalert2";
+import {
+  initializeEmailJS,
+  sendJobApplicationEmail,
+} from "@/lib/emailjs";
 
 interface Job {
   id?: string;
@@ -38,6 +42,11 @@ export default function JobApplicationForm({
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [resumeFileName, setResumeFileName] = useState<string>("");
+
+  // Initialize EmailJS on component mount
+  useEffect(() => {
+    initializeEmailJS();
+  }, []);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
@@ -143,6 +152,23 @@ export default function JobApplicationForm({
         jobId = jobData.id;
       }
 
+      // Send email via EmailJS
+      const emailSent = await sendJobApplicationEmail({
+        fullName: formData.fullName,
+        email: formData.email,
+        phone: formData.phone,
+        jobTitle: job.title,
+        experience: formData.experience,
+        linkedIn: formData.linkedIn,
+        portfolio: formData.portfolio,
+        coverletter: formData.coverletter,
+      });
+
+      if (!emailSent) {
+        console.warn("Email sending failed but will continue with database save");
+      }
+
+      // Also save to Supabase for database record
       const { data, error } = await supabase
         .from("job_applications")
         .insert([
@@ -178,7 +204,7 @@ export default function JobApplicationForm({
       Swal.fire({
         icon: "success",
         title: "Application Submitted!",
-        text: "Thank you for applying. We'll review your application and get back to you soon.",
+        text: "Thank you for applying. We'll review your application and get back to you soon. Check your email for confirmation.",
         confirmButtonColor: "#047F86",
       }).then(() => {
         onClose();

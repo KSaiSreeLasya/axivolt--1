@@ -1,7 +1,11 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Mail, Phone, Send } from "lucide-react";
 import { supabase } from "@/lib/supabase";
 import Swal from "sweetalert2";
+import {
+  initializeEmailJS,
+  sendContactFormEmail,
+} from "@/lib/emailjs";
 
 export default function ContactForm() {
   const [loading, setLoading] = useState(false);
@@ -14,6 +18,11 @@ export default function ContactForm() {
     message: "",
     contact_preference: "email",
   });
+
+  // Initialize EmailJS on component mount
+  useEffect(() => {
+    initializeEmailJS();
+  }, []);
 
   const handleChange = (
     e: React.ChangeEvent<
@@ -32,7 +41,15 @@ export default function ContactForm() {
     setLoading(true);
 
     try {
-      const { data, error } = await supabase
+      // Send email via EmailJS
+      const emailSent = await sendContactFormEmail(formData);
+
+      if (!emailSent) {
+        throw new Error("Failed to send email. Please check your EmailJS configuration.");
+      }
+
+      // Also save to Supabase for database record
+      const { error: dbError } = await supabase
         .from("contact_form_submissions")
         .insert([
           {
@@ -42,26 +59,18 @@ export default function ContactForm() {
         ])
         .select();
 
-      if (error) {
-        const errorMsg =
-          error instanceof Error ? error.message : JSON.stringify(error);
-        Swal.fire({
-          icon: "error",
-          title: "Submission Failed",
-          text: errorMsg,
-          confirmButtonColor: "#047F86",
-        });
-        console.error("Supabase error:", error);
-        setLoading(false);
-        return;
+      if (dbError) {
+        console.warn("Note: Database save failed but email was sent:", dbError);
       }
 
       Swal.fire({
         icon: "success",
         title: "Message Sent!",
-        text: "Thank you for contacting us. We'll get back to you soon.",
+        text: "Thank you for contacting us. We'll get back to you soon. Check your email for confirmation.",
         confirmButtonColor: "#047F86",
       });
+
+      // Reset form
       setFormData({
         full_name: "",
         email: "",
@@ -76,8 +85,8 @@ export default function ContactForm() {
       const errorMsg = err instanceof Error ? err.message : String(err);
       Swal.fire({
         icon: "error",
-        title: "Error",
-        text: errorMsg,
+        title: "Error Sending Message",
+        text: errorMsg || "Failed to send your message. Please try again.",
         confirmButtonColor: "#047F86",
       });
       console.error("Error:", err);

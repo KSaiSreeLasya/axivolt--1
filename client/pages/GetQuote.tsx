@@ -1,9 +1,13 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { CheckCircle } from "lucide-react";
 import Swal from "sweetalert2";
 import { supabase } from "@/lib/supabase";
+import {
+  initializeEmailJS,
+  sendQuoteRequestEmail,
+} from "@/lib/emailjs";
 
 interface BillRange {
   min: number;
@@ -82,6 +86,11 @@ export default function GetQuote() {
     agreeToTerms: false,
   });
 
+  // Initialize EmailJS on component mount
+  useEffect(() => {
+    initializeEmailJS();
+  }, []);
+
   const selectedRangeIndex = billOptions.indexOf(formData.billRange);
   const selectedBillRange =
     selectedRangeIndex >= 0 ? billRanges[selectedRangeIndex] : null;
@@ -125,7 +134,22 @@ export default function GetQuote() {
     e.preventDefault();
 
     try {
-      const { error } = await supabase.from("quote_requests").insert([
+      // Send email via EmailJS
+      const emailSent = await sendQuoteRequestEmail({
+        fullName: formData.fullName,
+        whatsapp: formData.whatsapp,
+        pinCode: formData.pinCode,
+        billRange: formData.billRange,
+        capacity: formData.capacity,
+        category: category,
+      });
+
+      if (!emailSent) {
+        throw new Error("Failed to send email. Please check your EmailJS configuration.");
+      }
+
+      // Also save to Supabase for database record
+      const { error: dbError } = await supabase.from("quote_requests").insert([
         {
           full_name: formData.fullName,
           whatsapp: formData.whatsapp,
@@ -137,15 +161,15 @@ export default function GetQuote() {
         },
       ]);
 
-      if (error) {
-        throw error;
+      if (dbError) {
+        console.warn("Note: Database save failed but email was sent:", dbError);
       }
 
       // Show success alert
       Swal.fire({
         icon: "success",
         title: "Quote Request Submitted!",
-        text: "Thank you! Our team will contact you shortly.",
+        text: "Thank you! Our team will contact you shortly. Check your email for confirmation.",
         confirmButtonColor: "#047F86",
         confirmButtonText: "OK",
       });

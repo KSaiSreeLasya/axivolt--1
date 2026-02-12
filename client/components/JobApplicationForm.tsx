@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { X } from "lucide-react";
 import { supabase } from "@/lib/supabase";
 import Swal from "sweetalert2";
+import { initEmailJS, sendJobApplicationEmail } from "@/services/emailService";
 
 interface Job {
   id?: string;
@@ -38,6 +39,10 @@ export default function JobApplicationForm({
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [resumeFileName, setResumeFileName] = useState<string>("");
+
+  useEffect(() => {
+    initEmailJS();
+  }, []);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
@@ -174,6 +179,35 @@ export default function JobApplicationForm({
         setLoading(false);
         return;
       }
+
+      // Send email to admin
+      const adminEmail = import.meta.env.VITE_ADMIN_EMAIL || "contac@axivolt.in";
+      await sendJobApplicationEmail(
+        {
+          fullName: formData.fullName,
+          email: formData.email,
+          phone: formData.phone,
+          coverletter: formData.coverletter,
+          experience: formData.experience,
+          linkedIn: formData.linkedIn,
+          portfolio: formData.portfolio,
+        },
+        adminEmail
+      );
+
+      // Send confirmation email to applicant
+      await sendJobApplicationEmail(
+        {
+          fullName: formData.fullName,
+          email: formData.email,
+          phone: formData.phone,
+          coverletter: formData.coverletter,
+          experience: formData.experience,
+          linkedIn: formData.linkedIn,
+          portfolio: formData.portfolio,
+        },
+        formData.email
+      );
 
       Swal.fire({
         icon: "success",

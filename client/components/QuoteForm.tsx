@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { FileText, Send } from "lucide-react";
 import { supabase } from "@/lib/supabase";
 import { toast } from "sonner";
+import { initEmailJS, sendQuoteFormEmail } from "@/services/emailService";
 
 export default function QuoteForm() {
   const [loading, setLoading] = useState(false);
@@ -21,6 +22,10 @@ export default function QuoteForm() {
     description: "",
   });
 
+  useEffect(() => {
+    initEmailJS();
+  }, []);
+
   const handleChange = (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
@@ -38,6 +43,7 @@ export default function QuoteForm() {
     setLoading(true);
 
     try {
+      // Save to Supabase
       const { data, error } = await supabase
         .from("quote_requests")
         .insert([
@@ -56,6 +62,13 @@ export default function QuoteForm() {
         setLoading(false);
         return;
       }
+
+      // Send email to admin
+      const adminEmail = import.meta.env.VITE_ADMIN_EMAIL || "contac@axivolt.in";
+      await sendQuoteFormEmail(formData, adminEmail);
+
+      // Send confirmation email to user
+      await sendQuoteFormEmail(formData, formData.email);
 
       toast.success(
         "Quote request submitted! We'll contact you within 24 hours.",

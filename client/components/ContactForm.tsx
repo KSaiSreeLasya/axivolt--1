@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Mail, Phone, Send } from "lucide-react";
 import { supabase } from "@/lib/supabase";
 import Swal from "sweetalert2";
+import { initEmailJS, sendContactFormEmail } from "@/services/emailService";
 
 export default function ContactForm() {
   const [loading, setLoading] = useState(false);
@@ -14,6 +15,10 @@ export default function ContactForm() {
     message: "",
     contact_preference: "email",
   });
+
+  useEffect(() => {
+    initEmailJS();
+  }, []);
 
   const handleChange = (
     e: React.ChangeEvent<
@@ -32,6 +37,7 @@ export default function ContactForm() {
     setLoading(true);
 
     try {
+      // Save to Supabase
       const { data, error } = await supabase
         .from("contact_form_submissions")
         .insert([
@@ -55,6 +61,13 @@ export default function ContactForm() {
         setLoading(false);
         return;
       }
+
+      // Send email to admin (contact email)
+      const adminEmail = import.meta.env.VITE_ADMIN_EMAIL || "contac@axivolt.in";
+      await sendContactFormEmail(formData, adminEmail);
+
+      // Send confirmation email to user
+      await sendContactFormEmail(formData, formData.email);
 
       Swal.fire({
         icon: "success",

@@ -157,19 +157,20 @@ export default function GetQuote() {
         capacity: formData.capacity,
         category: category,
       };
-      await sendEmail({
+      const emailSent = await sendEmail({
         templateId: import.meta.env.VITE_EMAILJS_QUOTE_TEMPLATE_ID || "quote_template",
         templateParams,
       });
 
-      // Send confirmation email to user (via WhatsApp number or email if available)
-      // For WhatsApp-based quotes, you might skip email to user or send to admin's email
+      // Show success alert with appropriate message based on email status
+      const successText = emailSent
+        ? "Thank you! Our team will contact you shortly."
+        : "Your quote request has been recorded. We'll reach out to you soon.";
 
-      // Show success alert
       Swal.fire({
         icon: "success",
         title: "Quote Request Submitted!",
-        text: "Thank you! Our team will contact you shortly.",
+        text: successText,
         confirmButtonColor: "#047F86",
         confirmButtonText: "OK",
       });

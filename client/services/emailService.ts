@@ -2,18 +2,18 @@ import emailjs from '@emailjs/browser';
 
 // Initialize EmailJS with your public key
 export const initEmailJS = () => {
-  // Disable EmailJS in production
-  if (import.meta.env.PROD) {
-    console.log('EmailJS is disabled in production');
-    return;
-  }
-
   const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
   if (!publicKey) {
     console.warn('EmailJS public key not found in environment variables');
     return;
   }
-  emailjs.init(publicKey);
+
+  try {
+    emailjs.init(publicKey);
+    console.log('EmailJS initialized successfully');
+  } catch (error) {
+    console.error('Failed to initialize EmailJS:', error);
+  }
 };
 
 interface SendEmailParams {
@@ -60,16 +60,12 @@ interface JobApplicationData {
 // Generic function to send emails
 export const sendEmail = async (params: SendEmailParams): Promise<boolean> => {
   try {
-    // Disable email sending in production
-    if (import.meta.env.PROD) {
-      console.log('Email sending is disabled in production');
-      return false;
-    }
-
     const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-    if (!serviceId) {
-      console.warn('EmailJS service ID not found in environment variables');
-      return false;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+    if (!serviceId || !publicKey) {
+      console.error('EmailJS configuration missing: serviceId or publicKey not found');
+      throw new Error('Email service is not properly configured');
     }
 
     const response = await emailjs.send(
@@ -79,12 +75,23 @@ export const sendEmail = async (params: SendEmailParams): Promise<boolean> => {
     );
 
     if (response.status === 200) {
-      console.log('Email sent successfully');
+      console.log('Email sent successfully', response);
       return true;
     }
+
+    console.warn('Email sent with unexpected status:', response.status);
     return false;
   } catch (error) {
     console.error('Failed to send email:', error);
+    // Log more details in production for debugging
+    if (import.meta.env.PROD) {
+      console.error('Email error details:', {
+        templateId: params.templateId,
+        hasServiceId: !!import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        hasPublicKey: !!import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+        error: error instanceof Error ? error.message : String(error)
+      });
+    }
     return false;
   }
 };

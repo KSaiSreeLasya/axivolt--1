@@ -1,9 +1,10 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { CheckCircle } from "lucide-react";
 import Swal from "sweetalert2";
 import { supabase } from "@/lib/supabase";
+import { initEmailJS, sendEmail } from "@/services/emailService";
 
 interface BillRange {
   min: number;
@@ -82,6 +83,10 @@ export default function GetQuote() {
     agreeToTerms: false,
   });
 
+  useEffect(() => {
+    initEmailJS();
+  }, []);
+
   const selectedRangeIndex = billOptions.indexOf(formData.billRange);
   const selectedBillRange =
     selectedRangeIndex >= 0 ? billRanges[selectedRangeIndex] : null;
@@ -140,6 +145,25 @@ export default function GetQuote() {
       if (error) {
         throw error;
       }
+
+      // Send email to admin
+      const adminEmail = import.meta.env.VITE_ADMIN_EMAIL || "contac@axivolt.in";
+      const templateParams = {
+        to_email: adminEmail,
+        from_name: formData.fullName,
+        whatsapp: formData.whatsapp,
+        pin_code: formData.pinCode,
+        bill_range: formData.billRange,
+        capacity: formData.capacity,
+        category: category,
+      };
+      await sendEmail({
+        templateId: import.meta.env.VITE_EMAILJS_QUOTE_TEMPLATE_ID || "quote_template",
+        templateParams,
+      });
+
+      // Send confirmation email to user (via WhatsApp number or email if available)
+      // For WhatsApp-based quotes, you might skip email to user or send to admin's email
 
       // Show success alert
       Swal.fire({

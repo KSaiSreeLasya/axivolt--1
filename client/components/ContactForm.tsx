@@ -64,15 +64,23 @@ export default function ContactForm() {
 
       // Send email to admin (contact email)
       const adminEmail = import.meta.env.VITE_ADMIN_EMAIL || "contac@axivolt.in";
-      await sendContactFormEmail(formData, adminEmail);
+      const adminEmailSent = await sendContactFormEmail(formData, adminEmail);
 
       // Send confirmation email to user
-      await sendContactFormEmail(formData, formData.email);
+      const userEmailSent = await sendContactFormEmail(formData, formData.email);
+
+      // Show appropriate success message
+      const emailStatusText =
+        adminEmailSent && userEmailSent
+          ? "Thank you for contacting us. We'll get back to you soon."
+          : adminEmailSent
+          ? "Your submission was received. You may not receive a confirmation email due to service limits."
+          : "Your submission was recorded. We may contact you via phone.";
 
       Swal.fire({
         icon: "success",
         title: "Message Sent!",
-        text: "Thank you for contacting us. We'll get back to you soon.",
+        text: emailStatusText,
         confirmButtonColor: "#047F86",
       });
       setFormData({

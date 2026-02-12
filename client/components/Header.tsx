@@ -1,12 +1,13 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, Menu, X } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function Header() {
   const [solutionsOpen, setSolutionsOpen] = useState(false);
   const [solarOpen, setSolarOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSolutionSubmenu, setActiveSolutionSubmenu] = useState<
     string | null
   >(null);
@@ -53,7 +54,7 @@ export default function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 w-full bg-background/95 backdrop-blur-md border-b border-cyan/20 shadow-lg">
       <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center h-24 gap-4">
+        <div className="flex items-center h-20 md:h-24 gap-4">
           {/* Logo and Brand */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -64,11 +65,12 @@ export default function Header() {
             <Link
               to="/"
               className="flex items-center gap-3 group flex-shrink-0 relative"
+              onClick={() => setMobileMenuOpen(false)}
             >
               <motion.img
                 src="https://cdn.builder.io/api/v1/image/assets%2F3c998b3ff9204c11af8b6ffa6ad40d16%2F30fb58eade114c97aa78f9ff333e7cab?format=webp&width=800&height=1200"
                 alt="AXIVOLT Logo"
-                className="h-20 w-auto"
+                className="h-16 md:h-20 w-auto"
                 whileHover={{ scale: 1.1 }}
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}
               />
@@ -82,7 +84,7 @@ export default function Header() {
             </Link>
           </motion.div>
 
-          {/* Navigation - Centered */}
+          {/* Navigation - Centered (Desktop) */}
           <nav className="hidden md:flex items-center gap-8 flex-1 justify-center">
             <motion.div
               custom={0}
@@ -328,12 +330,25 @@ export default function Header() {
             ))}
           </nav>
 
+          {/* Mobile Menu Toggle Button */}
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="md:hidden p-2 text-cyan hover:text-yellow-green transition-colors flex-shrink-0"
+            aria-label="Toggle mobile menu"
+          >
+            {mobileMenuOpen ? (
+              <X className="w-6 h-6" />
+            ) : (
+              <Menu className="w-6 h-6" />
+            )}
+          </button>
+
           {/* CTA Buttons */}
           <motion.div
             variants={buttonVariants}
             initial="hidden"
             animate="visible"
-            className="flex items-center gap-4 flex-shrink-0"
+            className="hidden sm:flex items-center gap-2 md:gap-4 flex-shrink-0"
           >
             <motion.div
               whileHover={{ scale: 1.08 }}
@@ -342,9 +357,9 @@ export default function Header() {
             >
               <Link
                 to="/contact"
-                className="border-2 border-cyan text-cyan px-6 py-3 rounded-lg font-semibold hover:border-yellow-green hover:text-yellow-green transition-all text-base inline-block relative group overflow-hidden"
+                className="border-2 border-cyan text-cyan px-4 md:px-6 py-2 md:py-3 rounded-lg font-semibold hover:border-yellow-green hover:text-yellow-green transition-all text-sm md:text-base inline-block relative group overflow-hidden"
               >
-                <span className="relative">Contact Us</span>
+                <span className="relative">Contact</span>
               </Link>
             </motion.div>
             <motion.div
@@ -354,13 +369,179 @@ export default function Header() {
             >
               <Link
                 to="/quote"
-                className="bg-gradient-to-r from-cyan to-yellow-green text-background px-7 py-3 rounded-lg font-semibold text-base inline-block shadow-lg hover:shadow-2xl transition-all relative group overflow-hidden hover:from-yellow-green hover:to-cyan"
+                className="bg-gradient-to-r from-cyan to-yellow-green text-background px-4 md:px-7 py-2 md:py-3 rounded-lg font-semibold text-sm md:text-base inline-block shadow-lg hover:shadow-2xl transition-all relative group overflow-hidden hover:from-yellow-green hover:to-cyan"
               >
-                <span className="relative">Get a Quote</span>
+                <span className="relative">Quote</span>
               </Link>
             </motion.div>
           </motion.div>
         </div>
+
+        {/* Mobile Menu Overlay */}
+        {mobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3 }}
+            className="md:hidden border-t border-cyan/20 bg-background/98 backdrop-blur-md"
+          >
+            <div className="px-4 py-4 space-y-2">
+              {/* Mobile Navigation Items */}
+              <Link
+                to="/"
+                onClick={() => setMobileMenuOpen(false)}
+                className="block px-4 py-3 text-cyan hover:text-yellow-green hover:bg-cyan/10 rounded-lg transition-all"
+              >
+                Home
+              </Link>
+
+              {/* Solutions Menu */}
+              <div>
+                <button
+                  onClick={() => setSolutionsOpen(!solutionsOpen)}
+                  className="w-full text-left px-4 py-3 text-cyan hover:text-yellow-green hover:bg-cyan/10 rounded-lg transition-all flex items-center justify-between"
+                >
+                  <span>Solutions</span>
+                  <ChevronDown
+                    className={`w-4 h-4 transition-transform ${
+                      solutionsOpen ? "rotate-180" : ""
+                    }`}
+                  />
+                </button>
+                {solutionsOpen && (
+                  <div className="pl-4 space-y-2 mt-2">
+                    {/* Solar Submenu */}
+                    <div>
+                      <button
+                        onClick={() => setSolarOpen(!solarOpen)}
+                        className="w-full text-left px-4 py-2 text-sm text-gray-700 hover:text-cyan hover:bg-cyan/10 rounded-lg transition-all flex items-center justify-between"
+                      >
+                        <span>Solar</span>
+                        <ChevronDown
+                          className={`w-4 h-4 transition-transform ${
+                            solarOpen ? "rotate-180" : ""
+                          }`}
+                        />
+                      </button>
+                      {solarOpen && (
+                        <div className="pl-4 space-y-1 mt-2 border-l border-cyan/30">
+                          <Link
+                            to="/solutions/solar/residential"
+                            onClick={() => setMobileMenuOpen(false)}
+                            className="block px-4 py-2 text-xs text-gray-600 hover:text-cyan transition-all"
+                          >
+                            Residential (B2C)
+                          </Link>
+                          <Link
+                            to="/solutions/solar/commercial"
+                            onClick={() => setMobileMenuOpen(false)}
+                            className="block px-4 py-2 text-xs text-gray-600 hover:text-cyan transition-all"
+                          >
+                            Commercial (B2B)
+                          </Link>
+                          <Link
+                            to="/solutions/solar/government"
+                            onClick={() => setMobileMenuOpen(false)}
+                            className="block px-4 py-2 text-xs text-gray-600 hover:text-cyan transition-all"
+                          >
+                            Government (B2G)
+                          </Link>
+                        </div>
+                      )}
+                    </div>
+
+                    {/* Other Solutions */}
+                    {[
+                      { to: "/solutions/wind", label: "Wind" },
+                      {
+                        to: "/solutions/energy-storage",
+                        label: "Energy Storage",
+                      },
+                      { to: "/solutions/ev-stations", label: "EV Stations" },
+                    ].map((item) => (
+                      <Link
+                        key={item.to}
+                        to={item.to}
+                        onClick={() => setMobileMenuOpen(false)}
+                        className="block px-4 py-2 text-sm text-gray-700 hover:text-cyan hover:bg-cyan/10 rounded-lg transition-all"
+                      >
+                        {item.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              {/* Services Menu */}
+              <div>
+                <button
+                  onClick={() => setServicesOpen(!servicesOpen)}
+                  className="w-full text-left px-4 py-3 text-cyan hover:text-yellow-green hover:bg-cyan/10 rounded-lg transition-all flex items-center justify-between"
+                >
+                  <span>Services</span>
+                  <ChevronDown
+                    className={`w-4 h-4 transition-transform ${
+                      servicesOpen ? "rotate-180" : ""
+                    }`}
+                  />
+                </button>
+                {servicesOpen && (
+                  <div className="pl-4 space-y-2 mt-2">
+                    {[
+                      { to: "/advisory", label: "Advisory" },
+                      { to: "/procurement", label: "Procurement" },
+                      { to: "/digital-solutions", label: "Digital Solutions" },
+                    ].map((item) => (
+                      <Link
+                        key={item.to}
+                        to={item.to}
+                        onClick={() => setMobileMenuOpen(false)}
+                        className="block px-4 py-2 text-sm text-gray-700 hover:text-cyan hover:bg-cyan/10 rounded-lg transition-all"
+                      >
+                        {item.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              {/* Other Navigation Items */}
+              {[
+                { to: "/industry", label: "Industry" },
+                { to: "/careers", label: "Careers" },
+                { to: "/about", label: "About" },
+              ].map((item) => (
+                <Link
+                  key={item.to}
+                  to={item.to}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="block px-4 py-3 text-cyan hover:text-yellow-green hover:bg-cyan/10 rounded-lg transition-all"
+                >
+                  {item.label}
+                </Link>
+              ))}
+
+              {/* Mobile CTA Buttons */}
+              <div className="pt-4 border-t border-cyan/20 space-y-3 mt-4">
+                <Link
+                  to="/contact"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="block w-full border-2 border-cyan text-cyan px-4 py-3 rounded-lg font-semibold hover:border-yellow-green hover:text-yellow-green transition-all text-center text-sm"
+                >
+                  Contact Us
+                </Link>
+                <Link
+                  to="/quote"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="block w-full bg-gradient-to-r from-cyan to-yellow-green text-background px-4 py-3 rounded-lg font-semibold text-center text-sm hover:from-yellow-green hover:to-cyan transition-all"
+                >
+                  Get a Quote
+                </Link>
+              </div>
+            </div>
+          </motion.div>
+        )}
       </div>
     </header>
   );

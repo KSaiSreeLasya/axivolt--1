@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Mail, Phone, Send } from "lucide-react";
 import { supabase } from "@/lib/supabase";
 import Swal from "sweetalert2";
@@ -6,6 +6,7 @@ import { initEmailJS, sendContactFormEmail } from "@/services/emailService";
 
 export default function ContactForm() {
   const [loading, setLoading] = useState(false);
+  const isSubmittingRef = useRef(false);
   const [formData, setFormData] = useState({
     full_name: "",
     email: "",
@@ -34,6 +35,13 @@ export default function ContactForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Prevent double submissions
+    if (isSubmittingRef.current || loading) {
+      return;
+    }
+
+    isSubmittingRef.current = true;
     setLoading(true);
 
     try {
@@ -58,6 +66,7 @@ export default function ContactForm() {
           confirmButtonColor: "#047F86",
         });
         console.error("Supabase error:", error);
+        isSubmittingRef.current = false;
         setLoading(false);
         return;
       }
@@ -92,6 +101,7 @@ export default function ContactForm() {
         message: "",
         contact_preference: "email",
       });
+      isSubmittingRef.current = false;
       setLoading(false);
     } catch (err) {
       const errorMsg = err instanceof Error ? err.message : String(err);
@@ -102,6 +112,7 @@ export default function ContactForm() {
         confirmButtonColor: "#047F86",
       });
       console.error("Error:", err);
+      isSubmittingRef.current = false;
       setLoading(false);
     }
   };

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { FileText, Send } from "lucide-react";
 import { supabase } from "@/lib/supabase";
 import { toast } from "sonner";
@@ -6,6 +6,7 @@ import { initEmailJS, sendQuoteFormEmail } from "@/services/emailService";
 
 export default function QuoteForm() {
   const [loading, setLoading] = useState(false);
+  const isSubmittingRef = useRef(false);
   const [formData, setFormData] = useState({
     full_name: "",
     email: "",
@@ -40,6 +41,13 @@ export default function QuoteForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Prevent double submissions
+    if (isSubmittingRef.current || loading) {
+      return;
+    }
+
+    isSubmittingRef.current = true;
     setLoading(true);
 
     try {
@@ -59,6 +67,7 @@ export default function QuoteForm() {
           error instanceof Error ? error.message : JSON.stringify(error);
         toast.error("Failed to submit quote request: " + errorMsg);
         console.error("Supabase error:", error);
+        isSubmittingRef.current = false;
         setLoading(false);
         return;
       }
@@ -94,11 +103,13 @@ export default function QuoteForm() {
         timeline: "",
         description: "",
       });
+      isSubmittingRef.current = false;
       setLoading(false);
     } catch (err) {
       const errorMsg = err instanceof Error ? err.message : String(err);
       toast.error("An error occurred: " + errorMsg);
       console.error("Error:", err);
+      isSubmittingRef.current = false;
       setLoading(false);
     }
   };

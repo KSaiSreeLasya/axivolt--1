@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { X } from "lucide-react";
 import { supabase } from "@/lib/supabase";
 import Swal from "sweetalert2";
@@ -39,6 +39,7 @@ export default function JobApplicationForm({
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [resumeFileName, setResumeFileName] = useState<string>("");
+  const isSubmittingRef = useRef(false);
 
   useEffect(() => {
     initEmailJS();
@@ -92,6 +93,13 @@ export default function JobApplicationForm({
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Prevent double submissions
+    if (isSubmittingRef.current || loading) {
+      return;
+    }
+
+    isSubmittingRef.current = true;
     setLoading(true);
 
     try {
@@ -112,6 +120,7 @@ export default function JobApplicationForm({
             text: "Failed to upload resume. Please try again.",
             confirmButtonColor: "#047F86",
           });
+          isSubmittingRef.current = false;
           setLoading(false);
           return;
         }
@@ -142,6 +151,7 @@ export default function JobApplicationForm({
             text: "Unable to find job. Please try again.",
             confirmButtonColor: "#047F86",
           });
+          isSubmittingRef.current = false;
           setLoading(false);
           return;
         }
@@ -176,6 +186,7 @@ export default function JobApplicationForm({
           confirmButtonColor: "#047F86",
         });
         console.error("Supabase error:", error);
+        isSubmittingRef.current = false;
         setLoading(false);
         return;
       }
@@ -237,6 +248,7 @@ export default function JobApplicationForm({
         });
         setResumeFileName("");
       });
+      isSubmittingRef.current = false;
       setLoading(false);
     } catch (err) {
       const errorMsg = err instanceof Error ? err.message : String(err);
@@ -247,6 +259,7 @@ export default function JobApplicationForm({
         confirmButtonColor: "#047F86",
       });
       console.error("Error:", err);
+      isSubmittingRef.current = false;
       setLoading(false);
     }
   };

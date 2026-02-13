@@ -160,12 +160,16 @@ export default function GetQuote() {
       const adminEmail = import.meta.env.VITE_ADMIN_EMAIL || "contac@axivolt.in";
       const templateParams = {
         to_email: adminEmail,
-        from_name: formData.fullName,
+        name: formData.fullName,
         whatsapp: formData.whatsapp,
-        pin_code: formData.pinCode,
+        pincode: formData.pinCode,
+        project_type: category,
         bill_range: formData.billRange,
         capacity: formData.capacity,
-        category: category,
+        previous_price: selectedBillRange?.previousPrice || 0,
+        current_price: selectedBillRange?.currentPrice || 0,
+        estimated_cost: selectedBillRange?.currentPrice || 0,
+        time: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' }),
       };
       const emailSent = await sendEmail({
         templateId: import.meta.env.VITE_EMAILJS_QUOTE_TEMPLATE_ID || "quote_template",

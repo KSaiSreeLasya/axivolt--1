@@ -158,14 +158,24 @@ export default function GetQuote() {
 
       // Send email to admin
       const adminEmail = import.meta.env.VITE_ADMIN_EMAIL || "contac@axivolt.in";
+
+      // Get pricing details
+      const estimatedCost = selectedBillRange?.currentPrice || 0;
+      const previousPrice = selectedBillRange?.previousPrice || 0;
+      const currentPrice = selectedBillRange?.currentPrice || 0;
+
       const templateParams = {
         to_email: adminEmail,
-        from_name: formData.fullName,
+        name: formData.fullName,
         whatsapp: formData.whatsapp,
-        pin_code: formData.pinCode,
+        pincode: formData.pinCode,
+        project_type: category.charAt(0).toUpperCase() + category.slice(1),
         bill_range: formData.billRange,
         capacity: formData.capacity,
-        category: category,
+        previous_price: previousPrice.toLocaleString('en-IN'),
+        current_price: currentPrice.toLocaleString('en-IN'),
+        estimated_cost: estimatedCost.toLocaleString('en-IN'),
+        time: new Date().toLocaleString('en-IN'),
       };
       const emailSent = await sendEmail({
         templateId: import.meta.env.VITE_EMAILJS_QUOTE_TEMPLATE_ID || "quote_template",

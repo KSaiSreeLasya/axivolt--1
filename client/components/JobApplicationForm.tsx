@@ -191,9 +191,9 @@ export default function JobApplicationForm({
         return;
       }
 
-      // Send email to admin
+      // Send email to admin only
       const adminEmail = import.meta.env.VITE_ADMIN_EMAIL || "contac@axivolt.in";
-      const adminEmailSent = await sendJobApplicationEmail(
+      const emailSent = await sendJobApplicationEmail(
         {
           fullName: formData.fullName,
           email: formData.email,
@@ -206,27 +206,10 @@ export default function JobApplicationForm({
         adminEmail
       );
 
-      // Send confirmation email to applicant
-      const userEmailSent = await sendJobApplicationEmail(
-        {
-          fullName: formData.fullName,
-          email: formData.email,
-          phone: formData.phone,
-          coverletter: formData.coverletter,
-          experience: formData.experience,
-          linkedIn: formData.linkedIn,
-          portfolio: formData.portfolio,
-        },
-        formData.email
-      );
-
-      // Show appropriate success message based on email status
-      const successText =
-        adminEmailSent && userEmailSent
-          ? "Thank you for applying. We'll review your application and get back to you soon."
-          : adminEmailSent
-          ? "Your application was received. Check your email for confirmation details."
-          : "Your application has been recorded. Our HR team will review and contact you soon.";
+      // Show success message
+      const successText = emailSent
+        ? "Thank you for applying. We'll review your application and get back to you soon."
+        : "Your application has been recorded. Our HR team will review and contact you soon.";
 
       Swal.fire({
         icon: "success",

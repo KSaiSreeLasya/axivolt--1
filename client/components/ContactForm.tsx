@@ -71,20 +71,14 @@ export default function ContactForm() {
         return;
       }
 
-      // Send email to admin (contact email)
+      // Send email to admin only
       const adminEmail = import.meta.env.VITE_ADMIN_EMAIL || "contac@axivolt.in";
-      const adminEmailSent = await sendContactFormEmail(formData, adminEmail);
+      const emailSent = await sendContactFormEmail(formData, adminEmail);
 
-      // Send confirmation email to user
-      const userEmailSent = await sendContactFormEmail(formData, formData.email);
-
-      // Show appropriate success message
-      const emailStatusText =
-        adminEmailSent && userEmailSent
-          ? "Thank you for contacting us. We'll get back to you soon."
-          : adminEmailSent
-          ? "Your submission was received. You may not receive a confirmation email due to service limits."
-          : "Your submission was recorded. We may contact you via phone.";
+      // Show success message
+      const emailStatusText = emailSent
+        ? "Thank you for contacting us. We'll get back to you soon."
+        : "Your submission was recorded. We'll contact you soon.";
 
       Swal.fire({
         icon: "success",

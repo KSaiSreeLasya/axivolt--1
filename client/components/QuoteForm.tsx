@@ -72,20 +72,14 @@ export default function QuoteForm() {
         return;
       }
 
-      // Send email to admin
+      // Send email to admin only
       const adminEmail = import.meta.env.VITE_ADMIN_EMAIL || "contac@axivolt.in";
-      const adminEmailSent = await sendQuoteFormEmail(formData, adminEmail);
+      const emailSent = await sendQuoteFormEmail(formData, adminEmail);
 
-      // Send confirmation email to user
-      const userEmailSent = await sendQuoteFormEmail(formData, formData.email);
-
-      // Show appropriate success message based on email status
-      const successMessage =
-        adminEmailSent && userEmailSent
-          ? "Quote request submitted! We'll contact you within 24 hours."
-          : adminEmailSent
-          ? "Quote request received! Check your email for confirmation details."
-          : "Quote request recorded. Our team will reach out to you soon.";
+      // Show success message
+      const successMessage = emailSent
+        ? "Quote request submitted! We'll contact you within 24 hours."
+        : "Quote request recorded. Our team will reach out to you soon.";
 
       toast.success(successMessage);
       setFormData({

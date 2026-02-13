@@ -191,25 +191,11 @@ export default function JobApplicationForm({
         return;
       }
 
-      // Send email to admin only
-      const adminEmail = import.meta.env.VITE_ADMIN_EMAIL || "contac@axivolt.in";
-      const emailSent = await sendJobApplicationEmail(
-        {
-          fullName: formData.fullName,
-          email: formData.email,
-          phone: formData.phone,
-          coverletter: formData.coverletter,
-          experience: formData.experience,
-          linkedIn: formData.linkedIn,
-          portfolio: formData.portfolio,
-        },
-        adminEmail
-      );
+      // Note: Email sending is disabled for job applications
+      // Applications are saved to database and can be reviewed in the admin dashboard
 
       // Show success message
-      const successText = emailSent
-        ? "Thank you for applying. We'll review your application and get back to you soon."
-        : "Your application has been recorded. Our HR team will review and contact you soon.";
+      const successText = "Thank you for applying. We'll review your application and get back to you soon.";
 
       Swal.fire({
         icon: "success",

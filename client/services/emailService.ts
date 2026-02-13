@@ -113,8 +113,17 @@ export const sendEmail = async (params: SendEmailParams): Promise<boolean> => {
       throw new Error(configError);
     }
 
+    // Validate template parameters - check for required fields
+    const toEmail = params.templateParams.to_email;
+    if (!toEmail || !toEmail.trim()) {
+      const paramError = `Cannot send email: recipient email (to_email) is empty. Parameters: ${JSON.stringify(params.templateParams)}`;
+      console.error(paramError);
+      throw new Error(paramError);
+    }
+
     console.log('Sending email with template:', params.templateId);
     console.log('Email parameters keys:', Object.keys(params.templateParams));
+    console.log('Target recipient:', toEmail);
 
     const response = await emailjs.send(
       serviceId,
@@ -129,7 +138,7 @@ export const sendEmail = async (params: SendEmailParams): Promise<boolean> => {
 
     // EmailJS returns status 200 on success
     if (response.status === 200) {
-      console.log('Email sent successfully');
+      console.log('Email sent successfully to:', toEmail);
       return true;
     }
 
@@ -150,6 +159,7 @@ export const sendEmail = async (params: SendEmailParams): Promise<boolean> => {
       hasServiceId: !!import.meta.env.VITE_EMAILJS_SERVICE_ID,
       hasPublicKey: !!import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
       recipientEmail: params.templateParams.to_email || 'NOT SET',
+      parameterKeys: Object.keys(params.templateParams),
       errorMessage,
     });
 
@@ -174,6 +184,12 @@ export const sendContactFormEmail = async (
   formData: ContactFormData,
   recipientEmail: string
 ): Promise<boolean> => {
+  // Validate recipient email
+  if (!recipientEmail || !recipientEmail.trim()) {
+    console.error('Cannot send email: recipient email is empty');
+    return false;
+  }
+
   const templateParams = {
     to_email: recipientEmail,
     from_name: formData.full_name,
@@ -185,6 +201,7 @@ export const sendContactFormEmail = async (
     contact_preference: formData.contact_preference || 'email',
   };
 
+  console.log('Sending contact email to:', recipientEmail);
   return sendEmail({
     templateId: import.meta.env.VITE_EMAILJS_CONTACT_TEMPLATE_ID || 'contact_template',
     templateParams,
@@ -196,6 +213,12 @@ export const sendQuoteFormEmail = async (
   formData: QuoteFormData,
   recipientEmail: string
 ): Promise<boolean> => {
+  // Validate recipient email
+  if (!recipientEmail || !recipientEmail.trim()) {
+    console.error('Cannot send email: recipient email is empty');
+    return false;
+  }
+
   const templateParams = {
     to_email: recipientEmail,
     from_name: formData.full_name,
@@ -213,6 +236,7 @@ export const sendQuoteFormEmail = async (
     description: formData.description,
   };
 
+  console.log('Sending quote email to:', recipientEmail);
   return sendEmail({
     templateId: import.meta.env.VITE_EMAILJS_QUOTE_TEMPLATE_ID || 'quote_template',
     templateParams,
@@ -224,6 +248,12 @@ export const sendJobApplicationEmail = async (
   formData: JobApplicationData,
   recipientEmail: string
 ): Promise<boolean> => {
+  // Validate recipient email
+  if (!recipientEmail || !recipientEmail.trim()) {
+    console.error('Cannot send email: recipient email is empty');
+    return false;
+  }
+
   const templateParams = {
     to_email: recipientEmail,
     applicant_name: formData.fullName,
@@ -235,6 +265,7 @@ export const sendJobApplicationEmail = async (
     portfolio: formData.portfolio || 'Not provided',
   };
 
+  console.log('Sending job application email to:', recipientEmail);
   return sendEmail({
     templateId: import.meta.env.VITE_EMAILJS_JOB_TEMPLATE_ID || 'job_template',
     templateParams,

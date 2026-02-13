@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { X } from "lucide-react";
 import { supabase } from "@/lib/supabase";
 import Swal from "sweetalert2";
@@ -39,6 +39,7 @@ export default function JobApplicationForm({
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [resumeFileName, setResumeFileName] = useState<string>("");
+  const isSubmittingRef = useRef(false);
 
   useEffect(() => {
     initEmailJS();
@@ -92,6 +93,13 @@ export default function JobApplicationForm({
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Prevent double submissions
+    if (isSubmittingRef.current || loading) {
+      return;
+    }
+
+    isSubmittingRef.current = true;
     setLoading(true);
 
     try {
@@ -112,6 +120,7 @@ export default function JobApplicationForm({
             text: "Failed to upload resume. Please try again.",
             confirmButtonColor: "#047F86",
           });
+          isSubmittingRef.current = false;
           setLoading(false);
           return;
         }
@@ -142,6 +151,7 @@ export default function JobApplicationForm({
             text: "Unable to find job. Please try again.",
             confirmButtonColor: "#047F86",
           });
+          isSubmittingRef.current = false;
           setLoading(false);
           return;
         }
@@ -176,46 +186,16 @@ export default function JobApplicationForm({
           confirmButtonColor: "#047F86",
         });
         console.error("Supabase error:", error);
+        isSubmittingRef.current = false;
         setLoading(false);
         return;
       }
 
-      // Send email to admin
-      const adminEmail = import.meta.env.VITE_ADMIN_EMAIL || "contac@axivolt.in";
-      const adminEmailSent = await sendJobApplicationEmail(
-        {
-          fullName: formData.fullName,
-          email: formData.email,
-          phone: formData.phone,
-          coverletter: formData.coverletter,
-          experience: formData.experience,
-          linkedIn: formData.linkedIn,
-          portfolio: formData.portfolio,
-        },
-        adminEmail
-      );
+      // Note: Email sending is disabled for job applications
+      // Applications are saved to database and can be reviewed in the admin dashboard
 
-      // Send confirmation email to applicant
-      const userEmailSent = await sendJobApplicationEmail(
-        {
-          fullName: formData.fullName,
-          email: formData.email,
-          phone: formData.phone,
-          coverletter: formData.coverletter,
-          experience: formData.experience,
-          linkedIn: formData.linkedIn,
-          portfolio: formData.portfolio,
-        },
-        formData.email
-      );
-
-      // Show appropriate success message based on email status
-      const successText =
-        adminEmailSent && userEmailSent
-          ? "Thank you for applying. We'll review your application and get back to you soon."
-          : adminEmailSent
-          ? "Your application was received. Check your email for confirmation details."
-          : "Your application has been recorded. Our HR team will review and contact you soon.";
+      // Show success message
+      const successText = "Thank you for applying. We'll review your application and get back to you soon.";
 
       Swal.fire({
         icon: "success",
@@ -237,6 +217,7 @@ export default function JobApplicationForm({
         });
         setResumeFileName("");
       });
+      isSubmittingRef.current = false;
       setLoading(false);
     } catch (err) {
       const errorMsg = err instanceof Error ? err.message : String(err);
@@ -247,6 +228,7 @@ export default function JobApplicationForm({
         confirmButtonColor: "#047F86",
       });
       console.error("Error:", err);
+      isSubmittingRef.current = false;
       setLoading(false);
     }
   };

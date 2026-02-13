@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Mail, Phone, Send } from "lucide-react";
 import { supabase } from "@/lib/supabase";
 import Swal from "sweetalert2";
@@ -6,6 +6,7 @@ import { initEmailJS, sendContactFormEmail } from "@/services/emailService";
 
 export default function ContactForm() {
   const [loading, setLoading] = useState(false);
+  const isSubmittingRef = useRef(false);
   const [formData, setFormData] = useState({
     full_name: "",
     email: "",
@@ -34,6 +35,13 @@ export default function ContactForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Prevent double submissions
+    if (isSubmittingRef.current || loading) {
+      return;
+    }
+
+    isSubmittingRef.current = true;
     setLoading(true);
 
     try {
@@ -58,24 +66,19 @@ export default function ContactForm() {
           confirmButtonColor: "#047F86",
         });
         console.error("Supabase error:", error);
+        isSubmittingRef.current = false;
         setLoading(false);
         return;
       }
 
-      // Send email to admin (contact email)
+      // Send email to admin only
       const adminEmail = import.meta.env.VITE_ADMIN_EMAIL || "contac@axivolt.in";
-      const adminEmailSent = await sendContactFormEmail(formData, adminEmail);
+      const emailSent = await sendContactFormEmail(formData, adminEmail);
 
-      // Send confirmation email to user
-      const userEmailSent = await sendContactFormEmail(formData, formData.email);
-
-      // Show appropriate success message
-      const emailStatusText =
-        adminEmailSent && userEmailSent
-          ? "Thank you for contacting us. We'll get back to you soon."
-          : adminEmailSent
-          ? "Your submission was received. You may not receive a confirmation email due to service limits."
-          : "Your submission was recorded. We may contact you via phone.";
+      // Show success message
+      const emailStatusText = emailSent
+        ? "Thank you for contacting us. We'll get back to you soon."
+        : "Your submission was recorded. We'll contact you soon.";
 
       Swal.fire({
         icon: "success",
@@ -92,6 +95,7 @@ export default function ContactForm() {
         message: "",
         contact_preference: "email",
       });
+      isSubmittingRef.current = false;
       setLoading(false);
     } catch (err) {
       const errorMsg = err instanceof Error ? err.message : String(err);
@@ -102,6 +106,7 @@ export default function ContactForm() {
         confirmButtonColor: "#047F86",
       });
       console.error("Error:", err);
+      isSubmittingRef.current = false;
       setLoading(false);
     }
   };

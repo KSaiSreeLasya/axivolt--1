@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { FileText, Send } from "lucide-react";
 import { supabase } from "@/lib/supabase";
 import { toast } from "sonner";
@@ -6,6 +6,7 @@ import { initEmailJS, sendQuoteFormEmail } from "@/services/emailService";
 
 export default function QuoteForm() {
   const [loading, setLoading] = useState(false);
+  const isSubmittingRef = useRef(false);
   const [formData, setFormData] = useState({
     full_name: "",
     email: "",
@@ -40,6 +41,13 @@ export default function QuoteForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Prevent double submissions
+    if (isSubmittingRef.current || loading) {
+      return;
+    }
+
+    isSubmittingRef.current = true;
     setLoading(true);
 
     try {
@@ -59,24 +67,19 @@ export default function QuoteForm() {
           error instanceof Error ? error.message : JSON.stringify(error);
         toast.error("Failed to submit quote request: " + errorMsg);
         console.error("Supabase error:", error);
+        isSubmittingRef.current = false;
         setLoading(false);
         return;
       }
 
-      // Send email to admin
+      // Send email to admin only
       const adminEmail = import.meta.env.VITE_ADMIN_EMAIL || "contac@axivolt.in";
-      const adminEmailSent = await sendQuoteFormEmail(formData, adminEmail);
+      const emailSent = await sendQuoteFormEmail(formData, adminEmail);
 
-      // Send confirmation email to user
-      const userEmailSent = await sendQuoteFormEmail(formData, formData.email);
-
-      // Show appropriate success message based on email status
-      const successMessage =
-        adminEmailSent && userEmailSent
-          ? "Quote request submitted! We'll contact you within 24 hours."
-          : adminEmailSent
-          ? "Quote request received! Check your email for confirmation details."
-          : "Quote request recorded. Our team will reach out to you soon.";
+      // Show success message
+      const successMessage = emailSent
+        ? "Quote request submitted! We'll contact you within 24 hours."
+        : "Quote request recorded. Our team will reach out to you soon.";
 
       toast.success(successMessage);
       setFormData({
@@ -94,11 +97,13 @@ export default function QuoteForm() {
         timeline: "",
         description: "",
       });
+      isSubmittingRef.current = false;
       setLoading(false);
     } catch (err) {
       const errorMsg = err instanceof Error ? err.message : String(err);
       toast.error("An error occurred: " + errorMsg);
       console.error("Error:", err);
+      isSubmittingRef.current = false;
       setLoading(false);
     }
   };

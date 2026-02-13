@@ -1,6 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { CheckCircle } from "lucide-react";
 import Swal from "sweetalert2";
 import { supabase } from "@/lib/supabase";
@@ -74,6 +74,8 @@ export default function GetQuote() {
   const [category, setCategory] = useState<
     "residential" | "housing" | "commercial"
   >("residential");
+  const [loading, setLoading] = useState(false);
+  const isSubmittingRef = useRef(false);
   const [formData, setFormData] = useState({
     fullName: "",
     whatsapp: "",
@@ -128,6 +130,14 @@ export default function GetQuote() {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    // Prevent double submissions
+    if (isSubmittingRef.current || loading) {
+      return;
+    }
+
+    isSubmittingRef.current = true;
+    setLoading(true);
 
     try {
       const { error } = await supabase.from("quote_requests").insert([
@@ -184,6 +194,8 @@ export default function GetQuote() {
         capacity: "",
         agreeToTerms: false,
       });
+      isSubmittingRef.current = false;
+      setLoading(false);
     } catch (error: any) {
       console.error("Failed to submit quote:", error);
       Swal.fire({
@@ -192,6 +204,8 @@ export default function GetQuote() {
         text: error.message || "Failed to submit quote. Please try again.",
         confirmButtonColor: "#047F86",
       });
+      isSubmittingRef.current = false;
+      setLoading(false);
     }
   };
 
@@ -411,9 +425,10 @@ export default function GetQuote() {
                 {/* Submit Button */}
                 <button
                   type="submit"
-                  className="w-full bg-cyan text-background px-6 py-3 rounded font-bold hover:bg-[#047F86] transition-all"
+                  disabled={loading}
+                  className="w-full bg-cyan text-background px-6 py-3 rounded font-bold hover:bg-[#047F86] transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Submit Details
+                  {loading ? "Submitting..." : "Submit Details"}
                 </button>
               </form>
             </div>

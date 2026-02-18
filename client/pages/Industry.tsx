@@ -3,9 +3,23 @@ import Footer from "@/components/Footer";
 import { ArrowRight, CheckCircle, Building2, Factory, Zap } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
+import { useSEO } from "@/hooks/useSEO";
 
 export default function Industry() {
   const navigate = useNavigate();
+
+  useSEO({
+    title:
+      "Industry-Specific Solar Solutions | AXIVOLT Green Energy Solutions",
+    description:
+      "Tailored renewable energy solutions for commercial, industrial, healthcare, and government sectors. Maximize efficiency and reduce costs.",
+    keywords:
+      "industry solar solutions, commercial renewable energy, industrial solar, sector-specific energy solutions",
+    ogTitle: "Industry-Specific Renewable Energy Solutions - AXIVOLT",
+    ogDescription:
+      "Customized solar and renewable energy solutions for different industries and business sectors.",
+    canonical: `${typeof window !== "undefined" ? window.location.origin : ""}/industry`,
+  });
   const industries = [
     {
       title: "Commercial & Office",

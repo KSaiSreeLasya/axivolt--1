@@ -9,9 +9,21 @@ import {
 } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
+import { useSEO } from "@/hooks/useSEO";
 
 export default function Wind() {
   const navigate = useNavigate();
+
+  useSEO({
+    title: "Wind Energy Solutions | Onshore & Offshore Wind Power | AXIVOLT",
+    description:
+      "Harness the power of wind energy. AXIVOLT provides comprehensive wind power solutions for residential, commercial, and utility-scale projects.",
+    keywords:
+      "wind energy, wind turbines, onshore wind, wind power solutions, renewable wind",
+    ogTitle: "Wind Energy Solutions - AXIVOLT",
+    ogDescription: "Clean, sustainable wind power solutions for your energy needs.",
+    canonical: `${typeof window !== "undefined" ? window.location.origin : ""}/solutions/wind`,
+  });
   const projects = [
     {
       title: "Onshore Wind Farm Sunset",

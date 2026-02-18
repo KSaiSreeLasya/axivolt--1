@@ -1,7 +1,18 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { useSEO } from "@/hooks/useSEO";
 
 export default function TermsOfService() {
+  useSEO({
+    title: "Terms of Service | AXIVOLT - Legal Terms",
+    description:
+      "Read the terms and conditions of using AXIVOLT's website and services.",
+    keywords: "terms of service, terms and conditions, legal terms",
+    ogTitle: "Terms of Service - AXIVOLT",
+    ogDescription: "AXIVOLT's terms and conditions for website use.",
+    canonical: `${typeof window !== "undefined" ? window.location.origin : ""}/terms-of-service`,
+    noindex: true,
+  });
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Header />

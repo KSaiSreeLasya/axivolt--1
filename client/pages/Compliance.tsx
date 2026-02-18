@@ -1,8 +1,21 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { CheckCircle } from "lucide-react";
+import { useSEO } from "@/hooks/useSEO";
 
 export default function Compliance() {
+  useSEO({
+    title:
+      "Certifications & Compliance | AXIVOLT ISO Standards & Regulatory",
+    description:
+      "AXIVOLT holds ISO 9001, ISO 14001, and TUREC certifications. Full compliance with all federal, state, and local regulations.",
+    keywords:
+      "ISO certification, compliance, TUREC certification, quality management, environmental management",
+    ogTitle: "Certifications & Compliance - AXIVOLT",
+    ogDescription:
+      "AXIVOLT maintains the highest standards with ISO and regulatory certifications.",
+    canonical: `${typeof window !== "undefined" ? window.location.origin : ""}/compliance`,
+  });
   const certifications = [
     {
       title: "ISO 9001:2015",

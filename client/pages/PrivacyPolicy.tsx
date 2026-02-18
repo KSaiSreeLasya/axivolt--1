@@ -1,7 +1,18 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { useSEO } from "@/hooks/useSEO";
 
 export default function PrivacyPolicy() {
+  useSEO({
+    title: "Privacy Policy | AXIVOLT - Your Data Protection Information",
+    description:
+      "Learn about AXIVOLT's privacy practices and how we protect your personal information.",
+    keywords: "privacy policy, data protection, privacy statement",
+    ogTitle: "Privacy Policy - AXIVOLT",
+    ogDescription: "AXIVOLT's commitment to protecting your privacy.",
+    canonical: `${typeof window !== "undefined" ? window.location.origin : ""}/privacy-policy`,
+    noindex: true,
+  });
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Header />

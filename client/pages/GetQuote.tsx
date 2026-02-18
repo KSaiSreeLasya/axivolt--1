@@ -5,6 +5,7 @@ import { CheckCircle } from "lucide-react";
 import Swal from "sweetalert2";
 import { supabase } from "@/lib/supabase";
 import { initEmailJS, sendEmail } from "@/services/emailService";
+import { useSEO } from "@/hooks/useSEO";
 
 interface BillRange {
   min: number;
@@ -71,6 +72,18 @@ const billOptions = billRanges.map(
 );
 
 export default function GetQuote() {
+  useSEO({
+    title: "Get Solar Quote | Free Energy Savings Estimation | AXIVOLT",
+    description:
+      "Get a free personalized solar quote. Calculate your energy savings and system cost based on your current electricity bills.",
+    keywords:
+      "solar quote, free solar estimate, solar cost calculator, solar savings",
+    ogTitle: "Get Your Free Solar Quote - AXIVOLT",
+    ogDescription:
+      "Quick and easy solar quote calculator. See your potential savings today.",
+    canonical: `${typeof window !== "undefined" ? window.location.origin : ""}/quote`,
+  });
+
   const [category, setCategory] = useState<
     "residential" | "housing" | "commercial"
   >("residential");

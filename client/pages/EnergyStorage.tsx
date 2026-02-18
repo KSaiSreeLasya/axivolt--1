@@ -2,9 +2,22 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { ArrowLeft, Battery, Gauge, Zap } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
+import { useSEO } from "@/hooks/useSEO";
 
 export default function EnergyStorage() {
   const navigate = useNavigate();
+
+  useSEO({
+    title: "Energy Storage Solutions | Battery Systems & Grid Storage | AXIVOLT",
+    description:
+      "Advanced battery storage systems for residential, commercial, and grid-scale applications. Store and manage energy efficiently.",
+    keywords:
+      "energy storage, battery storage, battery systems, grid storage, renewable energy storage",
+    ogTitle: "Energy Storage Solutions - AXIVOLT",
+    ogDescription:
+      "Smart energy storage solutions to maximize your renewable energy use.",
+    canonical: `${typeof window !== "undefined" ? window.location.origin : ""}/solutions/energy-storage`,
+  });
   const infrastructure = [
     {
       title: "Smart City Energy System",

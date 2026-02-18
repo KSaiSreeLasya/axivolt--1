@@ -12,6 +12,7 @@ import {
   Heart,
 } from "lucide-react";
 import { motion } from "framer-motion";
+import { useSEO } from "@/hooks/useSEO";
 
 interface Job {
   id?: string;
@@ -32,6 +33,17 @@ export default function Careers() {
   const [selectedJob, setSelectedJob] = useState<Job | null>(null);
   const [jobs, setJobs] = useState<Job[]>([]);
   const [loading, setLoading] = useState(true);
+
+  useSEO({
+    title: "Careers at AXIVOLT | Join Our Renewable Energy Team",
+    description:
+      "Explore career opportunities at AXIVOLT. Be part of a mission-driven team transforming the renewable energy industry.",
+    keywords:
+      "careers, jobs, renewable energy jobs, solar industry jobs, green energy careers, hyderabad jobs",
+    ogTitle: "Careers - AXIVOLT Green Energy",
+    ogDescription: "Join AXIVOLT and be part of the renewable energy revolution.",
+    canonical: `${typeof window !== "undefined" ? window.location.origin : ""}/careers`,
+  });
 
   useEffect(() => {
     fetchJobs();

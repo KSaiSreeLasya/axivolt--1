@@ -2,9 +2,22 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { ArrowLeft, Zap, Plug, Truck } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
+import { useSEO } from "@/hooks/useSEO";
 
 export default function EVStations() {
   const navigate = useNavigate();
+
+  useSEO({
+    title: "EV Charging Stations | Solar Powered Electric Vehicle Charging",
+    description:
+      "Install EV charging stations powered by solar energy. Home and commercial charging solutions for electric vehicles.",
+    keywords:
+      "EV charging, electric vehicle charging, solar charging, charging stations, EV infrastructure",
+    ogTitle: "EV Charging Stations - AXIVOLT",
+    ogDescription:
+      "Solar-powered EV charging solutions for home and commercial use.",
+    canonical: `${typeof window !== "undefined" ? window.location.origin : ""}/solutions/ev-stations`,
+  });
   const solutions = [
     {
       title: "Home EV Charging Station",

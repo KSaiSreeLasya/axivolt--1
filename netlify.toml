@@ -3,19 +3,36 @@
   functions = "netlify/functions"
   publish = "dist/spa"
 
+[context.production]
+  command = "npm run build:client"
 
 [functions]
   external_node_modules = ["express"]
   node_bundler = "esbuild"
 
+# API Routes - route to serverless function
 [[redirects]]
   force = true
   from = "/api/*"
   status = 200
   to = "/.netlify/functions/api/:splat"
 
-# SPA Fallback - serve index.html for all non-matching routes
+# SEO Routes - sitemap.xml and robots.txt via serverless
+[[redirects]]
+  force = true
+  from = "/sitemap.xml"
+  status = 200
+  to = "/.netlify/functions/api/sitemap.xml"
+
+[[redirects]]
+  force = true
+  from = "/robots.txt"
+  status = 200
+  to = "/.netlify/functions/api/robots.txt"
+
+# SPA Fallback - serve index.html for all non-API, non-asset routes
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
+  conditions = { "Not" = ["/:file.{css,js,png,jpg,jpeg,gif,svg,ico,webp,woff,woff2,ttf,eot}"] }

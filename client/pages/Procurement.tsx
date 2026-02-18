@@ -10,9 +10,23 @@ import {
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
+import { useSEO } from "@/hooks/useSEO";
 
 export default function Procurement() {
   const navigate = useNavigate();
+
+  useSEO({
+    title:
+      "Procurement Solutions | Equipment Supply & Project Management | AXIVOLT",
+    description:
+      "Comprehensive procurement services for solar panels, inverters, and renewable energy equipment. Quality assurance and timely delivery.",
+    keywords:
+      "equipment procurement, solar panels supply, renewable energy equipment, procurement services",
+    ogTitle: "Procurement Solutions - AXIVOLT",
+    ogDescription:
+      "Professional procurement services for all your renewable energy equipment needs.",
+    canonical: `${typeof window !== "undefined" ? window.location.origin : ""}/procurement`,
+  });
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Header />

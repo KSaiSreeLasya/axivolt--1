@@ -12,9 +12,23 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { useSEO } from "@/hooks/useSEO";
 
 export default function DigitalSolutions() {
   const [activeTab, setActiveTab] = useState("energy");
+
+  useSEO({
+    title:
+      "Digital Energy Solutions | IoT Monitoring & Smart Energy Management",
+    description:
+      "Advanced digital solutions for energy management, real-time monitoring, and data analytics. Optimize your renewable energy systems.",
+    keywords:
+      "energy management software, IoT monitoring, smart energy, digital solutions, energy analytics",
+    ogTitle: "Digital Energy Solutions - AXIVOLT",
+    ogDescription:
+      "Next-generation digital tools for energy monitoring and optimization.",
+    canonical: `${typeof window !== "undefined" ? window.location.origin : ""}/digital-solutions`,
+  });
 
   return (
     <div className="min-h-screen bg-background text-foreground">

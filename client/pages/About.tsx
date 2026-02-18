@@ -69,14 +69,14 @@ export default function About() {
   }, []);
 
   useSEO({
-    title: "About AXIVOLT | Leading Solar Energy Company in India",
+    title: "About Axivolt | Solar Energy Experts in Hyderabad",
     description:
-      "Learn about AXIVOLT - a pioneering renewable energy company with 15+ years of experience in solar solutions. 500+ projects, 250MW capacity.",
+      "Learn how Axivolt is driving clean energy adoption through innovative solar solutions and customer-focused service.",
     keywords:
       "about solar company, renewable energy company, green energy provider, solar energy expertise",
-    ogTitle: "About AXIVOLT - Renewable Energy Leaders",
+    ogTitle: "About Axivolt | Solar Energy Experts in Hyderabad",
     ogDescription:
-      "Discover AXIVOLT's mission to transform energy through innovative solar solutions.",
+      "Learn how Axivolt is driving clean energy adoption through innovative solar solutions and customer-focused service.",
     canonical: `${typeof window !== "undefined" ? window.location.origin : ""}/about`,
   });
 

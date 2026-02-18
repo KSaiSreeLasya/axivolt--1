@@ -73,14 +73,14 @@ const billOptions = billRanges.map(
 
 export default function GetQuote() {
   useSEO({
-    title: "Get Solar Quote | Free Energy Savings Estimation | AXIVOLT",
+    title: "Get Solar Installation Quote in Hyderabad | Axivolt",
     description:
-      "Get a free personalized solar quote. Calculate your energy savings and system cost based on your current electricity bills.",
+      "Request a free solar installation quote from Axivolt and start saving with efficient and affordable solar energy solutions.",
     keywords:
-      "solar quote, free solar estimate, solar cost calculator, solar savings",
-    ogTitle: "Get Your Free Solar Quote - AXIVOLT",
+      "solar quote, free solar estimate, solar cost calculator, solar savings, solar quote hyderabad",
+    ogTitle: "Get Solar Installation Quote in Hyderabad | Axivolt",
     ogDescription:
-      "Quick and easy solar quote calculator. See your potential savings today.",
+      "Request a free solar installation quote from Axivolt and start saving with efficient and affordable solar energy solutions.",
     canonical: `${typeof window !== "undefined" ? window.location.origin : ""}/quote`,
   });
 

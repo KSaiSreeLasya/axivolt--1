@@ -17,15 +17,14 @@ import { motion } from "framer-motion";
 export default function SolarResidential() {
   const navigate = useNavigate();
   useSEO({
-    title:
-      "Residential Solar Panel Installation in Hyderabad | Rooftop Solar Systems",
+    title: "Residential Solar Panel Installation in Hyderabad | Axivolt",
     description:
-      "Professional residential solar panel installation in Hyderabad and Telangana. Custom rooftop solar systems for homes with warranty and maintenance support. Save on electricity bills with AXIVOLT's expert service.",
+      "Save on electricity bills with customized residential solar solutions. Axivolt offers expert installation and premium solar panels.",
     keywords:
       "residential solar panels hyderabad, rooftop solar installation telangana, home solar system, solar panels for home in hyderabad, residential solar company telangana, solar installation andhra pradesh, rooftop solar system hyderabad",
-    ogTitle: "Residential Solar Solutions - AXIVOLT",
+    ogTitle: "Residential Solar Panel Installation in Hyderabad | Axivolt",
     ogDescription:
-      "Transform your home with affordable solar energy. Expert installation in Hyderabad and Telangana with lifetime support.",
+      "Save on electricity bills with customized residential solar solutions. Axivolt offers expert installation and premium solar panels.",
     canonical: `${typeof window !== "undefined" ? window.location.origin : ""}/solutions/solar/residential`,
   });
 

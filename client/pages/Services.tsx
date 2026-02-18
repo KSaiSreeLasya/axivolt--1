@@ -14,15 +14,14 @@ import { useEffect } from "react";
 export default function Services() {
   const navigate = useNavigate();
   useSEO({
-    title:
-      "Renewable Energy Services | Advisory, Procurement, Digital Solutions | AXIVOLT",
+    title: "Solar EPC Company in Hyderabad | Axivolt",
     description:
-      "Complete renewable energy services including advisory, procurement, and digital solutions for solar, wind, and energy storage projects in Hyderabad, Telangana, and Andhra Pradesh.",
+      "Axivolt is a leading solar EPC company providing design, procurement, installation, and maintenance services.",
     keywords:
-      "renewable energy services, energy advisory, solar procurement, energy solutions, renewable energy consultation, solar services in Hyderabad, Telangana",
-    ogTitle: "Energy Services & Solutions - AXIVOLT",
+      "solar EPC company, solar installation services, EPC contractor, solar panel installation, renewable energy services, solar EPC hyderabad",
+    ogTitle: "Solar EPC Company in Hyderabad | Axivolt",
     ogDescription:
-      "Expert advisory, procurement, and digital solutions for renewable energy projects.",
+      "Axivolt is a leading solar EPC company providing design, procurement, installation, and maintenance services.",
     canonical: `${typeof window !== "undefined" ? window.location.origin : ""}/services`,
   });
 

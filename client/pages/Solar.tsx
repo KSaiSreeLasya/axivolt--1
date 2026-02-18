@@ -8,15 +8,14 @@ import { useEffect } from "react";
 export default function Solar() {
   const navigate = useNavigate();
   useSEO({
-    title:
-      "Solar Panel Installation & Solutions in Hyderabad, Telangana | AXIVOLT",
+    title: "Axivolt Solar Solutions | Trusted Renewable Energy Company in India",
     description:
-      "Top-rated solar panel installation company in Hyderabad and Telangana. Comprehensive residential, commercial, and government solar solutions. 500+ projects completed with 50MW+ capacity.",
+      "Axivolt is a reliable solar energy company delivering high-performance solar systems with expert installation and long-term support.",
     keywords:
       "solar panels in hyderabad, solar companies telangana, solar energy solutions, residential solar installation, commercial solar systems, solar energy telangana, best solar company in hyderabad, solar company in andhra pradesh",
-    ogTitle: "Solar Energy Solutions - AXIVOLT",
+    ogTitle: "Axivolt Solar Solutions | Trusted Renewable Energy Company in India",
     ogDescription:
-      "Professional solar installations for homes and businesses. Expert service with 15+ years experience in Hyderabad and Telangana.",
+      "Axivolt is a reliable solar energy company delivering high-performance solar systems with expert installation and long-term support.",
     canonical: `${typeof window !== "undefined" ? window.location.origin : ""}/solutions/solar`,
   });
 

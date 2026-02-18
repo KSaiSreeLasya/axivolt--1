@@ -16,15 +16,14 @@ import { motion } from "framer-motion";
 export default function SolarGovernment() {
   const navigate = useNavigate();
   useSEO({
-    title:
-      "Government Solar Projects | Public Sector Energy Solutions | AXIVOLT",
+    title: "Government & Large-Scale Solar Projects | Axivolt India",
     description:
-      "Specialized solar solutions for government and public sector projects. Tender support, compliance, and large-scale installations. Energy solutions for cities and institutions.",
+      "Axivolt specializes in executing government and large-scale solar projects with reliable engineering and timely delivery.",
     keywords:
-      "government solar projects, public sector solar, government energy solutions, solar for institutions, public solar programs",
-    ogTitle: "Government Solar Solutions - AXIVOLT",
+      "government solar projects, public sector solar, government energy solutions, solar for institutions, public solar programs, large-scale solar",
+    ogTitle: "Government & Large-Scale Solar Projects | Axivolt India",
     ogDescription:
-      "Government-scale solar solutions with full compliance and tender support.",
+      "Axivolt specializes in executing government and large-scale solar projects with reliable engineering and timely delivery.",
     canonical: `${typeof window !== "undefined" ? window.location.origin : ""}/solutions/solar/government`,
   });
 

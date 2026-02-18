@@ -7,15 +7,14 @@ import { useEffect } from "react";
 
 export default function Solutions() {
   useSEO({
-    title:
-      "Renewable Energy Solutions | Solar, Wind, Storage, EV Charging | AXIVOLT",
+    title: "Renewable Energy & Solar Power Solutions | Axivolt",
     description:
-      "AXIVOLT offers comprehensive renewable energy solutions including solar energy, wind power, energy storage, and EV charging infrastructure for residential, commercial, and government sectors.",
+      "Switch to clean energy with Axivolt's advanced renewable energy and solar power solutions for a sustainable future.",
     keywords:
       "renewable energy solutions, solar energy, wind energy, energy storage, EV charging, renewable power generation, green energy solutions",
-    ogTitle: "Renewable Energy Solutions - AXIVOLT",
+    ogTitle: "Renewable Energy & Solar Power Solutions | Axivolt",
     ogDescription:
-      "Explore our core energy solutions: Solar, Wind, Energy Storage, and EV Charging with proven results across all sectors.",
+      "Switch to clean energy with Axivolt's advanced renewable energy and solar power solutions for a sustainable future.",
     canonical: `${typeof window !== "undefined" ? window.location.origin : ""}/solutions`,
   });
 

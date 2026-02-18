@@ -19,14 +19,14 @@ import { motion } from "framer-motion";
 export default function SolarCommercial() {
   const navigate = useNavigate();
   useSEO({
-    title: "Commercial & Industrial Solar Solutions in Hyderabad | AXIVOLT",
+    title: "Commercial Solar Power Solutions in Hyderabad | Axivolt",
     description:
-      "Large-scale commercial and industrial solar installations for businesses in Hyderabad and Telangana. ROI-focused solutions with energy monitoring and asset management. Reduce operating costs significantly.",
+      "Axivolt delivers cost-effective commercial solar power systems for offices, factories, and enterprises across Hyderabad.",
     keywords:
       "commercial solar panels hyderabad, industrial solar installation telangana, business solar solutions, commercial solar company andhra pradesh, industrial solar systems, corporate solar energy solutions, solar for factories and warehouses",
-    ogTitle: "Commercial Solar Solutions - AXIVOLT",
+    ogTitle: "Commercial Solar Power Solutions in Hyderabad | Axivolt",
     ogDescription:
-      "Scale your business with solar. Proven commercial installations in Hyderabad and Telangana with 24/7 monitoring.",
+      "Axivolt delivers cost-effective commercial solar power systems for offices, factories, and enterprises across Hyderabad.",
     canonical: `${typeof window !== "undefined" ? window.location.origin : ""}/solutions/solar/commercial`,
   });
 

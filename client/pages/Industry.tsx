@@ -9,15 +9,14 @@ export default function Industry() {
   const navigate = useNavigate();
 
   useSEO({
-    title:
-      "Industry-Specific Solar Solutions | AXIVOLT Green Energy Solutions",
+    title: "Industrial Solar Energy Systems in India | Axivolt",
     description:
-      "Tailored renewable energy solutions for commercial, industrial, healthcare, and government sectors. Maximize efficiency and reduce costs.",
+      "High-capacity industrial solar installations designed to reduce operational energy costs and improve sustainability.",
     keywords:
-      "industry solar solutions, commercial renewable energy, industrial solar, sector-specific energy solutions",
-    ogTitle: "Industry-Specific Renewable Energy Solutions - AXIVOLT",
+      "industry solar solutions, commercial renewable energy, industrial solar, sector-specific energy solutions, industrial solar systems",
+    ogTitle: "Industrial Solar Energy Systems in India | Axivolt",
     ogDescription:
-      "Customized solar and renewable energy solutions for different industries and business sectors.",
+      "High-capacity industrial solar installations designed to reduce operational energy costs and improve sustainability.",
     canonical: `${typeof window !== "undefined" ? window.location.origin : ""}/industry`,
   });
   const industries = [

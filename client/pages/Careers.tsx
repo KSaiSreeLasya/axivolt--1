@@ -35,7 +35,7 @@ export default function Careers() {
   const [loading, setLoading] = useState(true);
 
   useSEO({
-    title: "Careers at AXIVOLT | Join Our Renewable Energy Team",
+    title: "Careers at AXIVOLT GREEN ENERGY| Join Our Renewable Energy Team",
     description:
       "Explore career opportunities at AXIVOLT. Be part of a mission-driven team transforming the renewable energy industry.",
     keywords:

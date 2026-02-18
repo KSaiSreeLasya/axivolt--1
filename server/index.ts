@@ -1,6 +1,7 @@
 import "dotenv/config";
 import express from "express";
 import cors from "cors";
+import path from "path";
 import { handleDemo } from "./routes/demo";
 import { handleSitemap } from "./routes/sitemap";
 import { handleRobots } from "./routes/robots";
@@ -24,6 +25,15 @@ export function createServer() {
   // SEO routes
   app.get("/sitemap.xml", handleSitemap);
   app.get("/robots.txt", handleRobots);
+
+  // Serve static files from dist/spa in production
+  const spaPath = path.join(__dirname, "../dist/spa");
+  app.use(express.static(spaPath));
+
+  // SPA fallback: serve index.html for all non-API routes
+  app.use((_req, res) => {
+    res.sendFile(path.join(spaPath, "index.html"));
+  });
 
   return app;
 }

@@ -1,7 +1,18 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { useSEO } from "@/hooks/useSEO";
 
 export default function CookiePolicy() {
+  useSEO({
+    title: "Cookie Policy | AXIVOLT - Cookie Information",
+    description:
+      "Learn about the cookies AXIVOLT uses on our website and how to manage your preferences.",
+    keywords: "cookie policy, cookie consent, cookie information",
+    ogTitle: "Cookie Policy - AXIVOLT",
+    ogDescription: "Information about cookies used on the AXIVOLT website.",
+    canonical: `${typeof window !== "undefined" ? window.location.origin : ""}/cookie-policy`,
+    noindex: true,
+  });
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Header />

@@ -20,15 +20,14 @@ import { motion } from "framer-motion";
 export default function Index() {
   const navigate = useNavigate();
   useSEO({
-    title:
-      "AXIVOLT - Best Solar Company in Hyderabad, Telangana & Andhra Pradesh",
+    title: "Axivolt | Best Solar Company in Hyderabad for Homes & Businesses",
     description:
-      "Leading solar energy company in Hyderabad and Telangana offering residential, commercial, and government solar panel installations. Expert renewable energy solutions with 15+ years experience. 500+ projects completed.",
+      "Axivolt provides trusted solar panel installation and renewable energy solutions for residential, commercial, and industrial needs in Hyderabad.",
     keywords:
       "solar company hyderabad, best solar companies in telangana, solar energy solutions andhra pradesh, residential solar panels hyderabad, commercial solar installation, solar panel installation telangana, renewable energy company, green energy solutions",
-    ogTitle: "AXIVOLT - Solar Energy Solutions in Hyderabad & Telangana",
+    ogTitle: "Axivolt | Best Solar Company in Hyderabad for Homes & Businesses",
     ogDescription:
-      "Transform your energy with AXIVOLT's solar solutions. 500+ projects, 250MW capacity, 15+ years of excellence in Hyderabad, Telangana, and Andhra Pradesh.",
+      "Axivolt provides trusted solar panel installation and renewable energy solutions for residential, commercial, and industrial needs in Hyderabad.",
     canonical: `${typeof window !== "undefined" ? window.location.origin : ""}/`,
   });
 

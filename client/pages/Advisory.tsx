@@ -9,9 +9,22 @@ import {
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
+import { useSEO } from "@/hooks/useSEO";
 
 export default function Advisory() {
   const navigate = useNavigate();
+
+  useSEO({
+    title: "Energy Advisory Services | AXIVOLT Green Energy Consulting",
+    description:
+      "Expert energy advisory services for renewable energy transition. Get professional consultation on solar, wind, and energy storage solutions for your business.",
+    keywords:
+      "energy advisory, renewable energy consulting, solar consulting, energy transition, green energy strategy",
+    ogTitle: "Energy Advisory Services - AXIVOLT",
+    ogDescription:
+      "Professional advisory services for renewable energy solutions and energy transition planning.",
+    canonical: `${typeof window !== "undefined" ? window.location.origin : ""}/advisory`,
+  });
 
   return (
     <div className="min-h-screen bg-background text-foreground">

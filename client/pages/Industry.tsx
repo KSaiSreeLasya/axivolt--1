@@ -3,9 +3,22 @@ import Footer from "@/components/Footer";
 import { ArrowRight, CheckCircle, Building2, Factory, Zap } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
+import { useSEO } from "@/hooks/useSEO";
 
 export default function Industry() {
   const navigate = useNavigate();
+
+  useSEO({
+    title: "Industrial Solar Energy Systems in India | Axivolt",
+    description:
+      "High-capacity industrial solar installations designed to reduce operational energy costs and improve sustainability.",
+    keywords:
+      "industry solar solutions, commercial renewable energy, industrial solar, sector-specific energy solutions, industrial solar systems",
+    ogTitle: "Industrial Solar Energy Systems in India | Axivolt",
+    ogDescription:
+      "High-capacity industrial solar installations designed to reduce operational energy costs and improve sustainability.",
+    canonical: `${typeof window !== "undefined" ? window.location.origin : ""}/industry`,
+  });
   const industries = [
     {
       title: "Commercial & Office",

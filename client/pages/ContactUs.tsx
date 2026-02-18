@@ -14,14 +14,14 @@ import { useEffect } from "react";
 
 export default function ContactUs() {
   useSEO({
-    title: "Contact AXIVOLT | Solar Energy Solutions | Get Free Consultation",
+    title: "Contact Axivolt | Solar Panel Experts in Hyderabad",
     description:
-      "Get in touch with AXIVOLT for solar energy solutions in Hyderabad. Free consultation, expert advice, and personalized solar system design.",
+      "Contact Axivolt for solar consultation, pricing, site visits, and expert guidance on solar power installations.",
     keywords:
       "contact solar company, solar consultation, solar inquiry, renewable energy consultation, solar company hyderabad contact",
-    ogTitle: "Contact AXIVOLT - Solar Energy Experts",
+    ogTitle: "Contact Axivolt | Solar Panel Experts in Hyderabad",
     ogDescription:
-      "Reach out to AXIVOLT for a free solar energy consultation. We're here to help.",
+      "Contact Axivolt for solar consultation, pricing, site visits, and expert guidance on solar power installations.",
     canonical: `${typeof window !== "undefined" ? window.location.origin : ""}/contact`,
   });
 

@@ -5,6 +5,7 @@ import { CheckCircle } from "lucide-react";
 import Swal from "sweetalert2";
 import { supabase } from "@/lib/supabase";
 import { initEmailJS, sendEmail } from "@/services/emailService";
+import { useSEO } from "@/hooks/useSEO";
 
 interface BillRange {
   min: number;
@@ -71,6 +72,18 @@ const billOptions = billRanges.map(
 );
 
 export default function GetQuote() {
+  useSEO({
+    title: "Get Solar Installation Quote in Hyderabad | Axivolt",
+    description:
+      "Request a free solar installation quote from Axivolt and start saving with efficient and affordable solar energy solutions.",
+    keywords:
+      "solar quote, free solar estimate, solar cost calculator, solar savings, solar quote hyderabad",
+    ogTitle: "Get Solar Installation Quote in Hyderabad | Axivolt",
+    ogDescription:
+      "Request a free solar installation quote from Axivolt and start saving with efficient and affordable solar energy solutions.",
+    canonical: `${typeof window !== "undefined" ? window.location.origin : ""}/quote`,
+  });
+
   const [category, setCategory] = useState<
     "residential" | "housing" | "commercial"
   >("residential");

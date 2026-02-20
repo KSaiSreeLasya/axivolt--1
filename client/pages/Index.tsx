@@ -457,14 +457,14 @@ export default function Index() {
                 Professional solar panel installations with minimal disruption.
                 Maximize your roof space efficiency.
               </p>
-              <motion.a
-                href="#"
-                className="text-orange-600 font-semibold hover:text-orange-700 transition-colors inline-flex items-center gap-2 group/link"
+              <motion.button
+                onClick={() => navigate("/solutions/solar")}
+                className="text-orange-600 font-semibold hover:text-orange-700 transition-colors inline-flex items-center gap-2 group/link bg-transparent border-none cursor-pointer p-0"
                 whileHover={{ x: 5 }}
               >
                 Explore More{" "}
                 <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
-              </motion.a>
+              </motion.button>
             </motion.div>
 
             {/* Service 2 - Blue Icon */}
@@ -494,14 +494,14 @@ export default function Index() {
                 Advanced battery systems for round-the-clock power availability.
                 Store solar energy efficiently.
               </p>
-              <motion.a
-                href="#"
-                className="text-blue-600 font-semibold hover:text-blue-700 transition-colors inline-flex items-center gap-2 group/link"
+              <motion.button
+                onClick={() => navigate("/solutions/energy-storage")}
+                className="text-blue-600 font-semibold hover:text-blue-700 transition-colors inline-flex items-center gap-2 group/link bg-transparent border-none cursor-pointer p-0"
                 whileHover={{ x: 5 }}
               >
                 Explore More{" "}
                 <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
-              </motion.a>
+              </motion.button>
             </motion.div>
 
             {/* Service 3 - Green Icon */}
@@ -525,20 +525,20 @@ export default function Index() {
                 <Leaf className="w-8 md:w-10 h-8 md:h-10 text-white" />
               </motion.div>
               <h3 className="text-lg md:text-xl lg:text-2xl font-bold mb-2 md:mb-4 text-gray-900">
-                Industrial Solutions
+                Wind Solutions
               </h3>
               <p className="text-sm md:text-base text-gray-700 mb-4 md:mb-6 lg:mb-8 leading-relaxed">
                 Large-scale green energy projects for commercial and industrial
                 operations.
               </p>
-              <motion.a
-                href="#"
-                className="text-green-600 font-semibold hover:text-green-700 transition-colors inline-flex items-center gap-2 group/link"
+              <motion.button
+                onClick={() => navigate("/solutions/wind")}
+                className="text-green-600 font-semibold hover:text-green-700 transition-colors inline-flex items-center gap-2 group/link bg-transparent border-none cursor-pointer p-0"
                 whileHover={{ x: 5 }}
               >
                 Explore More{" "}
                 <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
-              </motion.a>
+              </motion.button>
             </motion.div>
           </div>
         </div>

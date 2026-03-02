@@ -9,11 +9,15 @@ import {
   Download,
   Plus,
   X,
+  LogOut,
 } from "lucide-react";
 import Header from "@/components/Header";
 import { supabase } from "@/lib/supabase";
 import { toast } from "sonner";
 import Swal from "sweetalert2";
+import { useAuth } from "@/contexts/AuthContext";
+import { useNavigate } from "react-router-dom";
+import { Button } from "@/components/ui/button";
 
 type SubmissionType = "contact" | "quote" | "application" | "jobs";
 
@@ -67,6 +71,8 @@ interface Job {
 }
 
 export default function AdminDashboard() {
+  const { user, signOut } = useAuth();
+  const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState<SubmissionType>("contact");
   const [contacts, setContacts] = useState<ContactSubmission[]>([]);
   const [quotes, setQuotes] = useState<QuoteRequest[]>([]);
@@ -77,6 +83,15 @@ export default function AdminDashboard() {
   const [viewDetailModal, setViewDetailModal] = useState(false);
   const [showJobModal, setShowJobModal] = useState(false);
   const [editingJob, setEditingJob] = useState<Job | null>(null);
+
+  const handleSignOut = async () => {
+    try {
+      await signOut();
+      navigate("/");
+    } catch (error) {
+      toast.error("Failed to sign out");
+    }
+  };
   const [jobForm, setJobForm] = useState<Job>({
     title: "",
     department: "",
@@ -413,11 +428,28 @@ export default function AdminDashboard() {
       <Header />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="mb-8">
-          <h1 className="text-4xl font-bold mb-2">Admin Dashboard</h1>
-          <p className="text-gray-400">
-            Manage all contact forms, quotes, and job applications
-          </p>
+        <div className="mb-8 flex justify-between items-start">
+          <div>
+            <h1 className="text-4xl font-bold mb-2">Admin Dashboard</h1>
+            <p className="text-gray-400">
+              Manage all contact forms, quotes, and job applications
+            </p>
+          </div>
+          <div className="flex items-center gap-4">
+            <div className="text-right">
+              <p className="text-sm text-gray-400">Logged in as</p>
+              <p className="font-semibold">{user?.email}</p>
+            </div>
+            <Button
+              onClick={handleSignOut}
+              variant="outline"
+              size="sm"
+              className="gap-2"
+            >
+              <LogOut className="w-4 h-4" />
+              Sign Out
+            </Button>
+          </div>
         </div>
 
         {/* Tabs */}

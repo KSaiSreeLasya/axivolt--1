@@ -1,9 +1,32 @@
 services:
-  - type: static
-    name: axivolt
-    buildCommand: pnpm install --frozen-lockfile && pnpm run build:client
-    staticPublishPath: ./dist/spa
-    routes:
-      - path: /*
-        destination: /index.html
-        match: miss
+  - type: web
+    name: axivolt-app
+    env: node
+    plan: standard
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: VITE_PUBLIC_SUPABASE_URL
+        sync: false
+      - key: VITE_PUBLIC_SUPABASE_ANON_KEY
+        sync: false
+      - key: SUPABASE_SERVICE_ROLE_KEY
+        sync: false
+      - key: VITE_ADMIN_EMAIL
+        sync: false
+      - key: VITE_EMAILJS_PUBLIC_KEY
+        sync: false
+      - key: VITE_EMAILJS_SERVICE_ID
+        sync: false
+      - key: VITE_EMAILJS_CONTACT_TEMPLATE_ID
+        sync: false
+      - key: VITE_EMAILJS_QUOTE_TEMPLATE_ID
+        sync: false
+      - key: VITE_EMAILJS_JOB_TEMPLATE_ID
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: PING_MESSAGE
+        value: pong

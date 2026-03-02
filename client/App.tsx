@@ -10,6 +10,8 @@ import React, { useEffect } from "react";
 import FloatingActionButton from "./components/FloatingActionButton";
 import { initEmailJS, checkEmailJSStatus } from "./services/emailService";
 import { printEmailDebug } from "./lib/emailDebug";
+import { AuthProvider } from "./contexts/AuthContext";
+import ProtectedRoute from "./components/ProtectedRoute";
 import Index from "./pages/Index";
 import Advisory from "./pages/Advisory";
 import Procurement from "./pages/Procurement";
@@ -20,6 +22,8 @@ import About from "./pages/About";
 import ContactUs from "./pages/ContactUs";
 import GetQuote from "./pages/GetQuote";
 import AdminDashboard from "./pages/AdminDashboard";
+import Login from "./pages/Login";
+import SignUp from "./pages/SignUp";
 import NotFound from "./pages/NotFound";
 import Solutions from "./pages/Solutions";
 import Services from "./pages/Services";
@@ -46,19 +50,29 @@ const App = () => {
 
   return (
   <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <FloatingActionButton />
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/industry" element={<Industry />} />
-          <Route path="/careers" element={<Careers />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<ContactUs />} />
-          <Route path="/quote" element={<GetQuote />} />
-          <Route path="/admin" element={<AdminDashboard />} />
+    <AuthProvider>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+          <FloatingActionButton />
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/industry" element={<Industry />} />
+            <Route path="/careers" element={<Careers />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<ContactUs />} />
+            <Route path="/quote" element={<GetQuote />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<SignUp />} />
+            <Route
+              path="/admin"
+              element={
+                <ProtectedRoute requireAdmin={true}>
+                  <AdminDashboard />
+                </ProtectedRoute>
+              }
+            />
           <Route path="/services" element={<Services />} />
           <Route path="/advisory" element={<Advisory />} />
           <Route path="/procurement" element={<Procurement />} />
@@ -88,7 +102,8 @@ const App = () => {
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
-    </TooltipProvider>
+      </TooltipProvider>
+    </AuthProvider>
   </QueryClientProvider>
   );
 };

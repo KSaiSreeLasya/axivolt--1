@@ -32,6 +32,9 @@ export default defineConfig({
         // External dependencies that should not be bundled
         "express",
         "cors",
+        "cookie-parser",
+        "jsonwebtoken",
+        "@supabase/supabase-js",
       ],
       output: {
         format: "es",

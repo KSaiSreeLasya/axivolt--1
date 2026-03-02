@@ -2,9 +2,18 @@ import "dotenv/config";
 import express from "express";
 import cors from "cors";
 import path from "path";
+import cookieParser from "cookie-parser";
 import { handleDemo } from "./routes/demo";
 import { handleSitemap } from "./routes/sitemap";
 import { handleRobots } from "./routes/robots";
+import {
+  handleSignUp,
+  handleSignIn,
+  handleSignOut,
+  handleGetMe,
+  handleVerifyToken,
+  authMiddleware,
+} from "./routes/auth";
 
 export function createServer() {
   const app = express();
@@ -13,6 +22,8 @@ export function createServer() {
   app.use(cors());
   app.use(express.json());
   app.use(express.urlencoded({ extended: true }));
+  app.use(cookieParser());
+  app.use(authMiddleware);
 
   // Example API routes
   app.get("/api/ping", (_req, res) => {
@@ -21,6 +32,13 @@ export function createServer() {
   });
 
   app.get("/api/demo", handleDemo);
+
+  // Auth routes
+  app.post("/api/auth/signup", handleSignUp);
+  app.post("/api/auth/signin", handleSignIn);
+  app.post("/api/auth/signout", handleSignOut);
+  app.get("/api/auth/me", handleGetMe);
+  app.get("/api/auth/verify", handleVerifyToken);
 
   // SEO routes
   app.get("/sitemap.xml", handleSitemap);
